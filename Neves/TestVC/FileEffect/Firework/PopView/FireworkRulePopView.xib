@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="FireworkRulePopView" customModule="Neves_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket_tc_bg" translatesAutoresizingMaskIntoConstraints="NO" id="rEe-tO-4OF">
+                    <rect key="frame" x="59.5" y="237.5" width="295" height="379"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rEe-tO-4OF" secondAttribute="height" multiplier="280:360" id="82E-eT-kvT"/>
+                        <constraint firstAttribute="width" constant="295" id="kph-jJ-gpT"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdo-IG-W93">
+                    <rect key="frame" x="71.5" y="285.5" width="271" height="311"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">1、一次性给单个用户送礼 ≥ 18800金币，即可触发焰火发射器，显示在该房间右下角 2、在倒计时15分钟内，在该房间累计送礼 ≥ 88800金币，即可触发第1个焰火特效 3、焰火发射器仅出现在所触发房间内，不会跟随用户去到不同的房间哦 4、焰火玩法只能在娱乐房里触发，派对房暂不支持该功能 5、第一个焰火发射后，倒计时10分钟内，在该房间累计送礼仅需要 ≥ 50000金币，即可发射下一个焰火特效</string>
+                            <attributes>
+                                <color key="NSBackgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="menu" size="14"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="10" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="suL-Gj-hhR">
+                    <rect key="frame" x="192" y="628.5" width="30" height="30"/>
+                    <state key="normal" backgroundImage="rocket_tc_icon_close"/>
+                    <connections>
+                        <action selector="close" destination="iN0-l3-epB" eventType="touchUpInside" id="XO2-gV-0BW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="suL-Gj-hhR" firstAttribute="top" secondItem="rEe-tO-4OF" secondAttribute="bottom" constant="12" id="71F-ll-uPk"/>
+                <constraint firstItem="suL-Gj-hhR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LU0-5h-FwP"/>
+                <constraint firstItem="xdo-IG-W93" firstAttribute="bottom" secondItem="rEe-tO-4OF" secondAttribute="bottom" constant="-20" id="MU6-XS-WDL"/>
+                <constraint firstItem="xdo-IG-W93" firstAttribute="top" secondItem="rEe-tO-4OF" secondAttribute="top" constant="48" id="SkK-Kv-kgM"/>
+                <constraint firstItem="rEe-tO-4OF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="llu-us-ob1"/>
+                <constraint firstItem="xdo-IG-W93" firstAttribute="trailing" secondItem="rEe-tO-4OF" secondAttribute="trailing" constant="-12" id="mM5-4c-rbj"/>
+                <constraint firstItem="rEe-tO-4OF" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-21" id="pAY-jb-BFv"/>
+                <constraint firstItem="xdo-IG-W93" firstAttribute="leading" secondItem="rEe-tO-4OF" secondAttribute="leading" constant="12" id="uH6-wX-7rh"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgImgView" destination="rEe-tO-4OF" id="ZSc-lE-pIn"/>
+                <outlet property="closeBtn" destination="suL-Gj-hhR" id="nch-OS-cwE"/>
+                <outlet property="ruleLabel" destination="xdo-IG-W93" id="wuR-X0-8Pt"/>
+            </connections>
+            <point key="canvasLocation" x="51" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rocket_tc_bg" width="286" height="364"/>
+        <image name="rocket_tc_icon_close" width="30" height="30"/>
+    </resources>
+</document>

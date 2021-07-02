@@ -1,0 +1,26 @@
+{
+	"list": [
+                {
+		"gravity": 1,
+		"height": 1624,
+		"marginBottom": 0,
+		"marginLeft": 0,
+		"marginRight": 0,
+		"marginTop": 0,
+		"packageName": "appgift_30128_animation01",
+		"width": 750,
+		"zIndex": 1
+	        },
+                {
+		"gravity": 2,
+		"height": 1624,
+		"marginBottom": 0,
+		"marginLeft": 0,
+		"marginRight": 0,
+		"marginTop": 0,
+		"packageName": "appgift_30128_animation02",
+		"width": 750,
+		"zIndex": 2
+	        }],
+	"totalTime": 14000
+}

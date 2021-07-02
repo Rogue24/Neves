@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FX-LED.ttf">
+            <string>FX-LED</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1X1-aJ-XUd" customClass="FireworkItem" customModule="mp_shengdong" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="65" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fire_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hE1-ep-wp6">
+                    <rect key="frame" x="0.0" y="0.0" width="65" height="200"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_all_user" translatesAutoresizingMaskIntoConstraints="NO" id="pUO-KE-b9l">
+                    <rect key="frame" x="22" y="110" width="21" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="pUO-KE-b9l" secondAttribute="height" id="azC-Lf-c3Q"/>
+                        <constraint firstAttribute="width" constant="21" id="jAK-np-PVQ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymE-dd-Hes">
+                    <rect key="frame" x="21" y="133.5" width="23" height="10"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="23" id="AUz-nK-cYG"/>
+                        <constraint firstAttribute="height" constant="10" id="xaL-2m-OlQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="FX-LED" family="FX-LED" pointSize="10"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="hE1-ep-wp6" secondAttribute="trailing" id="8gG-q4-WDW"/>
+                <constraint firstItem="pUO-KE-b9l" firstAttribute="centerX" secondItem="1X1-aJ-XUd" secondAttribute="centerX" id="FPG-5T-ocS"/>
+                <constraint firstItem="pUO-KE-b9l" firstAttribute="top" secondItem="1X1-aJ-XUd" secondAttribute="top" constant="110" id="I8P-mn-vdG"/>
+                <constraint firstAttribute="bottom" secondItem="hE1-ep-wp6" secondAttribute="bottom" id="VeN-jL-dnp"/>
+                <constraint firstItem="ymE-dd-Hes" firstAttribute="centerX" secondItem="1X1-aJ-XUd" secondAttribute="centerX" id="iIZ-UL-26v"/>
+                <constraint firstItem="hE1-ep-wp6" firstAttribute="leading" secondItem="1X1-aJ-XUd" secondAttribute="leading" id="kiC-YW-4cg"/>
+                <constraint firstItem="hE1-ep-wp6" firstAttribute="top" secondItem="1X1-aJ-XUd" secondAttribute="top" id="uBl-ST-WG9"/>
+                <constraint firstItem="ymE-dd-Hes" firstAttribute="top" secondItem="pUO-KE-b9l" secondAttribute="bottom" constant="2.5" id="w1V-u4-NTO"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bgView" destination="hE1-ep-wp6" id="zjb-bM-EGU"/>
+                <outlet property="countDownLabel" destination="ymE-dd-Hes" id="tPY-dZ-81c"/>
+                <outlet property="iconView" destination="pUO-KE-b9l" id="GC9-Jr-D8e"/>
+            </connections>
+            <point key="canvasLocation" x="701" y="117"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default_all_user" width="80" height="80"/>
+        <image name="fire_bg" width="195" height="600"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

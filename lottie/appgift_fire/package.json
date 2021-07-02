@@ -1,0 +1,14 @@
+{
+	"list": [{
+		"gravity": 1,
+		"height": 1624,
+		"marginBottom": 0,
+		"marginLeft": 0,
+		"marginRight": 0,
+		"marginTop": 0,
+		"packageName": "appgift_fire_animation",
+		"width": 750,
+		"zIndex": 1
+	}],
+	"totalTime": 6500
+}
