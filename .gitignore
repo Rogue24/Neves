@@ -34,5 +34,5 @@ Carthage
 
 #CocoaPods
 Pods
+Podfile.lock
 !Podfile
-!Podfile.lock
