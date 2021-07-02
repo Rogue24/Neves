@@ -60,6 +60,9 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        JPrint("StatusBar", StatusBarH, DiffStatusBarH)
+        JPrint("TabBar", TabBarH, DiffTabBarH)
+        
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: Self.headerID)
         
 //        let currentDate = Date()
@@ -117,7 +120,7 @@ extension MainTableViewController {
         if let builder = rowItem.builder, let vc = builder.build() {
             navigationController?.pushViewController(vc, animated: true)
         } else {
-            JPProgressHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建", userInteractionEnabled: true)
+            JPProgressHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建")//, userInteractionEnabled: true)
         }
     }
 }
