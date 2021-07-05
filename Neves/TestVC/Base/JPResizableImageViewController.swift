@@ -26,9 +26,15 @@ class JPResizableImageViewController: TestBaseViewController {
         imageView1.frame = [20, (imageView0.maxY + 20), 350, 81]
         view.addSubview(imageView1)
         
+        let imageView11 = UIImageView(image: image1)
+        imageView11.backgroundColor = .randomColor
+        imageView11.contentMode = .scaleAspectFit
+        imageView11.frame = [20, (imageView1.maxY + 20), 250, 81]
+        view.addSubview(imageView11)
+        
         let imageView2 = UIImageView(image: image1)
         imageView2.backgroundColor = .randomColor
-        imageView2.frame = [20, (imageView1.maxY + 20), 350, 40.5]
+        imageView2.frame = [20, (imageView11.maxY + 20), 350, 40.5]
         view.addSubview(imageView2)
         
         
