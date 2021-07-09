@@ -8,6 +8,23 @@
 
 import UIKit
 
+extension Date: JPCompatible {}
+extension JP where Base == Date {
+    
+    var mmssString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:ss"
+        return formatter.string(from: base)
+    }
+    
+    var ssString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "mm:ss"
+        return formatter.string(from: base)
+    }
+    
+}
+
 class MainTableViewController: UITableViewController {
     
     private static let headerID = "MainHeader"
@@ -72,6 +89,8 @@ class MainTableViewController: UITableViewController {
 //        let dateStr1 = fm.string(from: currentDate)
 //        let dateStr2 = fm.string(from: refreshDate)
 //        JPrint("时间？" , dateStr1, dateStr2)
+        
+        JPrint("时间？", Date().jp.mmssString)
     }
     
     override func viewWillAppear(_ animated: Bool) {

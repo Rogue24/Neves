@@ -64,6 +64,10 @@
         "header" : "Test",
         "vcList" : [
             {
+                "vcName": "PropertyWrapperTestVC",
+                "createVcWay" : 0
+            },
+            {
                 "vcName": "TestViewController",
                 "createVcWay" : 0
             },

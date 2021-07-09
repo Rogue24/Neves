@@ -21,6 +21,21 @@ class TestViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        box.frame = [100, 100, 100, 100]
+        box.backgroundColor = .randomColor()
+        view.addSubview(box)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        navigationController?.pushViewController(Test1ViewController(), animated: true)
+        navigationController?.pushViewController(Test2ViewController(), animated: true)
+//        navigationController?.pushViewController(Test3ViewController(), animated: true)
+    }
+
+}
+
+extension TestViewController {
+    func testSet() {
         let set1: Set = [1, 2, 3, 4, 5]
         let set2: Set = [2, 3, 4]
         
@@ -58,22 +73,11 @@ class TestViewController: TestBaseViewController {
         
         JPrint(set1.contains(6))
         JPrint(set1.contains(2))
-        
-        return
-        
-        
-        box.frame = [100, 100, 100, 100]
-        box.backgroundColor = .randomColor()
-        view.addSubview(box)
-        
-        let a = 3.0
-        
-        JPrint(pow(a, 0))
-        JPrint(pow(a, 1))
-        JPrint(pow(a, 2))
-        JPrint(pow(a, 3))
-        JPrint(pow(a, 4))
-        
+    }
+}
+
+extension TestViewController {
+    func testHYLabel() {
         demoLabel.text = "作者:@coderwhy 话题:#Label字符串识别# 网址:http://www.520it.com"
         demoLabel.size = .init(width: 200, height: 200)
         demoLabel.origin = .init(x: 20, y: 200)
@@ -96,11 +100,11 @@ class TestViewController: TestBaseViewController {
             JPrint(topic)
             JPrint(range)
         }
-        
-        
-        
-        
-        
+    }
+}
+
+extension TestViewController {
+    func testLayer() {
         let recordLayer = CALayer()
         recordLayer.frame = [100, 300, 85, 85]
         recordLayer.backgroundColor = UIColor.randomColor.cgColor
@@ -130,27 +134,4 @@ class TestViewController: TestBaseViewController {
         locationLayer.path = locationPath.cgPath
         recordLayer.addSublayer(locationLayer)
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        navigationController?.pushViewController(Test3ViewController(), animated: true)
-        
-        typealias ABC = UIViewController & UIScrollViewDelegate
-        
-        let vc: ABC = UITableViewController()
-        
-        
-        
-        
-        return
-        
-        
-        box.x += 1
-        box.y += 1
-        box.width += 1
-        box.height += 1
-        
-        navigationController?.pushViewController(Test1ViewController(), animated: true)
-    }
-
 }
