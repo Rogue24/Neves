@@ -3,7 +3,7 @@
 //  Neves_Example
 //
 //  Created by aa on 2020/10/26.
-//  Copyright © 2020 Quwan. All rights reserved.
+//  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
 struct ImageReplacementProvider: AnimationImageProvider {
@@ -23,7 +23,7 @@ struct ImageReplacementProvider: AnimationImageProvider {
     }
 }
 
-extension AnimationView: JPCompatible {}
+//extension AnimationView: JPCompatible {}
 extension JP where Base: AnimationView {
     static func build(_ dirName: String, _ imageReplacement: [String: CGImage?]? = nil) -> Base {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(dirName)") else { fatalError("路径错误！") }

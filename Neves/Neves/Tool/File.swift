@@ -3,7 +3,7 @@
 //  app
 //
 //  Created by aa on 2020/11/13.
-//  Copyright © 2020 Quwan. All rights reserved.
+//  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
 struct File {

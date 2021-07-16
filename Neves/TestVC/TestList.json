@@ -136,6 +136,10 @@
                 "vcName": "LottieTestViewController",
                 "createVcWay" : 2
             },
+            {
+                "vcName": "MagicCubeViewController",
+                "createVcWay" : 0
+            },
         ]
     },
     {

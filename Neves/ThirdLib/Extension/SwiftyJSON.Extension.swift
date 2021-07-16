@@ -3,7 +3,7 @@
 //  Neves_Example
 //
 //  Created by aa on 2020/10/26.
-//  Copyright © 2020 Quwan. All rights reserved.
+//  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
 import SwiftyJSON

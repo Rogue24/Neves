@@ -146,6 +146,9 @@
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
+		718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E226A0111F00080316 /* MagicCubeViewController.swift */; };
+		718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E526A0115100080316 /* MagicCubeSuspendView.swift */; };
+		718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E726A0116400080316 /* MagicCubeBubbleView.swift */; };
 		719646CB26675D7800AA64D5 /* JPTestHashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */; };
 		719646CF26675DC600AA64D5 /* JPPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 719646CE26675DC600AA64D5 /* JPPerson.m */; };
 		719646D326675DCE00AA64D5 /* JPDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 719646D226675DCE00AA64D5 /* JPDog.m */; };
@@ -347,6 +350,9 @@
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
+		718874E226A0111F00080316 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
+		718874E526A0115100080316 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
+		718874E726A0116400080316 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
 		719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPTestHashViewController.swift; sourceTree = "<group>"; };
 		719646CD26675DC600AA64D5 /* JPPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPPerson.h; sourceTree = "<group>"; };
 		719646CE26675DC600AA64D5 /* JPPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPPerson.m; sourceTree = "<group>"; };
@@ -785,6 +791,8 @@
 			isa = PBXGroup;
 			children = (
 				0081D76E2550EC15009D7ABA /* LottieTestViewController.swift */,
+				718874E226A0111F00080316 /* MagicCubeViewController.swift */,
+				718874E426A0112700080316 /* MagicCube */,
 			);
 			path = Animate;
 			sourceTree = "<group>";
@@ -963,6 +971,15 @@
 				716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */,
 			);
 			path = Kingfisher;
+			sourceTree = "<group>";
+		};
+		718874E426A0112700080316 /* MagicCube */ = {
+			isa = PBXGroup;
+			children = (
+				718874E526A0115100080316 /* MagicCubeSuspendView.swift */,
+				718874E726A0116400080316 /* MagicCubeBubbleView.swift */,
+			);
+			path = MagicCube;
 			sourceTree = "<group>";
 		};
 		71B897A6268C509F00705AC1 /* Video */ = {
@@ -1149,9 +1166,11 @@
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
+				718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				0049E970254FA7E200878F44 /* MarebulabulasManager.swift in Sources */,
+				718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */,
 				1A35452A254E77600032B677 /* Test1ViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
@@ -1195,6 +1214,7 @@
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
+				718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
 				719646CF26675DC600AA64D5 /* JPPerson.m in Sources */,
 				1A354535254E77600032B677 /* Firework.Extension.swift in Sources */,
