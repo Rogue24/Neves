@@ -23,7 +23,7 @@ class MagicCubeViewController: TestBaseViewController {
         guard let touch = touches.first else { return }
         let point = touch.location(in: view)
         
-        guard suspendView.frame.contains(point) else { return }
+        guard !suspendView.frame.contains(point) else { return }
         MagicCubeBubbleView.launch(on: view, site: suspendView.site, launchPoint: point)
     }
 }
