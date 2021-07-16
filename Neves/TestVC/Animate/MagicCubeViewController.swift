@@ -15,8 +15,14 @@ class MagicCubeViewController: TestBaseViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard suspendView == nil else { return }
-        suspendView = MagicCubeSuspendView.show(on: view, contentInset: .init(top: NavTopMargin, left: 0, bottom: DiffTabBarH, right: 0))
+        guard let suspendView = self.suspendView else {
+            suspendView = MagicCubeSuspendView.show(on: view, contentInset: .init(top: NavTopMargin, left: 0, bottom: DiffTabBarH, right: 0))
+            return
+        }
+        
+        guard let touch = touches.first else { return }
+        let point = touch.location(in: view)
+        MagicCubeBubbleView.launch(on: view, site: suspendView.site, launchPoint: point)
     }
 }
 
