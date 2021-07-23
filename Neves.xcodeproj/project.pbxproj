@@ -149,6 +149,10 @@
 		718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E226A0111F00080316 /* MagicCubeViewController.swift */; };
 		718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E526A0115100080316 /* MagicCubeSuspendView.swift */; };
 		718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E726A0116400080316 /* MagicCubeBubbleView.swift */; };
+		719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */; };
+		719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */; };
+		719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */; };
+		719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */; };
 		719646CB26675D7800AA64D5 /* JPTestHashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */; };
 		719646CF26675DC600AA64D5 /* JPPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 719646CE26675DC600AA64D5 /* JPPerson.m */; };
 		719646D326675DCE00AA64D5 /* JPDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 719646D226675DCE00AA64D5 /* JPDog.m */; };
@@ -353,6 +357,10 @@
 		718874E226A0111F00080316 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
 		718874E526A0115100080316 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		718874E726A0116400080316 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
+		719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleView.swift; sourceTree = "<group>"; };
+		719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleLaunchAble.swift; sourceTree = "<group>"; };
+		719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeSuspendView.swift; sourceTree = "<group>"; };
+		719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPMagicGiftInfo.swift; sourceTree = "<group>"; };
 		719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPTestHashViewController.swift; sourceTree = "<group>"; };
 		719646CD26675DC600AA64D5 /* JPPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPPerson.h; sourceTree = "<group>"; };
 		719646CE26675DC600AA64D5 /* JPPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPPerson.m; sourceTree = "<group>"; };
@@ -976,6 +984,10 @@
 		718874E426A0112700080316 /* MagicCube */ = {
 			isa = PBXGroup;
 			children = (
+				719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */,
+				719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */,
+				719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */,
+				719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */,
 				718874E526A0115100080316 /* MagicCubeSuspendView.swift */,
 				718874E726A0116400080316 /* MagicCubeBubbleView.swift */,
 			);
@@ -1251,6 +1263,7 @@
 				1A354525254E77600032B677 /* JPTextLayoutTool.m in Sources */,
 				715C193226981B0100731B67 /* PropertyWrapperTestVC.swift in Sources */,
 				1A3544FB254E77600032B677 /* ListViewReusable.swift in Sources */,
+				719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
@@ -1269,6 +1282,7 @@
 				00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */,
 				1A3544FA254E77600032B677 /* JP.swift in Sources */,
 				1A354530254E77600032B677 /* GCDSemaphoreTestVC.swift in Sources */,
+				719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				712C4B872671AA3400B205A2 /* JPFuncTestViewController.swift in Sources */,
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
@@ -1276,6 +1290,8 @@
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				71B11752263BE21C007048DA /* CircleMedalView.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
+				719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */,
+				719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
 				1A3544FE254E77600032B677 /* Function.swift in Sources */,

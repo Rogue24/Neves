@@ -72,6 +72,7 @@ class MagicCubeBubbleView: UIView {
     }
     
     func stop(andRemove: Bool = false) {
+        isAnimating = false
         layer.removeAllAnimations()
         isAnimating = true
         UIView.animate(withDuration: 0.15) {
@@ -85,6 +86,8 @@ class MagicCubeBubbleView: UIView {
 
 private extension MagicCubeBubbleView {
     func prepareLaunch(site: Site, launchPoint: CGPoint) {
+        JPrint("中断前")
+        isAnimating = false
         layer.removeAllAnimations()
         
         CATransaction.begin()
@@ -103,19 +106,27 @@ private extension MagicCubeBubbleView {
         layer.opacity = 0
         
         CATransaction.commit()
+        
+        JPrint("中断后")
     }
     
     func launch() {
+        JPrint("开始新动画")
         isAnimating = true
         UIView.animate(withDuration: 0.55, delay: 0, usingSpringWithDamping: 0.65, initialSpringVelocity: 0.5, options: []) {
             self.layer.transform = CATransform3DMakeScale(1, 1, 1)
             self.layer.opacity = 1
         } completion: { finish in
-            guard finish else { return }
+            guard finish else {
+                JPrint("被中断了1 ---", self.isAnimating)
+                return
+            }
             UIView.animate(withDuration: 0.3, delay: 2, options: []) {
                 self.layer.opacity = 0
             } completion: { finish in
-                if finish { self.isAnimating = false }
+                if finish { self.isAnimating = false } else {
+                    JPrint("被中断了2 ---", self.isAnimating)
+                }
             }
         }
     }
