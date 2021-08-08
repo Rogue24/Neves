@@ -106,12 +106,12 @@
         "header" : "Image",
         "vcList" : [
             {
-                "vcName": "ResizableImageViewController",
-                "createVcWay" : 0
-            },
-            {
                 "vcName": "JPCropViewController",
                 "createVcWay" : 1
+            },
+            {
+                "vcName": "ResizableImageViewController",
+                "createVcWay" : 0
             },
             {
                 "vcName": "WatermarkViewController",
