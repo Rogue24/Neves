@@ -1,28 +1,58 @@
 [
     {
+        "header" : "Test",
+        "vcList" : [
+            {
+                "vcName": "TestViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "TestTableViewController",
+                "createVcWay" : 0
+            },
+        ],
+    },
+    {
         "header" : "Base",
         "vcList" : [
             {
-                "vcName": "JPFuncTestViewController",
+                "vcName": "AwaitTestViewController",
                 "createVcWay" : 0
             },
             {
-                "vcName": "JPAwaitTestViewController",
+                "vcName": "BindableViewController",
                 "createVcWay" : 0
             },
             {
-                "vcName": "JPBindViewController",
+                "vcName": "PropertyWrapperTestVC",
                 "createVcWay" : 0
             },
             {
-                "vcName": "JPResizableImageViewController",
+                "vcName": "SetTestViewController",
                 "createVcWay" : 0
             },
             {
-                "vcName": "JPTestHashViewController",
+                "vcName": "HashTestViewController",
                 "createVcWay" : 0
             },
         ]
+    },
+    {
+        "header" : "Function",
+        "vcList" : [
+            {
+                "vcName": "ProcessorTestViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "FuncTestViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "TestTryCatchViewController",
+                "createVcWay" : 0
+            },
+        ],
     },
     {
         "header" : "Kingfisher",
@@ -38,6 +68,93 @@
         "vcList" : [
             {
                 "vcName": "RealmTestViewController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "Animate",
+        "vcList" : [
+            {
+                "vcName": "LottieTestViewController",
+                "createVcWay" : 2
+            },
+            {
+                "vcName": "MagicCubeViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "TableViewAnimateController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "View&Layer",
+        "vcList" : [
+            {
+                "vcName": "SublayerTransformTestVC",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "PopViewTestViewController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "Image",
+        "vcList" : [
+            {
+                "vcName": "ResizableImageViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "JPCropViewController",
+                "createVcWay" : 1
+            },
+            {
+                "vcName": "WatermarkViewController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "Video",
+        "vcList" : [
+            {
+                "vcName": "VideoViewController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "GCD",
+        "vcList" : [
+            {
+                "vcName": "GCDSemaphoreTestVC",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "GCDWorkItemTestVC",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "Memory",
+        "vcList" : [
+            {
+                "vcName": "MemorySizeTestViewController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "Widget",
+        "vcList" : [
+            {
+                "vcName": "WidgetViewController",
                 "createVcWay" : 0
             },
         ]
@@ -60,121 +177,4 @@
             },
         ]
     },
-    {
-        "header" : "Test",
-        "vcList" : [
-            {
-                "vcName": "PropertyWrapperTestVC",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "TestViewController",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "TestTableViewController",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "MemoryTestViewController",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "FuncTestViewController",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "TestTryCatchViewController",
-                "createVcWay" : 0
-            },
-        ],
-    },
-    {
-        "header" : "View&Layer",
-        "vcList" : [
-            {
-                "vcName": "SublayerTransformTestVC",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "PopViewTestViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Widget",
-        "vcList" : [
-            {
-                "vcName": "WidgetViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Closure",
-        "vcList" : [
-            {
-                "vcName": "ClosureViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Video",
-        "vcList" : [
-            {
-                "vcName": "VideoViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Animate",
-        "vcList" : [
-            {
-                "vcName": "LottieTestViewController",
-                "createVcWay" : 2
-            },
-            {
-                "vcName": "MagicCubeViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Image",
-        "vcList" : [
-            {
-                "vcName": "JPCropViewController",
-                "createVcWay" : 1
-            },
-            {
-                "vcName": "WatermarkViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Public",
-        "vcList" : [
-            {
-                "vcName": "PublicViewController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "GCD",
-        "vcList" : [
-            {
-                "vcName": "GCDSemaphoreTestVC",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "GCDWorkItemTestVC",
-                "createVcWay" : 0
-            },
-        ]
-    }
 ]

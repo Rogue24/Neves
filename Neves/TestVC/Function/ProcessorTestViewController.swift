@@ -1,5 +1,5 @@
 //
-//  JPFuncTestViewController.swift
+//  ProcessorTestViewController.swift
 //  Neves
 //
 //  Created by 周健平 on 2021/6/9.
@@ -73,7 +73,7 @@ class JPDProcessor: JPProcessor {
 }
 
 
-class JPFuncTestViewController: TestBaseViewController {
+class ProcessorTestViewController: TestBaseViewController {
     
     var p: JPProcessor! = nil
     

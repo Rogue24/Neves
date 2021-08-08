@@ -1,5 +1,5 @@
 //
-//  JPAwaitTestViewController.swift
+//  AwaitTestViewController.swift
 //  Neves
 //
 //  Created by 周健平 on 2021/6/9.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-class JPAwaitTestViewController: TestBaseViewController {
+class AwaitTestViewController: TestBaseViewController {
     
     
     override func viewDidLoad() {

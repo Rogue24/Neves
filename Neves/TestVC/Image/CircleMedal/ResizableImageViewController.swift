@@ -1,11 +1,11 @@
 //
-//  JPResizableImageViewController.swift
+//  ResizableImageViewController.swift
 //  Neves
 //
 //  Created by aa on 2021/4/29.
 //
 
-class JPResizableImageViewController: TestBaseViewController {
+class ResizableImageViewController: TestBaseViewController {
     
     let activeImage = UIImage(named: "quanzi_mingpai_hyd")
     

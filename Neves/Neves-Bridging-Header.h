@@ -23,6 +23,7 @@
 #import <YYText/YYText.h>
 #import "JPPerson.h"
 #import "JPDog.h"
+#import "JPObject.h"
 
 // JPBasic
 #import "JPInline.h"

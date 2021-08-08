@@ -21,9 +21,6 @@
 		007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB31025CA39CE00CFF914 /* Test3ViewController.swift */; };
 		0081D677254FF4E3009D7ABA /* Marebulabulas.TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D676254FF4E3009D7ABA /* Marebulabulas.TestData.swift */; };
 		0081D76F2550EC15009D7ABA /* LottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D76E2550EC15009D7ABA /* LottieTestViewController.swift */; };
-		00842C5125879B930007F36E /* JPCroper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00842C5025879B930007F36E /* JPCroper.swift */; };
-		00842C5525879BA80007F36E /* JPCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00842C5325879BA80007F36E /* JPCropViewController.swift */; };
-		00842C5625879BA80007F36E /* JPCropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00842C5425879BA80007F36E /* JPCropViewController.xib */; };
 		0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */; };
 		00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00965D5B25CBF4DD00B7BB9C /* Done.swift */; };
 		00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109A725749DA200F17889 /* TestBaseViewController.swift */; };
@@ -96,9 +93,7 @@
 		1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A35442D254E775F0032B677 /* JPInteractiveTransition.m */; };
 		1A354529254E77600032B677 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354433254E77600032B677 /* TestViewController.swift */; };
 		1A35452A254E77600032B677 /* Test1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354434254E77600032B677 /* Test1ViewController.swift */; };
-		1A35452B254E77600032B677 /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354435254E77600032B677 /* TestTableView.swift */; };
 		1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354436254E77600032B677 /* TestTableViewController.swift */; };
-		1A35452E254E77600032B677 /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354438254E77600032B677 /* TestTableViewCell.swift */; };
 		1A35452F254E77600032B677 /* TestList.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A354439254E77600032B677 /* TestList.json */; };
 		1A354530254E77600032B677 /* GCDSemaphoreTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35443B254E77600032B677 /* GCDSemaphoreTestVC.swift */; };
 		1A354531254E77600032B677 /* FileEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35443F254E77600032B677 /* FileEffectViewController.swift */; };
@@ -129,19 +124,31 @@
 		1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AC254E818B0032B677 /* Lottie.Extension.swift */; };
 		1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AD254E818B0032B677 /* HYLabel.swift */; };
 		1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545B7254E893F0032B677 /* WidgetViewController.swift */; };
-		1A400CFA25DD56CC00187563 /* TestTryCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A400CF925DD56CC00187563 /* TestTryCatchViewController.swift */; };
 		1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65873D2629E67300846689 /* PopViewTestViewController.swift */; };
 		1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587422629E6CC00846689 /* PopViewCompatible.swift */; };
 		1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587442629E6CC00846689 /* OptionPopView.swift */; };
 		1A65874C2629E6CC00846689 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587452629E6CC00846689 /* AlertView.swift */; };
 		1A65874E2629E6CC00846689 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587472629E6CC00846689 /* SheetView.swift */; };
+		1A9E417826BE4061006941D0 /* TableViewAnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */; };
+		1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */; };
+		1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */; };
+		1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E418426BE44A1006941D0 /* JPPerson.m */; };
+		1A9E418926BE44A1006941D0 /* JPDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E418526BE44A1006941D0 /* JPDog.m */; };
+		1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E418726BE44A1006941D0 /* HashTestViewController.swift */; };
+		1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E418D26BE44E3006941D0 /* ProcessorTestViewController.swift */; };
+		1A9E419326BE459E006941D0 /* JPObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419126BE459E006941D0 /* JPObject.m */; };
+		1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419226BE459E006941D0 /* SetTestViewController.swift */; };
+		1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419626BE45D6006941D0 /* CircleMedalView.swift */; };
+		1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419726BE45D6006941D0 /* CircleLevelView.swift */; };
+		1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419826BE45D6006941D0 /* ResizableImageViewController.swift */; };
+		1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419D26BE4633006941D0 /* JPCroper.swift */; };
+		1A9E41A126BE4633006941D0 /* JPCropViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A9E419E26BE4633006941D0 /* JPCropViewController.xib */; };
+		1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E419F26BE4633006941D0 /* JPCropViewController.swift */; };
+		1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41A826BFE0C5006941D0 /* PropertyWrapperTestVC.swift */; };
+		1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */; };
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
-		1AABA9B52555BC180051CA7E /* MemoryTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B42555BC180051CA7E /* MemoryTestViewController.swift */; };
-		1ACDFB722584CE7A003A5FE6 /* FuncTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDFB712584CE7A003A5FE6 /* FuncTestViewController.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
-		710A2F12260C6A130060CF01 /* JPBindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* JPBindViewController.swift */; };
-		712C4B872671AA3400B205A2 /* JPFuncTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712C4B862671AA3400B205A2 /* JPFuncTestViewController.swift */; };
-		715C193226981B0100731B67 /* PropertyWrapperTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C193126981B0100731B67 /* PropertyWrapperTestVC.swift */; };
+		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
@@ -153,13 +160,7 @@
 		719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */; };
 		719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */; };
 		719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */; };
-		719646CB26675D7800AA64D5 /* JPTestHashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */; };
-		719646CF26675DC600AA64D5 /* JPPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 719646CE26675DC600AA64D5 /* JPPerson.m */; };
-		719646D326675DCE00AA64D5 /* JPDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 719646D226675DCE00AA64D5 /* JPDog.m */; };
-		71B11744263ABD6D007048DA /* JPResizableImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B11743263ABD6D007048DA /* JPResizableImageViewController.swift */; };
-		71B1174F263BA394007048DA /* CircleLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1174E263BA394007048DA /* CircleLevelView.swift */; };
-		71B11752263BE21C007048DA /* CircleMedalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B11751263BE21B007048DA /* CircleMedalView.swift */; };
-		71B897A5268C4F1E00705AC1 /* JPAwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* JPAwaitTestViewController.swift */; };
+		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693A26563165009463E6 /* UIImage.Extension.swift */; };
 		71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693D265631DF009463E6 /* WatermarkViewController.swift */; };
 		71EA694126563270009463E6 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71EA694026563270009463E6 /* girl.jpg */; };
@@ -180,9 +181,6 @@
 		007AB31025CA39CE00CFF914 /* Test3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3ViewController.swift; sourceTree = "<group>"; };
 		0081D676254FF4E3009D7ABA /* Marebulabulas.TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marebulabulas.TestData.swift; sourceTree = "<group>"; };
 		0081D76E2550EC15009D7ABA /* LottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestViewController.swift; sourceTree = "<group>"; };
-		00842C5025879B930007F36E /* JPCroper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPCroper.swift; sourceTree = "<group>"; };
-		00842C5325879BA80007F36E /* JPCropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPCropViewController.swift; sourceTree = "<group>"; };
-		00842C5425879BA80007F36E /* JPCropViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JPCropViewController.xib; sourceTree = "<group>"; };
 		0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFit.Extension.swift; sourceTree = "<group>"; };
 		00965D5B25CBF4DD00B7BB9C /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
 		00D109A725749DA200F17889 /* TestBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
@@ -302,9 +300,7 @@
 		1A35442D254E775F0032B677 /* JPInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPInteractiveTransition.m; sourceTree = "<group>"; };
 		1A354433254E77600032B677 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1A354434254E77600032B677 /* Test1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test1ViewController.swift; sourceTree = "<group>"; };
-		1A354435254E77600032B677 /* TestTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
 		1A354436254E77600032B677 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
-		1A354438254E77600032B677 /* TestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		1A354439254E77600032B677 /* TestList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestList.json; sourceTree = "<group>"; };
 		1A35443B254E77600032B677 /* GCDSemaphoreTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphoreTestVC.swift; sourceTree = "<group>"; };
 		1A35443F254E77600032B677 /* FileEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEffectViewController.swift; sourceTree = "<group>"; };
@@ -335,21 +331,36 @@
 		1A3545AC254E818B0032B677 /* Lottie.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lottie.Extension.swift; sourceTree = "<group>"; };
 		1A3545AD254E818B0032B677 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
 		1A3545B7254E893F0032B677 /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
-		1A400CF925DD56CC00187563 /* TestTryCatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTryCatchViewController.swift; sourceTree = "<group>"; };
 		1A65873D2629E67300846689 /* PopViewTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewTestViewController.swift; sourceTree = "<group>"; };
 		1A6587422629E6CC00846689 /* PopViewCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewCompatible.swift; sourceTree = "<group>"; };
 		1A6587442629E6CC00846689 /* OptionPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionPopView.swift; sourceTree = "<group>"; };
 		1A6587452629E6CC00846689 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		1A6587472629E6CC00846689 /* SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAnimateController.swift; sourceTree = "<group>"; };
+		1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncTestViewController.swift; sourceTree = "<group>"; };
+		1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTryCatchViewController.swift; sourceTree = "<group>"; };
+		1A9E418326BE44A1006941D0 /* JPDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPDog.h; sourceTree = "<group>"; };
+		1A9E418426BE44A1006941D0 /* JPPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPerson.m; sourceTree = "<group>"; };
+		1A9E418526BE44A1006941D0 /* JPDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPDog.m; sourceTree = "<group>"; };
+		1A9E418626BE44A1006941D0 /* JPPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPerson.h; sourceTree = "<group>"; };
+		1A9E418726BE44A1006941D0 /* HashTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashTestViewController.swift; sourceTree = "<group>"; };
+		1A9E418D26BE44E3006941D0 /* ProcessorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessorTestViewController.swift; sourceTree = "<group>"; };
+		1A9E419026BE459E006941D0 /* JPObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPObject.h; sourceTree = "<group>"; };
+		1A9E419126BE459E006941D0 /* JPObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPObject.m; sourceTree = "<group>"; };
+		1A9E419226BE459E006941D0 /* SetTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTestViewController.swift; sourceTree = "<group>"; };
+		1A9E419626BE45D6006941D0 /* CircleMedalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleMedalView.swift; sourceTree = "<group>"; };
+		1A9E419726BE45D6006941D0 /* CircleLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLevelView.swift; sourceTree = "<group>"; };
+		1A9E419826BE45D6006941D0 /* ResizableImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizableImageViewController.swift; sourceTree = "<group>"; };
+		1A9E419D26BE4633006941D0 /* JPCroper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPCroper.swift; sourceTree = "<group>"; };
+		1A9E419E26BE4633006941D0 /* JPCropViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JPCropViewController.xib; sourceTree = "<group>"; };
+		1A9E419F26BE4633006941D0 /* JPCropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPCropViewController.swift; sourceTree = "<group>"; };
+		1A9E41A826BFE0C5006941D0 /* PropertyWrapperTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyWrapperTestVC.swift; sourceTree = "<group>"; };
+		1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySizeTestViewController.swift; sourceTree = "<group>"; };
+		1A9E41AD26BFE33A006941D0 /* Processor-函数式编程.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Processor-函数式编程.HEIC"; sourceTree = "<group>"; };
 		1AABA9B02555BBA10051CA7E /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
-		1AABA9B42555BC180051CA7E /* MemoryTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryTestViewController.swift; sourceTree = "<group>"; };
-		1ACDFB712584CE7A003A5FE6 /* FuncTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncTestViewController.swift; sourceTree = "<group>"; };
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
-		710A2F11260C6A130060CF01 /* JPBindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPBindViewController.swift; sourceTree = "<group>"; };
-		712C4B862671AA3400B205A2 /* JPFuncTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPFuncTestViewController.swift; sourceTree = "<group>"; };
-		712C4B882671B0F400B205A2 /* 函数式编程.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "函数式编程.HEIC"; sourceTree = "<group>"; };
-		715C193126981B0100731B67 /* PropertyWrapperTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyWrapperTestVC.swift; sourceTree = "<group>"; };
+		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
@@ -361,15 +372,7 @@
 		719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleLaunchAble.swift; sourceTree = "<group>"; };
 		719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPMagicGiftInfo.swift; sourceTree = "<group>"; };
-		719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPTestHashViewController.swift; sourceTree = "<group>"; };
-		719646CD26675DC600AA64D5 /* JPPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPPerson.h; sourceTree = "<group>"; };
-		719646CE26675DC600AA64D5 /* JPPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPPerson.m; sourceTree = "<group>"; };
-		719646D126675DCE00AA64D5 /* JPDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPDog.h; sourceTree = "<group>"; };
-		719646D226675DCE00AA64D5 /* JPDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPDog.m; sourceTree = "<group>"; };
-		71B11743263ABD6D007048DA /* JPResizableImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPResizableImageViewController.swift; sourceTree = "<group>"; };
-		71B1174E263BA394007048DA /* CircleLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleLevelView.swift; sourceTree = "<group>"; };
-		71B11751263BE21B007048DA /* CircleMedalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleMedalView.swift; sourceTree = "<group>"; };
-		71B897A4268C4F1E00705AC1 /* JPAwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPAwaitTestViewController.swift; sourceTree = "<group>"; };
+		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71EA693A26563165009463E6 /* UIImage.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.Extension.swift; sourceTree = "<group>"; };
 		71EA693D265631DF009463E6 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
 		71EA694026563270009463E6 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
@@ -777,20 +780,20 @@
 			children = (
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
+				1A354432254E77600032B677 /* Test */,
 				1A354455254E77600032B677 /* Base */,
+				1A9E417926BE4286006941D0 /* Function */,
 				716EFCE72671EFE100320C79 /* Kingfisher */,
 				00D109A125749D6500F17889 /* Relam */,
 				1A354430254E77600032B677 /* Animate */,
-				1A35443E254E77600032B677 /* FileEffect */,
-				1A35443A254E77600032B677 /* GCD */,
-				1A35443C254E77600032B677 /* Image */,
-				1A354457254E77600032B677 /* Marebulabulas */,
-				1A354432254E77600032B677 /* Test */,
-				71B897A7268C50B400705AC1 /* Public */,
-				71B897A6268C509F00705AC1 /* Video */,
 				1A354453254E77600032B677 /* View&Layer */,
-				71B897A8268C50C100705AC1 /* Closure */,
+				1A35443C254E77600032B677 /* Image */,
+				71B897A6268C509F00705AC1 /* Video */,
+				1A35443A254E77600032B677 /* GCD */,
+				1A9E41AA26BFE19F006941D0 /* Memory */,
 				1A3545B6254E89040032B677 /* Widget */,
+				1A35443E254E77600032B677 /* FileEffect */,
+				1A354457254E77600032B677 /* Marebulabulas */,
 			);
 			path = TestVC;
 			sourceTree = "<group>";
@@ -801,6 +804,7 @@
 				0081D76E2550EC15009D7ABA /* LottieTestViewController.swift */,
 				718874E226A0111F00080316 /* MagicCubeViewController.swift */,
 				718874E426A0112700080316 /* MagicCube */,
+				1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */,
 			);
 			path = Animate;
 			sourceTree = "<group>";
@@ -808,17 +812,11 @@
 		1A354432254E77600032B677 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				715C193126981B0100731B67 /* PropertyWrapperTestVC.swift */,
 				1A354433254E77600032B677 /* TestViewController.swift */,
 				1A354434254E77600032B677 /* Test1ViewController.swift */,
 				007AB30B25CA387B00CFF914 /* Test2ViewController.swift */,
 				007AB31025CA39CE00CFF914 /* Test3ViewController.swift */,
-				1A354435254E77600032B677 /* TestTableView.swift */,
-				1A354438254E77600032B677 /* TestTableViewCell.swift */,
 				1A354436254E77600032B677 /* TestTableViewController.swift */,
-				1AABA9B42555BC180051CA7E /* MemoryTestViewController.swift */,
-				1ACDFB712584CE7A003A5FE6 /* FuncTestViewController.swift */,
-				1A400CF925DD56CC00187563 /* TestTryCatchViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -835,9 +833,8 @@
 		1A35443C254E77600032B677 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				00842C5025879B930007F36E /* JPCroper.swift */,
-				00842C5325879BA80007F36E /* JPCropViewController.swift */,
-				00842C5425879BA80007F36E /* JPCropViewController.xib */,
+				1A9E419C26BE4633006941D0 /* JPCroper */,
+				1A9E419526BE45D6006941D0 /* CircleMedal */,
 				71EA693D265631DF009463E6 /* WatermarkViewController.swift */,
 			);
 			path = Image;
@@ -903,18 +900,11 @@
 		1A354455254E77600032B677 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				712C4B882671B0F400B205A2 /* 函数式编程.HEIC */,
-				712C4B862671AA3400B205A2 /* JPFuncTestViewController.swift */,
-				71B897A4268C4F1E00705AC1 /* JPAwaitTestViewController.swift */,
-				710A2F11260C6A130060CF01 /* JPBindViewController.swift */,
-				71B11743263ABD6D007048DA /* JPResizableImageViewController.swift */,
-				71B1174E263BA394007048DA /* CircleLevelView.swift */,
-				71B11751263BE21B007048DA /* CircleMedalView.swift */,
-				719646CA26675D7800AA64D5 /* JPTestHashViewController.swift */,
-				719646CD26675DC600AA64D5 /* JPPerson.h */,
-				719646CE26675DC600AA64D5 /* JPPerson.m */,
-				719646D126675DCE00AA64D5 /* JPDog.h */,
-				719646D226675DCE00AA64D5 /* JPDog.m */,
+				71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */,
+				710A2F11260C6A130060CF01 /* BindableViewController.swift */,
+				1A9E41A726BFE0C5006941D0 /* PropertyWrapper */,
+				1A9E418F26BE459E006941D0 /* Set */,
+				1A9E418226BE44A1006941D0 /* Hash */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -973,6 +963,75 @@
 			path = PopView;
 			sourceTree = "<group>";
 		};
+		1A9E417926BE4286006941D0 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E41AD26BFE33A006941D0 /* Processor-函数式编程.HEIC */,
+				1A9E418D26BE44E3006941D0 /* ProcessorTestViewController.swift */,
+				1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */,
+				1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		1A9E418226BE44A1006941D0 /* Hash */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E418726BE44A1006941D0 /* HashTestViewController.swift */,
+				1A9E418626BE44A1006941D0 /* JPPerson.h */,
+				1A9E418426BE44A1006941D0 /* JPPerson.m */,
+				1A9E418326BE44A1006941D0 /* JPDog.h */,
+				1A9E418526BE44A1006941D0 /* JPDog.m */,
+			);
+			path = Hash;
+			sourceTree = "<group>";
+		};
+		1A9E418F26BE459E006941D0 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E419226BE459E006941D0 /* SetTestViewController.swift */,
+				1A9E419026BE459E006941D0 /* JPObject.h */,
+				1A9E419126BE459E006941D0 /* JPObject.m */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		1A9E419526BE45D6006941D0 /* CircleMedal */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E419826BE45D6006941D0 /* ResizableImageViewController.swift */,
+				1A9E419626BE45D6006941D0 /* CircleMedalView.swift */,
+				1A9E419726BE45D6006941D0 /* CircleLevelView.swift */,
+			);
+			path = CircleMedal;
+			sourceTree = "<group>";
+		};
+		1A9E419C26BE4633006941D0 /* JPCroper */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E419D26BE4633006941D0 /* JPCroper.swift */,
+				1A9E419F26BE4633006941D0 /* JPCropViewController.swift */,
+				1A9E419E26BE4633006941D0 /* JPCropViewController.xib */,
+			);
+			path = JPCroper;
+			sourceTree = "<group>";
+		};
+		1A9E41A726BFE0C5006941D0 /* PropertyWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E41A826BFE0C5006941D0 /* PropertyWrapperTestVC.swift */,
+			);
+			path = PropertyWrapper;
+			sourceTree = "<group>";
+		};
+		1A9E41AA26BFE19F006941D0 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
 		716EFCE72671EFE100320C79 /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
@@ -999,20 +1058,6 @@
 			children = (
 			);
 			path = Video;
-			sourceTree = "<group>";
-		};
-		71B897A7268C50B400705AC1 /* Public */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Public;
-			sourceTree = "<group>";
-		};
-		71B897A8268C50C100705AC1 /* Closure */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Closure;
 			sourceTree = "<group>";
 		};
 		E267A15A814DD8944EEB458F /* Frameworks */ = {
@@ -1106,7 +1151,7 @@
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
 				1A35452F254E77600032B677 /* TestList.json in Resources */,
 				1A3544B6254E77600032B677 /* JPIcon.png in Resources */,
-				00842C5625879BA80007F36E /* JPCropViewController.xib in Resources */,
+				1A9E41A126BE4633006941D0 /* JPCropViewController.xib in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,
 				1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */,
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
@@ -1167,33 +1212,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A35452B254E77600032B677 /* TestTableView.swift in Sources */,
 				1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* LottieTestViewController.swift in Sources */,
 				1A35453F254E77600032B677 /* AsyncDecodeAnimationView.swift in Sources */,
-				00842C5125879B930007F36E /* JPCroper.swift in Sources */,
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
+				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,
 				007AB30C25CA387B00CFF914 /* Test2ViewController.swift in Sources */,
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
 				718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */,
+				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				0049E970254FA7E200878F44 /* MarebulabulasManager.swift in Sources */,
 				718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */,
 				1A35452A254E77600032B677 /* Test1ViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
+				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
 				1A354541254E77600032B677 /* FireworkModel.swift in Sources */,
+				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
 				1A354531254E77600032B677 /* FileEffectViewController.swift in Sources */,
 				007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
-				71B11744263ABD6D007048DA /* JPResizableImageViewController.swift in Sources */,
+				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
+				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
 				1A35453D254E77600032B677 /* FireworkPopView.swift in Sources */,
 				1A35451B254E77600032B677 /* UIViewController+JPExtension.m in Sources */,
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
@@ -1203,7 +1251,6 @@
 				1A35459D254E77600032B677 /* MarebulabulasViewController.swift in Sources */,
 				1A354512254E77600032B677 /* JPViewController.m in Sources */,
 				1A354515254E77600032B677 /* JPSubTableViewController.m in Sources */,
-				719646CB26675D7800AA64D5 /* JPTestHashViewController.swift in Sources */,
 				1A35459B254E77600032B677 /* MarebulabulasRecordControl.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				1A354523254E77600032B677 /* JPFileTool.m in Sources */,
@@ -1211,48 +1258,47 @@
 				0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */,
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
-				00842C5525879BA80007F36E /* JPCropViewController.swift in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				1A354540254E77600032B677 /* FireworkItem.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
-				1A35452E254E77600032B677 /* TestTableViewCell.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
-				1AABA9B52555BC180051CA7E /* MemoryTestViewController.swift in Sources */,
-				71B1174F263BA394007048DA /* CircleLevelView.swift in Sources */,
+				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
 				718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */,
+				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
-				719646CF26675DC600AA64D5 /* JPPerson.m in Sources */,
 				1A354535254E77600032B677 /* Firework.Extension.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				0081D677254FF4E3009D7ABA /* Marebulabulas.TestData.swift in Sources */,
 				1A35453A254E77600032B677 /* FireworkCell.swift in Sources */,
 				1A354513254E77600032B677 /* JPSubCollectionViewController.m in Sources */,
-				71B897A5268C4F1E00705AC1 /* JPAwaitTestViewController.swift in Sources */,
+				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
 				1A354503254E77600032B677 /* JPNoHighlightButton.m in Sources */,
 				005DF54425652EDB0010E772 /* File.swift in Sources */,
+				1A9E419326BE459E006941D0 /* JPObject.m in Sources */,
 				1A65874C2629E6CC00846689 /* AlertView.swift in Sources */,
 				1A35453E254E77600032B677 /* FireworkView.swift in Sources */,
 				1A354502254E77600032B677 /* JPUnderlineButton.m in Sources */,
 				1A354508254E77600032B677 /* JPFPSLabel.m in Sources */,
 				1A35451D254E77600032B677 /* NSDate+JPExtension.m in Sources */,
-				710A2F12260C6A130060CF01 /* JPBindViewController.swift in Sources */,
+				710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */,
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
+				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
+				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
 				1A35453B254E77600032B677 /* FireworkRulePopView.swift in Sources */,
 				1A354598254E77600032B677 /* MarebulabulasOperationView.swift in Sources */,
 				1A35451E254E77600032B677 /* NSURL+JPExtension.m in Sources */,
 				1A3544F8254E77600032B677 /* UIScreen.Extension.swift in Sources */,
-				1ACDFB722584CE7A003A5FE6 /* FuncTestViewController.swift in Sources */,
 				1A354534254E77600032B677 /* Firework.TestData.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
@@ -1261,7 +1307,6 @@
 				1A354509254E77600032B677 /* JPGradientView.m in Sources */,
 				1A35459A254E77600032B677 /* MarebulabulasLrcCell.swift in Sources */,
 				1A354525254E77600032B677 /* JPTextLayoutTool.m in Sources */,
-				715C193226981B0100731B67 /* PropertyWrapperTestVC.swift in Sources */,
 				1A3544FB254E77600032B677 /* ListViewReusable.swift in Sources */,
 				719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
@@ -1274,28 +1319,29 @@
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,
+				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
+				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
-				1A400CFA25DD56CC00187563 /* TestTryCatchViewController.swift in Sources */,
 				00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */,
 				1A3544F1254E77600032B677 /* NotificationCenter.Extension.swift in Sources */,
 				00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */,
 				1A3544FA254E77600032B677 /* JP.swift in Sources */,
 				1A354530254E77600032B677 /* GCDSemaphoreTestVC.swift in Sources */,
+				1A9E417826BE4061006941D0 /* TableViewAnimateController.swift in Sources */,
 				719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
-				712C4B872671AA3400B205A2 /* JPFuncTestViewController.swift in Sources */,
+				1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */,
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
+				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
-				71B11752263BE21C007048DA /* CircleMedalView.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
 				719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */,
 				719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
 				1A3544FE254E77600032B677 /* Function.swift in Sources */,
-				719646D326675DCE00AA64D5 /* JPDog.m in Sources */,
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
 				1A35450C254E77600032B677 /* JPTextView.m in Sources */,
 				1A354516254E77600032B677 /* UIImage+JPExtension.m in Sources */,

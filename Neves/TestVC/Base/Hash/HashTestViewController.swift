@@ -1,11 +1,11 @@
 //
-//  JPTestHashViewController.swift
+//  HashTestViewController.swift
 //  Neves
 //
 //  Created by aa on 2021/6/2.
 //
 
-class JPTestHashViewController: TestBaseViewController {
+class HashTestViewController: TestBaseViewController {
     
     var set1 = Set<JPPerson>()
     var set2 = Set<JPDog>()

@@ -1,5 +1,5 @@
 //
-//  JPBindViewController.swift
+//  BindableViewController.swift
 //  Neves
 //
 //  Created by aa on 2021/3/25.
@@ -8,7 +8,7 @@
 var cellCount = 0
 var modelCount = 0
 
-class JPBindViewController: TestBaseViewController {
+class BindableViewController: TestBaseViewController {
     
     let testCount = 30
     
@@ -49,7 +49,7 @@ class JPBindViewController: TestBaseViewController {
     
 }
 
-extension JPBindViewController: UITableViewDataSource, UITableViewDelegate {
+extension BindableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         models.count
     }

@@ -1,5 +1,5 @@
 //
-//  MemoryTestViewController.swift
+//  MemorySizeTestViewController.swift
 //  Neves
 //
 //  Created by 周健平 on 2020/11/7.
@@ -50,7 +50,7 @@ class D {
     var c: C = C()
 }
 
-class MemoryTestViewController: TestBaseViewController {
+class MemorySizeTestViewController: TestBaseViewController {
 
     let d = D()
     
