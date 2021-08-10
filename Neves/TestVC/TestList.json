@@ -41,6 +41,10 @@
         "header" : "Function",
         "vcList" : [
             {
+                "vcName": "DeferTestViewController",
+                "createVcWay" : 0
+            },
+            {
                 "vcName": "ProcessorTestViewController",
                 "createVcWay" : 0
             },
