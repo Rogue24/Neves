@@ -35,7 +35,7 @@ class DeferTestViewController: TestBaseViewController {
      *  [03:32:19:66] [DeferTestViewController abc()] [第20行]: aaaa
         [03:32:19:66] [DeferTestViewController abc()] [第23行]: dddddd
      *
-     * 4. `defer`可以访问【当前层】以及【所有外层`defer`】的任意变量
+     * 4. `defer`可以访问【当前层】以及【所有外层`defer`】的任意变量（最外层是函数体）
      *  - 并且这些变量不是copy过来的，而是类似引用类型，是真的把变量传过来的，有关联的；
      *  - 而【所有内层`defer`】中的变量都无法访问。
      *
