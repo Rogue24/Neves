@@ -160,6 +160,8 @@
 		719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */; };
 		719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */; };
 		719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */; };
+		71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */; };
+		71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3364126C26202004669F7 /* DeferTestViewController.swift */; };
 		71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693A26563165009463E6 /* UIImage.Extension.swift */; };
@@ -373,6 +375,9 @@
 		719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleLaunchAble.swift; sourceTree = "<group>"; };
 		719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPMagicGiftInfo.swift; sourceTree = "<group>"; };
+		71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
+		71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Publisher的share图示.jpg"; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71E3364126C26202004669F7 /* DeferTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferTestViewController.swift; sourceTree = "<group>"; };
 		71EA693A26563165009463E6 /* UIImage.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.Extension.swift; sourceTree = "<group>"; };
@@ -904,6 +909,7 @@
 			children = (
 				71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */,
 				710A2F11260C6A130060CF01 /* BindableViewController.swift */,
+				71B18FB926D338E1006CF7C0 /* Combine */,
 				1A9E41A726BFE0C5006941D0 /* PropertyWrapper */,
 				1A9E418F26BE459E006941D0 /* Set */,
 				1A9E418226BE44A1006941D0 /* Hash */,
@@ -1054,6 +1060,16 @@
 				718874E726A0116400080316 /* MagicCubeBubbleView.swift */,
 			);
 			path = MagicCube;
+			sourceTree = "<group>";
+		};
+		71B18FB926D338E1006CF7C0 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */,
+				71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */,
+				71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 		71B897A6268C509F00705AC1 /* Video */ = {
@@ -1269,6 +1285,7 @@
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
+				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
@@ -1306,6 +1323,7 @@
 				1A354534254E77600032B677 /* Firework.TestData.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
+				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
 				1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */,
 				1A354509254E77600032B677 /* JPGradientView.m in Sources */,

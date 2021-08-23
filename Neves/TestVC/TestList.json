@@ -35,6 +35,10 @@
                 "vcName": "HashTestViewController",
                 "createVcWay" : 0
             },
+            {
+                "vcName": "CombineTestViewController",
+                "createVcWay" : 0
+            },
         ]
     },
     {
