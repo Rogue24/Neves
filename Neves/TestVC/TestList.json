@@ -1,5 +1,22 @@
 [
     {
+        "header" : "View&Layer",
+        "vcList" : [
+            {
+                "vcName": "RelationshipPlanetViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "SublayerTransformTestVC",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "PopViewTestViewController",
+                "createVcWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "Test",
         "vcList" : [
             {
@@ -93,19 +110,6 @@
             },
             {
                 "vcName": "TableViewAnimateController",
-                "createVcWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "View&Layer",
-        "vcList" : [
-            {
-                "vcName": "SublayerTransformTestVC",
-                "createVcWay" : 0
-            },
-            {
-                "vcName": "PopViewTestViewController",
                 "createVcWay" : 0
             },
         ]

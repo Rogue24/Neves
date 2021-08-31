@@ -151,8 +151,13 @@
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
+		71695AC626DE07D200384C2A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695AC526DE07D200384C2A /* PeopleView.swift */; };
+		71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695AC726DE153A00384C2A /* RelationshipPlanet.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
+		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
+		717E8B7926DCC753000E3E9F /* PlanetLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7826DCC753000E3E9F /* PlanetLayout.swift */; };
+		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
 		718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E226A0111F00080316 /* MagicCubeViewController.swift */; };
 		718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E526A0115100080316 /* MagicCubeSuspendView.swift */; };
 		718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E726A0116400080316 /* MagicCubeBubbleView.swift */; };
@@ -366,8 +371,13 @@
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
+		71695AC526DE07D200384C2A /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
+		71695AC726DE153A00384C2A /* RelationshipPlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipPlanet.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
+		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
+		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
+		717E8B7A26DDF44E000E3E9F /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
 		718874E226A0111F00080316 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
 		718874E526A0115100080316 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		718874E726A0116400080316 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
@@ -900,6 +910,7 @@
 			children = (
 				1A354454254E77600032B677 /* SublayerTransformTestVC.swift */,
 				1A65873D2629E67300846689 /* PopViewTestViewController.swift */,
+				717E8B7326DCC6A9000E3E9F /* RelationshipPlanet */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1047,6 +1058,18 @@
 				716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */,
 			);
 			path = Kingfisher;
+			sourceTree = "<group>";
+		};
+		717E8B7326DCC6A9000E3E9F /* RelationshipPlanet */ = {
+			isa = PBXGroup;
+			children = (
+				71695AC726DE153A00384C2A /* RelationshipPlanet.swift */,
+				717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */,
+				717E8B7A26DDF44E000E3E9F /* PlanetView.swift */,
+				71695AC526DE07D200384C2A /* PeopleView.swift */,
+				717E8B7826DCC753000E3E9F /* PlanetLayout.swift */,
+			);
+			path = RelationshipPlanet;
 			sourceTree = "<group>";
 		};
 		718874E426A0112700080316 /* MagicCube */ = {
@@ -1267,6 +1290,7 @@
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
+				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
 				1A354599254E77600032B677 /* MarebulabulasLrcView.swift in Sources */,
 				1A35459D254E77600032B677 /* MarebulabulasViewController.swift in Sources */,
 				1A354512254E77600032B677 /* JPViewController.m in Sources */,
@@ -1283,6 +1307,7 @@
 				1A354540254E77600032B677 /* FireworkItem.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
+				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
@@ -1308,6 +1333,7 @@
 				1A35453E254E77600032B677 /* FireworkView.swift in Sources */,
 				1A354502254E77600032B677 /* JPUnderlineButton.m in Sources */,
 				1A354508254E77600032B677 /* JPFPSLabel.m in Sources */,
+				71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */,
 				1A35451D254E77600032B677 /* NSDate+JPExtension.m in Sources */,
 				710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */,
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
@@ -1343,6 +1369,7 @@
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
+				717E8B7926DCC753000E3E9F /* PlanetLayout.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
 				00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */,
@@ -1357,6 +1384,7 @@
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
+				717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */,
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
 				719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */,
