@@ -22,14 +22,15 @@ class PeopleView: UIView {
     init(tag: Int) {
         super.init(frame: [0, 0, peopleW, peopleH])
         self.tag = tag
-        layer.anchorPoint = [CGFloat(15 / peopleW), 0.5]
+//        backgroundColor = .randomColor
+        layer.anchorPoint = [CGFloat(15.px / peopleW), 0.5]
         
         line.layer.anchorPoint = [1, 0.5]
-        line.frame = [CGFloat(-20 - 5), HalfDiffValue(peopleH, 1), CGFloat(20 + 5 + 15), 1]
+        line.frame = [CGFloat(-20 - 5).px, HalfDiffValue(peopleH, 1.px), CGFloat(20 + 5 + 15).px, 1.px]
         addSubview(line)
         
         let gLayer = CAGradientLayer()
-        gLayer.frame = [0, 0, 20, 1]
+        gLayer.frame = [0, 0, 20.px, 1.px]
         gLayer.startPoint = [0, 0]
         gLayer.endPoint = [1, 0]
         gLayer.colors = [UIColor.clear.cgColor, UIColor(white: 1, alpha: 1).cgColor, UIColor.clear.cgColor]
@@ -38,27 +39,25 @@ class PeopleView: UIView {
         
         userIcon.frame = [0, 0, peopleH, peopleH]
         userIcon.contentMode = .scaleAspectFill
-        userIcon.layer.cornerRadius = peopleH * 0.5
-        userIcon.layer.masksToBounds = true
         addSubview(userIcon)
         
-        infoView.frame = [CGFloat(30 + 10), -3.5, 100, 37]
+        infoView.frame = [CGFloat(30 + 10).px, -3.5.px, 100.px, 37.px]
         addSubview(infoView)
         
-        nameLabel.frame = [0, 0, 100, 16.5]
-        nameLabel.font = .systemFont(ofSize: 12)
+        nameLabel.frame = [0, 0, 100.px, 16.5.px]
+        nameLabel.font = .systemFont(ofSize: 12.px)
         nameLabel.textColor = .init(white: 1, alpha: 0.8)
         nameLabel.text = "健了个平 - \(tag)"
         infoView.addSubview(nameLabel)
         
-        let y: CGFloat = nameLabel.maxY + 4
-        levelIcon.frame = [1, y + HalfDiffValue(16.5, 11.3), 11.3, 11.3]
+        let y: CGFloat = nameLabel.maxY + 4.px
+        levelIcon.frame = [1.px, y + HalfDiffValue(16.5.px, 11.3.px), 11.3.px, 11.3.px]
         infoView.addSubview(levelIcon)
         
-        relLabel.font = .systemFont(ofSize: 12, weight: .medium)
-        relLabel.text = "你爹"
+        relLabel.font = .systemFont(ofSize: 12.px, weight: .medium)
+        relLabel.text = "宝贝"
         relLabel.sizeToFit()
-        relLabel.height = 16.5
+        relLabel.height = 16.5.px
         
         relBgView
             .startPoint(0, 0)
@@ -66,17 +65,17 @@ class PeopleView: UIView {
             .colors(.rgb(117, 138, 255), .rgb(116, 211, 255))
         relBgView.addSubview(relLabel)
         relBgView.mask = relLabel
-        relBgView.frame = [levelIcon.maxX + 5, y, relLabel.width, relLabel.height]
+        relBgView.frame = [levelIcon.maxX + 5.px, y, relLabel.width, relLabel.height]
         infoView.addSubview(relBgView)
         
-        relNumIcon.frame = [relBgView.maxX + 10, y + HalfDiffValue(16.5, 13), 13, 13]
+        relNumIcon.frame = [relBgView.maxX + 10.px, y + HalfDiffValue(16.5.px, 13.px), 13.px, 13.px]
         infoView.addSubview(relNumIcon)
         
-        relNumLabel.font = .systemFont(ofSize: 12, weight: .medium)
+        relNumLabel.font = .systemFont(ofSize: 12.px, weight: .medium)
         relNumLabel.text = "9999"
         relNumLabel.textColor = .init(white: 1, alpha: 0.5)
         relNumLabel.sizeToFit()
-        relNumLabel.frame = [relNumIcon.maxX + 4, y, relNumLabel.width, 16.5]
+        relNumLabel.frame = [relNumIcon.maxX + 4.px, y, relNumLabel.width, 16.5.px]
         infoView.addSubview(relNumLabel)
         
         minShowOffsetY = CGFloat(tag) * onePeopleOffsetY - topInset
@@ -120,11 +119,12 @@ class PeopleView: UIView {
             
             line.transform = .init(rotationAngle: newValue)
             
-            if tag == 0 {
-                JPrint("多少度！！", JPRadian2Angle(newValue))
-            }
+//            if tag == 6 {
+//                JPrint("多少度！！", JPRadian2Angle(newValue))
+//            }
             
-            if newValue > radian180 || newValue < -radian180 {
+            // 30 * 3.5 = 105
+            if newValue > radian30 * 3.5 || newValue < -(radian30 * 3.5) {
                 line.isHidden = true
                 userIcon.isHidden = true
             } else {
