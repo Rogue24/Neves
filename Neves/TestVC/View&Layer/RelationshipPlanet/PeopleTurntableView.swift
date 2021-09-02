@@ -52,12 +52,9 @@ extension PeopleTurntableView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
         let progress = offsetY / Self.totalOffsetY
-        JPrint("offsetY:", offsetY)
-        JPrint("scale:", scale)
-//        JPrint("onePeopleOffsetY:", onePeopleOffsetY)
-//        JPrint("onePeopleRadian:", onePeopleRadian)
-        JPrint("----------------------")
-        
+//        JPrint("offsetY:", offsetY)
+//        JPrint("progress:", progress)
+//        JPrint("----------------------")
         peoples.forEach { $0.updateLayout(offsetY: offsetY, progress: progress) }
     }
 }
