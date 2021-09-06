@@ -101,7 +101,11 @@
         "header" : "Animate",
         "vcList" : [
             {
-                "vcName": "LottieTestViewController",
+                "vcName": "LottieShowViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "FireLottieTestViewController",
                 "createVcWay" : 2
             },
             {
