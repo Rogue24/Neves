@@ -40,9 +40,11 @@ class MainTableViewController: UITableViewController {
             
             var builder: VcBuilder? {
                 let className = Bundle.jp.executable() + "." + vcName
-                guard let vcType = NSClassFromString(className) as? UIViewController.Type else {
-                    return nil
-                }
+                guard let vcType =
+                        NSClassFromString(className) as? UIViewController.Type ??
+                        NSClassFromString(vcName) as? UIViewController.Type
+                else { return nil }
+                
                 switch createVcWay {
                 case .code:
                     return .code(vcType)

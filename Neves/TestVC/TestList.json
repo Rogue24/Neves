@@ -56,6 +56,14 @@
                 "vcName": "TestTryCatchViewController",
                 "createVcWay" : 0
             },
+            {
+                "vcName": "EqualTestViewController",
+                "createVcWay" : 0
+            },
+            {
+                "vcName": "OCEqualTestViewController",
+                "createVcWay" : 0
+            },
         ],
     },
     {

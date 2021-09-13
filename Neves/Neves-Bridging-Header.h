@@ -24,6 +24,8 @@
 #import "JPPerson.h"
 #import "JPDog.h"
 #import "JPObject.h"
+#import "OCTestObject.h"
+#import "OCEqualTestViewController.h"
 
 // JPBasic
 #import "JPInline.h"
