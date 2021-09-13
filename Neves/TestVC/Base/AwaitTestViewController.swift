@@ -7,13 +7,10 @@
 
 import Foundation
 
-
 class AwaitTestViewController: TestBaseViewController {
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let bbb: UIButton = {
             let btn = UIButton(type: .system)
@@ -25,9 +22,7 @@ class AwaitTestViewController: TestBaseViewController {
             return btn
         }()
         view.addSubview(bbb)
-        
     }
-    
     
     @objc func tttt() {//async {
 //        let r = await aaa()

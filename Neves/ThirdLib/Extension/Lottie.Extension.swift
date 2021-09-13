@@ -38,4 +38,17 @@ extension JP where Base: AnimationView {
         animView.backgroundBehavior = .pauseAndRestore
         return animView
     }
+    
+    static func build(at filepath: String, _ imageReplacement: [String: CGImage?]? = nil) -> Base {
+        let animView: Base
+        if let imageReplacement = imageReplacement {
+            let path = URL(fileURLWithPath: filepath).deletingLastPathComponent().path
+            let imageProvider = ImageReplacementProvider(imageReplacement: imageReplacement, filePath: path)
+            animView = Base.init(filePath: filepath, imageProvider: imageProvider)
+        } else {
+            animView = Base.init(filePath: filepath)
+        }
+        animView.backgroundBehavior = .pauseAndRestore
+        return animView
+    }
 }
