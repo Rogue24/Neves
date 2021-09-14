@@ -124,6 +124,10 @@
 		1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AC254E818B0032B677 /* Lottie.Extension.swift */; };
 		1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AD254E818B0032B677 /* HYLabel.swift */; };
 		1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545B7254E893F0032B677 /* WidgetViewController.swift */; };
+		1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013C26CEA10100DF819F /* OCTestObject.m */; };
+		1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013E26CEA11200DF819F /* TestObject.swift */; };
+		1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C014026CEA2AF00DF819F /* EqualTestViewController.swift */; };
+		1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C014326CEA5FB00DF819F /* OCEqualTestViewController.m */; };
 		1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A65873D2629E67300846689 /* PopViewTestViewController.swift */; };
 		1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587422629E6CC00846689 /* PopViewCompatible.swift */; };
 		1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587442629E6CC00846689 /* OptionPopView.swift */; };
@@ -342,6 +346,12 @@
 		1A3545AC254E818B0032B677 /* Lottie.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lottie.Extension.swift; sourceTree = "<group>"; };
 		1A3545AD254E818B0032B677 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
 		1A3545B7254E893F0032B677 /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
+		1A5C013B26CEA10100DF819F /* OCTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTestObject.h; sourceTree = "<group>"; };
+		1A5C013C26CEA10100DF819F /* OCTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestObject.m; sourceTree = "<group>"; };
+		1A5C013E26CEA11200DF819F /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
+		1A5C014026CEA2AF00DF819F /* EqualTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualTestViewController.swift; sourceTree = "<group>"; };
+		1A5C014226CEA5FB00DF819F /* OCEqualTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCEqualTestViewController.h; sourceTree = "<group>"; };
+		1A5C014326CEA5FB00DF819F /* OCEqualTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCEqualTestViewController.m; sourceTree = "<group>"; };
 		1A65873D2629E67300846689 /* PopViewTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewTestViewController.swift; sourceTree = "<group>"; };
 		1A6587422629E6CC00846689 /* PopViewCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewCompatible.swift; sourceTree = "<group>"; };
 		1A6587442629E6CC00846689 /* OptionPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionPopView.swift; sourceTree = "<group>"; };
@@ -980,6 +990,19 @@
 			path = Widget;
 			sourceTree = "<group>";
 		};
+		1A5C013A26CEA0DA00DF819F /* Equal */ = {
+			isa = PBXGroup;
+			children = (
+				1A5C014026CEA2AF00DF819F /* EqualTestViewController.swift */,
+				1A5C014226CEA5FB00DF819F /* OCEqualTestViewController.h */,
+				1A5C014326CEA5FB00DF819F /* OCEqualTestViewController.m */,
+				1A5C013E26CEA11200DF819F /* TestObject.swift */,
+				1A5C013B26CEA10100DF819F /* OCTestObject.h */,
+				1A5C013C26CEA10100DF819F /* OCTestObject.m */,
+			);
+			path = Equal;
+			sourceTree = "<group>";
+		};
 		1A6587402629E6CC00846689 /* PopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -999,6 +1022,7 @@
 				1A9E418D26BE44E3006941D0 /* ProcessorTestViewController.swift */,
 				1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */,
 				1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */,
+				1A5C013A26CEA0DA00DF819F /* Equal */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -1311,6 +1335,7 @@
 				1A354515254E77600032B677 /* JPSubTableViewController.m in Sources */,
 				1A35459B254E77600032B677 /* MarebulabulasRecordControl.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
+				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
 				1A354523254E77600032B677 /* JPFileTool.m in Sources */,
 				1A354536254E77600032B677 /* FireworkController.swift in Sources */,
 				0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */,
@@ -1337,6 +1362,7 @@
 				1A354535254E77600032B677 /* Firework.Extension.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
+				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				0081D677254FF4E3009D7ABA /* Marebulabulas.TestData.swift in Sources */,
 				1A35453A254E77600032B677 /* FireworkCell.swift in Sources */,
 				1A354513254E77600032B677 /* JPSubCollectionViewController.m in Sources */,
@@ -1381,6 +1407,7 @@
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
+				1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */,
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
@@ -1407,6 +1434,7 @@
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
+				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,
 				1A3544FE254E77600032B677 /* Function.swift in Sources */,
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
 				1A35450C254E77600032B677 /* JPTextView.m in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// 自定义日志
 func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String = #function) {
 #if DEBUG
     guard msg.count != 0, let lastItem = msg.last else { return }
@@ -26,26 +27,12 @@ func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String
 #endif
 }
 
+/// 互换两个值
 func swapValues<T>(_ a: inout T, _ b: inout T) {
     (a, b) = (b, a)
 }
 
-//func ScaleValue(_ value: CGFloat) -> CGFloat {
-//    value * BasisWScale
-//}
-//
-//func ScaleValue(_ value: Double) -> CGFloat {
-//    CGFloat(value) * BasisWScale
-//}
-//
-//func ScaleValue(_ value: Float) -> CGFloat {
-//    CGFloat(value) * BasisWScale
-//}
-//
-//func ScaleValue(_ value: Int) -> CGFloat {
-//    CGFloat(value) * BasisWScale
-//}
-
+/// 一半的差值
 func HalfDiffValue(_ superValue: CGFloat, _ subValue: CGFloat) -> CGFloat {
     (superValue - subValue) * 0.5
 }
@@ -127,4 +114,45 @@ func PageScrollProgress(WithPageSizeValue pageSizeValue: CGFloat,
     progress = kProgress
     
     return true
+}
+
+/// 获取`KeyWindow`
+func GetKeyWindow() -> UIWindow? {
+    UIApplication.shared.connectedScenes
+        .filter { $0.activationState == .foregroundActive }
+        .compactMap { $0 as? UIWindowScene }
+            .first?
+                .windows
+                .filter { $0.isKeyWindow }
+                .first
+}
+
+/// 获取最顶层的`ViewController` --- 从`KeyWindow`开始查找
+func GetTopMostViewController() -> UIViewController? {
+    guard let rootVC = GetKeyWindow()?.rootViewController else { return nil }
+    return GetTopMostViewController(from: rootVC)
+}
+
+/// 获取最顶层的`ViewController` --- 从指定VC开始查找
+func GetTopMostViewController(from vc: UIViewController) -> UIViewController {
+    if let presentedVC = vc.presentedViewController {
+        return GetTopMostViewController(from: presentedVC)
+    }
+    
+    switch vc {
+    case let navCtr as UINavigationController:
+        guard let topVC = navCtr.topViewController else { return navCtr }
+        return GetTopMostViewController(from: topVC)
+        
+    case let tabBarCtr as UITabBarController:
+        guard let selectedVC = tabBarCtr.selectedViewController else { return tabBarCtr }
+        return GetTopMostViewController(from: selectedVC)
+        
+    case let alertCtr as UIAlertController:
+        guard let presentedVC = alertCtr.presentedViewController else { return alertCtr }
+        return GetTopMostViewController(from: presentedVC)
+        
+    default:
+        return vc
+    }
 }
