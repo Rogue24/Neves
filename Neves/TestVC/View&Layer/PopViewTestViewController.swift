@@ -8,12 +8,6 @@
 import UIKit
 
 class PopViewTestViewController: TestBaseViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         OptionPopView.show(title: "娃哈哈", actions: [
