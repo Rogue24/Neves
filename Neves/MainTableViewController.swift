@@ -32,20 +32,22 @@ class MainTableViewController: UITableViewController {
     
     struct SectionItem: Convertible {
         struct RowItem: Convertible {
-            enum CreateVcWay: Int, ConvertibleEnum {
+            enum VcCreateWay: Int, ConvertibleEnum {
                 case code, xib, storyboard, custom
             }
-            var vcName: String = ""
-            var createVcWay: CreateVcWay = .code
             
-            var builder: VcBuilder? {
-                let className = Bundle.jp.executable() + "." + vcName
+            var vcName: String = ""
+            
+            var vcCreateWay: VcCreateWay = .code
+            
+            var vcBuilder: VcBuilder? {
+                let className = Bundle.jp.executable() + "." + vcName // Swift要加上模块前缀，OC的则不需要
                 guard let vcType =
                         NSClassFromString(className) as? UIViewController.Type ??
                         NSClassFromString(vcName) as? UIViewController.Type
                 else { return nil }
                 
-                switch createVcWay {
+                switch vcCreateWay {
                 case .code:
                     return .code(vcType)
                 case .xib:
@@ -138,7 +140,7 @@ extension MainTableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         let sectionItem = dataSource[indexPath.section]
         let rowItem = sectionItem.vcList[indexPath.row]
-        if let builder = rowItem.builder, let vc = builder.build() {
+        if let vcBuilder = rowItem.vcBuilder, let vc = vcBuilder.build() {
             navigationController?.pushViewController(vc, animated: true)
         } else {
             JPProgressHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建")//, userInteractionEnabled: true)

@@ -3,6 +3,10 @@
         "header" : "View&Layer",
         "vcList" : [
             {
+                "vcName": "TurntableViewController",
+                "createVcWay" : 0
+            },
+            {
                 "vcName": "RelationshipPlanetViewController",
                 "createVcWay" : 0
             },
