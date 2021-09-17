@@ -4,19 +4,19 @@
         "vcList" : [
             {
                 "vcName": "TurntableViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "RelationshipPlanetViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "SublayerTransformTestVC",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "PopViewTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -25,11 +25,11 @@
         "vcList" : [
             {
                 "vcName": "TestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "TestTableViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ],
     },
@@ -38,27 +38,27 @@
         "vcList" : [
             {
                 "vcName": "AwaitTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "BindableViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "PropertyWrapperTestVC",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "SetTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "HashTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "CombineTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -67,27 +67,27 @@
         "vcList" : [
             {
                 "vcName": "DeferTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "ProcessorTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "FuncTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "TestTryCatchViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "EqualTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "OCEqualTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ],
     },
@@ -96,7 +96,7 @@
         "vcList" : [
             {
                 "vcName": "KingfisherTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -105,7 +105,7 @@
         "vcList" : [
             {
                 "vcName": "RealmTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -114,19 +114,19 @@
         "vcList" : [
             {
                 "vcName": "LottieShowViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "FireLottieTestViewController",
-                "createVcWay" : 2
+                "vcCreateWay" : 2
             },
             {
                 "vcName": "MagicCubeViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "TableViewAnimateController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -135,15 +135,15 @@
         "vcList" : [
             {
                 "vcName": "JPCropViewController",
-                "createVcWay" : 1
+                "vcCreateWay" : 1
             },
             {
                 "vcName": "ResizableImageViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "WatermarkViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -152,7 +152,7 @@
         "vcList" : [
             {
                 "vcName": "VideoViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -161,11 +161,11 @@
         "vcList" : [
             {
                 "vcName": "GCDSemaphoreTestVC",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
             {
                 "vcName": "GCDWorkItemTestVC",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -174,7 +174,7 @@
         "vcList" : [
             {
                 "vcName": "MemorySizeTestViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -183,7 +183,7 @@
         "vcList" : [
             {
                 "vcName": "WidgetViewController",
-                "createVcWay" : 0
+                "vcCreateWay" : 0
             },
         ]
     },
@@ -192,7 +192,7 @@
         "vcList" : [
             {
                 "vcName": "FileEffectViewController",
-                "createVcWay" : 1
+                "vcCreateWay" : 1
             },
         ]
     },
@@ -201,7 +201,7 @@
         "vcList" : [
             {
                 "vcName": "MarebulabulasViewController",
-                "createVcWay" : 3
+                "vcCreateWay" : 3
             },
         ]
     },
