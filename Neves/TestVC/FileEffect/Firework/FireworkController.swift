@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Lottie
+//import Lottie
 
 @objcMembers class FireworkController: NSObject {
     // MARK:- 公开属性

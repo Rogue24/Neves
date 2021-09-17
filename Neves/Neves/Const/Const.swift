@@ -78,7 +78,7 @@ let NavBarH: CGFloat = 44.0
 let NavTopMargin: CGFloat = StatusBarH + NavBarH
 
 let BasisWScale: CGFloat = PortraitScreenWidth / 375.0
-let BasisHScale: CGFloat = PortraitScreenHeight / 667.0
+let BasisHScale: CGFloat = (PortraitScreenHeight - DiffStatusBarH - DiffTabBarH) / 667.0
 
 let SeparateLineThick: CGFloat = ScreenScale > 2 ? 0.333 : 0.5;
 

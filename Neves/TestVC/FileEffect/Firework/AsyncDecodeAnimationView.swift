@@ -6,7 +6,6 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
-import Lottie
 import SwiftyJSON
 
 @objcMembers class AsyncDecodeAnimationView: UIView {
@@ -72,19 +71,8 @@ extension AsyncDecodeAnimationView {
         let superSize = self.bounds.size
         let ratio = UIScreen.main.bounds.size.width / 375.0
         
-        let safeTop: CGFloat = {
-            if #available(iOS 11.0, *) {
-                return UIApplication.shared.keyWindow!.safeAreaInsets.top + 20
-            }
-            return 64
-        }()
-        
-        let safeBottom: CGFloat = {
-            if #available(iOS 11.0, *) {
-                return UIApplication.shared.keyWindow!.safeAreaInsets.bottom
-            }
-            return 0
-        }()
+        let safeTop: CGFloat = NavTopMargin
+        let safeBottom: CGFloat = DiffTabBarH
         
         DispatchQueue.global().async {
             // 除重
@@ -257,9 +245,9 @@ extension AsyncDecodeAnimationView {
             alphaInfo == .premultipliedFirst ||
             alphaInfo == .last ||
             alphaInfo == .first {
-            bitmapRawValue += CGImageAlphaInfo.premultipliedFirst.rawValue
+            bitmapRawValue |= CGImageAlphaInfo.premultipliedFirst.rawValue
         } else {
-            bitmapRawValue += CGImageAlphaInfo.noneSkipFirst.rawValue
+            bitmapRawValue |= CGImageAlphaInfo.noneSkipFirst.rawValue
         }
         
         guard let context = CGContext(data: nil,
