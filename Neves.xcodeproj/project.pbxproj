@@ -158,6 +158,9 @@
 		71695AC626DE07D200384C2A /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695AC526DE07D200384C2A /* PeopleView.swift */; };
 		71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695AC726DE153A00384C2A /* RelationshipPlanet.swift */; };
 		71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695ACA26DF920D00384C2A /* UniverseView.swift */; };
+		716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */; };
+		716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */; };
+		716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
@@ -391,6 +394,9 @@
 		71695AC726DE153A00384C2A /* RelationshipPlanet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationshipPlanet.swift; sourceTree = "<group>"; };
 		71695AC926DF1B2000384C2A /* 关系星球注释.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "关系星球注释.jpg"; sourceTree = "<group>"; };
 		71695ACA26DF920D00384C2A /* UniverseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseView.swift; sourceTree = "<group>"; };
+		716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.Extension.swift; sourceTree = "<group>"; };
+		716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCell.swift; sourceTree = "<group>"; };
+		716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCellLayout.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
@@ -604,6 +610,7 @@
 				1A3543BE254E775F0032B677 /* UIViewController.Extension.swift */,
 				1A3543C2254E775F0032B677 /* UIWindow.Extension.swift */,
 				71EA693A26563165009463E6 /* UIImage.Extension.swift */,
+				716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1152,6 +1159,8 @@
 				71BC27E426F052B300DB3A7A /* TurntableViewController.swift */,
 				71BC27E626F06FCC00DB3A7A /* TurntableView.swift */,
 				71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */,
+				716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */,
+				716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */,
 			);
 			path = TurntableView;
 			sourceTree = "<group>";
@@ -1316,6 +1325,7 @@
 				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,
 				007AB30C25CA387B00CFF914 /* Test2ViewController.swift in Sources */,
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
+				716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
 				718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */,
@@ -1337,6 +1347,7 @@
 				007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
+				716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */,
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
 				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
@@ -1421,6 +1432,7 @@
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
+				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,

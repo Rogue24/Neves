@@ -62,7 +62,7 @@ class PeopleView: UIView {
         nameLabel.frame = [0, 0, infoSize.width * 2, nameH]
         nameLabel.font = .systemFont(ofSize: 12.px)
         nameLabel.textColor = .init(white: 1, alpha: 0.8)
-        nameLabel.text = "健了个平 - \(tag)"
+        nameLabel.text = "健了个平 - \(tag + 1)"
         infoView.addSubview(nameLabel)
         
         let y: CGFloat = infoSize.height - relH

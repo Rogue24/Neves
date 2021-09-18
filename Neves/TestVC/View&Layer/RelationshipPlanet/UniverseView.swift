@@ -18,6 +18,8 @@ class UniverseView: UIView {
     lazy var allPlanet: [PlanetView] = [bosomFriendPlanet, confidantePlanet, bestFriendPlanet, masterApprenticePlanet]
     lazy var mainPlanet: PlanetView = bosomFriendPlanet
     
+    var isShowMainDetail: Bool = false
+    
     init() {
         super.init(frame: .init(origin: .zero, size: RelationshipPlanet.universeSize))
         backgroundColor = .rgb(30, 27, 43)
@@ -52,7 +54,10 @@ class UniverseView: UIView {
 
 extension UniverseView {
     func switchMainPlanet(_ fromPlanet: PlanetView) {
-        guard fromPlanet.layout.location != .main else { return }
+        guard fromPlanet.layout.location != .main else {
+            showOrBackMainDetail()
+            return
+        }
         isUserInteractionEnabled = false
         
         let leavePlant = mainPlanet
@@ -157,5 +162,13 @@ extension UniverseView {
         anim.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         anim.duration = duration
         return anim
+    }
+}
+
+extension UniverseView {
+    func showOrBackMainDetail() {
+        isShowMainDetail.toggle()
+        
+        
     }
 }
