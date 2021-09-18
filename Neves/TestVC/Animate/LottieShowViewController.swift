@@ -78,14 +78,16 @@ class LottieShowViewController: TestBaseViewController {
         makeAnimationImage(animationLayer, animation.startFrame)
     }
     
+    deinit {
+        makerItem?.cancel()
+        makerItem = nil
+    }
+    
     @objc func changeAnim(_ btn: UIButton) {
         animView.stop()
         
         makerItem?.cancel()
-        
-        animationLayer?.removeFromSuperlayer()
         animationLayer = nil
-        
         placeholderView.image = nil
         
         let lottieName: String
@@ -136,6 +138,7 @@ class LottieShowViewController: TestBaseViewController {
     }
 }
 
+// MARK:- 截取Lottie动画的其中一帧生成图片
 extension LottieShowViewController {
     func makeAnimationImage(_ animationLayer: AnimationContainer, _ currentFrame: CGFloat) {
         makerItem?.cancel()
@@ -157,9 +160,19 @@ extension LottieShowViewController {
         animationLayer.backgroundColor = UIColor.black.cgColor
         animationLayer.frame = [0, 0, 300, 300]
         
-        let scale = animationLayer.bounds.width / animation.bounds.size.width
-        animationLayer.animationLayers.forEach { $0.transform = CATransform3DMakeScale(scale, scale, 1) }
-
+        let scale: CGFloat
+        if animation.bounds.size.width < animation.bounds.size.height {
+            scale = animationLayer.bounds.height / animation.bounds.size.height
+        } else {
+            scale = animationLayer.bounds.width / animation.bounds.size.width
+        }
+        animationLayer.animationLayers.forEach {
+            $0.transform = CATransform3DMakeScale(scale, scale, 1)
+            // $0.anchorPoint 是 [0, 0]
+            $0.position = [HalfDiffValue(animationLayer.bounds.width, $0.frame.width),
+                           HalfDiffValue(animationLayer.bounds.height, $0.frame.height)]
+        }
+        
         animationLayer.renderScale = ScreenScale
         animationLayer.reloadImages()
         animationLayer.setNeedsDisplay()
