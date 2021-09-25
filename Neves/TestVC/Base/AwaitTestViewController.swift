@@ -5,8 +5,7 @@
 //  Created by 周健平 on 2021/6/9.
 //
 
-import Foundation
-
+@available(iOS 15.0.0, *)
 class AwaitTestViewController: TestBaseViewController {
     
     override func viewDidLoad() {
@@ -22,31 +21,46 @@ class AwaitTestViewController: TestBaseViewController {
             return btn
         }()
         view.addSubview(bbb)
+        
+//        Module.Task
+        
+        
+//        Task(priority: .low) {
+
+//        }
+        
     }
     
-    @objc func tttt() {//async {
-//        let r = await aaa()
-//        JPrint("tttt r", r, Thread.current)
+    
+    
+    @objc func tttt() {
+//        Task {
+//            do {
+//                let str = try await loadData()
+//                print(str)
+//            } catch {
+//                print("error \(error)")
+//            }
+//            print("1111")
+//        }
     }
-//
-//    func aaa() async -> Double {
-//        let r1 = await abc(6)
-//        let r2 = await abc(7)
-//        let r3 = await abc(8)
-//        let r4 = await abc(9)
-//        return r1 + r2 + r3 + r4
-//    }
-//
-//    func abc(_ x: Double) async -> Double {
-//        let delay = arc4random_uniform(5)
-//
-//        JPrint("begin x", x, "delay", delay, Thread.current)
-//        sleep(delay)
-//
-//        let r = p.process(x)
-//
-//        JPrint("end x", x, "delay", delay, Thread.current)
-//        return r
-//    }
+    
+    func loadData() async throws -> String {
+
+        let (data, _) = try await URLSession.shared.data(from: URL(string: "https://v1.hitokoto.cn")!)
+
+//        let data = try await Data(contentsOf: URL(string: "https://v1.hitokoto.cn")!)
+
+        guard let dict = JSON(data).dictionary,
+              let hitokoto = dict["hitokoto"]?.string else {
+            return "文案请求失败: 数据解析失败"
+        }
+
+        return hitokoto
+
+    }
+    
+    
+    
 }
 

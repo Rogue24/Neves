@@ -78,31 +78,33 @@ class DeferTestViewController: TestBaseViewController {
     }
     
     func abc2() {
-        JPrint("---------- abc2 ----------")
-        defer {
-            defer {
-                defer {
-                    defer {
-                        let e = 5
-                        d += 1
-                        c += 1
-                        b += 1
-                        a += 1
-                        JPrint("a: \(a),", "b: \(b),", "c: \(c),", "d: \(d),", "e: \(e)")
-                    }
-                    var d = 4
-                    c += 1
-                    b += 1
-                    a += 1
-                }
-                var c = 3
-                b += 1
-                a += 1
-            }
-            var b = 2
-            a += 1
-        }
-        var a = 1
+        // Swift5.5：以下做法已经不允许了，会报错。
+        
+//        JPrint("---------- abc2 ----------")
+//        defer {
+//            defer {
+//                defer {
+//                    defer {
+//                        let e = 5
+//                        d += 1
+//                        c += 1
+//                        b += 1
+//                        a += 1
+//                        JPrint("a: \(a),", "b: \(b),", "c: \(c),", "d: \(d),", "e: \(e)")
+//                    }
+//                    var d = 4
+//                    c += 1
+//                    b += 1
+//                    a += 1
+//                }
+//                var c = 3
+//                b += 1
+//                a += 1
+//            }
+//            var b = 2
+//            a += 1
+//        }
+//        var a = 1
         
         // 无法访问内层defer的变量
 //        b += 1

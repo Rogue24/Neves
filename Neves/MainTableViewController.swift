@@ -8,23 +8,6 @@
 
 import UIKit
 
-extension Date: JPCompatible {}
-extension JP where Base == Date {
-    
-    var mmssString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "mm:ss"
-        return formatter.string(from: base)
-    }
-    
-    var ssString: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "mm:ss"
-        return formatter.string(from: base)
-    }
-    
-}
-
 class MainTableViewController: UITableViewController {
     
     private static let headerID = "MainHeader"
@@ -81,8 +64,7 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        JPrint("StatusBar", StatusBarH, DiffStatusBarH)
-        JPrint("TabBar", TabBarH, DiffTabBarH)
+        title = "Neves"
         
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: Self.headerID)
         

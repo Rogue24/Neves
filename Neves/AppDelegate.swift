@@ -23,9 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         JPProgressHUD.setMaxSupportedWindowLevel(.alert)
         JPProgressHUD.setMinimumDismissTimeInterval(1.3)
+        
+        JPrint("StatusBar", StatusBarH, DiffStatusBarH)
+        JPrint("TabBar", TabBarH, DiffTabBarH)
         
         JPrint(File.documentDirPath)
         JPrint(File.documentFilePath("123"))
@@ -33,6 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         JPrint(File.cacheFilePath("456"))
         JPrint(File.tmpDirPath)
         JPrint(File.tmpFilePath("789"))
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            let navigationBar = UINavigationBar.appearance()
+            navigationBar.scrollEdgeAppearance = appearance
+            navigationBar.standardAppearance = appearance
+        }
         
         return true
     }
