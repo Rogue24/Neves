@@ -10,13 +10,6 @@ import Foundation
 
 extension NotificationCenter: JPCompatible {}
 extension JP where Base: NotificationCenter {
-    static func post(name: NSNotification.Name, object: Any? = nil, userInfo: [AnyHashable : Any]? = nil) {
-        Base.default.post(name: name, object: object, userInfo: userInfo)
-    }
-    
-    static func addObserver(_ observer: Any, selector: Selector, name: NSNotification.Name, object: Any? = nil) {
-        Base.default.addObserver(observer, selector: selector, name: name, object: object)
-    }
     
     static func removeObserver(_ observer: Any, name: NSNotification.Name? = nil, object: Any? = nil) {
         if let aName = name {
@@ -25,4 +18,29 @@ extension JP where Base: NotificationCenter {
             Base.default.removeObserver(observer)
         }
     }
+    
+    static func addObserver(_ observer: Any, selector aSelector: Selector, name aName: NSNotification.Name, object anObject: Any? = nil) {
+        Base.default.addObserver(observer, selector: aSelector, name: aName, object: anObject)
+    }
+    
+    static func addObserver(_ observer: Any, selector aSelector: Selector, name aName: String, object anObject: Any? = nil) {
+        Base.default.addObserver(observer, selector: aSelector, name: Notification.Name(rawValue: aName), object: anObject)
+    }
+    
+    static func addObserver(forName name: NSNotification.Name, object obj: Any? = nil, queue: OperationQueue? = nil, using block: @escaping (Notification) -> Void) {
+        Base.default.addObserver(forName: name, object: obj, queue: queue, using: block)
+    }
+    
+    static func addObserver(forName name: String, object obj: Any? = nil, queue: OperationQueue? = nil, using block: @escaping (Notification) -> Void) {
+        Base.default.addObserver(forName: Notification.Name(rawValue: name), object: obj, queue: queue, using: block)
+    }
+    
+    static func post(name aName: NSNotification.Name, object anObject: Any? = nil, userInfo aUserInfo: [AnyHashable : Any]? = nil) {
+        Base.default.post(name: aName, object: anObject, userInfo: aUserInfo)
+    }
+    
+    static func post(name aName: String, object anObject: Any? = nil, userInfo aUserInfo: [AnyHashable : Any]? = nil) {
+        Base.default.post(name: Notification.Name(rawValue: aName), object: anObject, userInfo: aUserInfo)
+    }
+    
 }
