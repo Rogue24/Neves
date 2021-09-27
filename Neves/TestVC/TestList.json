@@ -1,5 +1,26 @@
 [
     {
+        "header" : "Animate",
+        "vcList" : [
+            {
+                "vcName": "LottieShowViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "FireLottieTestViewController",
+                "vcCreateWay" : 2
+            },
+            {
+                "vcName": "MagicCubeViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "TableViewAnimateController",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "View&Layer",
         "vcList" : [
             {
@@ -105,27 +126,6 @@
         "vcList" : [
             {
                 "vcName": "RealmTestViewController",
-                "vcCreateWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Animate",
-        "vcList" : [
-            {
-                "vcName": "LottieShowViewController",
-                "vcCreateWay" : 0
-            },
-            {
-                "vcName": "FireLottieTestViewController",
-                "vcCreateWay" : 2
-            },
-            {
-                "vcName": "MagicCubeViewController",
-                "vcCreateWay" : 0
-            },
-            {
-                "vcName": "TableViewAnimateController",
                 "vcCreateWay" : 0
             },
         ]

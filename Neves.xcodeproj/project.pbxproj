@@ -163,6 +163,7 @@
 		716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */; };
 		716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
+		7170BF132701CA2000900BE7 /* ImageVideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
@@ -400,6 +401,7 @@
 		716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCell.swift; sourceTree = "<group>"; };
 		716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCellLayout.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
+		7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoMaker.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
@@ -645,6 +647,7 @@
 				005DF54325652EDB0010E772 /* File.swift */,
 				1A3543CE254E775F0032B677 /* Asyncs.swift */,
 				00965D5B25CBF4DD00B7BB9C /* Done.swift */,
+				7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1386,6 +1389,7 @@
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
+				7170BF132701CA2000900BE7 /* ImageVideoMaker.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,

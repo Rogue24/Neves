@@ -68,11 +68,10 @@ import SwiftyJSON
 
 extension AsyncDecodeAnimationView {
     private func prepareToPlay(_ filePaths: [String]) {
-        let superSize = self.bounds.size
-        let ratio = UIScreen.main.bounds.size.width / 375.0
-        
-        let safeTop: CGFloat = NavTopMargin
-        let safeBottom: CGFloat = DiffTabBarH
+        let superSize = bounds.size
+        let ratio = BasisWScale
+        let safeTop = NavTopMargin
+        let safeBottom = DiffTabBarH
         
         DispatchQueue.global().async {
             // 除重
@@ -91,7 +90,7 @@ extension AsyncDecodeAnimationView {
                 }
             }
             
-            for i in 0..<self.animItems.count {
+            for i in 0 ..< self.animItems.count {
                 let animItem = self.animItems[i]
                 JPrint("1", i, "---", animItem.filePath.components(separatedBy: "/").last!)
             }
