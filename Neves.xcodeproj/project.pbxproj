@@ -152,7 +152,17 @@
 		1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */; };
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
+		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
+		713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */; };
+		713998062705B64D002BC263 /* Girl5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FE2705B64C002BC263 /* Girl5.jpg */; };
+		713998072705B64D002BC263 /* Girl2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FF2705B64D002BC263 /* Girl2.jpg */; };
+		713998082705B64D002BC263 /* Girl3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998002705B64D002BC263 /* Girl3.jpg */; };
+		713998092705B64D002BC263 /* Girl7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998012705B64D002BC263 /* Girl7.jpg */; };
+		7139980A2705B64D002BC263 /* Girl4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998022705B64D002BC263 /* Girl4.jpg */; };
+		7139980B2705B64D002BC263 /* Girl1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998032705B64D002BC263 /* Girl1.jpg */; };
+		7139980C2705B64D002BC263 /* Girl6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998042705B64D002BC263 /* Girl6.jpg */; };
+		7139980D2705B64D002BC263 /* Girl8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998052705B64D002BC263 /* Girl8.jpg */; };
 		715ED74626FF26520030F279 /* Date.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715ED74526FF26520030F279 /* Date.Extension.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
@@ -162,8 +172,8 @@
 		716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */; };
 		716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */; };
 		716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */; };
+		716B20B527055B5E00F0A955 /* ImageVideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
-		7170BF132701CA2000900BE7 /* ImageVideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
@@ -389,7 +399,17 @@
 		1AABA9B02555BBA10051CA7E /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
+		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
+		713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoMakeViewController.swift; sourceTree = "<group>"; };
+		713997FE2705B64C002BC263 /* Girl5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl5.jpg; sourceTree = "<group>"; };
+		713997FF2705B64D002BC263 /* Girl2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl2.jpg; sourceTree = "<group>"; };
+		713998002705B64D002BC263 /* Girl3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl3.jpg; sourceTree = "<group>"; };
+		713998012705B64D002BC263 /* Girl7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl7.jpg; sourceTree = "<group>"; };
+		713998022705B64D002BC263 /* Girl4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl4.jpg; sourceTree = "<group>"; };
+		713998032705B64D002BC263 /* Girl1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl1.jpg; sourceTree = "<group>"; };
+		713998042705B64D002BC263 /* Girl6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl6.jpg; sourceTree = "<group>"; };
+		713998052705B64D002BC263 /* Girl8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl8.jpg; sourceTree = "<group>"; };
 		715ED74526FF26520030F279 /* Date.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.Extension.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
@@ -557,6 +577,14 @@
 		1A354373254E775F0032B677 /* Picture */ = {
 			isa = PBXGroup;
 			children = (
+				713998032705B64D002BC263 /* Girl1.jpg */,
+				713997FF2705B64D002BC263 /* Girl2.jpg */,
+				713998002705B64D002BC263 /* Girl3.jpg */,
+				713998022705B64D002BC263 /* Girl4.jpg */,
+				713997FE2705B64C002BC263 /* Girl5.jpg */,
+				713998042705B64D002BC263 /* Girl6.jpg */,
+				713998012705B64D002BC263 /* Girl7.jpg */,
+				713998052705B64D002BC263 /* Girl8.jpg */,
 				71EA694026563270009463E6 /* girl.jpg */,
 				1A354374254E775F0032B677 /* JPIcon.png */,
 			);
@@ -959,6 +987,7 @@
 			children = (
 				71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */,
 				710A2F11260C6A130060CF01 /* BindableViewController.swift */,
+				7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */,
 				71B18FB926D338E1006CF7C0 /* Combine */,
 				1A9E41A726BFE0C5006941D0 /* PropertyWrapper */,
 				1A9E418F26BE459E006941D0 /* Set */,
@@ -1155,6 +1184,7 @@
 		71B897A6268C509F00705AC1 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -1249,20 +1279,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				0049EAC5254FD90700878F44 /* dialogue2.txt in Resources */,
+				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
+				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
 				0049EAC0254FD90700878F44 /* noAccLrc1.txt in Resources */,
 				0049EAC4254FD90700878F44 /* lrc2.txt in Resources */,
 				71EA694126563270009463E6 /* girl.jpg in Resources */,
+				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
 				1A35459C254E77600032B677 /* MarebulabulasLrcCell.xib in Resources */,
+				713998072705B64D002BC263 /* Girl2.jpg in Resources */,
 				0049EAC2254FD90700878F44 /* bgm.wav in Resources */,
 				0049EAC6254FD90700878F44 /* dialogue1.txt in Resources */,
 				1A354539254E77600032B677 /* FireworkFooter.xib in Resources */,
 				0049EAC3254FD90700878F44 /* lrc1.txt in Resources */,
 				1A354538254E77600032B677 /* FireworkPopView.xib in Resources */,
 				0049EAC1254FD90700878F44 /* noAccLrc2.txt in Resources */,
+				713998062705B64D002BC263 /* Girl5.jpg in Resources */,
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
 				1A35452F254E77600032B677 /* TestList.json in Resources */,
 				1A3544B6254E77600032B677 /* JPIcon.png in Resources */,
 				1A9E41A126BE4633006941D0 /* JPCropViewController.xib in Resources */,
+				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,
 				1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */,
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
@@ -1271,6 +1307,8 @@
 				1A354533254E77600032B677 /* FireworkItem.xib in Resources */,
 				1A354537254E77600032B677 /* FireworkCell.xib in Resources */,
 				1A354370254E76B40032B677 /* lottie in Resources */,
+				7139980A2705B64D002BC263 /* Girl4.jpg in Resources */,
+				713998092705B64D002BC263 /* Girl7.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1381,6 +1419,7 @@
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				1A354540254E77600032B677 /* FireworkItem.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
+				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
@@ -1389,7 +1428,6 @@
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
-				7170BF132701CA2000900BE7 /* ImageVideoMaker.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
@@ -1442,6 +1480,7 @@
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
+				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
@@ -1450,6 +1489,7 @@
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
+				716B20B527055B5E00F0A955 /* ImageVideoMaker.swift in Sources */,
 				71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,

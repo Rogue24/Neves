@@ -90,3 +90,5 @@ let hhmmssSSFormatter: DateFormatter = {
     formatter.dateFormat = "hh:mm:ss:SS"
     return formatter
 }()
+
+let ColorSpace = CGColorSpaceCreateDeviceRGB()

@@ -1,5 +1,14 @@
 [
     {
+        "header" : "Video",
+        "vcList" : [
+            {
+                "vcName": "ImageVideoMakeViewController",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "Animate",
         "vcList" : [
             {
@@ -57,6 +66,10 @@
     {
         "header" : "Base",
         "vcList" : [
+            {
+                "vcName": "OperationQueueTestViewController",
+                "vcCreateWay" : 0
+            },
             {
                 "vcName": "AwaitTestViewController",
                 "vcCreateWay" : 0
@@ -143,15 +156,6 @@
             },
             {
                 "vcName": "WatermarkViewController",
-                "vcCreateWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Video",
-        "vcList" : [
-            {
-                "vcName": "VideoViewController",
                 "vcCreateWay" : 0
             },
         ]

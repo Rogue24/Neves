@@ -71,4 +71,9 @@ extension JP where Base: UIImage {
         
         return newImage
     }
+    
+    static func fromBundle(_ name: String, type: String? = nil) -> UIImage? {
+        Base(contentsOfFile: Bundle.jp.resourcePath(withName: name, type: type))
+    }
+    
 }
