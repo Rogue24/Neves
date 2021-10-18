@@ -97,9 +97,9 @@ class LottieShowViewController: TestBaseViewController {
         case 1:
             lottieName = "cube_s_lottie"
         case 2:
-            lottieName = "fire_lottie2"
+            lottieName = "video_tx_jielong_lottie"//"fire_lottie2"
         default:
-            lottieName = "lottie_recordingmotion"
+            lottieName = "album_videobg_jielong_lottie"//"lottie_recordingmotion"
         }
         
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),

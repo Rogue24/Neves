@@ -76,4 +76,19 @@ extension JP where Base: UIImage {
         Base(contentsOfFile: Bundle.jp.resourcePath(withName: name, type: type))
     }
     
+    var isContainsAlpha: Bool { base.cgImage?.jp.isContainsAlpha ?? false }
+}
+
+extension CGImage: JPCompatible {}
+extension JP where Base: CGImage {
+    var isContainsAlpha: Bool {
+        let alphaInfo = base.alphaInfo
+        if alphaInfo == .premultipliedLast ||
+            alphaInfo == .premultipliedFirst ||
+            alphaInfo == .last ||
+            alphaInfo == .first {
+            return true
+        }
+        return false
+    }
 }

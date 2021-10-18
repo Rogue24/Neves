@@ -23,6 +23,7 @@ let updateData = [
     Update(image: "Card5", title: "Framer Playground", text: "Create powerful animations and interactions with the Framer X code editor", date: "JUN 11")
 ]
 
+@available(iOS 13.0, *)
 class UpdateStore: ObservableObject {
     @Published var updates: [Update] = updateData
 }

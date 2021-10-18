@@ -12,6 +12,18 @@
         "header" : "Animate",
         "vcList" : [
             {
+                "vcName": "SolitairePopAnimationViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "SolitaireAnimationViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "LottieImagePickerViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "LottieShowViewController",
                 "vcCreateWay" : 0
             },

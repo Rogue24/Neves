@@ -118,13 +118,20 @@ func PageScrollProgress(WithPageSizeValue pageSizeValue: CGFloat,
 
 /// 获取`KeyWindow`
 func GetKeyWindow() -> UIWindow? {
-    UIApplication.shared.connectedScenes
-        .filter { $0.activationState == .foregroundActive }
-        .compactMap { $0 as? UIWindowScene }
-            .first?
+    if #available(iOS 13.0, *) {
+        return UIApplication.shared.connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .compactMap { $0 as? UIWindowScene }
+                .first?
                 .windows
                 .filter { $0.isKeyWindow }
                 .first
+    } else {
+        return UIApplication.shared
+                .windows
+                .filter { $0.isKeyWindow }
+                .first
+    }
 }
 
 /// 获取最顶层的`ViewController` --- 从`KeyWindow`开始查找
@@ -155,4 +162,33 @@ func GetTopMostViewController(from vc: UIViewController) -> UIViewController {
     default:
         return vc
     }
+}
+
+/// 解码图片
+func DecodeImage(_ cgImage: CGImage) -> CGImage? {
+    let width = cgImage.width
+    let height = cgImage.height
+    
+    var bitmapRawValue = CGBitmapInfo.byteOrder32Little.rawValue
+    let alphaInfo = cgImage.alphaInfo
+    if alphaInfo == .premultipliedLast ||
+        alphaInfo == .premultipliedFirst ||
+        alphaInfo == .last ||
+        alphaInfo == .first {
+        bitmapRawValue |= CGImageAlphaInfo.premultipliedFirst.rawValue
+    } else {
+        bitmapRawValue |= CGImageAlphaInfo.noneSkipFirst.rawValue
+    }
+    
+    guard let context = CGContext(data: nil,
+                                  width: width,
+                                  height: height,
+                                  bitsPerComponent: 8,
+                                  bytesPerRow: 0,
+                                  space: ColorSpace,
+                                  bitmapInfo: bitmapRawValue) else { return nil }
+    context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+    
+    let decodeImg = context.makeImage()
+    return decodeImg
 }

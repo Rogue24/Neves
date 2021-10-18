@@ -18,6 +18,7 @@ import Combine
     
 }
 
+@available(iOS 13.0, *)
 class CombineTestViewController: TestBaseViewController {
     
 //    @ObservedObject var store = UpdateStore()
@@ -62,6 +63,7 @@ class CombineTestViewController: TestBaseViewController {
     }
 }
 
+@available(iOS 13.0, *)
 extension CombineTestViewController {
     func testObj() {
         let personPublisher = person.publisher(for: \.name, options: .new)

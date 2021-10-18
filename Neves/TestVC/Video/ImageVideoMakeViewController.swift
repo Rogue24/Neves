@@ -5,9 +5,11 @@
 //  Created by aa on 2021/9/30.
 //
 
+import UIKit
+
 class ImageVideoMakeViewController: TestBaseViewController {
     
-    let maker = ImageVideoMaker()
+    let maker = VideoMaker()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         JPProgressHUD.show()
@@ -15,13 +17,14 @@ class ImageVideoMakeViewController: TestBaseViewController {
         var indexs: Set<Int> = Set()
         for i in 1 ... 8 { indexs.insert(i) }
         
-        var imageInfos = [ImageVideoMaker.ImageInfo]()
+        var imageInfos = [VideoMaker.ImageInfo]()
         while let i = indexs.first {
             indexs.remove(i)
-            imageInfos.append(.init(image: UIImage.jp.fromBundle("Girl\(i).jpg")!, duration: 2))
+            imageInfos.append(.init(image: UIImage.jp.fromBundle("Girl\(i).jpg")!,
+                                    duration: 1 + CGFloat(arc4random_uniform(3))))
         }
         
-        maker.createVideo(with: imageInfos) { result in
+        maker.makeVideo(with: imageInfos) { result in
             Asyncs.main {
                 JPProgressHUD.dismiss()
             }

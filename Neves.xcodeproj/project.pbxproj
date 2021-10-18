@@ -154,6 +154,11 @@
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
 		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
+		711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711074282717FBF400178969 /* LottieImagePickerViewController.swift */; };
+		7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742A271968D700178969 /* VideoMaker.Lottie.swift */; };
+		7110742D27196B8200178969 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742C27196B8200178969 /* VideoMaker.Image.swift */; };
+		7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */; };
+		71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */; };
 		713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */; };
 		713998062705B64D002BC263 /* Girl5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FE2705B64C002BC263 /* Girl5.jpg */; };
 		713998072705B64D002BC263 /* Girl2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FF2705B64D002BC263 /* Girl2.jpg */; };
@@ -172,7 +177,7 @@
 		716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */; };
 		716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */; };
 		716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */; };
-		716B20B527055B5E00F0A955 /* ImageVideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */; };
+		716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* VideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
@@ -180,6 +185,8 @@
 		718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E226A0111F00080316 /* MagicCubeViewController.swift */; };
 		718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E526A0115100080316 /* MagicCubeSuspendView.swift */; };
 		718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E726A0116400080316 /* MagicCubeBubbleView.swift */; };
+		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
+		7190E4E6271037F700E8C511 /* LottieImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190E4E5271037F700E8C511 /* LottieImagePicker.swift */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
 		719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */; };
@@ -401,6 +408,11 @@
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
 		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
+		711074282717FBF400178969 /* LottieImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePickerViewController.swift; sourceTree = "<group>"; };
+		7110742A271968D700178969 /* VideoMaker.Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Lottie.swift; sourceTree = "<group>"; };
+		7110742C27196B8200178969 /* VideoMaker.Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Image.swift; sourceTree = "<group>"; };
+		7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationViewController.swift; sourceTree = "<group>"; };
+		71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitairePopAnimationViewController.swift; sourceTree = "<group>"; };
 		713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoMakeViewController.swift; sourceTree = "<group>"; };
 		713997FE2705B64C002BC263 /* Girl5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl5.jpg; sourceTree = "<group>"; };
 		713997FF2705B64D002BC263 /* Girl2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl2.jpg; sourceTree = "<group>"; };
@@ -421,7 +433,7 @@
 		716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCell.swift; sourceTree = "<group>"; };
 		716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCellLayout.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
-		7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoMaker.swift; sourceTree = "<group>"; };
+		7170BF122701CA2000900BE7 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
@@ -429,6 +441,8 @@
 		718874E226A0111F00080316 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
 		718874E526A0115100080316 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		718874E726A0116400080316 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
+		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
+		7190E4E5271037F700E8C511 /* LottieImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePicker.swift; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
 		719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleView.swift; sourceTree = "<group>"; };
@@ -567,6 +581,7 @@
 		1A354372254E775F0032B677 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7190E4E227102EB600E8C511 /* Music */,
 				1A354373254E775F0032B677 /* Picture */,
 				1A354375254E775F0032B677 /* JSON */,
 				1A3543B3254E775F0032B677 /* Font */,
@@ -675,7 +690,10 @@
 				005DF54325652EDB0010E772 /* File.swift */,
 				1A3543CE254E775F0032B677 /* Asyncs.swift */,
 				00965D5B25CBF4DD00B7BB9C /* Done.swift */,
-				7170BF122701CA2000900BE7 /* ImageVideoMaker.swift */,
+				7190E4E5271037F700E8C511 /* LottieImagePicker.swift */,
+				7170BF122701CA2000900BE7 /* VideoMaker.swift */,
+				7110742C27196B8200178969 /* VideoMaker.Image.swift */,
+				7110742A271968D700178969 /* VideoMaker.Lottie.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -883,6 +901,9 @@
 		1A354430254E77600032B677 /* Animate */ = {
 			isa = PBXGroup;
 			children = (
+				71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */,
+				7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */,
+				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
 				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */,
 				718874E226A0111F00080316 /* MagicCubeViewController.swift */,
@@ -1171,6 +1192,14 @@
 			path = MagicCube;
 			sourceTree = "<group>";
 		};
+		7190E4E227102EB600E8C511 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		71B18FB926D338E1006CF7C0 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
@@ -1298,6 +1327,7 @@
 				1A35452F254E77600032B677 /* TestList.json in Resources */,
 				1A3544B6254E77600032B677 /* JPIcon.png in Resources */,
 				1A9E41A126BE4633006941D0 /* JPCropViewController.xib in Resources */,
+				7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */,
 				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,
 				1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */,
@@ -1439,6 +1469,7 @@
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				0081D677254FF4E3009D7ABA /* Marebulabulas.TestData.swift in Sources */,
+				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
 				1A35453A254E77600032B677 /* FireworkCell.swift in Sources */,
 				1A354513254E77600032B677 /* JPSubCollectionViewController.m in Sources */,
 				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
@@ -1465,6 +1496,7 @@
 				1A354534254E77600032B677 /* Firework.TestData.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
+				7190E4E6271037F700E8C511 /* LottieImagePicker.swift in Sources */,
 				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
 				1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */,
@@ -1473,10 +1505,12 @@
 				1A354525254E77600032B677 /* JPTextLayoutTool.m in Sources */,
 				1A3544FB254E77600032B677 /* ListViewReusable.swift in Sources */,
 				719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */,
+				711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
+				7110742D27196B8200178969 /* VideoMaker.Image.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
@@ -1489,7 +1523,8 @@
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
-				716B20B527055B5E00F0A955 /* ImageVideoMaker.swift in Sources */,
+				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
+				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
 				71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
@@ -1514,6 +1549,7 @@
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
+				71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */,
 				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,
 				1A3544FE254E77600032B677 /* Function.swift in Sources */,
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
@@ -1670,7 +1706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH4WHYK8ZQ;
 				INFOPLIST_FILE = Neves/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1681,7 +1717,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Neves/Neves-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1695,7 +1731,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH4WHYK8ZQ;
 				INFOPLIST_FILE = Neves/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1705,7 +1741,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Neves/Neves-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
