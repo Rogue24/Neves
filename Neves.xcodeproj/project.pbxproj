@@ -159,6 +159,12 @@
 		7110742D27196B8200178969 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742C27196B8200178969 /* VideoMaker.Image.swift */; };
 		7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */; };
 		71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */; };
+		71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107432271E63B000178969 /* SolitaireCalculationViewController.swift */; };
+		71107435271E930C00178969 /* SolitaireUserIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107434271E930C00178969 /* SolitaireUserIconView.swift */; };
+		71107437271E956100178969 /* VideoMaker.Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107436271E956100178969 /* VideoMaker.Layer.swift */; };
+		71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107438271EA81300178969 /* LayerVideoViewController.swift */; };
+		7110743D271ECA4800178969 /* voices.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7110743C271ECA4800178969 /* voices.m4a */; };
+		7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110743E271ED4D400178969 /* ImageVideoViewController.swift */; };
 		713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */; };
 		713998062705B64D002BC263 /* Girl5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FE2705B64C002BC263 /* Girl5.jpg */; };
 		713998072705B64D002BC263 /* Girl2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FF2705B64D002BC263 /* Girl2.jpg */; };
@@ -413,6 +419,12 @@
 		7110742C27196B8200178969 /* VideoMaker.Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Image.swift; sourceTree = "<group>"; };
 		7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationViewController.swift; sourceTree = "<group>"; };
 		71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitairePopAnimationViewController.swift; sourceTree = "<group>"; };
+		71107432271E63B000178969 /* SolitaireCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireCalculationViewController.swift; sourceTree = "<group>"; };
+		71107434271E930C00178969 /* SolitaireUserIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireUserIconView.swift; sourceTree = "<group>"; };
+		71107436271E956100178969 /* VideoMaker.Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Layer.swift; sourceTree = "<group>"; };
+		71107438271EA81300178969 /* LayerVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerVideoViewController.swift; sourceTree = "<group>"; };
+		7110743C271ECA4800178969 /* voices.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = voices.m4a; sourceTree = "<group>"; };
+		7110743E271ED4D400178969 /* ImageVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoViewController.swift; sourceTree = "<group>"; };
 		713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoMakeViewController.swift; sourceTree = "<group>"; };
 		713997FE2705B64C002BC263 /* Girl5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl5.jpg; sourceTree = "<group>"; };
 		713997FF2705B64D002BC263 /* Girl2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl2.jpg; sourceTree = "<group>"; };
@@ -694,6 +706,7 @@
 				7170BF122701CA2000900BE7 /* VideoMaker.swift */,
 				7110742C27196B8200178969 /* VideoMaker.Image.swift */,
 				7110742A271968D700178969 /* VideoMaker.Lottie.swift */,
+				71107436271E956100178969 /* VideoMaker.Layer.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -901,6 +914,10 @@
 		1A354430254E77600032B677 /* Animate */ = {
 			isa = PBXGroup;
 			children = (
+				7110743E271ED4D400178969 /* ImageVideoViewController.swift */,
+				71107438271EA81300178969 /* LayerVideoViewController.swift */,
+				71107434271E930C00178969 /* SolitaireUserIconView.swift */,
+				71107432271E63B000178969 /* SolitaireCalculationViewController.swift */,
 				71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */,
 				7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */,
 				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
@@ -1195,6 +1212,7 @@
 		7190E4E227102EB600E8C511 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				7110743C271ECA4800178969 /* voices.m4a */,
 				7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */,
 			);
 			path = Music;
@@ -1334,6 +1352,7 @@
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
 				1A354532254E77600032B677 /* FileEffectViewController.xib in Resources */,
 				1A35453C254E77600032B677 /* FireworkRulePopView.xib in Resources */,
+				7110743D271ECA4800178969 /* voices.m4a in Resources */,
 				1A354533254E77600032B677 /* FireworkItem.xib in Resources */,
 				1A354537254E77600032B677 /* FireworkCell.xib in Resources */,
 				1A354370254E76B40032B677 /* lottie in Resources */,
@@ -1405,6 +1424,7 @@
 				718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
+				71107435271E930C00178969 /* SolitaireUserIconView.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				0049E970254FA7E200878F44 /* MarebulabulasManager.swift in Sources */,
@@ -1423,6 +1443,7 @@
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
 				716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */,
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
+				7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
 				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
 				1A35453D254E77600032B677 /* FireworkPopView.swift in Sources */,
@@ -1437,6 +1458,7 @@
 				1A354515254E77600032B677 /* JPSubTableViewController.m in Sources */,
 				1A35459B254E77600032B677 /* MarebulabulasRecordControl.swift in Sources */,
 				715ED74626FF26520030F279 /* Date.Extension.swift in Sources */,
+				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */,
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
@@ -1453,6 +1475,7 @@
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
+				71107437271E956100178969 /* VideoMaker.Layer.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
@@ -1485,6 +1508,7 @@
 				710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */,
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
+				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,

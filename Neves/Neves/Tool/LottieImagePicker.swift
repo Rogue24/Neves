@@ -101,6 +101,11 @@ class LottieImagePicker {
         self.animLayer = animLayer
     }
     
+    func update(_ currentFrame: Int) {
+        let totalFrame = Int(animTotalFrame)
+        animLayer.currentFrame = CGFloat(currentFrame % totalFrame)
+        animLayer.display()
+    }
 }
 
 // MARK:- 截取Lottie动画的其中一帧生成图片

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVKit
 
 /// 自定义日志
 func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String = #function) {
@@ -191,4 +192,23 @@ func DecodeImage(_ cgImage: CGImage) -> CGImage? {
     
     let decodeImg = context.makeImage()
     return decodeImg
+}
+
+func Play(_ filePath: String, isAutoPlay: Bool = true) {
+    guard File.manager.fileExists(filePath) else {
+        JPProgressHUD.showError(withStatus: "文件不存在！", userInteractionEnabled: true)
+        return
+    }
+    
+    guard let topVC = GetTopMostViewController() else {
+        JPProgressHUD.showError(withStatus: "木有控制器！", userInteractionEnabled: true)
+        return
+    }
+    
+    let playerVC = AVPlayerViewController()
+    playerVC.player = AVPlayer(url: URL(fileURLWithPath: filePath))
+    
+    topVC.present(playerVC, animated: true) {
+        if isAutoPlay { playerVC.player?.play() }
+    }
 }

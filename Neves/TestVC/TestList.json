@@ -12,6 +12,18 @@
         "header" : "Animate",
         "vcList" : [
             {
+                "vcName": "ImageVideoViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "LayerVideoViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "SolitaireCalculationViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "SolitairePopAnimationViewController",
                 "vcCreateWay" : 0
             },

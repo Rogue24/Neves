@@ -4,10 +4,16 @@
 //
 //  Created by aa on 2021/9/27.
 //
+
 import UIKit
 import AVFoundation
 
 class VideoMaker {
+    
+    typealias LayerProvider = (_ currentFrame: Int, _ currentTime: TimeInterval, _ size: CGSize) -> [CALayer?]
+    typealias ImageProvider = (_ currentFrame: Int, _ currentTime: TimeInterval, _ size: CGSize) -> [UIImage?]
+    typealias Completion = (Result<String, MakeError>) -> ()
+    
     
     enum MakeError: Error {
         case writerError
