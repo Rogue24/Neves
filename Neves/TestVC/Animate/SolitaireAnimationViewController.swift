@@ -8,6 +8,7 @@
 import UIKit
 
 class SolitaireAnimationViewController: TestBaseViewController {
+    static var videoPath: String? = nil
     
     let animLayer = CALayer()
     let userIcon1 = CALayer()
@@ -98,7 +99,16 @@ class SolitaireAnimationViewController: TestBaseViewController {
         btn3.addTarget(self, action: #selector(makeVideo), for: .touchUpInside)
         view.addSubview(btn3)
         
-        drawView.frame = [HalfDiffValue(PortraitScreenWidth, 150), btn2.maxY + 20, 150, 150]
+        let btn4 = UIButton(type: .system)
+        btn4.titleLabel?.font = .systemFont(ofSize: 15)
+        btn4.setTitle("播放视频", for: .normal)
+        btn4.setTitleColor(.randomColor, for: .normal)
+        btn4.backgroundColor = .randomColor
+        btn4.frame = [btn1.x, btn1.maxY + 5, 80, 40]
+        btn4.addTarget(self, action: #selector(playVideo), for: .touchUpInside)
+        view.addSubview(btn4)
+        
+        drawView.frame = [HalfDiffValue(PortraitScreenWidth, 150), btn4.maxY + 10, 150, 150]
         drawView.backgroundColor = .randomColor
         drawView.contentMode = .scaleAspectFit
         view.addSubview(drawView)
@@ -250,8 +260,11 @@ class SolitaireAnimationViewController: TestBaseViewController {
     }
     
     @objc func drawAnim() {
+        let animLayer = self.animLayer
+        let size: CGSize = [360, 360]
+        
         Asyncs.async {
-            UIGraphicsBeginImageContextWithOptions(self.animLayer.frame.size, false, 0)
+            UIGraphicsBeginImageContextWithOptions(size, false, 1)
             defer { UIGraphicsEndImageContext() }
             
             guard let ctx = UIGraphicsGetCurrentContext() else {
@@ -259,9 +272,12 @@ class SolitaireAnimationViewController: TestBaseViewController {
                 return
             }
             
+//            var presentationLayer: CALayer? = nil
             DispatchQueue.main.sync {
-                self.animLayer.presentation()?.render(in: ctx)
+                animLayer.presentation()?.render(in: ctx)
+//                presentationLayer = self.animLayer.presentation()
             }
+//            presentationLayer?.render(in: ctx)
             
             guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
                 JPrint("失败")
@@ -269,6 +285,7 @@ class SolitaireAnimationViewController: TestBaseViewController {
             }
             
             Asyncs.main {
+                JPrint("画好了")
                 self.drawView.backgroundColor = .randomColor
                 self.drawView.image = image
             }
@@ -276,14 +293,12 @@ class SolitaireAnimationViewController: TestBaseViewController {
     }
     
     @objc func makeVideo() {
-        
+        let animLayer = self.animLayer
+        let size: CGSize = [360, 360]
         let maxTime = anim1Duration + anim2Duration + duration
         
         JPProgressHUD.show()
         Asyncs.async {
-            
-            let size: CGSize = [360, 360]
-            
             UIGraphicsBeginImageContextWithOptions(size, false, 1)
             
             guard let ctx = UIGraphicsGetCurrentContext() else {
@@ -294,14 +309,16 @@ class SolitaireAnimationViewController: TestBaseViewController {
                 return
             }
             
-            let lock = DispatchSemaphore(value: 0)
             VideoMaker.createVideo(framerate: 24, frameInterval: 24, duration: 31, size: size) { currentFrame, currentTime in
+//                JPrint("currentTime", currentTime)
                 
                 // 画
                 ctx.saveGState()
                 
                 // 渲染
                 DispatchQueue.main.sync {
+                    self.slider.value = Float(currentTime)
+                    
                     if currentTime > maxTime {
                         self.pausedTime = self.beginTime + maxTime
                     } else {
@@ -312,14 +329,11 @@ class SolitaireAnimationViewController: TestBaseViewController {
                     self.userIcon2.timeOffset = self.pausedTime
                     self.userIcon3.timeOffset = self.pausedTime
                     
-                    self.animLayer.presentation()?.render(in: ctx)
-                    
-                    lock.signal()
+                    animLayer.presentation()?.render(in: ctx)
                 }
-                lock.wait()
-                
                 
                 let image = UIGraphicsGetImageFromCurrentImageContext()
+//                let image = ctx.makeImage().map { UIImage(cgImage: $0) } ?? nil
                 
                 ctx.clear(CGRect(origin: .zero, size: size))
                 ctx.restoreGState()
@@ -332,7 +346,10 @@ class SolitaireAnimationViewController: TestBaseViewController {
                     switch result {
                     case let .success(path):
                         JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
-                        JPrint("视频路径", path)
+                        File.manager.deleteFile(Self.videoPath)
+                        Self.videoPath = path
+                        JPrint("成功！视频路径", path)
+                        
                     case .failure:
                         JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
                     }
@@ -341,5 +358,14 @@ class SolitaireAnimationViewController: TestBaseViewController {
             
         }
         
+    }
+    
+    @objc func playVideo() {
+        guard let videoPath = Self.videoPath else {
+            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+            return
+        }
+        
+        Play(videoPath)
     }
 }

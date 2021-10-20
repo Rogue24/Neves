@@ -8,6 +8,7 @@
 import UIKit
 
 class SolitaireCalculationViewController: TestBaseViewController {
+    static var videoPath: String? = nil
     
     let animLayer = UIView()
     let userIcon1 = UIImageView()
@@ -105,7 +106,16 @@ class SolitaireCalculationViewController: TestBaseViewController {
         btn3.addTarget(self, action: #selector(makeVideo), for: .touchUpInside)
         view.addSubview(btn3)
         
-        drawView.frame = [HalfDiffValue(PortraitScreenWidth, 150), btn2.maxY + 20, 150, 150]
+        let btn4 = UIButton(type: .system)
+        btn4.titleLabel?.font = .systemFont(ofSize: 15)
+        btn4.setTitle("播放视频", for: .normal)
+        btn4.setTitleColor(.randomColor, for: .normal)
+        btn4.backgroundColor = .randomColor
+        btn4.frame = [btn1.x, btn1.maxY + 5, 80, 40]
+        btn4.addTarget(self, action: #selector(playVideo), for: .touchUpInside)
+        view.addSubview(btn4)
+        
+        drawView.frame = [HalfDiffValue(PortraitScreenWidth, 150), btn4.maxY + 20, 150, 150]
         drawView.backgroundColor = .randomColor
         drawView.contentMode = .scaleAspectFit
         view.addSubview(drawView)
@@ -391,20 +401,34 @@ class SolitaireCalculationViewController: TestBaseViewController {
 //
 //        }
         
-        VideoMaker.makeVideo(framerate: frameInterval, frameInterval: frameInterval, duration: totalDuration, size: [360, 360]) { currentFrame, _, _ in
-            JPrint(currentFrame)
+        let animLayer = animLayer.layer
+        let size = animLayer.frame.size
+        
+        VideoMaker.makeVideo(framerate: frameInterval, frameInterval: frameInterval, duration: totalDuration, size: size) { currentFrame, _, _ in
+//            JPrint(currentFrame)
             self.updateUserIcons(currentFrame)
-            return [self.animLayer.layer]
+            return [animLayer]
         } completion: { result in
             switch result {
             case let .success(path):
                 JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
-                JPrint("视频路径", path)
+                File.manager.deleteFile(Self.videoPath)
+                Self.videoPath = path
+                JPrint("成功！视频路径", path)
             case .failure:
                 JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
             }
         }
         
+    }
+    
+    @objc func playVideo() {
+        guard let videoPath = Self.videoPath else {
+            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+            return
+        }
+        
+        Play(videoPath)
     }
 }
 
