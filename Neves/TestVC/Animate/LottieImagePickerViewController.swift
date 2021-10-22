@@ -181,56 +181,18 @@ class LottieImagePickerViewController: TestBaseViewController {
         Asyncs.async {
             let directoryPath = "/Users/aa/Desktop/LottieTest/Images/"
             
-//            let c1 = LottieImageStore.Configure(lottieName: "album_videobg_jielong_lottie",
-//                                                imageSize: [720, 720])
-//            if let s1 = LottieImageStore.createStore(configure: c1) {
-//                for (currentFrame, image) in s1.imageMap {
-//                    var url = URL(fileURLWithPath: directoryPath)
-//                    url.appendPathComponent("videobg_\(currentFrame).png")
-//
-//                    guard let imgData = image.pngData() else {
-//                        JPrint("数据错误 ---", url.path)
-//                        continue
-//                    }
-//
-//                    do {
-//                        try imgData.write(to: url)
-//                    } catch {
-//                        JPrint("写入错误 ---", url.path)
-//                    }
-//                }
-//            }
-//
-//            let c2 = LottieImageStore.Configure(lottieName: "video_tx_jielong_lottie", imageSize: [720, 720], lottieSize: [220, 220]) { [374, 250, $1.width, $1.height] }
-//            if let s2 = LottieImageStore.createStore(configure: c2) {
-//                for (currentFrame, image) in s2.imageMap {
-//                    var url = URL(fileURLWithPath: directoryPath)
-//                    url.appendPathComponent("videotx_\(currentFrame).png")
-//
-//                    guard let imgData = image.pngData() else {
-//                        JPrint("数据错误 ---", url.path)
-//                        continue
-//                    }
-//
-//                    do {
-//                        try imgData.write(to: url)
-//                    } catch {
-//                        JPrint("写入错误 ---", url.path)
-//                    }
-//                }
-//            }
-            
-            let c3 = LottieImageStore.Configure(lottieName: self.lottieName)
-            if let s3 = LottieImageStore.createStore(configure: c3) {
-                for (currentFrame, image) in s3.imageMap {
+            let c1 = LottieImageStore.Configure(lottieName: "album_videobg_jielong_lottie",
+                                                imageSize: [720, 720])
+            if let s1 = LottieImageStore.createStore(configure: c1) {
+                for (currentFrame, image) in s1.imageMap {
                     var url = URL(fileURLWithPath: directoryPath)
-                    url.appendPathComponent("\(self.lottieName)_\(currentFrame).png")
-                    
+                    url.appendPathComponent("videobg_\(currentFrame).png")
+
                     guard let imgData = image.pngData() else {
                         JPrint("数据错误 ---", url.path)
                         continue
                     }
-                    
+
                     do {
                         try imgData.write(to: url)
                     } catch {
@@ -238,6 +200,44 @@ class LottieImagePickerViewController: TestBaseViewController {
                     }
                 }
             }
+
+            let c2 = LottieImageStore.Configure(lottieName: "video_tx_jielong_lottie", imageSize: [720, 720], lottieSize: [220, 220]) { [374, 250, $1.width, $1.height] }
+            if let s2 = LottieImageStore.createStore(configure: c2) {
+                for (currentFrame, image) in s2.imageMap {
+                    var url = URL(fileURLWithPath: directoryPath)
+                    url.appendPathComponent("videotx_\(currentFrame).png")
+
+                    guard let imgData = image.pngData() else {
+                        JPrint("数据错误 ---", url.path)
+                        continue
+                    }
+
+                    do {
+                        try imgData.write(to: url)
+                    } catch {
+                        JPrint("写入错误 ---", url.path)
+                    }
+                }
+            }
+            
+//            let c3 = LottieImageStore.Configure(lottieName: self.lottieName)
+//            if let s3 = LottieImageStore.createStore(configure: c3) {
+//                for (currentFrame, image) in s3.imageMap {
+//                    var url = URL(fileURLWithPath: directoryPath)
+//                    url.appendPathComponent("\(self.lottieName)_\(currentFrame).png")
+//
+//                    guard let imgData = image.pngData() else {
+//                        JPrint("数据错误 ---", url.path)
+//                        continue
+//                    }
+//
+//                    do {
+//                        try imgData.write(to: url)
+//                    } catch {
+//                        JPrint("写入错误 ---", url.path)
+//                    }
+//                }
+//            }
             
             Asyncs.main { JPProgressHUD.dismiss() }
         }

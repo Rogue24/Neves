@@ -170,13 +170,15 @@ private extension LottieImageStore {
                 animLayer.display()
             }
             
-//            ctx.saveGState()
-            
-            animLayer.render(in: ctx)
-            imageMap[currentFrame] = UIGraphicsGetImageFromCurrentImageContext()
-            
-            ctx.clear(CGRect(origin: .zero, size: lottieSize))
-//            ctx.restoreGState()
+            autoreleasepool {
+//                ctx.saveGState()
+                
+                animLayer.render(in: ctx)
+                imageMap[currentFrame] = UIGraphicsGetImageFromCurrentImageContext()
+                
+                ctx.clear(CGRect(origin: .zero, size: lottieSize))
+//                ctx.restoreGState()
+            }
         }
         UIGraphicsEndImageContext()
         
@@ -185,6 +187,12 @@ private extension LottieImageStore {
         }
         self.lottieFrame = lottieFrame
         
+        fitImages()
+    }
+    
+    func fitImages() {
+        guard lottieFrame != CGRect(origin: .zero, size: imageSize) else { return }
+        
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 1)
         guard let ctx = UIGraphicsGetCurrentContext() else {
             UIGraphicsEndImageContext()
@@ -192,15 +200,15 @@ private extension LottieImageStore {
         }
         
         for (currentFrame, image) in imageMap {
-//            ctx.saveGState()
-            
             autoreleasepool {
+//                ctx.saveGState()
+                
                 image.draw(in: lottieFrame)
                 imageMap[currentFrame] = UIGraphicsGetImageFromCurrentImageContext()
+                
+                ctx.clear(CGRect(origin: .zero, size: imageSize))
+//                ctx.restoreGState()
             }
-            
-            ctx.clear(CGRect(origin: .zero, size: imageSize))
-//            ctx.restoreGState()
         }
         UIGraphicsEndImageContext()
     }
