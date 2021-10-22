@@ -156,7 +156,7 @@
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
 		711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711074282717FBF400178969 /* LottieImagePickerViewController.swift */; };
 		7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742A271968D700178969 /* VideoMaker.Lottie.swift */; };
-		7110742D27196B8200178969 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742C27196B8200178969 /* VideoMaker.Image.swift */; };
+		7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742C27196B8200178969 /* VideoMaker.ImageInfo.swift */; };
 		7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */; };
 		71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */; };
 		71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107432271E63B000178969 /* SolitaireCalculationViewController.swift */; };
@@ -204,6 +204,7 @@
 		719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */; };
 		71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */; };
 		71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */; };
+		71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B300892722BBAF00997B20 /* VideoMaker.Image.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
 		71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E426F052B300DB3A7A /* TurntableViewController.swift */; };
@@ -420,7 +421,7 @@
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
 		711074282717FBF400178969 /* LottieImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePickerViewController.swift; sourceTree = "<group>"; };
 		7110742A271968D700178969 /* VideoMaker.Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Lottie.swift; sourceTree = "<group>"; };
-		7110742C27196B8200178969 /* VideoMaker.Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Image.swift; sourceTree = "<group>"; };
+		7110742C27196B8200178969 /* VideoMaker.ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageInfo.swift; sourceTree = "<group>"; };
 		7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationViewController.swift; sourceTree = "<group>"; };
 		71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitairePopAnimationViewController.swift; sourceTree = "<group>"; };
 		71107432271E63B000178969 /* SolitaireCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireCalculationViewController.swift; sourceTree = "<group>"; };
@@ -471,6 +472,7 @@
 		71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Publisher的share图示.jpg"; sourceTree = "<group>"; };
+		71B300892722BBAF00997B20 /* VideoMaker.Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Image.swift; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
 		71BC27E426F052B300DB3A7A /* TurntableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewController.swift; sourceTree = "<group>"; };
@@ -712,9 +714,10 @@
 				718018C527228A830056E699 /* Syncs.swift */,
 				00965D5B25CBF4DD00B7BB9C /* Done.swift */,
 				7170BF122701CA2000900BE7 /* VideoMaker.swift */,
-				7110742C27196B8200178969 /* VideoMaker.Image.swift */,
+				7110742C27196B8200178969 /* VideoMaker.ImageInfo.swift */,
 				7110742A271968D700178969 /* VideoMaker.Lottie.swift */,
 				71107436271E956100178969 /* VideoMaker.Layer.swift */,
+				71B300892722BBAF00997B20 /* VideoMaker.Image.swift */,
 				718018BE2722611A0056E699 /* LottieImage */,
 			);
 			path = Tool;
@@ -1507,6 +1510,7 @@
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
+				71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
 				718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
@@ -1557,7 +1561,7 @@
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
-				7110742D27196B8200178969 /* VideoMaker.Image.swift in Sources */,
+				7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,

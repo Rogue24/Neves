@@ -2,136 +2,276 @@
 //  VideoMaker.Image.swift
 //  Neves
 //
-//  Created by aa on 2021/10/15.
+//  Created by aa on 2021/10/22.
 //
 
 import AVFoundation
 
+protocol VideoImageStore {
+    func getImage(_ currentFrame: Int) -> UIImage?
+    func getImage(_ currentTime: TimeInterval) -> UIImage?
+}
+
 extension VideoMaker {
-    
-    struct ImageInfo {
-        let image: UIImage
-        let duration: TimeInterval
-        var pixelBuffer: CVPixelBuffer? = nil
-    }
-    
-    func makeVideo(with infos: [ImageInfo], completion: @escaping (Result<String, MakeError>) -> ()) {
-        Asyncs.async {
-            var imageInfos = infos
-            
-            let operationLock = DispatchSemaphore(value: 1)
-            let concurrentLock = DispatchSemaphore(value: self.maxConcurrentOperationCount)
-            
-            DispatchQueue.concurrentPerform(iterations: imageInfos.count) { [weak self] i in
-                guard let self = self else { return }
-                
-                concurrentLock.wait()
-                defer { concurrentLock.signal() }
-                
-                operationLock.wait()
-                var imageInfo = imageInfos[i]
-                if imageInfo.pixelBuffer == nil, let pixelBuffer = Self.createPixelBufferWithImage(imageInfo.image, size: self.videoSize) {
-                    imageInfo.pixelBuffer = pixelBuffer
-                    imageInfos[i] = imageInfo
-                }
-                operationLock.signal()
+    static func makeVideo(framerate: Int,
+                          frameInterval: Int,
+                          duration: TimeInterval,
+                          size: CGSize,
+                          audioPath: String? = nil,
+                          animLayer: VideoAnimationLayer? = nil,
+                          imageStores: [VideoImageStore],
+                          completion: @escaping Completion) {
+        
+        guard !Thread.isMainThread else {
+            Asyncs.async {
+                makeVideo(framerate: framerate,
+                          frameInterval: frameInterval,
+                          duration: duration,
+                          size: size,
+                          audioPath: audioPath,
+                          animLayer: animLayer,
+                          imageStores: imageStores,
+                          completion: completion)
             }
-            
-            Self.createVideoWithImageInfos(imageInfos, size: self.videoSize, frameInterval: self.frameInterval, completion: completion)
+            return
         }
-    }
-    
-    static func createVideoWithImageInfos(_ imageInfos: [ImageInfo], size: CGSize, frameInterval: Int, completion: @escaping (Result<String, MakeError>) -> ()) {
+        JPrint("makeVideo", Thread.current)
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 1)
+        defer { UIGraphicsEndImageContext() }
+        
+        guard let ctx = UIGraphicsGetCurrentContext() else {
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
         
         let videoName = "\(Int(Date().timeIntervalSince1970)).mp4"
         let videoPath = File.tmpFilePath(videoName)
         
         guard let videoWriter = try? AVAssetWriter(url: URL(fileURLWithPath: videoPath), fileType: .mp4) else {
-            completion(.failure(.writerError))
+            Asyncs.main { completion(.failure(.writerError)) }
             return
         }
         
-        let bitsPerSecond = 5000 * 1024
-        let settings: [String: Any] = [
-            AVVideoCodecKey: AVVideoCodecType.h264,
-            AVVideoWidthKey: size.width,
-            AVVideoHeightKey: size.height,
-            AVVideoCompressionPropertiesKey: [
-                AVVideoAverageBitRateKey: bitsPerSecond,
-                AVVideoMaxKeyFrameIntervalKey: frameInterval,
-                AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel,
-            ]
-        ]
+        videoWriter.shouldOptimizeForNetworkUse = false
         
-        let writerInput = AVAssetWriterInput(mediaType: .video, outputSettings: settings)
-        let adaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes: nil)
+        let writerInput = createVideoWriterInput(frameInterval: frameInterval, size: size)
+        
+        var keyCallBacks = kCFTypeDictionaryKeyCallBacks
+        var valCallBacks = kCFTypeDictionaryValueCallBacks
+        guard let empty = CFDictionaryCreate(kCFAllocatorDefault, nil, nil, 0, &keyCallBacks, &valCallBacks) else {
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        let attributes: [CFString: Any] = [
+            kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_32BGRA,
+            kCVPixelBufferCGImageCompatibilityKey: true,
+            kCVPixelBufferCGBitmapContextCompatibilityKey: true,
+            kCVPixelBufferIOSurfacePropertiesKey: empty
+        ]
+        let adaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes: attributes as [String: Any])
         
         guard videoWriter.canAdd(writerInput) else {
-            completion(.failure(.writerError))
+            Asyncs.main { completion(.failure(.writerError)) }
             return
         }
-        
-//        JPrint("000 ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData)
         videoWriter.add(writerInput)
-//        JPrint("111 ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData);
         
-//        JPrint("222 ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData);
         guard videoWriter.startWriting() else {
-            completion(.failure(.writerError))
+            Asyncs.main { completion(.failure(.writerError)) }
             return
         }
-//        JPrint("333 ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData);
-        
-//        JPrint("444 ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData);
         videoWriter.startSession(atSourceTime: .zero)
-//        JPrint("555 ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData);
+        JPrint("startSession", Thread.current) // 卡顿所在
         
-        var currentFrame = 0
-        let timescale = CMTimeScale(frameInterval)
+        let timescale = CMTimeScale(framerate)
         
-        for imageInfo in imageInfos {
-            guard let pixelBuffer = imageInfo.pixelBuffer else {
-                completion(.failure(.writerError))
+        let totalFrame = framerate * Int(duration)
+        let frameCount = frameInterval * Int(duration)
+        
+//        var lastFrame: Int = -1
+        var lastPixelBuffer: CVPixelBuffer? = nil
+        
+        let fps: CGFloat = 1.0 / CGFloat(frameInterval)
+        
+        for i in 0 ... frameCount {
+            // framerate和frameInterval不一样的情况，该处理有待考量
+//            let progress = CGFloat(i) / CGFloat(frameCount)
+//            let currentFrame = Int(CGFloat(totalFrame) * progress)
+//            let currentTime = duration * progress
+//
+//            // 这里会有一定概率出现错误：Code=-11800 "The operation could not be completed"
+//            // 这是因为写入了相同的currentFrame造成的，所以要这里做判断，相同就跳过
+//            if lastFrame == currentFrame { continue }
+//            lastFrame = currentFrame
+            
+            // framerate和frameInterval一样的情况（暂时写死该情况，完善制作后再优化）
+            let currentFrame = i
+            let currentTime = CGFloat(currentFrame) * fps
+            
+            while true {
+                if adaptor.assetWriterInput.isReadyForMoreMediaData ||
+                   videoWriter.status != .writing {
+                    break
+                }
+            }
+            if videoWriter.status != .writing {
+                // 其中一个错误：Code=-11800 "The operation could not be completed"
+                // 这是因为写入了相同的currentFrame造成的
+                JPrint("失败？？？", videoWriter.status.rawValue,
+                       videoWriter.error ?? "",
+                       adaptor.assetWriterInput.isReadyForMoreMediaData)
+                
+                File.manager.deleteFile(videoPath)
+                Asyncs.main { completion(.failure(.writerError)) }
                 return
             }
             
-            let imageTotalFrame = Int(ceil(imageInfo.duration)) * frameInterval
-            
-            for _ in 0 ..< imageTotalFrame {
-                while true {
-                    if adaptor.assetWriterInput.isReadyForMoreMediaData || videoWriter.status != .writing {
-//                        JPrint("xxx ---", videoWriter.status.rawValue, adaptor.assetWriterInput.isReadyForMoreMediaData);
-                        break
-                    }
+//            ctx.saveGState()
+                            
+            UIImage(named: "album_videobg_jielong")?.draw(in: CGRect(origin: .zero, size: size))
+            for store in imageStores {
+                guard let image = store.getImage(currentTime) else {
+                    continue
                 }
-                
-                if videoWriter.status != .writing {
-                    completion(.failure(.writerError))
-                    return
-                }
-                
-                let currentTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
-                adaptor.append(pixelBuffer, withPresentationTime: currentTime)
-                currentFrame += 1
+                image.draw(in: CGRect(origin: .zero, size: size))
             }
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            
+            ctx.clear(CGRect(origin: .zero, size: size))
+//            ctx.restoreGState()
+            
+            let pixelBuffer: CVPixelBuffer
+            if let image = image,
+               let pb = createPixelBufferWithImage(image,
+                                                   pixelBufferPool: adaptor.pixelBufferPool,
+                                                   size: size) {
+                lastPixelBuffer = pb
+                pixelBuffer = pb
+            } else {
+                pixelBuffer = lastPixelBuffer ?? {
+                    let pb = createPixelBufferWithImage(UIImage.jp_createImage(with: .black), size: size)!
+                    lastPixelBuffer = pb
+                    return pb
+                }()
+            }
+            let frameTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
+            adaptor.append(pixelBuffer, withPresentationTime: frameTime)
         }
         
         writerInput.markAsFinished()
+        JPrint("markAsFinished", Thread.current)
         
-        let endTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
+        let endTime = CMTime(value: CMTimeValue(totalFrame), timescale: timescale)
         videoWriter.endSession(atSourceTime: endTime)
         
-        videoWriter.finishWriting {
-            switch videoWriter.status {
+        let lock = DispatchSemaphore(value: 0)
+        videoWriter.finishWriting { lock.signal() }
+        lock.wait()
+        
+        switch videoWriter.status {
+        case .completed:
+            break
+        default:
+            File.manager.deleteFile(videoPath)
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        
+        let cachePath = File.cacheFilePath(videoName)
+        File.manager.deleteFile(cachePath)
+        
+        guard let audioPath = audioPath else {
+            File.manager.moveFile(videoPath, toPath: cachePath)
+            Asyncs.main { completion(.success(cachePath)) }
+            return
+        }
+        
+        let videoAsset = AVURLAsset(url: URL(fileURLWithPath: videoPath))
+        let audioAsset = AVURLAsset(url: URL(fileURLWithPath: audioPath))
+        
+        let videoDuration = videoAsset.duration
+        
+        guard let videoTrack = videoAsset.tracks(withMediaType: .video).first,
+              let audioTrack = audioAsset.tracks(withMediaType: .audio).first else {
+            File.manager.deleteFile(videoPath)
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        
+        let mixComposition = AVMutableComposition()
+        
+        guard let compositionVideoTrack = mixComposition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid),
+              let compositionAudioTrack = mixComposition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid) else {
+            File.manager.deleteFile(videoPath)
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        
+        do {
+            try compositionVideoTrack.insertTimeRange(CMTimeRange(start: .zero, duration: videoDuration), of: videoTrack, at: .zero)
+            
+            var audioDuration = audioAsset.duration
+            if audioDuration > videoDuration {
+                audioDuration = videoDuration
+            }
+            try compositionAudioTrack.insertTimeRange(CMTimeRange(start: .zero, duration: audioDuration), of: audioTrack, at: .zero)
+        } catch {
+            File.manager.deleteFile(videoPath)
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        
+        var videoComposition: AVMutableVideoComposition?
+        if let animLayer = animLayer {
+            let layerInstruciton = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+            
+            let instruction = AVMutableVideoCompositionInstruction()
+            instruction.timeRange = CMTimeRange(start: .zero, duration: videoDuration)
+            instruction.layerInstructions = [layerInstruciton]
+            
+            let composition = AVMutableVideoComposition()
+            composition.instructions = [instruction]
+            composition.frameDuration = CMTime(value: 1, timescale: timescale)
+            composition.renderScale = 1
+            composition.renderSize = size
+            
+            // 视频layer
+            let videoLayer = CALayer()
+            videoLayer.frame = CGRect(origin: .zero, size: size)
+            videoLayer.addSublayer(animLayer)
+            
+            // 父layer
+            let parentLayer = CALayer()
+            parentLayer.frame = CGRect(origin: .zero, size: size)
+            parentLayer.contentsScale = 1
+            parentLayer.isGeometryFlipped = true
+            parentLayer.addSublayer(videoLayer)
+            
+            // 将合成的parentLayer关联到composition中
+            composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+            
+            animLayer.addAnimate()
+            videoComposition = composition
+        }
+        
+        guard let exportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else {
+            File.manager.deleteFile(videoPath)
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        exportSession.outputFileType = .mp4
+        exportSession.outputURL = URL(fileURLWithPath: cachePath)
+        exportSession.shouldOptimizeForNetworkUse = true
+        exportSession.videoComposition = videoComposition
+        
+        exportSession.exportAsynchronously {
+            File.manager.deleteFile(videoPath)
+            switch exportSession.status {
             case .completed:
-                let cachePath = File.cacheFilePath(videoName)
-                File.manager.deleteFile(cachePath)
-                File.manager.moveFile(videoPath, toPath: cachePath)
-                File.manager.deleteFile(videoPath)
-                completion(.success(cachePath))
-                
+                Asyncs.main { completion(.success(cachePath)) }
             default:
-                completion(.failure(.writerError))
+                Asyncs.main { completion(.failure(.writerError)) }
             }
         }
     }

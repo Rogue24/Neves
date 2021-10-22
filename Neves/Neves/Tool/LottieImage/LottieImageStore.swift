@@ -14,18 +14,15 @@ class LottieImageStore {
         let imageSize: CGSize?
         let lottieSize: CGSize?
         let lottieFrame: ((_ imageSize: CGSize, _ lottieSize: CGSize) -> CGRect?)?
-        let framerate: Int?
         
         init(lottieName: String,
              imageSize: CGSize? = nil,
              lottieSize: CGSize? = nil,
-             lottieFrame: ((_ imageSize: CGSize, _ lottieSize: CGSize) -> CGRect?)? = nil,
-             framerate: Int? = nil) {
+             lottieFrame: ((_ imageSize: CGSize, _ lottieSize: CGSize) -> CGRect?)? = nil) {
             self.lottieName = lottieName
             self.imageSize = imageSize
             self.lottieSize = lottieSize
             self.lottieFrame = lottieFrame
-            self.framerate = framerate
         }
     }
     
@@ -150,20 +147,12 @@ private extension LottieImageStore {
         }
         
         var imageMap: [Int: UIImage] = [:]
-        defer { self.imageMap = imageMap }
         
-        let startFrame = CGFloat(self.startFrame)
-        let framerateScale = CGFloat(configure.framerate ?? self.framerate) / CGFloat(self.framerate)
-        let totalFrame = CGFloat(self.totalFrame) * framerateScale
-        let totalCount = Int(totalFrame)
+        let startFrame = self.startFrame
+        let totalFrame = self.totalFrame
         
-        var lastFrame: Int = -1
-        for i in 0 ... totalCount {
-            let progress = CGFloat(i) / totalFrame
-            let currentFrame = Int(startFrame + totalFrame * progress)
-            
-            guard lastFrame != currentFrame else { continue }
-            lastFrame = currentFrame
+        for i in 0 ... totalFrame {
+            let currentFrame = startFrame + i
             
             Syncs.main {
                 animLayer.currentFrame = CGFloat(currentFrame)
@@ -181,6 +170,7 @@ private extension LottieImageStore {
             }
         }
         UIGraphicsEndImageContext()
+        self.imageMap = imageMap
         
         guard let lottieFrame = configure.lottieFrame?(imageSize, lottieSize) else {
             return
@@ -214,9 +204,13 @@ private extension LottieImageStore {
     }
 }
 
-extension LottieImageStore {
+extension LottieImageStore: VideoImageStore {
     func getImage(_ currentFrame: Int) -> UIImage? {
-        imageMap[startFrame + currentFrame]
+        if let image = imageMap[startFrame + currentFrame] {
+            return image
+        }
+        JPrint("木有这个currentFrame", currentFrame, "--- totalFrame", totalFrame)
+        return nil
     }
     
     func getImage(_ currentTime: TimeInterval) -> UIImage? {

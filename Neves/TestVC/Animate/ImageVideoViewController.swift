@@ -18,13 +18,13 @@ class ImageVideoViewController: TestBaseViewController {
     let duration: TimeInterval = 0.6
     let anim1Duration: TimeInterval = 6
     let anim2Duration: TimeInterval = 8
-    let anim3Duration: TimeInterval = 17
+    let anim3Duration: TimeInterval = 3//17
     lazy var totalDuration: TimeInterval = anim1Duration + anim2Duration + anim3Duration
     
     let bgView = UIView()
     
-    let boardLayer = CALayer()
     lazy var solitaireView = SolitaireCalculationView(frameInterval: frameInterval)
+    lazy var solitaireLayer = SolitaireAnimationLayer()
     
     var isMaking = false
     
@@ -43,8 +43,6 @@ class ImageVideoViewController: TestBaseViewController {
         bgView.frame.size = size
         bgView.addSubview(bgImageView)
         bgView.addSubview(lottieBgImgView)
-        
-        boardLayer.frame.size = size
         
         let btn3 = UIButton(type: .system)
         btn3.titleLabel?.font = .systemFont(ofSize: 15)
@@ -82,10 +80,12 @@ class ImageVideoViewController: TestBaseViewController {
         JPrint("开始制作！")
         isMaking = true
         
+        let audioPath = Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")
+        let animLayer = solitaireLayer
+        
 //        JPProgressHUD.show()
         Asyncs.async {
-            guard let bgPicker = LottieImagePicker(lottieName: "album_videobg_jielong_lottie",
-                                                   animSize: self.size) else {
+            guard let store1 = LottieImageStore.createStore(configure: LottieImageStore.Configure(lottieName: "album_videobg_jielong_lottie", imageSize: self.size)) else {
                 Asyncs.main {
                     JPrint("失败！")
                     JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
@@ -94,42 +94,22 @@ class ImageVideoViewController: TestBaseViewController {
                 return
             }
             
-            guard let boardPicker = LottieImagePicker(lottieName: "video_tx_jielong_lottie",
-                                                      animSize: [220, 220]) else {
+            guard let store2 = LottieImageStore.createStore(configure: LottieImageStore.Configure(lottieName: "video_tx_jielong_lottie", imageSize: self.size, lottieSize: [220, 220]) { [374, 250, $1.width, $1.height] }) else {
                 Asyncs.main {
                     JPrint("失败！")
                     JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
                     self.isMaking = false
                 }
                 return
-            }
-            
-            DispatchQueue.main.sync {
-                boardPicker.animLayer.position = CGPoint(x: 374 + 110, y: 250 + 110)
-                self.boardLayer.addSublayer(boardPicker.animLayer)
             }
             
             VideoMaker.makeVideo(framerate: self.frameInterval,
                                  frameInterval: self.frameInterval,
                                  duration: self.totalDuration,
                                  size: self.size,
-                                 audioPath: Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")) { currentFrame, _, _ in
-                
-                self.solitaireView.update(currentFrame)
-                bgPicker.update(currentFrame)
-                boardPicker.update(currentFrame)
-                
-                return [
-                    self.bgView.layer,
-                    bgPicker.animLayer,
-                    self.boardLayer,
-                    self.solitaireView.layer
-                ]
-                
-            } completion: { result in
-                
-                self.boardLayer.sublayers?.forEach { $0.removeFromSuperlayer() }
-                
+                                 audioPath: audioPath,
+                                 animLayer: animLayer,
+                                 imageStores: [store1, store2]) { result in
                 switch result {
                 case let .success(path):
                     JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
@@ -146,7 +126,6 @@ class ImageVideoViewController: TestBaseViewController {
                 self.isMaking = false
             }
         }
-        
     }
     
     @objc func playVideo() {

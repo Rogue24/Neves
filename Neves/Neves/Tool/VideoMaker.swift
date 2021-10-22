@@ -40,6 +40,21 @@ class VideoMaker {
 }
 
 extension VideoMaker {
+    static func createVideoWriterInput(frameInterval: Int, size: CGSize) -> AVAssetWriterInput {
+        let bitsPerSecond = 5000 * 1024
+        let settings: [String: Any] = [
+            AVVideoCodecKey: AVVideoCodecType.h264,
+            AVVideoWidthKey: size.width,
+            AVVideoHeightKey: size.height,
+            AVVideoCompressionPropertiesKey: [
+                AVVideoAverageBitRateKey: bitsPerSecond,
+                AVVideoMaxKeyFrameIntervalKey: frameInterval,
+                AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel,
+            ]
+        ]
+        return AVAssetWriterInput(mediaType: .video, outputSettings: settings)
+    }
+    
     static func createPixelBufferWithImage(_ image: UIImage, pixelBufferPool: CVPixelBufferPool? = nil, size: CGSize) -> CVPixelBuffer? {
         guard let cgImage = image.cgImage else {
             return nil

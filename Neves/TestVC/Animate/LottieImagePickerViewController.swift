@@ -21,6 +21,10 @@ class LottieImagePickerViewController: TestBaseViewController {
     
     var isPicking = false
     
+    var s1: LottieImageStore?
+    var s2: LottieImageStore?
+    var s3: LottieImageStore?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -199,6 +203,7 @@ class LottieImagePickerViewController: TestBaseViewController {
                         JPrint("写入错误 ---", url.path)
                     }
                 }
+                self.s1 = s1
             }
 
             let c2 = LottieImageStore.Configure(lottieName: "video_tx_jielong_lottie", imageSize: [720, 720], lottieSize: [220, 220]) { [374, 250, $1.width, $1.height] }
@@ -218,6 +223,7 @@ class LottieImagePickerViewController: TestBaseViewController {
                         JPrint("写入错误 ---", url.path)
                     }
                 }
+                self.s2 = s2
             }
             
 //            let c3 = LottieImageStore.Configure(lottieName: self.lottieName)
@@ -237,6 +243,7 @@ class LottieImagePickerViewController: TestBaseViewController {
 //                        JPrint("写入错误 ---", url.path)
 //                    }
 //                }
+//                self.s3 = s3
 //            }
             
             Asyncs.main { JPProgressHUD.dismiss() }
