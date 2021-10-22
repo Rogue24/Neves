@@ -24,7 +24,7 @@ class ImageVideoViewController: TestBaseViewController {
     let bgView = UIView()
     
     let boardLayer = CALayer()
-    lazy var solitaireView = SolitaireUserIconView(frameInterval: frameInterval)
+    lazy var solitaireView = SolitaireCalculationView(frameInterval: frameInterval)
     
     var isMaking = false
     

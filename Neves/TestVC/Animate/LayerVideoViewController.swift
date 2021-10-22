@@ -9,7 +9,6 @@ import UIKit
 import AVKit
 
 class LayerVideoViewController: TestBaseViewController {
-    
     static var videoPath: String? = nil
     
     let frameInterval: Int = 24
@@ -18,13 +17,14 @@ class LayerVideoViewController: TestBaseViewController {
     let duration: TimeInterval = 0.6
     let anim1Duration: TimeInterval = 6
     let anim2Duration: TimeInterval = 8
-    let anim3Duration: TimeInterval = 17
+    let anim3Duration: TimeInterval = 3//17
     lazy var totalDuration: TimeInterval = anim1Duration + anim2Duration + anim3Duration
     
     let bgView = UIView()
     
     let boardLayer = CALayer()
-    lazy var solitaireView = SolitaireUserIconView(frameInterval: frameInterval)
+    lazy var solitaireView = SolitaireCalculationView(frameInterval: frameInterval)
+    lazy var solitaireLayer = SolitaireAnimationLayer()
     
     var isMaking = false
     
@@ -82,9 +82,12 @@ class LayerVideoViewController: TestBaseViewController {
         JPrint("开始制作！")
         isMaking = true
         
+        let audioPath = Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")
+        
         let layer1 = bgView.layer
         let layer3 = boardLayer
-        let layer4 = solitaireView.layer
+//        let layer4 = solitaireView.layer
+        let layer5: VideoAnimationLayer? = solitaireLayer
         
 //        JPProgressHUD.show()
         Asyncs.async {
@@ -120,17 +123,18 @@ class LayerVideoViewController: TestBaseViewController {
                                  frameInterval: self.frameInterval,
                                  duration: self.totalDuration,
                                  size: self.size,
-                                 audioPath: Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")) { currentFrame, _, _ in
+                                 audioPath: audioPath,
+                                 animLayer: layer5) { currentFrame, currentTime, _ in
                 
                 self.solitaireView.update(currentFrame)
-                bgPicker.update(currentFrame)
-                boardPicker.update(currentFrame)
+                bgPicker.update(currentTime)
+                boardPicker.update(currentTime)
                 
                 return [
                     layer1,
                     layer2,
                     layer3,
-                    layer4
+//                    layer4
                 ]
                 
             } completion: { result in

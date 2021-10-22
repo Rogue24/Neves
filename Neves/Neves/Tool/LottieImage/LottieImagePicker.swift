@@ -7,38 +7,6 @@
 
 import UIKit
 
-class DecodeImageProvider: AnimationImageProvider {
-    let images: [String: CGImage]
-    let replacement: [String: CGImage]?
-    
-    init?(imageDirPath: String, imageReplacement: [String: CGImage]? = nil) {
-        guard File.manager.fileExists(imageDirPath) else {
-            JPrint("不存在图片文件夹！")
-            return nil
-        }
-        
-        guard let fileNames = try? FileManager.default.subpathsOfDirectory(atPath: imageDirPath) else {
-            JPrint("不存在图片！")
-            return nil
-        }
-        
-        var images: [String: CGImage] = [:]
-        for fileName in fileNames {
-            let imagePath = imageDirPath + "/\(fileName)"
-            guard let image = UIImage(contentsOfFile: imagePath),
-                  let cgImg = image.cgImage else { return nil }
-            images[fileName] = DecodeImage(cgImg) ?? cgImg
-        }
-        
-        self.images = images
-        self.replacement = imageReplacement
-    }
-    
-    func imageForAsset(asset: ImageAsset) -> CGImage? {
-        replacement.map { $0[asset.name] } ?? images[asset.name]
-    }
-}
-
 class LottieImagePicker {
     
     let pickQueue = DispatchQueue(label: "LottieImagePicker.SerialQueue")
@@ -103,7 +71,18 @@ class LottieImagePicker {
     
     func update(_ currentFrame: Int) {
         let totalFrame = Int(animTotalFrame)
-        animLayer.currentFrame = CGFloat(currentFrame % totalFrame)
+        animLayer.currentFrame = animStartFrame + CGFloat(currentFrame % totalFrame)
+        animLayer.display()
+    }
+    
+    func update(_ currentTime: TimeInterval) {
+        var fixTime = currentTime
+        if currentTime > animDuration {
+            let pe = Int(currentTime / animDuration)
+            fixTime -= animDuration * TimeInterval(pe)
+        }
+        let progress: CGFloat = fixTime / animDuration
+        animLayer.currentFrame = animStartFrame + animTotalFrame * progress
         animLayer.display()
     }
 }

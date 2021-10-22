@@ -1,11 +1,11 @@
 //
-//  SolitaireUserIconView.swift
+//  SolitaireCalculationView.swift
 //  Neves
 //
 //  Created by aa on 2021/10/19.
 //
 
-class SolitaireUserIconView: UIView {
+class SolitaireCalculationView: UIView {
     
     let userIcon1 = UIImageView()
     let userIcon2 = UIImageView()

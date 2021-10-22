@@ -40,31 +40,47 @@ class VideoMaker {
 }
 
 extension VideoMaker {
-    static func createPixelBufferWithImage(_ image: UIImage, size: CGSize) -> CVPixelBuffer? {
+    static func createPixelBufferWithImage(_ image: UIImage, pixelBufferPool: CVPixelBufferPool? = nil, size: CGSize) -> CVPixelBuffer? {
         guard let cgImage = image.cgImage else {
             return nil
         }
         
-        var keyCallBacks = kCFTypeDictionaryKeyCallBacks
-        var valCallBacks = kCFTypeDictionaryValueCallBacks
-        guard let empty = CFDictionaryCreate(kCFAllocatorDefault, nil, nil, 0, &keyCallBacks, &valCallBacks) else {
-            return nil
-        }
         
-        let options: [CFString: Any] = [
-            kCVPixelBufferCGImageCompatibilityKey: true,
-            kCVPixelBufferCGBitmapContextCompatibilityKey: true,
-            kCVPixelBufferIOSurfacePropertiesKey: empty,
-        ]
         
         var pixelBuffer: CVPixelBuffer? = nil
         // 创建 pixel buffer
-        let status = CVPixelBufferCreate(kCFAllocatorDefault,
+        let status: CVReturn
+        if let pixelBufferPool = pixelBufferPool {
+//            status = CVPixelBufferPoolCreatePixelBufferWithAuxAttributes(
+//                            kCFAllocatorDefault,
+//                            pixelBufferPool,
+//                            options as CFDictionary,
+//                            &pixelBuffer
+//                        )
+            status = CVPixelBufferPoolCreatePixelBuffer(
+                            kCFAllocatorDefault,
+                            pixelBufferPool,
+                            &pixelBuffer
+                        )
+        } else {
+            var keyCallBacks = kCFTypeDictionaryKeyCallBacks
+            var valCallBacks = kCFTypeDictionaryValueCallBacks
+            guard let empty = CFDictionaryCreate(kCFAllocatorDefault, nil, nil, 0, &keyCallBacks, &valCallBacks) else {
+                return nil
+            }
+            let attributes: [CFString: Any] = [
+                kCVPixelBufferCGImageCompatibilityKey: true,
+                kCVPixelBufferCGBitmapContextCompatibilityKey: true,
+                kCVPixelBufferIOSurfacePropertiesKey: empty,
+            ]
+            
+            status = CVPixelBufferCreate(kCFAllocatorDefault,
                                          Int(size.width),
                                          Int(size.height),
                                          kCVPixelFormatType_32BGRA,
-                                         options as CFDictionary,
+                                         attributes as CFDictionary,
                                          &pixelBuffer)
+        }
         guard status == kCVReturnSuccess, let pixelBuffer = pixelBuffer else {
             return nil
         }

@@ -7,6 +7,10 @@
 
 import AVFoundation
 
+protocol VideoAnimationLayer: CALayer {
+    func addAnimate()
+}
+
 extension VideoMaker {
     static func createVideoWriterInput(frameInterval: Int, size: CGSize) -> AVAssetWriterInput {
         let bitsPerSecond = 5000 * 1024
@@ -29,6 +33,7 @@ extension VideoMaker {
                           duration: TimeInterval,
                           size: CGSize,
                           audioPath: String? = nil,
+                          animLayer: VideoAnimationLayer? = nil,
                           layerProvider: @escaping LayerProvider,
                           completion: @escaping Completion) {
         
@@ -63,7 +68,20 @@ extension VideoMaker {
         videoWriter.shouldOptimizeForNetworkUse = false
         
         let writerInput = createVideoWriterInput(frameInterval: frameInterval, size: size)
-        let adaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes: nil)
+        
+        var keyCallBacks = kCFTypeDictionaryKeyCallBacks
+        var valCallBacks = kCFTypeDictionaryValueCallBacks
+        guard let empty = CFDictionaryCreate(kCFAllocatorDefault, nil, nil, 0, &keyCallBacks, &valCallBacks) else {
+            Asyncs.main { completion(.failure(.writerError)) }
+            return
+        }
+        let attributes: [CFString: Any] = [
+            kCVPixelBufferPixelFormatTypeKey: kCVPixelFormatType_32BGRA,
+            kCVPixelBufferCGImageCompatibilityKey: true,
+            kCVPixelBufferCGBitmapContextCompatibilityKey: true,
+            kCVPixelBufferIOSurfacePropertiesKey: empty
+        ]
+        let adaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput, sourcePixelBufferAttributes: attributes as [String: Any])
         
         guard videoWriter.canAdd(writerInput) else {
             Asyncs.main { completion(.failure(.writerError)) }
@@ -82,7 +100,7 @@ extension VideoMaker {
         let totalFrame = framerate * Int(duration)
         let frameCount = frameInterval * Int(duration)
         
-        var lastFrame: Int = 0
+        var lastFrame: Int = -1
         var lastPixelBuffer: CVPixelBuffer? = nil
         
         for i in 0 ... frameCount {
@@ -115,7 +133,7 @@ extension VideoMaker {
                 return
             }
             
-            ctx.saveGState()
+//            ctx.saveGState()
             var layers: [CALayer?] = []
             DispatchQueue.main.sync {
                 layers = layerProvider(currentFrame, currentTime, size)
@@ -126,10 +144,13 @@ extension VideoMaker {
             }
             let image = UIGraphicsGetImageFromCurrentImageContext()
             ctx.clear(CGRect(origin: .zero, size: size))
-            ctx.restoreGState()
+//            ctx.restoreGState()
             
             let pixelBuffer: CVPixelBuffer
-            if let image = image, let pb = createPixelBufferWithImage(image, size: size) {
+            if let image = image,
+               let pb = createPixelBufferWithImage(image,
+                                                   pixelBufferPool: adaptor.pixelBufferPool,
+                                                   size: size) {
                 lastPixelBuffer = pb
                 pixelBuffer = pb
             } else {
@@ -205,6 +226,39 @@ extension VideoMaker {
             return
         }
         
+        var videoComposition: AVMutableVideoComposition?
+        if let animLayer = animLayer {
+            let layerInstruciton = AVMutableVideoCompositionLayerInstruction(assetTrack: videoTrack)
+            
+            let instruction = AVMutableVideoCompositionInstruction()
+            instruction.timeRange = CMTimeRange(start: .zero, duration: videoDuration)
+            instruction.layerInstructions = [layerInstruciton]
+            
+            let composition = AVMutableVideoComposition()
+            composition.instructions = [instruction]
+            composition.frameDuration = CMTime(value: 1, timescale: timescale)
+            composition.renderScale = 1
+            composition.renderSize = size
+            
+            // 视频layer
+            let videoLayer = CALayer()
+            videoLayer.frame = CGRect(origin: .zero, size: size)
+            videoLayer.addSublayer(animLayer)
+            
+            // 父layer
+            let parentLayer = CALayer()
+            parentLayer.frame = CGRect(origin: .zero, size: size)
+            parentLayer.contentsScale = 1
+            parentLayer.isGeometryFlipped = true
+            parentLayer.addSublayer(videoLayer)
+            
+            // 将合成的parentLayer关联到composition中
+            composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+            
+            animLayer.addAnimate()
+            videoComposition = composition
+        }
+        
         guard let exportSession = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else {
             File.manager.deleteFile(videoPath)
             Asyncs.main { completion(.failure(.writerError)) }
@@ -213,6 +267,7 @@ extension VideoMaker {
         exportSession.outputFileType = .mp4
         exportSession.outputURL = URL(fileURLWithPath: cachePath)
         exportSession.shouldOptimizeForNetworkUse = true
+        exportSession.videoComposition = videoComposition
         
         exportSession.exportAsynchronously {
             File.manager.deleteFile(videoPath)

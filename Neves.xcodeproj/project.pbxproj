@@ -160,7 +160,7 @@
 		7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */; };
 		71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */; };
 		71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107432271E63B000178969 /* SolitaireCalculationViewController.swift */; };
-		71107435271E930C00178969 /* SolitaireUserIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107434271E930C00178969 /* SolitaireUserIconView.swift */; };
+		71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107434271E930C00178969 /* SolitaireCalculationView.swift */; };
 		71107437271E956100178969 /* VideoMaker.Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107436271E956100178969 /* VideoMaker.Layer.swift */; };
 		71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107438271EA81300178969 /* LayerVideoViewController.swift */; };
 		7110743D271ECA4800178969 /* voices.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7110743C271ECA4800178969 /* voices.m4a */; };
@@ -188,11 +188,14 @@
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
+		718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018BF2722611A0056E699 /* LottieImagePicker.swift */; };
+		718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C1272261370056E699 /* DecodeImageProvider.swift */; };
+		718018C4272261970056E699 /* LottieImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C3272261970056E699 /* LottieImageStore.swift */; };
+		718018C627228A830056E699 /* Syncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C527228A830056E699 /* Syncs.swift */; };
 		718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E226A0111F00080316 /* MagicCubeViewController.swift */; };
 		718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E526A0115100080316 /* MagicCubeSuspendView.swift */; };
 		718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E726A0116400080316 /* MagicCubeBubbleView.swift */; };
 		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
-		7190E4E6271037F700E8C511 /* LottieImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190E4E5271037F700E8C511 /* LottieImagePicker.swift */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
 		719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */; };
@@ -202,6 +205,7 @@
 		71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */; };
 		71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
+		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
 		71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E426F052B300DB3A7A /* TurntableViewController.swift */; };
 		71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E626F06FCC00DB3A7A /* TurntableView.swift */; };
 		71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */; };
@@ -420,7 +424,7 @@
 		7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationViewController.swift; sourceTree = "<group>"; };
 		71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitairePopAnimationViewController.swift; sourceTree = "<group>"; };
 		71107432271E63B000178969 /* SolitaireCalculationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireCalculationViewController.swift; sourceTree = "<group>"; };
-		71107434271E930C00178969 /* SolitaireUserIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireUserIconView.swift; sourceTree = "<group>"; };
+		71107434271E930C00178969 /* SolitaireCalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireCalculationView.swift; sourceTree = "<group>"; };
 		71107436271E956100178969 /* VideoMaker.Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Layer.swift; sourceTree = "<group>"; };
 		71107438271EA81300178969 /* LayerVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerVideoViewController.swift; sourceTree = "<group>"; };
 		7110743C271ECA4800178969 /* voices.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = voices.m4a; sourceTree = "<group>"; };
@@ -450,11 +454,14 @@
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
 		717E8B7A26DDF44E000E3E9F /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+		718018BF2722611A0056E699 /* LottieImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieImagePicker.swift; sourceTree = "<group>"; };
+		718018C1272261370056E699 /* DecodeImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeImageProvider.swift; sourceTree = "<group>"; };
+		718018C3272261970056E699 /* LottieImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImageStore.swift; sourceTree = "<group>"; };
+		718018C527228A830056E699 /* Syncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syncs.swift; sourceTree = "<group>"; };
 		718874E226A0111F00080316 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
 		718874E526A0115100080316 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		718874E726A0116400080316 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
 		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
-		7190E4E5271037F700E8C511 /* LottieImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePicker.swift; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
 		719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleView.swift; sourceTree = "<group>"; };
@@ -465,6 +472,7 @@
 		71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Publisher的share图示.jpg"; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
+		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
 		71BC27E426F052B300DB3A7A /* TurntableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewController.swift; sourceTree = "<group>"; };
 		71BC27E626F06FCC00DB3A7A /* TurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableView.swift; sourceTree = "<group>"; };
 		71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableView.Calculate.swift; sourceTree = "<group>"; };
@@ -701,12 +709,13 @@
 			children = (
 				005DF54325652EDB0010E772 /* File.swift */,
 				1A3543CE254E775F0032B677 /* Asyncs.swift */,
+				718018C527228A830056E699 /* Syncs.swift */,
 				00965D5B25CBF4DD00B7BB9C /* Done.swift */,
-				7190E4E5271037F700E8C511 /* LottieImagePicker.swift */,
 				7170BF122701CA2000900BE7 /* VideoMaker.swift */,
 				7110742C27196B8200178969 /* VideoMaker.Image.swift */,
 				7110742A271968D700178969 /* VideoMaker.Lottie.swift */,
 				71107436271E956100178969 /* VideoMaker.Layer.swift */,
+				718018BE2722611A0056E699 /* LottieImage */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -916,10 +925,11 @@
 			children = (
 				7110743E271ED4D400178969 /* ImageVideoViewController.swift */,
 				71107438271EA81300178969 /* LayerVideoViewController.swift */,
-				71107434271E930C00178969 /* SolitaireUserIconView.swift */,
+				71107434271E930C00178969 /* SolitaireCalculationView.swift */,
 				71107432271E63B000178969 /* SolitaireCalculationViewController.swift */,
-				71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */,
+				71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */,
 				7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */,
+				71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */,
 				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
 				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */,
@@ -1196,6 +1206,16 @@
 			path = RelationshipPlanet;
 			sourceTree = "<group>";
 		};
+		718018BE2722611A0056E699 /* LottieImage */ = {
+			isa = PBXGroup;
+			children = (
+				718018C1272261370056E699 /* DecodeImageProvider.swift */,
+				718018BF2722611A0056E699 /* LottieImagePicker.swift */,
+				718018C3272261970056E699 /* LottieImageStore.swift */,
+			);
+			path = LottieImage;
+			sourceTree = "<group>";
+		};
 		718874E426A0112700080316 /* MagicCube */ = {
 			isa = PBXGroup;
 			children = (
@@ -1424,9 +1444,10 @@
 				718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
-				71107435271E930C00178969 /* SolitaireUserIconView.swift in Sources */,
+				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
+				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
 				0049E970254FA7E200878F44 /* MarebulabulasManager.swift in Sources */,
 				718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */,
 				1A35452A254E77600032B677 /* Test1ViewController.swift in Sources */,
@@ -1436,6 +1457,7 @@
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
 				1A354541254E77600032B677 /* FireworkModel.swift in Sources */,
 				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
+				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				1A354531254E77600032B677 /* FileEffectViewController.swift in Sources */,
 				007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */,
@@ -1462,10 +1484,12 @@
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */,
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
+				71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */,
 				1A354523254E77600032B677 /* JPFileTool.m in Sources */,
 				1A354536254E77600032B677 /* FireworkController.swift in Sources */,
 				0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */,
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
+				718018C627228A830056E699 /* Syncs.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
@@ -1520,7 +1544,6 @@
 				1A354534254E77600032B677 /* Firework.TestData.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
-				7190E4E6271037F700E8C511 /* LottieImagePicker.swift in Sources */,
 				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
 				1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */,
@@ -1542,6 +1565,7 @@
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
+				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
 				1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */,
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,

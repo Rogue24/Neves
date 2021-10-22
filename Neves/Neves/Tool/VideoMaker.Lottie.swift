@@ -11,7 +11,8 @@ extension VideoMaker {
         Asyncs.async {
             
             let framerate = Int(picker.animFramerate)
-            let frameInterval = framerate / 2
+            let frameInterval = framerate
+//            let frameInterval = framerate / 2
             let duration = picker.animDuration
             let animLayer = picker.animLayer
             let size = animLayer.frame.size
