@@ -136,9 +136,15 @@ extension VideoMaker {
                 return
             }
             
-//            ctx.saveGState()
-                            
+            if let girl = UIImage(contentsOfFile: Bundle.main.path(forResource: "girl", ofType: "jpg")!) {
+                if girl.size.width > girl.size.height {
+                    girl.draw(in: [HalfDiffValue(size.width, girl.size.width), 0, size.height * (girl.size.width / girl.size.height), size.height])
+                } else {
+                    girl.draw(in: [0, HalfDiffValue(size.height, girl.size.height), size.width, size.width * (girl.size.height / girl.size.width)])
+                }
+            }
             UIImage(named: "album_videobg_jielong")?.draw(in: CGRect(origin: .zero, size: size))
+            
             for store in imageStores {
                 guard let image = store.getImage(currentTime) else {
                     continue
@@ -149,9 +155,7 @@ extension VideoMaker {
                 image.draw(in: CGRect(origin: .zero, size: size))
             }
             let image = UIGraphicsGetImageFromCurrentImageContext()
-            
             ctx.clear(CGRect(origin: .zero, size: size))
-//            ctx.restoreGState()
             
             let pixelBuffer: CVPixelBuffer
             if let image = image,
