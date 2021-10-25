@@ -103,6 +103,7 @@ class ImageVideoViewController: TestBaseViewController {
                 return
             }
             
+//            VideoMaker.makeVideoTest(framerate: self.frameInterval,
             VideoMaker.makeVideo(framerate: self.frameInterval,
                                  frameInterval: self.frameInterval,
                                  duration: self.totalDuration,

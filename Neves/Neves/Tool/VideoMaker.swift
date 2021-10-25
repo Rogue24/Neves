@@ -59,6 +59,10 @@ extension VideoMaker {
         guard let cgImage = image.cgImage else {
             return nil
         }
+        return createPixelBufferWithImage(cgImage, pixelBufferPool: pixelBufferPool, size: size)
+    }
+    
+    static func createPixelBufferWithImage(_ cgImage: CGImage, pixelBufferPool: CVPixelBufferPool? = nil, size: CGSize) -> CVPixelBuffer? {
         
         var pixelBuffer: CVPixelBuffer? = nil
         // 创建 pixel buffer
@@ -76,15 +80,15 @@ extension VideoMaker {
                             &pixelBuffer
                         )
         } else {
-            var keyCallBacks = kCFTypeDictionaryKeyCallBacks
-            var valCallBacks = kCFTypeDictionaryValueCallBacks
-            guard let empty = CFDictionaryCreate(kCFAllocatorDefault, nil, nil, 0, &keyCallBacks, &valCallBacks) else {
-                return nil
-            }
+//            var keyCallBacks = kCFTypeDictionaryKeyCallBacks
+//            var valCallBacks = kCFTypeDictionaryValueCallBacks
+//            guard let empty = CFDictionaryCreate(kCFAllocatorDefault, nil, nil, 0, &keyCallBacks, &valCallBacks) else {
+//                return nil
+//            }
             let attributes: [CFString: Any] = [
                 kCVPixelBufferCGImageCompatibilityKey: true,
                 kCVPixelBufferCGBitmapContextCompatibilityKey: true,
-                kCVPixelBufferIOSurfacePropertiesKey: empty,
+//                kCVPixelBufferIOSurfacePropertiesKey: empty,
             ]
             
             status = CVPixelBufferCreate(kCFAllocatorDefault,
