@@ -136,43 +136,41 @@ extension VideoMaker {
                 return
             }
             
-            if let girl = UIImage(contentsOfFile: Bundle.main.path(forResource: "girl", ofType: "jpg")!) {
-                if girl.size.width > girl.size.height {
+            autoreleasepool {
+                if let girl = UIImage(contentsOfFile: Bundle.main.path(forResource: "girl", ofType: "jpg")!) {
                     girl.draw(in: [HalfDiffValue(size.width, girl.size.width), 0, size.height * (girl.size.width / girl.size.height), size.height])
-                } else {
-                    girl.draw(in: [0, HalfDiffValue(size.height, girl.size.height), size.width, size.width * (girl.size.height / girl.size.width)])
                 }
-            }
-            UIImage(named: "album_videobg_jielong")?.draw(in: CGRect(origin: .zero, size: size))
-            
-            for store in imageStores {
-                guard let image = store.getImage(currentTime) else {
-                    continue
+                UIImage(named: "album_videobg_jielong")?.draw(in: CGRect(origin: .zero, size: size))
+                
+                for store in imageStores {
+                    guard let image = store.getImage(currentTime) else {
+                        continue
+                    }
+//                    guard let image = store.getImage(currentFrame) else {
+//                        continue
+//                    }
+                    image.draw(in: CGRect(origin: .zero, size: size))
                 }
-//                guard let image = store.getImage(currentFrame) else {
-//                    continue
-//                }
-                image.draw(in: CGRect(origin: .zero, size: size))
-            }
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            ctx.clear(CGRect(origin: .zero, size: size))
-            
-            let pixelBuffer: CVPixelBuffer
-            if let image = image,
-               let pb = createPixelBufferWithImage(image,
-                                                   pixelBufferPool: adaptor.pixelBufferPool,
-                                                   size: size) {
-                lastPixelBuffer = pb
-                pixelBuffer = pb
-            } else {
-                pixelBuffer = lastPixelBuffer ?? {
-                    let pb = createPixelBufferWithImage(UIImage.jp_createImage(with: .black), size: size)!
+                let image = UIGraphicsGetImageFromCurrentImageContext()
+                ctx.clear(CGRect(origin: .zero, size: size))
+                
+                let pixelBuffer: CVPixelBuffer
+                if let image = image,
+                   let pb = createPixelBufferWithImage(image,
+                                                       pixelBufferPool: adaptor.pixelBufferPool,
+                                                       size: size) {
                     lastPixelBuffer = pb
-                    return pb
-                }()
+                    pixelBuffer = pb
+                } else {
+                    pixelBuffer = lastPixelBuffer ?? {
+                        let pb = createPixelBufferWithImage(UIImage.jp_createImage(with: .black), size: size)!
+                        lastPixelBuffer = pb
+                        return pb
+                    }()
+                }
+                let frameTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
+                adaptor.append(pixelBuffer, withPresentationTime: frameTime)
             }
-            let frameTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
-            adaptor.append(pixelBuffer, withPresentationTime: frameTime)
         }
         
         writerInput.markAsFinished()
