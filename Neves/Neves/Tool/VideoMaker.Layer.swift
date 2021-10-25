@@ -133,35 +133,35 @@ extension VideoMaker {
                 return
             }
             
-//            ctx.saveGState()
             var layers: [CALayer?] = []
             DispatchQueue.main.sync {
                 layers = layerProvider(currentFrame, currentTime, size)
             }
-            layers.forEach {
-                guard let layer = $0 else { return }
-                layer.render(in: ctx)
-            }
-            let image = UIGraphicsGetImageFromCurrentImageContext()
-            ctx.clear(CGRect(origin: .zero, size: size))
-//            ctx.restoreGState()
-            
-            let pixelBuffer: CVPixelBuffer
-            if let image = image,
-               let pb = createPixelBufferWithImage(image,
-                                                   pixelBufferPool: adaptor.pixelBufferPool,
-                                                   size: size) {
-                lastPixelBuffer = pb
-                pixelBuffer = pb
-            } else {
-                pixelBuffer = lastPixelBuffer ?? {
-                    let pb = createPixelBufferWithImage(UIImage.jp_createImage(with: .black), size: size)!
+            autoreleasepool {
+                layers.forEach {
+                    guard let layer = $0 else { return }
+                    layer.render(in: ctx)
+                }
+                let image = UIGraphicsGetImageFromCurrentImageContext()
+                ctx.clear(CGRect(origin: .zero, size: size))
+                
+                let pixelBuffer: CVPixelBuffer
+                if let image = image,
+                   let pb = createPixelBufferWithImage(image,
+                                                       pixelBufferPool: adaptor.pixelBufferPool,
+                                                       size: size) {
                     lastPixelBuffer = pb
-                    return pb
-                }()
+                    pixelBuffer = pb
+                } else {
+                    pixelBuffer = lastPixelBuffer ?? {
+                        let pb = createPixelBufferWithImage(UIImage.jp_createImage(with: .black), size: size)!
+                        lastPixelBuffer = pb
+                        return pb
+                    }()
+                }
+                let frameTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
+                adaptor.append(pixelBuffer, withPresentationTime: frameTime)
             }
-            let frameTime = CMTime(value: CMTimeValue(currentFrame), timescale: timescale)
-            adaptor.append(pixelBuffer, withPresentationTime: frameTime)
         }
         
         writerInput.markAsFinished()
