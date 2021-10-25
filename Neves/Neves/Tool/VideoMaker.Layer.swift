@@ -51,7 +51,7 @@ extension VideoMaker {
             return
         }
         
-        videoWriter.shouldOptimizeForNetworkUse = false
+        videoWriter.shouldOptimizeForNetworkUse = true
         
         let writerInput = createVideoWriterInput(frameInterval: frameInterval, size: size)
         

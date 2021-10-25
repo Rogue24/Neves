@@ -35,7 +35,7 @@ extension VideoMaker {
             }
             return
         }
-        JPrint("makeVideo", Thread.current)
+//        JPrint("makeVideo", Thread.current)
         
         UIGraphicsBeginImageContextWithOptions(size, false, 1)
         defer { UIGraphicsEndImageContext() }
@@ -53,7 +53,7 @@ extension VideoMaker {
             return
         }
         
-        videoWriter.shouldOptimizeForNetworkUse = false
+        videoWriter.shouldOptimizeForNetworkUse = true
         
         let writerInput = createVideoWriterInput(frameInterval: frameInterval, size: size)
         
