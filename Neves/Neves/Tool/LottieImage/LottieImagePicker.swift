@@ -71,18 +71,21 @@ class LottieImagePicker {
     
     func update(_ currentFrame: Int) {
         let totalFrame = Int(animTotalFrame)
-        animLayer.currentFrame = animStartFrame + CGFloat(currentFrame % totalFrame)
+        var fixFrame = CGFloat(currentFrame % totalFrame)
+        if fixFrame == 0 {
+            fixFrame = currentFrame == 0 ? 0 : animTotalFrame
+        }
+        animLayer.currentFrame = animStartFrame + fixFrame
         animLayer.display()
     }
     
     func update(_ currentTime: TimeInterval) {
         var fixTime = currentTime
         if currentTime > animDuration {
-            let pe = Int(currentTime / animDuration)
-            fixTime -= animDuration * TimeInterval(pe)
+            let multiple = Int(currentTime / animDuration)
+            fixTime -= animDuration * TimeInterval(multiple)
         }
-        let progress: CGFloat = fixTime / animDuration
-        animLayer.currentFrame = animStartFrame + animTotalFrame * progress
+        animLayer.currentFrame = animStartFrame + fixTime * animFramerate
         animLayer.display()
     }
 }

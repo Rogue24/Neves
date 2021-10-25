@@ -85,29 +85,38 @@ extension VideoMaker {
         JPrint("startSession", Thread.current) // 卡顿所在
         
         let timescale = CMTimeScale(framerate)
+        let fps: CGFloat = 1.0 / CGFloat(frameInterval)
         
         let totalFrame = framerate * Int(duration)
         let frameCount = frameInterval * Int(duration)
         
-//        var lastFrame: Int = -1
+        var lastFrame: Int = -1
+        var lastTime: CGFloat = -1
         var lastPixelBuffer: CVPixelBuffer? = nil
-        
-        let fps: CGFloat = 1.0 / CGFloat(frameInterval)
         
         for i in 0 ... frameCount {
             // framerate和frameInterval不一样的情况，该处理有待考量
-//            let progress = CGFloat(i) / CGFloat(frameCount)
-//            let currentFrame = Int(CGFloat(totalFrame) * progress)
-//            let currentTime = duration * progress
-//
-//            // 这里会有一定概率出现错误：Code=-11800 "The operation could not be completed"
-//            // 这是因为写入了相同的currentFrame造成的，所以要这里做判断，相同就跳过
-//            if lastFrame == currentFrame { continue }
-//            lastFrame = currentFrame
-            
-            // framerate和frameInterval一样的情况（暂时写死该情况，完善制作后再优化）
-            let currentFrame = i
+            let currentFrame: Int
+            if framerate == frameInterval {
+                currentFrame = i
+            } else {
+                let progress = CGFloat(i) / CGFloat(frameCount)
+                currentFrame = Int(round(Double(totalFrame) * progress))
+            }
             let currentTime = CGFloat(currentFrame) * fps
+            
+            if lastTime == currentTime {
+                JPrint("这两个时间一样 lastTime", lastTime, ", currentTime", currentTime)
+            }
+            lastTime = currentTime
+            
+            // 这里会有一定概率出现错误：Code=-11800 "The operation could not be completed"
+            // 这是因为写入了相同的currentFrame造成的，所以要这里做判断，相同就跳过
+            if lastFrame == currentFrame {
+                JPrint("这两个frame一样 lastFrame", lastFrame, ", currentFrame", currentFrame)
+                continue
+            }
+            lastFrame = currentFrame
             
             while true {
                 if adaptor.assetWriterInput.isReadyForMoreMediaData ||
@@ -134,6 +143,9 @@ extension VideoMaker {
                 guard let image = store.getImage(currentTime) else {
                     continue
                 }
+//                guard let image = store.getImage(currentFrame) else {
+//                    continue
+//                }
                 image.draw(in: CGRect(origin: .zero, size: size))
             }
             let image = UIGraphicsGetImageFromCurrentImageContext()

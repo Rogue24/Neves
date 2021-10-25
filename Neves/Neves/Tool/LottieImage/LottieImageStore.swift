@@ -47,6 +47,8 @@ class LottieImageStore {
         self.duration = duration
     }
     
+//    var lastFrame: Int = -1
+//    var lastTime: CGFloat = -1
 }
 
 extension LottieImageStore {
@@ -206,21 +208,28 @@ private extension LottieImageStore {
 
 extension LottieImageStore: VideoImageStore {
     func getImage(_ currentFrame: Int) -> UIImage? {
-        if let image = imageMap[startFrame + currentFrame] {
+        var fixFrame = currentFrame % totalFrame
+        if fixFrame == 0 {
+            fixFrame = currentFrame == 0 ? 0 : totalFrame
+        }
+        
+//        let diff = abs(lastFrame - fixFrame)
+//        if diff > 1 {
+//            JPrint("不是相差1帧？？？相差", diff, ", lastFrame", lastFrame, ", fixFrame", fixFrame, ", currentFrame", currentFrame)
+//        }
+//        lastFrame = fixFrame
+        
+        if let image = imageMap[startFrame + fixFrame] {
             return image
         }
-        JPrint("木有这个currentFrame", currentFrame, "--- totalFrame", totalFrame)
+        
+        JPrint("没有这一帧 fixFrame", fixFrame, ", totalFrame", totalFrame)
         return nil
     }
     
     func getImage(_ currentTime: TimeInterval) -> UIImage? {
-        var fixTime = currentTime
-        if currentTime > duration {
-            let pe = Int(currentTime / duration)
-            fixTime -= duration * TimeInterval(pe)
-        }
-        let progress: CGFloat = fixTime / duration
-        let currentFrame = Int(CGFloat(totalFrame) * progress)
+        // round 四舍五入
+        let currentFrame = Int(round(currentTime * Double(framerate)))
         return getImage(currentFrame)
     }
 }

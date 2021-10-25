@@ -927,10 +927,10 @@
 			isa = PBXGroup;
 			children = (
 				7110743E271ED4D400178969 /* ImageVideoViewController.swift */,
+				71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */,
 				71107438271EA81300178969 /* LayerVideoViewController.swift */,
 				71107434271E930C00178969 /* SolitaireCalculationView.swift */,
 				71107432271E63B000178969 /* SolitaireCalculationViewController.swift */,
-				71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */,
 				7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */,
 				71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */,
 				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
