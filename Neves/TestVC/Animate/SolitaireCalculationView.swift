@@ -16,7 +16,7 @@ class SolitaireCalculationView: UIView {
     let duration: TimeInterval = 0.6
     let anim1Duration: TimeInterval = 6
     let anim2Duration: TimeInterval = 8
-    let anim3Duration: TimeInterval = 17
+    let anim3Duration: TimeInterval = 5//17
     lazy var totalDuration: TimeInterval = anim1Duration + anim2Duration + anim3Duration
     
     let frameInterval: Int

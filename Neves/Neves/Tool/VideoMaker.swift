@@ -60,8 +60,6 @@ extension VideoMaker {
             return nil
         }
         
-        
-        
         var pixelBuffer: CVPixelBuffer? = nil
         // 创建 pixel buffer
         let status: CVReturn
