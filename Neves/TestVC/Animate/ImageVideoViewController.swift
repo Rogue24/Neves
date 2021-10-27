@@ -83,7 +83,7 @@ class ImageVideoViewController: TestBaseViewController {
         let audioPath = Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")
         let animLayer = solitaireLayer
         
-//        JPProgressHUD.show()
+        JPProgressHUD.show(true)
         Asyncs.async {
             guard let store1 = LottieImageStore.createStore(configure: LottieImageStore.Configure(lottieName: "album_videobg_jielong_lottie", imageSize: self.size)) else {
                 Asyncs.main {

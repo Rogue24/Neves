@@ -28,6 +28,9 @@ class LayerVideoViewController: TestBaseViewController {
     
     var isMaking = false
     
+    let player = AVPlayer()
+    let playerLayer = AVPlayerLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,6 +73,14 @@ class LayerVideoViewController: TestBaseViewController {
         textView.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
         view.addSubview(textView)
         
+        player.automaticallyWaitsToMinimizeStalling = false
+        playerLayer.player = player
+        playerLayer.videoGravity = .resizeAspect
+        let w: CGFloat = PortraitScreenWidth - 40
+        let h: CGFloat = w * (9.0 / 16.0)
+        playerLayer.frame = [HalfDiffValue(PortraitScreenWidth, w), textView.maxY + 20, w, h]
+        playerLayer.backgroundColor = UIColor.randomColor.cgColor
+        view.layer.addSublayer(playerLayer)
     }
     
     
@@ -84,12 +95,12 @@ class LayerVideoViewController: TestBaseViewController {
         
         let audioPath = Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")
         
-        let layer1 = bgView.layer
-        let layer3 = boardLayer
-//        let layer4 = solitaireView.layer
-        let layer5: VideoAnimationLayer? = solitaireLayer
+        let bgImgLayer = bgView.layer
+        let boardLayer = self.boardLayer
+//        let solitaireLayer = solitaireView.layer
+        let animLayer: VideoAnimationLayer? = solitaireLayer
         
-//        JPProgressHUD.show()
+        JPProgressHUD.show(true)
         Asyncs.async {
             guard let bgPicker = LottieImagePicker(lottieName: "album_videobg_jielong_lottie",
                                                    animSize: self.size) else {
@@ -111,12 +122,12 @@ class LayerVideoViewController: TestBaseViewController {
                 return
             }
             
-            var layer2: CALayer?
+            var bgPickerLayer: CALayer?
             DispatchQueue.main.sync {
-                layer2 = bgPicker.animLayer
+                bgPickerLayer = bgPicker.animLayer
                 
                 boardPicker.animLayer.position = CGPoint(x: 374 + 110, y: 250 + 110)
-                self.boardLayer.addSublayer(boardPicker.animLayer)
+                boardLayer.addSublayer(boardPicker.animLayer)
             }
             
             VideoMaker.makeVideo(framerate: self.frameInterval,
@@ -124,17 +135,17 @@ class LayerVideoViewController: TestBaseViewController {
                                  duration: self.totalDuration,
                                  size: self.size,
                                  audioPath: audioPath,
-                                 animLayer: layer5) { currentFrame, currentTime, _ in
+                                 animLayer: animLayer) { currentFrame, currentTime, _ in
                 
-                self.solitaireView.update(currentFrame)
+//                self.solitaireView.update(currentFrame)
                 bgPicker.update(currentTime)
                 boardPicker.update(currentTime)
                 
                 return [
-                    layer1,
-                    layer2,
-                    layer3,
-//                    layer4
+                    bgImgLayer,
+                    bgPickerLayer,
+                    boardLayer,
+//                    solitaireLayer
                 ]
                 
             } completion: { result in
@@ -161,16 +172,37 @@ class LayerVideoViewController: TestBaseViewController {
     }
     
     @objc func playVideo() {
+//        guard !isMaking else {
+//            JPrint("已经在制作！别动！")
+//            return
+//        }
+//
+//        guard let videoPath = Self.videoPath else {
+//            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+//            return
+//        }
+//
+//        Play(videoPath)
+        
         guard !isMaking else {
             JPrint("已经在制作！别动！")
             return
         }
         
+        player.pause()
+        player.currentItem?.cancelPendingSeeks()
+        player.currentItem?.asset.cancelLoading()
+
         guard let videoPath = Self.videoPath else {
             JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
             return
         }
         
-        Play(videoPath)
+        let videoURL = URL(fileURLWithPath: videoPath)
+        let asset = AVURLAsset(url: videoURL)
+        let playerItem = AVPlayerItem(asset: asset)
+        
+        player.replaceCurrentItem(with: playerItem)
+        player.play()
     }
 }
