@@ -44,10 +44,6 @@
                 "vcCreateWay" : 2
             },
             {
-                "vcName": "MagicCubeViewController",
-                "vcCreateWay" : 0
-            },
-            {
                 "vcName": "TableViewAnimateController",
                 "vcCreateWay" : 0
             },
@@ -216,20 +212,19 @@
         ]
     },
     {
-        "header" : "FileEffect",
+        "header" : "MyJob",
         "vcList" : [
             {
                 "vcName": "FileEffectViewController",
                 "vcCreateWay" : 1
             },
-        ]
-    },
-    {
-        "header" : "Marebulabulas",
-        "vcList" : [
             {
                 "vcName": "MarebulabulasViewController",
                 "vcCreateWay" : 3
+            },
+            {
+                "vcName": "MagicCubeViewController",
+                "vcCreateWay" : 0
             },
         ]
     },

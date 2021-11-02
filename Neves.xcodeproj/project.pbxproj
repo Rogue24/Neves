@@ -8,18 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
-		0049E970254FA7E200878F44 /* MarebulabulasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049E96F254FA7E200878F44 /* MarebulabulasManager.swift */; };
-		0049EAC0254FD90700878F44 /* noAccLrc1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0049EAB7254FD90700878F44 /* noAccLrc1.txt */; };
-		0049EAC1254FD90700878F44 /* noAccLrc2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0049EAB8254FD90700878F44 /* noAccLrc2.txt */; };
-		0049EAC2254FD90700878F44 /* bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0049EABA254FD90700878F44 /* bgm.wav */; };
-		0049EAC3254FD90700878F44 /* lrc1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0049EABB254FD90700878F44 /* lrc1.txt */; };
-		0049EAC4254FD90700878F44 /* lrc2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0049EABC254FD90700878F44 /* lrc2.txt */; };
-		0049EAC5254FD90700878F44 /* dialogue2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0049EABE254FD90700878F44 /* dialogue2.txt */; };
-		0049EAC6254FD90700878F44 /* dialogue1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0049EABF254FD90700878F44 /* dialogue1.txt */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		007AB30C25CA387B00CFF914 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* Test2ViewController.swift */; };
 		007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB31025CA39CE00CFF914 /* Test3ViewController.swift */; };
-		0081D677254FF4E3009D7ABA /* Marebulabulas.TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D676254FF4E3009D7ABA /* Marebulabulas.TestData.swift */; };
 		0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */; };
 		0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */; };
 		00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00965D5B25CBF4DD00B7BB9C /* Done.swift */; };
@@ -96,30 +87,7 @@
 		1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354436254E77600032B677 /* TestTableViewController.swift */; };
 		1A35452F254E77600032B677 /* TestList.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A354439254E77600032B677 /* TestList.json */; };
 		1A354530254E77600032B677 /* GCDSemaphoreTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35443B254E77600032B677 /* GCDSemaphoreTestVC.swift */; };
-		1A354531254E77600032B677 /* FileEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35443F254E77600032B677 /* FileEffectViewController.swift */; };
-		1A354532254E77600032B677 /* FileEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A354440254E77600032B677 /* FileEffectViewController.xib */; };
-		1A354533254E77600032B677 /* FireworkItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A354442254E77600032B677 /* FireworkItem.xib */; };
-		1A354534254E77600032B677 /* Firework.TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354444254E77600032B677 /* Firework.TestData.swift */; };
-		1A354535254E77600032B677 /* Firework.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354445254E77600032B677 /* Firework.Extension.swift */; };
-		1A354536254E77600032B677 /* FireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354446254E77600032B677 /* FireworkController.swift */; };
-		1A354537254E77600032B677 /* FireworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A354448254E77600032B677 /* FireworkCell.xib */; };
-		1A354538254E77600032B677 /* FireworkPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A354449254E77600032B677 /* FireworkPopView.xib */; };
-		1A354539254E77600032B677 /* FireworkFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A35444A254E77600032B677 /* FireworkFooter.xib */; };
-		1A35453A254E77600032B677 /* FireworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35444B254E77600032B677 /* FireworkCell.swift */; };
-		1A35453B254E77600032B677 /* FireworkRulePopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35444C254E77600032B677 /* FireworkRulePopView.swift */; };
-		1A35453C254E77600032B677 /* FireworkRulePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A35444D254E77600032B677 /* FireworkRulePopView.xib */; };
-		1A35453D254E77600032B677 /* FireworkPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35444E254E77600032B677 /* FireworkPopView.swift */; };
-		1A35453E254E77600032B677 /* FireworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35444F254E77600032B677 /* FireworkView.swift */; };
-		1A35453F254E77600032B677 /* AsyncDecodeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354450254E77600032B677 /* AsyncDecodeAnimationView.swift */; };
-		1A354540254E77600032B677 /* FireworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354451254E77600032B677 /* FireworkItem.swift */; };
-		1A354541254E77600032B677 /* FireworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354452254E77600032B677 /* FireworkModel.swift */; };
 		1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A354454254E77600032B677 /* SublayerTransformTestVC.swift */; };
-		1A354598254E77600032B677 /* MarebulabulasOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3544B0254E77600032B677 /* MarebulabulasOperationView.swift */; };
-		1A354599254E77600032B677 /* MarebulabulasLrcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3544B1254E77600032B677 /* MarebulabulasLrcView.swift */; };
-		1A35459A254E77600032B677 /* MarebulabulasLrcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3544B2254E77600032B677 /* MarebulabulasLrcCell.swift */; };
-		1A35459B254E77600032B677 /* MarebulabulasRecordControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3544B3254E77600032B677 /* MarebulabulasRecordControl.swift */; };
-		1A35459C254E77600032B677 /* MarebulabulasLrcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A3544B4254E77600032B677 /* MarebulabulasLrcCell.xib */; };
-		1A35459D254E77600032B677 /* MarebulabulasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3544B5254E77600032B677 /* MarebulabulasViewController.swift */; };
 		1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AB254E818B0032B677 /* SwiftyJSON.Extension.swift */; };
 		1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AC254E818B0032B677 /* Lottie.Extension.swift */; };
 		1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AD254E818B0032B677 /* HYLabel.swift */; };
@@ -193,16 +161,9 @@
 		718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C1272261370056E699 /* DecodeImageProvider.swift */; };
 		718018C4272261970056E699 /* LottieImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C3272261970056E699 /* LottieImageStore.swift */; };
 		718018C627228A830056E699 /* Syncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C527228A830056E699 /* Syncs.swift */; };
-		718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E226A0111F00080316 /* MagicCubeViewController.swift */; };
-		718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E526A0115100080316 /* MagicCubeSuspendView.swift */; };
-		718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718874E726A0116400080316 /* MagicCubeBubbleView.swift */; };
 		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
-		719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */; };
-		719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */; };
-		719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */; };
-		719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */; };
 		71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */; };
 		71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */; };
 		71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B300892722BBAF00997B20 /* VideoMaker.Image.swift */; };
@@ -212,27 +173,64 @@
 		71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E426F052B300DB3A7A /* TurntableViewController.swift */; };
 		71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E626F06FCC00DB3A7A /* TurntableView.swift */; };
 		71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */; };
+		71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0C27310D4500300367 /* FloatWindowContainer.swift */; };
+		71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0E2731141D00300367 /* FunFloatButton.swift */; };
 		71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE01A626E61978003EBF66 /* LottieShowViewController.swift */; };
 		71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3364126C26202004669F7 /* DeferTestViewController.swift */; };
 		71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693A26563165009463E6 /* UIImage.Extension.swift */; };
 		71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693D265631DF009463E6 /* WatermarkViewController.swift */; };
 		71EA694126563270009463E6 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71EA694026563270009463E6 /* girl.jpg */; };
+		71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499227313B0C00FAAD93 /* FloatContainer.swift */; };
+		71F249CF2731517A00FAAD93 /* FileEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499A2731517A00FAAD93 /* FileEffectViewController.swift */; };
+		71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499B2731517A00FAAD93 /* FileEffectViewController.xib */; };
+		71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499D2731517A00FAAD93 /* FireworkItem.xib */; };
+		71F249D22731517A00FAAD93 /* Firework.TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499F2731517A00FAAD93 /* Firework.TestData.swift */; };
+		71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249A02731517A00FAAD93 /* Firework.Extension.swift */; };
+		71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249A12731517A00FAAD93 /* FireworkController.swift */; };
+		71F249D52731517A00FAAD93 /* FireworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249A32731517A00FAAD93 /* FireworkCell.xib */; };
+		71F249D62731517A00FAAD93 /* FireworkPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249A42731517A00FAAD93 /* FireworkPopView.xib */; };
+		71F249D72731517A00FAAD93 /* FireworkFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249A52731517A00FAAD93 /* FireworkFooter.xib */; };
+		71F249D82731517A00FAAD93 /* FireworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249A62731517A00FAAD93 /* FireworkCell.swift */; };
+		71F249D92731517A00FAAD93 /* FireworkRulePopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249A72731517A00FAAD93 /* FireworkRulePopView.swift */; };
+		71F249DA2731517A00FAAD93 /* FireworkRulePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249A82731517A00FAAD93 /* FireworkRulePopView.xib */; };
+		71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249A92731517A00FAAD93 /* FireworkPopView.swift */; };
+		71F249DC2731517A00FAAD93 /* FireworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AA2731517A00FAAD93 /* FireworkView.swift */; };
+		71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AB2731517A00FAAD93 /* AsyncDecodeAnimationView.swift */; };
+		71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AC2731517A00FAAD93 /* FireworkItem.swift */; };
+		71F249DF2731517A00FAAD93 /* FireworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AD2731517A00FAAD93 /* FireworkModel.swift */; };
+		71F249E02731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AF2731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */; };
+		71F249E12731517A00FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B02731517A00FAAD93 /* DragonSlayerBanner.Manager.swift */; };
+		71F249E22731517A00FAAD93 /* DragonSlayerBanner.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B12731517A00FAAD93 /* DragonSlayerBanner.Model.swift */; };
+		71F249E32731517A00FAAD93 /* DragonSlayerBanner.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B22731517A00FAAD93 /* DragonSlayerBanner.View.swift */; };
+		71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B42731517A00FAAD93 /* JPMagicCubeSuspendView.swift */; };
+		71F249E52731517A00FAAD93 /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B52731517A00FAAD93 /* JPMagicGiftInfo.swift */; };
+		71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B62731517A00FAAD93 /* MagicCubeBubbleView.swift */; };
+		71F249E72731517A00FAAD93 /* MagicCubeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B72731517A00FAAD93 /* MagicCubeViewController.swift */; };
+		71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B82731517A00FAAD93 /* JPMagicCubeBubbleView.swift */; };
+		71F249E92731517A00FAAD93 /* MagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B92731517A00FAAD93 /* MagicCubeSuspendView.swift */; };
+		71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249BA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift */; };
+		71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249BC2731517A00FAAD93 /* Marebulabulas.TestData.swift */; };
+		71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249BD2731517A00FAAD93 /* MarebulabulasOperationView.swift */; };
+		71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249BE2731517A00FAAD93 /* MarebulabulasManager.swift */; };
+		71F249EE2731517A00FAAD93 /* MarebulabulasLrcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249BF2731517A00FAAD93 /* MarebulabulasLrcView.swift */; };
+		71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249C02731517A00FAAD93 /* MarebulabulasLrcCell.swift */; };
+		71F249F02731517A00FAAD93 /* MarebulabulasRecordControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249C12731517A00FAAD93 /* MarebulabulasRecordControl.swift */; };
+		71F249F12731517A00FAAD93 /* noAccLrc1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249C42731517A00FAAD93 /* noAccLrc1.txt */; };
+		71F249F22731517A00FAAD93 /* noAccLrc2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249C52731517A00FAAD93 /* noAccLrc2.txt */; };
+		71F249F32731517A00FAAD93 /* bgm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 71F249C72731517A00FAAD93 /* bgm.wav */; };
+		71F249F42731517A00FAAD93 /* lrc1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249C82731517A00FAAD93 /* lrc1.txt */; };
+		71F249F52731517A00FAAD93 /* lrc2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249C92731517A00FAAD93 /* lrc2.txt */; };
+		71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CB2731517A00FAAD93 /* dialogue2.txt */; };
+		71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CC2731517A00FAAD93 /* dialogue1.txt */; };
+		71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */; };
+		71F249F92731517A00FAAD93 /* MarebulabulasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
-		0049E96F254FA7E200878F44 /* MarebulabulasManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarebulabulasManager.swift; sourceTree = "<group>"; };
-		0049EAB7254FD90700878F44 /* noAccLrc1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = noAccLrc1.txt; sourceTree = "<group>"; };
-		0049EAB8254FD90700878F44 /* noAccLrc2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = noAccLrc2.txt; sourceTree = "<group>"; };
-		0049EABA254FD90700878F44 /* bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm.wav; sourceTree = "<group>"; };
-		0049EABB254FD90700878F44 /* lrc1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lrc1.txt; sourceTree = "<group>"; };
-		0049EABC254FD90700878F44 /* lrc2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lrc2.txt; sourceTree = "<group>"; };
-		0049EABE254FD90700878F44 /* dialogue2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dialogue2.txt; sourceTree = "<group>"; };
-		0049EABF254FD90700878F44 /* dialogue1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dialogue1.txt; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
 		007AB31025CA39CE00CFF914 /* Test3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test3ViewController.swift; sourceTree = "<group>"; };
-		0081D676254FF4E3009D7ABA /* Marebulabulas.TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marebulabulas.TestData.swift; sourceTree = "<group>"; };
 		0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLottieTestViewController.swift; sourceTree = "<group>"; };
 		0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFit.Extension.swift; sourceTree = "<group>"; };
 		00965D5B25CBF4DD00B7BB9C /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
@@ -356,30 +354,7 @@
 		1A354436254E77600032B677 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		1A354439254E77600032B677 /* TestList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestList.json; sourceTree = "<group>"; };
 		1A35443B254E77600032B677 /* GCDSemaphoreTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDSemaphoreTestVC.swift; sourceTree = "<group>"; };
-		1A35443F254E77600032B677 /* FileEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEffectViewController.swift; sourceTree = "<group>"; };
-		1A354440254E77600032B677 /* FileEffectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileEffectViewController.xib; sourceTree = "<group>"; };
-		1A354442254E77600032B677 /* FireworkItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkItem.xib; sourceTree = "<group>"; };
-		1A354444254E77600032B677 /* Firework.TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.TestData.swift; sourceTree = "<group>"; };
-		1A354445254E77600032B677 /* Firework.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.Extension.swift; sourceTree = "<group>"; };
-		1A354446254E77600032B677 /* FireworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkController.swift; sourceTree = "<group>"; };
-		1A354448254E77600032B677 /* FireworkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkCell.xib; sourceTree = "<group>"; };
-		1A354449254E77600032B677 /* FireworkPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkPopView.xib; sourceTree = "<group>"; };
-		1A35444A254E77600032B677 /* FireworkFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkFooter.xib; sourceTree = "<group>"; };
-		1A35444B254E77600032B677 /* FireworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkCell.swift; sourceTree = "<group>"; };
-		1A35444C254E77600032B677 /* FireworkRulePopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkRulePopView.swift; sourceTree = "<group>"; };
-		1A35444D254E77600032B677 /* FireworkRulePopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkRulePopView.xib; sourceTree = "<group>"; };
-		1A35444E254E77600032B677 /* FireworkPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkPopView.swift; sourceTree = "<group>"; };
-		1A35444F254E77600032B677 /* FireworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkView.swift; sourceTree = "<group>"; };
-		1A354450254E77600032B677 /* AsyncDecodeAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDecodeAnimationView.swift; sourceTree = "<group>"; };
-		1A354451254E77600032B677 /* FireworkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkItem.swift; sourceTree = "<group>"; };
-		1A354452254E77600032B677 /* FireworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkModel.swift; sourceTree = "<group>"; };
 		1A354454254E77600032B677 /* SublayerTransformTestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SublayerTransformTestVC.swift; sourceTree = "<group>"; };
-		1A3544B0254E77600032B677 /* MarebulabulasOperationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasOperationView.swift; sourceTree = "<group>"; };
-		1A3544B1254E77600032B677 /* MarebulabulasLrcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasLrcView.swift; sourceTree = "<group>"; };
-		1A3544B2254E77600032B677 /* MarebulabulasLrcCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasLrcCell.swift; sourceTree = "<group>"; };
-		1A3544B3254E77600032B677 /* MarebulabulasRecordControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasRecordControl.swift; sourceTree = "<group>"; };
-		1A3544B4254E77600032B677 /* MarebulabulasLrcCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarebulabulasLrcCell.xib; sourceTree = "<group>"; };
-		1A3544B5254E77600032B677 /* MarebulabulasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasViewController.swift; sourceTree = "<group>"; };
 		1A3545AB254E818B0032B677 /* SwiftyJSON.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.Extension.swift; sourceTree = "<group>"; };
 		1A3545AC254E818B0032B677 /* Lottie.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lottie.Extension.swift; sourceTree = "<group>"; };
 		1A3545AD254E818B0032B677 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
@@ -462,16 +437,9 @@
 		718018C1272261370056E699 /* DecodeImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeImageProvider.swift; sourceTree = "<group>"; };
 		718018C3272261970056E699 /* LottieImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImageStore.swift; sourceTree = "<group>"; };
 		718018C527228A830056E699 /* Syncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syncs.swift; sourceTree = "<group>"; };
-		718874E226A0111F00080316 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
-		718874E526A0115100080316 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
-		718874E726A0116400080316 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
 		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
-		719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleView.swift; sourceTree = "<group>"; };
-		719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleLaunchAble.swift; sourceTree = "<group>"; };
-		719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeSuspendView.swift; sourceTree = "<group>"; };
-		719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPMagicGiftInfo.swift; sourceTree = "<group>"; };
 		71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Publisher的share图示.jpg"; sourceTree = "<group>"; };
@@ -482,11 +450,57 @@
 		71BC27E426F052B300DB3A7A /* TurntableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewController.swift; sourceTree = "<group>"; };
 		71BC27E626F06FCC00DB3A7A /* TurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableView.swift; sourceTree = "<group>"; };
 		71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableView.Calculate.swift; sourceTree = "<group>"; };
+		71D72B0C27310D4500300367 /* FloatWindowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWindowContainer.swift; sourceTree = "<group>"; };
+		71D72B0E2731141D00300367 /* FunFloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFloatButton.swift; sourceTree = "<group>"; };
 		71DE01A626E61978003EBF66 /* LottieShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieShowViewController.swift; sourceTree = "<group>"; };
 		71E3364126C26202004669F7 /* DeferTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferTestViewController.swift; sourceTree = "<group>"; };
 		71EA693A26563165009463E6 /* UIImage.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.Extension.swift; sourceTree = "<group>"; };
 		71EA693D265631DF009463E6 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
 		71EA694026563270009463E6 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
+		71F2499227313B0C00FAAD93 /* FloatContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatContainer.swift; sourceTree = "<group>"; };
+		71F2499A2731517A00FAAD93 /* FileEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEffectViewController.swift; sourceTree = "<group>"; };
+		71F2499B2731517A00FAAD93 /* FileEffectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileEffectViewController.xib; sourceTree = "<group>"; };
+		71F2499D2731517A00FAAD93 /* FireworkItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkItem.xib; sourceTree = "<group>"; };
+		71F2499F2731517A00FAAD93 /* Firework.TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.TestData.swift; sourceTree = "<group>"; };
+		71F249A02731517A00FAAD93 /* Firework.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.Extension.swift; sourceTree = "<group>"; };
+		71F249A12731517A00FAAD93 /* FireworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkController.swift; sourceTree = "<group>"; };
+		71F249A32731517A00FAAD93 /* FireworkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkCell.xib; sourceTree = "<group>"; };
+		71F249A42731517A00FAAD93 /* FireworkPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkPopView.xib; sourceTree = "<group>"; };
+		71F249A52731517A00FAAD93 /* FireworkFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkFooter.xib; sourceTree = "<group>"; };
+		71F249A62731517A00FAAD93 /* FireworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkCell.swift; sourceTree = "<group>"; };
+		71F249A72731517A00FAAD93 /* FireworkRulePopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkRulePopView.swift; sourceTree = "<group>"; };
+		71F249A82731517A00FAAD93 /* FireworkRulePopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkRulePopView.xib; sourceTree = "<group>"; };
+		71F249A92731517A00FAAD93 /* FireworkPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkPopView.swift; sourceTree = "<group>"; };
+		71F249AA2731517A00FAAD93 /* FireworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkView.swift; sourceTree = "<group>"; };
+		71F249AB2731517A00FAAD93 /* AsyncDecodeAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDecodeAnimationView.swift; sourceTree = "<group>"; };
+		71F249AC2731517A00FAAD93 /* FireworkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkItem.swift; sourceTree = "<group>"; };
+		71F249AD2731517A00FAAD93 /* FireworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkModel.swift; sourceTree = "<group>"; };
+		71F249AF2731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunFloatButton.DragonSlayerBanner.swift; sourceTree = "<group>"; };
+		71F249B02731517A00FAAD93 /* DragonSlayerBanner.Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Manager.swift; sourceTree = "<group>"; };
+		71F249B12731517A00FAAD93 /* DragonSlayerBanner.Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Model.swift; sourceTree = "<group>"; };
+		71F249B22731517A00FAAD93 /* DragonSlayerBanner.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.View.swift; sourceTree = "<group>"; };
+		71F249B42731517A00FAAD93 /* JPMagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeSuspendView.swift; sourceTree = "<group>"; };
+		71F249B52731517A00FAAD93 /* JPMagicGiftInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicGiftInfo.swift; sourceTree = "<group>"; };
+		71F249B62731517A00FAAD93 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
+		71F249B72731517A00FAAD93 /* MagicCubeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicCubeViewController.swift; sourceTree = "<group>"; };
+		71F249B82731517A00FAAD93 /* JPMagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleView.swift; sourceTree = "<group>"; };
+		71F249B92731517A00FAAD93 /* MagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicCubeSuspendView.swift; sourceTree = "<group>"; };
+		71F249BA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeBubbleLaunchAble.swift; sourceTree = "<group>"; };
+		71F249BC2731517A00FAAD93 /* Marebulabulas.TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marebulabulas.TestData.swift; sourceTree = "<group>"; };
+		71F249BD2731517A00FAAD93 /* MarebulabulasOperationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasOperationView.swift; sourceTree = "<group>"; };
+		71F249BE2731517A00FAAD93 /* MarebulabulasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasManager.swift; sourceTree = "<group>"; };
+		71F249BF2731517A00FAAD93 /* MarebulabulasLrcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasLrcView.swift; sourceTree = "<group>"; };
+		71F249C02731517A00FAAD93 /* MarebulabulasLrcCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasLrcCell.swift; sourceTree = "<group>"; };
+		71F249C12731517A00FAAD93 /* MarebulabulasRecordControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasRecordControl.swift; sourceTree = "<group>"; };
+		71F249C42731517A00FAAD93 /* noAccLrc1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = noAccLrc1.txt; sourceTree = "<group>"; };
+		71F249C52731517A00FAAD93 /* noAccLrc2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = noAccLrc2.txt; sourceTree = "<group>"; };
+		71F249C72731517A00FAAD93 /* bgm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm.wav; sourceTree = "<group>"; };
+		71F249C82731517A00FAAD93 /* lrc1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lrc1.txt; sourceTree = "<group>"; };
+		71F249C92731517A00FAAD93 /* lrc2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lrc2.txt; sourceTree = "<group>"; };
+		71F249CB2731517A00FAAD93 /* dialogue2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dialogue2.txt; sourceTree = "<group>"; };
+		71F249CC2731517A00FAAD93 /* dialogue1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dialogue1.txt; sourceTree = "<group>"; };
+		71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarebulabulasLrcCell.xib; sourceTree = "<group>"; };
+		71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -501,44 +515,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0049EAB5254FD90600878F44 /* MarebulabulasData */ = {
-			isa = PBXGroup;
-			children = (
-				0049EABD254FD90700878F44 /* Dialogue */,
-				0049EAB9254FD90700878F44 /* SingWithAccompaniment */,
-				0049EAB6254FD90700878F44 /* SingWithoutAccompaniment */,
-			);
-			path = MarebulabulasData;
-			sourceTree = "<group>";
-		};
-		0049EAB6254FD90700878F44 /* SingWithoutAccompaniment */ = {
-			isa = PBXGroup;
-			children = (
-				0049EAB7254FD90700878F44 /* noAccLrc1.txt */,
-				0049EAB8254FD90700878F44 /* noAccLrc2.txt */,
-			);
-			path = SingWithoutAccompaniment;
-			sourceTree = "<group>";
-		};
-		0049EAB9254FD90700878F44 /* SingWithAccompaniment */ = {
-			isa = PBXGroup;
-			children = (
-				0049EABA254FD90700878F44 /* bgm.wav */,
-				0049EABB254FD90700878F44 /* lrc1.txt */,
-				0049EABC254FD90700878F44 /* lrc2.txt */,
-			);
-			path = SingWithAccompaniment;
-			sourceTree = "<group>";
-		};
-		0049EABD254FD90700878F44 /* Dialogue */ = {
-			isa = PBXGroup;
-			children = (
-				0049EABF254FD90700878F44 /* dialogue1.txt */,
-				0049EABE254FD90700878F44 /* dialogue2.txt */,
-			);
-			path = Dialogue;
-			sourceTree = "<group>";
-		};
 		00D109A125749D6500F17889 /* Relam */ = {
 			isa = PBXGroup;
 			children = (
@@ -923,8 +899,8 @@
 				1A35443A254E77600032B677 /* GCD */,
 				1A9E41AA26BFE19F006941D0 /* Memory */,
 				1A3545B6254E89040032B677 /* Widget */,
-				1A35443E254E77600032B677 /* FileEffect */,
-				1A354457254E77600032B677 /* Marebulabulas */,
+				71D72B0B27310CD000300367 /* FloatWindow */,
+				71F249982731517A00FAAD93 /* MyJob */,
 			);
 			path = TestVC;
 			sourceTree = "<group>";
@@ -942,8 +918,6 @@
 				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
 				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */,
-				718874E226A0111F00080316 /* MagicCubeViewController.swift */,
-				718874E426A0112700080316 /* MagicCube */,
 				1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */,
 			);
 			path = Animate;
@@ -980,54 +954,6 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		1A35443E254E77600032B677 /* FileEffect */ = {
-			isa = PBXGroup;
-			children = (
-				1A35443F254E77600032B677 /* FileEffectViewController.swift */,
-				1A354440254E77600032B677 /* FileEffectViewController.xib */,
-				1A354441254E77600032B677 /* Firework */,
-			);
-			path = FileEffect;
-			sourceTree = "<group>";
-		};
-		1A354441254E77600032B677 /* Firework */ = {
-			isa = PBXGroup;
-			children = (
-				1A354446254E77600032B677 /* FireworkController.swift */,
-				1A35444F254E77600032B677 /* FireworkView.swift */,
-				1A354451254E77600032B677 /* FireworkItem.swift */,
-				1A354442254E77600032B677 /* FireworkItem.xib */,
-				1A354452254E77600032B677 /* FireworkModel.swift */,
-				1A354450254E77600032B677 /* AsyncDecodeAnimationView.swift */,
-				1A354447254E77600032B677 /* PopView */,
-				1A354443254E77600032B677 /* Extension */,
-			);
-			path = Firework;
-			sourceTree = "<group>";
-		};
-		1A354443254E77600032B677 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				1A354444254E77600032B677 /* Firework.TestData.swift */,
-				1A354445254E77600032B677 /* Firework.Extension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		1A354447254E77600032B677 /* PopView */ = {
-			isa = PBXGroup;
-			children = (
-				1A35444E254E77600032B677 /* FireworkPopView.swift */,
-				1A354449254E77600032B677 /* FireworkPopView.xib */,
-				1A35444B254E77600032B677 /* FireworkCell.swift */,
-				1A354448254E77600032B677 /* FireworkCell.xib */,
-				1A35444A254E77600032B677 /* FireworkFooter.xib */,
-				1A35444C254E77600032B677 /* FireworkRulePopView.swift */,
-				1A35444D254E77600032B677 /* FireworkRulePopView.xib */,
-			);
-			path = PopView;
-			sourceTree = "<group>";
-		};
 		1A354453254E77600032B677 /* View&Layer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1051,22 +977,6 @@
 				1A9E418226BE44A1006941D0 /* Hash */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		1A354457254E77600032B677 /* Marebulabulas */ = {
-			isa = PBXGroup;
-			children = (
-				0049E96F254FA7E200878F44 /* MarebulabulasManager.swift */,
-				1A3544B5254E77600032B677 /* MarebulabulasViewController.swift */,
-				1A3544B1254E77600032B677 /* MarebulabulasLrcView.swift */,
-				1A3544B2254E77600032B677 /* MarebulabulasLrcCell.swift */,
-				1A3544B4254E77600032B677 /* MarebulabulasLrcCell.xib */,
-				1A3544B0254E77600032B677 /* MarebulabulasOperationView.swift */,
-				1A3544B3254E77600032B677 /* MarebulabulasRecordControl.swift */,
-				0081D676254FF4E3009D7ABA /* Marebulabulas.TestData.swift */,
-				0049EAB5254FD90600878F44 /* MarebulabulasData */,
-			);
-			path = Marebulabulas;
 			sourceTree = "<group>";
 		};
 		1A3545A9254E818B0032B677 /* ThirdLib */ = {
@@ -1233,19 +1143,6 @@
 			path = LottieImage;
 			sourceTree = "<group>";
 		};
-		718874E426A0112700080316 /* MagicCube */ = {
-			isa = PBXGroup;
-			children = (
-				719461BE26A81AC0007A79EB /* JPMagicCubeBubbleLaunchAble.swift */,
-				719461BD26A81AC0007A79EB /* JPMagicCubeBubbleView.swift */,
-				719461BF26A81AC1007A79EB /* JPMagicCubeSuspendView.swift */,
-				719461C326A8267F007A79EB /* JPMagicGiftInfo.swift */,
-				718874E526A0115100080316 /* MagicCubeSuspendView.swift */,
-				718874E726A0116400080316 /* MagicCubeBubbleView.swift */,
-			);
-			path = MagicCube;
-			sourceTree = "<group>";
-		};
 		7190E4E227102EB600E8C511 /* Music */ = {
 			isa = PBXGroup;
 			children = (
@@ -1283,6 +1180,154 @@
 				716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */,
 			);
 			path = TurntableView;
+			sourceTree = "<group>";
+		};
+		71D72B0B27310CD000300367 /* FloatWindow */ = {
+			isa = PBXGroup;
+			children = (
+				71F2499227313B0C00FAAD93 /* FloatContainer.swift */,
+				71D72B0C27310D4500300367 /* FloatWindowContainer.swift */,
+				71D72B0E2731141D00300367 /* FunFloatButton.swift */,
+			);
+			path = FloatWindow;
+			sourceTree = "<group>";
+		};
+		71F249982731517A00FAAD93 /* MyJob */ = {
+			isa = PBXGroup;
+			children = (
+				71F249992731517A00FAAD93 /* FileEffect */,
+				71F249BB2731517A00FAAD93 /* Marebulabulas */,
+				71F249B32731517A00FAAD93 /* MagicCube */,
+				71F249AE2731517A00FAAD93 /* DragonSlayer */,
+			);
+			path = MyJob;
+			sourceTree = "<group>";
+		};
+		71F249992731517A00FAAD93 /* FileEffect */ = {
+			isa = PBXGroup;
+			children = (
+				71F2499A2731517A00FAAD93 /* FileEffectViewController.swift */,
+				71F2499B2731517A00FAAD93 /* FileEffectViewController.xib */,
+				71F2499C2731517A00FAAD93 /* Firework */,
+			);
+			path = FileEffect;
+			sourceTree = "<group>";
+		};
+		71F2499C2731517A00FAAD93 /* Firework */ = {
+			isa = PBXGroup;
+			children = (
+				71F2499E2731517A00FAAD93 /* Extension */,
+				71F249A22731517A00FAAD93 /* PopView */,
+				71F249AB2731517A00FAAD93 /* AsyncDecodeAnimationView.swift */,
+				71F249A12731517A00FAAD93 /* FireworkController.swift */,
+				71F249AC2731517A00FAAD93 /* FireworkItem.swift */,
+				71F2499D2731517A00FAAD93 /* FireworkItem.xib */,
+				71F249AD2731517A00FAAD93 /* FireworkModel.swift */,
+				71F249AA2731517A00FAAD93 /* FireworkView.swift */,
+			);
+			path = Firework;
+			sourceTree = "<group>";
+		};
+		71F2499E2731517A00FAAD93 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				71F249A02731517A00FAAD93 /* Firework.Extension.swift */,
+				71F2499F2731517A00FAAD93 /* Firework.TestData.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		71F249A22731517A00FAAD93 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				71F249A62731517A00FAAD93 /* FireworkCell.swift */,
+				71F249A32731517A00FAAD93 /* FireworkCell.xib */,
+				71F249A52731517A00FAAD93 /* FireworkFooter.xib */,
+				71F249A92731517A00FAAD93 /* FireworkPopView.swift */,
+				71F249A42731517A00FAAD93 /* FireworkPopView.xib */,
+				71F249A72731517A00FAAD93 /* FireworkRulePopView.swift */,
+				71F249A82731517A00FAAD93 /* FireworkRulePopView.xib */,
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
+		71F249AE2731517A00FAAD93 /* DragonSlayer */ = {
+			isa = PBXGroup;
+			children = (
+				71F249B02731517A00FAAD93 /* DragonSlayerBanner.Manager.swift */,
+				71F249B12731517A00FAAD93 /* DragonSlayerBanner.Model.swift */,
+				71F249B22731517A00FAAD93 /* DragonSlayerBanner.View.swift */,
+				71F249AF2731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */,
+			);
+			path = DragonSlayer;
+			sourceTree = "<group>";
+		};
+		71F249B32731517A00FAAD93 /* MagicCube */ = {
+			isa = PBXGroup;
+			children = (
+				71F249BA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift */,
+				71F249B82731517A00FAAD93 /* JPMagicCubeBubbleView.swift */,
+				71F249B42731517A00FAAD93 /* JPMagicCubeSuspendView.swift */,
+				71F249B52731517A00FAAD93 /* JPMagicGiftInfo.swift */,
+				71F249B62731517A00FAAD93 /* MagicCubeBubbleView.swift */,
+				71F249B92731517A00FAAD93 /* MagicCubeSuspendView.swift */,
+				71F249B72731517A00FAAD93 /* MagicCubeViewController.swift */,
+			);
+			path = MagicCube;
+			sourceTree = "<group>";
+		};
+		71F249BB2731517A00FAAD93 /* Marebulabulas */ = {
+			isa = PBXGroup;
+			children = (
+				71F249C22731517A00FAAD93 /* MarebulabulasData */,
+				71F249BC2731517A00FAAD93 /* Marebulabulas.TestData.swift */,
+				71F249C02731517A00FAAD93 /* MarebulabulasLrcCell.swift */,
+				71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */,
+				71F249BF2731517A00FAAD93 /* MarebulabulasLrcView.swift */,
+				71F249BE2731517A00FAAD93 /* MarebulabulasManager.swift */,
+				71F249BD2731517A00FAAD93 /* MarebulabulasOperationView.swift */,
+				71F249C12731517A00FAAD93 /* MarebulabulasRecordControl.swift */,
+				71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */,
+			);
+			path = Marebulabulas;
+			sourceTree = "<group>";
+		};
+		71F249C22731517A00FAAD93 /* MarebulabulasData */ = {
+			isa = PBXGroup;
+			children = (
+				71F249CA2731517A00FAAD93 /* Dialogue */,
+				71F249C62731517A00FAAD93 /* SingWithAccompaniment */,
+				71F249C32731517A00FAAD93 /* SingWithoutAccompaniment */,
+			);
+			path = MarebulabulasData;
+			sourceTree = "<group>";
+		};
+		71F249C32731517A00FAAD93 /* SingWithoutAccompaniment */ = {
+			isa = PBXGroup;
+			children = (
+				71F249C42731517A00FAAD93 /* noAccLrc1.txt */,
+				71F249C52731517A00FAAD93 /* noAccLrc2.txt */,
+			);
+			path = SingWithoutAccompaniment;
+			sourceTree = "<group>";
+		};
+		71F249C62731517A00FAAD93 /* SingWithAccompaniment */ = {
+			isa = PBXGroup;
+			children = (
+				71F249C72731517A00FAAD93 /* bgm.wav */,
+				71F249C82731517A00FAAD93 /* lrc1.txt */,
+				71F249C92731517A00FAAD93 /* lrc2.txt */,
+			);
+			path = SingWithAccompaniment;
+			sourceTree = "<group>";
+		};
+		71F249CA2731517A00FAAD93 /* Dialogue */ = {
+			isa = PBXGroup;
+			children = (
+				71F249CC2731517A00FAAD93 /* dialogue1.txt */,
+				71F249CB2731517A00FAAD93 /* dialogue2.txt */,
+			);
+			path = Dialogue;
 			sourceTree = "<group>";
 		};
 		E267A15A814DD8944EEB458F /* Frameworks */ = {
@@ -1362,37 +1407,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0049EAC5254FD90700878F44 /* dialogue2.txt in Resources */,
+				71F249F32731517A00FAAD93 /* bgm.wav in Resources */,
+				71F249D52731517A00FAAD93 /* FireworkCell.xib in Resources */,
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
 				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
-				0049EAC0254FD90700878F44 /* noAccLrc1.txt in Resources */,
-				0049EAC4254FD90700878F44 /* lrc2.txt in Resources */,
 				71EA694126563270009463E6 /* girl.jpg in Resources */,
 				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
-				1A35459C254E77600032B677 /* MarebulabulasLrcCell.xib in Resources */,
+				71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */,
 				717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */,
 				713998072705B64D002BC263 /* Girl2.jpg in Resources */,
-				0049EAC2254FD90700878F44 /* bgm.wav in Resources */,
-				0049EAC6254FD90700878F44 /* dialogue1.txt in Resources */,
-				1A354539254E77600032B677 /* FireworkFooter.xib in Resources */,
-				0049EAC3254FD90700878F44 /* lrc1.txt in Resources */,
-				1A354538254E77600032B677 /* FireworkPopView.xib in Resources */,
-				0049EAC1254FD90700878F44 /* noAccLrc2.txt in Resources */,
+				71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */,
 				713998062705B64D002BC263 /* Girl5.jpg in Resources */,
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
 				1A35452F254E77600032B677 /* TestList.json in Resources */,
 				1A3544B6254E77600032B677 /* JPIcon.png in Resources */,
 				1A9E41A126BE4633006941D0 /* JPCropViewController.xib in Resources */,
 				7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */,
+				71F249D72731517A00FAAD93 /* FireworkFooter.xib in Resources */,
 				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
+				71F249D62731517A00FAAD93 /* FireworkPopView.xib in Resources */,
+				71F249DA2731517A00FAAD93 /* FireworkRulePopView.xib in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,
+				71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */,
 				1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */,
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
-				1A354532254E77600032B677 /* FileEffectViewController.xib in Resources */,
-				1A35453C254E77600032B677 /* FireworkRulePopView.xib in Resources */,
+				71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */,
+				71F249F52731517A00FAAD93 /* lrc2.txt in Resources */,
+				71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */,
+				71F249F12731517A00FAAD93 /* noAccLrc1.txt in Resources */,
 				7110743D271ECA4800178969 /* voices.m4a in Resources */,
-				1A354533254E77600032B677 /* FireworkItem.xib in Resources */,
-				1A354537254E77600032B677 /* FireworkCell.xib in Resources */,
+				71F249F22731517A00FAAD93 /* noAccLrc2.txt in Resources */,
+				71F249F42731517A00FAAD93 /* lrc1.txt in Resources */,
 				1A354370254E76B40032B677 /* lottie in Resources */,
 				7139980A2705B64D002BC263 /* Girl4.jpg in Resources */,
 				713998092705B64D002BC263 /* Girl7.jpg in Resources */,
@@ -1451,73 +1496,71 @@
 				1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */,
-				1A35453F254E77600032B677 /* AsyncDecodeAnimationView.swift in Sources */,
+				71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */,
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
 				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,
+				71F249D82731517A00FAAD93 /* FireworkCell.swift in Sources */,
 				007AB30C25CA387B00CFF914 /* Test2ViewController.swift in Sources */,
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
+				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
 				716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */,
+				71F249CF2731517A00FAAD93 /* FileEffectViewController.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
-				718874E326A0111F00080316 /* MagicCubeViewController.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
-				0049E970254FA7E200878F44 /* MarebulabulasManager.swift in Sources */,
-				718874E626A0115100080316 /* MagicCubeSuspendView.swift in Sources */,
 				1A35452A254E77600032B677 /* Test1ViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
 				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
-				1A354541254E77600032B677 /* FireworkModel.swift in Sources */,
 				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
+				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
-				1A354531254E77600032B677 /* FileEffectViewController.swift in Sources */,
 				007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
+				71F249E52731517A00FAAD93 /* JPMagicGiftInfo.swift in Sources */,
 				716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */,
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
 				7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
 				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
-				1A35453D254E77600032B677 /* FireworkPopView.swift in Sources */,
 				1A35451B254E77600032B677 /* UIViewController+JPExtension.m in Sources */,
+				71F249E72731517A00FAAD93 /* MagicCubeViewController.swift in Sources */,
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
 				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
-				1A354599254E77600032B677 /* MarebulabulasLrcView.swift in Sources */,
-				1A35459D254E77600032B677 /* MarebulabulasViewController.swift in Sources */,
 				1A354512254E77600032B677 /* JPViewController.m in Sources */,
 				1A354515254E77600032B677 /* JPSubTableViewController.m in Sources */,
-				1A35459B254E77600032B677 /* MarebulabulasRecordControl.swift in Sources */,
 				715ED74626FF26520030F279 /* Date.Extension.swift in Sources */,
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
+				71F249DC2731517A00FAAD93 /* FireworkView.swift in Sources */,
 				71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */,
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
 				71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */,
 				1A354523254E77600032B677 /* JPFileTool.m in Sources */,
-				1A354536254E77600032B677 /* FireworkController.swift in Sources */,
 				0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */,
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
 				718018C627228A830056E699 /* Syncs.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
-				1A354540254E77600032B677 /* FireworkItem.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
+				71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
+				71F249EE2731517A00FAAD93 /* MarebulabulasLrcView.swift in Sources */,
 				71107437271E956100178969 /* VideoMaker.Layer.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
@@ -1528,50 +1571,52 @@
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
-				718874E826A0116400080316 /* MagicCubeBubbleView.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
-				1A354535254E77600032B677 /* Firework.Extension.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
+				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
-				0081D677254FF4E3009D7ABA /* Marebulabulas.TestData.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
-				1A35453A254E77600032B677 /* FireworkCell.swift in Sources */,
 				1A354513254E77600032B677 /* JPSubCollectionViewController.m in Sources */,
 				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
 				1A354503254E77600032B677 /* JPNoHighlightButton.m in Sources */,
 				005DF54425652EDB0010E772 /* File.swift in Sources */,
 				1A9E419326BE459E006941D0 /* JPObject.m in Sources */,
 				1A65874C2629E6CC00846689 /* AlertView.swift in Sources */,
-				1A35453E254E77600032B677 /* FireworkView.swift in Sources */,
+				71F249F92731517A00FAAD93 /* MarebulabulasViewController.swift in Sources */,
+				71F249D22731517A00FAAD93 /* Firework.TestData.swift in Sources */,
 				1A354502254E77600032B677 /* JPUnderlineButton.m in Sources */,
 				1A354508254E77600032B677 /* JPFPSLabel.m in Sources */,
+				71F249E02731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */,
 				71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */,
+				71F249E92731517A00FAAD93 /* MagicCubeSuspendView.swift in Sources */,
 				1A35451D254E77600032B677 /* NSDate+JPExtension.m in Sources */,
+				71F249F02731517A00FAAD93 /* MarebulabulasRecordControl.swift in Sources */,
 				710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */,
+				71F249DF2731517A00FAAD93 /* FireworkModel.swift in Sources */,
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
+				71F249E22731517A00FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
+				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
-				1A35453B254E77600032B677 /* FireworkRulePopView.swift in Sources */,
-				1A354598254E77600032B677 /* MarebulabulasOperationView.swift in Sources */,
+				71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */,
 				1A35451E254E77600032B677 /* NSURL+JPExtension.m in Sources */,
 				1A3544F8254E77600032B677 /* UIScreen.Extension.swift in Sources */,
-				1A354534254E77600032B677 /* Firework.TestData.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
+				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
 				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
 				1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */,
 				1A354509254E77600032B677 /* JPGradientView.m in Sources */,
-				1A35459A254E77600032B677 /* MarebulabulasLrcCell.swift in Sources */,
 				1A354525254E77600032B677 /* JPTextLayoutTool.m in Sources */,
 				1A3544FB254E77600032B677 /* ListViewReusable.swift in Sources */,
-				719461C026A81AC1007A79EB /* JPMagicCubeBubbleView.swift in Sources */,
+				71F249D92731517A00FAAD93 /* FireworkRulePopView.swift in Sources */,
 				711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
@@ -1581,9 +1626,13 @@
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
+				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
+				71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */,
+				71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */,
+				71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
 				1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */,
@@ -1595,27 +1644,30 @@
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
 				71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
+				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
+				71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
+				71F249E32731517A00FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */,
 				1A3544F1254E77600032B677 /* NotificationCenter.Extension.swift in Sources */,
 				00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */,
 				1A3544FA254E77600032B677 /* JP.swift in Sources */,
 				1A354530254E77600032B677 /* GCDSemaphoreTestVC.swift in Sources */,
 				1A9E417826BE4061006941D0 /* TableViewAnimateController.swift in Sources */,
-				719461C126A81AC1007A79EB /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */,
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
+				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,
+				71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */,
 				71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
 				717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */,
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
-				719461C426A8267F007A79EB /* JPMagicGiftInfo.swift in Sources */,
-				719461C226A81AC1007A79EB /* JPMagicCubeSuspendView.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
+				71F249E12731517A00FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
 				71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */,
 				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,

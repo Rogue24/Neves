@@ -83,6 +83,18 @@ class MainTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let window = view.window, FloatWindowContainer.shared.superview != window {
+            FloatWindowContainer.shared.frame = window.bounds
+            window.addSubview(FloatWindowContainer.shared)
+            
+            FloatWindowContainer.shared.addSubview(FunFloatButton.shared)
+            FunFloatButton.shared.addDragonSlayerBannerAction()
+        }
+    }
 }
 
 // MARK: - Table view data source
