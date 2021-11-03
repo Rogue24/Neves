@@ -198,10 +198,6 @@
 		71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AB2731517A00FAAD93 /* AsyncDecodeAnimationView.swift */; };
 		71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AC2731517A00FAAD93 /* FireworkItem.swift */; };
 		71F249DF2731517A00FAAD93 /* FireworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AD2731517A00FAAD93 /* FireworkModel.swift */; };
-		71F249E02731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249AF2731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */; };
-		71F249E12731517A00FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B02731517A00FAAD93 /* DragonSlayerBanner.Manager.swift */; };
-		71F249E22731517A00FAAD93 /* DragonSlayerBanner.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B12731517A00FAAD93 /* DragonSlayerBanner.Model.swift */; };
-		71F249E32731517A00FAAD93 /* DragonSlayerBanner.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B22731517A00FAAD93 /* DragonSlayerBanner.View.swift */; };
 		71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B42731517A00FAAD93 /* JPMagicCubeSuspendView.swift */; };
 		71F249E52731517A00FAAD93 /* JPMagicGiftInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B52731517A00FAAD93 /* JPMagicGiftInfo.swift */; };
 		71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249B62731517A00FAAD93 /* MagicCubeBubbleView.swift */; };
@@ -224,6 +220,13 @@
 		71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CC2731517A00FAAD93 /* dialogue1.txt */; };
 		71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */; };
 		71F249F92731517A00FAAD93 /* MarebulabulasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */; };
+		71F24A002732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */; };
+		71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FD2732270800FAAD93 /* DragonSlayerBanner.Manager.swift */; };
+		71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FE2732270800FAAD93 /* DragonSlayerBanner.Model.swift */; };
+		71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */; };
+		71F24A052732272700FAAD93 /* DragonSlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A042732272700FAAD93 /* DragonSlayerViewController.swift */; };
+		71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A06273227AE00FAAD93 /* DragonSlayerInspireView.swift */; };
+		71F24A09273282AD00FAAD93 /* DragonSlayerInspireBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A08273282AD00FAAD93 /* DragonSlayerInspireBubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -475,10 +478,6 @@
 		71F249AB2731517A00FAAD93 /* AsyncDecodeAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncDecodeAnimationView.swift; sourceTree = "<group>"; };
 		71F249AC2731517A00FAAD93 /* FireworkItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkItem.swift; sourceTree = "<group>"; };
 		71F249AD2731517A00FAAD93 /* FireworkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkModel.swift; sourceTree = "<group>"; };
-		71F249AF2731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunFloatButton.DragonSlayerBanner.swift; sourceTree = "<group>"; };
-		71F249B02731517A00FAAD93 /* DragonSlayerBanner.Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Manager.swift; sourceTree = "<group>"; };
-		71F249B12731517A00FAAD93 /* DragonSlayerBanner.Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Model.swift; sourceTree = "<group>"; };
-		71F249B22731517A00FAAD93 /* DragonSlayerBanner.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.View.swift; sourceTree = "<group>"; };
 		71F249B42731517A00FAAD93 /* JPMagicCubeSuspendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicCubeSuspendView.swift; sourceTree = "<group>"; };
 		71F249B52731517A00FAAD93 /* JPMagicGiftInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPMagicGiftInfo.swift; sourceTree = "<group>"; };
 		71F249B62731517A00FAAD93 /* MagicCubeBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicCubeBubbleView.swift; sourceTree = "<group>"; };
@@ -501,6 +500,13 @@
 		71F249CC2731517A00FAAD93 /* dialogue1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dialogue1.txt; sourceTree = "<group>"; };
 		71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarebulabulasLrcCell.xib; sourceTree = "<group>"; };
 		71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasViewController.swift; sourceTree = "<group>"; };
+		71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunFloatButton.DragonSlayerBanner.swift; sourceTree = "<group>"; };
+		71F249FD2732270800FAAD93 /* DragonSlayerBanner.Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Manager.swift; sourceTree = "<group>"; };
+		71F249FE2732270800FAAD93 /* DragonSlayerBanner.Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Model.swift; sourceTree = "<group>"; };
+		71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.View.swift; sourceTree = "<group>"; };
+		71F24A042732272700FAAD93 /* DragonSlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerViewController.swift; sourceTree = "<group>"; };
+		71F24A06273227AE00FAAD93 /* DragonSlayerInspireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerInspireView.swift; sourceTree = "<group>"; };
+		71F24A08273282AD00FAAD93 /* DragonSlayerInspireBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerInspireBubble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1254,10 +1260,9 @@
 		71F249AE2731517A00FAAD93 /* DragonSlayer */ = {
 			isa = PBXGroup;
 			children = (
-				71F249B02731517A00FAAD93 /* DragonSlayerBanner.Manager.swift */,
-				71F249B12731517A00FAAD93 /* DragonSlayerBanner.Model.swift */,
-				71F249B22731517A00FAAD93 /* DragonSlayerBanner.View.swift */,
-				71F249AF2731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */,
+				71F24A042732272700FAAD93 /* DragonSlayerViewController.swift */,
+				71F249FB2732270800FAAD93 /* Banner */,
+				71F249FA2732270800FAAD93 /* Inspire */,
 			);
 			path = DragonSlayer;
 			sourceTree = "<group>";
@@ -1328,6 +1333,26 @@
 				71F249CB2731517A00FAAD93 /* dialogue2.txt */,
 			);
 			path = Dialogue;
+			sourceTree = "<group>";
+		};
+		71F249FA2732270800FAAD93 /* Inspire */ = {
+			isa = PBXGroup;
+			children = (
+				71F24A06273227AE00FAAD93 /* DragonSlayerInspireView.swift */,
+				71F24A08273282AD00FAAD93 /* DragonSlayerInspireBubble.swift */,
+			);
+			path = Inspire;
+			sourceTree = "<group>";
+		};
+		71F249FB2732270800FAAD93 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				71F249FD2732270800FAAD93 /* DragonSlayerBanner.Manager.swift */,
+				71F249FE2732270800FAAD93 /* DragonSlayerBanner.Model.swift */,
+				71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */,
+				71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 		E267A15A814DD8944EEB458F /* Frameworks */ = {
@@ -1496,6 +1521,7 @@
 				1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */,
+				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
 				71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */,
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
 				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,
@@ -1503,6 +1529,7 @@
 				007AB30C25CA387B00CFF914 /* Test2ViewController.swift in Sources */,
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
+				71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
 				716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */,
 				71F249CF2731517A00FAAD93 /* FileEffectViewController.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
@@ -1520,6 +1547,7 @@
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
 				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
+				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				007AB31125CA39CE00CFF914 /* Test3ViewController.swift in Sources */,
@@ -1534,6 +1562,7 @@
 				1A35451B254E77600032B677 /* UIViewController+JPExtension.m in Sources */,
 				71F249E72731517A00FAAD93 /* MagicCubeViewController.swift in Sources */,
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
+				71F24A09273282AD00FAAD93 /* DragonSlayerInspireBubble.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
 				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
@@ -1557,6 +1586,7 @@
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
+				71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
 				71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
@@ -1571,6 +1601,7 @@
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
+				71F24A052732272700FAAD93 /* DragonSlayerViewController.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
@@ -1588,7 +1619,6 @@
 				71F249D22731517A00FAAD93 /* Firework.TestData.swift in Sources */,
 				1A354502254E77600032B677 /* JPUnderlineButton.m in Sources */,
 				1A354508254E77600032B677 /* JPFPSLabel.m in Sources */,
-				71F249E02731517A00FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */,
 				71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */,
 				71F249E92731517A00FAAD93 /* MagicCubeSuspendView.swift in Sources */,
 				1A35451D254E77600032B677 /* NSDate+JPExtension.m in Sources */,
@@ -1601,7 +1631,6 @@
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
-				71F249E22731517A00FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
 				71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */,
@@ -1639,6 +1668,7 @@
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
+				71F24A002732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
@@ -1647,7 +1677,6 @@
 				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
 				71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
-				71F249E32731517A00FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */,
 				1A3544F1254E77600032B677 /* NotificationCenter.Extension.swift in Sources */,
 				00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */,
@@ -1667,7 +1696,6 @@
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
-				71F249E12731517A00FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
 				71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */,
 				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,

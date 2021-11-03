@@ -1,5 +1,26 @@
 [
     {
+        "header" : "MyJob",
+        "vcList" : [
+            {
+                "vcName": "FileEffectViewController",
+                "vcCreateWay" : 1
+            },
+            {
+                "vcName": "MarebulabulasViewController",
+                "vcCreateWay" : 3
+            },
+            {
+                "vcName": "MagicCubeViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "DragonSlayerViewController",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "Video",
         "vcList" : [
             {
@@ -207,23 +228,6 @@
         "vcList" : [
             {
                 "vcName": "WidgetViewController",
-                "vcCreateWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "MyJob",
-        "vcList" : [
-            {
-                "vcName": "FileEffectViewController",
-                "vcCreateWay" : 1
-            },
-            {
-                "vcName": "MarebulabulasViewController",
-                "vcCreateWay" : 3
-            },
-            {
-                "vcName": "MagicCubeViewController",
                 "vcCreateWay" : 0
             },
         ]
