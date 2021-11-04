@@ -226,7 +226,12 @@
 		71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */; };
 		71F24A052732272700FAAD93 /* DragonSlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A042732272700FAAD93 /* DragonSlayerViewController.swift */; };
 		71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A06273227AE00FAAD93 /* DragonSlayerInspireView.swift */; };
-		71F24A09273282AD00FAAD93 /* DragonSlayerInspireBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A08273282AD00FAAD93 /* DragonSlayerInspireBubble.swift */; };
+		71F24A09273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A08273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift */; };
+		71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A0D27337C9700FAAD93 /* DragonSlayerEntrance.swift */; };
+		71F24A1027338EAC00FAAD93 /* DragonSlayerEntrance.Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A0F27338EAC00FAAD93 /* DragonSlayerEntrance.Bubble.swift */; };
+		71F24A122733B33300FAAD93 /* DragonSlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A112733B33300FAAD93 /* DragonSlayer.swift */; };
+		71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */; };
+		71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -506,7 +511,12 @@
 		71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.View.swift; sourceTree = "<group>"; };
 		71F24A042732272700FAAD93 /* DragonSlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerViewController.swift; sourceTree = "<group>"; };
 		71F24A06273227AE00FAAD93 /* DragonSlayerInspireView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerInspireView.swift; sourceTree = "<group>"; };
-		71F24A08273282AD00FAAD93 /* DragonSlayerInspireBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerInspireBubble.swift; sourceTree = "<group>"; };
+		71F24A08273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerInspireView.Bubble.swift; sourceTree = "<group>"; };
+		71F24A0D27337C9700FAAD93 /* DragonSlayerEntrance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.swift; sourceTree = "<group>"; };
+		71F24A0F27338EAC00FAAD93 /* DragonSlayerEntrance.Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.Bubble.swift; sourceTree = "<group>"; };
+		71F24A112733B33300FAAD93 /* DragonSlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayer.swift; sourceTree = "<group>"; };
+		71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.CountingDown.swift; sourceTree = "<group>"; };
+		71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1260,9 +1270,11 @@
 		71F249AE2731517A00FAAD93 /* DragonSlayer */ = {
 			isa = PBXGroup;
 			children = (
+				71F24A112733B33300FAAD93 /* DragonSlayer.swift */,
 				71F24A042732272700FAAD93 /* DragonSlayerViewController.swift */,
 				71F249FB2732270800FAAD93 /* Banner */,
 				71F249FA2732270800FAAD93 /* Inspire */,
+				71F24A0C27337C8300FAAD93 /* Entrance */,
 			);
 			path = DragonSlayer;
 			sourceTree = "<group>";
@@ -1339,7 +1351,7 @@
 			isa = PBXGroup;
 			children = (
 				71F24A06273227AE00FAAD93 /* DragonSlayerInspireView.swift */,
-				71F24A08273282AD00FAAD93 /* DragonSlayerInspireBubble.swift */,
+				71F24A08273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift */,
 			);
 			path = Inspire;
 			sourceTree = "<group>";
@@ -1353,6 +1365,17 @@
 				71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */,
 			);
 			path = Banner;
+			sourceTree = "<group>";
+		};
+		71F24A0C27337C8300FAAD93 /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				71F24A0D27337C9700FAAD93 /* DragonSlayerEntrance.swift */,
+				71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */,
+				71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */,
+				71F24A0F27338EAC00FAAD93 /* DragonSlayerEntrance.Bubble.swift */,
+			);
+			path = Entrance;
 			sourceTree = "<group>";
 		};
 		E267A15A814DD8944EEB458F /* Frameworks */ = {
@@ -1519,6 +1542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */,
+				71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */,
 				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
@@ -1561,8 +1585,9 @@
 				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
 				1A35451B254E77600032B677 /* UIViewController+JPExtension.m in Sources */,
 				71F249E72731517A00FAAD93 /* MagicCubeViewController.swift in Sources */,
+				71F24A1027338EAC00FAAD93 /* DragonSlayerEntrance.Bubble.swift in Sources */,
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
-				71F24A09273282AD00FAAD93 /* DragonSlayerInspireBubble.swift in Sources */,
+				71F24A09273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
 				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
@@ -1633,11 +1658,13 @@
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
+				71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */,
 				71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */,
 				1A35451E254E77600032B677 /* NSURL+JPExtension.m in Sources */,
 				1A3544F8254E77600032B677 /* UIScreen.Extension.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
 				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
+				71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
 				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
@@ -1668,6 +1695,7 @@
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
+				71F24A122733B33300FAAD93 /* DragonSlayer.swift in Sources */,
 				71F24A002732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,

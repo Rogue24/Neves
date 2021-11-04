@@ -93,11 +93,11 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "album_sing_bg_lottie"
+            lottieName = "dragon_enter_lottie_1"
         case 1:
-            lottieName = "cube_s_lottie"
+            lottieName = "dragon_enter_lottie_2"//"cube_s_lottie"
         case 2:
-            lottieName = "video_tx_jielong_lottie"//"fire_lottie2"
+            lottieName = "dragon_guwu_lottie"//"fire_lottie2"
         default:
             lottieName = "album_videobg_jielong_lottie"//"lottie_recordingmotion"
         }

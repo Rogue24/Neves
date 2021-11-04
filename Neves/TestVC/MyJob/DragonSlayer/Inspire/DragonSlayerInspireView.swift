@@ -1,5 +1,5 @@
 //
-//  InspirePopView.swift
+//  DragonSlayerInspireView.swift
 //  Neves
 //
 //  Created by aa on 2021/11/3.
@@ -11,9 +11,8 @@ class DragonSlayerInspireView: UIView {
     
     // MARK: UI变量
     private var viewMaxY: CGFloat = 0
-    
-    private let minH: CGFloat = 129
-    private let maxH: CGFloat = 201
+    private let viewMinH: CGFloat = 111 // 129 - 18
+    private let viewMaxH: CGFloat = 201
     
     private let contentFont = UIFont.systemFont(ofSize: 10)
     private let contentColor = UIColor(white: 1, alpha: 0.8)
@@ -28,14 +27,14 @@ class DragonSlayerInspireView: UIView {
     private let userIcon = UIImageView()
     private let nameLabel = UILabel()
     private let countLabel = UILabel()
-    
+    private let zanIcon = UIImageView(image: UIImage(named: "dragon_icon_guwu2"))
     private let contentLabel = UILabel()
     
     private let inspireBtn = UIView()
     private let inspireLabel = UILabel()
     
     private var bubbleName: String? = nil
-    private lazy var bubbles: [DragonSlayerInspireBubble] = []
+    private lazy var bubbles: [Bubble] = []
     
     // MARK: 存储属性
     private(set) var names: [String]
@@ -87,14 +86,14 @@ private extension DragonSlayerInspireView {
         layer.masksToBounds = true
         
         let gLayer = CAGradientLayer()
-        gLayer.frame = [0, 0, frame.width, minH]
+        gLayer.frame = [0, 0, frame.width, viewMinH]
         gLayer.startPoint = [0.5, 0]
         gLayer.endPoint = [0.5, 1]
         gLayer.colors = [UIColor.rgb(77, 22, 52, a: 0.95).cgColor, UIColor.rgb(71, 23, 75, a: 0.95).cgColor]
         layer.addSublayer(gLayer)
         
         let bgLayer = CALayer()
-        bgLayer.frame = [0, gLayer.frame.maxY, gLayer.frame.width, 100]
+        bgLayer.frame = [0, gLayer.frame.maxY, gLayer.frame.width, 150]
         bgLayer.backgroundColor = UIColor.rgb(71, 23, 75, a: 0.95).cgColor
         layer.addSublayer(bgLayer)
     }
@@ -143,8 +142,8 @@ private extension DragonSlayerInspireView {
     }
     
     func setupContent() {
-        let zanIcon = UIImageView(frame: [12, infoView.frame.maxY + 5, 12, 12])
-        zanIcon.image = UIImage(named: "dragon_icon_guwu2")
+        zanIcon.alpha = 0
+        zanIcon.frame = [12, infoView.frame.maxY + 5, 12, 12]
         addSubview(zanIcon)
         
         contentLabel.frame = [6, infoView.frame.maxY + contentVerMargin + 2, contentW, minContentH]
@@ -181,14 +180,6 @@ private extension DragonSlayerInspireView {
 private extension DragonSlayerInspireView {
     
     func updateContent(animated: Bool = false) {
-        var text = "\(names.count)人已鼓舞 | "
-        let startLocation = text.count
-        
-        for (i, name) in names.enumerated() {
-            if i != 0 { text += "、" }
-            text += name
-        }
-        
         var attributes = [NSAttributedString.Key: Any]()
         attributes[.font] = contentFont
         attributes[.foregroundColor] = contentColor
@@ -198,19 +189,37 @@ private extension DragonSlayerInspireView {
         parag.firstLineHeadIndent = 22
         attributes[.paragraphStyle] = parag
         
-        var contentH = (text as NSString).boundingRect(with: [contentW, 999], options: .usesLineFragmentOrigin, attributes: attributes, context: nil).size.height
-        
-        // 文本的高度 - 字体高度 > 行间距 -----> 判断为当前超过1行
-        let isMoreThanOneLine = (contentH - contentFont.lineHeight) > contentLineSpace
-        if !isMoreThanOneLine || contentH < minContentH {
-            contentH = minContentH
-            parag.lineSpacing = 0
-        }
-        
+        var text = ""
+        var startLocation = 0
+        var zanAlpha: CGFloat = 0
+        var contentH: CGFloat = 0
         var isFull = false
-        if contentH > maxContentH {
-            contentH = maxContentH
-            isFull = true
+        
+        if names.count > 0 {
+            text = "\(names.count)人已鼓舞 | "
+            startLocation = text.count
+            zanAlpha = 1
+            
+            for (i, name) in names.enumerated() {
+                if i != 0 { text += "、" }
+                text += name
+            }
+            
+            contentH = (text as NSString).boundingRect(with: [contentW, 999], options: .usesLineFragmentOrigin, attributes: attributes, context: nil).size.height
+            
+            // 文本的高度 - 字体高度 > 行间距 -----> 判断为当前超过1行
+            let isMoreThanOneLine = (contentH - contentFont.lineHeight) > contentLineSpace
+            if !isMoreThanOneLine || contentH < minContentH {
+                contentH = minContentH
+                parag.lineSpacing = 0
+            }
+            
+            if contentH > maxContentH {
+                contentH = maxContentH
+                isFull = true
+            }
+        } else {
+            parag.lineSpacing = 0
         }
         
         let attStr = NSMutableAttributedString(string: text, attributes: attributes)
@@ -232,9 +241,10 @@ private extension DragonSlayerInspireView {
         guard contentLabel.frame.size.height != contentH else { return }
         contentLabel.frame.size.height = contentH
         
-        let inspireBtnY = contentLabel.frame.origin.y + contentH + contentVerMargin + 10
+        let inspireBtnY = contentH == 0 ? (infoView.frame.maxY + 12) : (contentLabel.frame.origin.y + contentH + contentVerMargin + 10)
         let viewH = inspireBtnY + inspireBtn.frame.height + 10
         let update: () -> () = {
+            self.zanIcon.alpha = zanAlpha
             self.inspireBtn.frame.origin.y = inspireBtnY
             self.frame = [self.frame.origin.x, self.viewMaxY - viewH, self.frame.width, viewH]
         }
@@ -244,9 +254,9 @@ private extension DragonSlayerInspireView {
             return
         }
         
-        UIView.animate(withDuration: 0.4,
+        UIView.animate(withDuration: 0.45,
                        delay: 0,
-                       usingSpringWithDamping: 0.65,
+                       usingSpringWithDamping: 0.7,
                        initialSpringVelocity: 1,
                        options: [],
                        animations: update,
@@ -256,7 +266,7 @@ private extension DragonSlayerInspireView {
     func showBubble(_ name: String) {
         let bubbles = self.bubbles
         
-        let bubble = DragonSlayerInspireBubble(name: name)
+        let bubble = Bubble(name: name)
         bubble.frame.origin = [frame.width - bubble.frame.width, inspireBtn.frame.origin.y - 10 - bubble.frame.height]
         bubble.alpha = 0
         addSubview(bubble)
