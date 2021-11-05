@@ -15,4 +15,9 @@ enum DragonSlayer {
         case allDone
     }
     
+    enum CountingDown: Equatable {
+        case prepare(_ second: TimeInterval)
+        case fight(_ second: TimeInterval)
+    }
+    
 }

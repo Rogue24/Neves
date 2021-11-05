@@ -29,6 +29,20 @@ extension DragonSlayerEntrance {
             knifeIcon.image = UIImage(named: "dragon_knife")
             knifeBgIcon.addSubview(knifeIcon)
             
+            let countLayer = CAShapeLayer()
+            countLayer.fillColor = UIColor.rgb(249, 221, 140).cgColor
+            let path = UIBezierPath(roundedRect: [25, 31, 10, 9], byRoundingCorners: [.topLeft], cornerRadii: [4, 4])
+            path.append(UIBezierPath(roundedRect: [35, 31, 5, 9], byRoundingCorners: [.bottomRight], cornerRadii: [2, 2]))
+            countLayer.path = path.cgPath
+            knifeBgIcon.layer.addSublayer(countLayer)
+            
+            let countLabel = UILabel(frame: [25, 31, 15, 9])
+            countLabel.font = .systemFont(ofSize: 8.5)
+            countLabel.textColor = .rgb(109, 44, 37)
+            countLabel.textAlignment = .center
+            countLabel.text = "x\(count)"
+            knifeBgIcon.addSubview(countLabel)
+            
             let contentLabel = UILabel(frame: [53, 0, CGFloat(155 - 8 - 45 - 8), 50])
             contentLabel.font = .systemFont(ofSize: 9)
             contentLabel.textColor = UIColor(white: 1, alpha: 0.9)
@@ -45,8 +59,6 @@ extension DragonSlayerEntrance {
         deinit {
             JPrint("死得惨")
         }
-        
-        
     }
     
     func launchBubble() {

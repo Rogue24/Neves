@@ -12,6 +12,22 @@ class DragonSlayerViewController: TestBaseViewController {
     
     var entrance: DragonSlayerEntrance!
     
+    var timer: DispatchSourceTimer?
+    var second: TimeInterval = 0 {
+        didSet {
+            if isFight {
+                entrance.countingDownSecond = .fight(second)
+            } else {
+                entrance.countingDownSecond = .prepare(second)
+            }
+            if second <= 0 {
+                timer?.cancel()
+                timer = nil
+            }
+        }
+    }
+    var isFight = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,7 +129,27 @@ class DragonSlayerViewController: TestBaseViewController {
         }()
         view.addSubview(btn6)
         
+        let btn7: UIButton = {
+            let btn = UIButton(type: .system)
+            btn.titleLabel?.font = .boldSystemFont(ofSize: 15)
+            btn.setTitle("停止计时", for: .normal)
+            btn.setTitleColor(.randomColor, for: .normal)
+            btn.backgroundColor = .randomColor
+            btn.layer.cornerRadius = 10
+            btn.layer.masksToBounds = true
+            btn.frame = [200, 400, 80, 40]
+            btn.addTarget(self, action: #selector(stopCountingDown), for: .touchUpInside)
+            return btn
+        }()
+        view.addSubview(btn7)
+        
         entrance = DragonSlayerEntrance.build(on: view, superviewFrame: PortraitScreenBounds)
+    }
+    
+    deinit {
+        JPrint("DragonSlayerViewController Die")
+        timer?.cancel()
+        timer = nil
     }
     
     weak var inspireView: DragonSlayerInspireView? = nil
@@ -158,11 +194,30 @@ class DragonSlayerViewController: TestBaseViewController {
     
     @objc func s30() {
         JPrint("倒计时30s")
-        entrance.prepareSecond = 30
+        isFight = false
+        second = 30
+        countingDown()
     }
     
     @objc func s60() {
         JPrint("倒计时60s")
-        entrance.fightSecond = 30
+        isFight = true
+        second = 60
+        countingDown()
+    }
+    
+    @objc func stopCountingDown() {
+        JPrint("停止倒计时")
+        second = 0
+    }
+    
+    func countingDown() {
+        let timer = DispatchSource.makeTimerSource(queue: DispatchQueue.main)
+        timer.schedule(deadline: .now() + 1, repeating: .seconds(1))
+        timer.setEventHandler { [weak self] in
+            self?.second -= 1
+        }
+        timer.resume()
+        self.timer = timer
     }
 }

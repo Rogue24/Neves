@@ -22,8 +22,23 @@ class DragonSlayerEntrance: UIView {
         get { contentView.task }
     }
     
-    var prepareSecond = 0
-    var fightSecond = 0
+    var countingDownSecond: DragonSlayer.CountingDown = .prepare(0) {
+        didSet {
+            guard countingDownSecond != oldValue else { return }
+            
+            switch countingDownSecond {
+            case let .prepare(second):
+                fallthrough
+            case let .fight(second):
+                if second == 0 {
+                    hideCountingDownView()
+                } else {
+                    let countingDownView = showCountingDownView()
+                    countingDownView.second = countingDownSecond
+                }
+            }
+        }
+    }
     
     enum Site {
         case topLeft
@@ -55,7 +70,6 @@ class DragonSlayerEntrance: UIView {
         bgAnimView.loopMode = .loop
         bgAnimView.frame = bounds
         addSubview(bgAnimView)
-        bgAnimView.play()
         
         addSubview(contentView)
         
@@ -81,6 +95,7 @@ extension DragonSlayerEntrance {
         entrance.frame.origin.x = superviewFrame.width - entrance.frame.width - 72
         entrance.frame.origin.y = superviewFrame.height - entrance.frame.height - 57 - DiffTabBarH
         view.addSubview(entrance)
+        entrance.playAnim()
         return entrance
     }
     
@@ -103,23 +118,15 @@ extension DragonSlayerEntrance {
 
 private extension DragonSlayerEntrance {
     func playAnim() {
-//        guard self.animView == nil else {
-//            return
-//        }
-//        let animView = AnimationView.jp.build("cube_s_lottie")
-//        animView.loopMode = .loop
-//        animView.isUserInteractionEnabled = false
-//        insertSubview(animView, at: 0)
-//        animView.snp.makeConstraints { $0.edges.equalToSuperview() }
-//        animView.layoutIfNeeded()
-//        animView.play()
-//        self.animView = animView
+        countingDownView?.playAnim()
+        guard !bgAnimView.isAnimationPlaying else { return }
+        bgAnimView.play()
     }
     
     func stopAnim() {
-//        animView?.stop()
-//        animView?.removeFromSuperview()
-//        animView = nil
+        countingDownView?.stopAnim()
+        guard bgAnimView.isAnimationPlaying else { return }
+        bgAnimView.stop()
     }
 }
 
@@ -182,4 +189,34 @@ private extension DragonSlayerEntrance {
     }
 }
 
-
+private extension DragonSlayerEntrance {
+    func showCountingDownView() -> CountingDownView {
+        let countingDownView = self.countingDownView ?? {
+            let view = CountingDownView()
+            view.alpha = 0
+            addSubview(view)
+            self.countingDownView = view
+            return view
+        }()
+        countingDownView.playAnim()
+        if countingDownView.alpha == 1, contentView.alpha == 0 {
+            return countingDownView
+        }
+        UIView.animate(withDuration: 0.25) {
+            countingDownView.alpha = 1
+            self.contentView.alpha = 0
+        }
+        return countingDownView
+    }
+    
+    func hideCountingDownView() {
+        guard let countingDownView = self.countingDownView else { return }
+        UIView.animate(withDuration: 0.25) {
+            countingDownView.alpha = 0
+            self.contentView.alpha = 1
+        } completion: { _ in
+            guard countingDownView.alpha == 0 else { return }
+            countingDownView.stopAnim()
+        }
+    }
+}
