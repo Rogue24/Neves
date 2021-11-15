@@ -236,11 +236,6 @@ private extension DragonSlayerInspireView {
         contentLabel.lineBreakMode = .byTruncatingTail // 得重新设置才能显示省略号
         
         defer {
-            if isFull, let bubbleName = self.bubbleName {
-                showBubble(bubbleName)
-            }
-            self.bubbleName = nil
-            
             if animated {
                 let animView = AnimationView.jp.build("dragon_guwu_lottie")
                 animView.isUserInteractionEnabled = false
@@ -256,7 +251,13 @@ private extension DragonSlayerInspireView {
                 animView.play { [weak animView] _ in
                     animView?.removeFromSuperview()
                 }
+                
+                if isFull, let bubbleName = self.bubbleName {
+                    showBubble(bubbleName)
+                }
             }
+            
+            self.bubbleName = nil
         }
         
         guard contentLabel.frame.size.height != contentH else { return }
