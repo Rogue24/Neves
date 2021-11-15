@@ -1,5 +1,5 @@
 //
-//  Test1ViewController.swift
+//  ManyLayerToMaskViewController.swift
 //  Neves_Example
 //
 //  Created by 周健平 on 2020/10/29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Test1ViewController: TestBaseViewController {
+class ManyLayerToMaskViewController: TestBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

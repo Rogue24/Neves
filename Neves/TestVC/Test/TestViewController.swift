@@ -14,9 +14,6 @@ class TestViewController: TestBaseViewController {
     
     let demoLabel = HYLabel()
     
-    let test1VC = Test1ViewController()
-    let test2VC = Test2ViewController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,9 +23,8 @@ class TestViewController: TestBaseViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        navigationController?.pushViewController(Test1ViewController(), animated: true)
-        navigationController?.pushViewController(Test2ViewController(), animated: true)
-//        navigationController?.pushViewController(Test3ViewController(), animated: true)
+//        navigationController?.pushViewController(ManyLayerToMaskViewController(), animated: true)
+        navigationController?.pushViewController(WorkItemTestViewController(), animated: true)
     }
 
 }

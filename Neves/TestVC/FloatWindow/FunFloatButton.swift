@@ -42,7 +42,7 @@ class FunFloatButton: UIButton {
     }
     
     init() {
-        super.init(frame: CGRect(origin: .zero, size: [55.px, 55.px]))
+        super.init(frame: CGRect(origin: [PortraitScreenWidth, 0], size: [55.px, 55.px]))
         _setupUI()
         _setupAction()
     }
