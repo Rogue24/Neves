@@ -61,7 +61,7 @@ class MainTableViewController: UITableViewController {
             fatalError(error.localizedDescription)
         }
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Neves"
@@ -77,10 +77,6 @@ class MainTableViewController: UITableViewController {
 //        JPrint("时间？" , dateStr1, dateStr2)
         
         JPrint("时间？", Date().jp.mmssString)
-        
-        let abc: [[Int]] = [[1, 2], [3], [4, 5, 6]]
-        JPrint(abc)
-        JPrint(abc.flatMap { $0 })
     }
     
     override func viewWillAppear(_ animated: Bool) {
