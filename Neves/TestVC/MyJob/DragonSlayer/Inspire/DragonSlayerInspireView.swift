@@ -23,6 +23,7 @@ class DragonSlayerInspireView: UIView {
     private let maxContentH: CGFloat = 92
     
     // MARK: UI控件
+    private let bgLayer = CALayer()
     private let infoView = UIView()
     private let userIcon = UIImageView()
     private let nameLabel = UILabel()
@@ -82,20 +83,23 @@ class DragonSlayerInspireView: UIView {
 private extension DragonSlayerInspireView {
     
     func setupBg() {
-        layer.cornerRadius = 8
-        layer.masksToBounds = true
+        bgLayer.frame = bounds
+        bgLayer.cornerRadius = 8
+        bgLayer.masksToBounds = true
+        layer.addSublayer(bgLayer)
         
         let gLayer = CAGradientLayer()
         gLayer.frame = [0, 0, frame.width, viewMinH]
         gLayer.startPoint = [0.5, 0]
         gLayer.endPoint = [0.5, 1]
-        gLayer.colors = [UIColor.rgb(77, 22, 52, a: 0.95).cgColor, UIColor.rgb(71, 23, 75, a: 0.95).cgColor]
-        layer.addSublayer(gLayer)
+        gLayer.colors = [UIColor.rgb(77, 22, 52, a: 0.95).cgColor,
+                         UIColor.rgb(71, 23, 75, a: 0.95).cgColor]
+        bgLayer.addSublayer(gLayer)
         
-        let bgLayer = CALayer()
-        bgLayer.frame = [0, gLayer.frame.maxY, gLayer.frame.width, 150]
-        bgLayer.backgroundColor = UIColor.rgb(71, 23, 75, a: 0.95).cgColor
-        layer.addSublayer(bgLayer)
+        let bgBottomLayer = CALayer()
+        bgBottomLayer.frame = [0, gLayer.frame.maxY, gLayer.frame.width, 150]
+        bgBottomLayer.backgroundColor = UIColor.rgb(71, 23, 75, a: 0.95).cgColor
+        bgLayer.addSublayer(bgBottomLayer)
     }
     
     func setupInfo() {
@@ -236,6 +240,23 @@ private extension DragonSlayerInspireView {
                 showBubble(bubbleName)
             }
             self.bubbleName = nil
+            
+            if animated {
+                let animView = AnimationView.jp.build("dragon_guwu_lottie")
+                animView.isUserInteractionEnabled = false
+                animView.loopMode = .playOnce
+                addSubview(animView)
+                animView.snp.makeConstraints {
+                    $0.centerX.equalToSuperview()
+                    $0.top.equalTo(30)
+                    $0.width.equalTo(230)
+                    $0.height.equalTo(170)
+                }
+                animView.layoutIfNeeded()
+                animView.play { [weak animView] _ in
+                    animView?.removeFromSuperview()
+                }
+            }
         }
         
         guard contentLabel.frame.size.height != contentH else { return }
@@ -247,6 +268,7 @@ private extension DragonSlayerInspireView {
             self.zanIcon.alpha = zanAlpha
             self.inspireBtn.frame.origin.y = inspireBtnY
             self.frame = [self.frame.origin.x, self.viewMaxY - viewH, self.frame.width, viewH]
+            self.bgLayer.frame.size.height = viewH
         }
         
         guard animated else {
