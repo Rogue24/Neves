@@ -243,7 +243,7 @@ private extension DragonSlayerInspireView {
                 addSubview(animView)
                 animView.snp.makeConstraints {
                     $0.centerX.equalToSuperview()
-                    $0.top.equalTo(30)
+                    $0.bottom.equalToSuperview()
                     $0.width.equalTo(230)
                     $0.height.equalTo(170)
                 }

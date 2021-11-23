@@ -92,7 +92,6 @@ class MainTableViewController: UITableViewController {
             window.addSubview(FloatWindowContainer.shared)
             
             FloatWindowContainer.shared.addSubview(FunFloatButton.shared)
-            FunFloatButton.shared.addDragonSlayerBannerAction()
         }
     }
 }

@@ -18,6 +18,10 @@
                 "vcName": "DragonSlayerViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "RoomGuideAttentionViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

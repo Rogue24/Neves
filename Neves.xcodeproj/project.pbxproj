@@ -120,6 +120,9 @@
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
 		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
+		71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */; };
+		71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1F274CD00C004C3257 /* AttentionBothSides.swift */; };
+		71070E22274CD0FC004C3257 /* HorizontalRotationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E21274CD0FC004C3257 /* HorizontalRotationIconView.swift */; };
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
 		711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711074282717FBF400178969 /* LottieImagePickerViewController.swift */; };
 		7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742A271968D700178969 /* VideoMaker.Lottie.swift */; };
@@ -401,6 +404,9 @@
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
 		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
+		71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGuideAttentionViewController.swift; sourceTree = "<group>"; };
+		71070E1F274CD00C004C3257 /* AttentionBothSides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionBothSides.swift; sourceTree = "<group>"; };
+		71070E21274CD0FC004C3257 /* HorizontalRotationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRotationIconView.swift; sourceTree = "<group>"; };
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
 		711074282717FBF400178969 /* LottieImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePickerViewController.swift; sourceTree = "<group>"; };
 		7110742A271968D700178969 /* VideoMaker.Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Lottie.swift; sourceTree = "<group>"; };
@@ -1114,6 +1120,16 @@
 			path = Memory;
 			sourceTree = "<group>";
 		};
+		71070E1C274CBADE004C3257 /* RoomGuideAttention */ = {
+			isa = PBXGroup;
+			children = (
+				71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */,
+				71070E1F274CD00C004C3257 /* AttentionBothSides.swift */,
+				71070E21274CD0FC004C3257 /* HorizontalRotationIconView.swift */,
+			);
+			path = RoomGuideAttention;
+			sourceTree = "<group>";
+		};
 		716EFCE72671EFE100320C79 /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
@@ -1212,6 +1228,7 @@
 				71F249BB2731517A00FAAD93 /* Marebulabulas */,
 				71F249B32731517A00FAAD93 /* MagicCube */,
 				71F249AE2731517A00FAAD93 /* DragonSlayer */,
+				71070E1C274CBADE004C3257 /* RoomGuideAttention */,
 			);
 			path = MyJob;
 			sourceTree = "<group>";
@@ -1604,6 +1621,7 @@
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
+				71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */,
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
@@ -1651,6 +1669,7 @@
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
+				71070E22274CD0FC004C3257 /* HorizontalRotationIconView.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
@@ -1689,6 +1708,7 @@
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
 				1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */,
 				71675A09266A323600392630 /* JPError.swift in Sources */,
+				71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
 				71F24A122733B33300FAAD93 /* DragonSlayer.swift in Sources */,
