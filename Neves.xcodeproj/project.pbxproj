@@ -155,6 +155,7 @@
 		716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* VideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
+		71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71782B46274E40F60047F2B8 /* TestLockViewController.swift */; };
 		717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 717B3388272902CD000B0A70 /* minion_01.mp4 */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
@@ -439,6 +440,7 @@
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		7170BF122701CA2000900BE7 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
+		71782B46274E40F60047F2B8 /* TestLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLockViewController.swift; sourceTree = "<group>"; };
 		717B3388272902CD000B0A70 /* minion_01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = minion_01.mp4; sourceTree = "<group>"; };
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
@@ -948,6 +950,7 @@
 				1A354434254E77600032B677 /* ManyLayerToMaskViewController.swift */,
 				007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */,
 				1A354436254E77600032B677 /* TestTableViewController.swift */,
+				71782B46274E40F60047F2B8 /* TestLockViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1181,9 +1184,9 @@
 		71B18FB926D338E1006CF7C0 /* Combine */ = {
 			isa = PBXGroup;
 			children = (
-				71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */,
 				71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */,
 				71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */,
+				71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */,
 			);
 			path = Combine;
 			sourceTree = "<group>";
@@ -1647,6 +1650,7 @@
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
 				1A354513254E77600032B677 /* JPSubCollectionViewController.m in Sources */,
 				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
+				71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */,
 				1A354503254E77600032B677 /* JPNoHighlightButton.m in Sources */,
 				005DF54425652EDB0010E772 /* File.swift in Sources */,
 				1A9E419326BE459E006941D0 /* JPObject.m in Sources */,

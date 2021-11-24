@@ -37,6 +37,10 @@
         "header" : "Animate",
         "vcList" : [
             {
+                "vcName": "LottieShowViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "ImageVideoViewController",
                 "vcCreateWay" : 0
             },
@@ -58,10 +62,6 @@
             },
             {
                 "vcName": "LottieImagePickerViewController",
-                "vcCreateWay" : 0
-            },
-            {
-                "vcName": "LottieShowViewController",
                 "vcCreateWay" : 0
             },
             {
@@ -104,6 +104,10 @@
             },
             {
                 "vcName": "TestTableViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "TestLockViewController",
                 "vcCreateWay" : 0
             },
         ],
