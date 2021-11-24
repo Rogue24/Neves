@@ -93,13 +93,13 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "dragon_enter_lottie_1"
+            lottieName = "guanzhu_tx_lottie"
         case 1:
-            lottieName = "dragon_enter_lottie_2"//"cube_s_lottie"
+            lottieName = "roomguide_tx_lottie"
         case 2:
-            lottieName = "dragon_guwu_lottie"//"fire_lottie2"
+            lottieName = "dragon_guwu_lottie"
         default:
-            lottieName = "album_videobg_jielong_lottie"//"lottie_recordingmotion"
+            lottieName = "album_videobg_jielong_lottie"
         }
         
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),

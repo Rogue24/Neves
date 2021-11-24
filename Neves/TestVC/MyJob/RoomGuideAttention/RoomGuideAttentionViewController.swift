@@ -45,16 +45,14 @@ extension RoomGuideAttentionViewController {
         bsView.show()
         
         if isFirst {
-            self.tryNextTopBubble()
+            tryNextTopBubble()
         }
     }
     
     func tryNextTopBubble() {
         Asyncs.mainDelay(2) { [weak self] in
             guard let self = self else { return }
-            defer {
-                self.tryLaunchBubble()
-            }
+            defer { self.tryLaunchBubble() }
             
             guard let topBsView = self.bsViews.first else { return }
             topBsView.hide()

@@ -122,7 +122,6 @@
 		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
 		71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */; };
 		71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1F274CD00C004C3257 /* AttentionBothSides.swift */; };
-		71070E22274CD0FC004C3257 /* HorizontalRotationIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E21274CD0FC004C3257 /* HorizontalRotationIconView.swift */; };
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
 		711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711074282717FBF400178969 /* LottieImagePickerViewController.swift */; };
 		7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742A271968D700178969 /* VideoMaker.Lottie.swift */; };
@@ -406,7 +405,6 @@
 		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
 		71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGuideAttentionViewController.swift; sourceTree = "<group>"; };
 		71070E1F274CD00C004C3257 /* AttentionBothSides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionBothSides.swift; sourceTree = "<group>"; };
-		71070E21274CD0FC004C3257 /* HorizontalRotationIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRotationIconView.swift; sourceTree = "<group>"; };
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
 		711074282717FBF400178969 /* LottieImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePickerViewController.swift; sourceTree = "<group>"; };
 		7110742A271968D700178969 /* VideoMaker.Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Lottie.swift; sourceTree = "<group>"; };
@@ -1125,7 +1123,6 @@
 			children = (
 				71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */,
 				71070E1F274CD00C004C3257 /* AttentionBothSides.swift */,
-				71070E21274CD0FC004C3257 /* HorizontalRotationIconView.swift */,
 			);
 			path = RoomGuideAttention;
 			sourceTree = "<group>";
@@ -1669,7 +1666,6 @@
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
-				71070E22274CD0FC004C3257 /* HorizontalRotationIconView.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
