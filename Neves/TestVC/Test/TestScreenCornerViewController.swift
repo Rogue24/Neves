@@ -26,7 +26,7 @@ class TestScreenCornerViewController: TestBaseViewController {
         v.layer.masksToBounds = true
         view.addSubview(v)
         
-        /// 感觉是`47`
+        /// 小屏是`38`左右，大屏是`47`左右
     }
     
     @objc func sliderDidChanged(_ slider: UISlider) {
