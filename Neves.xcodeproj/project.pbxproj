@@ -155,6 +155,7 @@
 		716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* VideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
+		717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */; };
 		71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71782B46274E40F60047F2B8 /* TestLockViewController.swift */; };
 		717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 717B3388272902CD000B0A70 /* minion_01.mp4 */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
@@ -440,6 +441,7 @@
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		7170BF122701CA2000900BE7 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
+		717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenCornerViewController.swift; sourceTree = "<group>"; };
 		71782B46274E40F60047F2B8 /* TestLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLockViewController.swift; sourceTree = "<group>"; };
 		717B3388272902CD000B0A70 /* minion_01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = minion_01.mp4; sourceTree = "<group>"; };
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
@@ -951,6 +953,7 @@
 				007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */,
 				1A354436254E77600032B677 /* TestTableViewController.swift */,
 				71782B46274E40F60047F2B8 /* TestLockViewController.swift */,
+				717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1694,6 +1697,7 @@
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
 				7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */,
+				717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,

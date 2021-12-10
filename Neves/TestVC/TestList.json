@@ -110,6 +110,10 @@
                 "vcName": "TestLockViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "TestScreenCornerViewController",
+                "vcCreateWay" : 0
+            },
         ],
     },
     {
