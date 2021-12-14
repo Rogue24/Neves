@@ -146,6 +146,34 @@ class DragonSlayerViewController: TestBaseViewController {
         entrance = DragonSlayerEntrance.build(on: view, superviewFrame: PortraitScreenBounds)
     }
     
+    static var num = 1
+    static var top = true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        FunFloatButton.shared.tapMeAction = {
+            if Self.num % 3 == 0 {
+                DragonSlayerBanner.bannerY = Self.top ? 0 : 50
+                Self.top.toggle()
+                
+                JPrint("换位置 ---", Self.num)
+                Self.num += 1
+                return
+            }
+            
+            let duration = TimeInterval(1 + arc4random_uniform(2))
+            let info = DragonSlayerBanner.Info(title: "\(Self.num)", duration: duration)
+            DragonSlayerBanner.show(info)
+            
+            JPrint("放横幅 ---", Self.num)
+            Self.num += 1
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        FunFloatButton.shared.tapMeAction = nil
+    }
+    
     deinit {
         JPrint("DragonSlayerViewController Die")
         timer?.cancel()

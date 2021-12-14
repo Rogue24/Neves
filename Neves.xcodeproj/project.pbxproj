@@ -100,6 +100,7 @@
 		1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587442629E6CC00846689 /* OptionPopView.swift */; };
 		1A65874C2629E6CC00846689 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587452629E6CC00846689 /* AlertView.swift */; };
 		1A65874E2629E6CC00846689 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587472629E6CC00846689 /* SheetView.swift */; };
+		1A82A1442768FCF000ECA895 /* FunFloatButton.Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A82A1432768FCF000ECA895 /* FunFloatButton.Playground.swift */; };
 		1A9E417826BE4061006941D0 /* TableViewAnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */; };
 		1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */; };
 		1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */; };
@@ -223,7 +224,6 @@
 		71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CC2731517A00FAAD93 /* dialogue1.txt */; };
 		71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */; };
 		71F249F92731517A00FAAD93 /* MarebulabulasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */; };
-		71F24A002732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */; };
 		71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FD2732270800FAAD93 /* DragonSlayerBanner.Manager.swift */; };
 		71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FE2732270800FAAD93 /* DragonSlayerBanner.Model.swift */; };
 		71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */; };
@@ -380,6 +380,7 @@
 		1A6587442629E6CC00846689 /* OptionPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionPopView.swift; sourceTree = "<group>"; };
 		1A6587452629E6CC00846689 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		1A6587472629E6CC00846689 /* SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		1A82A1432768FCF000ECA895 /* FunFloatButton.Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFloatButton.Playground.swift; sourceTree = "<group>"; };
 		1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAnimateController.swift; sourceTree = "<group>"; };
 		1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncTestViewController.swift; sourceTree = "<group>"; };
 		1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTryCatchViewController.swift; sourceTree = "<group>"; };
@@ -511,7 +512,6 @@
 		71F249CC2731517A00FAAD93 /* dialogue1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dialogue1.txt; sourceTree = "<group>"; };
 		71F249CD2731517A00FAAD93 /* MarebulabulasLrcCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MarebulabulasLrcCell.xib; sourceTree = "<group>"; };
 		71F249CE2731517A00FAAD93 /* MarebulabulasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarebulabulasViewController.swift; sourceTree = "<group>"; };
-		71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunFloatButton.DragonSlayerBanner.swift; sourceTree = "<group>"; };
 		71F249FD2732270800FAAD93 /* DragonSlayerBanner.Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Manager.swift; sourceTree = "<group>"; };
 		71F249FE2732270800FAAD93 /* DragonSlayerBanner.Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.Model.swift; sourceTree = "<group>"; };
 		71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragonSlayerBanner.View.swift; sourceTree = "<group>"; };
@@ -909,6 +909,7 @@
 			children = (
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
+				71D72B0B27310CD000300367 /* FloatWindow */,
 				1A354432254E77600032B677 /* Test */,
 				1A354455254E77600032B677 /* Base */,
 				1A9E417926BE4286006941D0 /* Function */,
@@ -921,7 +922,6 @@
 				1A35443A254E77600032B677 /* GCD */,
 				1A9E41AA26BFE19F006941D0 /* Memory */,
 				1A3545B6254E89040032B677 /* Widget */,
-				71D72B0B27310CD000300367 /* FloatWindow */,
 				71F249982731517A00FAAD93 /* MyJob */,
 			);
 			path = TestVC;
@@ -1220,6 +1220,7 @@
 				71F2499227313B0C00FAAD93 /* FloatContainer.swift */,
 				71D72B0C27310D4500300367 /* FloatWindowContainer.swift */,
 				71D72B0E2731141D00300367 /* FunFloatButton.swift */,
+				1A82A1432768FCF000ECA895 /* FunFloatButton.Playground.swift */,
 			);
 			path = FloatWindow;
 			sourceTree = "<group>";
@@ -1379,7 +1380,6 @@
 				71F249FD2732270800FAAD93 /* DragonSlayerBanner.Manager.swift */,
 				71F249FE2732270800FAAD93 /* DragonSlayerBanner.Model.swift */,
 				71F249FF2732270800FAAD93 /* DragonSlayerBanner.View.swift */,
-				71F249FC2732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift */,
 			);
 			path = Banner;
 			sourceTree = "<group>";
@@ -1716,7 +1716,6 @@
 				00D65163257498720074693E /* GradientView.swift in Sources */,
 				1A9E418926BE44A1006941D0 /* JPDog.m in Sources */,
 				71F24A122733B33300FAAD93 /* DragonSlayer.swift in Sources */,
-				71F24A002732270800FAAD93 /* FunFloatButton.DragonSlayerBanner.swift in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
@@ -1734,6 +1733,7 @@
 				1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */,
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
+				1A82A1442768FCF000ECA895 /* FunFloatButton.Playground.swift in Sources */,
 				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,
 				71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */,
 				71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */,

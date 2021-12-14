@@ -105,7 +105,7 @@ private extension FunFloatButton {
     
     @objc func _touchUpInside() {
         isTouching = false
-        tapMeAction?()
+        tapMeAction.map { $0() } ?? tapMeWhatToDo()
     }
     
     @objc func panMe(_ panGR: UIPanGestureRecognizer) {

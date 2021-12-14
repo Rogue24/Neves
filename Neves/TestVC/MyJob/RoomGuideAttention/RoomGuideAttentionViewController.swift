@@ -11,16 +11,19 @@ class RoomGuideAttentionViewController: TestBaseViewController {
     
     var bsTag = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         FunFloatButton.shared.tapMeAction = { [weak self] in
             guard let self = self else { return }
             self.bsTag += 1
             self.launchBubble(AttentionBothSides.Model(name1: "美男", name2: "帅哥", tag: self.bsTag))
             JPrint("点了第\(self.bsTag)下")
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        FunFloatButton.shared.tapMeAction = nil
     }
     
     var models: [AttentionBothSides.Model] = []
