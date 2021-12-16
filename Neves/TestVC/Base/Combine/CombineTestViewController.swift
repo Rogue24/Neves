@@ -26,21 +26,23 @@ class CombineTestViewController: TestBaseViewController {
     let person = Person("hh")
     
     var connection: Combine.Cancellable? // RxSwift也有Cancellable，得加上模块前缀区分
+    
+    // testObj
     var canceler1: AnyCancellable?
     var canceler2: AnyCancellable?
+    
+    // testReq
     var canceler3: AnyCancellable?
+    
+    // testShare
     var canceler4: AnyCancellable?
     var canceler5: AnyCancellable?
     var canceler6: AnyCancellable?
     var canceler7: AnyCancellable?
+    
+    // testConnectable
     var canceler8: AnyCancellable?
     var canceler9: AnyCancellable?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        testShare()
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         person.name = "\(Date())"
@@ -62,6 +64,12 @@ class CombineTestViewController: TestBaseViewController {
         canceler9?.cancel()
     }
 }
+
+/**
+ * Publisher 负责发布内容
+ * Subscriber 负责接收内容
+ * Subscription 作为中介，协调生产端和消费端的需求
+ */
 
 @available(iOS 13.0, *)
 extension CombineTestViewController {
