@@ -230,6 +230,14 @@
         "header" : "Memory",
         "vcList" : [
             {
+                "vcName": "MemoryLayoutViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "MemorySizeViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "MemorySizeTestViewController",
                 "vcCreateWay" : 0
             },

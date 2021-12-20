@@ -161,6 +161,8 @@
 		717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 717B3388272902CD000B0A70 /* minion_01.mp4 */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
+		717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FA034277059FF0081DD50 /* MemorySizeViewController.swift */; };
+		717FA03727706B2D0081DD50 /* MemoryLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */; };
 		718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018BF2722611A0056E699 /* LottieImagePicker.swift */; };
 		718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C1272261370056E699 /* DecodeImageProvider.swift */; };
 		718018C4272261970056E699 /* LottieImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C3272261970056E699 /* LottieImageStore.swift */; };
@@ -448,6 +450,8 @@
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
 		717E8B7A26DDF44E000E3E9F /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+		717FA034277059FF0081DD50 /* MemorySizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySizeViewController.swift; sourceTree = "<group>"; };
+		717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLayoutViewController.swift; sourceTree = "<group>"; };
 		718018BF2722611A0056E699 /* LottieImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieImagePicker.swift; sourceTree = "<group>"; };
 		718018C1272261370056E699 /* DecodeImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeImageProvider.swift; sourceTree = "<group>"; };
 		718018C3272261970056E699 /* LottieImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImageStore.swift; sourceTree = "<group>"; };
@@ -1119,6 +1123,8 @@
 		1A9E41AA26BFE19F006941D0 /* Memory */ = {
 			isa = PBXGroup;
 			children = (
+				717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */,
+				717FA034277059FF0081DD50 /* MemorySizeViewController.swift */,
 				1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */,
 			);
 			path = Memory;
@@ -1632,6 +1638,7 @@
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
 				71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
+				717FA03727706B2D0081DD50 /* MemoryLayoutViewController.swift in Sources */,
 				71F249EE2731517A00FAAD93 /* MarebulabulasLrcView.swift in Sources */,
 				71107437271E956100178969 /* VideoMaker.Layer.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
@@ -1644,6 +1651,7 @@
 				71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */,
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
 				71F24A052732272700FAAD93 /* DragonSlayerViewController.swift in Sources */,
+				717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
