@@ -17,7 +17,7 @@ enum TapHandlerType : Int {
 
 public class HYLabel: UILabel {
     
-    // MARK:- 属性
+    // MARK: - 属性
     // 重写系统的属性
     override public var text : String? {
         didSet {
@@ -67,7 +67,7 @@ public class HYLabel: UILabel {
     public var topicTapHandler : HYTapHandler?
     public var userTapHandler : HYTapHandler?
     
-    // MARK:- 构造函数
+    // MARK: - 构造函数
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -80,7 +80,7 @@ public class HYLabel: UILabel {
         prepareTextSystem()
     }
     
-    // MARK:- 布局子控件
+    // MARK: - 布局子控件
     override public func layoutSubviews() {
         super.layoutSubviews()
         
@@ -88,7 +88,7 @@ public class HYLabel: UILabel {
         textContainer.size = frame.size
     }
     
-    // MARK:- 重写drawTextInRect方法
+    // MARK: - 重写drawTextInRect方法
     override public func drawText(in rect: CGRect) {
         // 1.绘制背景
         if selectedRange != nil {
@@ -180,7 +180,7 @@ extension HYLabel {
 }
 
 
-// MARK:- 字符串匹配封装
+// MARK: - 字符串匹配封装
 extension HYLabel {
     private func getRanges(pattern : String) -> [NSRange]? {
         // 创建正则表达式对象
@@ -215,7 +215,7 @@ extension HYLabel {
 }
 
 
-// MARK:- 点击交互的封装
+// MARK: - 点击交互的封装
 extension HYLabel {
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // 0.记录点击
@@ -308,7 +308,7 @@ extension HYLabel {
     }
 }
 
-// MARK:- 补充
+// MARK: - 补充
 extension HYLabel {
     /// 如果用户没有设置lineBreak,则所有内容会绘制到同一行中,因此需要主动设置
     private func addLineBreak(attrString: NSAttributedString) -> NSMutableAttributedString {

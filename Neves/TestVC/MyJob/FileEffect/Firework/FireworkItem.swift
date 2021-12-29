@@ -9,14 +9,14 @@
 import UIKit
 
 class FireworkItem: UIView {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     @IBOutlet weak var bgView: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var countDownLabel: UILabel!
     // MARK: 用户标识，用于刷新头像
     var uid: UInt32?
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     override func awakeFromNib() {
         super.awakeFromNib()
         NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo), name: FireworkModel.UserInfoGetedNotification, object: nil)
@@ -27,7 +27,7 @@ class FireworkItem: UIView {
         JPrint("老子死了吗")
     }
     
-    // MARK:- 监听获取到用户信息的通知
+    // MARK: - 监听获取到用户信息的通知
     @objc fileprivate func getUserInfo(_ notification: Notification) {
         guard let uid = self.uid,
               let userInfo = notification.object as? FireworkModel.UserInfo,
@@ -35,7 +35,7 @@ class FireworkItem: UIView {
         iconView.image = userInfo.icon ?? FireworkModel.defaultIcon
     }
     
-    // MARK:- 刷新秒数&闪烁动画
+    // MARK: - 刷新秒数&闪烁动画
     func updateSeconds(_ model: FireworkModel) {
         uid = model.uid
         iconView.image = model.icon ?? FireworkModel.defaultIcon

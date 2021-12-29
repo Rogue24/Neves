@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage {
-    // MARK:- 图片切圆&压缩
+    // MARK: - 图片切圆&压缩
     func clipRound(_ scale: CGFloat? = nil) -> UIImage {
         guard let cgImg = self.cgImage else { return self }
         
@@ -43,7 +43,7 @@ extension UIImage {
         return finalImg ?? self
     }
     
-//    // MARK:- 图片解码&压缩
+//    // MARK: - 图片解码&压缩
 //    func decode(_ scale: CGFloat? = nil) -> UIImage {
 //        guard let cgImg = self.cgImage else { return self }
 //        

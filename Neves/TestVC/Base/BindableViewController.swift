@@ -211,7 +211,7 @@ class JPModel: NSObject, MBindable {
     }
 }
 
-// MARK:- 工作状态
+// MARK: - 工作状态
 enum JPWorkState: Equatable {
     case idle // 空闲
     case prepare // 准备中
@@ -219,7 +219,7 @@ enum JPWorkState: Equatable {
     case done // 完成
 }
 
-// MARK:- 工作模拟队列
+// MARK: - 工作模拟队列
 
 final class JPWorkManager {
     

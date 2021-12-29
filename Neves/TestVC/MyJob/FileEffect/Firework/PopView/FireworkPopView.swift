@@ -9,7 +9,7 @@
 import UIKit
 
 class FireworkPopView: UIView {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     @IBOutlet weak var contentViewBottom: NSLayoutConstraint!
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var contentView: UIView!
@@ -17,7 +17,7 @@ class FireworkPopView: UIView {
     @IBOutlet weak var topBgView: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -39,7 +39,7 @@ class FireworkPopView: UIView {
         JPrint("老子死了吗")
     }
     
-    // MARK:- 弹出动画
+    // MARK: - 弹出动画
     class func show(onView view: UIView? = nil, _ models: [FireworkModel]) {
         guard let superview = view ?? UIApplication.shared.keyWindow else { return }
         
@@ -66,7 +66,7 @@ class FireworkPopView: UIView {
         }, completion: nil)
     }
     
-    // MARK:- 关闭动画
+    // MARK: - 关闭动画
     func close() {
         isUserInteractionEnabled = false
         contentViewBottom.constant = -(contentViewHeight.constant + 20)
@@ -85,7 +85,7 @@ class FireworkPopView: UIView {
         if contentView.frame.contains(point) == false { close() }
     }
     
-    // MARK:- 弹出规则视图
+    // MARK: - 弹出规则视图
     @IBAction func showRule() {
         FireworkRulePopView.show { [weak self] in
             self?.layer.backgroundColor = UIColor.rgb(0, 0, 0, a: 0).cgColor
@@ -96,12 +96,12 @@ class FireworkPopView: UIView {
 }
 
 class FireworkListView: UITableView {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     var cellModels: [FireworkCellModel] = [] {
         didSet { reloadData() }
     }
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -119,7 +119,7 @@ class FireworkListView: UITableView {
         JPrint("老子死了吗")
     }
     
-    // MARK:- 监听获取到用户信息的通知
+    // MARK: - 监听获取到用户信息的通知
     @objc func getUserInfo(_ notification: Notification) {
         guard let userInfo = notification.object as? FireworkModel.UserInfo,
               visibleCells.count > 0 else { return }
@@ -135,7 +135,7 @@ class FireworkListView: UITableView {
     }
 }
 
-// MARK:- UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension FireworkListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cellModels.count

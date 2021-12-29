@@ -7,12 +7,12 @@
 //
 
 class AlertView: UIView, PopActionViewCompatible {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     let style: PopStyle = .alert
     let contentView = UIView()
     let actions: [PopBaseAction<AlertView>]
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     init(_ title: String,
          _ message: String?,
          _ cancelTitle: String? = nil,
@@ -120,7 +120,7 @@ class AlertView: UIView, PopActionViewCompatible {
         JPrint("弹窗小妹死了")
     }
     
-    // MARK:- 创建+弹出
+    // MARK: - 创建+弹出
     @discardableResult
     static func show(onView view: UIView? = nil,
                      title: String,
@@ -137,6 +137,6 @@ class AlertView: UIView, PopActionViewCompatible {
         show(onView: view) { AlertView(title, message, cancelTitle, cancelTitleColor, cancelBgColor, confirmTitle, confirmTitleColor, confirmBgColor, isCancelOnLeft, isAfterConfirmToClose, confirm) }
     }
     
-    // MARK:- 监听按钮点击
+    // MARK: - 监听按钮点击
     @objc func didClickBtn(_ sender: UIButton) { execAction(sender.tag) }
 }

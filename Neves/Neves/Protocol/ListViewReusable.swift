@@ -24,7 +24,7 @@ extension CellReusable where Self: UICollectionViewCell {
 }
 
 extension UITableView {
-    // MARK:- Register
+    // MARK: - Register
     func registerCell<T: UITableViewCell>(_ cellClass: T.Type) where T: CellReusable {
         if let nib = T.nib {
             register(nib, forCellReuseIdentifier: T.reuseIdentifier)
@@ -41,7 +41,7 @@ extension UITableView {
         }
     }
     
-    // MARK:- Dequeue Reusable
+    // MARK: - Dequeue Reusable
     func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath) -> T where T: CellReusable {
         dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }
@@ -52,7 +52,7 @@ extension UITableView {
 }
 
 extension UICollectionView {
-    // MARK:- Register
+    // MARK: - Register
     func registerCell<T: UICollectionViewCell>(_ cellClass: T.Type) where T: CellReusable {
         if let nib = T.nib {
             register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
@@ -77,7 +77,7 @@ extension UICollectionView {
         }
     }
     
-    // MARK:- Dequeue Reusable
+    // MARK: - Dequeue Reusable
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: CellReusable {
         dequeueReusableCell(withReuseIdentifier: T.reuseIdentifier, for: indexPath) as! T
     }

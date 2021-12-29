@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class FireworkModel: Equatable {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     struct UserInfo {
         let uid: UInt32
         var icon: UIImage? = FireworkModel.defaultIcon
@@ -41,7 +41,7 @@ class FireworkModel: Equatable {
         }
     }
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     init(_ launcherInfo: UU_FireworkLauncherInfo) {
         self.launcherInfo = launcherInfo
         
@@ -56,20 +56,20 @@ class FireworkModel: Equatable {
         NotificationCenter.default.removeObserver(self)
     }
     
-    // MARK:- 监听获取到用户信息的通知
+    // MARK: - 监听获取到用户信息的通知
     @objc func getUserInfo(_ notification: Notification) {
         guard let userInfo = notification.object as? FireworkModel.UserInfo,
               userInfo.uid == uid else { return }
         self.userInfo = userInfo
     }
     
-    // MARK:- Equatable
+    // MARK: - Equatable
     static func == (lhs: FireworkModel, rhs: FireworkModel) -> Bool {
         lhs.uid == rhs.uid
     }
 }
 
-// MARK:- 获取&缓存用户模型
+// MARK: - 获取&缓存用户模型
 extension FireworkModel {
     // MARK: 更新用户模型通知
     static let UserInfoGetedNotification: NSNotification.Name = NSNotification.Name(rawValue: "FireworkModel.UserInfoGetedNotification")

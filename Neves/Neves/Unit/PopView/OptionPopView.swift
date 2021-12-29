@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK:- 选项类型
+// MARK: - 选项类型
 enum OptionType {
     case remarks // 备注
     case blacklist(_ isCancel: Bool) // 拉黑
@@ -49,7 +49,7 @@ enum OptionType {
     }
 }
 
-// MARK:- 选项事件模型
+// MARK: - 选项事件模型
 struct OptionAction: PopActionCompatible {
     typealias Execute = (OptionPopView, Self, Int) -> ()
     
@@ -82,7 +82,7 @@ struct OptionAction: PopActionCompatible {
     }
 }
 
-// MARK:- 选项弹窗
+// MARK: - 选项弹窗
 class OptionPopView: UIView, PopActionViewCompatible {
     static let maxCol = 4
     static let contentInset: UIEdgeInsets = .init(top: 27.px, left: 39.px, bottom: 30.px + DiffTabBarH, right: 39.px)
@@ -171,7 +171,7 @@ class OptionPopView: UIView, PopActionViewCompatible {
     }
 }
 
-// MARK:- 选项按钮
+// MARK: - 选项按钮
 class OptionItem: UIView {
     static let size: CGSize = [45.px, (45 + 8 + 15).px]
     

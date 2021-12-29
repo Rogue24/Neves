@@ -27,7 +27,7 @@ class KingfisherTestViewController: TestBaseViewController {
         
 //        (_ receivedSize: Int64, _ totalSize: Int64)
         
-        // MARK:- 【ImageProcessor】
+        // MARK: - 【ImageProcessor】
         // 使用了 ImageProcessor 会有一个新的 identifier，用于区别同一张图片的不同处理结果
         // 每种不同（单个或组装）的 ImageProcessor 只对应处理过的图片，所以只保存处理的图片，不会同时保存原图
         var p: ImageProcessor = RoundCornerImageProcessor(cornerRadius: 999)
@@ -36,7 +36,7 @@ class KingfisherTestViewController: TestBaseViewController {
         
         let c = FormatIndicatedCacheSerializer.png
         
-        // MARK:- KingfisherManager.shared.downloader.downloadImage
+        // MARK: - KingfisherManager.shared.downloader.downloadImage
         
         // downloadImage不会去缓存获取，每次都会重新下载，也不会缓存到磁盘中
         // 下载过程接收的是mutableData（可变Data），在内存中，并不是磁盘里面
@@ -55,7 +55,7 @@ class KingfisherTestViewController: TestBaseViewController {
         }
         
         
-        // MARK:- KingfisherManager.shared.retrieveImage
+        // MARK: - KingfisherManager.shared.retrieveImage
         
         // retrieveImage才会缓存，有缓存（内存没有再去磁盘找）直接返回，没有就下载
         KingfisherManager.shared.retrieveImage(with: url, options: [.processor(p), .cacheSerializer(c)]) { a, b in
@@ -75,7 +75,7 @@ class KingfisherTestViewController: TestBaseViewController {
         }
         
         
-        // MARK:- ImagePrefetcher
+        // MARK: - ImagePrefetcher
         
         guard let url1 = URL(string: "https://picsum.photos/400/200?random=1"),
               let url2 = URL(string: "https://picsum.photos/400/200?random=2"),

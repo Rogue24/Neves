@@ -10,12 +10,12 @@ import UIKit
 //import Lottie
 
 @objcMembers class FireworkController: NSObject {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     let fwView: FireworkView = FireworkView()
     weak var superview: UIView?
     weak var operationView: UIView?
     
-    // MARK:- 私有属性
+    // MARK: - 私有属性
     
     // MARK: 任务队列
     fileprivate let dataQueue = DispatchQueue(label: "Firework.data.SerialQueue")
@@ -64,7 +64,7 @@ import UIKit
     
     fileprivate let myUid: UInt32
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     override init() {
         self.myUid = 184669029
         super.init()
@@ -75,7 +75,7 @@ import UIKit
     }
 }
 
-// MARK:- 公开方法
+// MARK: - 公开方法
 extension FireworkController {
     // MARK: 初始化焰火UI
     func setupFireworkView(onView superview: UIView, operationView: UIView, isMinigameMode: Bool) {
@@ -251,7 +251,7 @@ extension FireworkController {
     }
 }
 
-// MARK:- 私有方法
+// MARK: - 私有方法
 extension FireworkController {
     // MARK: 匹配/找出要发射🚀的模型
     fileprivate func matchFireworkGains(_ lastUid: UInt32? = nil) -> [FireworkModel] {
@@ -320,7 +320,7 @@ extension FireworkController {
     }
 }
 
-// MARK:- 计时器相关方法
+// MARK: - 计时器相关方法
 extension FireworkController {
     // MARK: 开始&继续计时
     fileprivate func startTiming() {

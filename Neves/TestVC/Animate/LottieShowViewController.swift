@@ -138,7 +138,7 @@ class LottieShowViewController: TestBaseViewController {
     }
 }
 
-// MARK:- 截取Lottie动画的其中一帧生成图片
+// MARK: - 截取Lottie动画的其中一帧生成图片
 extension LottieShowViewController {
     func makeAnimationImage(_ animationLayer: AnimationContainer, _ currentFrame: CGFloat) {
         makerItem?.cancel()

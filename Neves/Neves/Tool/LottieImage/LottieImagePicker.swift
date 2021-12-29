@@ -90,7 +90,7 @@ class LottieImagePicker {
     }
 }
 
-// MARK:- 截取Lottie动画的其中一帧生成图片
+// MARK: - 截取Lottie动画的其中一帧生成图片
 extension LottieImagePicker {
     
     func asyncPickAllImages(framerate: CGFloat? = nil, directoryPath: String, completion: @escaping (Bool) -> ()) {

@@ -39,7 +39,7 @@ class TestTableViewController: TestBaseViewController, UITableViewDataSource {
         // Configure the cell...
         cell.textLabel?.text = "\(indexPath.row)"
         
-        // MARK:- 循环引用问题
+        // MARK: - 循环引用问题
         cell.tapMeAction = {
             // controller、tableView、cell都不死
             // cell ← tableView ← self
@@ -59,7 +59,7 @@ class TestTableViewController: TestBaseViewController, UITableViewDataSource {
 
 }
 
-// MARK:- TableView
+// MARK: - TableView
 class TestTableView: UITableView {
 
     deinit {
@@ -68,7 +68,7 @@ class TestTableView: UITableView {
 
 }
 
-// MARK:- TableViewCell
+// MARK: - TableViewCell
 class TestTableViewCell: UITableViewCell {
     
     var tapMeAction: (() -> ())?

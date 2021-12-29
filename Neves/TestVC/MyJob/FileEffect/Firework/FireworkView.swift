@@ -9,17 +9,17 @@
 import UIKit
 
 class FireworkView: UIView {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     typealias UpdateDone = () -> Void
     // MARK: 点击回调
     var touchAction: (() -> ())?
     
-    // MARK:- 私有属性
+    // MARK: - 私有属性
     fileprivate var itemView = UIView()
     fileprivate var frontItem: FireworkItem = FireworkItem.loadFromNib()
     fileprivate var backItem: FireworkItem = FireworkItem.loadFromNib()
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     init() {
         super.init(frame: .zero)
         setupUI()
@@ -33,7 +33,7 @@ class FireworkView: UIView {
         JPrint("老子死了吗")
     }
     
-    // MARK:- 重写父类方法
+    // MARK: - 重写父类方法
     override func didMoveToSuperview() {
         if self.superview != nil { updateItemsLayout() }
     }
@@ -48,7 +48,7 @@ class FireworkView: UIView {
     }
 }
 
-// MARK:- 初始化UI
+// MARK: - 初始化UI
 extension FireworkView {
     // MARK: 初始化焰火轮播图
     fileprivate func setupUI() {
@@ -73,7 +73,7 @@ extension FireworkView {
     }
 }
 
-// MARK:- 公开方法
+// MARK: - 公开方法
 extension FireworkView {
     // MARK: 第一次显示动画
     func showAnim(_ model: FireworkModel, _ updateDone: UpdateDone?) {
@@ -170,7 +170,7 @@ extension FireworkView {
     }
 }
 
-// MARK:- 私有方法
+// MARK: - 私有方法
 extension FireworkView {
     // MARK: 交换前后引用
     private func swapItems(_ a: inout FireworkItem, _ b: inout FireworkItem) { (a, b) = (b, a) }

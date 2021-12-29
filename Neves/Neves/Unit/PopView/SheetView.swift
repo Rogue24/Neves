@@ -8,7 +8,7 @@
 
 import UIKit
 
-// MARK:- 事件模型
+// MARK: - 事件模型
 struct SheetAction: PopActionCompatible {
     typealias Execute = (SheetView, Self, Int) -> ()
     
@@ -31,12 +31,12 @@ struct SheetAction: PopActionCompatible {
 }
 
 class SheetView: UIView, PopActionViewCompatible {
-    // MARK:- 公开属性
+    // MARK: - 公开属性
     let style: PopStyle = .sheet
     let contentView = UIView()
     let actions: [SheetAction]
     
-    // MARK:- 初始化&反初始化
+    // MARK: - 初始化&反初始化
     init(_ actions: [SheetAction]) {
         
         self.actions = actions
@@ -91,19 +91,19 @@ class SheetView: UIView, PopActionViewCompatible {
         JPrint("弹窗小妹死了")
     }
     
-    // MARK:- 创建+弹出
+    // MARK: - 创建+弹出
     @discardableResult
     static func show(onView view: UIView? = nil, actions: [SheetAction]) -> SheetView? {
         show(onView: view) { SheetView(actions) }
     }
     
-    // MARK:- 点击空白关闭
+    // MARK: - 点击空白关闭
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let point = touch.location(in: self)
         if contentView.frame.contains(point) == false { close() }
     }
     
-    // MARK:- 监听按钮点击
+    // MARK: - 监听按钮点击
     @objc func didClickBtn(_ sender: UIButton) { execAction(sender.tag) }
 }

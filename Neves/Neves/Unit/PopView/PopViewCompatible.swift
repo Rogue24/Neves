@@ -19,7 +19,7 @@ protocol PopViewCompatible {
 }
 
 extension PopViewCompatible where Self: UIView {
-    // MARK:- 创建+弹出
+    // MARK: - 创建+弹出
     @discardableResult
     static func show(onView view: UIView? = nil, insertAt index: Int? = nil, builder: () -> Self) -> Self? {
         guard let superview = view ?? UIApplication.shared.windows.first else { return nil }
@@ -33,7 +33,7 @@ extension PopViewCompatible where Self: UIView {
         return popView
     }
     
-    // MARK:- 弹出动画
+    // MARK: - 弹出动画
     func show() {
         switch style {
         case .sheet:
@@ -62,7 +62,7 @@ extension PopViewCompatible where Self: UIView {
         }
     }
     
-    // MARK:- 关闭动画
+    // MARK: - 关闭动画
     func close() {
         isUserInteractionEnabled = false
         switch style {
@@ -127,7 +127,7 @@ protocol PopActionViewCompatible: PopViewCompatible {
 }
 
 extension PopActionViewCompatible {
-    // MARK:- 执行Action
+    // MARK: - 执行Action
     func execAction(_ index: Int) {
         guard let popView = self as? Self.Action.PopView,
               index < actions.count else { return }
