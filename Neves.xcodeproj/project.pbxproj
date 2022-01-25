@@ -135,6 +135,7 @@
 		71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71107438271EA81300178969 /* LayerVideoViewController.swift */; };
 		7110743D271ECA4800178969 /* voices.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7110743C271ECA4800178969 /* voices.m4a */; };
 		7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110743E271ED4D400178969 /* ImageVideoViewController.swift */; };
+		711437DE2785707700A6779A /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711437DD2785707700A6779A /* JSON.swift */; };
 		713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */; };
 		713998062705B64D002BC263 /* Girl5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FE2705B64C002BC263 /* Girl5.jpg */; };
 		713998072705B64D002BC263 /* Girl2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713997FF2705B64D002BC263 /* Girl2.jpg */; };
@@ -422,6 +423,7 @@
 		71107438271EA81300178969 /* LayerVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerVideoViewController.swift; sourceTree = "<group>"; };
 		7110743C271ECA4800178969 /* voices.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = voices.m4a; sourceTree = "<group>"; };
 		7110743E271ED4D400178969 /* ImageVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoViewController.swift; sourceTree = "<group>"; };
+		711437DD2785707700A6779A /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVideoMakeViewController.swift; sourceTree = "<group>"; };
 		713997FE2705B64C002BC263 /* Girl5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl5.jpg; sourceTree = "<group>"; };
 		713997FF2705B64D002BC263 /* Girl2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl2.jpg; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 				71107436271E956100178969 /* VideoMaker.Layer.swift */,
 				71B300892722BBAF00997B20 /* VideoMaker.Image.swift */,
 				71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */,
+				711437DD2785707700A6779A /* JSON.swift */,
 				718018BE2722611A0056E699 /* LottieImage */,
 			);
 			path = Tool;
@@ -1747,6 +1750,7 @@
 				71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
+				711437DE2785707700A6779A /* JSON.swift in Sources */,
 				717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */,
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,

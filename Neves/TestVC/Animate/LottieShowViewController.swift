@@ -15,14 +15,14 @@ class LottieShowViewController: TestBaseViewController {
     
     lazy var placeholderView: UIImageView = {
         let imgView = UIImageView()
-        imgView.frame = [HalfDiffValue(PortraitScreenWidth, 300), animView.jp_maxY + 80, 300, 300]
+        imgView.frame = [HalfDiffValue(PortraitScreenWidth, 300), animView.jp_maxY + 65, 300, 300]
         imgView.backgroundColor = .black
         view.addSubview(imgView)
         return imgView
     }()
     
     lazy var slider: UISlider = {
-        let s = UISlider(frame: [30, placeholderView.jp_maxY + 20, PortraitScreenWidth - 60, 20])
+        let s = UISlider(frame: [30, placeholderView.jp_maxY + 15, PortraitScreenWidth - 60, 20])
         s.addTarget(self, action: #selector(sliderDidChanged(_:)), for: .valueChanged)
         view.addSubview(s)
         return s
@@ -52,17 +52,19 @@ class LottieShowViewController: TestBaseViewController {
         
         let s: CGFloat = 5
         let x: CGFloat = 15
-        let y = animView.maxY + 20
+        let y = animView.maxY + 10
         let w = (PortraitScreenWidth - 2 * x - 3 * s) / 4
-        let h: CGFloat = 50
+        let h: CGFloat = 20
         
-        (0 ..< 4).forEach {
+        (0 ..< 8).forEach {
             let btn = UIButton(type: .system)
-            btn.titleLabel?.font = .systemFont(ofSize: 20)
+            btn.titleLabel?.font = .systemFont(ofSize: 15)
             btn.setTitle("动画\($0 + 1)", for: .normal)
             btn.setTitleColor(.randomColor, for: .normal)
             btn.backgroundColor = .randomColor
-            btn.frame = [x + CGFloat($0) * (w + s), y, w, h]
+            let col = $0 % 4
+            let row = $0 / 4
+            btn.frame = [x + CGFloat(col) * (w + s), y + CGFloat(row) * (h + s), w, h]
             btn.addTarget(self, action: #selector(changeAnim(_:)), for: .touchUpInside)
             btn.tag = $0
             view.addSubview(btn)
@@ -93,10 +95,20 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "guanzhu_tx_lottie"
+            lottieName = "magicball_entrance_available_lottie"
         case 1:
-            lottieName = "roomguide_tx_lottie"
+            lottieName = "magicball_entrance_normal_lottie"
         case 2:
+            lottieName = "magicball_normal_lottie"
+        case 3:
+            lottieName = "magicball_power_available_lottie"
+        case 4:
+            lottieName = "magicball_power_get_lottie"
+        case 5:
+            lottieName = "magicball_power_notreached_lottie"
+        case 6:
+            lottieName = "magicball_trigger_lottie"
+        case 7:
             lottieName = "dragon_guwu_lottie"
         default:
             lottieName = "album_videobg_jielong_lottie"
@@ -125,6 +137,8 @@ class LottieShowViewController: TestBaseViewController {
         slider.value = slider.minimumValue
         
         makeAnimationImage(animationLayer, animation.startFrame)
+        
+        JPrint("时长", animation.duration)
     }
     
     @objc func sliderDidChanged(_ slider: UISlider) {

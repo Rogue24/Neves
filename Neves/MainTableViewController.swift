@@ -84,10 +84,30 @@ class MainTableViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
+    enum JPStatus: Equatable {
+        case received
+        case canReceive
+        case countdown(_ text: String)
+        case waitCountdown(_ text: String)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         FloatWindowContainer.shared.setupFunFloatButton()
+        
+        FunFloatButton.shared.tapMeAction = {
+            let s1 = JPStatus.received
+            let s2 = JPStatus.countdown("1")
+            let s3 = JPStatus.countdown("1")
+            let s4 = JPStatus.countdown("2")
+            let s5 = JPStatus.waitCountdown("2")
+
+            JPrint("s1 == s2", s1 == s2) // false
+            JPrint("s2 == s3", s2 == s3) // true
+            JPrint("s3 == s4", s3 == s4) // false
+            JPrint("s4 == s5", s4 == s5) // false
+        }
     }
 }
 
