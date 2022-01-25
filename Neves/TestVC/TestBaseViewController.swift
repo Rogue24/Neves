@@ -12,7 +12,22 @@ class TestBaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.randomColor()
+        setupTitle()
+        view.backgroundColor = .randomColor
+    }
+    
+    private func setupTitle() {
+        var title = "\(Self.self)" as NSString
+        
+        if let last = title.components(separatedBy: ".").last {
+            title = last as NSString
+        }
+        
+        if let first = title.components(separatedBy: "ViewController").first {
+            title = first as NSString
+        }
+        
+        self.title = title as String
     }
     
 }

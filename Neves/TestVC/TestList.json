@@ -93,6 +93,10 @@
                 "vcName": "PopViewTestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "NestScrollViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

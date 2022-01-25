@@ -171,6 +171,7 @@
 		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
+		71ADDF7C279FECFC00404FF4 /* NestScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */; };
 		71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */; };
 		71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */; };
 		71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B300892722BBAF00997B20 /* VideoMaker.Image.swift */; };
@@ -461,6 +462,7 @@
 		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
+		71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestScrollViewController.swift; sourceTree = "<group>"; };
 		71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Publisher的share图示.jpg"; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 				717E8B7326DCC6A9000E3E9F /* RelationshipPlanet */,
 				1A354454254E77600032B677 /* SublayerTransformTestVC.swift */,
 				1A65873D2629E67300846689 /* PopViewTestViewController.swift */,
+				71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1649,6 +1652,7 @@
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
+				71ADDF7C279FECFC00404FF4 /* NestScrollViewController.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */,
