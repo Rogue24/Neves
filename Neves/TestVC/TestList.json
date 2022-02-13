@@ -1,5 +1,14 @@
 [
     {
+        "header" : "Playground",
+        "vcList" : [
+            {
+                "vcName": "PlaygroundViewController",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "MyJob",
         "vcList" : [
             {
@@ -97,6 +106,10 @@
                 "vcName": "NestScrollViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "AutoLayoutTableViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
@@ -119,6 +132,15 @@
                 "vcCreateWay" : 0
             },
         ],
+    },
+    {
+        "header" : "Data",
+        "vcList" : [
+            {
+                "vcName": "JSONTestViewController",
+                "vcCreateWay" : 0
+            },
+        ]
     },
     {
         "header" : "Base",

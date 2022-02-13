@@ -91,6 +91,15 @@
 		1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AC254E818B0032B677 /* Lottie.Extension.swift */; };
 		1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AD254E818B0032B677 /* HYLabel.swift */; };
 		1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545B7254E893F0032B677 /* WidgetViewController.swift */; };
+		1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930EF27B8DD6900DC60FC /* TurntableView.swift */; };
+		1A5930F627B8DD6900DC60FC /* TurntableView.Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F027B8DD6900DC60FC /* TurntableView.Calculate.swift */; };
+		1A5930F727B8DD6900DC60FC /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F127B8DD6900DC60FC /* TurntableViewCellLayout.swift */; };
+		1A5930F827B8DD6900DC60FC /* TurntableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F227B8DD6900DC60FC /* TurntableViewCell.swift */; };
+		1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F327B8DD6900DC60FC /* TurntableViewController.swift */; };
+		1A5930FA27B8DD6900DC60FC /* Turntable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F427B8DD6900DC60FC /* Turntable.swift */; };
+		1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FB27B8DD8500DC60FC /* AutoLayoutTableViewController.swift */; };
+		1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */; };
+		1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */; };
 		1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013C26CEA10100DF819F /* OCTestObject.m */; };
 		1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013E26CEA11200DF819F /* TestObject.swift */; };
 		1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C014026CEA2AF00DF819F /* EqualTestViewController.swift */; };
@@ -152,8 +161,6 @@
 		71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695AC726DE153A00384C2A /* RelationshipPlanet.swift */; };
 		71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71695ACA26DF920D00384C2A /* UniverseView.swift */; };
 		716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */; };
-		716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */; };
-		716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */; };
 		716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* VideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
@@ -178,9 +185,6 @@
 		71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
-		71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E426F052B300DB3A7A /* TurntableViewController.swift */; };
-		71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E626F06FCC00DB3A7A /* TurntableView.swift */; };
-		71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */; };
 		71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0C27310D4500300367 /* FloatWindowContainer.swift */; };
 		71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0E2731141D00300367 /* FunFloatButton.swift */; };
 		71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE01A626E61978003EBF66 /* LottieShowViewController.swift */; };
@@ -373,6 +377,15 @@
 		1A3545AC254E818B0032B677 /* Lottie.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lottie.Extension.swift; sourceTree = "<group>"; };
 		1A3545AD254E818B0032B677 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
 		1A3545B7254E893F0032B677 /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
+		1A5930EF27B8DD6900DC60FC /* TurntableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableView.swift; sourceTree = "<group>"; };
+		1A5930F027B8DD6900DC60FC /* TurntableView.Calculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableView.Calculate.swift; sourceTree = "<group>"; };
+		1A5930F127B8DD6900DC60FC /* TurntableViewCellLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableViewCellLayout.swift; sourceTree = "<group>"; };
+		1A5930F227B8DD6900DC60FC /* TurntableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableViewCell.swift; sourceTree = "<group>"; };
+		1A5930F327B8DD6900DC60FC /* TurntableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableViewController.swift; sourceTree = "<group>"; };
+		1A5930F427B8DD6900DC60FC /* Turntable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turntable.swift; sourceTree = "<group>"; };
+		1A5930FB27B8DD8500DC60FC /* AutoLayoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutTableViewController.swift; sourceTree = "<group>"; };
+		1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoguBanner.swift; sourceTree = "<group>"; };
+		1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestViewController.swift; sourceTree = "<group>"; };
 		1A5C013B26CEA10100DF819F /* OCTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTestObject.h; sourceTree = "<group>"; };
 		1A5C013C26CEA10100DF819F /* OCTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestObject.m; sourceTree = "<group>"; };
 		1A5C013E26CEA11200DF819F /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
@@ -442,8 +455,6 @@
 		71695AC926DF1B2000384C2A /* 关系星球注释.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "关系星球注释.jpg"; sourceTree = "<group>"; };
 		71695ACA26DF920D00384C2A /* UniverseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverseView.swift; sourceTree = "<group>"; };
 		716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.Extension.swift; sourceTree = "<group>"; };
-		716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCell.swift; sourceTree = "<group>"; };
-		716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewCellLayout.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		7170BF122701CA2000900BE7 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
@@ -470,9 +481,6 @@
 		71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageTest.swift; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
-		71BC27E426F052B300DB3A7A /* TurntableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableViewController.swift; sourceTree = "<group>"; };
-		71BC27E626F06FCC00DB3A7A /* TurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableView.swift; sourceTree = "<group>"; };
-		71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurntableView.Calculate.swift; sourceTree = "<group>"; };
 		71D72B0C27310D4500300367 /* FloatWindowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWindowContainer.swift; sourceTree = "<group>"; };
 		71D72B0E2731141D00300367 /* FunFloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFloatButton.swift; sourceTree = "<group>"; };
 		71DE01A626E61978003EBF66 /* LottieShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieShowViewController.swift; sourceTree = "<group>"; };
@@ -921,6 +929,7 @@
 				71D72B0B27310CD000300367 /* FloatWindow */,
 				1A354432254E77600032B677 /* Test */,
 				1A354455254E77600032B677 /* Base */,
+				1A5930FD27B8DD9200DC60FC /* Data */,
 				1A9E417926BE4286006941D0 /* Function */,
 				716EFCE72671EFE100320C79 /* Kingfisher */,
 				00D109A125749D6500F17889 /* Relam */,
@@ -989,11 +998,12 @@
 		1A354453254E77600032B677 /* View&Layer */ = {
 			isa = PBXGroup;
 			children = (
-				71BC27E326F052A500DB3A7A /* TurntableView */,
+				1A5930EE27B8DD6900DC60FC /* Turntable */,
 				717E8B7326DCC6A9000E3E9F /* RelationshipPlanet */,
 				1A354454254E77600032B677 /* SublayerTransformTestVC.swift */,
 				1A65873D2629E67300846689 /* PopViewTestViewController.swift */,
 				71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */,
+				1A5930FB27B8DD8500DC60FC /* AutoLayoutTableViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1037,6 +1047,28 @@
 				1A3545B7254E893F0032B677 /* WidgetViewController.swift */,
 			);
 			path = Widget;
+			sourceTree = "<group>";
+		};
+		1A5930EE27B8DD6900DC60FC /* Turntable */ = {
+			isa = PBXGroup;
+			children = (
+				1A5930F427B8DD6900DC60FC /* Turntable.swift */,
+				1A5930F327B8DD6900DC60FC /* TurntableViewController.swift */,
+				1A5930EF27B8DD6900DC60FC /* TurntableView.swift */,
+				1A5930F027B8DD6900DC60FC /* TurntableView.Calculate.swift */,
+				1A5930F127B8DD6900DC60FC /* TurntableViewCellLayout.swift */,
+				1A5930F227B8DD6900DC60FC /* TurntableViewCell.swift */,
+			);
+			path = Turntable;
+			sourceTree = "<group>";
+		};
+		1A5930FD27B8DD9200DC60FC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */,
+				1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		1A5C013A26CEA0DA00DF819F /* Equal */ = {
@@ -1212,18 +1244,6 @@
 				713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */,
 			);
 			path = Video;
-			sourceTree = "<group>";
-		};
-		71BC27E326F052A500DB3A7A /* TurntableView */ = {
-			isa = PBXGroup;
-			children = (
-				71BC27E426F052B300DB3A7A /* TurntableViewController.swift */,
-				71BC27E626F06FCC00DB3A7A /* TurntableView.swift */,
-				71BC27E826F070C400DB3A7A /* TurntableView.Calculate.swift */,
-				716A8B7026F5B92900D9C8E9 /* TurntableViewCellLayout.swift */,
-				716A8B6E26F58E6000D9C8E9 /* TurntableViewCell.swift */,
-			);
-			path = TurntableView;
 			sourceTree = "<group>";
 		};
 		71D72B0B27310CD000300367 /* FloatWindow */ = {
@@ -1583,12 +1603,12 @@
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
 				71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
-				716A8B7126F5B92A00D9C8E9 /* TurntableViewCellLayout.swift in Sources */,
 				71F249CF2731517A00FAAD93 /* FileEffectViewController.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
+				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
@@ -1624,8 +1644,8 @@
 				715ED74626FF26520030F279 /* Date.Extension.swift in Sources */,
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
+				1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */,
 				71F249DC2731517A00FAAD93 /* FireworkView.swift in Sources */,
-				71BC27E526F052B300DB3A7A /* TurntableViewController.swift in Sources */,
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
 				71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */,
 				1A354523254E77600032B677 /* JPFileTool.m in Sources */,
@@ -1636,6 +1656,7 @@
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
+				1A5930F727B8DD6900DC60FC /* TurntableViewCellLayout.swift in Sources */,
 				71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */,
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
@@ -1650,6 +1671,7 @@
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
+				1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
 				71ADDF7C279FECFC00404FF4 /* NestScrollViewController.swift in Sources */,
@@ -1714,14 +1736,17 @@
 				7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */,
 				717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
-				716A8B6F26F58E6000D9C8E9 /* TurntableViewCell.swift in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
+				1A5930F827B8DD6900DC60FC /* TurntableViewCell.swift in Sources */,
+				1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */,
 				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
+				1A5930FA27B8DD6900DC60FC /* Turntable.swift in Sources */,
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
 				71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */,
 				71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */,
+				1A5930F627B8DD6900DC60FC /* TurntableView.Calculate.swift in Sources */,
 				71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
@@ -1734,9 +1759,9 @@
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
-				71BC27E926F070C400DB3A7A /* TurntableView.Calculate.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
+				1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */,
 				71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
 				00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */,
@@ -1751,7 +1776,6 @@
 				1A82A1442768FCF000ECA895 /* FunFloatButton.Playground.swift in Sources */,
 				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,
 				71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */,
-				71BC27E726F06FCC00DB3A7A /* TurntableView.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
 				711437DE2785707700A6779A /* JSON.swift in Sources */,
