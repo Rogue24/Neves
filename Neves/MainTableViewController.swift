@@ -94,9 +94,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        FloatWindowContainer.shared.setupFunFloatButton()
-        
-        FunFloatButton.shared.tapMeAction = {
+        addFunAction {
             let s1 = JPStatus.received
             let s2 = JPStatus.countdown("1")
             let s3 = JPStatus.countdown("1")

@@ -162,3 +162,31 @@ private extension FunFloatButton {
         return f
     }
 }
+
+// MARK: - 随处添加/移除
+
+extension FunFloatButton {
+    @objc static func replaceFunAction(_ action: (() -> ())?) {
+        FloatWindowContainer.shared.setup()
+        FloatWindowContainer.shared.addSubview(shared)
+        shared.tapMeAction = action
+    }
+}
+
+extension NSObject {
+    @objc static func addFunAction(_ action: (() -> ())?) {
+        FunFloatButton.replaceFunAction(action)
+    }
+    
+    @objc func addFunAction(_ action: (() -> ())?) {
+        FunFloatButton.replaceFunAction(action)
+    }
+    
+    @objc static func removeFunAction() {
+        FunFloatButton.shared.tapMeAction = nil
+    }
+    
+    @objc func removeFunAction() {
+        FunFloatButton.shared.tapMeAction = nil
+    }
+}

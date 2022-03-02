@@ -13,7 +13,7 @@ class RoomGuideAttentionViewController: TestBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        FunFloatButton.shared.tapMeAction = { [weak self] in
+        addFunAction { [weak self] in
             guard let self = self else { return }
             self.bsTag += 1
             self.launchBubble(AttentionBothSides.Model(name1: "美男", name2: "帅哥", tag: self.bsTag))
@@ -23,7 +23,7 @@ class RoomGuideAttentionViewController: TestBaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        FunFloatButton.shared.tapMeAction = nil
+        removeFunAction()
     }
     
     var models: [AttentionBothSides.Model] = []

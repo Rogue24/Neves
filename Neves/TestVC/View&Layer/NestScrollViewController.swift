@@ -60,7 +60,7 @@ class NestScrollViewController: TestBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        FunFloatButton.shared.tapMeAction = { [weak self] in
+        addFunAction { [weak self] in
             guard let self = self else { return }
             self.showPopView()
         }
@@ -68,7 +68,7 @@ class NestScrollViewController: TestBaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        FunFloatButton.shared.tapMeAction = nil
+        removeFunAction()
     }
     
 }

@@ -150,7 +150,7 @@ class DragonSlayerViewController: TestBaseViewController {
     static var top = true
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        FunFloatButton.shared.tapMeAction = {
+        addFunAction {
             if Self.num % 3 == 0 {
                 DragonSlayerBanner.bannerY = Self.top ? 0 : 50
                 Self.top.toggle()
@@ -171,7 +171,7 @@ class DragonSlayerViewController: TestBaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        FunFloatButton.shared.tapMeAction = nil
+        removeFunAction()
     }
     
     deinit {
