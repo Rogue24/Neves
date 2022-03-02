@@ -106,6 +106,5 @@ extension AnimScrollViewController: UICollectionViewDataSource {
         return cell
     }
     
-    
 }
 
