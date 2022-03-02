@@ -167,6 +167,7 @@
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */; };
 		71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71782B46274E40F60047F2B8 /* TestLockViewController.swift */; };
+		71797E6F27CF704800ED2EE3 /* AnimScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71797E6E27CF704800ED2EE3 /* AnimScrollViewController.swift */; };
 		717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 717B3388272902CD000B0A70 /* minion_01.mp4 */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
@@ -462,6 +463,7 @@
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenCornerViewController.swift; sourceTree = "<group>"; };
 		71782B46274E40F60047F2B8 /* TestLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLockViewController.swift; sourceTree = "<group>"; };
+		71797E6E27CF704800ED2EE3 /* AnimScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimScrollViewController.swift; sourceTree = "<group>"; };
 		717B3388272902CD000B0A70 /* minion_01.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = minion_01.mp4; sourceTree = "<group>"; };
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
@@ -1007,6 +1009,7 @@
 				1A65873D2629E67300846689 /* PopViewTestViewController.swift */,
 				71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */,
 				1A5930FB27B8DD8500DC60FC /* AutoLayoutTableViewController.swift */,
+				71797E6E27CF704800ED2EE3 /* AnimScrollViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1614,6 +1617,7 @@
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
+				71797E6F27CF704800ED2EE3 /* AnimScrollViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
