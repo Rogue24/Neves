@@ -114,6 +114,10 @@
                 "vcName": "AnimScrollViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "PanScrollViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
@@ -239,6 +243,10 @@
             },
             {
                 "vcName": "WatermarkViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "FocusOnFacesViewController",
                 "vcCreateWay" : 0
             },
         ]

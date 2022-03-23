@@ -155,6 +155,8 @@
 		7139980B2705B64D002BC263 /* Girl1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998032705B64D002BC263 /* Girl1.jpg */; };
 		7139980C2705B64D002BC263 /* Girl6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998042705B64D002BC263 /* Girl6.jpg */; };
 		7139980D2705B64D002BC263 /* Girl8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998052705B64D002BC263 /* Girl8.jpg */; };
+		7151894A27EB2AF400342645 /* Attachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151894827EB2AF400342645 /* Attachable.swift */; };
+		7151894B27EB2AF400342645 /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151894927EB2AF400342645 /* UIImageView+FaceAware.swift */; };
 		715ED74626FF26520030F279 /* Date.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715ED74526FF26520030F279 /* Date.Extension.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
@@ -177,6 +179,8 @@
 		718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C1272261370056E699 /* DecodeImageProvider.swift */; };
 		718018C4272261970056E699 /* LottieImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C3272261970056E699 /* LottieImageStore.swift */; };
 		718018C627228A830056E699 /* Syncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C527228A830056E699 /* Syncs.swift */; };
+		718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718066A727D74823002CAC09 /* PanScrollViewController.swift */; };
+		718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */; };
 		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
@@ -450,6 +454,8 @@
 		713998032705B64D002BC263 /* Girl1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl1.jpg; sourceTree = "<group>"; };
 		713998042705B64D002BC263 /* Girl6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl6.jpg; sourceTree = "<group>"; };
 		713998052705B64D002BC263 /* Girl8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl8.jpg; sourceTree = "<group>"; };
+		7151894827EB2AF400342645 /* Attachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachable.swift; sourceTree = "<group>"; };
+		7151894927EB2AF400342645 /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
 		715ED74526FF26520030F279 /* Date.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.Extension.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
@@ -474,6 +480,8 @@
 		718018C1272261370056E699 /* DecodeImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeImageProvider.swift; sourceTree = "<group>"; };
 		718018C3272261970056E699 /* LottieImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImageStore.swift; sourceTree = "<group>"; };
 		718018C527228A830056E699 /* Syncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syncs.swift; sourceTree = "<group>"; };
+		718066A727D74823002CAC09 /* PanScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanScrollViewController.swift; sourceTree = "<group>"; };
+		718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFacesViewController.swift; sourceTree = "<group>"; };
 		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
@@ -996,6 +1004,7 @@
 				1A9E419C26BE4633006941D0 /* JPCroper */,
 				1A9E419526BE45D6006941D0 /* CircleMedal */,
 				71EA693D265631DF009463E6 /* WatermarkViewController.swift */,
+				718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -1010,6 +1019,7 @@
 				71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */,
 				1A5930FB27B8DD8500DC60FC /* AutoLayoutTableViewController.swift */,
 				71797E6E27CF704800ED2EE3 /* AnimScrollViewController.swift */,
+				718066A727D74823002CAC09 /* PanScrollViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1031,6 +1041,7 @@
 		1A3545A9254E818B0032B677 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				7151894727EB2AF400342645 /* FaceAware */,
 				1A3545AA254E818B0032B677 /* Extension */,
 				1A3545AD254E818B0032B677 /* HYLabel.swift */,
 				1AABA9B02555BBA10051CA7E /* Mems.swift */,
@@ -1181,6 +1192,15 @@
 				71070E1F274CD00C004C3257 /* AttentionBothSides.swift */,
 			);
 			path = RoomGuideAttention;
+			sourceTree = "<group>";
+		};
+		7151894727EB2AF400342645 /* FaceAware */ = {
+			isa = PBXGroup;
+			children = (
+				7151894827EB2AF400342645 /* Attachable.swift */,
+				7151894927EB2AF400342645 /* UIImageView+FaceAware.swift */,
+			);
+			path = FaceAware;
 			sourceTree = "<group>";
 		};
 		716EFCE72671EFE100320C79 /* Kingfisher */ = {
@@ -1653,6 +1673,7 @@
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */,
+				718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */,
 				71F249DC2731517A00FAAD93 /* FireworkView.swift in Sources */,
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
 				71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */,
@@ -1691,6 +1712,7 @@
 				717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
+				718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
@@ -1720,6 +1742,7 @@
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
+				7151894A27EB2AF400342645 /* Attachable.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
 				71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */,
 				71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */,
@@ -1799,6 +1822,7 @@
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
 				1A35450C254E77600032B677 /* JPTextView.m in Sources */,
 				1A354516254E77600032B677 /* UIImage+JPExtension.m in Sources */,
+				7151894B27EB2AF400342645 /* UIImageView+FaceAware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
