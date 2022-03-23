@@ -101,6 +101,7 @@
 		1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */; };
 		1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */; };
 		1A59310327B8E5EF00DC60FC /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */; };
+		1A59310C27B9588500DC60FC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59310B27B9588500DC60FC /* TestView.swift */; };
 		1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013C26CEA10100DF819F /* OCTestObject.m */; };
 		1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013E26CEA11200DF819F /* TestObject.swift */; };
 		1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C014026CEA2AF00DF819F /* EqualTestViewController.swift */; };
@@ -393,6 +394,7 @@
 		1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoguBanner.swift; sourceTree = "<group>"; };
 		1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestViewController.swift; sourceTree = "<group>"; };
 		1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
+		1A59310B27B9588500DC60FC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		1A5C013B26CEA10100DF819F /* OCTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTestObject.h; sourceTree = "<group>"; };
 		1A5C013C26CEA10100DF819F /* OCTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestObject.m; sourceTree = "<group>"; };
 		1A5C013E26CEA11200DF819F /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
@@ -939,6 +941,7 @@
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
 				1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */,
+				1A59310B27B9588500DC60FC /* TestView.swift */,
 				71D72B0B27310CD000300367 /* FloatWindow */,
 				1A354432254E77600032B677 /* Test */,
 				1A354455254E77600032B677 /* Base */,
@@ -1738,6 +1741,7 @@
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
+				1A59310C27B9588500DC60FC /* TestView.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
