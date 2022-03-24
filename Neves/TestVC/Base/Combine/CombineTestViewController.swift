@@ -87,7 +87,7 @@ extension CombineTestViewController {
     }
     
     func testReq() {
-        let dataTaskPublisher = URLSession.shared.dataTaskPublisher(for: URL(string: "https://v1.hitokoto.cn")!)
+        let dataTaskPublisher = URLSession.shared.dataTaskPublisher(for: URL.jp.hitokoto)
         // receiveCompletion 和 receiveValue 都在【同一线程】内回调，一般会先执行 receiveValue 再执行 receiveCompletion
         canceler3 = dataTaskPublisher
             .receive(on: DispatchQueue.main)

@@ -69,8 +69,7 @@ class AwaitTestViewController: TestBaseViewController {
         JPrint("\(String(format: "%02d", tag)) - getHitokoto_begin", Thread.current)
         
         var str = "null"
-        if let url = URL(string: "https://v1.hitokoto.cn"),
-           let (data, _) = try? await URLSession.shared.data(from: url),
+        if let (data, _) = try? await URLSession.shared.data(from: URL.jp.hitokoto),
            let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers),
            let dic = json as? [String: Any],
            let hitokoto = dic["hitokoto"] as? String {

@@ -14,7 +14,7 @@ class FocusOnFacesViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = UIImage(contentsOfFile: Bundle.main.path(forResource: "Girl3", ofType: "jpg")!)!
+        let image = UIImage(contentsOfFile: Bundle.jp.resourcePath(withName: "Girl3.jpg"))!
         let imgSize: CGSize = [300, 300]
 
         fofImgView.clipsToBounds = true
