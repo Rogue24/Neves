@@ -101,14 +101,14 @@ enum LoremPicsum {
 }
 
 extension LoremPicsum {
-    /// 随机图片URL（自带随机ID，范围：0...9999）
+    /// 随机图片URL（自带随机ID，范围：1...10000）
     /// - Parameters:
     ///   - size: 图片尺寸（单位是【像素】，如果想要适配手机像素，`size`的宽高记得乘以`UIScreen.main.scale`）
     static func photoURLwithRandomId(size: CGSize) -> URL {
         return photoURL(size: size,
                         id: nil,
                         option: nil,
-                        randomId: Int(arc4random_uniform(10000)),
+                        randomId: 1 + Int(arc4random_uniform(10000)),
                         suffix: nil)
     }
     
