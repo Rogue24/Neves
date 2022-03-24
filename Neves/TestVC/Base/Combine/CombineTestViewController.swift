@@ -149,7 +149,7 @@ extension CombineTestViewController {
         
         /// 使用`makeConnectable()`和`connect()`控制发布
         
-        let connectable = URLSession.shared.dataTaskPublisher(for: URL(string: "https://v1.hitokoto.cn")!)
+        let connectable = URLSession.shared.dataTaskPublisher(for: URL.jp.hitokoto)
             .map { data, _ -> String in
                 guard let dict = JSON(data).dictionary,
                       let hitokoto = dict["hitokoto"]?.stringValue else {
