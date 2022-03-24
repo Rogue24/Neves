@@ -30,7 +30,6 @@ class FocusOnFacesViewController: TestBaseViewController {
         }
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addFunAction { [weak self] in
