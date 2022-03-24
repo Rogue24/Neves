@@ -118,6 +118,14 @@
                 "vcName": "PanScrollViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "DrawRectTestViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "MoonMaskViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
@@ -260,6 +268,10 @@
             },
             {
                 "vcName": "GCDWorkItemTestVC",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "GCDAttributesViewController",
                 "vcCreateWay" : 0
             },
         ]

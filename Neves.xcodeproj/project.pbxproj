@@ -101,7 +101,6 @@
 		1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */; };
 		1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */; };
 		1A59310327B8E5EF00DC60FC /* PlaygroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */; };
-		1A59310C27B9588500DC60FC /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A59310B27B9588500DC60FC /* TestView.swift */; };
 		1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013C26CEA10100DF819F /* OCTestObject.m */; };
 		1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C013E26CEA11200DF819F /* TestObject.swift */; };
 		1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5C014026CEA2AF00DF819F /* EqualTestViewController.swift */; };
@@ -158,6 +157,9 @@
 		7139980D2705B64D002BC263 /* Girl8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 713998052705B64D002BC263 /* Girl8.jpg */; };
 		7151894A27EB2AF400342645 /* Attachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151894827EB2AF400342645 /* Attachable.swift */; };
 		7151894B27EB2AF400342645 /* UIImageView+FaceAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151894927EB2AF400342645 /* UIImageView+FaceAware.swift */; };
+		7151894D27EC154500342645 /* DrawRectTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151894C27EC154500342645 /* DrawRectTestViewController.swift */; };
+		7151894F27EC168B00342645 /* MoonMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151894E27EC168B00342645 /* MoonMaskViewController.swift */; };
+		7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151895027EC16B500342645 /* GCDAttributesViewController.swift */; };
 		715ED74626FF26520030F279 /* Date.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715ED74526FF26520030F279 /* Date.Extension.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
@@ -394,7 +396,6 @@
 		1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoguBanner.swift; sourceTree = "<group>"; };
 		1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONTestViewController.swift; sourceTree = "<group>"; };
 		1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaygroundViewController.swift; sourceTree = "<group>"; };
-		1A59310B27B9588500DC60FC /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		1A5C013B26CEA10100DF819F /* OCTestObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCTestObject.h; sourceTree = "<group>"; };
 		1A5C013C26CEA10100DF819F /* OCTestObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCTestObject.m; sourceTree = "<group>"; };
 		1A5C013E26CEA11200DF819F /* TestObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObject.swift; sourceTree = "<group>"; };
@@ -458,6 +459,9 @@
 		713998052705B64D002BC263 /* Girl8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl8.jpg; sourceTree = "<group>"; };
 		7151894827EB2AF400342645 /* Attachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachable.swift; sourceTree = "<group>"; };
 		7151894927EB2AF400342645 /* UIImageView+FaceAware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FaceAware.swift"; sourceTree = "<group>"; };
+		7151894C27EC154500342645 /* DrawRectTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRectTestViewController.swift; sourceTree = "<group>"; };
+		7151894E27EC168B00342645 /* MoonMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonMaskViewController.swift; sourceTree = "<group>"; };
+		7151895027EC16B500342645 /* GCDAttributesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDAttributesViewController.swift; sourceTree = "<group>"; };
 		715ED74526FF26520030F279 /* Date.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.Extension.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
@@ -941,7 +945,6 @@
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
 				1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */,
-				1A59310B27B9588500DC60FC /* TestView.swift */,
 				71D72B0B27310CD000300367 /* FloatWindow */,
 				1A354432254E77600032B677 /* Test */,
 				1A354455254E77600032B677 /* Base */,
@@ -997,6 +1000,7 @@
 			children = (
 				1A35443B254E77600032B677 /* GCDSemaphoreTestVC.swift */,
 				00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */,
+				7151895027EC16B500342645 /* GCDAttributesViewController.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -1023,6 +1027,8 @@
 				1A5930FB27B8DD8500DC60FC /* AutoLayoutTableViewController.swift */,
 				71797E6E27CF704800ED2EE3 /* AnimScrollViewController.swift */,
 				718066A727D74823002CAC09 /* PanScrollViewController.swift */,
+				7151894C27EC154500342645 /* DrawRectTestViewController.swift */,
+				7151894E27EC168B00342645 /* MoonMaskViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1628,6 +1634,7 @@
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
 				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,
 				71F249D82731517A00FAAD93 /* FireworkCell.swift in Sources */,
+				7151894D27EC154500342645 /* DrawRectTestViewController.swift in Sources */,
 				007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */,
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
@@ -1649,6 +1656,7 @@
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
 				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
+				7151894F27EC168B00342645 /* MoonMaskViewController.swift in Sources */,
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
@@ -1741,7 +1749,6 @@
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
-				1A59310C27B9588500DC60FC /* TestView.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
@@ -1765,6 +1772,7 @@
 				71F249D92731517A00FAAD93 /* FireworkRulePopView.swift in Sources */,
 				711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
+				7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
