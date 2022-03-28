@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="CosmicExplorationPlayView" customModule="Neves" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfb-Ie-2p5">
+                    <rect key="frame" x="0.0" y="167" width="375" height="500"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_bg" translatesAutoresizingMaskIntoConstraints="NO" id="k7n-6Q-KNW">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="475"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="475" id="iqc-gG-rCV"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVt-vF-Ax3" customClass="CosmicExplorationTurntableView" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="62.5" width="375" height="375"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnC-2c-gPh" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                    <rect key="frame" x="321" y="337" width="54" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="bnC-2c-gPh" secondAttribute="height" multiplier="54:24" id="HEs-Mz-YvZ"/>
+                                        <constraint firstAttribute="width" constant="54" id="tbs-Gz-Iq9"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" backgroundImage="spaceship_bag"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="bnC-2c-gPh" secondAttribute="trailing" id="NLr-Jw-Pm1"/>
+                                <constraint firstAttribute="width" secondItem="JVt-vF-Ax3" secondAttribute="height" id="R91-Oe-NQd"/>
+                                <constraint firstAttribute="bottom" secondItem="bnC-2c-gPh" secondAttribute="bottom" constant="14" id="d4k-d5-dri"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="knapsackBtn" destination="bnC-2c-gPh" id="FCj-9g-JAu"/>
+                                <outlet property="knapsackBtnBottomConstraint" destination="d4k-d5-dri" id="8up-I8-OXl"/>
+                                <outlet property="knapsackBtnWidthConstraint" destination="tbs-Gz-Iq9" id="Was-5U-IQ3"/>
+                            </connections>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lg5-Sm-miy" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="10" y="10" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Lg5-Sm-miy" secondAttribute="height" id="IC9-ej-XRD"/>
+                                <constraint firstAttribute="width" constant="30" id="Wkr-XT-Lpy"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="spaceship_close"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT7-QJ-vzy" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="335" y="10" width="30" height="30"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="spaceship_more"/>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejq-3A-N11" customClass="CosmicExplorationBannerView" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="10" y="50" width="355" height="22"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.204432792404071" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="ID7-cw-VYe"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9n-1r-FeQ" customClass="CosmicExplorationCountView" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="10" y="77" width="89" height="22"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="PSZ-nx-Pcv">
+                                    <rect key="frame" x="5" y="3.5" width="15" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="PSZ-nx-Pcv" secondAttribute="height" id="gS9-Ak-EXi"/>
+                                        <constraint firstAttribute="width" constant="15" id="xU6-GA-i1H"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_addticket" translatesAutoresizingMaskIntoConstraints="NO" id="pHh-ch-Bdj">
+                                    <rect key="frame" x="70.5" y="3.5" width="15" height="15"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="15" id="KRy-LP-XdM"/>
+                                        <constraint firstAttribute="width" secondItem="pHh-ch-Bdj" secondAttribute="height" id="fz3-hs-Ri8"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXA-Bz-dXj">
+                                    <rect key="frame" x="25" y="4" width="36" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="1" green="0.94509803921568625" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.19594973609561012" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="PSZ-nx-Pcv" firstAttribute="centerY" secondItem="M9n-1r-FeQ" secondAttribute="centerY" id="07s-ox-jYL"/>
+                                <constraint firstItem="PSZ-nx-Pcv" firstAttribute="leading" secondItem="M9n-1r-FeQ" secondAttribute="leading" constant="5" id="9Mf-pg-dKd"/>
+                                <constraint firstAttribute="trailing" secondItem="pHh-ch-Bdj" secondAttribute="trailing" constant="3.5" id="CTw-k6-QKU"/>
+                                <constraint firstItem="nXA-Bz-dXj" firstAttribute="centerY" secondItem="M9n-1r-FeQ" secondAttribute="centerY" id="Caq-ul-YJi"/>
+                                <constraint firstItem="nXA-Bz-dXj" firstAttribute="leading" secondItem="PSZ-nx-Pcv" secondAttribute="trailing" constant="5" id="Z00-Fv-6Cw"/>
+                                <constraint firstItem="pHh-ch-Bdj" firstAttribute="leading" secondItem="nXA-Bz-dXj" secondAttribute="trailing" constant="9.5" id="eRW-xK-lsP"/>
+                                <constraint firstItem="pHh-ch-Bdj" firstAttribute="centerY" secondItem="M9n-1r-FeQ" secondAttribute="centerY" id="eqH-co-ZTx"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="countLabel" destination="nXA-Bz-dXj" id="Dgu-QT-6Xp"/>
+                                <outlet property="icon1LeftConstraint" destination="9Mf-pg-dKd" id="0fm-ys-Gq1"/>
+                                <outlet property="icon1RightConstraint" destination="Z00-Fv-6Cw" id="0Rg-dx-Xsw"/>
+                                <outlet property="icon1WidthConstraint" destination="xU6-GA-i1H" id="oYe-MA-lkM"/>
+                                <outlet property="icon2LeftConstraint" destination="eRW-xK-lsP" id="xLm-Ym-fCw"/>
+                                <outlet property="icon2RightConstraint" destination="CTw-k6-QKU" id="trE-6x-fwF"/>
+                                <outlet property="icon2WidthConstraint" destination="KRy-LP-XdM" id="VPe-qW-CDo"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FfR-P0-13m" customClass="CosmicExplorationRecordView" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="135" y="77" width="230" height="22"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="探索记录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-h3-7jD">
+                                    <rect key="frame" x="10" y="4" width="45" height="14"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-2B-1wQ">
+                                    <rect key="frame" x="61" y="0.0" width="159" height="22"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="abc-cG-WMt">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.204432792404071" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="mKh-h3-7jD" firstAttribute="leading" secondItem="FfR-P0-13m" secondAttribute="leading" constant="10" id="4sT-bD-PsK"/>
+                                <constraint firstAttribute="bottom" secondItem="T2w-2B-1wQ" secondAttribute="bottom" id="J6K-cy-bp6"/>
+                                <constraint firstItem="T2w-2B-1wQ" firstAttribute="top" secondItem="FfR-P0-13m" secondAttribute="top" id="ani-0p-6zd"/>
+                                <constraint firstItem="mKh-h3-7jD" firstAttribute="centerY" secondItem="FfR-P0-13m" secondAttribute="centerY" id="cyz-mt-5ax"/>
+                                <constraint firstAttribute="trailing" secondItem="T2w-2B-1wQ" secondAttribute="trailing" constant="10" id="iSG-ZO-ddQ"/>
+                                <constraint firstAttribute="width" constant="230" id="yEa-pC-V1i"/>
+                                <constraint firstItem="T2w-2B-1wQ" firstAttribute="leading" secondItem="mKh-h3-7jD" secondAttribute="trailing" constant="6" id="zUr-CG-gNg"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="collectionView" destination="T2w-2B-1wQ" id="hls-xI-ska"/>
+                                <outlet property="collectionViewLeftConstraint" destination="zUr-CG-gNg" id="KYU-Dn-sdz"/>
+                                <outlet property="collectionViewRightConstraint" destination="iSG-ZO-ddQ" id="N8l-Ao-lF7"/>
+                                <outlet property="titleLabel" destination="mKh-h3-7jD" id="RLD-9o-9RU"/>
+                                <outlet property="titleLabelLeftConstraint" destination="4sT-bD-PsK" id="pKn-Wv-uTF"/>
+                            </connections>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50Q-bt-70H" customClass="CosmicExplorationBottomView" customModule="Neves" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="423" width="375" height="77"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_function_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0bg-tZ-VBO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gC-0r-Xcy" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="7.5" width="90" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="3Rd-4g-IXe"/>
+                                        <constraint firstAttribute="width" secondItem="5gC-0r-Xcy" secondAttribute="height" multiplier="90:36" id="jo9-GO-VQy"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" backgroundImage="spaceship_active_btn1"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-3i-g6W" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                    <rect key="frame" x="104.5" y="7.5" width="80" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="h0s-Gt-clj"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" backgroundImage="spaceship_active_btn2"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nft-dG-Sds" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                    <rect key="frame" x="190.5" y="7.5" width="80" height="36"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" backgroundImage="spaceship_active_btn3"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-rl-MMK" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                    <rect key="frame" x="275" y="7.5" width="90" height="36"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" backgroundImage="spaceship_active_btn4"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="命中目的地可获得相应倍数的礼物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPQ-Ab-IoL">
+                                    <rect key="frame" x="118.5" y="48.5" width="138" height="11"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                    <color key="textColor" red="0.73333333333333328" green="0.92549019607843142" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="5gC-0r-Xcy" firstAttribute="leading" secondItem="50Q-bt-70H" secondAttribute="leading" constant="10" id="3aH-dy-mJG"/>
+                                <constraint firstItem="XPQ-Ab-IoL" firstAttribute="top" secondItem="m1o-3i-g6W" secondAttribute="bottom" constant="5" id="5Bt-4H-Yhl"/>
+                                <constraint firstItem="nft-dG-Sds" firstAttribute="height" secondItem="5gC-0r-Xcy" secondAttribute="height" id="5XC-xU-q7b"/>
+                                <constraint firstItem="kt3-rl-MMK" firstAttribute="leading" secondItem="nft-dG-Sds" secondAttribute="trailing" constant="4.5" id="6KC-UX-Pdx"/>
+                                <constraint firstItem="nft-dG-Sds" firstAttribute="centerY" secondItem="5gC-0r-Xcy" secondAttribute="centerY" id="6YI-n5-bq8"/>
+                                <constraint firstItem="0bg-tZ-VBO" firstAttribute="top" secondItem="50Q-bt-70H" secondAttribute="top" id="6fv-0p-Zzw"/>
+                                <constraint firstAttribute="height" constant="77" id="7sb-wM-tDz"/>
+                                <constraint firstAttribute="trailing" secondItem="0bg-tZ-VBO" secondAttribute="trailing" id="CBi-J3-pqv"/>
+                                <constraint firstItem="kt3-rl-MMK" firstAttribute="width" secondItem="5gC-0r-Xcy" secondAttribute="width" id="DiW-od-6og"/>
+                                <constraint firstItem="m1o-3i-g6W" firstAttribute="centerY" secondItem="5gC-0r-Xcy" secondAttribute="centerY" id="Gsj-wO-4iF"/>
+                                <constraint firstItem="0bg-tZ-VBO" firstAttribute="leading" secondItem="50Q-bt-70H" secondAttribute="leading" id="KXk-0b-aJw"/>
+                                <constraint firstItem="5gC-0r-Xcy" firstAttribute="top" secondItem="50Q-bt-70H" secondAttribute="top" constant="7.5" id="Q0n-bm-xaU"/>
+                                <constraint firstItem="m1o-3i-g6W" firstAttribute="height" secondItem="5gC-0r-Xcy" secondAttribute="height" id="T8E-Js-xi4"/>
+                                <constraint firstAttribute="bottom" secondItem="0bg-tZ-VBO" secondAttribute="bottom" id="TWO-xO-l5D"/>
+                                <constraint firstAttribute="trailing" secondItem="kt3-rl-MMK" secondAttribute="trailing" constant="10" id="dU0-7q-PaP"/>
+                                <constraint firstItem="XPQ-Ab-IoL" firstAttribute="centerX" secondItem="50Q-bt-70H" secondAttribute="centerX" id="p8q-vJ-S4J"/>
+                                <constraint firstItem="kt3-rl-MMK" firstAttribute="centerY" secondItem="5gC-0r-Xcy" secondAttribute="centerY" id="sA1-IQ-H8U"/>
+                                <constraint firstItem="nft-dG-Sds" firstAttribute="width" secondItem="m1o-3i-g6W" secondAttribute="width" id="tuy-ca-Fav"/>
+                                <constraint firstItem="kt3-rl-MMK" firstAttribute="height" secondItem="5gC-0r-Xcy" secondAttribute="height" id="yqT-7q-0Pj"/>
+                                <constraint firstItem="m1o-3i-g6W" firstAttribute="leading" secondItem="5gC-0r-Xcy" secondAttribute="trailing" constant="4.5" id="zQb-0c-gTe"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="leftBtn1" destination="5gC-0r-Xcy" id="77u-gG-3Z4"/>
+                                <outlet property="leftBtn1LeftConstraint" destination="3aH-dy-mJG" id="7Hp-hB-gfs"/>
+                                <outlet property="leftBtn1RightConstraint" destination="zQb-0c-gTe" id="GF1-6f-GCW"/>
+                                <outlet property="leftBtn1WidthConstraint" destination="3Rd-4g-IXe" id="Vlc-Dx-qtE"/>
+                                <outlet property="leftBtn2" destination="m1o-3i-g6W" id="JL7-Z9-Kp7"/>
+                                <outlet property="leftBtn2WidthConstraint" destination="h0s-Gt-clj" id="pUO-qK-jGB"/>
+                                <outlet property="rightBtn1" destination="kt3-rl-MMK" id="vmy-2Y-RQG"/>
+                                <outlet property="rightBtn1LeftConstraint" destination="6KC-UX-Pdx" id="bcA-y2-JMd"/>
+                                <outlet property="rightBtn1RightConstraint" destination="dU0-7q-PaP" id="Jrp-cF-QYK"/>
+                                <outlet property="rightBtn2" destination="nft-dG-Sds" id="KwW-4p-0vY"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="50Q-bt-70H" secondAttribute="trailing" id="1Q0-8N-XT2"/>
+                        <constraint firstItem="FfR-P0-13m" firstAttribute="top" secondItem="Ejq-3A-N11" secondAttribute="bottom" constant="5" id="1Xp-5w-e0a"/>
+                        <constraint firstAttribute="height" constant="500" id="4YZ-kZ-fVd"/>
+                        <constraint firstAttribute="bottom" secondItem="50Q-bt-70H" secondAttribute="bottom" id="69i-on-jDe"/>
+                        <constraint firstItem="hT7-QJ-vzy" firstAttribute="height" secondItem="Lg5-Sm-miy" secondAttribute="height" id="BJ8-8V-D6g"/>
+                        <constraint firstAttribute="trailing" secondItem="JVt-vF-Ax3" secondAttribute="trailing" id="Fhy-cX-7IW"/>
+                        <constraint firstItem="M9n-1r-FeQ" firstAttribute="top" secondItem="Ejq-3A-N11" secondAttribute="bottom" constant="5" id="GPT-6O-FDO"/>
+                        <constraint firstItem="FfR-P0-13m" firstAttribute="trailing" secondItem="Ejq-3A-N11" secondAttribute="trailing" id="Jso-G1-jly"/>
+                        <constraint firstItem="Lg5-Sm-miy" firstAttribute="top" secondItem="Zfb-Ie-2p5" secondAttribute="top" constant="10" id="Mn8-87-Rn9"/>
+                        <constraint firstItem="k7n-6Q-KNW" firstAttribute="top" secondItem="Zfb-Ie-2p5" secondAttribute="top" id="STY-im-4VG"/>
+                        <constraint firstItem="hT7-QJ-vzy" firstAttribute="trailing" secondItem="Ejq-3A-N11" secondAttribute="trailing" id="V6I-Zw-LKp"/>
+                        <constraint firstItem="M9n-1r-FeQ" firstAttribute="height" secondItem="Ejq-3A-N11" secondAttribute="height" id="Wwj-69-zXL"/>
+                        <constraint firstAttribute="trailing" secondItem="hT7-QJ-vzy" secondAttribute="trailing" constant="10" id="Zfr-If-c3X"/>
+                        <constraint firstAttribute="trailing" secondItem="k7n-6Q-KNW" secondAttribute="trailing" id="ZjN-7H-Ppf"/>
+                        <constraint firstItem="Ejq-3A-N11" firstAttribute="leading" secondItem="Lg5-Sm-miy" secondAttribute="leading" id="c72-JJ-QBP"/>
+                        <constraint firstItem="JVt-vF-Ax3" firstAttribute="leading" secondItem="Zfb-Ie-2p5" secondAttribute="leading" id="cCb-dD-W7A"/>
+                        <constraint firstItem="hT7-QJ-vzy" firstAttribute="width" secondItem="Lg5-Sm-miy" secondAttribute="width" id="fvL-jk-hIZ"/>
+                        <constraint firstItem="FfR-P0-13m" firstAttribute="height" secondItem="Ejq-3A-N11" secondAttribute="height" id="j8P-yS-O9x"/>
+                        <constraint firstItem="JVt-vF-Ax3" firstAttribute="top" secondItem="Zfb-Ie-2p5" secondAttribute="top" constant="62.5" id="kbS-i4-5Lw"/>
+                        <constraint firstItem="Ejq-3A-N11" firstAttribute="top" secondItem="Lg5-Sm-miy" secondAttribute="bottom" constant="10" id="q2g-94-QFk"/>
+                        <constraint firstItem="hT7-QJ-vzy" firstAttribute="centerY" secondItem="Lg5-Sm-miy" secondAttribute="centerY" id="qCz-Xd-sHt"/>
+                        <constraint firstItem="k7n-6Q-KNW" firstAttribute="leading" secondItem="Zfb-Ie-2p5" secondAttribute="leading" id="rFD-Nj-2AA"/>
+                        <constraint firstItem="M9n-1r-FeQ" firstAttribute="leading" secondItem="Ejq-3A-N11" secondAttribute="leading" id="tpI-td-WIK"/>
+                        <constraint firstItem="Lg5-Sm-miy" firstAttribute="leading" secondItem="Zfb-Ie-2p5" secondAttribute="leading" constant="10" id="xT1-Xi-e0I"/>
+                        <constraint firstItem="50Q-bt-70H" firstAttribute="leading" secondItem="Zfb-Ie-2p5" secondAttribute="leading" id="zji-Cr-kYi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Zfb-Ie-2p5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S4x-9h-vsx"/>
+                <constraint firstAttribute="trailing" secondItem="Zfb-Ie-2p5" secondAttribute="trailing" id="o0c-jk-4qq"/>
+                <constraint firstAttribute="bottom" secondItem="Zfb-Ie-2p5" secondAttribute="bottom" id="pzb-rB-MQl"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <connections>
+                <outlet property="bannerView" destination="Ejq-3A-N11" id="Dtp-Ba-I77"/>
+                <outlet property="bannerViewHeightConstraint" destination="ID7-cw-VYe" id="mqv-iu-hk5"/>
+                <outlet property="bgImgView" destination="k7n-6Q-KNW" id="PjA-4a-WOf"/>
+                <outlet property="bgImgViewHeightConstraint" destination="iqc-gG-rCV" id="zus-KI-95s"/>
+                <outlet property="bottomView" destination="50Q-bt-70H" id="7rz-j0-uCv"/>
+                <outlet property="bottomViewHeightConstraint" destination="7sb-wM-tDz" id="yH5-ol-6ke"/>
+                <outlet property="closeBtn" destination="Lg5-Sm-miy" id="8lw-vs-g4K"/>
+                <outlet property="closeBtnLeftConstraint" destination="xT1-Xi-e0I" id="atG-Zb-mHX"/>
+                <outlet property="closeBtnTopConstraint" destination="Mn8-87-Rn9" id="djY-hi-boV"/>
+                <outlet property="closeBtnWidthConstraint" destination="Wkr-XT-Lpy" id="nff-nf-6ZN"/>
+                <outlet property="contentView" destination="Zfb-Ie-2p5" id="fNz-nF-ci9"/>
+                <outlet property="countView" destination="M9n-1r-FeQ" id="F6f-Ol-EAB"/>
+                <outlet property="moreBtn" destination="hT7-QJ-vzy" id="MVK-QP-tU6"/>
+                <outlet property="moreBtnRightConstraint" destination="Zfr-If-c3X" id="Fhh-Bf-W2Y"/>
+                <outlet property="recordView" destination="FfR-P0-13m" id="9je-uQ-enQ"/>
+                <outlet property="turntableView" destination="JVt-vF-Ax3" id="A1D-si-cEe"/>
+                <outlet property="turntableViewTopConstraint" destination="kbS-i4-5Lw" id="Aao-f1-s9i"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="56.221889055472268"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="spaceship_active_btn1" width="90" height="36"/>
+        <image name="spaceship_active_btn2" width="80" height="36"/>
+        <image name="spaceship_active_btn3" width="80" height="36"/>
+        <image name="spaceship_active_btn4" width="90" height="36"/>
+        <image name="spaceship_addticket" width="15" height="15"/>
+        <image name="spaceship_bag" width="54" height="24"/>
+        <image name="spaceship_bg" width="375" height="475"/>
+        <image name="spaceship_close" width="30" height="30"/>
+        <image name="spaceship_function_bg" width="375" height="77"/>
+        <image name="spaceship_more" width="30" height="30"/>
+        <image name="spaceship_ticket" width="15" height="15"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -31,6 +31,10 @@
                 "vcName": "RoomGuideAttentionViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "CosmicExplorationTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
