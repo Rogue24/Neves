@@ -7,11 +7,25 @@
 
 class CosmicExplorationTestViewController: TestBaseViewController {
     
+    let playView = CosmicExplorationPlayView.build()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         addFunAction { [weak self] in
             guard let self = self else { return }
             
+            guard self.playView.superview == nil else { return }
+            
+            self.playView.frame = PortraitScreenBounds
+            self.playView.layoutIfNeeded()
+            self.view.addSubview(self.playView)
+            
+            self.playView.show()
         }
     }
     

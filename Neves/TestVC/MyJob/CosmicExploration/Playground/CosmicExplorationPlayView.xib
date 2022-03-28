@@ -278,6 +278,8 @@
                 <outlet property="closeBtnTopConstraint" destination="Mn8-87-Rn9" id="djY-hi-boV"/>
                 <outlet property="closeBtnWidthConstraint" destination="Wkr-XT-Lpy" id="nff-nf-6ZN"/>
                 <outlet property="contentView" destination="Zfb-Ie-2p5" id="fNz-nF-ci9"/>
+                <outlet property="contentViewBottomConstraint" destination="pzb-rB-MQl" id="HG0-CN-5sO"/>
+                <outlet property="contentViewHeightConstraint" destination="4YZ-kZ-fVd" id="3te-ly-sdH"/>
                 <outlet property="countView" destination="M9n-1r-FeQ" id="F6f-Ol-EAB"/>
                 <outlet property="moreBtn" destination="hT7-QJ-vzy" id="MVK-QP-tU6"/>
                 <outlet property="moreBtnRightConstraint" destination="Zfr-If-c3X" id="Fhh-Bf-W2Y"/>
