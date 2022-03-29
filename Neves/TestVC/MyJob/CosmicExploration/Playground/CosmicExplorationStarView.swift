@@ -44,6 +44,7 @@ class CosmicExplorationStarView: UIView {
     
     var multiple: Int = 0
     let multipleView: MultipleView?
+    let betGiftsView = BetGiftsView()
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
@@ -57,6 +58,8 @@ class CosmicExplorationStarView: UIView {
         addSubview(bgImgView)
         
         multipleView.map { addSubview($0) }
+        
+        addSubview(betGiftsView)
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
         
@@ -88,8 +91,189 @@ extension CosmicExplorationStarView {
     }
     
     func updateBetGifts(_ betGifts: [CosmicExploration.BetGiftModel], animated: Bool = true) {
-        JPrint("刷新礼物了喂")
+        var itemModels: [BetGiftItemModel] = []
+        
+        let itemH: CGFloat = 14.px
+        let minItemW = 20.5.px
+        
+        for model in betGifts {
+            let itemTitle = "+\(model.betCount)"
+            let itemW = minItemW + itemTitle.jp.textSize(withFont: .systemFont(ofSize: 10.px)).width
+            itemModels.append(BetGiftItemModel(itemTitle: itemTitle, itemFrame: [0, 0, itemW, itemH]))
+        }
+        
+        let total = itemModels.count
+        let space: CGFloat = 2.px
+        
+        switch total {
+        case 1:
+            var itemModel1 = itemModels[0]
+            itemModel1.itemFrame.origin.x = HalfDiffValue(frame.width, itemModel1.itemFrame.width)
+            itemModels[0] = itemModel1
+            
+        case 2...:
+            var itemModel1 = itemModels[0]
+            var itemModel2 = itemModels[1]
+            let firstLineW = itemModel1.itemFrame.width + space + itemModel2.itemFrame.width
+            
+            itemModel1.itemFrame.origin.x = HalfDiffValue(frame.width, firstLineW)
+            itemModels[0] = itemModel1
+            
+            itemModel2.itemFrame.origin.x = itemModel1.itemFrame.maxX + space
+            itemModels[1] = itemModel2
+            
+            if total > 2 {
+                let y = itemModel2.itemFrame.maxY + space
+                var itemModel3 = itemModels[2]
+                if total > 3 {
+                    var itemModel4 = itemModels[3]
+                    let secondLineW = itemModel3.itemFrame.width + space + itemModel4.itemFrame.width
+                    
+                    itemModel3.itemFrame.origin = [HalfDiffValue(frame.width, secondLineW), y]
+                    itemModels[2] = itemModel3
+                    
+                    itemModel4.itemFrame.origin = [itemModel3.itemFrame.maxX + space, y]
+                    itemModels[3] = itemModel4
+                } else {
+                    itemModel3.itemFrame.origin = [HalfDiffValue(frame.width, itemModel3.itemFrame.width), y]
+                    itemModels[2] = itemModel3
+                }
+            }
+        default:
+            break
+        }
+        
+        betGiftsView.updateBetGifts(itemModels, animated: animated)
     }
 }
 
-
+extension CosmicExplorationStarView {
+    
+    struct BetGiftItemModel {
+        let itemTitle: String
+        var itemFrame: CGRect
+    }
+    
+    class BetGiftItem: UIView {
+        let icon = UIImageView()
+        let label = UILabel()
+        
+        init() {
+            super.init(frame: [0, 0, 0, 14.px])
+            
+            backgroundColor = .rgb(16, 20, 59, a: 0.7)
+            layer.cornerRadius = 7.px
+            layer.masksToBounds = true
+            
+            icon.image = UIImage(named: "dragon_weideng")
+            icon.frame = [4.px, 2.px, 10.px, 10.px]
+            addSubview(icon)
+            
+            label.frame = [icon.maxX + 2.px, 0, 100, 14.px]
+            label.textColor = .white
+            label.font = .systemFont(ofSize: 10.px)
+            addSubview(label)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        func updateUI(_ itemModel: BetGiftItemModel) {
+            label.text = itemModel.itemTitle
+            frame = itemModel.itemFrame
+        }
+    }
+    
+    
+    class BetGiftsView: UIView {
+        
+        var items: [BetGiftItem] = []
+        
+        init() {
+            super.init(frame: [0, 118.px - 38.px, 118.px, 38.px])
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        func updateBetGifts(_ itemModels: [BetGiftItemModel], animated: Bool = true) {
+            if !animated {
+                let items = self.items
+                if items.count > itemModels.count {
+                    for (i, item) in items.enumerated() {
+                        if i >= itemModels.count {
+                            item.removeFromSuperview()
+                            if let index = self.items.firstIndex(where: { $0 == item }) {
+                                self.items.remove(at: index)
+                            }
+                        } else {
+                            let itemModel = itemModels[i]
+                            item.updateUI(itemModel)
+                        }
+                    }
+                } else {
+                    for (i, itemModel) in itemModels.enumerated() {
+                        if i >= items.count {
+                            let item = BetGiftItem()
+                            item.updateUI(itemModel)
+                            self.addSubview(item)
+                            self.items.append(item)
+                        } else {
+                            let item = items[i]
+                            item.updateUI(itemModel)
+                        }
+                    }
+                }
+                return
+            }
+            
+            let items = self.items
+            if items.count > itemModels.count {
+                for (i, item) in items.enumerated() {
+                    if i >= itemModels.count {
+                        if let index = self.items.firstIndex(where: { $0 == item }) {
+                            self.items.remove(at: index)
+                        }
+                        UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: []) {
+                            item.alpha = 0
+                            item.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                        } completion: { _ in
+                            item.removeFromSuperview()
+                        }
+                    } else {
+                        let itemModel = itemModels[i]
+                        UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: []) {
+                            item.updateUI(itemModel)
+                        } completion: { _ in }
+                    }
+                }
+            } else {
+                for (i, itemModel) in itemModels.enumerated() {
+                    if i >= items.count {
+                        let item = BetGiftItem()
+                        item.updateUI(itemModel)
+                        item.alpha = 0
+                        item.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                        self.addSubview(item)
+                        self.items.append(item)
+                        
+                        UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: []) {
+                            item.alpha = 1
+                            item.transform = CGAffineTransform.identity
+                        } completion: { _ in }
+                    } else {
+                        let item = items[i]
+                        UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: []) {
+                            item.updateUI(itemModel)
+                        } completion: { _ in }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+}
