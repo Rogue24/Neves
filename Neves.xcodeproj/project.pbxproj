@@ -195,7 +195,6 @@
 		718A56A427F1B63B0071C724 /* CosmicExplorationStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A327F1B63A0071C724 /* CosmicExplorationStarView.swift */; };
 		718A56A627F1B6760071C724 /* CosmicExplorationHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A527F1B6760071C724 /* CosmicExplorationHostView.swift */; };
 		718A56A827F1B6A00071C724 /* CosmicExplorationRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A727F1B6A00071C724 /* CosmicExplorationRecordView.swift */; };
-		718A56AA27F1B6B10071C724 /* CosmicExplorationStarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718A56A927F1B6B10071C724 /* CosmicExplorationStarView.xib */; };
 		718A56AC27F1B6BE0071C724 /* CosmicExplorationHostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718A56AB27F1B6BE0071C724 /* CosmicExplorationHostView.xib */; };
 		718A56AE27F1B8B80071C724 /* CosmicExplorationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56AD27F1B8B80071C724 /* CosmicExplorationBottomView.swift */; };
 		718A56B127F1B9500071C724 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56B027F1B9500071C724 /* Buttons.swift */; };
@@ -516,7 +515,6 @@
 		718A56A327F1B63A0071C724 /* CosmicExplorationStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationStarView.swift; sourceTree = "<group>"; };
 		718A56A527F1B6760071C724 /* CosmicExplorationHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationHostView.swift; sourceTree = "<group>"; };
 		718A56A727F1B6A00071C724 /* CosmicExplorationRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationRecordView.swift; sourceTree = "<group>"; };
-		718A56A927F1B6B10071C724 /* CosmicExplorationStarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationStarView.xib; sourceTree = "<group>"; };
 		718A56AB27F1B6BE0071C724 /* CosmicExplorationHostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationHostView.xib; sourceTree = "<group>"; };
 		718A56AD27F1B8B80071C724 /* CosmicExplorationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBottomView.swift; sourceTree = "<group>"; };
 		718A56B027F1B9500071C724 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
@@ -1314,7 +1312,6 @@
 				718A56A527F1B6760071C724 /* CosmicExplorationHostView.swift */,
 				718A56AB27F1B6BE0071C724 /* CosmicExplorationHostView.xib */,
 				718A56A327F1B63A0071C724 /* CosmicExplorationStarView.swift */,
-				718A56A927F1B6B10071C724 /* CosmicExplorationStarView.xib */,
 				718A56AD27F1B8B80071C724 /* CosmicExplorationBottomView.swift */,
 			);
 			path = Playground;
@@ -1640,7 +1637,6 @@
 				7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */,
 				71F249D72731517A00FAAD93 /* FireworkFooter.xib in Resources */,
 				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
-				718A56AA27F1B6B10071C724 /* CosmicExplorationStarView.xib in Resources */,
 				71F249D62731517A00FAAD93 /* FireworkPopView.xib in Resources */,
 				71F249DA2731517A00FAAD93 /* FireworkRulePopView.xib in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,

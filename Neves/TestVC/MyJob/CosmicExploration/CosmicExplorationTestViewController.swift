@@ -7,7 +7,7 @@
 
 class CosmicExplorationTestViewController: TestBaseViewController {
     
-    let playView = CosmicExplorationPlayView.build()
+    let playView = CosmicExplorationPlayView.loadFromNib()
     
     override func viewDidLoad() {
         super.viewDidLoad()

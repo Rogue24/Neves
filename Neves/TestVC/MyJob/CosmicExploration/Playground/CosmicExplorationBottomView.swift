@@ -87,6 +87,28 @@ class CosmicExplorationBottomView: UIView {
         rightLabel1.font = .systemFont(ofSize: 11.px)
         rightLabel2.font = .systemFont(ofSize: 11.px)
         bottomTitleLabel.font = .systemFont(ofSize: 9.px)
+        
+        leftBtn1.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        leftBtn2.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        rightBtn1.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        rightBtn2.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+    }
+    
+    var isActived = false
+    
+}
+
+extension CosmicExplorationBottomView {
+    
+    @objc func btnDidClick(_ sender: UIButton) {
+        isActived.toggle()
+        
+        UIView.transition(with: self, duration: 0.2, options: .transitionCrossDissolve) {
+            self.leftBtn1.isSelected = self.isActived
+            self.leftBtn2.isSelected = self.isActived
+            self.rightBtn1.isSelected = self.isActived
+            self.rightBtn2.isSelected = self.isActived
+        } completion: { _ in }
     }
     
 }

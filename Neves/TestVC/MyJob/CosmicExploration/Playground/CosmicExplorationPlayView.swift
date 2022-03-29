@@ -65,10 +65,6 @@ class CosmicExplorationPlayView: UIView {
         JPrint("死了啦！都是你害的啦！")
     }
     
-    static func build() -> Self {
-        Bundle.main.loadNibNamed("\(self)", owner: nil, options: nil)?.first as! Self
-    }
-    
 }
 
 extension CosmicExplorationPlayView {

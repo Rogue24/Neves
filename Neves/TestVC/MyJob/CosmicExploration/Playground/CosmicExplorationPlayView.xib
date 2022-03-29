@@ -163,7 +163,8 @@
                                         <constraint firstAttribute="width" secondItem="5gC-0r-Xcy" secondAttribute="height" multiplier="90:36" id="jo9-GO-VQy"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" backgroundImage="spaceship_active_btn1"/>
+                                    <state key="normal" backgroundImage="spaceship_normal_btn1"/>
+                                    <state key="selected" backgroundImage="spaceship_active_btn1"/>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="AAW-Vb-UYi">
                                     <rect key="frame" x="21" y="20.5" width="18" height="18"/>
@@ -185,13 +186,14 @@
                                         <constraint firstAttribute="width" secondItem="cEJ-IU-fE8" secondAttribute="height" id="ZUk-zR-fG1"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-3i-g6W" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-3i-g6W" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
                                     <rect key="frame" x="104.5" y="7.5" width="80" height="36"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="h0s-Gt-clj"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" backgroundImage="spaceship_active_btn2"/>
+                                    <state key="normal" backgroundImage="spaceship_normal_btn2"/>
+                                    <state key="selected" backgroundImage="spaceship_active_btn2"/>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-9W-Wib">
                                     <rect key="frame" x="113.5" y="20.5" width="18" height="18"/>
@@ -205,10 +207,11 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="T9Y-9C-eps">
                                     <rect key="frame" x="165" y="24.5" width="10" height="10"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nft-dG-Sds" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nft-dG-Sds" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
                                     <rect key="frame" x="190.5" y="7.5" width="80" height="36"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" backgroundImage="spaceship_active_btn3"/>
+                                    <state key="normal" backgroundImage="spaceship_normal_btn3"/>
+                                    <state key="selected" backgroundImage="spaceship_active_btn3"/>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="p4t-fc-mdI">
                                     <rect key="frame" x="199.5" y="20.5" width="18" height="18"/>
@@ -222,10 +225,11 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="sUI-Vm-OeH">
                                     <rect key="frame" x="251" y="24.5" width="10" height="10"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-rl-MMK" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-rl-MMK" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
                                     <rect key="frame" x="275" y="7.5" width="90" height="36"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" backgroundImage="spaceship_active_btn4"/>
+                                    <state key="normal" backgroundImage="spaceship_normal_btn4"/>
+                                    <state key="selected" backgroundImage="spaceship_active_btn4"/>
                                 </button>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-5r-hwd">
                                     <rect key="frame" x="289.5" y="20.5" width="18" height="18"/>
@@ -418,6 +422,10 @@
         <image name="spaceship_close" width="30" height="30"/>
         <image name="spaceship_function_bg" width="375" height="77"/>
         <image name="spaceship_more" width="30" height="30"/>
+        <image name="spaceship_normal_btn1" width="90" height="36"/>
+        <image name="spaceship_normal_btn2" width="80" height="36"/>
+        <image name="spaceship_normal_btn3" width="80" height="36"/>
+        <image name="spaceship_normal_btn4" width="90" height="36"/>
         <image name="spaceship_ticket" width="15" height="15"/>
     </resources>
 </document>
