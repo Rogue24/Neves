@@ -12,7 +12,7 @@ class CosmicExplorationTurntableView: UIView {
     @IBOutlet weak var knapsackBtnWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var knapsackBtnBottomConstraint: NSLayoutConstraint!
     
-    let starViews: [CosmicExplorationStarView] = CosmicExplorationStarView.Planet.allCases.map { .init($0) }
+    let starViews: [CosmicExplorationStarView] = CosmicExploration.Planet.allCases.map { .init($0) }
     
     override func awakeFromNib() {
         super.awakeFromNib()
