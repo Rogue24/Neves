@@ -7,8 +7,6 @@
 
 class CosmicExplorationTestViewController: TestBaseViewController {
     
-    let playView = CosmicExplorationPlayView.loadFromNib()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,14 +16,15 @@ class CosmicExplorationTestViewController: TestBaseViewController {
         super.viewDidAppear(animated)
         addFunAction { [weak self] in
             guard let self = self else { return }
+            guard CosmicExplorationManager.shared.playView == nil else { return }
             
-            guard self.playView.superview == nil else { return }
+            let playView = CosmicExplorationPlayView.loadFromNib()
+            playView.frame = PortraitScreenBounds
+            playView.layoutIfNeeded()
+            self.view.addSubview(playView)
+            CosmicExplorationManager.shared.playView = playView
             
-            self.playView.frame = PortraitScreenBounds
-            self.playView.layoutIfNeeded()
-            self.view.addSubview(self.playView)
-            
-            self.playView.show()
+            playView.show()
         }
     }
     

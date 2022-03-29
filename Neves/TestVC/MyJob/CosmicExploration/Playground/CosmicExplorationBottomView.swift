@@ -88,27 +88,54 @@ class CosmicExplorationBottomView: UIView {
         rightLabel2.font = .systemFont(ofSize: 11.px)
         bottomTitleLabel.font = .systemFont(ofSize: 9.px)
         
-        leftBtn1.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
-        leftBtn2.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
-        rightBtn1.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
-        rightBtn2.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        setupUI()
+        updateActived(CosmicExplorationManager.shared.isActived, animated: false)
     }
-    
-    var isActived = false
     
 }
 
 extension CosmicExplorationBottomView {
-    
-    @objc func btnDidClick(_ sender: UIButton) {
-        isActived.toggle()
+    func setupUI() {
+        CosmicExplorationManager.shared.giftInfos.forEach {
+            switch $0 {
+            case let .info1(singleVotes, _):
+                leftBtn1.tag = $0.type
+                leftLabel1.text = "\(singleVotes)"
+                
+            case let .info2(singleVotes, _):
+                leftBtn2.tag = $0.type
+                leftLabel2.text = "\(singleVotes)"
+                
+            case let .info3(singleVotes, _):
+                rightBtn2.tag = $0.type
+                rightLabel2.text = "\(singleVotes)"
+                
+            case let .info4(singleVotes, _):
+                rightBtn1.tag = $0.type
+                rightLabel1.text = "\(singleVotes)"
+            }
+        }
         
-        UIView.transition(with: self, duration: 0.2, options: .transitionCrossDissolve) {
-            self.leftBtn1.isSelected = self.isActived
-            self.leftBtn2.isSelected = self.isActived
-            self.rightBtn1.isSelected = self.isActived
-            self.rightBtn2.isSelected = self.isActived
-        } completion: { _ in }
+        leftBtn1.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        leftBtn2.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        rightBtn2.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
+        rightBtn1.addTarget(self, action: #selector(btnDidClick(_:)), for: .touchUpInside)
     }
-    
+}
+
+extension CosmicExplorationBottomView {
+    @objc func btnDidClick(_ sender: UIButton) {
+        CosmicExplorationManager.shared.planetBet(for: sender.tag)
+    }
+}
+
+extension CosmicExplorationBottomView {
+    func updateActived(_ isActived: Bool, animated: Bool = true) {
+        leftBtn1.isSelected = isActived
+        leftBtn2.isSelected = isActived
+        rightBtn1.isSelected = isActived
+        rightBtn2.isSelected = isActived
+        guard animated else { return }
+        UIView.transition(with: self, duration: 0.2, options: .transitionCrossDissolve) {} completion: { _ in }
+    }
 }
