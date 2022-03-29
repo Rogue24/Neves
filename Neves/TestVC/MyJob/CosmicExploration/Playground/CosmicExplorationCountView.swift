@@ -22,6 +22,9 @@ class CosmicExplorationCountView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        layer.cornerRadius = 11.px
+        layer.masksToBounds = true
+        
         countLabel.font = .systemFont(ofSize: 12.px)
         
         icon1WidthConstraint.constant = 15.px

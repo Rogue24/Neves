@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -124,8 +123,8 @@
                                 </label>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-2B-1wQ">
                                     <rect key="frame" x="61" y="0.0" width="159" height="22"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="abc-cG-WMt">
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="abc-cG-WMt">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -166,6 +165,26 @@
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" backgroundImage="spaceship_active_btn1"/>
                                 </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="AAW-Vb-UYi">
+                                    <rect key="frame" x="21" y="20.5" width="18" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="18" id="JD8-XO-Apm"/>
+                                        <constraint firstAttribute="width" secondItem="AAW-Vb-UYi" secondAttribute="height" id="mLD-cS-RWj"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEI-iA-e7z">
+                                    <rect key="frame" x="45" y="23" width="28.5" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.73333333333333328" green="0.92549019607843142" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="cEJ-IU-fE8">
+                                    <rect key="frame" x="75.5" y="24.5" width="10" height="10"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="10" id="5JD-Vq-1Fg"/>
+                                        <constraint firstAttribute="width" secondItem="cEJ-IU-fE8" secondAttribute="height" id="ZUk-zR-fG1"/>
+                                    </constraints>
+                                </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-3i-g6W" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
                                     <rect key="frame" x="104.5" y="7.5" width="80" height="36"/>
                                     <constraints>
@@ -174,16 +193,52 @@
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" backgroundImage="spaceship_active_btn2"/>
                                 </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-9W-Wib">
+                                    <rect key="frame" x="113.5" y="20.5" width="18" height="18"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgn-kQ-Sej">
+                                    <rect key="frame" x="134.5" y="23" width="28.5" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.73333333333333328" green="0.92549019607843142" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="T9Y-9C-eps">
+                                    <rect key="frame" x="165" y="24.5" width="10" height="10"/>
+                                </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nft-dG-Sds" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
                                     <rect key="frame" x="190.5" y="7.5" width="80" height="36"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" backgroundImage="spaceship_active_btn3"/>
                                 </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="p4t-fc-mdI">
+                                    <rect key="frame" x="199.5" y="20.5" width="18" height="18"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UO5-3v-hkY">
+                                    <rect key="frame" x="220.5" y="23" width="28.5" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.73333333333333328" green="0.92549019607843142" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="sUI-Vm-OeH">
+                                    <rect key="frame" x="251" y="24.5" width="10" height="10"/>
+                                </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-rl-MMK" customClass="NoHighlightButton" customModule="Neves" customModuleProvider="target">
                                     <rect key="frame" x="275" y="7.5" width="90" height="36"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" backgroundImage="spaceship_active_btn4"/>
                                 </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="oSO-5r-hwd">
+                                    <rect key="frame" x="289.5" y="20.5" width="18" height="18"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-Nw-iYq">
+                                    <rect key="frame" x="315" y="23" width="28.5" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.73333333333333328" green="0.92549019607843142" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="cSr-Nx-q66">
+                                    <rect key="frame" x="345.5" y="24.5" width="10" height="10"/>
+                                </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="命中目的地可获得相应倍数的礼物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPQ-Ab-IoL">
                                     <rect key="frame" x="118.5" y="48.5" width="138" height="11"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -193,6 +248,7 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="cSr-Nx-q66" firstAttribute="leading" secondItem="dLA-Nw-iYq" secondAttribute="trailing" constant="2" id="0QV-H7-ISt"/>
                                 <constraint firstItem="5gC-0r-Xcy" firstAttribute="leading" secondItem="50Q-bt-70H" secondAttribute="leading" constant="10" id="3aH-dy-mJG"/>
                                 <constraint firstItem="XPQ-Ab-IoL" firstAttribute="top" secondItem="m1o-3i-g6W" secondAttribute="bottom" constant="5" id="5Bt-4H-Yhl"/>
                                 <constraint firstItem="nft-dG-Sds" firstAttribute="height" secondItem="5gC-0r-Xcy" secondAttribute="height" id="5XC-xU-q7b"/>
@@ -200,31 +256,91 @@
                                 <constraint firstItem="nft-dG-Sds" firstAttribute="centerY" secondItem="5gC-0r-Xcy" secondAttribute="centerY" id="6YI-n5-bq8"/>
                                 <constraint firstItem="0bg-tZ-VBO" firstAttribute="top" secondItem="50Q-bt-70H" secondAttribute="top" id="6fv-0p-Zzw"/>
                                 <constraint firstAttribute="height" constant="77" id="7sb-wM-tDz"/>
+                                <constraint firstItem="T9Y-9C-eps" firstAttribute="width" secondItem="cEJ-IU-fE8" secondAttribute="width" id="8dg-D5-973"/>
+                                <constraint firstItem="Bgn-kQ-Sej" firstAttribute="centerY" secondItem="rEI-iA-e7z" secondAttribute="centerY" id="BuS-m6-uBE"/>
                                 <constraint firstAttribute="trailing" secondItem="0bg-tZ-VBO" secondAttribute="trailing" id="CBi-J3-pqv"/>
                                 <constraint firstItem="kt3-rl-MMK" firstAttribute="width" secondItem="5gC-0r-Xcy" secondAttribute="width" id="DiW-od-6og"/>
+                                <constraint firstItem="p4t-fc-mdI" firstAttribute="centerY" secondItem="AAW-Vb-UYi" secondAttribute="centerY" id="Eet-C9-xMD"/>
+                                <constraint firstItem="sUI-Vm-OeH" firstAttribute="width" secondItem="cEJ-IU-fE8" secondAttribute="width" id="EvD-wx-Mhq"/>
                                 <constraint firstItem="m1o-3i-g6W" firstAttribute="centerY" secondItem="5gC-0r-Xcy" secondAttribute="centerY" id="Gsj-wO-4iF"/>
+                                <constraint firstItem="p4t-fc-mdI" firstAttribute="width" secondItem="AAW-Vb-UYi" secondAttribute="width" id="ID9-YV-be7"/>
+                                <constraint firstItem="m1o-3i-g6W" firstAttribute="trailing" secondItem="T9Y-9C-eps" secondAttribute="trailing" constant="9.5" id="JgW-Qp-hly"/>
                                 <constraint firstItem="0bg-tZ-VBO" firstAttribute="leading" secondItem="50Q-bt-70H" secondAttribute="leading" id="KXk-0b-aJw"/>
+                                <constraint firstItem="cEJ-IU-fE8" firstAttribute="top" secondItem="5gC-0r-Xcy" secondAttribute="top" constant="17" id="L5R-uY-CEP"/>
+                                <constraint firstItem="sUI-Vm-OeH" firstAttribute="leading" secondItem="UO5-3v-hkY" secondAttribute="trailing" constant="2" id="LBK-jV-fPV"/>
+                                <constraint firstItem="cSr-Nx-q66" firstAttribute="height" secondItem="cEJ-IU-fE8" secondAttribute="height" id="LXv-nD-krR"/>
+                                <constraint firstItem="UO5-3v-hkY" firstAttribute="centerY" secondItem="rEI-iA-e7z" secondAttribute="centerY" id="NUc-Fq-nQG"/>
                                 <constraint firstItem="5gC-0r-Xcy" firstAttribute="top" secondItem="50Q-bt-70H" secondAttribute="top" constant="7.5" id="Q0n-bm-xaU"/>
+                                <constraint firstItem="T9Y-9C-eps" firstAttribute="centerY" secondItem="cEJ-IU-fE8" secondAttribute="centerY" id="Rri-cv-tC5"/>
                                 <constraint firstItem="m1o-3i-g6W" firstAttribute="height" secondItem="5gC-0r-Xcy" secondAttribute="height" id="T8E-Js-xi4"/>
                                 <constraint firstAttribute="bottom" secondItem="0bg-tZ-VBO" secondAttribute="bottom" id="TWO-xO-l5D"/>
+                                <constraint firstItem="T9Y-9C-eps" firstAttribute="leading" secondItem="Bgn-kQ-Sej" secondAttribute="trailing" constant="2" id="Ttp-xR-CIZ"/>
+                                <constraint firstItem="p4t-fc-mdI" firstAttribute="height" secondItem="AAW-Vb-UYi" secondAttribute="height" id="WeW-N9-9gv"/>
+                                <constraint firstItem="sUI-Vm-OeH" firstAttribute="height" secondItem="cEJ-IU-fE8" secondAttribute="height" id="YPT-7e-9Wj"/>
+                                <constraint firstItem="cEJ-IU-fE8" firstAttribute="centerY" secondItem="rEI-iA-e7z" secondAttribute="centerY" id="ZBh-qe-L3K"/>
+                                <constraint firstItem="oSO-5r-hwd" firstAttribute="height" secondItem="AAW-Vb-UYi" secondAttribute="height" id="aRD-If-q7z"/>
+                                <constraint firstItem="cEJ-IU-fE8" firstAttribute="centerY" secondItem="AAW-Vb-UYi" secondAttribute="centerY" id="b5y-bc-RTA"/>
                                 <constraint firstAttribute="trailing" secondItem="kt3-rl-MMK" secondAttribute="trailing" constant="10" id="dU0-7q-PaP"/>
+                                <constraint firstItem="nft-dG-Sds" firstAttribute="trailing" secondItem="sUI-Vm-OeH" secondAttribute="trailing" constant="9.5" id="f12-l7-CeL"/>
+                                <constraint firstItem="cEJ-IU-fE8" firstAttribute="trailing" secondItem="5gC-0r-Xcy" secondAttribute="trailing" constant="-14.5" id="icu-JQ-m1u"/>
+                                <constraint firstItem="sUI-Vm-OeH" firstAttribute="centerY" secondItem="cEJ-IU-fE8" secondAttribute="centerY" id="jD9-Fc-bvV"/>
+                                <constraint firstItem="dLA-Nw-iYq" firstAttribute="centerY" secondItem="rEI-iA-e7z" secondAttribute="centerY" id="jyl-78-iGh"/>
+                                <constraint firstItem="cEJ-IU-fE8" firstAttribute="leading" secondItem="rEI-iA-e7z" secondAttribute="trailing" constant="2" id="lYY-Gy-8aE"/>
+                                <constraint firstItem="iQZ-9W-Wib" firstAttribute="width" secondItem="AAW-Vb-UYi" secondAttribute="width" id="law-r3-2vx"/>
+                                <constraint firstItem="kt3-rl-MMK" firstAttribute="leading" secondItem="oSO-5r-hwd" secondAttribute="leading" constant="-14.5" id="o4h-5Q-6DA"/>
                                 <constraint firstItem="XPQ-Ab-IoL" firstAttribute="centerX" secondItem="50Q-bt-70H" secondAttribute="centerX" id="p8q-vJ-S4J"/>
+                                <constraint firstItem="cSr-Nx-q66" firstAttribute="width" secondItem="cEJ-IU-fE8" secondAttribute="width" id="plr-SK-2b5"/>
+                                <constraint firstItem="iQZ-9W-Wib" firstAttribute="height" secondItem="AAW-Vb-UYi" secondAttribute="height" id="puB-bY-8XS"/>
                                 <constraint firstItem="kt3-rl-MMK" firstAttribute="centerY" secondItem="5gC-0r-Xcy" secondAttribute="centerY" id="sA1-IQ-H8U"/>
+                                <constraint firstItem="cSr-Nx-q66" firstAttribute="centerY" secondItem="cEJ-IU-fE8" secondAttribute="centerY" id="sVW-bx-cx1"/>
+                                <constraint firstItem="nft-dG-Sds" firstAttribute="leading" secondItem="p4t-fc-mdI" secondAttribute="leading" constant="-9" id="sff-1U-q3S"/>
+                                <constraint firstItem="T9Y-9C-eps" firstAttribute="height" secondItem="cEJ-IU-fE8" secondAttribute="height" id="t1b-y4-FFy"/>
                                 <constraint firstItem="nft-dG-Sds" firstAttribute="width" secondItem="m1o-3i-g6W" secondAttribute="width" id="tuy-ca-Fav"/>
+                                <constraint firstItem="AAW-Vb-UYi" firstAttribute="leading" secondItem="5gC-0r-Xcy" secondAttribute="leading" constant="11" id="vZ3-4c-vJ2"/>
+                                <constraint firstItem="m1o-3i-g6W" firstAttribute="leading" secondItem="iQZ-9W-Wib" secondAttribute="leading" constant="-9" id="xK5-36-40h"/>
+                                <constraint firstItem="iQZ-9W-Wib" firstAttribute="centerY" secondItem="AAW-Vb-UYi" secondAttribute="centerY" id="xuy-8U-r7g"/>
+                                <constraint firstItem="oSO-5r-hwd" firstAttribute="width" secondItem="AAW-Vb-UYi" secondAttribute="width" id="yg5-lZ-byt"/>
+                                <constraint firstItem="kt3-rl-MMK" firstAttribute="trailing" secondItem="cSr-Nx-q66" secondAttribute="trailing" constant="9.5" id="yiB-Sl-ZMg"/>
+                                <constraint firstItem="oSO-5r-hwd" firstAttribute="centerY" secondItem="AAW-Vb-UYi" secondAttribute="centerY" id="yjE-74-bzc"/>
                                 <constraint firstItem="kt3-rl-MMK" firstAttribute="height" secondItem="5gC-0r-Xcy" secondAttribute="height" id="yqT-7q-0Pj"/>
                                 <constraint firstItem="m1o-3i-g6W" firstAttribute="leading" secondItem="5gC-0r-Xcy" secondAttribute="trailing" constant="4.5" id="zQb-0c-gTe"/>
                             </constraints>
                             <connections>
+                                <outlet property="bottomTitleLabel" destination="XPQ-Ab-IoL" id="qLo-va-zQH"/>
+                                <outlet property="bottomTitleLabelTopConstraint" destination="5Bt-4H-Yhl" id="K6a-TL-xI5"/>
                                 <outlet property="leftBtn1" destination="5gC-0r-Xcy" id="77u-gG-3Z4"/>
                                 <outlet property="leftBtn1LeftConstraint" destination="3aH-dy-mJG" id="7Hp-hB-gfs"/>
                                 <outlet property="leftBtn1RightConstraint" destination="zQb-0c-gTe" id="GF1-6f-GCW"/>
                                 <outlet property="leftBtn1WidthConstraint" destination="3Rd-4g-IXe" id="Vlc-Dx-qtE"/>
                                 <outlet property="leftBtn2" destination="m1o-3i-g6W" id="JL7-Z9-Kp7"/>
                                 <outlet property="leftBtn2WidthConstraint" destination="h0s-Gt-clj" id="pUO-qK-jGB"/>
+                                <outlet property="leftGiftIcon1" destination="AAW-Vb-UYi" id="tFp-dm-NbG"/>
+                                <outlet property="leftGiftIcon1LeftConstraint" destination="vZ3-4c-vJ2" id="JVs-mI-Hbs"/>
+                                <outlet property="leftGiftIcon1WidthConstraint" destination="JD8-XO-Apm" id="bXf-He-Osx"/>
+                                <outlet property="leftGiftIcon2" destination="iQZ-9W-Wib" id="vVH-eY-PN2"/>
+                                <outlet property="leftGiftIcon2LeftConstraint" destination="xK5-36-40h" id="P57-ws-2ym"/>
+                                <outlet property="leftIcon1RightConstraint" destination="icu-JQ-m1u" id="oCH-op-G7G"/>
+                                <outlet property="leftIcon1TopConstraint" destination="L5R-uY-CEP" id="5yx-Li-BTE"/>
+                                <outlet property="leftIcon1WidthConstraint" destination="5JD-Vq-1Fg" id="YIV-OM-8Vx"/>
+                                <outlet property="leftIcon2RightConstraint" destination="JgW-Qp-hly" id="dee-h0-tAu"/>
+                                <outlet property="leftLabel1" destination="rEI-iA-e7z" id="T58-Z8-dxr"/>
+                                <outlet property="leftLabel2" destination="Bgn-kQ-Sej" id="2E1-qc-rUK"/>
                                 <outlet property="rightBtn1" destination="kt3-rl-MMK" id="vmy-2Y-RQG"/>
                                 <outlet property="rightBtn1LeftConstraint" destination="6KC-UX-Pdx" id="bcA-y2-JMd"/>
                                 <outlet property="rightBtn1RightConstraint" destination="dU0-7q-PaP" id="Jrp-cF-QYK"/>
                                 <outlet property="rightBtn2" destination="nft-dG-Sds" id="KwW-4p-0vY"/>
+                                <outlet property="rightGiftIcon1" destination="oSO-5r-hwd" id="Tbr-9Q-Ygc"/>
+                                <outlet property="rightGiftIcon1LeftConstraint" destination="o4h-5Q-6DA" id="A5u-Sx-Bic"/>
+                                <outlet property="rightGiftIcon2" destination="p4t-fc-mdI" id="UdM-kh-oGT"/>
+                                <outlet property="rightGiftIcon2LeftConstraint" destination="sff-1U-q3S" id="A9B-dc-Cqj"/>
+                                <outlet property="rightIcon1RightConstraint" destination="yiB-Sl-ZMg" id="6SI-a2-naM"/>
+                                <outlet property="rightIcon2RightConstraint" destination="f12-l7-CeL" id="pkG-d3-LPe"/>
+                                <outlet property="rightLabel1" destination="dLA-Nw-iYq" id="9eQ-BG-b0z"/>
+                                <outlet property="rightLabel2" destination="UO5-3v-hkY" id="yQB-mk-S7v"/>
+                                <outletCollection property="labelIconSpaceConstraints" destination="lYY-Gy-8aE" collectionClass="NSMutableArray" id="daA-KG-OFw"/>
+                                <outletCollection property="labelIconSpaceConstraints" destination="Ttp-xR-CIZ" collectionClass="NSMutableArray" id="P2D-JM-K2Y"/>
+                                <outletCollection property="labelIconSpaceConstraints" destination="LBK-jV-fPV" collectionClass="NSMutableArray" id="Fvf-ZO-kSQ"/>
+                                <outletCollection property="labelIconSpaceConstraints" destination="0QV-H7-ISt" collectionClass="NSMutableArray" id="XDi-GZ-qkZ"/>
                             </connections>
                         </view>
                     </subviews>
@@ -291,6 +407,7 @@
         </view>
     </objects>
     <resources>
+        <image name="dragon_weideng" width="30" height="30"/>
         <image name="spaceship_active_btn1" width="90" height="36"/>
         <image name="spaceship_active_btn2" width="80" height="36"/>
         <image name="spaceship_active_btn3" width="80" height="36"/>
@@ -302,8 +419,5 @@
         <image name="spaceship_function_bg" width="375" height="77"/>
         <image name="spaceship_more" width="30" height="30"/>
         <image name="spaceship_ticket" width="15" height="15"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

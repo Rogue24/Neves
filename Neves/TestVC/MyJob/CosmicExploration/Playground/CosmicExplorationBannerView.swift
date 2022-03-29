@@ -7,4 +7,11 @@
 
 class CosmicExplorationBannerView: UIView {
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 11.px
+        layer.masksToBounds = true
+    }
+    
 }

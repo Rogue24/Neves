@@ -17,6 +17,9 @@ class CosmicExplorationRecordView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        layer.cornerRadius = 11.px
+        layer.masksToBounds = true
+        
         titleLabel.font = .systemFont(ofSize: 11.px)
         
         titleLabelLeftConstraint.constant = 10.px
