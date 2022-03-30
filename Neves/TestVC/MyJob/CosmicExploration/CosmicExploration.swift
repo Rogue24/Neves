@@ -68,25 +68,24 @@ extension CosmicExploration {
             }
         }
         
-        var size: CGSize { [118.px, 118.px] }
-        
         var frame: CGRect {
+            let wh = CosmicExplorationStarView.wh
             let origin: CGPoint
             switch self {
             case .mercury:
                 origin = [55.px, 22.5.px]
             case .venus:
-                origin = [PortraitScreenWidth - 55.px - size.width, 22.5.px]
+                origin = [PortraitScreenWidth - 55.px - wh, 22.5.px]
             case .mars:
-                origin = [PortraitScreenWidth - size.width, 132.5.px]
+                origin = [PortraitScreenWidth - wh, 132.5.px]
             case .jupiter:
-                origin = [PortraitScreenWidth - 55.px - size.width, 242.5.px]
+                origin = [PortraitScreenWidth - 55.px - wh, 242.5.px]
             case .saturn:
                 origin = [55.px, 242.5.px]
             case .uranus:
                 origin = [0, 132.5.px]
             }
-            return CGRect(origin: origin, size: size)
+            return CGRect(origin: origin, size: [wh, wh])
         }
     }
     
@@ -102,7 +101,7 @@ extension CosmicExploration {
         var betGifts: [BetGiftModel] = []
         
         func bet(_ giftType: Int) {
-            defer { starView?.updateBetGifts(betGifts) }
+            defer { starView?.updateBetGifts(betGifts, giftType: giftType) }
             guard let betGift = betGifts.first(where: { $0.giftType == giftType }) else {
                 betGifts.append(BetGiftModel(giftType, 1))
                 return

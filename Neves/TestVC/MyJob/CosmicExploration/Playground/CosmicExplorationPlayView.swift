@@ -5,6 +5,8 @@
 //  Created by aa on 2022/3/28.
 //
 
+import UIKit
+
 class CosmicExplorationPlayView: UIView {
     
     @IBOutlet weak var contentView: UIView!
@@ -41,6 +43,8 @@ class CosmicExplorationPlayView: UIView {
         bannerViewHeightConstraint.constant = 22.px
         turntableViewTopConstraint.constant = 62.5.px
         bottomViewHeightConstraint.constant = 77.px
+        
+        turntableView.delegate = self
     }
     
     // MARK: - 点击空白关闭
@@ -88,5 +92,39 @@ extension CosmicExplorationPlayView {
     
     @objc func more() {
         
+    }
+}
+
+extension CosmicExplorationPlayView: CosmicExplorationTurntableViewDelegate {
+    func turntableView(_ turntableView: CosmicExplorationTurntableView, betFrom giftType: Int, to frame: CGRect) {
+        let giftIcon: UIImageView
+        switch giftType {
+        case 0:
+            giftIcon = bottomView.leftGiftIcon1
+        case 1:
+            giftIcon = bottomView.leftGiftIcon2
+        case 2:
+            giftIcon = bottomView.rightGiftIcon2
+        case 3:
+            giftIcon = bottomView.rightGiftIcon1
+        default:
+            return
+        }
+        
+        let fromFrame = giftIcon.convert(giftIcon.bounds, to: contentView)
+        let toCenter: CGPoint = [frame.origin.x + 9.px, frame.origin.y + 7.px]
+        let scale = 10.px / giftIcon.frame.width
+         
+        let imageView = UIImageView(frame: fromFrame)
+        imageView.image = giftIcon.image
+        contentView.addSubview(imageView)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: []) {
+            imageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            imageView.center = toCenter
+        } completion: { _ in
+            imageView.removeFromSuperview()
+        }
+
     }
 }
