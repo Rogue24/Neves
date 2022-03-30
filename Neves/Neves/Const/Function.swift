@@ -130,6 +130,11 @@ func GetKeyWindow() -> UIWindow? {
                 .windows
                 .filter { $0.isKeyWindow }
                 .first
+                ??
+        UIApplication.shared
+                .windows
+                .filter { $0.isKeyWindow }
+                .first
     } else {
         return UIApplication.shared
                 .windows

@@ -57,6 +57,15 @@ class CosmicExplorationPlanetView: UIView {
     let supplyListView = SupplyListView()
     private var otherSupplyViews: [OtherSupplyView] = []
     
+    let bgAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
+    let selectedAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
+    
+    var animation1: Animation?
+    var provider1: AnimationImageProvider?
+    
+    var animation2: Animation?
+    var provider2: AnimationImageProvider?
+    
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
         
@@ -81,9 +90,20 @@ class CosmicExplorationPlanetView: UIView {
         self.multipleView = MultipleView(planet)
         super.init(frame: CGRect(origin: origin, size: size))
         
+        bgAnimView.backgroundBehavior = .pauseAndRestore
+        bgAnimView.contentMode = .scaleAspectFill
+        bgAnimView.frame = bounds
+        addSubview(bgAnimView)
+        
         bgImgView.image = planet.bgImg
         bgImgView.frame = bounds
         addSubview(bgImgView)
+        
+        selectedAnimView.backgroundBehavior = .pauseAndRestore
+        selectedAnimView.contentMode = .scaleAspectFill
+        selectedAnimView.frame = bounds
+        selectedAnimView.alpha = 0
+        addSubview(selectedAnimView)
         
         multipleView.map { addSubview($0) }
         
@@ -93,6 +113,37 @@ class CosmicExplorationPlanetView: UIView {
         updateSupplies(model.supplyModels, animated: false)
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
+        
+        
+        Asyncs.async { [weak self] in
+            guard let self = self else { return }
+            
+            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_default_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+                self.animation1 = animation
+                self.provider1 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+            }
+
+            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_target_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+                self.animation2 = animation
+                self.provider2 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+            }
+            
+        } mainTask: { [weak self] in
+            guard let self = self else { return }
+
+            if let animation = self.animation1, let provider = self.provider1 {
+                self.bgAnimView.animation = animation
+                self.bgAnimView.imageProvider = provider
+                self.bgAnimView.loopMode = .loop
+                self.bgAnimView.play()
+            }
+
+            if let animation = self.animation2, let provider = self.provider2 {
+                self.selectedAnimView.animation = animation
+                self.selectedAnimView.imageProvider = provider
+                self.selectedAnimView.loopMode = .loop
+            }
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -114,9 +165,28 @@ extension CosmicExplorationPlanetView {
 // MARK: - 选中状态
 extension CosmicExplorationPlanetView {
     func updateIsSelected(_ isSelected: Bool, animated: Bool = true) {
-        bgImgView.backgroundColor = isSelected ? .randomColor : .clear
-        guard animated else { return }
-        UIView.transition(with: bgImgView, duration: 0.2, options: .transitionCrossDissolve) {} completion: { _ in }
+        if isSelected {
+            selectedAnimView.play()
+            if animated {
+                UIView.animate(withDuration: 0.15) {
+                    self.selectedAnimView.alpha = 1
+                }
+            } else {
+                selectedAnimView.alpha = 1
+            }
+        } else {
+            if animated {
+                UIView.animate(withDuration: 0.15) {
+                    self.selectedAnimView.alpha = 0
+                } completion: { finished in
+                    guard finished else { return }
+                    self.selectedAnimView.stop()
+                }
+            } else {
+                selectedAnimView.stop()
+                selectedAnimView.alpha = 0
+            }
+        }
     }
 }
 

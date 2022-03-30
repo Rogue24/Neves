@@ -31,7 +31,9 @@ class CosmicExplorationTestViewController: TestBaseViewController {
             self.view.addSubview(playView)
             CosmicExplorationManager.shared.playView = playView
             
-            playView.show()
+            Asyncs.main {
+                playView.show()
+            }
         }
     }
     

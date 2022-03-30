@@ -89,6 +89,7 @@ class CosmicExplorationBottomView: UIView {
         bottomTitleLabel.font = .systemFont(ofSize: 9.px)
         
         setupUI()
+        updateIsActived(CosmicExplorationManager.shared.isActived, animated: false)
     }
     
 }
