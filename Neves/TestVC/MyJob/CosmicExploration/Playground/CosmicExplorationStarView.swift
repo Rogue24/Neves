@@ -45,6 +45,103 @@ class CosmicExplorationStarView: UIView {
         }
     }
     
+    class OtherBetView: UIView {
+        let userIcon = UIImageView()
+        let giftIcon = UIImageView()
+        
+        var willHide: ((OtherBetView) -> ())?
+        var hideWorkItem: DispatchWorkItem? = nil
+        
+        init() {
+            super.init(frame: CGRect(origin: [15.px, 33.px], size: [45.px, 14.px]))
+            
+            backgroundColor = .rgb(0, 0, 0, a: 0.4)
+            layer.cornerRadius = 7.px
+            layer.masksToBounds = true
+            
+            userIcon.image = UIImage(named: "jp_icon")
+            userIcon.frame = [1.5.px, 1.5.px, 11.px, 11.px]
+            userIcon.layer.cornerRadius = 5.5.px
+            userIcon.layer.masksToBounds = true
+            addSubview(userIcon)
+            
+            let label = UILabel()
+            label.text = "补给"
+            label.font = .systemFont(ofSize: 8.px)
+            label.textColor = .white
+            label.sizeToFit()
+            label.frame.origin = [userIcon.maxX + 2.px, HalfDiffValue(14.px, label.frame.height)]
+            addSubview(label)
+            
+            giftIcon.image = UIImage(named: "dragon_weideng")
+            giftIcon.frame = [(45 - 10 - 2.5).px, 2.px, 10.px, 10.px]
+            addSubview(giftIcon)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        static func show(on view: UIView, delay: TimeInterval, willHide: @escaping (OtherBetView) -> ()) -> OtherBetView {
+            let otherBetView = OtherBetView()
+            otherBetView.alpha = 0
+            view.addSubview(otherBetView)
+            otherBetView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9).translatedBy(x: 0, y: 5.px)
+            
+            UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.88, initialSpringVelocity: 0, options: []) {
+                otherBetView.transform = CGAffineTransform(scaleX: 1, y: 1)
+            } completion: { _ in }
+            
+            UIView.animate(withDuration: 0.17, delay: delay, options: []) {
+                otherBetView.alpha = 1
+            } completion: { _ in }
+            
+            otherBetView.hideWorkItem = Asyncs.mainDelay(3 + delay) {
+                otherBetView.hideAnim()
+            }
+            
+            otherBetView.willHide = willHide
+            return otherBetView
+        }
+        
+        func topAnim() {
+            var transform = self.transform.scaledBy(x: 0.8, y: 0.8)
+//            let size = frame.applying(transform).size
+            transform = transform.translatedBy(x: 0, y: -(frame.height + 3.px))
+            
+            var alpha = self.alpha - 0.6
+            if alpha <= 0 {
+                alpha = 0
+                
+                hideWorkItem?.cancel()
+                willHide?(self)
+                willHide = nil
+            }
+            
+            UIView.animate(withDuration: 0.3) {
+                self.alpha = alpha
+                self.transform = transform
+            } completion: { _ in
+                if alpha == 0 {
+                    self.removeFromSuperview()
+                }
+            }
+        }
+        
+        func hideAnim() {
+            hideWorkItem?.cancel()
+            
+            willHide?(self)
+            willHide = nil
+            
+            UIView.animate(withDuration: 0.2) {
+                self.alpha = 0
+            } completion: { _ in
+                self.removeFromSuperview()
+            }
+        }
+    }
+    
     let planet: CosmicExploration.Planet
     let bgImgView = UIImageView()
     
@@ -53,6 +150,8 @@ class CosmicExplorationStarView: UIView {
     let betGiftsView = BetGiftsView()
     
     weak var delegate: (AnyObject & CosmicExplorationStarViewDelegate)? = nil
+    
+    var otherBetViews: [OtherBetView] = []
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
@@ -116,6 +215,22 @@ extension CosmicExplorationStarView {
         Asyncs.mainDelay(delay) {
             self.betGiftsView.updateBetGifts(itemModels, animated: animated)
         }
+    }
+}
+
+extension CosmicExplorationStarView {
+    func betFromOther() {
+        JPrint("来了老弟")
+        let delay: TimeInterval = otherBetViews.count == 0 ? 0 : 0.23
+        
+        otherBetViews.forEach { $0.topAnim() }
+        
+        let otherBetView = OtherBetView.show(on: self, delay: delay) { [weak self] obView in
+            guard let self = self else { return }
+            self.otherBetViews.removeAll { $0 == obView }
+        }
+        
+        otherBetViews.insert(otherBetView, at: 0)
     }
 }
 

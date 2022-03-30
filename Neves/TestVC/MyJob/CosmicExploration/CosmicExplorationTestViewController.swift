@@ -16,7 +16,12 @@ class CosmicExplorationTestViewController: TestBaseViewController {
         super.viewDidAppear(animated)
         addFunAction { [weak self] in
             guard let self = self else { return }
-            guard CosmicExplorationManager.shared.playView == nil else { return }
+            guard CosmicExplorationManager.shared.playView == nil else {
+                if let model = CosmicExplorationManager.shared.selectedPlanetModel {
+                    CosmicExplorationManager.shared.playView?.plantBetFromOther(model.planet)
+                }
+                return
+            }
             
             let playView = CosmicExplorationPlayView.loadFromNib()
             playView.frame = PortraitScreenBounds

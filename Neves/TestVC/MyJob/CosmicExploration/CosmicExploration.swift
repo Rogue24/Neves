@@ -11,17 +11,17 @@ extension CosmicExploration {
     
     enum Planet: Equatable {
         /// 水星
-        case mercury(_ multiple: Int)
+        case mercury(_ multiple: Int = 0)
         /// 金星
-        case venus(_ multiple: Int)
+        case venus(_ multiple: Int = 0)
         /// 火星
-        case mars(_ multiple: Int)
+        case mars(_ multiple: Int = 0)
         /// 木星
-        case jupiter(_ multiple: Int)
+        case jupiter(_ multiple: Int = 0)
         /// 土星
-        case saturn(_ multiple: Int)
+        case saturn(_ multiple: Int = 0)
         /// 天王星
-        case uranus(_ multiple: Int)
+        case uranus(_ multiple: Int = 0)
         
         var bgImg: UIImage? {
             switch self {

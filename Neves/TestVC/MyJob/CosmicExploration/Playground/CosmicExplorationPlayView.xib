@@ -124,6 +124,9 @@
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-2B-1wQ">
                                     <rect key="frame" x="61" y="0.0" width="159" height="22"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="159" id="guu-W9-gBP"/>
+                                    </constraints>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="abc-cG-WMt">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -140,12 +143,11 @@
                                 <constraint firstItem="mKh-h3-7jD" firstAttribute="centerY" secondItem="FfR-P0-13m" secondAttribute="centerY" id="cyz-mt-5ax"/>
                                 <constraint firstAttribute="trailing" secondItem="T2w-2B-1wQ" secondAttribute="trailing" constant="10" id="iSG-ZO-ddQ"/>
                                 <constraint firstAttribute="width" constant="230" id="yEa-pC-V1i"/>
-                                <constraint firstItem="T2w-2B-1wQ" firstAttribute="leading" secondItem="mKh-h3-7jD" secondAttribute="trailing" constant="6" id="zUr-CG-gNg"/>
                             </constraints>
                             <connections>
                                 <outlet property="collectionView" destination="T2w-2B-1wQ" id="hls-xI-ska"/>
-                                <outlet property="collectionViewLeftConstraint" destination="zUr-CG-gNg" id="KYU-Dn-sdz"/>
                                 <outlet property="collectionViewRightConstraint" destination="iSG-ZO-ddQ" id="N8l-Ao-lF7"/>
+                                <outlet property="collectionViewWidthConstraint" destination="guu-W9-gBP" id="G4g-CW-V9a"/>
                                 <outlet property="titleLabel" destination="mKh-h3-7jD" id="RLD-9o-9RU"/>
                                 <outlet property="titleLabelLeftConstraint" destination="4sT-bD-PsK" id="pKn-Wv-uTF"/>
                             </connections>

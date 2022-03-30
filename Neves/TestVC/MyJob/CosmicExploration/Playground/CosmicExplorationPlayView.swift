@@ -95,6 +95,15 @@ extension CosmicExplorationPlayView {
     }
 }
 
+extension CosmicExplorationPlayView {
+    
+    func plantBetFromOther(_ plant: CosmicExploration.Planet) {
+        guard let starView = turntableView.starViews.first(where: { $0.planet == plant }) else { return }
+        starView.betFromOther()
+    }
+    
+}
+
 extension CosmicExplorationPlayView: CosmicExplorationTurntableViewDelegate {
     func turntableView(_ turntableView: CosmicExplorationTurntableView, betFrom giftType: Int, to frame: CGRect) {
         let giftIcon: UIImageView
