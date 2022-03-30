@@ -17,7 +17,7 @@ class CosmicExplorationTestViewController: TestBaseViewController {
         addFunAction { [weak self] in
             guard let self = self else { return }
             guard CosmicExplorationManager.shared.playView == nil else {
-                if let model = CosmicExplorationManager.shared.selectedPlanetModel {
+                if let model = CosmicExplorationManager.shared.selectedPlanet {
                     CosmicExplorationManager.shared.addSupplyFromOther(toPlant: model.planet)
                 }
                 return

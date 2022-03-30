@@ -16,7 +16,7 @@ protocol CosmicExplorationPlanetViewDelegate {
 
 class CosmicExplorationPlanetView: UIView {
     
-    static let wh: CGFloat = 118.px
+    static let size: CGSize = [118.px, 118.px]
     
     class MultipleView: UIView {
         
@@ -28,7 +28,7 @@ class CosmicExplorationPlanetView: UIView {
             guard multiple > 0 else { return nil }
             
             let size: CGSize = [38.px, 21.px]
-            super.init(frame: CGRect(origin: [CosmicExplorationPlanetView.wh - size.width - 17.5.px, 28.px], size: size))
+            super.init(frame: CGRect(origin: [CosmicExplorationPlanetView.size.width - size.width - 17.5.px, 28.px], size: size))
             
             bgImgView.image = planet.multipleImg
             bgImgView.frame = bounds
@@ -59,10 +59,27 @@ class CosmicExplorationPlanetView: UIView {
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
+        
+        let size = CosmicExplorationPlanetView.size
+        let origin: CGPoint
+        switch planet {
+        case .mercury:
+            origin = [55.px, 22.5.px]
+        case .venus:
+            origin = [PortraitScreenWidth - 55.px - size.width, 22.5.px]
+        case .mars:
+            origin = [PortraitScreenWidth - size.width, 132.5.px]
+        case .jupiter:
+            origin = [PortraitScreenWidth - 55.px - size.width, 242.5.px]
+        case .saturn:
+            origin = [55.px, 242.5.px]
+        case .uranus:
+            origin = [0, 132.5.px]
+        }
+        
         self.planet = planet
         self.multipleView = MultipleView(planet)
-        
-        super.init(frame: planet.frame)
+        super.init(frame: CGRect(origin: origin, size: size))
         
         bgImgView.image = planet.bgImg
         bgImgView.frame = bounds
@@ -72,7 +89,7 @@ class CosmicExplorationPlanetView: UIView {
         
         addSubview(supplyListView)
         
-        updateSelected(model.isSelected, animated: false)
+        updateIsSelected(model.isSelected, animated: false)
         updateSupplies(model.supplyModels, animated: false)
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
@@ -90,13 +107,13 @@ class CosmicExplorationPlanetView: UIView {
 
 extension CosmicExplorationPlanetView {
     @objc func didClick() {
-        CosmicExplorationManager.shared.selectPlanet(planet)
+        CosmicExplorationManager.shared.toSelectPlanet(planet)
     }
 }
 
 // MARK: - 选中状态
 extension CosmicExplorationPlanetView {
-    func updateSelected(_ isSelected: Bool, animated: Bool = true) {
+    func updateIsSelected(_ isSelected: Bool, animated: Bool = true) {
         bgImgView.backgroundColor = isSelected ? .randomColor : .clear
         guard animated else { return }
         UIView.transition(with: bgImgView, duration: 0.2, options: .transitionCrossDissolve) {} completion: { _ in }
@@ -113,7 +130,7 @@ extension CosmicExplorationPlanetView {
         static func convert(fromSupplyModels supplyModels: [CosmicExploration.SupplyModel]) -> [SupplyItemModel] {
             var itemModels: [SupplyItemModel] = []
             
-            let superW = CosmicExplorationPlanetView.wh
+            let planetWidth = CosmicExplorationPlanetView.size.width
             let itemH: CGFloat = 14.px
             let minItemW = 20.5.px
             
@@ -129,7 +146,7 @@ extension CosmicExplorationPlanetView {
             switch total {
             case 1:
                 var itemModel1 = itemModels[0]
-                itemModel1.itemFrame.origin.x = HalfDiffValue(superW, itemModel1.itemFrame.width)
+                itemModel1.itemFrame.origin.x = HalfDiffValue(planetWidth, itemModel1.itemFrame.width)
                 itemModels[0] = itemModel1
                 
             case 2...:
@@ -137,7 +154,7 @@ extension CosmicExplorationPlanetView {
                 var itemModel2 = itemModels[1]
                 let firstLineW = itemModel1.itemFrame.width + space + itemModel2.itemFrame.width
                 
-                itemModel1.itemFrame.origin.x = HalfDiffValue(superW, firstLineW)
+                itemModel1.itemFrame.origin.x = HalfDiffValue(planetWidth, firstLineW)
                 itemModels[0] = itemModel1
                 
                 itemModel2.itemFrame.origin.x = itemModel1.itemFrame.maxX + space
@@ -150,13 +167,13 @@ extension CosmicExplorationPlanetView {
                         var itemModel4 = itemModels[3]
                         let secondLineW = itemModel3.itemFrame.width + space + itemModel4.itemFrame.width
                         
-                        itemModel3.itemFrame.origin = [HalfDiffValue(superW, secondLineW), y]
+                        itemModel3.itemFrame.origin = [HalfDiffValue(planetWidth, secondLineW), y]
                         itemModels[2] = itemModel3
                         
                         itemModel4.itemFrame.origin = [itemModel3.itemFrame.maxX + space, y]
                         itemModels[3] = itemModel4
                     } else {
-                        itemModel3.itemFrame.origin = [HalfDiffValue(superW, itemModel3.itemFrame.width), y]
+                        itemModel3.itemFrame.origin = [HalfDiffValue(planetWidth, itemModel3.itemFrame.width), y]
                         itemModels[2] = itemModel3
                     }
                 }
@@ -205,7 +222,7 @@ extension CosmicExplorationPlanetView {
         var items: [SupplyItem] = []
         
         init() {
-            super.init(frame: [0, CosmicExplorationPlanetView.wh - 38.px, CosmicExplorationPlanetView.wh, 38.px])
+            super.init(frame: [0, CosmicExplorationPlanetView.size.height - 38.px, CosmicExplorationPlanetView.size.width, 38.px])
         }
         
         required init?(coder: NSCoder) {

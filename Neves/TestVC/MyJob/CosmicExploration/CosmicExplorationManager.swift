@@ -9,11 +9,20 @@ class CosmicExplorationManager {
     
     static let shared = CosmicExplorationManager()
     
+    weak var playView: CosmicExplorationPlayView?
+    
     private(set) var planetModels: [CosmicExploration.PlanetModel] = []
     
     private(set) var supplyInfoModels: [CosmicExploration.SupplyInfoModel] = []
     
-    weak var playView: CosmicExplorationPlayView?
+    var isActived: Bool { selectedPlanet != nil }
+    private(set) var selectedPlanet: CosmicExploration.PlanetModel? = nil {
+        didSet {
+            guard (selectedPlanet == nil && oldValue != nil) ||
+                  (selectedPlanet != nil && oldValue == nil) else { return }
+            playView?.bottomView.updateIsActived(isActived)
+        }
+    }
     
     init() {
         resetData()
@@ -37,17 +46,12 @@ class CosmicExplorationManager {
         ]
     }
     
-    var selectedPlanetModel: CosmicExploration.PlanetModel? = nil {
-        didSet {
-            guard (selectedPlanetModel == nil && oldValue != nil) || (selectedPlanetModel != nil && oldValue == nil) else { return }
-            playView?.bottomView.updateActived(isActived)
-        }
-    }
-    
-    var isActived: Bool { selectedPlanetModel != nil }
-    
-    func selectPlanet(_ planet: CosmicExploration.Planet) {
-        var selectedModel: CosmicExploration.PlanetModel? = nil
+}
+
+// MARK: - 选中状态
+extension CosmicExplorationManager {
+    func toSelectPlanet(_ planet: CosmicExploration.Planet) {
+        var targetPlanet: CosmicExploration.PlanetModel? = nil
         planetModels.forEach {
             guard $0.planet == planet else {
                 $0.isSelected = false
@@ -58,15 +62,18 @@ class CosmicExplorationManager {
                 $0.isSelected = false
             } else {
                 $0.isSelected = true
-                selectedModel = $0
+                targetPlanet = $0
             }
         }
-        selectedPlanetModel = selectedModel
+        selectedPlanet = targetPlanet
     }
-    
-    func addSupply(_ type: CosmicExploration.SupplyType) {
-        guard let planetModel = selectedPlanetModel else { return }
-        planetModel.addSupply(type)
+}
+
+// MARK: - 补给
+extension CosmicExplorationManager {
+    func addSupply(for type: CosmicExploration.SupplyType) {
+        guard let planetModel = selectedPlanet else { return }
+        planetModel.addSupply(for: type)
     }
     
     func addSupplyFromOther(toPlant plant: CosmicExploration.Planet) {

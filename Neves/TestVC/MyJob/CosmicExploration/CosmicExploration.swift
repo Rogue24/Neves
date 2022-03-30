@@ -8,7 +8,33 @@
 enum CosmicExploration {}
 
 extension CosmicExploration {
+    enum SupplyType: Int, CaseIterable {
+        case supply1
+        case supply2
+        case supply3
+        case supply4
+    }
     
+    struct SupplyInfoModel {
+        let type: SupplyType
+        let singleVotes: Int
+        let iconUrl: String
+    }
+    
+    class SupplyModel: Equatable {
+        static func == (lhs: SupplyModel, rhs: SupplyModel) -> Bool { lhs.type == rhs.type }
+        
+        let type: SupplyType
+        var count: Int
+
+        init(_ type: SupplyType,  _ count: Int = 0) {
+            self.type = type
+            self.count = count
+        }
+    }
+}
+
+extension CosmicExploration {
     enum Planet: Equatable {
         /// 水星
         case mercury(_ multiple: Int = 0)
@@ -67,60 +93,6 @@ extension CosmicExploration {
             case let .uranus(multiple): return multiple
             }
         }
-        
-        var frame: CGRect {
-            let wh = CosmicExplorationPlanetView.wh
-            let origin: CGPoint
-            switch self {
-            case .mercury:
-                origin = [55.px, 22.5.px]
-            case .venus:
-                origin = [PortraitScreenWidth - 55.px - wh, 22.5.px]
-            case .mars:
-                origin = [PortraitScreenWidth - wh, 132.5.px]
-            case .jupiter:
-                origin = [PortraitScreenWidth - 55.px - wh, 242.5.px]
-            case .saturn:
-                origin = [55.px, 242.5.px]
-            case .uranus:
-                origin = [0, 132.5.px]
-            }
-            return CGRect(origin: origin, size: [wh, wh])
-        }
-    }
-    
-}
- 
-extension CosmicExploration {
-    
-    enum SupplyType: Int, CaseIterable {
-        case supply1
-        case supply2
-        case supply3
-        case supply4
-    }
-    
-    struct SupplyInfoModel {
-        let type: SupplyType
-        let singleVotes: Int
-        let iconUrl: String
-    }
-    
-}
-
-
-extension CosmicExploration {
-    
-    class SupplyModel: Equatable {
-        static func == (lhs: SupplyModel, rhs: SupplyModel) -> Bool { lhs.type == rhs.type }
-        
-        let type: SupplyType
-        var count: Int
-
-        init(_ type: SupplyType,  _ count: Int) {
-            self.type = type
-            self.count = count
-        }
     }
     
     class PlanetModel {
@@ -131,6 +103,14 @@ extension CosmicExploration {
             self.planet = planet
         }
         
+        // MARK: - 选中状态
+        var isSelected: Bool = false {
+            didSet {
+                guard isSelected != oldValue else { return }
+                planetView?.updateIsSelected(isSelected)
+            }
+        }
+        
         // MARK: - 补给
         var supplyModels: [SupplyModel] = []
         
@@ -138,24 +118,14 @@ extension CosmicExploration {
             supplyModels.first { $0.type == type }
         }
         
-        func addSupply(_ type: SupplyType) {
-            if let supplyModel = findSupply(type) {
-                supplyModel.count += 1
-            } else {
-                supplyModels.append(SupplyModel(type, 1))
-            }
-            
+        func addSupply(for type: SupplyType) {
+            let supplyModel = findSupply(type) ?? {
+                let model = SupplyModel(type)
+                supplyModels.append(model)
+                return model
+            }()
+            supplyModel.count += 1
             planetView?.updateSupplies(supplyModels, supplyType: type)
         }
-        
-        // MARK: - 选中状态
-        var isSelected: Bool = false {
-            didSet {
-                guard isSelected != oldValue else { return }
-                planetView?.updateSelected(isSelected)
-            }
-        }
     }
-    
-    
 }

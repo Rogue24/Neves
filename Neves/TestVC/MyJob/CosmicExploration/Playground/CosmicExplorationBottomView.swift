@@ -89,7 +89,7 @@ class CosmicExplorationBottomView: UIView {
         bottomTitleLabel.font = .systemFont(ofSize: 9.px)
         
         setupUI()
-        updateActived(CosmicExplorationManager.shared.isActived, animated: false)
+        updateIsActived(CosmicExplorationManager.shared.isActived, animated: false)
     }
     
 }
@@ -126,12 +126,12 @@ extension CosmicExplorationBottomView {
 extension CosmicExplorationBottomView {
     @objc func btnDidClick(_ sender: UIButton) {
         guard let supplyType = CosmicExploration.SupplyType(rawValue: sender.tag) else { return }
-        CosmicExplorationManager.shared.addSupply(supplyType)
+        CosmicExplorationManager.shared.addSupply(for: supplyType)
     }
 }
 
 extension CosmicExplorationBottomView {
-    func updateActived(_ isActived: Bool, animated: Bool = true) {
+    func updateIsActived(_ isActived: Bool, animated: Bool = true) {
         leftBtn1.isSelected = isActived
         leftBtn2.isSelected = isActived
         rightBtn1.isSelected = isActived
