@@ -46,26 +46,26 @@ class CosmicExplorationManager {
         ]
     }
     
+    private(set) var stage: CosmicExploration.Stage = .idle
+    private var timer: DispatchSourceTimer?
 }
 
 // MARK: - 选中状态
 extension CosmicExplorationManager {
-    func toSelectPlanet(_ planet: CosmicExploration.Planet) {
-        var targetPlanet: CosmicExploration.PlanetModel? = nil
+    func toSelectPlanet(_ targetPlanet: CosmicExploration.Planet?) {
+        if selectedPlanet == nil, targetPlanet == nil { return }
+        
+        var selectedPlanet: CosmicExploration.PlanetModel? = nil
         planetModels.forEach {
-            guard $0.planet == planet else {
+            guard let planet = targetPlanet, $0.planet == planet else {
                 $0.isSelected = false
                 return
             }
-            
-            if $0.isSelected {
-                $0.isSelected = false
-            } else {
-                $0.isSelected = true
-                targetPlanet = $0
-            }
+            $0.isSelected.toggle()
+            if $0.isSelected { selectedPlanet = $0 }
         }
-        selectedPlanet = targetPlanet
+        
+        self.selectedPlanet = selectedPlanet
     }
 }
 
@@ -80,3 +80,84 @@ extension CosmicExplorationManager {
         playView?.addSupplyFromOther(toPlant: plant)
     }
 }
+
+// MARK: - 探索阶段
+extension CosmicExplorationManager {
+    func gotoNextStage() {
+        var stage = self.stage
+        
+        switch stage {
+        case .idle:
+            stage = .supplying(10)
+            
+        case let .supplying(second):
+            if second > 0 {
+                stage = .supplying(second - 1)
+            } else {
+                toSelectPlanet(nil)
+                stage = .startExploring
+            }
+            
+        case .startExploring:
+            toSelectPlanet(nil)
+            stage = .exploring(5)
+            
+        case let .exploring(second):
+            toSelectPlanet(nil)
+            if second > 0 {
+                stage = .exploring(second - 1)
+            } else {
+                stage = .finish(true, 10)
+            }
+            
+        case let .finish(isDiscover, second):
+            toSelectPlanet(nil)
+            if second > 0 {
+                stage = .finish(isDiscover, second - 1)
+                toSelectPlanet(nil)
+            } else {
+                stage = .idle
+            }
+        }
+        
+        debugStage(stage)
+        
+        self.stage = stage
+        playView?.updateStage(stage)
+    }
+    
+    func debugStage(_ stage: CosmicExploration.Stage) {
+        switch stage {
+        case .idle:
+            JPrint("空闲阶段")
+        case let .supplying(second):
+            JPrint("补给阶段", second)
+        case .startExploring:
+            JPrint("开始探索")
+        case let .exploring(second):
+            JPrint("探索阶段", second)
+        case let .finish(isDiscover, second):
+            JPrint("探索结束", isDiscover, second)
+        }
+    }
+}
+
+// MARK: - 计时器
+extension CosmicExplorationManager {
+    func addTimer(_ eventHandler: @escaping () -> ()) {
+        removeTimer()
+        
+        let timer = DispatchSource.makeTimerSource(queue: DispatchQueue.main)
+        timer.schedule(deadline: .now() + 1, repeating: .seconds(1))
+        timer.setEventHandler(handler: eventHandler)
+        timer.resume()
+        self.timer = timer
+    }
+    
+    func removeTimer() {
+        timer?.cancel()
+        timer = nil
+    }
+}
+
+

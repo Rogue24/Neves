@@ -89,7 +89,6 @@ class CosmicExplorationBottomView: UIView {
         bottomTitleLabel.font = .systemFont(ofSize: 9.px)
         
         setupUI()
-        updateIsActived(CosmicExplorationManager.shared.isActived, animated: false)
     }
     
 }
@@ -132,11 +131,37 @@ extension CosmicExplorationBottomView {
 
 extension CosmicExplorationBottomView {
     func updateIsActived(_ isActived: Bool, animated: Bool = true) {
+        guard leftBtn1.isSelected != isActived else { return }
         leftBtn1.isSelected = isActived
         leftBtn2.isSelected = isActived
         rightBtn1.isSelected = isActived
         rightBtn2.isSelected = isActived
         guard animated else { return }
         UIView.transition(with: self, duration: 0.2, options: .transitionCrossDissolve) {} completion: { _ in }
+    }
+}
+
+extension CosmicExplorationBottomView {
+    func updateStage(_ stage: CosmicExploration.Stage, animated: Bool) {
+        
+        var isEnabled = true
+        switch stage {
+        case .idle:
+            isEnabled = true
+
+        case let .supplying(second):
+            isEnabled = true
+
+        case .startExploring:
+            isEnabled = false
+
+        case let .exploring(second):
+            isEnabled = false
+
+        case let .finish(isDiscover, second):
+            isEnabled = false
+        }
+        
+        isUserInteractionEnabled = isEnabled
     }
 }

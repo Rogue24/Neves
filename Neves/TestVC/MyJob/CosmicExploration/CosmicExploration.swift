@@ -129,3 +129,13 @@ extension CosmicExploration {
         }
     }
 }
+
+extension CosmicExploration {
+    enum Stage: Equatable {
+        case idle
+        case supplying(_ second: TimeInterval)
+        case startExploring
+        case exploring(_ second: TimeInterval)
+        case finish(_ isDiscover: Bool, _ second: TimeInterval)
+    }
+}

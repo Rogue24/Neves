@@ -45,6 +45,8 @@ class CosmicExplorationPlayView: UIView {
         bottomViewHeightConstraint.constant = 77.px
         
         turntableView.delegate = self
+        
+        updateStage(CosmicExplorationManager.shared.stage, animated: false)
     }
     
     // MARK: - 点击空白关闭
@@ -136,4 +138,14 @@ extension CosmicExplorationPlayView: CosmicExplorationTurntableViewDelegate {
         }
 
     }
+}
+
+extension CosmicExplorationPlayView {
+    
+    func updateStage(_ stage: CosmicExploration.Stage, animated: Bool = true) {
+        turntableView.updateStage(stage, animated: animated)
+        bottomView.updateStage(stage, animated: animated)
+    }
+    
+    
 }
