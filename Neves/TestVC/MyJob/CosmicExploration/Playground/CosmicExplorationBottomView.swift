@@ -96,23 +96,23 @@ class CosmicExplorationBottomView: UIView {
 
 extension CosmicExplorationBottomView {
     func setupUI() {
-        CosmicExplorationManager.shared.giftInfos.forEach {
-            switch $0 {
-            case let .info1(singleVotes, _):
-                leftBtn1.tag = $0.type
-                leftLabel1.text = "\(singleVotes)"
+        CosmicExplorationManager.shared.supplyInfoModels.forEach {
+            switch $0.type {
+            case .supply1:
+                leftBtn1.tag = $0.type.rawValue
+                leftLabel1.text = "\($0.singleVotes)"
                 
-            case let .info2(singleVotes, _):
-                leftBtn2.tag = $0.type
-                leftLabel2.text = "\(singleVotes)"
+            case .supply2:
+                leftBtn2.tag = $0.type.rawValue
+                leftLabel2.text = "\($0.singleVotes)"
                 
-            case let .info3(singleVotes, _):
-                rightBtn2.tag = $0.type
-                rightLabel2.text = "\(singleVotes)"
+            case .supply3:
+                rightBtn2.tag = $0.type.rawValue
+                rightLabel2.text = "\($0.singleVotes)"
                 
-            case let .info4(singleVotes, _):
-                rightBtn1.tag = $0.type
-                rightLabel1.text = "\(singleVotes)"
+            case .supply4:
+                rightBtn1.tag = $0.type.rawValue
+                rightLabel1.text = "\($0.singleVotes)"
             }
         }
         
@@ -125,7 +125,8 @@ extension CosmicExplorationBottomView {
 
 extension CosmicExplorationBottomView {
     @objc func btnDidClick(_ sender: UIButton) {
-        CosmicExplorationManager.shared.planetBet(for: sender.tag)
+        guard let supplyType = CosmicExploration.SupplyType(rawValue: sender.tag) else { return }
+        CosmicExplorationManager.shared.addSupply(supplyType)
     }
 }
 

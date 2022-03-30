@@ -1,5 +1,5 @@
 //
-//  CosmicExplorationStarView.swift
+//  CosmicExplorationPlanetView.swift
 //  Neves
 //
 //  Created by aa on 2022/3/28.
@@ -8,11 +8,13 @@
 import CoreGraphics
 import UIKit
 
-protocol CosmicExplorationStarViewDelegate {
-    func starView(_ starView: CosmicExplorationStarView, betFrom giftType: Int, to frame: CGRect)
+protocol CosmicExplorationPlanetViewDelegate {
+    func planetView(_ planetView: CosmicExplorationPlanetView,
+                    updateSuppliesFromSupplyType supplyType: CosmicExploration.SupplyType,
+                    toItemFrame itemFrame: CGRect)
 }
 
-class CosmicExplorationStarView: UIView {
+class CosmicExplorationPlanetView: UIView {
     
     static let wh: CGFloat = 118.px
     
@@ -26,7 +28,7 @@ class CosmicExplorationStarView: UIView {
             guard multiple > 0 else { return nil }
             
             let size: CGSize = [38.px, 21.px]
-            super.init(frame: CGRect(origin: [CosmicExplorationStarView.wh - size.width - 17.5.px, 28.px], size: size))
+            super.init(frame: CGRect(origin: [CosmicExplorationPlanetView.wh - size.width - 17.5.px, 28.px], size: size))
             
             bgImgView.image = planet.multipleImg
             bgImgView.frame = bounds
@@ -45,113 +47,15 @@ class CosmicExplorationStarView: UIView {
         }
     }
     
-    class OtherBetView: UIView {
-        let userIcon = UIImageView()
-        let giftIcon = UIImageView()
-        
-        var willHide: ((OtherBetView) -> ())?
-        var hideWorkItem: DispatchWorkItem? = nil
-        
-        init() {
-            super.init(frame: CGRect(origin: [15.px, 33.px], size: [45.px, 14.px]))
-            
-            backgroundColor = .rgb(0, 0, 0, a: 0.4)
-            layer.cornerRadius = 7.px
-            layer.masksToBounds = true
-            
-            userIcon.image = UIImage(named: "jp_icon")
-            userIcon.frame = [1.5.px, 1.5.px, 11.px, 11.px]
-            userIcon.layer.cornerRadius = 5.5.px
-            userIcon.layer.masksToBounds = true
-            addSubview(userIcon)
-            
-            let label = UILabel()
-            label.text = "补给"
-            label.font = .systemFont(ofSize: 8.px)
-            label.textColor = .white
-            label.sizeToFit()
-            label.frame.origin = [userIcon.maxX + 2.px, HalfDiffValue(14.px, label.frame.height)]
-            addSubview(label)
-            
-            giftIcon.image = UIImage(named: "dragon_weideng")
-            giftIcon.frame = [(45 - 10 - 2.5).px, 2.px, 10.px, 10.px]
-            addSubview(giftIcon)
-        }
-        
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-        
-        static func show(on view: UIView, delay: TimeInterval, willHide: @escaping (OtherBetView) -> ()) -> OtherBetView {
-            let otherBetView = OtherBetView()
-            otherBetView.alpha = 0
-            view.addSubview(otherBetView)
-            otherBetView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9).translatedBy(x: 0, y: 5.px)
-            
-            UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.88, initialSpringVelocity: 0, options: []) {
-                otherBetView.transform = CGAffineTransform(scaleX: 1, y: 1)
-            } completion: { _ in }
-            
-            UIView.animate(withDuration: 0.17, delay: delay, options: []) {
-                otherBetView.alpha = 1
-            } completion: { _ in }
-            
-            otherBetView.hideWorkItem = Asyncs.mainDelay(3 + delay) {
-                otherBetView.hideAnim()
-            }
-            
-            otherBetView.willHide = willHide
-            return otherBetView
-        }
-        
-        func topAnim() {
-            var transform = self.transform.scaledBy(x: 0.8, y: 0.8)
-//            let size = frame.applying(transform).size
-            transform = transform.translatedBy(x: 0, y: -(frame.height + 3.px))
-            
-            var alpha = self.alpha - 0.6
-            if alpha <= 0 {
-                alpha = 0
-                
-                hideWorkItem?.cancel()
-                willHide?(self)
-                willHide = nil
-            }
-            
-            UIView.animate(withDuration: 0.3) {
-                self.alpha = alpha
-                self.transform = transform
-            } completion: { _ in
-                if alpha == 0 {
-                    self.removeFromSuperview()
-                }
-            }
-        }
-        
-        func hideAnim() {
-            hideWorkItem?.cancel()
-            
-            willHide?(self)
-            willHide = nil
-            
-            UIView.animate(withDuration: 0.2) {
-                self.alpha = 0
-            } completion: { _ in
-                self.removeFromSuperview()
-            }
-        }
-    }
+    weak var delegate: (AnyObject & CosmicExplorationPlanetViewDelegate)? = nil
     
     let planet: CosmicExploration.Planet
     let bgImgView = UIImageView()
     
     var multiple: Int = 0
     let multipleView: MultipleView?
-    let betGiftsView = BetGiftsView()
-    
-    weak var delegate: (AnyObject & CosmicExplorationStarViewDelegate)? = nil
-    
-    var otherBetViews: [OtherBetView] = []
+    let supplyListView = SupplyListView()
+    private var otherSupplyViews: [OtherSupplyView] = []
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
@@ -166,12 +70,12 @@ class CosmicExplorationStarView: UIView {
         
         multipleView.map { addSubview($0) }
         
-        addSubview(betGiftsView)
-        
-        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
+        addSubview(supplyListView)
         
         updateSelected(model.isSelected, animated: false)
-        updateBetGifts(model.betGifts, animated: false)
+        updateSupplies(model.supplyModels, animated: false)
+        
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
     }
     
     required init?(coder: NSCoder) {
@@ -184,75 +88,39 @@ class CosmicExplorationStarView: UIView {
     
 }
 
-extension CosmicExplorationStarView {
+extension CosmicExplorationPlanetView {
     @objc func didClick() {
         CosmicExplorationManager.shared.selectPlanet(planet)
     }
 }
 
-extension CosmicExplorationStarView {
+// MARK: - 选中状态
+extension CosmicExplorationPlanetView {
     func updateSelected(_ isSelected: Bool, animated: Bool = true) {
         bgImgView.backgroundColor = isSelected ? .randomColor : .clear
         guard animated else { return }
         UIView.transition(with: bgImgView, duration: 0.2, options: .transitionCrossDissolve) {} completion: { _ in }
     }
-    
-    func updateBetGifts(_ betGifts: [CosmicExploration.BetGiftModel], giftType: Int? = nil, animated: Bool = true) {
-        let itemModels = BetGiftItemModel.convert(withBetGiftModels: betGifts)
-        guard animated else {
-            betGiftsView.updateBetGifts(itemModels, animated: false)
-            return
-        }
-        
-        var delay: TimeInterval = 0
-        if let delegate = self.delegate, let superView = self.superview,
-           let giftType = giftType,
-           let itemFrame = itemModels.first(where: { $0.giftType == giftType })?.itemFrame {
-            delegate.starView(self, betFrom: giftType, to: betGiftsView.convert(itemFrame, to: superView))
-            delay = 0.3
-        }
-        
-        Asyncs.mainDelay(delay) {
-            self.betGiftsView.updateBetGifts(itemModels, animated: animated)
-        }
-    }
 }
 
-extension CosmicExplorationStarView {
-    func betFromOther() {
-        JPrint("来了老弟")
-        let delay: TimeInterval = otherBetViews.count == 0 ? 0 : 0.23
-        
-        otherBetViews.forEach { $0.topAnim() }
-        
-        let otherBetView = OtherBetView.show(on: self, delay: delay) { [weak self] obView in
-            guard let self = self else { return }
-            self.otherBetViews.removeAll { $0 == obView }
-        }
-        
-        otherBetViews.insert(otherBetView, at: 0)
-    }
-}
-
-// MARK: - 下注礼物列表
-extension CosmicExplorationStarView {
-    
-    struct BetGiftItemModel {
-        let giftType: Int
+// MARK: - 我的补给
+extension CosmicExplorationPlanetView {
+    struct SupplyItemModel {
+        let type: CosmicExploration.SupplyType
         let itemTitle: String
         var itemFrame: CGRect
         
-        static func convert(withBetGiftModels betGifts: [CosmicExploration.BetGiftModel]) -> [BetGiftItemModel] {
-            var itemModels: [BetGiftItemModel] = []
+        static func convert(fromSupplyModels supplyModels: [CosmicExploration.SupplyModel]) -> [SupplyItemModel] {
+            var itemModels: [SupplyItemModel] = []
             
-            let superW = CosmicExplorationStarView.wh
+            let superW = CosmicExplorationPlanetView.wh
             let itemH: CGFloat = 14.px
             let minItemW = 20.5.px
             
-            for model in betGifts {
-                let itemTitle = "+\(model.betCount)"
+            for model in supplyModels {
+                let itemTitle = "+\(model.count)"
                 let itemW = minItemW + itemTitle.jp.textSize(withFont: .systemFont(ofSize: 10.px)).width
-                itemModels.append(BetGiftItemModel(giftType: model.giftType, itemTitle: itemTitle, itemFrame: [0, 0, itemW, itemH]))
+                itemModels.append(SupplyItemModel(type: model.type, itemTitle: itemTitle, itemFrame: [0, 0, itemW, itemH]))
             }
             
             let total = itemModels.count
@@ -300,7 +168,7 @@ extension CosmicExplorationStarView {
         }
     }
     
-    class BetGiftItem: UIView {
+    class SupplyItem: UIView {
         let icon = UIImageView()
         let label = UILabel()
         
@@ -325,26 +193,26 @@ extension CosmicExplorationStarView {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func updateUI(_ itemModel: BetGiftItemModel) {
+        func updateUI(_ itemModel: SupplyItemModel) {
             label.text = itemModel.itemTitle
             frame = itemModel.itemFrame
         }
     }
     
     
-    class BetGiftsView: UIView {
+    class SupplyListView: UIView {
         
-        var items: [BetGiftItem] = []
+        var items: [SupplyItem] = []
         
         init() {
-            super.init(frame: [0, CosmicExplorationStarView.wh - 38.px, CosmicExplorationStarView.wh, 38.px])
+            super.init(frame: [0, CosmicExplorationPlanetView.wh - 38.px, CosmicExplorationPlanetView.wh, 38.px])
         }
         
         required init?(coder: NSCoder) {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func updateBetGifts(_ itemModels: [BetGiftItemModel], animated: Bool = true) {
+        func updateSupplies(_ itemModels: [SupplyItemModel], animated: Bool = true) {
             if !animated {
                 let items = self.items
                 if items.count > itemModels.count {
@@ -362,7 +230,7 @@ extension CosmicExplorationStarView {
                 } else {
                     for (i, itemModel) in itemModels.enumerated() {
                         if i >= items.count {
-                            let item = BetGiftItem()
+                            let item = SupplyItem()
                             item.updateUI(itemModel)
                             self.addSubview(item)
                             self.items.append(item)
@@ -398,7 +266,7 @@ extension CosmicExplorationStarView {
             } else {
                 for (i, itemModel) in itemModels.enumerated() {
                     if i >= items.count {
-                        let item = BetGiftItem()
+                        let item = SupplyItem()
                         item.updateUI(itemModel)
                         item.alpha = 0
                         item.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
@@ -421,5 +289,142 @@ extension CosmicExplorationStarView {
         
     }
     
+    func updateSupplies(_ supplyModels: [CosmicExploration.SupplyModel], supplyType: CosmicExploration.SupplyType? = nil, animated: Bool = true) {
+        let itemModels = SupplyItemModel.convert(fromSupplyModels: supplyModels)
+        
+        guard animated else {
+            supplyListView.updateSupplies(itemModels, animated: false)
+            return
+        }
+        
+        var delay: TimeInterval = 0
+        if let delegate = self.delegate,
+           let superView = self.superview,
+           let supplyType = supplyType,
+           var itemFrame = itemModels.first(where: { $0.type == supplyType })?.itemFrame
+        {
+            itemFrame = supplyListView.convert(itemFrame, to: superView)
+            delegate.planetView(self, updateSuppliesFromSupplyType: supplyType, toItemFrame: itemFrame)
+            delay = 0.3
+        }
+        
+        Asyncs.mainDelay(delay) {
+            self.supplyListView.updateSupplies(itemModels, animated: true)
+        }
+    }
+}
+
+// MARK: - 别人的补给
+extension CosmicExplorationPlanetView {
+    class OtherSupplyView: UIView {
+        let userIcon = UIImageView()
+        let supplyIcon = UIImageView()
+        
+        private var willHide: ((OtherSupplyView) -> ())?
+        private var hideWorkItem: DispatchWorkItem? = nil
+        
+        init() {
+            super.init(frame: CGRect(origin: [15.px, 33.px], size: [45.px, 14.px]))
+            
+            backgroundColor = .rgb(0, 0, 0, a: 0.4)
+            layer.cornerRadius = 7.px
+            layer.masksToBounds = true
+            
+            userIcon.image = UIImage(named: "jp_icon")
+            userIcon.frame = [1.5.px, 1.5.px, 11.px, 11.px]
+            userIcon.layer.cornerRadius = 5.5.px
+            userIcon.layer.masksToBounds = true
+            addSubview(userIcon)
+            
+            let label = UILabel()
+            label.text = "补给"
+            label.font = .systemFont(ofSize: 8.px)
+            label.textColor = .white
+            label.sizeToFit()
+            label.frame.origin = [userIcon.maxX + 2.px, HalfDiffValue(14.px, label.frame.height)]
+            addSubview(label)
+            
+            supplyIcon.image = UIImage(named: "dragon_weideng")
+            supplyIcon.frame = [(45 - 10 - 2.5).px, 2.px, 10.px, 10.px]
+            addSubview(supplyIcon)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        static func show(on view: UIView, delay: TimeInterval, willHide: @escaping (OtherSupplyView) -> ()) -> OtherSupplyView {
+            let osView = OtherSupplyView()
+            view.addSubview(osView)
+            
+            osView.alpha = 0
+            osView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9).translatedBy(x: 0, y: 5.px)
+            
+            UIView.animate(withDuration: 0.5, delay: delay, usingSpringWithDamping: 0.88, initialSpringVelocity: 0, options: []) {
+                osView.transform = CGAffineTransform(scaleX: 1, y: 1)
+            } completion: { _ in }
+            
+            UIView.animate(withDuration: 0.17, delay: delay, options: []) {
+                osView.alpha = 1
+            } completion: { _ in }
+            
+            osView.hideWorkItem = Asyncs.mainDelay(3 + delay) {
+                osView.hideAnim()
+            }
+            
+            osView.willHide = willHide
+            return osView
+        }
+        
+        func topAnim() {
+            var transform = self.transform.scaledBy(x: 0.8, y: 0.8)
+//            let size = frame.applying(transform).size
+            transform = transform.translatedBy(x: 0, y: -(frame.height + 3.px))
+            
+            var alpha = self.alpha - 0.6
+            if alpha <= 0 {
+                alpha = 0
+                
+                hideWorkItem?.cancel()
+                willHide?(self)
+                willHide = nil
+            }
+            
+            UIView.animate(withDuration: 0.3) {
+                self.alpha = alpha
+                self.transform = transform
+            } completion: { _ in
+                if alpha == 0 {
+                    self.removeFromSuperview()
+                }
+            }
+        }
+        
+        func hideAnim() {
+            hideWorkItem?.cancel()
+            
+            willHide?(self)
+            willHide = nil
+            
+            UIView.animate(withDuration: 0.2) {
+                self.alpha = 0
+            } completion: { _ in
+                self.removeFromSuperview()
+            }
+        }
+    }
     
+    func addSupplyFromOther() {
+        JPrint("来了老弟")
+        let delay: TimeInterval = otherSupplyViews.count == 0 ? 0 : 0.23
+        
+        otherSupplyViews.forEach { $0.topAnim() }
+        
+        let osView = OtherSupplyView.show(on: self, delay: delay) { [weak self] kOsView in
+            guard let self = self else { return }
+            self.otherSupplyViews.removeAll { $0 == kOsView }
+        }
+        
+        otherSupplyViews.insert(osView, at: 0)
+    }
 }

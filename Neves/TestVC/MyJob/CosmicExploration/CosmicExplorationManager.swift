@@ -11,7 +11,7 @@ class CosmicExplorationManager {
     
     private(set) var planetModels: [CosmicExploration.PlanetModel] = []
     
-    private(set) var giftInfos: [CosmicExploration.GiftInfo] = []
+    private(set) var supplyInfoModels: [CosmicExploration.SupplyInfoModel] = []
     
     weak var playView: CosmicExplorationPlayView?
     
@@ -29,11 +29,11 @@ class CosmicExplorationManager {
             .init(.uranus(0)),
         ]
         
-        giftInfos = [
-            .info1(1000, ""),
-            .info2(2000, ""),
-            .info3(5000, ""),
-            .info4(10000, ""),
+        supplyInfoModels = [
+            .init(type: .supply1, singleVotes: 1000, iconUrl: ""),
+            .init(type: .supply2, singleVotes: 2000, iconUrl: ""),
+            .init(type: .supply3, singleVotes: 5000, iconUrl: ""),
+            .init(type: .supply4, singleVotes: 10000, iconUrl: ""),
         ]
     }
     
@@ -64,12 +64,12 @@ class CosmicExplorationManager {
         selectedPlanetModel = selectedModel
     }
     
-    func planetBet(for giftType: Int) {
+    func addSupply(_ type: CosmicExploration.SupplyType) {
         guard let planetModel = selectedPlanetModel else { return }
-        planetModel.bet(giftType)
+        planetModel.addSupply(type)
     }
     
-    func plantBetFromOther(_ plant: CosmicExploration.Planet) {
-        playView?.plantBetFromOther(plant)
+    func addSupplyFromOther(toPlant plant: CosmicExploration.Planet) {
+        playView?.addSupplyFromOther(toPlant: plant)
     }
 }

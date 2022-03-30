@@ -6,7 +6,9 @@
 //
 
 protocol CosmicExplorationTurntableViewDelegate {
-    func turntableView(_ turntableView: CosmicExplorationTurntableView, betFrom giftType: Int, to frame: CGRect)
+    func turntableView(_ turntableView: CosmicExplorationTurntableView,
+                       updateSuppliesFromSupplyType supplyType: CosmicExploration.SupplyType,
+                       toItemFrame itemFrame: CGRect)
 }
 
 class CosmicExplorationTurntableView: UIView {
@@ -17,7 +19,7 @@ class CosmicExplorationTurntableView: UIView {
     @IBOutlet weak var knapsackBtnBottomConstraint: NSLayoutConstraint!
     
     weak var delegate: (AnyObject & CosmicExplorationTurntableViewDelegate)? = nil
-    var starViews: [CosmicExplorationStarView] = []
+    var planetViews: [CosmicExplorationPlanetView] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,21 +27,24 @@ class CosmicExplorationTurntableView: UIView {
         knapsackBtnWidthConstraint.constant = 54.px
         knapsackBtnBottomConstraint.constant = 14.px
         
-        starViews = CosmicExplorationManager.shared.planetModels.map { model in
-            let starView = CosmicExplorationStarView(model)
-            starView.delegate = self
-            addSubview(starView)
-            model.starView = starView
-            return starView
+        planetViews = CosmicExplorationManager.shared.planetModels.map { model in
+            let planetView = CosmicExplorationPlanetView(model)
+            planetView.delegate = self
+            addSubview(planetView)
+            model.planetView = planetView
+            return planetView
         }
         
     }
     
 }
 
-extension CosmicExplorationTurntableView: CosmicExplorationStarViewDelegate {
-    func starView(_ starView: CosmicExplorationStarView, betFrom giftType: Int, to frame: CGRect) {
+extension CosmicExplorationTurntableView: CosmicExplorationPlanetViewDelegate {
+    func planetView(_ planetView: CosmicExplorationPlanetView,
+                    updateSuppliesFromSupplyType supplyType: CosmicExploration.SupplyType,
+                    toItemFrame itemFrame: CGRect) {
         guard let delegate = self.delegate, let superView = self.superview else { return }
-        delegate.turntableView(self, betFrom: giftType, to: convert(frame, to: superView))
+        let toItemFrame = convert(itemFrame, to: superView)
+        delegate.turntableView(self, updateSuppliesFromSupplyType: supplyType, toItemFrame: toItemFrame)
     }
 }

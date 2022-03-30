@@ -97,31 +97,31 @@ extension CosmicExplorationPlayView {
 
 extension CosmicExplorationPlayView {
     
-    func plantBetFromOther(_ plant: CosmicExploration.Planet) {
-        guard let starView = turntableView.starViews.first(where: { $0.planet == plant }) else { return }
-        starView.betFromOther()
+    func addSupplyFromOther(toPlant plant: CosmicExploration.Planet) {
+        guard let planetView = turntableView.planetViews.first(where: { $0.planet == plant }) else { return }
+        planetView.addSupplyFromOther()
     }
     
 }
 
 extension CosmicExplorationPlayView: CosmicExplorationTurntableViewDelegate {
-    func turntableView(_ turntableView: CosmicExplorationTurntableView, betFrom giftType: Int, to frame: CGRect) {
+    func turntableView(_ turntableView: CosmicExplorationTurntableView,
+                       updateSuppliesFromSupplyType supplyType: CosmicExploration.SupplyType,
+                       toItemFrame itemFrame: CGRect) {
         let giftIcon: UIImageView
-        switch giftType {
-        case 0:
+        switch supplyType {
+        case .supply1:
             giftIcon = bottomView.leftGiftIcon1
-        case 1:
+        case .supply2:
             giftIcon = bottomView.leftGiftIcon2
-        case 2:
+        case .supply3:
             giftIcon = bottomView.rightGiftIcon2
-        case 3:
+        case .supply4:
             giftIcon = bottomView.rightGiftIcon1
-        default:
-            return
         }
         
         let fromFrame = giftIcon.convert(giftIcon.bounds, to: contentView)
-        let toCenter: CGPoint = [frame.origin.x + 9.px, frame.origin.y + 7.px]
+        let toCenter: CGPoint = [itemFrame.origin.x + 9.px, itemFrame.origin.y + 7.px]
         let scale = 10.px / giftIcon.frame.width
          
         let imageView = UIImageView(frame: fromFrame)

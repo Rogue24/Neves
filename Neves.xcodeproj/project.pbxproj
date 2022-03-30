@@ -192,7 +192,7 @@
 		718A569E27F19F5E0071C724 /* CosmicExplorationPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718A569D27F19F5E0071C724 /* CosmicExplorationPlayView.xib */; };
 		718A56A027F1B5730071C724 /* CosmicExplorationBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A569F27F1B5730071C724 /* CosmicExplorationBannerView.swift */; };
 		718A56A227F1B6080071C724 /* CosmicExplorationTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A127F1B6080071C724 /* CosmicExplorationTurntableView.swift */; };
-		718A56A427F1B63B0071C724 /* CosmicExplorationStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A327F1B63A0071C724 /* CosmicExplorationStarView.swift */; };
+		718A56A427F1B63B0071C724 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A327F1B63A0071C724 /* CosmicExplorationPlanetView.swift */; };
 		718A56A627F1B6760071C724 /* CosmicExplorationHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A527F1B6760071C724 /* CosmicExplorationHostView.swift */; };
 		718A56A827F1B6A00071C724 /* CosmicExplorationRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56A727F1B6A00071C724 /* CosmicExplorationRecordView.swift */; };
 		718A56AC27F1B6BE0071C724 /* CosmicExplorationHostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718A56AB27F1B6BE0071C724 /* CosmicExplorationHostView.xib */; };
@@ -512,7 +512,7 @@
 		718A569D27F19F5E0071C724 /* CosmicExplorationPlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationPlayView.xib; sourceTree = "<group>"; };
 		718A569F27F1B5730071C724 /* CosmicExplorationBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBannerView.swift; sourceTree = "<group>"; };
 		718A56A127F1B6080071C724 /* CosmicExplorationTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationTurntableView.swift; sourceTree = "<group>"; };
-		718A56A327F1B63A0071C724 /* CosmicExplorationStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationStarView.swift; sourceTree = "<group>"; };
+		718A56A327F1B63A0071C724 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
 		718A56A527F1B6760071C724 /* CosmicExplorationHostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationHostView.swift; sourceTree = "<group>"; };
 		718A56A727F1B6A00071C724 /* CosmicExplorationRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationRecordView.swift; sourceTree = "<group>"; };
 		718A56AB27F1B6BE0071C724 /* CosmicExplorationHostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationHostView.xib; sourceTree = "<group>"; };
@@ -1311,7 +1311,7 @@
 				718A56A127F1B6080071C724 /* CosmicExplorationTurntableView.swift */,
 				718A56A527F1B6760071C724 /* CosmicExplorationHostView.swift */,
 				718A56AB27F1B6BE0071C724 /* CosmicExplorationHostView.xib */,
-				718A56A327F1B63A0071C724 /* CosmicExplorationStarView.swift */,
+				718A56A327F1B63A0071C724 /* CosmicExplorationPlanetView.swift */,
 				718A56AD27F1B8B80071C724 /* CosmicExplorationBottomView.swift */,
 			);
 			path = Playground;
@@ -1844,7 +1844,7 @@
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
-				718A56A427F1B63B0071C724 /* CosmicExplorationStarView.swift in Sources */,
+				718A56A427F1B63B0071C724 /* CosmicExplorationPlanetView.swift in Sources */,
 				7151894A27EB2AF400342645 /* Attachable.swift in Sources */,
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
 				71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */,
