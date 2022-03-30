@@ -23,6 +23,7 @@ class CosmicExplorationBannerView: UIView {
         leftIconWidthConstraint.constant = 15.px
         leftIconLeftConstraint.constant = 5.px
         
+        // TODO: 临时做法
         Asyncs.main { [weak self] in
             guard let self = self else { return }
             

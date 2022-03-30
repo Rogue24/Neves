@@ -60,9 +60,9 @@ class CosmicExplorationPlanetView: UIView {
     let bgAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
     let selectedAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
     
+    // TODO: 临时做法 111
     var animation1: Animation?
     var provider1: AnimationImageProvider?
-    
     var animation2: Animation?
     var provider2: AnimationImageProvider?
     
@@ -114,7 +114,7 @@ class CosmicExplorationPlanetView: UIView {
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
         
-        
+        // TODO: 临时做法 222
         Asyncs.async { [weak self] in
             guard let self = self else { return }
             
