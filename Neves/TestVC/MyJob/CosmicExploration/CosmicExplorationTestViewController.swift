@@ -18,7 +18,7 @@ class CosmicExplorationTestViewController: TestBaseViewController {
             guard let self = self else { return }
             guard CosmicExplorationManager.shared.playView == nil else {
                 if let model = CosmicExplorationManager.shared.selectedPlanetModel {
-                    CosmicExplorationManager.shared.playView?.plantBetFromOther(model.planet)
+                    CosmicExplorationManager.shared.plantBetFromOther(model.planet)
                 }
                 return
             }

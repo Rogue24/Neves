@@ -69,4 +69,7 @@ class CosmicExplorationManager {
         planetModel.bet(giftType)
     }
     
+    func plantBetFromOther(_ plant: CosmicExploration.Planet) {
+        playView?.plantBetFromOther(plant)
+    }
 }
