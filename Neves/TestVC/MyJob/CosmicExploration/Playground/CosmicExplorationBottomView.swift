@@ -146,20 +146,10 @@ extension CosmicExplorationBottomView {
         
         var isEnabled = true
         switch stage {
-        case .idle:
-            isEnabled = true
-
-        case let .supplying(second):
-            isEnabled = true
-
-        case .startExploring:
-            isEnabled = false
-
-        case let .exploring(second):
-            isEnabled = false
-
-        case let .finish(isDiscover, second):
-            isEnabled = false
+            case .startExploring: fallthrough
+            case .exploring: fallthrough
+            case .finish: isEnabled = false
+            default: break
         }
         
         isUserInteractionEnabled = isEnabled
