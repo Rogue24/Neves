@@ -142,7 +142,7 @@
                                 <constraint firstItem="T2w-2B-1wQ" firstAttribute="top" secondItem="FfR-P0-13m" secondAttribute="top" id="ani-0p-6zd"/>
                                 <constraint firstItem="mKh-h3-7jD" firstAttribute="centerY" secondItem="FfR-P0-13m" secondAttribute="centerY" id="cyz-mt-5ax"/>
                                 <constraint firstAttribute="trailing" secondItem="T2w-2B-1wQ" secondAttribute="trailing" constant="10" id="iSG-ZO-ddQ"/>
-                                <constraint firstAttribute="width" constant="230" id="yEa-pC-V1i"/>
+                                <constraint firstItem="T2w-2B-1wQ" firstAttribute="leading" secondItem="mKh-h3-7jD" secondAttribute="trailing" constant="6" id="jX8-Dh-HSN"/>
                             </constraints>
                             <connections>
                                 <outlet property="collectionView" destination="T2w-2B-1wQ" id="hls-xI-ska"/>
@@ -150,6 +150,7 @@
                                 <outlet property="collectionViewWidthConstraint" destination="guu-W9-gBP" id="G4g-CW-V9a"/>
                                 <outlet property="titleLabel" destination="mKh-h3-7jD" id="RLD-9o-9RU"/>
                                 <outlet property="titleLabelLeftConstraint" destination="4sT-bD-PsK" id="pKn-Wv-uTF"/>
+                                <outlet property="titleLabelRightConstraint" destination="jX8-Dh-HSN" id="YxU-6c-w13"/>
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50Q-bt-70H" customClass="CosmicExplorationBottomView" customModule="Neves" customModuleProvider="target">

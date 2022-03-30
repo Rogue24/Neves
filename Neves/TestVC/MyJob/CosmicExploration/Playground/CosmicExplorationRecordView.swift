@@ -11,6 +11,7 @@ class CosmicExplorationRecordView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var titleLabelLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleLabelRightConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var collectionViewRightConstraint: NSLayoutConstraint!
     
@@ -26,6 +27,7 @@ class CosmicExplorationRecordView: UIView {
         titleLabel.font = .systemFont(ofSize: 11.px)
         
         titleLabelLeftConstraint.constant = 10.px
+        titleLabelRightConstraint.constant = 6.px
         collectionViewWidthConstraint.constant = Self.cellW * 8 + Self.cellSpace * 8
         collectionViewRightConstraint.constant = 10.px
         
@@ -37,6 +39,7 @@ class CosmicExplorationRecordView: UIView {
             flowLayout.sectionInset = UIEdgeInsets(top: 0, left: Self.cellSpace, bottom: 0, right: 0)
             flowLayout.itemSize = [Self.cellW, 22.px]
         }
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(CosmicExplorationRecordView.Cell.self, forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
     }
