@@ -93,6 +93,7 @@ class CosmicExplorationPlanetView: UIView {
         bgAnimView.backgroundBehavior = .pauseAndRestore
         bgAnimView.contentMode = .scaleAspectFill
         bgAnimView.frame = bounds
+        bgAnimView.loopMode = .loop
         addSubview(bgAnimView)
         
         bgImgView.image = planet.bgImg
@@ -102,6 +103,7 @@ class CosmicExplorationPlanetView: UIView {
         selectedAnimView.backgroundBehavior = .pauseAndRestore
         selectedAnimView.contentMode = .scaleAspectFill
         selectedAnimView.frame = bounds
+        selectedAnimView.loopMode = .loop
         selectedAnimView.alpha = 0
         addSubview(selectedAnimView)
         
@@ -115,7 +117,7 @@ class CosmicExplorationPlanetView: UIView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
         
         // TODO: 临时做法 222
-        Asyncs.main {
+        DispatchQueue.global().async {
             if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_default_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
                 self.animation1 = animation
                 self.provider1 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
@@ -125,18 +127,18 @@ class CosmicExplorationPlanetView: UIView {
                 self.animation2 = animation
                 self.provider2 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             }
+            
+            DispatchQueue.main.async {
+                if let animation = self.animation1, let provider = self.provider1 {
+                    self.bgAnimView.animation = animation
+                    self.bgAnimView.imageProvider = provider
+                    self.bgAnimView.play()
+                }
 
-            if let animation = self.animation1, let provider = self.provider1 {
-                self.bgAnimView.animation = animation
-                self.bgAnimView.imageProvider = provider
-                self.bgAnimView.loopMode = .loop
-                self.bgAnimView.play()
-            }
-
-            if let animation = self.animation2, let provider = self.provider2 {
-                self.selectedAnimView.animation = animation
-                self.selectedAnimView.imageProvider = provider
-                self.selectedAnimView.loopMode = .loop
+                if let animation = self.animation2, let provider = self.provider2 {
+                    self.selectedAnimView.animation = animation
+                    self.selectedAnimView.imageProvider = provider
+                }
             }
         }
     }
