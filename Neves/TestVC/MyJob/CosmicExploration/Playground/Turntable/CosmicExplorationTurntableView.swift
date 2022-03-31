@@ -55,7 +55,9 @@ class CosmicExplorationTurntableView: UIView {
         }
     }
     
-    
+    func findPlanetView(for plant: CosmicExploration.Planet) -> CosmicExplorationPlanetView? {
+        planetViews.first(where: { $0.planet == plant })
+    }
 }
 
 extension CosmicExplorationTurntableView: CosmicExplorationPlanetViewDelegate {

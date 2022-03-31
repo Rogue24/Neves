@@ -111,7 +111,7 @@ extension CosmicExplorationPlayView {
 extension CosmicExplorationPlayView {
     
     func addSupplyFromOther(toPlant plant: CosmicExploration.Planet) {
-        guard let planetView = turntableView.planetViews.first(where: { $0.planet == plant }) else { return }
+        guard let planetView = turntableView.findPlanetView(for: plant) else { return }
         planetView.addSupplyFromOther()
     }
     
