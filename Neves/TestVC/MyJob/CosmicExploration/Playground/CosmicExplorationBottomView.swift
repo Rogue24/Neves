@@ -147,7 +147,6 @@ extension CosmicExplorationBottomView {
         
         var isEnabled = true
         switch stage {
-            case .startExploring: fallthrough
             case .exploring: fallthrough
             case .finish: isEnabled = false
             default: break

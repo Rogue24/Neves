@@ -59,12 +59,7 @@ class CosmicExplorationPlanetView: UIView {
     
     let bgAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
     let selectedAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
-    
-    // TODO: 临时做法 111
-    var animation1: Animation?
-    var provider1: AnimationImageProvider?
-    var animation2: Animation?
-    var provider2: AnimationImageProvider?
+    let exploringAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
@@ -107,6 +102,13 @@ class CosmicExplorationPlanetView: UIView {
         selectedAnimView.alpha = 0
         addSubview(selectedAnimView)
         
+        exploringAnimView.backgroundBehavior = .pauseAndRestore
+        exploringAnimView.contentMode = .scaleAspectFill
+        exploringAnimView.frame = bounds
+        exploringAnimView.loopMode = .loop
+        exploringAnimView.alpha = 0
+        addSubview(exploringAnimView)
+        
         multipleView.map { addSubview($0) }
         
         addSubview(supplyListView)
@@ -116,29 +118,24 @@ class CosmicExplorationPlanetView: UIView {
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
         
-        // TODO: 临时做法 222
-        DispatchQueue.global().async {
+        // TODO: 临时做法
+        DispatchQueue.main.async {
             if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_default_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
-                self.animation1 = animation
-                self.provider1 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+                self.bgAnimView.animation = animation
+                self.bgAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+                self.bgAnimView.play()
             }
 
             if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_target_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
-                self.animation2 = animation
-                self.provider2 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+                self.selectedAnimView.animation = animation
+                self.selectedAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+                self.selectedAnimView.stop()
             }
             
-            DispatchQueue.main.async {
-                if let animation = self.animation1, let provider = self.provider1 {
-                    self.bgAnimView.animation = animation
-                    self.bgAnimView.imageProvider = provider
-                    self.bgAnimView.play()
-                }
-
-                if let animation = self.animation2, let provider = self.provider2 {
-                    self.selectedAnimView.animation = animation
-                    self.selectedAnimView.imageProvider = provider
-                }
+            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_random_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+                self.exploringAnimView.animation = animation
+                self.exploringAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
+                self.exploringAnimView.stop()
             }
         }
     }
@@ -511,4 +508,50 @@ extension CosmicExplorationPlanetView {
         
         otherSupplyViews.insert(osView, at: 0)
     }
+}
+
+// MARK: - 探索动画
+extension CosmicExplorationPlanetView {
+    func startExploringAnimtion(endDelay: TimeInterval) {
+        exploringAnimView.pop_removeAllAnimations()
+        
+        exploringAnimView.play()
+        let anim1 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
+        anim1.fromValue = 0
+        anim1.toValue = 1
+        anim1.duration = 0.12
+        exploringAnimView.pop_add(anim1, forKey: "start")
+        
+        guard endDelay > 0 else { return }
+        let anim2 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
+        anim2.fromValue = 1
+        anim2.toValue = 0
+        anim2.duration = 0.12
+        anim2.beginTime = CACurrentMediaTime() + endDelay
+        anim2.completionBlock = { [weak exploringAnimView] _, finished in
+            guard finished else { return }
+            exploringAnimView?.stop()
+        }
+        exploringAnimView.pop_add(anim2, forKey: "end")
+    }
+    
+    func stopExploringAnimtion() {
+        exploringAnimView.pop_removeAllAnimations()
+        
+        guard exploringAnimView.alpha > 0 else {
+            exploringAnimView.stop()
+            return
+        }
+        
+        let anim = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
+        anim.toValue = 0
+        anim.duration = 0.12
+        anim.completionBlock = { [weak exploringAnimView] _, finished in
+            guard finished else { return }
+            exploringAnimView?.stop()
+        }
+        exploringAnimView.pop_add(anim, forKey: "end")
+    }
+    
+//    func
 }

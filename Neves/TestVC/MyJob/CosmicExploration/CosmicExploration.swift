@@ -49,6 +49,23 @@ extension CosmicExploration {
         /// 天王星
         case uranus(_ multiple: Int = 0)
         
+        var name: String {
+            switch self {
+            case .mercury:
+                return "水星"
+            case .venus:
+                return "金星"
+            case .mars:
+                return "火星"
+            case .jupiter:
+                return "木星"
+            case .saturn:
+                return "土星"
+            case .uranus:
+                return "天王星"
+            }
+        }
+        
         var bgImg: UIImage? {
             switch self {
             case .mercury:
@@ -134,7 +151,6 @@ extension CosmicExploration {
     enum Stage: Equatable {
         case idle
         case supplying(_ second: TimeInterval)
-        case startExploring
         case exploring(_ second: TimeInterval)
         case finish(_ isDiscover: Bool, _ second: TimeInterval)
     }

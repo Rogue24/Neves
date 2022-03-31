@@ -95,21 +95,21 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "magicball_entrance_available_lottie"
+            lottieName = "spaceship_countdown_lottie"
         case 1:
-            lottieName = "magicball_entrance_normal_lottie"
+            lottieName = "spaceship_countdown_s_lottie"
         case 2:
-            lottieName = "magicball_normal_lottie"
+            lottieName = "spaceship_default_lottie"
         case 3:
-            lottieName = "magicball_power_available_lottie"
+            lottieName = "spaceship_launch_lottie"
         case 4:
-            lottieName = "magicball_power_get_lottie"
+            lottieName = "spaceship_normal_lottie"
         case 5:
-            lottieName = "magicball_power_notreached_lottie"
+            lottieName = "spaceship_random_lottie"
         case 6:
-            lottieName = "magicball_trigger_lottie"
+            lottieName = "spaceship_result_lottie"
         case 7:
-            lottieName = "dragon_guwu_lottie"
+            lottieName = "spaceship_target_lottie"
         default:
             lottieName = "album_videobg_jielong_lottie"
         }
@@ -149,6 +149,26 @@ class LottieShowViewController: TestBaseViewController {
         animationLayer.display()
         
         makeAnimationImage(animationLayer, currentFrame)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addFunAction { [weak self] in
+            guard let self = self else { return }
+            if self.animView.isAnimationPlaying {
+                self.animView.stop()
+                if let animation = self.animView.animation {
+                    self.animView.currentFrame = (animation.endFrame - animation.startFrame) / 2
+                }
+            } else {
+                self.animView.play()
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        removeFunAction()
     }
 }
 

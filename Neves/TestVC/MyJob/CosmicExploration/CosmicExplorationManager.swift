@@ -88,19 +88,15 @@ extension CosmicExplorationManager {
         
         switch stage {
         case .idle:
-            stage = .supplying(10)
+            stage = .supplying(5)
             
         case let .supplying(second):
             if second > 0 {
                 stage = .supplying(second - 1)
             } else {
                 toSelectPlanet(nil)
-                stage = .startExploring
+                stage = .exploring(5)
             }
-            
-        case .startExploring:
-            toSelectPlanet(nil)
-            stage = .exploring(5)
             
         case let .exploring(second):
             toSelectPlanet(nil)
@@ -132,8 +128,6 @@ extension CosmicExplorationManager {
             JPrint("空闲阶段")
         case let .supplying(second):
             JPrint("补给阶段", second)
-        case .startExploring:
-            JPrint("开始探索")
         case let .exploring(second):
             JPrint("探索阶段", second)
         case let .finish(isDiscover, second):
