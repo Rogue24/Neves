@@ -45,8 +45,6 @@ class CosmicExplorationPlayView: UIView {
         bottomViewHeightConstraint.constant = 77.px
         
         turntableView.delegate = self
-        
-        updateStage(CosmicExplorationManager.shared.stage, animated: false)
     }
     
     // MARK: - 点击空白关闭
@@ -74,13 +72,26 @@ class CosmicExplorationPlayView: UIView {
 }
 
 extension CosmicExplorationPlayView {
+    static func show(on view: UIView) -> CosmicExplorationPlayView {
+        let playView = CosmicExplorationPlayView.loadFromNib()
+        playView.frame = PortraitScreenBounds
+        playView.layoutIfNeeded()
+        view.addSubview(playView)
+        
+        // TODO: 临时做法
+        Asyncs.main {
+            playView.show()
+        }
+        
+        return playView
+    }
+    
     func show() {
+        updateStage(CosmicExplorationManager.shared.stage, animated: false)
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: []) {
             self.superview?.layoutIfNeeded()
-        } completion: { _ in
-            
-        }
+        } completion: { _ in }
     }
     
     @objc func close() {

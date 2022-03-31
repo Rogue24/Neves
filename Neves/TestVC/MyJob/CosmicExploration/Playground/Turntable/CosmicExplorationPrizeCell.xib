@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CosmicExplorationPrizeCell" id="gTV-IL-0wX" customClass="CosmicExplorationPrizeCell" customModule="Neves" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="65" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_getticket_bg" translatesAutoresizingMaskIntoConstraints="NO" id="WCk-3M-43h">
+                        <rect key="frame" x="7.5" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="WCk-3M-43h" secondAttribute="height" id="WI6-dq-aGg"/>
+                            <constraint firstAttribute="width" constant="50" id="ZXU-Yy-Ld7"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-hQ-ZMn">
+                        <rect key="frame" x="12.5" y="5" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="GB8-hQ-ZMn" secondAttribute="height" id="64n-IG-UIV"/>
+                            <constraint firstAttribute="width" constant="40" id="src-qe-IPu"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Von-87-LAh">
+                        <rect key="frame" x="35.5" y="38.5" width="20.5" height="10"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36p-33-MRV">
+                                <rect key="frame" x="2.5" y="0.0" width="15.5" height="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49411764705882355" green="0.49411764705882355" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="36p-33-MRV" secondAttribute="trailing" constant="2.5" id="UPD-1t-DmG"/>
+                            <constraint firstAttribute="height" constant="10" id="ebQ-SJ-4d8"/>
+                            <constraint firstItem="36p-33-MRV" firstAttribute="centerY" secondItem="Von-87-LAh" secondAttribute="centerY" id="jnj-Fb-oXU"/>
+                            <constraint firstItem="36p-33-MRV" firstAttribute="leading" secondItem="Von-87-LAh" secondAttribute="leading" constant="2.5" id="rCl-DU-n9N"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="超级龙魂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dW0-41-EtM">
+                        <rect key="frame" x="0.0" y="53.5" width="65" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="DHD-73-qgf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="xBe-3K-Vgy">
+                        <rect key="frame" x="10.5" y="68" width="44.5" height="12"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88g-Sy-fFu">
+                                <rect key="frame" x="0.0" y="0.0" width="30.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.73333333333333328" green="0.92549019607843142" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_ticket" translatesAutoresizingMaskIntoConstraints="NO" id="crg-ir-TvY">
+                                <rect key="frame" x="33.5" y="0.5" width="11" height="11"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="crg-ir-TvY" secondAttribute="height" id="Fbe-bG-vd2"/>
+                                    <constraint firstAttribute="width" constant="11" id="mtx-ni-9sY"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="dW0-41-EtM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="2Fx-Dz-mMw"/>
+                <constraint firstItem="WCk-3M-43h" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5t5-qT-4F1"/>
+                <constraint firstItem="GB8-hQ-ZMn" firstAttribute="centerX" secondItem="WCk-3M-43h" secondAttribute="centerX" id="Dmv-yG-BVC"/>
+                <constraint firstItem="xBe-3K-Vgy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="HUA-H8-JGN"/>
+                <constraint firstItem="Von-87-LAh" firstAttribute="bottom" secondItem="WCk-3M-43h" secondAttribute="bottom" constant="-1.5" id="TyM-3a-A80"/>
+                <constraint firstItem="WCk-3M-43h" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VDj-W5-4FL"/>
+                <constraint firstItem="GB8-hQ-ZMn" firstAttribute="centerY" secondItem="WCk-3M-43h" secondAttribute="centerY" id="VoQ-lw-lL6"/>
+                <constraint firstAttribute="bottom" secondItem="xBe-3K-Vgy" secondAttribute="bottom" id="YE3-Ix-9EH"/>
+                <constraint firstItem="dW0-41-EtM" firstAttribute="top" secondItem="WCk-3M-43h" secondAttribute="bottom" constant="3.5" id="Zwd-PL-l7n"/>
+                <constraint firstItem="dW0-41-EtM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fMg-Ph-gpj"/>
+                <constraint firstItem="Von-87-LAh" firstAttribute="trailing" secondItem="WCk-3M-43h" secondAttribute="trailing" constant="-1.5" id="nK9-Ub-z1R"/>
+                <constraint firstAttribute="trailing" secondItem="dW0-41-EtM" secondAttribute="trailing" id="oV3-mf-0fr"/>
+            </constraints>
+            <size key="customSize" width="96" height="142"/>
+            <connections>
+                <outlet property="bgImgViewWidthConstraint" destination="ZXU-Yy-Ld7" id="I6N-kh-l7l"/>
+                <outlet property="countBgView" destination="Von-87-LAh" id="tsg-Cd-Bp4"/>
+                <outlet property="countBgViewBottomConstraint" destination="TyM-3a-A80" id="6iZ-Z4-b0V"/>
+                <outlet property="countBgViewHeightConstraint" destination="ebQ-SJ-4d8" id="Y9H-PE-k6i"/>
+                <outlet property="countBgViewRightConstraint" destination="nK9-Ub-z1R" id="ekW-G5-ZQX"/>
+                <outlet property="countLabel" destination="36p-33-MRV" id="fQi-HE-3AD"/>
+                <outlet property="giftIcon" destination="GB8-hQ-ZMn" id="8xg-BT-2JM"/>
+                <outlet property="giftIconWidthConstraint" destination="src-qe-IPu" id="gku-PA-e7W"/>
+                <outlet property="nameLabel" destination="dW0-41-EtM" id="FBy-f5-hsN"/>
+                <outlet property="nameLabelHeightConstraint" destination="DHD-73-qgf" id="gwV-af-RYW"/>
+                <outlet property="nameLabelTopConstraint" destination="Zwd-PL-l7n" id="1nT-Wz-iYD"/>
+                <outlet property="numLabel" destination="88g-Sy-fFu" id="6gq-Vc-llu"/>
+                <outlet property="stackView" destination="xBe-3K-Vgy" id="C0v-py-uug"/>
+                <outlet property="ticketIconWidthConstraint" destination="mtx-ni-9sY" id="1UZ-jV-RXs"/>
+                <outletCollection property="countLabelHorConstraints" destination="UPD-1t-DmG" collectionClass="NSMutableArray" id="zGy-oE-2fj"/>
+                <outletCollection property="countLabelHorConstraints" destination="rCl-DU-n9N" collectionClass="NSMutableArray" id="iLy-TQ-Z7W"/>
+            </connections>
+            <point key="canvasLocation" x="165.21739130434784" y="105.80357142857143"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="dragon_weideng" width="30" height="30"/>
+        <image name="spaceship_getticket_bg" width="85" height="85"/>
+        <image name="spaceship_ticket" width="15" height="15"/>
+    </resources>
+</document>

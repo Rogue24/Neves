@@ -22,9 +22,20 @@ class CosmicExplorationTurntableView: UIView {
     
     let hostView = CosmicExplorationHostView()
     var planetViews: [CosmicExplorationPlanetView] = []
+    weak var prizeView: CosmicExplorationPrizeView? = nil
     
-    var exploringWorkItems: [DispatchWorkItem] = []
-    var isExploring = false
+    
+    private var stage: CosmicExploration.Stage = .idle
+    
+    private var isSupplying = false {
+        didSet {
+            guard isSupplying != oldValue else { return }
+            planetViews.forEach { $0.isUserInteractionEnabled = isSupplying }
+        }
+    }
+    
+    private var exploringWorkItems: [DispatchWorkItem] = []
+    private var isExploring = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,15 +47,13 @@ class CosmicExplorationTurntableView: UIView {
         
         planetViews = CosmicExplorationManager.shared.planetModels.map { model in
             let planetView = CosmicExplorationPlanetView(model)
+            planetView.isUserInteractionEnabled = false
             planetView.delegate = self
             addSubview(planetView)
             model.planetView = planetView
             return planetView
         }
-        
     }
-    
-    private(set) var stage: CosmicExploration.Stage = .idle
     
     
 }
@@ -61,34 +70,76 @@ extension CosmicExplorationTurntableView: CosmicExplorationPlanetViewDelegate {
 
 extension CosmicExplorationTurntableView {
     func updateStage(_ stage: CosmicExploration.Stage, animated: Bool) {
-        let oldStage = self.stage
         guard self.stage != stage else { return }
-        self.stage = stage
+        defer { self.stage = stage }
         
         hostView.updateStage(stage, animated: animated)
         
-        var isEnabled = false
+        var isSupplying = false
         var isExploring = false
+        var isDiscover = false
+        var second = 0
         
         switch stage {
         case .idle:
             break
-
-        case let .supplying(second):
-            isEnabled = true
             
-        case let .exploring(second):
+        case .supplying:
+            switch self.stage {
+            case .supplying:
+                return
+            default:
+                break
+            }
+            
+            isSupplying = true
+            
+        case .exploring:
+            switch self.stage {
+            case .exploring:
+                return
+            default:
+                break
+            }
+            
             isExploring = true
 
-        case let .finish(isDiscover, second):
-            break
-            
+        case let .finish(isDis, sec):
+            isDiscover = isDis
+            second = Int(sec)
         }
         
-        planetViews.forEach { $0.isUserInteractionEnabled = isEnabled }
+        self.isSupplying = isSupplying
+        
         exploringAnim(isExploring)
+        
+        showOrHidePrizes(isDiscover, second > 5 ? 5 : second, animated: animated)
     }
     
+}
+
+// MARK: - 奖品
+extension CosmicExplorationTurntableView {
+    func showOrHidePrizes(_ isShow: Bool, _ second: Int, animated: Bool) {
+        guard isShow else {
+            prizeView?.hide(animated: animated)
+            prizeView = nil
+            return
+        }
+        
+        guard prizeView == nil else { return }
+        
+        guard let prizeView = CosmicExplorationPrizeView(second) else { return }
+        addSubview(prizeView)
+        self.prizeView = prizeView
+        prizeView.show(animated: animated)
+    }
+}
+
+// MARK: - 随机动画
+extension CosmicExplorationTurntableView {
+    
+    // TODO: 从最后一个开始添加，根据剩余时长
     func exploringAnim(_ isExploring: Bool) {
         guard self.isExploring != isExploring else { return }
         self.isExploring = isExploring

@@ -25,16 +25,7 @@ class CosmicExplorationTestViewController: TestBaseViewController {
                 return
             }
             
-            let playView = CosmicExplorationPlayView.loadFromNib()
-            playView.frame = PortraitScreenBounds
-            playView.layoutIfNeeded()
-            self.view.addSubview(playView)
-            CosmicExplorationManager.shared.playView = playView
-            
-            // TODO: 临时做法
-            Asyncs.main {
-                playView.show()
-            }
+            CosmicExplorationManager.shared.playView = CosmicExplorationPlayView.show(on: self.view)
         }
     }
     
