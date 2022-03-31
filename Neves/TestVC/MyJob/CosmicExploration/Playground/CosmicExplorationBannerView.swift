@@ -24,9 +24,7 @@ class CosmicExplorationBannerView: UIView {
         leftIconLeftConstraint.constant = 5.px
         
         // TODO: 临时做法
-        Asyncs.main { [weak self] in
-            guard let self = self else { return }
-            
+        Asyncs.main {
             let x: CGFloat = (5 + 15 + 5).px
             let w: CGFloat = PortraitScreenWidth - 20.px - x - 5.px
             let tableView = UITableView(frame: [x, 0, w, 22.px], style: .plain)

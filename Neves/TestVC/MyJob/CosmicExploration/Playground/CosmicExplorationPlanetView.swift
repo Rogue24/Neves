@@ -115,9 +115,7 @@ class CosmicExplorationPlanetView: UIView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClick)))
         
         // TODO: 临时做法 222
-        Asyncs.async { [weak self] in
-            guard let self = self else { return }
-            
+        Asyncs.main {
             if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_default_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
                 self.animation1 = animation
                 self.provider1 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
@@ -127,9 +125,6 @@ class CosmicExplorationPlanetView: UIView {
                 self.animation2 = animation
                 self.provider2 = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             }
-            
-        } mainTask: { [weak self] in
-            guard let self = self else { return }
 
             if let animation = self.animation1, let provider = self.provider1 {
                 self.bgAnimView.animation = animation
