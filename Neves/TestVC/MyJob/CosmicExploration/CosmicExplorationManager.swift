@@ -340,7 +340,7 @@ extension CosmicExplorationManager {
         
         switch stage {
         case .idle:
-            break
+            planetModels.forEach { $0.removeSupplies() }
             
         case .supplying:
             break

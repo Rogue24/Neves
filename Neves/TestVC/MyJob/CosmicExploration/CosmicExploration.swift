@@ -137,6 +137,12 @@ extension CosmicExploration {
             planetView?.updateSupplies(supplyModels, supplyType: type)
         }
         
+        func removeSupplies() {
+            guard supplyModels.count > 0 else { return }
+            supplyModels.removeAll()
+            planetView?.updateSupplies(supplyModels)
+        }
+        
         // MARK: - 选中状态
         var isSelected: Bool = false {
             didSet {
