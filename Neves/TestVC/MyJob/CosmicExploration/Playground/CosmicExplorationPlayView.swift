@@ -91,7 +91,9 @@ extension CosmicExplorationPlayView {
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: []) {
             self.superview?.layoutIfNeeded()
-        } completion: { _ in }
+        } completion: { _ in
+            CosmicExplorationManager.shared.updateWinningPlanet()
+        }
     }
     
     @objc func close() {

@@ -74,57 +74,37 @@ extension CosmicExplorationTurntableView {
         hostView.updateStage(stage, oldStage, animated: animated)
         
         var isSupplying = false
-        var isExploring = false
-        var isDiscover = false
-        var second = 0
         
         switch stage {
         case .idle:
-            break
+            hidePrizes(animated: animated)
             
         case .supplying:
-            switch oldStage {
-            case .supplying:
-                return
-            default:
-                break
-            }
-            
+            hidePrizes(animated: animated)
             isSupplying = true
             
         case .exploring:
-            switch oldStage {
-            case .exploring:
-                return
-            default:
-                break
-            }
-            
-            isExploring = true
+            hidePrizes(animated: animated)
 
-        case let .finish(isDis, sec):
-            isDiscover = isDis
-            second = Int(sec)
+        case let .finish(isDiscover, second):
+            switch oldStage {
+            case .finish:
+                break
+            default:
+                guard isDiscover, !CosmicExplorationManager.shared.isShowedPrizes else { break }
+                CosmicExplorationManager.shared.isShowedPrizes = true
+                showPrizes(Int(second > 5 ? 5 : second), animated: animated)
+            }
         }
         
         self.isSupplying = isSupplying
-        
-        exploringAnim(isExploring)
-        
-        showOrHidePrizes(isDiscover, second > 5 ? 5 : second, animated: animated)
     }
     
 }
 
 // MARK: - 奖品
 extension CosmicExplorationTurntableView {
-    func showOrHidePrizes(_ isShow: Bool, _ second: Int, animated: Bool) {
-        guard isShow else {
-            prizeView?.hide(animated: animated)
-            prizeView = nil
-            return
-        }
-        
+    func showPrizes(_ second: Int, animated: Bool) {
         guard prizeView == nil else { return }
         
         guard let prizeView = CosmicExplorationPrizeView(second) else { return }
@@ -132,78 +112,9 @@ extension CosmicExplorationTurntableView {
         self.prizeView = prizeView
         prizeView.show(animated: animated)
     }
-}
-
-// MARK: - 随机动画
-extension CosmicExplorationTurntableView {
     
-    // TODO: 从最后一个开始添加，根据剩余时长
-    func exploringAnim(_ isExploring: Bool) {
-        guard self.isExploring != isExploring else { return }
-        self.isExploring = isExploring
-        
-        guard isExploring else {
-            exploringWorkItems.forEach { $0.cancel() }
-            exploringWorkItems = []
-            for planetView in planetViews {
-                planetView.stopExploringAnimtion()
-            }
-            return
-        }
-        
-        let targetPlantView = planetViews.randomElement()!
-        JPrint("目标", targetPlantView.planet.name)
-        
-        var allPlant: [CosmicExplorationPlanetView] = []
-        
-        let planetViews1 = randomPlanetViews(without: nil)
-        allPlant += planetViews1
-        
-        let planetViews2 = randomPlanetViews(without: planetViews1.last)
-        allPlant += planetViews2
-        
-        var planetViews3 = randomPlanetViews(without: planetViews2.last)
-        if let index = planetViews3.firstIndex(of: targetPlantView) {
-            planetViews3.remove(at: index)
-        } else {
-            planetViews3.removeLast()
-        }
-        planetViews3.append(targetPlantView)
-        allPlant += planetViews3
-        
-        let maxIndex = allPlant.count - 1
-        let slowIndex = 11
-        var beginTime: Double = 0
-        
-        JPrint("开始")
-        for (i, planetView) in allPlant.enumerated() {
-            let thisTime = beginTime
-            let index = i
-            exploringWorkItems.append(Asyncs.mainDelay(thisTime) {
-                switch CosmicExplorationManager.shared.stage {
-                case .exploring:
-                    break
-                default:
-                    return
-                }
-                
-                let delay: TimeInterval = index < maxIndex ? (index >= slowIndex ? 0.45 : 0.25) : 0
-                planetView.startExploringAnimtion(endDelay: delay)
-                
-                JPrint(index, "---", planetView.planet.name, "开始时间:", thisTime, "消失延时:", delay)
-                if delay == 0 {
-                    JPrint("搞定")
-                }
-            })
-            beginTime += i >= slowIndex ? 0.45 : 0.25
-        }
-    }
-    
-    func randomPlanetViews(without planetView: CosmicExplorationPlanetView?) -> [CosmicExplorationPlanetView] {
-        var randomPlanetViews = Array(Set(planetViews))
-        if let planetView = planetView, let index = randomPlanetViews.firstIndex(of: planetView) {
-            randomPlanetViews.remove(at: index)
-        }
-        return randomPlanetViews
+    func hidePrizes(animated: Bool) {
+        prizeView?.hide(animated: animated)
+        prizeView = nil
     }
 }

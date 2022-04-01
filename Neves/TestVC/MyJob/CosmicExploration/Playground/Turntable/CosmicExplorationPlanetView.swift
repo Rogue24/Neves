@@ -153,7 +153,7 @@ class CosmicExplorationPlanetView: UIView {
 
 extension CosmicExplorationPlanetView {
     @objc func didClick() {
-        CosmicExplorationManager.shared.toSelectPlanet(planet)
+        CosmicExplorationManager.shared.selectPlanet(planet)
     }
 }
 
@@ -517,6 +517,8 @@ extension CosmicExplorationPlanetView {
         exploringAnimView.pop_removeAllAnimations()
         
         exploringAnimView.play()
+        if exploringAnimView.alpha == 1 { return }
+        
         let anim1 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
         anim1.fromValue = 0
         anim1.toValue = 1
@@ -561,6 +563,8 @@ extension CosmicExplorationPlanetView {
 extension CosmicExplorationPlanetView {
     func updateIsWinning(_ isWinning: Bool, animated: Bool = true) {
         if isWinning {
+            startExploringAnimtion(endDelay: 0)
+            
             guard winningAnimView == nil,
                   let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_result_lottie"),
                   let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
@@ -587,6 +591,8 @@ extension CosmicExplorationPlanetView {
             }
             
         } else {
+            stopExploringAnimtion()
+            
             guard let animView = winningAnimView else { return }
             if animated {
                 UIView.animate(withDuration: 0.15) {

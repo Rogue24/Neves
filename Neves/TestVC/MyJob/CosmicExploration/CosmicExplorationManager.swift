@@ -56,17 +56,20 @@ class CosmicExplorationManager {
         planetModels.first(where: { $0.planet == plant })
     }
     
+    var isShowedPrizes = false
+    
     private(set) var stage: CosmicExploration.Stage = .idle {
         didSet {
             updateStage(oldValue)
         }
     }
+    
     private var timer: DispatchSourceTimer?
 }
 
 // MARK: - 选中状态
 extension CosmicExplorationManager {
-    func toSelectPlanet(_ targetPlanet: CosmicExploration.Planet?) {
+    func selectPlanet(_ targetPlanet: CosmicExploration.Planet?) {
         if selectedPlanet == nil, targetPlanet == nil { return }
         
         var selectedPlanet: CosmicExploration.PlanetModel? = nil
@@ -102,15 +105,14 @@ extension CosmicExplorationManager {
         
         switch stage {
         case .idle:
-            toSelectPlanet(nil)
+            selectPlanet(nil)
             stage = .supplying(5)
             
         case let .supplying(second):
             if second > 0 {
                 stage = .supplying(second - 1)
             } else {
-                toSelectPlanet(nil)
-                targetPlanet = planetModels.randomElement()
+                selectPlanet(nil)
                 stage = .exploring(5)
             }
             
@@ -118,7 +120,7 @@ extension CosmicExplorationManager {
             if second > 0 {
                 stage = .exploring(second - 1)
             } else {
-                setWinningPlanet(targetPlanet?.planet)
+                resetWinningPlanet(targetPlanet?.planet)
                 stage = .finish(true, 10)
             }
             
@@ -126,7 +128,7 @@ extension CosmicExplorationManager {
             if second > 0 {
                 stage = .finish(isDiscover, second - 1)
             } else {
-                setWinningPlanet(nil)
+                resetWinningPlanet(nil)
                 stage = .idle
             }
         }
@@ -158,67 +160,71 @@ extension CosmicExplorationManager {
 
 // MARK: - 抽奖随机过程！
 extension CosmicExplorationManager {
-    // TODO: 从最后一个开始添加，根据剩余时长
-    func exploringAnim(_ isExploring: Bool) {
-//        guard self.isExploring != isExploring else { return }
-//        self.isExploring = isExploring
-//
-//        guard isExploring else {
-//            exploringWorkItems.forEach { $0.cancel() }
-//            exploringWorkItems = []
-//            for planetModel in planetModels {
-//                planetModel.planetView?.stopExploringAnimtion()
-//            }
-//            return
-//        }
-//
-//        let targetPlantView = planetViews.randomElement()!
-//        JPrint("目标", targetPlantView.planet.name)
-//
-//        var allPlant: [CosmicExplorationPlanetView] = []
-//
-//        let planetViews1 = randomPlanetViews(without: nil)
-//        allPlant += planetViews1
-//
-//        let planetViews2 = randomPlanetViews(without: planetViews1.last)
-//        allPlant += planetViews2
-//
-//        var planetViews3 = randomPlanetViews(without: planetViews2.last)
-//        if let index = planetViews3.firstIndex(of: targetPlantView) {
-//            planetViews3.remove(at: index)
-//        } else {
-//            planetViews3.removeLast()
-//        }
-//        planetViews3.append(targetPlantView)
-//        allPlant += planetViews3
-//
-//        let maxIndex = allPlant.count - 1
-//        let slowIndex = 11
-//        var beginTime: Double = 0
-//
-//        JPrint("开始")
-//        for (i, planetView) in allPlant.enumerated() {
-//            let thisTime = beginTime
-//            let index = i
-//            exploringWorkItems.append(Asyncs.mainDelay(thisTime) { [weak self] in
-//                guard let self = self else { return }
-//                switch self.stage {
-//                case .exploring:
-//                    break
-//                default:
-//                    return
-//                }
-//
-//                let delay: TimeInterval = index < maxIndex ? (index >= slowIndex ? 0.45 : 0.25) : 0
-//                planetView.startExploringAnimtion(endDelay: delay)
-//
-//                JPrint(index, "---", planetView.planet.name, "开始时间:", thisTime, "消失延时:", delay)
-//                if delay == 0 {
-//                    JPrint("搞定")
-//                }
-//            })
-//            beginTime += i >= slowIndex ? 0.45 : 0.25
-//        }
+    func resetExploring(_ isExploring: Bool) {
+        guard self.isExploring != isExploring else { return }
+        self.isExploring = isExploring
+
+        guard isExploring else {
+            exploringWorkItems.forEach { $0.cancel() }
+            exploringWorkItems = []
+            for planetModel in planetModels where !planetModel.isWinning {
+                planetModel.planetView?.stopExploringAnimtion()
+            }
+            return
+        }
+
+        let targetPlanet = planetModels.randomElement()!
+        self.targetPlanet = targetPlanet
+        JPrint("目标", targetPlanet.planet.name)
+
+        var exploringPlanetModels: [CosmicExploration.PlanetModel] = []
+
+        let planetModels1 = randomPlanetModels(without: nil)
+        exploringPlanetModels += planetModels1
+        
+        let planetModels2 = randomPlanetModels(without: planetModels1.last.map { [$0.planet] } ?? nil)
+        exploringPlanetModels += planetModels2
+
+        var planetModels3 = randomPlanetModels(without: planetModels2.last.map { [$0.planet] } ?? nil)
+        if let index = planetModels3.firstIndex(where: { $0.planet == targetPlanet.planet }) {
+            planetModels3.remove(at: index)
+        } else {
+            planetModels3.removeLast()
+        }
+        planetModels3.append(targetPlanet)
+        exploringPlanetModels += planetModels3
+
+        let maxIndex = exploringPlanetModels.count - 1
+        let slowIndex = 11
+        var beginTime: Double = 0
+
+        JPrint("开始")
+        for (i, planetModel) in exploringPlanetModels.enumerated() {
+            let thisTime = beginTime
+            let index = i
+            
+            beginTime += i >= slowIndex ? 0.45 : 0.25
+            
+            exploringWorkItems.append(
+                Asyncs.mainDelay(thisTime) { [weak self] in
+                    guard let self = self else { return }
+                    switch self.stage {
+                    case .exploring:
+                        break
+                    default:
+                        return
+                    }
+                    
+                    let delay: TimeInterval = index < maxIndex ? (index >= slowIndex ? 0.45 : 0.25) : 0
+                    JPrint(index, "---", planetModel.planet.name, "开始时间:", thisTime, "消失延时:", delay)
+                    if delay == 0 {
+                        JPrint("搞定")
+                    }
+                    
+                    planetModel.planetView?.startExploringAnimtion(endDelay: delay)
+                }
+            )
+        }
     }
 
     func randomPlanetModels(without planets: Set<CosmicExploration.Planet>?) -> [CosmicExploration.PlanetModel] {
@@ -235,12 +241,11 @@ extension CosmicExplorationManager {
         
         return randomPlanetModels
     }
-    
 }
 
 // MARK: - 中奖状态
 extension CosmicExplorationManager {
-    func setWinningPlanet(_ targetPlanet: CosmicExploration.Planet?) {
+    func resetWinningPlanet(_ targetPlanet: CosmicExploration.Planet?) {
         if winningPlanet == nil, targetPlanet == nil { return }
         
         var winningPlanet: CosmicExploration.PlanetModel? = nil
@@ -249,11 +254,16 @@ extension CosmicExplorationManager {
                 $0.isWinning = false
                 return
             }
-            $0.isWinning.toggle()
-            if $0.isWinning { winningPlanet = $0 }
+            $0.isWinning = true
+            winningPlanet = $0
         }
         
         self.winningPlanet = winningPlanet
+    }
+    
+    func updateWinningPlanet() {
+        guard let winningPlanet = self.winningPlanet else { return }
+        winningPlanet.planetView?.updateIsWinning(winningPlanet.isWinning)
     }
 }
 
@@ -275,21 +285,31 @@ extension CosmicExplorationManager {
     func updateStage(_ oldStage: CosmicExploration.Stage) {
         debugStage(stage)
         
+        var isExploring = false
+        
         switch stage {
         case .idle:
             break
             
-        case let .supplying(second):
+        case .supplying:
             break
             
-        case let .exploring(second):
-            break
+        case .exploring:
+            isExploring = true
             
-        case let .finish(isDiscover, second):
-            break
+        case let .finish(isDiscover, _):
+            switch oldStage {
+            case .finish:
+                break
+            default:
+                isShowedPrizes = !isDiscover
+            }
         }
         
-        playView?.updateStage(stage, oldStage)
+        resetExploring(isExploring)
+        
+        guard let playView = self.playView else { return }
+        playView.updateStage(stage, oldStage)
     }
 }
 
