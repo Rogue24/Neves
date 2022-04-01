@@ -197,35 +197,48 @@ extension CosmicExplorationManager {
         let maxIndex = exploringPlanetModels.count - 1
         let slowIndex = 11
         var beginTime: Double = 0
-
+        
         JPrint("开始")
         for (i, planetModel) in exploringPlanetModels.enumerated() {
-            let thisTime = beginTime
-            let index = i
+            let delay: TimeInterval = i < maxIndex ? (i >= slowIndex ? 0.45 : 0.25) : 0
+            JPrint(index, "---", planetModel.planet.name, "开始时间:", beginTime, "消失延时:", delay)
+            
+            if let workItem = exploringAnimtion(planetModel: planetModel,
+                                                beginTime: beginTime,
+                                                endDelay: delay) {
+                exploringWorkItems.append(workItem)
+            }
             
             beginTime += (i >= slowIndex ? 0.45 : 0.25)
+        }
+    }
+    
+    func exploringAnimtion(planetModel: CosmicExploration.PlanetModel,
+                           beginTime: Double,
+                           endDelay: TimeInterval) -> DispatchWorkItem? {
+        let task: () -> () = { [weak self] in
+            guard let self = self else { return }
             
-            exploringWorkItems.append(
-                Asyncs.mainDelay(thisTime) { [weak self] in
-                    guard let self = self else { return }
-                    switch self.stage {
-                    case .exploring:
-                        break
-                    default:
-                        return
-                    }
-                    
-                    let delay: TimeInterval = index < maxIndex ? (index >= slowIndex ? 0.45 : 0.25) : 0
-                    JPrint(index, "---", planetModel.planet.name, "开始时间:", thisTime, "消失延时:", delay)
-                    
-                    if delay == 0 {
-                        JPrint("搞定")
-                        planetModel.isTarget = true
-                    } else {
-                        planetModel.planetView?.startExploringAnimtion(endDelay: delay)
-                    }
-                }
-            )
+            switch self.stage {
+            case .exploring:
+                break
+            default:
+                return
+            }
+            
+            if endDelay == 0 {
+                JPrint("搞定")
+                planetModel.isTarget = true
+            } else {
+                planetModel.planetView?.startExploringAnimtion(endDelay: endDelay)
+            }
+        }
+        
+        if beginTime > 0 {
+            return Asyncs.mainDelay(beginTime, task)
+        } else {
+            task()
+            return nil
         }
     }
 

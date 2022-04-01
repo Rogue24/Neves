@@ -520,14 +520,12 @@ extension CosmicExplorationPlanetView {
         if exploringAnimView.alpha == 1 { return }
         
         let anim1 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
-        anim1.fromValue = 0
         anim1.toValue = 1
         anim1.duration = 0.12
         exploringAnimView.pop_add(anim1, forKey: "start")
         
         guard endDelay > 0 else { return }
         let anim2 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
-        anim2.fromValue = 1
         anim2.toValue = 0
         anim2.duration = 0.12
         anim2.beginTime = CACurrentMediaTime() + endDelay
