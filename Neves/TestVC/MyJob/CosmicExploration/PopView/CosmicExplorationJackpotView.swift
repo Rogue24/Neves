@@ -26,7 +26,7 @@ class CosmicExplorationJackpotView: UIView, CosmicExplorationPopViewCompatible {
             flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 14.px, bottom: DiffTabBarH + 10.px, right: 14.px)
             flowLayout.minimumLineSpacing = 10.px
             flowLayout.itemSize = [105.px - 1, (105 + 10 + 18.5 + 2 + 15).px]
-            flowLayout.minimumInteritemSpacing = (PortraitScreenWidth - 28.px - flowLayout.itemSize.width * 3) / 2
+            flowLayout.minimumInteritemSpacing = (PortraitScreenWidth - 28.px - 105.px * 3) / 2
         }
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.register(UINib(nibName:"CosmicExplorationJackpotCell", bundle: nil), forCellWithReuseIdentifier:"CosmicExplorationJackpotCell")
