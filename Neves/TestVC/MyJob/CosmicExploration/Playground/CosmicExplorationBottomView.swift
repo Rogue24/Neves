@@ -143,7 +143,7 @@ extension CosmicExplorationBottomView {
 }
 
 extension CosmicExplorationBottomView {
-    func updateStage(_ stage: CosmicExploration.Stage, animated: Bool) {
+    func updateStage(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage, animated: Bool) {
         
         var isEnabled = true
         switch stage {

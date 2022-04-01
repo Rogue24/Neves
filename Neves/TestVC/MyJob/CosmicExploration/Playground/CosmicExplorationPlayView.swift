@@ -87,7 +87,7 @@ extension CosmicExplorationPlayView {
     }
     
     func show() {
-        updateStage(CosmicExplorationManager.shared.stage, animated: false)
+        updateStage(CosmicExplorationManager.shared.stage, .idle, animated: false)
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: []) {
             self.superview?.layoutIfNeeded()
@@ -153,9 +153,9 @@ extension CosmicExplorationPlayView: CosmicExplorationTurntableViewDelegate {
 
 extension CosmicExplorationPlayView {
     
-    func updateStage(_ stage: CosmicExploration.Stage, animated: Bool = true) {
-        turntableView.updateStage(stage, animated: animated)
-        bottomView.updateStage(stage, animated: animated)
+    func updateStage(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage, animated: Bool = true) {
+        turntableView.updateStage(stage, oldStage, animated: animated)
+        bottomView.updateStage(stage, oldStage, animated: animated)
     }
     
     

@@ -35,7 +35,7 @@ extension CosmicExploration {
 }
 
 extension CosmicExploration {
-    enum Planet: Equatable {
+    enum Planet: Hashable {
         /// 水星
         case mercury(_ multiple: Int = 0)
         /// 金星
@@ -143,6 +143,14 @@ extension CosmicExploration {
             }()
             supplyModel.count += 1
             planetView?.updateSupplies(supplyModels, supplyType: type)
+        }
+        
+        // MARK: - 中奖状态
+        var isWinning: Bool = false {
+            didSet {
+                guard isWinning != oldValue else { return }
+                planetView?.updateIsWinning(isWinning)
+            }
         }
     }
 }

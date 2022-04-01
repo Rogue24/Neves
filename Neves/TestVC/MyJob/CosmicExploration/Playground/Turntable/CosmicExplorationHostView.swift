@@ -30,9 +30,9 @@ class CosmicExplorationHostView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
         
-    func updateStage(_ stage: CosmicExploration.Stage, animated: Bool) {
+    func updateStage(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage, animated: Bool) {
         updateBgAnim(stage)
-        countdownView.updateUI(stage)
+        countdownView.updateStage(stage, oldStage)
     }
 }
 
@@ -99,8 +99,6 @@ extension CosmicExplorationHostView {
         var subtitle = ""
         let subtitleLabel = UILabel()
         
-        var stage: CosmicExploration.Stage = .idle
-        
         init() {
             super.init(frame: [HalfDiffValue(PortraitScreenWidth, 200.px), 100.px, 200.px, 200.px])
             
@@ -124,9 +122,7 @@ extension CosmicExplorationHostView {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func updateUI(_ stage: CosmicExploration.Stage) {
-            defer { self.stage = stage }
-            
+        func updateStage(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage) {
             var alpha: CGFloat
             
             var lottieName = self.lottieName
@@ -150,7 +146,7 @@ extension CosmicExplorationHostView {
                 alpha = 1
                 second = Int(s)
                 
-                switch self.stage {
+                switch oldStage {
                 case .supplying: break
                 default:
                     lottieName = "spaceship_countdown_lottie"
@@ -169,7 +165,7 @@ extension CosmicExplorationHostView {
                 alpha = self.alpha
                 second = Int(s)
                 
-                switch self.stage {
+                switch oldStage {
                 case .exploring: break
                 default:
                     lottieName = "spaceship_countdown_lottie"
@@ -188,7 +184,7 @@ extension CosmicExplorationHostView {
                 alpha = 1
                 second = Int(s)
                 
-                switch self.stage {
+                switch oldStage {
                 case .finish: break
                 default:
                     lottieName = "spaceship_countdown_s_lottie"

@@ -60,6 +60,7 @@ class CosmicExplorationPlanetView: UIView {
     let bgAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
     let selectedAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
     let exploringAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
+    weak var winningAnimView: AnimationView?
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
@@ -554,4 +555,50 @@ extension CosmicExplorationPlanetView {
     }
     
 //    func
+}
+
+// MARK: - 中奖状态
+extension CosmicExplorationPlanetView {
+    func updateIsWinning(_ isWinning: Bool, animated: Bool = true) {
+        if isWinning {
+            guard winningAnimView == nil,
+                  let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_result_lottie"),
+                  let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+            else {
+                return
+            }
+            
+            let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+            animView.backgroundBehavior = .pauseAndRestore
+            animView.contentMode = .scaleAspectFill
+            animView.frame = bounds
+            animView.loopMode = .loop
+            addSubview(animView)
+            self.winningAnimView = animView
+            
+            if animated {
+                animView.alpha = 0
+                animView.play()
+                UIView.animate(withDuration: 0.15) {
+                    animView.alpha = 1
+                }
+            } else {
+                animView.play()
+            }
+            
+        } else {
+            guard let animView = winningAnimView else { return }
+            if animated {
+                UIView.animate(withDuration: 0.15) {
+                    animView.alpha = 0
+                } completion: { _ in
+                    animView.stop()
+                    animView.removeFromSuperview()
+                }
+            } else {
+                animView.stop()
+                animView.removeFromSuperview()
+            }
+        }
+    }
 }

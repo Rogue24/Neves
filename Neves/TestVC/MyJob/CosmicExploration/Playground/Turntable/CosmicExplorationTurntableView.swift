@@ -24,9 +24,6 @@ class CosmicExplorationTurntableView: UIView {
     var planetViews: [CosmicExplorationPlanetView] = []
     weak var prizeView: CosmicExplorationPrizeView? = nil
     
-    
-    private var stage: CosmicExploration.Stage = .idle
-    
     private var isSupplying = false {
         didSet {
             guard isSupplying != oldValue else { return }
@@ -71,11 +68,10 @@ extension CosmicExplorationTurntableView: CosmicExplorationPlanetViewDelegate {
 }
 
 extension CosmicExplorationTurntableView {
-    func updateStage(_ stage: CosmicExploration.Stage, animated: Bool) {
-        guard self.stage != stage else { return }
-        defer { self.stage = stage }
+    func updateStage(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage, animated: Bool) {
+        guard stage != oldStage else { return }
         
-        hostView.updateStage(stage, animated: animated)
+        hostView.updateStage(stage, oldStage, animated: animated)
         
         var isSupplying = false
         var isExploring = false
@@ -87,7 +83,7 @@ extension CosmicExplorationTurntableView {
             break
             
         case .supplying:
-            switch self.stage {
+            switch oldStage {
             case .supplying:
                 return
             default:
@@ -97,7 +93,7 @@ extension CosmicExplorationTurntableView {
             isSupplying = true
             
         case .exploring:
-            switch self.stage {
+            switch oldStage {
             case .exploring:
                 return
             default:
@@ -183,9 +179,8 @@ extension CosmicExplorationTurntableView {
         for (i, planetView) in allPlant.enumerated() {
             let thisTime = beginTime
             let index = i
-            exploringWorkItems.append(Asyncs.mainDelay(thisTime) { [weak self] in
-                guard let self = self else { return }
-                switch self.stage {
+            exploringWorkItems.append(Asyncs.mainDelay(thisTime) {
+                switch CosmicExplorationManager.shared.stage {
                 case .exploring:
                     break
                 default:
