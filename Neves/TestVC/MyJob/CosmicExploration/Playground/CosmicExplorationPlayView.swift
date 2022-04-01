@@ -88,12 +88,12 @@ extension CosmicExplorationPlayView {
     
     func show() {
         updateStage(CosmicExplorationManager.shared.stage, .idle, animated: false)
+        CosmicExplorationManager.shared.updateTargetPlanet()
+        
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: []) {
             self.superview?.layoutIfNeeded()
-        } completion: { _ in
-            CosmicExplorationManager.shared.updateWinningPlanet()
-        }
+        } completion: { _ in }
     }
     
     @objc func close() {

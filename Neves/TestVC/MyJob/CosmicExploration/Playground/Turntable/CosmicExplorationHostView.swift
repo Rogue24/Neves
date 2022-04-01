@@ -31,20 +31,30 @@ class CosmicExplorationHostView: UIView {
     }
         
     func updateStage(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage, animated: Bool) {
-        updateBgAnim(stage)
+        updateBgAnim(stage, oldStage)
         countdownView.updateStage(stage, oldStage)
     }
 }
 
 // MARK: - 背景动画
 extension CosmicExplorationHostView {
-    func updateBgAnim(_ stage: CosmicExploration.Stage) {
+    func updateBgAnim(_ stage: CosmicExploration.Stage, _ oldStage: CosmicExploration.Stage) {
         var bgLottieName = ""
         switch stage {
         case .supplying:
             bgLottieName = "spaceship_normal_lottie"
-        case .exploring:
-            bgLottieName = "spaceship_launch_lottie"
+        case let .exploring(second):
+            bgLottieName = self.bgLottieName
+            switch oldStage {
+            case .exploring:
+                break
+            default:
+                if second == 5 {
+                    bgLottieName = "spaceship_launch_lottie"
+                } else {
+                    countdownView.alpha = 1
+                }
+            }
         default:
             break
         }

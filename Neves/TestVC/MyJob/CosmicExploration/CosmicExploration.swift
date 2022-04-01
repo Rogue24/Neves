@@ -120,14 +120,6 @@ extension CosmicExploration {
             self.planet = planet
         }
         
-        // MARK: - 选中状态
-        var isSelected: Bool = false {
-            didSet {
-                guard isSelected != oldValue else { return }
-                planetView?.updateIsSelected(isSelected)
-            }
-        }
-        
         // MARK: - 补给
         var supplyModels: [SupplyModel] = []
         
@@ -145,10 +137,31 @@ extension CosmicExploration {
             planetView?.updateSupplies(supplyModels, supplyType: type)
         }
         
+        // MARK: - 选中状态
+        var isSelected: Bool = false {
+            didSet {
+                guard isSelected != oldValue else { return }
+                planetView?.updateIsSelected(isSelected)
+            }
+        }
+        
+        // MARK: - 目标状态
+        var isTarget: Bool = false {
+            didSet {
+                guard isTarget != oldValue else { return }
+                if isTarget {
+                    planetView?.startExploringAnimtion(endDelay: 0)
+                } else {
+                    planetView?.stopExploringAnimtion()
+                }
+            }
+        }
+        
         // MARK: - 中奖状态
         var isWinning: Bool = false {
             didSet {
                 guard isWinning != oldValue else { return }
+                isTarget = isWinning
                 planetView?.updateIsWinning(isWinning)
             }
         }

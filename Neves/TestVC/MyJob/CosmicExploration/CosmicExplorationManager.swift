@@ -128,6 +128,7 @@ extension CosmicExplorationManager {
             if second > 0 {
                 stage = .finish(isDiscover, second - 1)
             } else {
+                targetPlanet = nil
                 resetWinningPlanet(nil)
                 stage = .idle
             }
@@ -168,7 +169,7 @@ extension CosmicExplorationManager {
             exploringWorkItems.forEach { $0.cancel() }
             exploringWorkItems = []
             for planetModel in planetModels where !planetModel.isWinning {
-                planetModel.planetView?.stopExploringAnimtion()
+                planetModel.isTarget = false
             }
             return
         }
@@ -203,7 +204,7 @@ extension CosmicExplorationManager {
             let thisTime = beginTime
             let index = i
             
-            beginTime += i >= slowIndex ? 0.45 : 0.25
+            beginTime += (i >= slowIndex ? 0.45 : 0.25)
             
             exploringWorkItems.append(
                 Asyncs.mainDelay(thisTime) { [weak self] in
@@ -217,11 +218,13 @@ extension CosmicExplorationManager {
                     
                     let delay: TimeInterval = index < maxIndex ? (index >= slowIndex ? 0.45 : 0.25) : 0
                     JPrint(index, "---", planetModel.planet.name, "开始时间:", thisTime, "消失延时:", delay)
+                    
                     if delay == 0 {
                         JPrint("搞定")
+                        planetModel.isTarget = true
+                    } else {
+                        planetModel.planetView?.startExploringAnimtion(endDelay: delay)
                     }
-                    
-                    planetModel.planetView?.startExploringAnimtion(endDelay: delay)
                 }
             )
         }
@@ -261,9 +264,12 @@ extension CosmicExplorationManager {
         self.winningPlanet = winningPlanet
     }
     
-    func updateWinningPlanet() {
-        guard let winningPlanet = self.winningPlanet else { return }
-        winningPlanet.planetView?.updateIsWinning(winningPlanet.isWinning)
+    func updateTargetPlanet() {
+        if let winningPlanet = self.winningPlanet, winningPlanet.isWinning {
+            winningPlanet.planetView?.updateIsWinning(true, animated: false)
+        } else if let targetPlanet = self.targetPlanet, targetPlanet.isTarget {
+            targetPlanet.planetView?.startExploringAnimtion(endDelay: 0)
+        }
     }
 }
 
