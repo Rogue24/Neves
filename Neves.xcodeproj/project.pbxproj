@@ -213,6 +213,8 @@
 		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
+		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
+		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
 		71AB638127F5C287000CCF58 /* CosmicExplorationTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */; };
 		71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637E27F5C287000CCF58 /* CosmicExplorationHostView.swift */; };
@@ -549,6 +551,8 @@
 		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
+		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
+		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
 		71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationTurntableView.swift; sourceTree = "<group>"; };
 		71AB637E27F5C287000CCF58 /* CosmicExplorationHostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationHostView.swift; sourceTree = "<group>"; };
@@ -1314,6 +1318,8 @@
 		717F59D727F6E58600D759FB /* PopView */ = {
 			isa = PBXGroup;
 			children = (
+				71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */,
+				71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */,
 				717F59DB27F6E74B00D759FB /* CosmicExplorationMenuView.swift */,
 				715C900527F6F0C900B88B85 /* CosmicExplorationMenuView.xib */,
 				717F59D827F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift */,
@@ -1723,6 +1729,7 @@
 				1A354370254E76B40032B677 /* lottie in Resources */,
 				7139980A2705B64D002BC263 /* Girl4.jpg in Resources */,
 				715C901227F6F45100B88B85 /* CosmicExplorationJackpotView.xib in Resources */,
+				71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */,
 				713998092705B64D002BC263 /* Girl7.jpg in Resources */,
 				715C900627F6F0C900B88B85 /* CosmicExplorationMenuView.xib in Resources */,
 			);
@@ -1944,6 +1951,7 @@
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
 				7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
+				71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
 				7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */,

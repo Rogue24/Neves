@@ -10,6 +10,15 @@ class CosmicExplorationTestViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let btn = UIButton(type: .custom)
+        btn.frame = [50, 100, 150, 80]
+        btn.backgroundColor = .randomColor
+        btn.addTarget(self, action: #selector(what), for: .touchUpInside)
+        view.addSubview(btn)
+        
+        let v = JPView(frame: [200, 250, 150, 80])
+        v.backgroundColor = .randomColor
+        view.addSubview(v)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,4 +43,23 @@ class CosmicExplorationTestViewController: TestBaseViewController {
         removeFunAction()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        
+    }
+    
+    @objc func what() {
+        JPrint("what?")
+    }
+    
+    class JPView: UIView {
+        
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            super.touchesBegan(touches, with: event)
+            
+        }
+        
+    }
 }
+
+

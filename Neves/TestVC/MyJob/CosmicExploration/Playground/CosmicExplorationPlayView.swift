@@ -51,11 +51,13 @@ class CosmicExplorationPlayView: UIView {
         turntableView.delegate = self
         
         moreBtn.addTarget(self, action: #selector(more), for: .touchUpInside)
+        countView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goBuy)))
     }
     
     // MARK: - 点击空白关闭
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+        // 停止响应事件的回传
+//        super.touchesBegan(touches, with: event)
         
         guard let touch = touches.first else { return }
         let point = touch.location(in: self)
@@ -94,14 +96,14 @@ extension CosmicExplorationPlayView {
         
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: []) {
-            self.superview?.layoutIfNeeded()
+            self.layoutIfNeeded()
         } completion: { _ in }
     }
     
     @objc func close() {
         contentViewBottomConstraint.constant = -500.px
         UIView.animate(withDuration: 0.3) {
-            self.superview?.layoutIfNeeded()
+            self.layoutIfNeeded()
         } completion: { _ in
             self.removeFromSuperview()
         }
@@ -109,6 +111,10 @@ extension CosmicExplorationPlayView {
     
     @objc func more() {
         CosmicExplorationMenuView.show(withDelegate: self)
+    }
+    
+    @objc func goBuy() {
+        CosmicExplorationBuyTicketView.show(on: self)
     }
 }
 
