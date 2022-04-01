@@ -88,7 +88,7 @@ extension CosmicExplorationPlayView {
     
     func show() {
         updateStage(CosmicExplorationManager.shared.stage, .idle, animated: false)
-        CosmicExplorationManager.shared.updateTargetPlanet()
+        CosmicExplorationManager.shared.resetTargetPlanet()
         
         contentViewBottomConstraint.constant = 0
         UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: []) {

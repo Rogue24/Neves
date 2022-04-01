@@ -177,6 +177,7 @@
 		717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 717B3388272902CD000B0A70 /* minion_01.mp4 */; };
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
+		717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F59D527F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift */; };
 		717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FA034277059FF0081DD50 /* MemorySizeViewController.swift */; };
 		717FA03727706B2D0081DD50 /* MemoryLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */; };
 		718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018BF2722611A0056E699 /* LottieImagePicker.swift */; };
@@ -499,6 +500,7 @@
 		717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipPlanetViewController.swift; sourceTree = "<group>"; };
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
 		717E8B7A26DDF44E000E3E9F /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
+		717F59D527F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationManager.Exploring.swift; sourceTree = "<group>"; };
 		717FA034277059FF0081DD50 /* MemorySizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySizeViewController.swift; sourceTree = "<group>"; };
 		717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLayoutViewController.swift; sourceTree = "<group>"; };
 		718018BF2722611A0056E699 /* LottieImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieImagePicker.swift; sourceTree = "<group>"; };
@@ -1299,6 +1301,7 @@
 				718A569927F195A00071C724 /* CosmicExplorationTestViewController.swift */,
 				718A569427F193210071C724 /* CosmicExploration.swift */,
 				718A569627F195780071C724 /* CosmicExplorationManager.swift */,
+				717F59D527F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift */,
 				718A569827F1958D0071C724 /* Playground */,
 			);
 			path = CosmicExploration;
@@ -1741,6 +1744,7 @@
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
+				717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */,
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */,
