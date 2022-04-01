@@ -39,7 +39,7 @@ class CosmicExplorationMenuView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         popViewRightConstraint.constant = 6.px
-        popViewBottomConstraint.constant = 315.px
+        popViewBottomConstraint.constant = 500.px - 162 - 45.px
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
