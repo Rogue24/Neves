@@ -161,6 +161,17 @@
 		7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151895027EC16B500342645 /* GCDAttributesViewController.swift */; };
 		7151895327EC204D00342645 /* URL.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151895227EC204D00342645 /* URL.Extension.swift */; };
 		7151895527EC574000342645 /* LoremPicsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151895427EC574000342645 /* LoremPicsum.swift */; };
+		715C900627F6F0C900B88B85 /* CosmicExplorationMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C900527F6F0C900B88B85 /* CosmicExplorationMenuView.xib */; };
+		715C900827F6F27B00B88B85 /* CosmicExplorationRuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C900727F6F27B00B88B85 /* CosmicExplorationRuleView.swift */; };
+		715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C900927F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift */; };
+		715C900C27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C900B27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift */; };
+		715C901027F6F44000B88B85 /* CosmicExplorationRuleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C900F27F6F44000B88B85 /* CosmicExplorationRuleView.xib */; };
+		715C901227F6F45100B88B85 /* CosmicExplorationJackpotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901127F6F45100B88B85 /* CosmicExplorationJackpotView.xib */; };
+		715C901427F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901327F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib */; };
+		715C901927F6F88800B88B85 /* CosmicExplorationJackpotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C901727F6F88800B88B85 /* CosmicExplorationJackpotCell.swift */; };
+		715C901A27F6F88800B88B85 /* CosmicExplorationJackpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */; };
+		715C901C27F7002200B88B85 /* CosmicExplorationJournalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */; };
+		715C901E27F7014600B88B85 /* CosmicExplorationJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */; };
 		715ED74626FF26520030F279 /* Date.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715ED74526FF26520030F279 /* Date.Extension.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
@@ -178,6 +189,8 @@
 		717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7426DCC6A9000E3E9F /* RelationshipPlanetViewController.swift */; };
 		717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717E8B7A26DDF44E000E3E9F /* PlanetView.swift */; };
 		717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F59D527F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift */; };
+		717F59D927F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F59D827F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift */; };
+		717F59DD27F6E74B00D759FB /* CosmicExplorationMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717F59DB27F6E74B00D759FB /* CosmicExplorationMenuView.swift */; };
 		717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FA034277059FF0081DD50 /* MemorySizeViewController.swift */; };
 		717FA03727706B2D0081DD50 /* MemoryLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */; };
 		718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018BF2722611A0056E699 /* LottieImagePicker.swift */; };
@@ -482,6 +495,17 @@
 		7151895027EC16B500342645 /* GCDAttributesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDAttributesViewController.swift; sourceTree = "<group>"; };
 		7151895227EC204D00342645 /* URL.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.Extension.swift; sourceTree = "<group>"; };
 		7151895427EC574000342645 /* LoremPicsum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremPicsum.swift; sourceTree = "<group>"; };
+		715C900527F6F0C900B88B85 /* CosmicExplorationMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationMenuView.xib; sourceTree = "<group>"; };
+		715C900727F6F27B00B88B85 /* CosmicExplorationRuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationRuleView.swift; sourceTree = "<group>"; };
+		715C900927F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationJackpotView.swift; sourceTree = "<group>"; };
+		715C900B27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationRecordDetailView.swift; sourceTree = "<group>"; };
+		715C900F27F6F44000B88B85 /* CosmicExplorationRuleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationRuleView.xib; sourceTree = "<group>"; };
+		715C901127F6F45100B88B85 /* CosmicExplorationJackpotView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJackpotView.xib; sourceTree = "<group>"; };
+		715C901327F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationRecordDetailView.xib; sourceTree = "<group>"; };
+		715C901727F6F88800B88B85 /* CosmicExplorationJackpotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationJackpotCell.swift; sourceTree = "<group>"; };
+		715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJackpotCell.xib; sourceTree = "<group>"; };
+		715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJournalView.xib; sourceTree = "<group>"; };
+		715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationJournalView.swift; sourceTree = "<group>"; };
 		715ED74526FF26520030F279 /* Date.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.Extension.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
@@ -501,6 +525,8 @@
 		717E8B7826DCC753000E3E9F /* PlanetLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetLayout.swift; sourceTree = "<group>"; };
 		717E8B7A26DDF44E000E3E9F /* PlanetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetView.swift; sourceTree = "<group>"; };
 		717F59D527F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationManager.Exploring.swift; sourceTree = "<group>"; };
+		717F59D827F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPopViewCompatible.swift; sourceTree = "<group>"; };
+		717F59DB27F6E74B00D759FB /* CosmicExplorationMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationMenuView.swift; sourceTree = "<group>"; };
 		717FA034277059FF0081DD50 /* MemorySizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorySizeViewController.swift; sourceTree = "<group>"; };
 		717FA03627706B2D0081DD50 /* MemoryLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLayoutViewController.swift; sourceTree = "<group>"; };
 		718018BF2722611A0056E699 /* LottieImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieImagePicker.swift; sourceTree = "<group>"; };
@@ -1285,6 +1311,26 @@
 			path = RelationshipPlanet;
 			sourceTree = "<group>";
 		};
+		717F59D727F6E58600D759FB /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				717F59DB27F6E74B00D759FB /* CosmicExplorationMenuView.swift */,
+				715C900527F6F0C900B88B85 /* CosmicExplorationMenuView.xib */,
+				717F59D827F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift */,
+				715C900727F6F27B00B88B85 /* CosmicExplorationRuleView.swift */,
+				715C900F27F6F44000B88B85 /* CosmicExplorationRuleView.xib */,
+				715C900927F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift */,
+				715C901127F6F45100B88B85 /* CosmicExplorationJackpotView.xib */,
+				715C901727F6F88800B88B85 /* CosmicExplorationJackpotCell.swift */,
+				715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */,
+				715C900B27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift */,
+				715C901327F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib */,
+				715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */,
+				715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */,
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
 		718018BE2722611A0056E699 /* LottieImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1303,6 +1349,7 @@
 				718A569627F195780071C724 /* CosmicExplorationManager.swift */,
 				717F59D527F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift */,
 				718A569827F1958D0071C724 /* Playground */,
+				717F59D727F6E58600D759FB /* PopView */,
 			);
 			path = CosmicExploration;
 			sourceTree = "<group>";
@@ -1636,12 +1683,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715C901A27F6F88800B88B85 /* CosmicExplorationJackpotCell.xib in Resources */,
 				71AB638927F5DE29000CCF58 /* CosmicExplorationPrizeCell.xib in Resources */,
 				71F249F32731517A00FAAD93 /* bgm.wav in Resources */,
 				71F249D52731517A00FAAD93 /* FireworkCell.xib in Resources */,
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
 				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
 				71EA694126563270009463E6 /* girl.jpg in Resources */,
+				715C901427F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib in Resources */,
 				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
 				71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */,
 				717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */,
@@ -1649,7 +1698,9 @@
 				71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */,
 				713998062705B64D002BC263 /* Girl5.jpg in Resources */,
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
+				715C901C27F7002200B88B85 /* CosmicExplorationJournalView.xib in Resources */,
 				1A35452F254E77600032B677 /* TestList.json in Resources */,
+				715C901027F6F44000B88B85 /* CosmicExplorationRuleView.xib in Resources */,
 				1A3544B6254E77600032B677 /* JPIcon.png in Resources */,
 				1A9E41A126BE4633006941D0 /* JPCropViewController.xib in Resources */,
 				7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */,
@@ -1671,7 +1722,9 @@
 				71F249F42731517A00FAAD93 /* lrc1.txt in Resources */,
 				1A354370254E76B40032B677 /* lottie in Resources */,
 				7139980A2705B64D002BC263 /* Girl4.jpg in Resources */,
+				715C901227F6F45100B88B85 /* CosmicExplorationJackpotView.xib in Resources */,
 				713998092705B64D002BC263 /* Girl7.jpg in Resources */,
+				715C900627F6F0C900B88B85 /* CosmicExplorationMenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1752,6 +1805,8 @@
 				71797E6F27CF704800ED2EE3 /* AnimScrollViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
+				715C901927F6F88800B88B85 /* CosmicExplorationJackpotCell.swift in Sources */,
+				715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
 				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
@@ -1797,6 +1852,7 @@
 				0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */,
 				718A56B627F1BDAF0071C724 /* CosmicExplorationCountView.swift in Sources */,
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
+				715C901E27F7014600B88B85 /* CosmicExplorationJournalView.swift in Sources */,
 				718018C627228A830056E699 /* Syncs.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
@@ -1806,6 +1862,7 @@
 				718A569527F193210071C724 /* CosmicExploration.swift in Sources */,
 				718A569A27F195A00071C724 /* CosmicExplorationTestViewController.swift in Sources */,
 				71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */,
+				715C900C27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift in Sources */,
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
@@ -1875,6 +1932,7 @@
 				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
 				71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
+				717F59DD27F6E74B00D759FB /* CosmicExplorationMenuView.swift in Sources */,
 				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
 				1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */,
@@ -1896,6 +1954,7 @@
 				1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */,
 				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
 				1A5930FA27B8DD6900DC60FC /* Turntable.swift in Sources */,
+				717F59D927F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift in Sources */,
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
@@ -1940,6 +1999,7 @@
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
 				717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */,
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
+				715C900827F6F27B00B88B85 /* CosmicExplorationRuleView.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,

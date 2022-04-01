@@ -30,6 +30,10 @@ class CosmicExplorationPlayView: UIView {
     @IBOutlet weak var turntableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
     
+    private weak var popView: (UIView & CosmicExplorationPopViewCompatible)? = nil {
+        willSet { popView?.close() }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -45,6 +49,8 @@ class CosmicExplorationPlayView: UIView {
         bottomViewHeightConstraint.constant = 77.px
         
         turntableView.delegate = self
+        
+        moreBtn.addTarget(self, action: #selector(more), for: .touchUpInside)
     }
     
     // MARK: - 点击空白关闭
@@ -54,13 +60,9 @@ class CosmicExplorationPlayView: UIView {
         guard let touch = touches.first else { return }
         let point = touch.location(in: self)
         
-//        if let popView = self.popView, !popView.frame.contains(point) {
-//            popView.close()
-//        } else if !contentView.frame.contains(point) {
-//            close()
-//        }
-        
-        if !contentView.frame.contains(point) {
+        if let popView = self.popView, !popView.frame.contains(point) {
+            popView.close()
+        } else if !contentView.frame.contains(point) {
             close()
         }
     }
@@ -106,7 +108,7 @@ extension CosmicExplorationPlayView {
     }
     
     @objc func more() {
-        
+        CosmicExplorationMenuView.show(withDelegate: self)
     }
 }
 
@@ -161,4 +163,23 @@ extension CosmicExplorationPlayView {
     }
     
     
+}
+
+
+extension CosmicExplorationPlayView: CosmicExplorationMenuViewDelegate {
+    func showRuleView() {
+        popView = CosmicExplorationRuleView.show(on: self)
+    }
+    
+    func showJackpotView() {
+        popView = CosmicExplorationJackpotView.show(on: self)
+    }
+    
+    func showRecordView() {
+        popView = CosmicExplorationRecordDetailView.show(on: self)
+    }
+    
+    func showJournalView() {
+        popView = CosmicExplorationJournalView.show(on: self)
+    }
 }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CosmicExplorationJackpotCell" id="gTV-IL-0wX" customClass="CosmicExplorationJackpotCell" customModule="Neves" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="148" height="273"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="148" height="273"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_getticket_bg" translatesAutoresizingMaskIntoConstraints="NO" id="5eR-1O-8Wd">
+                        <rect key="frame" x="0.0" y="0.0" width="148" height="148"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="5eR-1O-8Wd" secondAttribute="height" id="Pn2-yT-dZa"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dragon_weideng" translatesAutoresizingMaskIntoConstraints="NO" id="RV8-cM-YYx">
+                        <rect key="frame" x="34" y="34" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="i9B-VF-Fay"/>
+                            <constraint firstAttribute="width" secondItem="RV8-cM-YYx" secondAttribute="height" id="qfJ-s2-MoO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="远古龙魂" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl7-KK-cJU">
+                        <rect key="frame" x="0.0" y="239" width="148" height="18.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18.5" id="oNR-c8-3Cj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="LAb-N0-7Cb">
+                        <rect key="frame" x="49.5" y="259.5" width="49.5" height="13.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw9-8v-Non">
+                                <rect key="frame" x="0.0" y="0.0" width="33.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.73333333329999995" green="0.92549019610000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin" translatesAutoresizingMaskIntoConstraints="NO" id="Mw7-5G-aj5">
+                                <rect key="frame" x="36.5" y="0.5" width="13" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="13" id="chV-8e-ve3"/>
+                                    <constraint firstAttribute="width" secondItem="Mw7-5G-aj5" secondAttribute="height" id="txH-Ko-XzQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="jl7-KK-cJU" secondAttribute="trailing" id="8fc-3N-QFv"/>
+                <constraint firstItem="5eR-1O-8Wd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BQs-iZ-MRF"/>
+                <constraint firstItem="RV8-cM-YYx" firstAttribute="centerY" secondItem="5eR-1O-8Wd" secondAttribute="centerY" id="DFu-lx-P82"/>
+                <constraint firstItem="5eR-1O-8Wd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Opx-LQ-ZqI"/>
+                <constraint firstItem="LAb-N0-7Cb" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="R4X-jL-7nU"/>
+                <constraint firstItem="jl7-KK-cJU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="c5P-ds-da4"/>
+                <constraint firstAttribute="trailing" secondItem="5eR-1O-8Wd" secondAttribute="trailing" id="ja3-gl-reF"/>
+                <constraint firstItem="LAb-N0-7Cb" firstAttribute="top" secondItem="jl7-KK-cJU" secondAttribute="bottom" constant="2" id="nec-hb-Yry"/>
+                <constraint firstItem="RV8-cM-YYx" firstAttribute="centerX" secondItem="5eR-1O-8Wd" secondAttribute="centerX" id="r1E-IS-G7p"/>
+                <constraint firstAttribute="bottom" secondItem="LAb-N0-7Cb" secondAttribute="bottom" id="rbg-xv-PoE"/>
+            </constraints>
+            <size key="customSize" width="148" height="273"/>
+            <connections>
+                <outlet property="coinIconWidthConstraint" destination="chV-8e-ve3" id="5RG-zB-9l6"/>
+                <outlet property="giftIcon" destination="RV8-cM-YYx" id="gsJ-NJ-kTE"/>
+                <outlet property="giftIconWidthConstraint" destination="i9B-VF-Fay" id="zzy-Kf-8bq"/>
+                <outlet property="nameLabel" destination="jl7-KK-cJU" id="s7E-04-HB2"/>
+                <outlet property="nameLabelBottomConstraint" destination="nec-hb-Yry" id="mnZ-51-xJI"/>
+                <outlet property="nameLabelHeightConstraint" destination="oNR-c8-3Cj" id="4mX-ry-Ode"/>
+                <outlet property="numLabel" destination="vw9-8v-Non" id="GSq-ip-32v"/>
+                <outlet property="stackView" destination="LAb-N0-7Cb" id="JZw-O3-lm1"/>
+            </connections>
+            <point key="canvasLocation" x="202.89855072463769" y="159.70982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="coin" width="15" height="15"/>
+        <image name="dragon_weideng" width="30" height="30"/>
+        <image name="spaceship_getticket_bg" width="85" height="85"/>
+    </resources>
+</document>
