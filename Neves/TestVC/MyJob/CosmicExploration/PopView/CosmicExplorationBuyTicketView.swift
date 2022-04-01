@@ -253,10 +253,11 @@ extension CosmicExplorationBuyTicketView: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        Asyncs.mainDelay(0.2) {
-            guard self.count4TextField.isFirstResponder else { return }
-            self.selectedIndex = 4
-        }
+        selectedIndex = 4
+//        Asyncs.mainDelay(0.2) {
+//            guard self.count4TextField.isFirstResponder else { return }
+//            self.selectedIndex = 4
+//        }
         
         guard let text = textField.text, let count = Int(text), count > 0 else {
             textField.text = ""
