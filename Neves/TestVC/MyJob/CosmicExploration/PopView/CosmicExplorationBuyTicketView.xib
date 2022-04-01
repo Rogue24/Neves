@@ -330,7 +330,6 @@
                         <constraint firstItem="Xcd-Xl-ztt" firstAttribute="top" secondItem="NNx-DN-8KA" secondAttribute="top" id="KId-a0-XGr"/>
                         <constraint firstItem="SuD-wj-16J" firstAttribute="leading" secondItem="qt2-8F-5kq" secondAttribute="trailing" constant="7.5" id="OWD-wg-yAV"/>
                         <constraint firstItem="Mu2-BS-I48" firstAttribute="leading" secondItem="NNx-DN-8KA" secondAttribute="leading" id="Oc2-IM-bwv"/>
-                        <constraint firstItem="qt2-8F-5kq" firstAttribute="top" secondItem="Mu2-BS-I48" secondAttribute="bottom" constant="10" id="ZBo-Sb-wcl"/>
                         <constraint firstItem="zNq-YX-Ird" firstAttribute="leading" secondItem="SuD-wj-16J" secondAttribute="trailing" constant="7.5" id="ZyV-ab-PNf"/>
                         <constraint firstItem="tJ7-j7-lDe" firstAttribute="leading" secondItem="NNx-DN-8KA" secondAttribute="leading" id="aWk-s5-on0"/>
                         <constraint firstItem="Rou-Tt-YUx" firstAttribute="top" secondItem="NNx-DN-8KA" secondAttribute="top" constant="5" id="ctU-Lb-k8T"/>
@@ -341,6 +340,7 @@
                         <constraint firstItem="W6y-rG-VoU" firstAttribute="top" secondItem="qt2-8F-5kq" secondAttribute="bottom" constant="13" id="mp9-JH-5H2"/>
                         <constraint firstItem="W6y-rG-VoU" firstAttribute="centerX" secondItem="NNx-DN-8KA" secondAttribute="centerX" id="n01-yd-mbQ"/>
                         <constraint firstItem="1wT-Js-FoR" firstAttribute="centerX" secondItem="NNx-DN-8KA" secondAttribute="centerX" id="n3e-5w-Rvd"/>
+                        <constraint firstItem="zNq-YX-Ird" firstAttribute="centerY" secondItem="qt2-8F-5kq" secondAttribute="centerY" id="n6i-Ju-hRZ"/>
                         <constraint firstItem="zNq-YX-Ird" firstAttribute="top" secondItem="Mu2-BS-I48" secondAttribute="bottom" constant="10" id="o6k-1r-OvP"/>
                         <constraint firstItem="Mu2-BS-I48" firstAttribute="top" secondItem="Rou-Tt-YUx" secondAttribute="bottom" constant="8" id="plG-qZ-5FD"/>
                     </constraints>

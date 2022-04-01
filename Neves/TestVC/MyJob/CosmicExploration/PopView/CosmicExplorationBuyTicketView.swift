@@ -388,9 +388,11 @@ extension CosmicExplorationBuyTicketView {
     static func show(on view: UIView) -> CosmicExplorationBuyTicketView {
         let buyTicketView = CosmicExplorationBuyTicketView.loadFromNib()
         buyTicketView.layer.backgroundColor = UIColor.rgb(0, 0, 0, a: 0).cgColor
-        buyTicketView.frame = PortraitScreenBounds
-        buyTicketView.layoutIfNeeded()
+//        buyTicketView.frame = PortraitScreenBounds
+//        buyTicketView.layoutIfNeeded()
         view.addSubview(buyTicketView)
+        buyTicketView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        view.layoutIfNeeded()
         
         // TODO: 临时做法
         Asyncs.main {

@@ -78,9 +78,11 @@ class CosmicExplorationPlayView: UIView {
 extension CosmicExplorationPlayView {
     static func show(on view: UIView) -> CosmicExplorationPlayView {
         let playView = CosmicExplorationPlayView.loadFromNib()
-        playView.frame = PortraitScreenBounds
-        playView.layoutIfNeeded()
+//        playView.frame = PortraitScreenBounds
+//        playView.layoutIfNeeded()
         view.addSubview(playView)
+        playView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        view.layoutIfNeeded()
         
         // TODO: 临时做法
         Asyncs.main {
