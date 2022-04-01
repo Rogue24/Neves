@@ -113,6 +113,7 @@ extension CosmicExplorationManager {
                 stage = .supplying(second - 1)
             } else {
                 selectPlanet(nil)
+                targetPlanet = planetModels.randomElement()
                 stage = .exploring(5)
             }
             
@@ -121,6 +122,7 @@ extension CosmicExplorationManager {
                 stage = .exploring(second - 1)
             } else {
                 resetWinningPlanet(targetPlanet?.planet)
+                targetPlanet = nil
                 stage = .finish(true, 10)
             }
             
@@ -128,7 +130,6 @@ extension CosmicExplorationManager {
             if second > 0 {
                 stage = .finish(isDiscover, second - 1)
             } else {
-                targetPlanet = nil
                 resetWinningPlanet(nil)
                 stage = .idle
             }
@@ -165,7 +166,7 @@ extension CosmicExplorationManager {
         guard self.isExploring != isExploring else { return }
         self.isExploring = isExploring
 
-        guard isExploring else {
+        guard isExploring, let targetPlanet = self.targetPlanet else {
             exploringWorkItems.forEach { $0.cancel() }
             exploringWorkItems = []
             for planetModel in planetModels where !planetModel.isWinning {
@@ -173,9 +174,7 @@ extension CosmicExplorationManager {
             }
             return
         }
-
-        let targetPlanet = planetModels.randomElement()!
-        self.targetPlanet = targetPlanet
+        
         JPrint("目标", targetPlanet.planet.name)
 
         var exploringPlanetModels: [CosmicExploration.PlanetModel] = []
