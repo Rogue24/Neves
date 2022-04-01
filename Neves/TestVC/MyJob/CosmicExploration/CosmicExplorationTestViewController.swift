@@ -21,7 +21,7 @@ class CosmicExplorationTestViewController: TestBaseViewController {
                     CosmicExplorationManager.shared.addSupplyFromOther(toPlant: model.planet)
                 }
                 
-                CosmicExplorationManager.shared.gotoNextStage()
+                CosmicExplorationManager.shared.begin()
                 return
             }
             

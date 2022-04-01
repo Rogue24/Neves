@@ -98,51 +98,74 @@ extension CosmicExplorationManager {
     }
 }
 
-// MARK: - 探索阶段
-extension CosmicExplorationManager {
-    func gotoNextStage() {
-        var stage = self.stage
-        
-        switch stage {
-        case .idle:
-            selectPlanet(nil)
-            stage = .supplying(5)
-            
-        case let .supplying(second):
-            if second > 0 {
-                stage = .supplying(second - 1)
-            } else {
-                selectPlanet(nil)
-                targetPlanet = planetModels.randomElement()
-                stage = .exploring(5)
-            }
-            
-        case let .exploring(second):
-            if second > 0 {
-                stage = .exploring(second - 1)
-            } else {
-                resetWinningPlanet(targetPlanet?.planet)
-                targetPlanet = nil
-                stage = .finish(true, 10)
-            }
-            
-        case let .finish(isDiscover, second):
-            if second > 0 {
-                stage = .finish(isDiscover, second - 1)
-            } else {
-                resetWinningPlanet(nil)
-                stage = .idle
-            }
-        }
-        
-        self.stage = stage
-    }
-    
-    
-}
-
 // MARK: - 计时器
 extension CosmicExplorationManager {
+    func addSupplyingTimer() {
+        addTimer { [weak self] in
+            guard let self = self else { return }
+            switch self.stage {
+            case let .supplying(second):
+                if second > 0 {
+                    self.stage = .supplying(second - 1)
+                } else {
+                    self.removeTimer()
+                    
+                    self.selectPlanet(nil)
+                    self.targetPlanet = self.planetModels.randomElement()
+                    
+                    self.stage = .exploring(5)
+                    self.addExploringTimer()
+                }
+                
+            default:
+                self.removeTimer()
+            }
+        }
+    }
+    
+    func addExploringTimer() {
+        addTimer { [weak self] in
+            guard let self = self else { return }
+            switch self.stage {
+            case let .exploring(second):
+                if second > 0 {
+                    self.stage = .exploring(second - 1)
+                } else {
+                    self.removeTimer()
+                    
+                    self.resetWinningPlanet(self.targetPlanet?.planet)
+                    self.targetPlanet = nil
+                    self.stage = .finish(true, 10)
+                    
+                    self.addFinalTimer()
+                }
+                
+            default:
+                self.removeTimer()
+            }
+        }
+    }
+    
+    func addFinalTimer() {
+        addTimer { [weak self] in
+            guard let self = self else { return }
+            switch self.stage {
+            case let .finish(isDiscover, second):
+                if second > 0 {
+                    self.stage = .finish(isDiscover, second - 1)
+                } else {
+                    self.removeTimer()
+                    
+                    self.resetWinningPlanet(nil)
+                    self.stage = .idle
+                }
+                
+            default:
+                self.removeTimer()
+            }
+        }
+    }
+    
     func addTimer(_ eventHandler: @escaping () -> ()) {
         removeTimer()
         
@@ -285,8 +308,18 @@ extension CosmicExplorationManager {
     }
 }
 
-// MARK: - 更新阶段
+// MARK: - 更新探索阶段
 extension CosmicExplorationManager {
+    func begin() {
+        switch stage {
+        case .idle:
+            stage = .supplying(30)
+            addSupplyingTimer()
+        default:
+            break
+        }
+    }
+    
     func debugStage(_ stage: CosmicExploration.Stage) {
         switch stage {
         case .idle:
