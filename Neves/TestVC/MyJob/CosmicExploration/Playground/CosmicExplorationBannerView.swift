@@ -28,6 +28,7 @@ class CosmicExplorationBannerView: UIView {
             let x: CGFloat = (5 + 15 + 5).px
             let w: CGFloat = PortraitScreenWidth - 20.px - x - 5.px
             let tableView = UITableView(frame: [x, 0, w, 22.px], style: .plain)
+            tableView.isUserInteractionEnabled = false
             tableView.backgroundColor = .clear
             tableView.jp.contentInsetAdjustmentNever()
             tableView.rowHeight = 22.px
