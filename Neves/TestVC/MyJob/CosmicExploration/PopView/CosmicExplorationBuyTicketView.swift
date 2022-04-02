@@ -186,13 +186,13 @@ extension CosmicExplorationBuyTicketView {
     
     func setupLayouts() {
         stackView.spacing = 15.px
-        count1View.layer.borderColor = UIColor.rgb(54, 58, 97).cgColor
+        count1View.layer.borderColor = UIColor.rgb(60, 69, 112).cgColor
         count1View.layer.borderWidth = 1
-        count2View.layer.borderColor = UIColor.rgb(54, 58, 97).cgColor
+        count2View.layer.borderColor = UIColor.rgb(60, 69, 112).cgColor
         count2View.layer.borderWidth = 1
-        count3View.layer.borderColor = UIColor.rgb(54, 58, 97).cgColor
+        count3View.layer.borderColor = UIColor.rgb(60, 69, 112).cgColor
         count3View.layer.borderWidth = 1
-        count4View.layer.borderColor = UIColor.rgb(54, 58, 97).cgColor
+        count4View.layer.borderColor = UIColor.rgb(60, 69, 112).cgColor
         count4View.layer.borderWidth = 1
         confirmBtn.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 4.px, right: 0)
     }
@@ -333,7 +333,7 @@ extension CosmicExplorationBuyTicketView {
         var count3SelImgViewIsHidden = true
         var count3LabelColor = norTextColor
         
-        var count4BorderColor = UIColor.rgb(54, 58, 97)
+        var count4BorderColor = UIColor.rgb(60, 69, 112)
         var count4TextColor = norTextColor
         
         switch selectedIndex {
@@ -353,7 +353,7 @@ extension CosmicExplorationBuyTicketView {
             chooseCount = 100
             
         case 4:
-            count4BorderColor = UIColor.rgb(245, 104, 91)
+            count4BorderColor = UIColor.rgb(252, 117, 96)
             count4TextColor = selTextColor
             chooseCount = Int(count4TextField.text ?? "") ?? 0
             

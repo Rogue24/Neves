@@ -35,15 +35,55 @@
                         <action selector="closeAction" destination="iN0-l3-epB" eventType="touchUpInside" id="6zo-tN-4Ys"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Ye-r9-iz6">
+                    <rect key="frame" x="0.0" y="84" width="414" height="416"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZE-fg-IGc">
+                    <rect key="frame" x="137" y="136" width="140" height="181"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spaceship_blank" translatesAutoresizingMaskIntoConstraints="NO" id="Ufl-5V-ece">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="0Ue-ub-3Oc"/>
+                                <constraint firstAttribute="width" secondItem="Ufl-5V-ece" secondAttribute="height" id="SyV-5A-tL4"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无探险日志" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRr-Nb-exI">
+                            <rect key="frame" x="24" y="160" width="92" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="fDX-Kc-RMd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.71372549019607845" green="0.84705882352941175" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Ufl-5V-ece" firstAttribute="top" secondItem="xZE-fg-IGc" secondAttribute="top" id="6Up-gI-8ae"/>
+                        <constraint firstItem="DRr-Nb-exI" firstAttribute="centerX" secondItem="xZE-fg-IGc" secondAttribute="centerX" id="Q4J-Ef-8d6"/>
+                        <constraint firstItem="Ufl-5V-ece" firstAttribute="leading" secondItem="xZE-fg-IGc" secondAttribute="leading" id="irQ-qU-mwY"/>
+                        <constraint firstAttribute="trailing" secondItem="Ufl-5V-ece" secondAttribute="trailing" id="p8Q-CT-wPh"/>
+                        <constraint firstItem="DRr-Nb-exI" firstAttribute="top" secondItem="Ufl-5V-ece" secondAttribute="bottom" constant="20" id="rey-LF-dYg"/>
+                        <constraint firstAttribute="bottom" secondItem="DRr-Nb-exI" secondAttribute="bottom" id="zKI-qW-dNV"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="5Ye-r9-iz6" secondAttribute="bottom" id="BA5-fD-1eo"/>
+                <constraint firstItem="5Ye-r9-iz6" firstAttribute="top" secondItem="bZv-85-6i2" secondAttribute="bottom" constant="13" id="FcS-CB-yVb"/>
                 <constraint firstAttribute="bottom" secondItem="xdh-DY-l3H" secondAttribute="bottom" id="Idd-Mp-blR"/>
                 <constraint firstItem="gGY-8F-Ty6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="J5L-my-eIx"/>
                 <constraint firstItem="bZv-85-6i2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KYT-5B-581"/>
                 <constraint firstItem="xdh-DY-l3H" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ORa-Ic-ich"/>
+                <constraint firstItem="xZE-fg-IGc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="efv-F7-TPZ"/>
                 <constraint firstItem="xdh-DY-l3H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f5g-TT-WDQ"/>
                 <constraint firstAttribute="trailing" secondItem="gGY-8F-Ty6" secondAttribute="trailing" id="kcm-G8-yYh"/>
+                <constraint firstItem="5Ye-r9-iz6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="m9h-ae-6hp"/>
+                <constraint firstItem="xZE-fg-IGc" firstAttribute="top" secondItem="bZv-85-6i2" secondAttribute="bottom" constant="65" id="mKq-53-oCB"/>
+                <constraint firstAttribute="trailing" secondItem="5Ye-r9-iz6" secondAttribute="trailing" id="pqv-9p-KzB"/>
                 <constraint firstItem="bZv-85-6i2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="vOV-lO-cbb"/>
                 <constraint firstAttribute="trailing" secondItem="xdh-DY-l3H" secondAttribute="trailing" id="z4N-Sv-Tgm"/>
             </constraints>
@@ -52,12 +92,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="closeBtnWidthConstraint" destination="tyh-HH-q9o" id="QCe-XM-rmo"/>
+                <outlet property="emptyView" destination="xZE-fg-IGc" id="ma7-nh-PUo"/>
+                <outlet property="tableView" destination="5Ye-r9-iz6" id="DCu-uO-gDV"/>
+                <outlet property="tableViewTopConstraint" destination="FcS-CB-yVb" id="8hb-8X-UHn"/>
                 <outlet property="titleImgViewWidthConstraint" destination="p2O-HC-IwG" id="8Gj-9r-K6S"/>
             </connections>
             <point key="canvasLocation" x="133" y="86"/>
         </view>
     </objects>
     <resources>
+        <image name="spaceship_blank" width="140" height="140"/>
         <image name="spaceship_close2" width="18" height="18"/>
         <image name="spaceship_myresult_title" width="228" height="71"/>
         <image name="spaceship_popup_bg" width="375" height="475"/>
