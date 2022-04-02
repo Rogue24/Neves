@@ -12,11 +12,7 @@ extension CosmicExplorationManager {
         self.isExploring = isExploring
 
         guard isExploring, let targetPlanet = self.targetPlanet else {
-            exploringWorkItems.forEach { $0.cancel() }
-            exploringWorkItems = []
-            for planetModel in planetModels where !planetModel.isWinning {
-                planetModel.isTarget = false
-            }
+            cancelExploringAnimtion()
             return
         }
         
@@ -38,55 +34,50 @@ extension CosmicExplorationManager {
         }
         planetModels3.append(targetPlanet)
         exploringPlanetModels += planetModels3
-
-        let maxIndex = exploringPlanetModels.count - 1
-        let slowIndex = 11
-        var beginTime: Double = 0
+        
+        self.exploringPlanetModels = exploringPlanetModels
         
         JPrint("开始")
-        for (i, planetModel) in exploringPlanetModels.enumerated() {
-            let delay: TimeInterval = i < maxIndex ? (i >= slowIndex ? 0.45 : 0.25) : 0
-            JPrint(index, "---", planetModel.planet.name, "开始时间:", beginTime, "消失延时:", delay)
-            
-            if let workItem = exploringAnimtion(planetModel: planetModel,
-                                                beginTime: beginTime,
-                                                endDelay: delay) {
-                exploringWorkItems.append(workItem)
-            }
-            
-            beginTime += (i >= slowIndex ? 0.45 : 0.25)
+        beginExploringAnimtion(index: 0, slowIndex: 11, maxIndex: exploringPlanetModels.count - 1)
+    }
+    
+    func beginExploringAnimtion(index: Int, slowIndex: Int, maxIndex: Int) {
+        exploringPlanetModel?.planetView?.stopExploringAnimtion()
+        exploringPlanetModel = nil
+        
+        exploringWorkItem?.cancel()
+        exploringWorkItem = nil
+        
+        guard let planetModel = exploringPlanetModels.first else { return }
+        exploringPlanetModels.removeFirst()
+        
+        planetModel.planetView?.startExploringAnimtion()
+        
+        guard exploringPlanetModels.count > 0 else {
+            JPrint("结束")
+            return
+        }
+        
+        exploringPlanetModel = planetModel
+        
+        let delay: TimeInterval = index < maxIndex ? (index >= slowIndex ? 0.45 : 0.25) : 0
+        let nextIndex = index + 1
+        exploringWorkItem = Asyncs.mainDelay(delay) { [weak self] in
+            guard let self = self else { return }
+            self.beginExploringAnimtion(index: nextIndex, slowIndex: slowIndex, maxIndex: maxIndex)
         }
     }
     
-    func exploringAnimtion(planetModel: CosmicExploration.PlanetModel,
-                           beginTime: Double,
-                           endDelay: TimeInterval) -> DispatchWorkItem? {
-        let task: () -> () = { [weak self] in
-            guard let self = self else { return }
-            
-            switch self.stage {
-            case .exploring:
-                break
-            default:
-                return
-            }
-            
-            if endDelay == 0 {
-                JPrint("搞定")
-                planetModel.isTarget = true
-            } else {
-                planetModel.planetView?.startExploringAnimtion(endDelay: endDelay)
-            }
-        }
-        
-        if beginTime > 0 {
-            return Asyncs.mainDelay(beginTime, task)
-        } else {
-            task()
-            return nil
+    func cancelExploringAnimtion() {
+        exploringPlanetModels = []
+        exploringPlanetModel = nil
+        exploringWorkItem?.cancel()
+        exploringWorkItem = nil
+        for planetModel in planetModels where !planetModel.isWinning {
+            planetModel.isTarget = false
         }
     }
-
+    
     func randomPlanetModels(without planets: Set<CosmicExploration.Planet>?) -> [CosmicExploration.PlanetModel] {
         var randomPlanets = Set(planetModels.map { $0.planet })
         if let planets = planets {

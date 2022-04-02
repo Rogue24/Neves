@@ -156,7 +156,7 @@ extension CosmicExploration {
             didSet {
                 guard isTarget != oldValue else { return }
                 if isTarget {
-                    planetView?.startExploringAnimtion(endDelay: 0)
+                    planetView?.startExploringAnimtion()
                 } else {
                     planetView?.stopExploringAnimtion()
                 }

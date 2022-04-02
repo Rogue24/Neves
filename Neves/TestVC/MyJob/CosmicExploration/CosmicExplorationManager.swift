@@ -25,8 +25,10 @@ class CosmicExplorationManager {
     
     private var timer: DispatchSourceTimer?
     
-    var exploringWorkItems: [DispatchWorkItem] = []
     var isExploring = false
+    var exploringPlanetModels: [CosmicExploration.PlanetModel] = []
+    var exploringPlanetModel: CosmicExploration.PlanetModel? = nil
+    var exploringWorkItem: DispatchWorkItem? = nil
     
     var targetPlanet: CosmicExploration.PlanetModel? = nil
     var winningPlanet: CosmicExploration.PlanetModel? = nil
@@ -71,7 +73,7 @@ extension CosmicExplorationManager {
         if let winningPlanet = self.winningPlanet, winningPlanet.isWinning {
             winningPlanet.planetView?.updateIsWinning(true, animated: false)
         } else if let targetPlanet = self.targetPlanet, targetPlanet.isTarget {
-            targetPlanet.planetView?.startExploringAnimtion(endDelay: 0)
+            targetPlanet.planetView?.startExploringAnimtion()
         }
     }
 }
@@ -119,7 +121,7 @@ extension CosmicExplorationManager {
     func begin() {
         switch stage {
         case .idle:
-            stage = .supplying(30)
+            stage = .supplying(5) // 30
             addSupplyingTimer()
         default:
             break

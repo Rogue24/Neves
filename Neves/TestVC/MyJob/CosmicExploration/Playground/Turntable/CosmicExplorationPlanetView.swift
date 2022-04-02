@@ -513,7 +513,7 @@ extension CosmicExplorationPlanetView {
 
 // MARK: - 探索动画
 extension CosmicExplorationPlanetView {
-    func startExploringAnimtion(endDelay: TimeInterval) {
+    func startExploringAnimtion() {
         exploringAnimView.pop_removeAllAnimations()
         
         exploringAnimView.play()
@@ -523,17 +523,6 @@ extension CosmicExplorationPlanetView {
         anim1.toValue = 1
         anim1.duration = 0.12
         exploringAnimView.pop_add(anim1, forKey: "start")
-        
-        guard endDelay > 0 else { return }
-        let anim2 = POPBasicAnimation(propertyNamed: kPOPViewAlpha)!
-        anim2.toValue = 0
-        anim2.duration = 0.12
-        anim2.beginTime = CACurrentMediaTime() + endDelay
-        anim2.completionBlock = { [weak exploringAnimView] _, finished in
-            guard finished else { return }
-            exploringAnimView?.stop()
-        }
-        exploringAnimView.pop_add(anim2, forKey: "end")
     }
     
     func stopExploringAnimtion() {
@@ -561,7 +550,7 @@ extension CosmicExplorationPlanetView {
 extension CosmicExplorationPlanetView {
     func updateIsWinning(_ isWinning: Bool, animated: Bool = true) {
         if isWinning {
-            startExploringAnimtion(endDelay: 0)
+            startExploringAnimtion()
             
             guard winningAnimView == nil,
                   let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_result_lottie"),
