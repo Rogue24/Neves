@@ -50,6 +50,8 @@ class CosmicExplorationTurntableView: UIView {
             model.planetView = planetView
             return planetView
         }
+        
+        knapsackBtn.addTarget(self, action: #selector(gotoKnapsack), for: .touchUpInside)
     }
     
     func findPlanetView(for plant: CosmicExploration.Planet) -> CosmicExplorationPlanetView? {
@@ -116,5 +118,11 @@ extension CosmicExplorationTurntableView {
     func hidePrizes(animated: Bool) {
         prizeView?.hide(animated: animated)
         prizeView = nil
+    }
+}
+
+extension CosmicExplorationTurntableView {
+    @objc func gotoKnapsack() {
+        
     }
 }
