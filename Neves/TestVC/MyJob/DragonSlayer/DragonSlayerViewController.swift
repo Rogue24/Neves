@@ -160,7 +160,7 @@ class DragonSlayerViewController: TestBaseViewController {
                 return
             }
             
-            let duration = TimeInterval(1 + arc4random_uniform(2))
+            let duration = TimeInterval.random(in: 1...2)
             let info = DragonSlayerBanner.Info(title: "\(Self.num)", duration: duration)
             DragonSlayerBanner.show(info)
             

@@ -21,7 +21,7 @@ class ImageVideoMakeViewController: TestBaseViewController {
         while let i = indexs.first {
             indexs.remove(i)
             imageInfos.append(.init(image: UIImage.jp.fromBundle("Girl\(i).jpg")!,
-                                    duration: 1 + CGFloat(arc4random_uniform(3))))
+                                    duration: TimeInterval.random(in: 1...3)))
         }
         
         maker.makeVideo(with: imageInfos) { result in

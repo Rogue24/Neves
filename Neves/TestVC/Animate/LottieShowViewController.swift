@@ -99,7 +99,7 @@ class LottieShowViewController: TestBaseViewController {
         case 1:
             lottieName = "spaceship_countdown_s_lottie"
         case 2:
-            lottieName = "spaceship_default_lottie"
+            lottieName = "spaceship_default_ios_lottie"
         case 3:
             lottieName = "spaceship_launch_lottie"
         case 4:

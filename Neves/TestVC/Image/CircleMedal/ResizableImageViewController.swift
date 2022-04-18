@@ -69,20 +69,19 @@ class ResizableImageViewController: TestBaseViewController {
     var i: Int = 0
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        levelView1.update(level: Int(arc4random_uniform(19)), text: ssss[i])
-        levelView2.update(level: Int(arc4random_uniform(19)), text: ssss[i])
-        levelView3.update(level: Int(arc4random_uniform(19)), text: ssss[i])
+        levelView1.update(level: Int.random(in: 1...18), text: ssss[i])
+        levelView2.update(level: Int.random(in: 1...18), text: ssss[i])
+        levelView3.update(level: Int.random(in: 1...18), text: ssss[i])
         
-        
-        medalView1.update(levelInfo: (level: Int(arc4random_uniform(19)), text: ssss[i]),
-                          activeImage: arc4random_uniform(2) == 1 ? activeImage : nil,
-                          signinImage: arc4random_uniform(2) == 1 ? activeImage : nil)
-        medalView2.update(levelInfo: (level: Int(arc4random_uniform(19)), text: ssss[i]),
-                          activeImage: arc4random_uniform(2) == 1 ? activeImage : nil,
-                          signinImage: arc4random_uniform(2) == 1 ? activeImage : nil)
-        medalView3.update(levelInfo: (level: Int(arc4random_uniform(19)), text: ssss[i]),
-                          activeImage: arc4random_uniform(2) == 1 ? activeImage : nil,
-                          signinImage: arc4random_uniform(2) == 1 ? activeImage : nil)
+        medalView1.update(levelInfo: (level: Int.random(in: 1...18), text: ssss[i]),
+                          activeImage: Bool.random() ? activeImage : nil,
+                          signinImage: Bool.random() ? activeImage : nil)
+        medalView2.update(levelInfo: (level: Int.random(in: 1...18), text: ssss[i]),
+                          activeImage: Bool.random() ? activeImage : nil,
+                          signinImage: Bool.random() ? activeImage : nil)
+        medalView3.update(levelInfo: (level: Int.random(in: 1...18), text: ssss[i]),
+                          activeImage: Bool.random() ? activeImage : nil,
+                          signinImage: Bool.random() ? activeImage : nil)
         
         i += 1
         if i == ssss.count {

@@ -16,9 +16,9 @@ extension UIColor {
         var a: CGFloat = 1
         
         static func randomRGBA(_ a: CGFloat = 1.0) -> Self {
-            RGBA(r: CGFloat(arc4random_uniform(256)),
-                 g: CGFloat(arc4random_uniform(256)),
-                 b: CGFloat(arc4random_uniform(256)),
+            RGBA(r: CGFloat.random(in: 0...255),
+                 g: CGFloat.random(in: 0...255),
+                 b: CGFloat.random(in: 0...255),
                  a: a)
         }
         

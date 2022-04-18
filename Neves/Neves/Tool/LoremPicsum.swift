@@ -108,7 +108,7 @@ extension LoremPicsum {
         return photoURL(size: size,
                         id: nil,
                         option: nil,
-                        randomId: 1 + Int(arc4random_uniform(10000)),
+                        randomId: Int.random(in: 1...10000),
                         suffix: nil)
     }
     
