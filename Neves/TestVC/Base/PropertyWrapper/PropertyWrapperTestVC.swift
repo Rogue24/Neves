@@ -8,37 +8,14 @@
 
 import Foundation
 
-/// ==================================================================================================
-/// 先告诉编译器 下面这个UserDefault是一个属性包裹器
-@propertyWrapper struct UserDefault<T> {
-    /// 这里的属性key 和 defaultValue 还有init方法都是实际业务中的业务代码
-    /// 我们不需要过多关注
-    let key: String
-    let defaultValue: T
-
-    init(_ key: String, defaultValue: T) {
-        self.key = key
-        self.defaultValue = defaultValue
-    }
-    
-    /// wrappedValue是@propertyWrapper必须要实现的属性
-    /// 当操作我们要包裹的属性时  其具体set get方法实际上走的都是wrappedValue 的set get 方法。
-    var wrappedValue: T {
-        get { UserDefaults.standard.object(forKey: key) as? T ?? defaultValue }
-        set { UserDefaults.standard.set(newValue, forKey: key) }
-    }
-    
-    var projectedValue: String { "hello?" }
-}
-
 /// 封装一个UserDefault配置文件
 struct UserDefaultsConfig {
     /// 告诉编译器 我要包裹的是hadShownGuideView这个值。
     /// 实际写法就是在UserDefault包裹器的初始化方法前加了个@
     /// hadShownGuideView 属性的一些key和默认值已经在 UserDefault包裹器的构造方法中实现
-    @UserDefault("had_shown_guide_view", defaultValue: false) static var hadShownGuideView: Bool
+    @UserDefault("had_shown_guide_view", defaultValue: false) static var hadShownGuideView: Bool?
     
-    @UserDefault("name", defaultValue: "sb") static var name: String
+    @UserDefault("name", defaultValue: "sb") static var name: String?
 }
 /// ==================================================================================================
 
@@ -86,7 +63,7 @@ struct UserDefaultsConfig {
 
 class PropertyWrapperTestVC: TestBaseViewController {
     
-    @UserDefault("nickname", defaultValue: "shuaige") var nickname: String
+    @UserDefault("nickname", defaultValue: "shuaige") var nickname: String?
     
     @ObserveChangeValue(valueDidChangedCallback: { (oldValue, newValue) in
         JPrint("oldValue", oldValue)
@@ -98,29 +75,29 @@ class PropertyWrapperTestVC: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        JPrint("nickname", nickname)
-        JPrint("$nickname", $nickname)
+        JPrint("nickname", nickname ?? "?")
+        JPrint("$nickname", $nickname ?? "??")
         
-        JPrint("myName", myName)
-        JPrint("$myName", $myName)
+        JPrint("myName", myName ?? "?")
+        JPrint("$myName", $myName ?? "??")
         
-        JPrint("taName", taName)
-        JPrint("$taName", $taName)
+        JPrint("taName", taName ?? "?")
+        JPrint("$taName", $taName ?? "??")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         nickname = "shuaige \(formatter.string(from: Date()))"
-        JPrint("nickname", nickname)
+        JPrint("nickname", nickname ?? "?")
         JPrint("-------------")
         
         myName = "shuaigeping \(formatter.string(from: Date()))"
-        JPrint("myName", myName)
+        JPrint("myName", myName ?? "?")
         JPrint("-------------")
         
         taName = "zhoujianping \(formatter.string(from: Date()))"
-        JPrint("taName", taName)
+        JPrint("taName", taName ?? "?")
         JPrint("-------------")
     }
 }

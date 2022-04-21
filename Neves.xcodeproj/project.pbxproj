@@ -199,6 +199,7 @@
 		718018C627228A830056E699 /* Syncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C527228A830056E699 /* Syncs.swift */; };
 		718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718066A727D74823002CAC09 /* PanScrollViewController.swift */; };
 		718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */; };
+		7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189227C281153FF00EC4CA4 /* UserDefault.swift */; };
 		718A569527F193210071C724 /* CosmicExploration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A569427F193210071C724 /* CosmicExploration.swift */; };
 		718A569727F195780071C724 /* CosmicExplorationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A569627F195780071C724 /* CosmicExplorationManager.swift */; };
 		718A569A27F195A00071C724 /* CosmicExplorationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A569927F195A00071C724 /* CosmicExplorationTestViewController.swift */; };
@@ -537,6 +538,7 @@
 		718018C527228A830056E699 /* Syncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syncs.swift; sourceTree = "<group>"; };
 		718066A727D74823002CAC09 /* PanScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanScrollViewController.swift; sourceTree = "<group>"; };
 		718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFacesViewController.swift; sourceTree = "<group>"; };
+		7189227C281153FF00EC4CA4 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		718A569427F193210071C724 /* CosmicExploration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExploration.swift; sourceTree = "<group>"; };
 		718A569627F195780071C724 /* CosmicExplorationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationManager.swift; sourceTree = "<group>"; };
 		718A569927F195A00071C724 /* CosmicExplorationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationTestViewController.swift; sourceTree = "<group>"; };
@@ -817,6 +819,7 @@
 		1A3543CD254E775F0032B677 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				7189227C281153FF00EC4CA4 /* UserDefault.swift */,
 				7151895427EC574000342645 /* LoremPicsum.swift */,
 				005DF54325652EDB0010E772 /* File.swift */,
 				1A3543CE254E775F0032B677 /* Asyncs.swift */,
@@ -1824,6 +1827,7 @@
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
+				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
