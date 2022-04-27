@@ -95,13 +95,13 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "spaceship_countdown_lottie"
+            lottieName = "pk_duel_lightning_lottie"
         case 1:
-            lottieName = "spaceship_countdown_s_lottie"
+            lottieName = "pk_duel_start_lottie"
         case 2:
-            lottieName = "spaceship_default_ios_lottie"
+            lottieName = "pk_room_progressbar_lottie"
         case 3:
-            lottieName = "spaceship_launch_lottie"
+            lottieName = "pk_start_lottie"
         case 4:
             lottieName = "spaceship_normal_lottie"
         case 5:

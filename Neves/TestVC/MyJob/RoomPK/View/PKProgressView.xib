@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="PKProgressView" customModule="Neves" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="365" height="90"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pk_room_bg" translatesAutoresizingMaskIntoConstraints="NO" id="9vq-uc-wT6">
+                    <rect key="frame" x="0.0" y="0.0" width="365" height="90"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMm-1K-6mz">
+                    <rect key="frame" x="0.0" y="34" width="365" height="15"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdc-WV-pBs">
+                            <rect key="frame" x="5" y="0.0" width="355" height="15"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pk_progress_bule" translatesAutoresizingMaskIntoConstraints="NO" id="Pbt-dr-7TS">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="15"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pk_progress_red" translatesAutoresizingMaskIntoConstraints="NO" id="5RI-Sh-Tlx">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="15"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我方" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IC9-eE-EO6">
+                                    <rect key="frame" x="10" y="1.5" width="20.5" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFe-2P-BGC">
+                                    <rect key="frame" x="35.5" y="1" width="7" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="对方" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpA-vM-lsc">
+                                    <rect key="frame" x="324.5" y="1.5" width="20.5" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmy-qe-y57">
+                                    <rect key="frame" x="312.5" y="1" width="7" height="13.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Pbt-dr-7TS" secondAttribute="trailing" id="2DS-VO-dOE"/>
+                                <constraint firstAttribute="bottom" secondItem="5RI-Sh-Tlx" secondAttribute="bottom" id="38Z-GQ-jme"/>
+                                <constraint firstItem="xFe-2P-BGC" firstAttribute="leading" secondItem="IC9-eE-EO6" secondAttribute="trailing" constant="5" id="9Kg-Zw-h95"/>
+                                <constraint firstAttribute="trailing" secondItem="lpA-vM-lsc" secondAttribute="trailing" constant="10" id="B9n-KE-6Wz"/>
+                                <constraint firstItem="5RI-Sh-Tlx" firstAttribute="top" secondItem="hdc-WV-pBs" secondAttribute="top" id="Bke-iL-2CS"/>
+                                <constraint firstItem="lpA-vM-lsc" firstAttribute="leading" secondItem="fmy-qe-y57" secondAttribute="trailing" constant="5" id="Dbt-Jf-5S7"/>
+                                <constraint firstItem="fmy-qe-y57" firstAttribute="centerY" secondItem="hdc-WV-pBs" secondAttribute="centerY" id="EUr-oM-xdM"/>
+                                <constraint firstItem="Pbt-dr-7TS" firstAttribute="top" secondItem="hdc-WV-pBs" secondAttribute="top" id="HHa-nZ-LAN"/>
+                                <constraint firstAttribute="bottom" secondItem="Pbt-dr-7TS" secondAttribute="bottom" id="KWi-L2-KN7"/>
+                                <constraint firstItem="Pbt-dr-7TS" firstAttribute="leading" secondItem="hdc-WV-pBs" secondAttribute="leading" id="QW4-Ua-RLy"/>
+                                <constraint firstItem="5RI-Sh-Tlx" firstAttribute="leading" secondItem="hdc-WV-pBs" secondAttribute="leading" id="WXX-oI-nKG"/>
+                                <constraint firstItem="IC9-eE-EO6" firstAttribute="centerY" secondItem="hdc-WV-pBs" secondAttribute="centerY" id="aTG-gs-gy3"/>
+                                <constraint firstItem="lpA-vM-lsc" firstAttribute="centerY" secondItem="hdc-WV-pBs" secondAttribute="centerY" id="cRL-Tr-eQb"/>
+                                <constraint firstItem="IC9-eE-EO6" firstAttribute="leading" secondItem="hdc-WV-pBs" secondAttribute="leading" constant="10" id="h1C-rE-zuT"/>
+                                <constraint firstItem="xFe-2P-BGC" firstAttribute="centerY" secondItem="hdc-WV-pBs" secondAttribute="centerY" id="sf7-oi-t78"/>
+                                <constraint firstAttribute="trailing" secondItem="5RI-Sh-Tlx" secondAttribute="trailing" id="wTT-17-sDM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="hdc-WV-pBs" secondAttribute="bottom" id="C4V-EU-Tcr"/>
+                        <constraint firstAttribute="height" constant="15" id="SpF-gg-2Cg"/>
+                        <constraint firstItem="hdc-WV-pBs" firstAttribute="leading" secondItem="RMm-1K-6mz" secondAttribute="leading" constant="5" id="b3S-FM-1Ua"/>
+                        <constraint firstItem="hdc-WV-pBs" firstAttribute="top" secondItem="RMm-1K-6mz" secondAttribute="top" id="nTC-aI-nHS"/>
+                        <constraint firstAttribute="trailing" secondItem="hdc-WV-pBs" secondAttribute="trailing" constant="5" id="pTl-XQ-qyR"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tKs-97-Wd5" customClass="PKProgressRankListView" customModule="Neves" customModuleProvider="target">
+                    <rect key="frame" x="258.5" y="54" width="100" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="zsb-UL-l6f">
+                        <size key="itemSize" width="21" height="21"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ9-nW-53H">
+                    <rect key="frame" x="163.5" y="4" width="38.5" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="kqb-BW-cah"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pk_duel_logo" translatesAutoresizingMaskIntoConstraints="NO" id="War-YX-653">
+                    <rect key="frame" x="148.5" y="49" width="68" height="41"/>
+                </imageView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SSD-hz-Jid" customClass="PKProgressRankListView" customModule="Neves" customModuleProvider="target">
+                    <rect key="frame" x="6.5" y="54" width="100" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="7OJ-bn-Gk7"/>
+                        <constraint firstAttribute="height" constant="21" id="Qb5-eE-lJm"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="8No-hE-Fne">
+                        <size key="itemSize" width="21" height="21"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RMm-1K-6mz" secondAttribute="trailing" id="1eg-wD-odw"/>
+                <constraint firstItem="tKs-97-Wd5" firstAttribute="centerY" secondItem="SSD-hz-Jid" secondAttribute="centerY" id="2t6-yc-F5R"/>
+                <constraint firstAttribute="trailing" secondItem="9vq-uc-wT6" secondAttribute="trailing" id="9YE-SQ-q2z"/>
+                <constraint firstItem="tKs-97-Wd5" firstAttribute="height" secondItem="SSD-hz-Jid" secondAttribute="height" id="OmC-nv-SNA"/>
+                <constraint firstAttribute="bottom" secondItem="War-YX-653" secondAttribute="bottom" id="PUO-5X-ZTF"/>
+                <constraint firstItem="nZ9-nW-53H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qet-Sl-ugy"/>
+                <constraint firstItem="SSD-hz-Jid" firstAttribute="top" secondItem="RMm-1K-6mz" secondAttribute="bottom" constant="5" id="YaK-YK-wws"/>
+                <constraint firstItem="RMm-1K-6mz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yf7-f5-ADt"/>
+                <constraint firstItem="9vq-uc-wT6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yqh-sL-Kdn"/>
+                <constraint firstAttribute="trailing" secondItem="tKs-97-Wd5" secondAttribute="trailing" constant="6.5" id="dcc-Uk-eMy"/>
+                <constraint firstItem="War-YX-653" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ebp-9p-n2c"/>
+                <constraint firstItem="RMm-1K-6mz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="34" id="gdl-yt-Rv4"/>
+                <constraint firstItem="nZ9-nW-53H" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="hnw-RI-bFw"/>
+                <constraint firstItem="War-YX-653" firstAttribute="top" secondItem="RMm-1K-6mz" secondAttribute="bottom" id="jpp-Oj-YaD"/>
+                <constraint firstAttribute="bottom" secondItem="9vq-uc-wT6" secondAttribute="bottom" id="keI-of-ild"/>
+                <constraint firstItem="SSD-hz-Jid" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6.5" id="qpU-QE-ia5"/>
+                <constraint firstItem="9vq-uc-wT6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="sqm-az-xY9"/>
+                <constraint firstItem="tKs-97-Wd5" firstAttribute="width" secondItem="SSD-hz-Jid" secondAttribute="width" id="xgV-OH-Ve7"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomImgView" destination="War-YX-653" id="r52-om-u9u"/>
+                <outlet property="durationLabel" destination="nZ9-nW-53H" id="H6K-pL-d7X"/>
+                <outlet property="leftCollectionView" destination="SSD-hz-Jid" id="Kut-Kb-pR5"/>
+                <outlet property="leftCountLabel" destination="xFe-2P-BGC" id="M2E-AW-cJJ"/>
+                <outlet property="leftProgressView" destination="5RI-Sh-Tlx" id="jDS-Xp-syq"/>
+                <outlet property="progressBgView" destination="RMm-1K-6mz" id="UvX-0i-Z1f"/>
+                <outlet property="progressBgViewTopConstraint" destination="gdl-yt-Rv4" id="Hg7-ed-Dxd"/>
+                <outlet property="progressContainerView" destination="hdc-WV-pBs" id="BvN-F0-WYE"/>
+                <outlet property="rightCollectionView" destination="tKs-97-Wd5" id="0Mk-MD-yiV"/>
+                <outlet property="rightCountLabel" destination="fmy-qe-y57" id="R3O-UC-tJu"/>
+                <outlet property="rightProgressView" destination="Pbt-dr-7TS" id="PG9-jy-GAd"/>
+            </connections>
+            <point key="canvasLocation" x="131.15942028985509" y="81.696428571428569"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pk_duel_logo" width="68" height="21"/>
+        <image name="pk_progress_bule" width="365" height="15"/>
+        <image name="pk_progress_red" width="365" height="15"/>
+        <image name="pk_room_bg" width="365" height="90"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

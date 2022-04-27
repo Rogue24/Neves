@@ -211,9 +211,18 @@
 		718A56B127F1B9500071C724 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56B027F1B9500071C724 /* Buttons.swift */; };
 		718A56B427F1B9E70071C724 /* ImageViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56B327F1B9E70071C724 /* ImageViews.swift */; };
 		718A56B627F1BDAF0071C724 /* CosmicExplorationCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A56B527F1BDAF0071C724 /* CosmicExplorationCountView.swift */; };
+		719029402818E597000F6E29 /* RoomPKTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190293F2818E597000F6E29 /* RoomPKTestViewController.swift */; };
+		719029422818E69E000F6E29 /* PKProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719029412818E69E000F6E29 /* PKProgressView.swift */; };
+		719029442818E7B3000F6E29 /* PKProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719029432818E7B3000F6E29 /* PKProgressView.xib */; };
+		71902948281924F0000F6E29 /* PKProgressRankListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71902947281924F0000F6E29 /* PKProgressRankListView.swift */; };
+		7190294A281924F9000F6E29 /* PKProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71902949281924F9000F6E29 /* PKProgressViewModel.swift */; };
+		7190294C28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190294B28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift */; };
+		7190294E28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7190294D28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib */; };
+		7190295028193176000F6E29 /* PlayhousePKProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190294F28193176000F6E29 /* PlayhousePKProgressViewModel.swift */; };
 		7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */; };
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
+		719299DC28194F9D00CCE872 /* PKRankModelCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299DB28194F9D00CCE872 /* PKRankModelCompatible.swift */; };
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
@@ -550,9 +559,18 @@
 		718A56B027F1B9500071C724 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		718A56B327F1B9E70071C724 /* ImageViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViews.swift; sourceTree = "<group>"; };
 		718A56B527F1BDAF0071C724 /* CosmicExplorationCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationCountView.swift; sourceTree = "<group>"; };
+		7190293F2818E597000F6E29 /* RoomPKTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPKTestViewController.swift; sourceTree = "<group>"; };
+		719029412818E69E000F6E29 /* PKProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressView.swift; sourceTree = "<group>"; };
+		719029432818E7B3000F6E29 /* PKProgressView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKProgressView.xib; sourceTree = "<group>"; };
+		71902947281924F0000F6E29 /* PKProgressRankListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressRankListView.swift; sourceTree = "<group>"; };
+		71902949281924F9000F6E29 /* PKProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressViewModel.swift; sourceTree = "<group>"; };
+		7190294B28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressPlayhouseInfoView.swift; sourceTree = "<group>"; };
+		7190294D28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKProgressPlayhouseInfoView.xib; sourceTree = "<group>"; };
+		7190294F28193176000F6E29 /* PlayhousePKProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayhousePKProgressViewModel.swift; sourceTree = "<group>"; };
 		7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Matteo-Panama.mp3"; sourceTree = "<group>"; };
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
+		719299DB28194F9D00CCE872 /* PKRankModelCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKRankModelCompatible.swift; sourceTree = "<group>"; };
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
@@ -1350,6 +1368,35 @@
 			path = LottieImage;
 			sourceTree = "<group>";
 		};
+		718A0D6A28194B8D00CECD54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71902947281924F0000F6E29 /* PKProgressRankListView.swift */,
+				719029412818E69E000F6E29 /* PKProgressView.swift */,
+				719029432818E7B3000F6E29 /* PKProgressView.xib */,
+				7190294B28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift */,
+				7190294D28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		718A0D6B28194BA100CECD54 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71902949281924F9000F6E29 /* PKProgressViewModel.swift */,
+				7190294F28193176000F6E29 /* PlayhousePKProgressViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		718A0D6C28194BBB00CECD54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				719299DB28194F9D00CCE872 /* PKRankModelCompatible.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		718A569327F192FC0071C724 /* CosmicExploration */ = {
 			isa = PBXGroup;
 			children = (
@@ -1391,6 +1438,17 @@
 				718A56B327F1B9E70071C724 /* ImageViews.swift */,
 			);
 			path = ImageViews;
+			sourceTree = "<group>";
+		};
+		7190293E2818E485000F6E29 /* RoomPK */ = {
+			isa = PBXGroup;
+			children = (
+				7190293F2818E597000F6E29 /* RoomPKTestViewController.swift */,
+				718A0D6B28194BA100CECD54 /* ViewModel */,
+				718A0D6A28194B8D00CECD54 /* View */,
+				718A0D6C28194BBB00CECD54 /* Model */,
+			);
+			path = RoomPK;
 			sourceTree = "<group>";
 		};
 		7190E4E227102EB600E8C511 /* Music */ = {
@@ -1453,6 +1511,7 @@
 				71F249AE2731517A00FAAD93 /* DragonSlayer */,
 				71070E1C274CBADE004C3257 /* RoomGuideAttention */,
 				718A569327F192FC0071C724 /* CosmicExploration */,
+				7190293E2818E485000F6E29 /* RoomPK */,
 			);
 			path = MyJob;
 			sourceTree = "<group>";
@@ -1694,6 +1753,8 @@
 			files = (
 				715C901A27F6F88800B88B85 /* CosmicExplorationJackpotCell.xib in Resources */,
 				71AB638927F5DE29000CCF58 /* CosmicExplorationPrizeCell.xib in Resources */,
+				719029442818E7B3000F6E29 /* PKProgressView.xib in Resources */,
+				7190294E28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib in Resources */,
 				71F249F32731517A00FAAD93 /* bgm.wav in Resources */,
 				71F249D52731517A00FAAD93 /* FireworkCell.xib in Resources */,
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
@@ -1815,6 +1876,7 @@
 				71797E6F27CF704800ED2EE3 /* AnimScrollViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
+				7190294C28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift in Sources */,
 				715C901927F6F88800B88B85 /* CosmicExplorationJackpotCell.swift in Sources */,
 				715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
@@ -1823,6 +1885,7 @@
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
 				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
+				719299DC28194F9D00CCE872 /* PKRankModelCompatible.swift in Sources */,
 				7151894F27EC168B00342645 /* MoonMaskViewController.swift in Sources */,
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
@@ -1865,7 +1928,9 @@
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
 				715C901E27F7014600B88B85 /* CosmicExplorationJournalView.swift in Sources */,
 				718018C627228A830056E699 /* Syncs.swift in Sources */,
+				719029422818E69E000F6E29 /* PKProgressView.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
+				7190294A281924F9000F6E29 /* PKProgressViewModel.swift in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
@@ -1899,6 +1964,7 @@
 				718A56AE27F1B8B80071C724 /* CosmicExplorationBottomView.swift in Sources */,
 				71F24A052732272700FAAD93 /* DragonSlayerViewController.swift in Sources */,
 				717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */,
+				719029402818E597000F6E29 /* RoomPKTestViewController.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
 				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
 				718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */,
@@ -1939,6 +2005,7 @@
 				1A35451E254E77600032B677 /* NSURL+JPExtension.m in Sources */,
 				1A3544F8254E77600032B677 /* UIScreen.Extension.swift in Sources */,
 				71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */,
+				71902948281924F0000F6E29 /* PKProgressRankListView.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
 				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
 				71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */,
@@ -1955,6 +2022,7 @@
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
 				7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
+				7190295028193176000F6E29 /* PlayhousePKProgressViewModel.swift in Sources */,
 				71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,

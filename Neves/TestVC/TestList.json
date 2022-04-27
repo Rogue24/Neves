@@ -12,6 +12,10 @@
         "header" : "MyJob",
         "vcList" : [
             {
+                "vcName": "RoomPKTestViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "FileEffectViewController",
                 "vcCreateWay" : 1
             },
