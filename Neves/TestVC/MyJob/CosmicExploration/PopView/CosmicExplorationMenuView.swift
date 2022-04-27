@@ -1,9 +1,8 @@
 //
 //  CosmicExplorationMenuView.swift
-//  app
+//  Neves
 //
-//  Created by aa on 2022/1/15.
-//  Copyright © 2022 Quwan. All rights reserved.
+//  Created by aa on 2022/4/1.
 //
 
 import UIKit
