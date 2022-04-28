@@ -96,18 +96,20 @@ extension PKProgressViewModel {
     }
     
     func startPK() {
-        contentView.showOrHideBottomImgView(false)
         contentView.playStartAnim()
+        contentView.stopPeakingAnim()
+        contentView.showOrHideBottomImgView(false)
     }
     
     func startPeakPK() {
-        contentView.showOrHideBottomImgView(true)
         contentView.playStartPeakAnim()
+        contentView.playPeakingAnim()
+        contentView.showOrHideBottomImgView(true)
     }
     
     func endPk() {
-        contentView.showOrHideBottomImgView(false)
         contentView.stopPeakingAnim()
+        contentView.showOrHideBottomImgView(false)
     }
 }
 

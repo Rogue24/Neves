@@ -234,6 +234,8 @@
 		719299F1281A620E00CCE872 /* PKChallengePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F0281A620E00CCE872 /* PKChallengePopView.xib */; };
 		719299F3281A6CC900CCE872 /* PKChallengeFoldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */; };
 		719299F5281A6E1700CCE872 /* PKChallengeInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */; };
+		719299F7281A8BC900CCE872 /* PKProgressOutSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299F6281A8BC900CCE872 /* PKProgressOutSideView.swift */; };
+		719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */; };
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
@@ -593,6 +595,8 @@
 		719299F0281A620E00CCE872 /* PKChallengePopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengePopView.xib; sourceTree = "<group>"; };
 		719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeFoldView.xib; sourceTree = "<group>"; };
 		719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeInviteView.xib; sourceTree = "<group>"; };
+		719299F6281A8BC900CCE872 /* PKProgressOutSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressOutSideView.swift; sourceTree = "<group>"; };
+		719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKProgressOutSideView.xib; sourceTree = "<group>"; };
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
@@ -1399,6 +1403,8 @@
 				719029432818E7B3000F6E29 /* PKProgressView.xib */,
 				7190294B28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift */,
 				7190294D28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib */,
+				719299F6281A8BC900CCE872 /* PKProgressOutSideView.swift */,
+				719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1843,6 +1849,7 @@
 				718A569E27F19F5E0071C724 /* CosmicExplorationPlayView.xib in Resources */,
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
 				71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */,
+				719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */,
 				71F249F52731517A00FAAD93 /* lrc2.txt in Resources */,
 				719299F3281A6CC900CCE872 /* PKChallengeFoldView.xib in Resources */,
 				71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */,
@@ -1958,6 +1965,7 @@
 				1A59310327B8E5EF00DC60FC /* PlaygroundViewController.swift in Sources */,
 				71F249E52731517A00FAAD93 /* JPMagicGiftInfo.swift in Sources */,
 				716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */,
+				719299F7281A8BC900CCE872 /* PKProgressOutSideView.swift in Sources */,
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
 				71AB638327F5C287000CCF58 /* CosmicExplorationPrizeView.swift in Sources */,
 				7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */,

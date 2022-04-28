@@ -5,10 +5,14 @@
 //  Created by aa on 2022/4/27.
 //
 
+import UIKit
+
 class RoomPKTestViewController: TestBaseViewController {
     
     let fmPkProgressVM = PKProgressViewModel<PKRankModel>()
     let phPkProgressVM = PlayhousePKProgressViewModel<PKRankModel>()
+    let outSideView = PKProgressOutSideView.loadFromNib()
+    var isShot = false
     
     weak var foldView: PKChallengeFoldView?
     weak var inviteView: PKChallengeInviteView?
@@ -16,28 +20,31 @@ class RoomPKTestViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fmPkProgressVM.addProgressView(on: self.view, top: 150)
-        phPkProgressVM.addProgressView(on: self.view, top: 300)
+        fmPkProgressVM.addProgressView(on: view, top: 120)
+        phPkProgressVM.addProgressView(on: view, top: 230)
+        
+        outSideView.put(on: view, top: 340)
+        outSideView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(updateOutSideViewLayout)))
         
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 1
         slider.value = 0.5
         slider.addTarget(self, action: #selector(sliderValueDidChanged(_:)), for: .valueChanged)
-        slider.frame = [20.px, PortraitScreenHeight - 260, PortraitScreenWidth - 40.px, slider.height]
+        slider.frame = [20.px, PortraitScreenHeight - 220, PortraitScreenWidth - 40.px, slider.height]
         view.addSubview(slider)
         
-        makeBtn("胜利", [20.px, 420.px], #selector(shengli))
-        makeBtn("失败", [100.px, 420.px], #selector(shibai))
-        makeBtn("打平", [180.px, 420.px], #selector(daping))
+        makeBtn("胜利", [20.px, 450.px], #selector(shengli))
+        makeBtn("失败", [100.px, 450.px], #selector(shibai))
+        makeBtn("打平", [180.px, 450.px], #selector(daping))
         
-        makeBtn("开始PK", [20.px, 460.px], #selector(kaishipk))
-        makeBtn("开始巅峰", [100.px, 460.px], #selector(kaishidianfeng))
-        makeBtn("结束PK", [180.px, 460.px], #selector(jiesupk))
+        makeBtn("开始PK", [20.px, 500.px], #selector(kaishipk))
+        makeBtn("开始巅峰", [100.px, 500.px], #selector(kaishidianfeng))
+        makeBtn("结束PK", [180.px, 500.px], #selector(jiesupk))
         
-        makeBtn("收起邀请", [20.px, 500.px], #selector(shouqiyaoqing))
-        makeBtn("弹起邀请", [100.px, 500.px], #selector(tanqiyaoqing))
-        makeBtn("收到邀请", [180.px, 500.px], #selector(shoudaoyaoqing))
+        makeBtn("收起邀请", [20.px, 550.px], #selector(shouqiyaoqing))
+        makeBtn("弹起邀请", [100.px, 550.px], #selector(tanqiyaoqing))
+        makeBtn("收到邀请", [180.px, 550.px], #selector(shoudaoyaoqing))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +73,9 @@ class RoomPKTestViewController: TestBaseViewController {
             self.phPkProgressVM.updateProgress(leftValue: Int.random(in: 0...100),
                                                rightValue: Int.random(in: 0...100),
                                                animated: true)
+            
+            self.updateOutSideViewProgress(leftValue: Int.random(in: 0...100),
+                                           rightValue: Int.random(in: 0...100))
         }
     }
     
@@ -86,13 +96,28 @@ class RoomPKTestViewController: TestBaseViewController {
         }()
         view.addSubview(btn)
     }
+    
+    @objc func updateOutSideViewLayout() {
+        UIView.animate(withDuration: 0.25) {
+            self.outSideView.updateLauout(isShot: !self.outSideView.isShot)
+        }
+    }
+    
+    func updateOutSideViewProgress(leftValue: Int, rightValue: Int) {
+        let totalValue = leftValue + rightValue
+        let progress = totalValue > 0 ? (CGFloat(leftValue) / CGFloat(totalValue)) : 0.5
+        UIView.animate(withDuration: 0.25) {
+            self.outSideView.update(progress: progress)
+        }
+    }
 }
 
 extension RoomPKTestViewController {
     @objc func sliderValueDidChanged(_ slider: UISlider) {
-//        let value = CGFloat(slider.value)
-//        fmPkProgressVM?.contentView.updateProgress(value)
-//        phPkProgressVM?.contentView.updateProgress(value)
+        let value = CGFloat(slider.value)
+        fmPkProgressVM.contentView.update(leftCount: Int(100 * value), rightCount: Int(100 * (1 - value)), progress: value)
+        phPkProgressVM.contentView.update(leftCount: Int(100 * value), rightCount: Int(100 * (1 - value)), progress: value)
+        outSideView.update(progress: value)
     }
 }
 

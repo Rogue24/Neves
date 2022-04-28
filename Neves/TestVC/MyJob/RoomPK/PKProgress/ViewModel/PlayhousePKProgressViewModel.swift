@@ -11,8 +11,9 @@ class PlayhousePKProgressViewModel<T: PKRankModelCompatible>: PKProgressViewMode
     
     override init() {
         super.init()
-        contentView.posAnimView.frame.origin.y = 32
+        
         contentView.progressBgViewTopConstraint.constant = 41
+        
         contentView.addSubview(infoView)
         infoView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
