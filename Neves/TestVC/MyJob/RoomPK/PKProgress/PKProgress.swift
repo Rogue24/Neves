@@ -6,8 +6,7 @@
 //
 
 enum PKProgress {
-    case victory
-    case lose
-    case draw
-    
+    case prepare
+    case pking
+    case end
 }
