@@ -32,5 +32,10 @@ class PKProgressPlayhouseInfoView: UIView {
         rightIcon.layer.masksToBounds = true
         
         bottomTitleLabel.isHidden = true
+        
+        leftIcon.image = UIImage(named: "jp_icon")
+        leftTitleLabel.text = "叫声爷放你一马"
+        rightIcon.image = UIImage(named: "jp_icon")
+        rightTitleLabel.text = "叫你🐴卖批"
     }
 }

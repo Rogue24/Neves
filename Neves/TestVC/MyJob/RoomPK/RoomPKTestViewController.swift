@@ -148,20 +148,17 @@ class RoomPKTestViewController: TestBaseViewController {
     }
     
     @objc func btn21DidClick() {
-        fmPkProgressVM.contentView.playStartAnim()
-        phPkProgressVM.contentView.playStartAnim()
+        fmPkProgressVM.startPK()
+        phPkProgressVM.startPK()
     }
     
     @objc func btn22DidClick() {
-        fmPkProgressVM.contentView.playStartPeakAnim()
-        fmPkProgressVM.contentView.playPeakingAnim()
-        
-        phPkProgressVM.contentView.playStartPeakAnim()
-        phPkProgressVM.contentView.playPeakingAnim()
+        fmPkProgressVM.startPeakPK()
+        phPkProgressVM.startPeakPK()
     }
     
     @objc func btn23DidClick() {
-        fmPkProgressVM.contentView.stopAnim()
-        phPkProgressVM.contentView.stopAnim()
+        fmPkProgressVM.endPk()
+        phPkProgressVM.endPk()
     }
 }

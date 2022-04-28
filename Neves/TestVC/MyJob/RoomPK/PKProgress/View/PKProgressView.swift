@@ -35,7 +35,7 @@ class PKProgressView: UIView {
         
         rightCollectionView.setupRightAligned()
         
-        bottomImgView.isHidden = true
+        bottomImgView.alpha = 0
         
         leftProgressMaskView.backgroundColor = .black
         leftProgressView.mask = leftProgressMaskView
@@ -55,6 +55,10 @@ class PKProgressView: UIView {
         update(leftCount: 0, rightCount: 0, progress: 0.5)
     }
     
+    deinit {
+        JPrint("PKProgressView 寿寝正终")
+    }
+    
     func update(leftCount: Int, rightCount: Int, progress: CGFloat) {
         leftCountLabel.text = "\(leftCount)"
         rightCountLabel.text = "\(rightCount)"
@@ -64,61 +68,54 @@ class PKProgressView: UIView {
         leftProgressMaskView.frame.size.width = 25 + progressValue
     }
     
-    func playStartAnim() {
-        guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_start_lottie"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
-        else { return }
-        
-        let startAnimView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
-        startAnimView.backgroundBehavior = .pauseAndRestore
-        startAnimView.contentMode = .scaleAspectFit
-        startAnimView.frame = [0, HalfDiffValue(frame.height, 300), PortraitScreenWidth, 300]
-        startAnimView.loopMode = .playOnce
-        startAnimView.isUserInteractionEnabled = false
-        addSubview(startAnimView)
-        startAnimView.play { [weak startAnimView] _ in
-            startAnimView?.removeFromSuperview()
+    func showOrHideBottomImgView(_ isShow: Bool) {
+        UIView.animate(withDuration: 0.12) {
+            self.bottomImgView.alpha = isShow ? 1 : 0
         }
+    }
+    
+    func playStartAnim() {
+        playAnim(lottieName: "pk_start_lottie", isOnec: true)
     }
     
     func playStartPeakAnim() {
-        guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_duel_start_lottie"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
-        else { return }
-        
-        let startPeakAnimView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
-        startPeakAnimView.backgroundBehavior = .pauseAndRestore
-        startPeakAnimView.contentMode = .scaleAspectFit
-        startPeakAnimView.frame = [0, HalfDiffValue(frame.height, 300), PortraitScreenWidth, 300]
-        startPeakAnimView.loopMode = .playOnce
-        startPeakAnimView.isUserInteractionEnabled = false
-        addSubview(startPeakAnimView)
-        startPeakAnimView.play { [weak startPeakAnimView] _ in
-            startPeakAnimView?.removeFromSuperview()
-        }
+        playAnim(lottieName: "pk_duel_start_lottie", isOnec: true)
     }
     
     func playPeakingAnim() {
-        guard peakingAnimView == nil,
-              let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_duel_lightning_lottie"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
-        else { return }
-        
-        let peakingAnimView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
-        peakingAnimView.backgroundBehavior = .pauseAndRestore
-        peakingAnimView.contentMode = .scaleAspectFit
-        peakingAnimView.frame = [0, HalfDiffValue(frame.height, 300), PortraitScreenWidth, 300]
-        peakingAnimView.loopMode = .loop
-        peakingAnimView.isUserInteractionEnabled = false
-        addSubview(peakingAnimView)
-        peakingAnimView.play()
-        self.peakingAnimView = peakingAnimView
+        guard peakingAnimView == nil else { return }
+        peakingAnimView = playAnim(lottieName: "pk_duel_lightning_lottie", isOnec: false)
     }
     
-    func stopAnim() {
+    func stopPeakingAnim() {
         peakingAnimView?.stop()
         peakingAnimView?.removeFromSuperview()
         peakingAnimView = nil
+    }
+    
+    @discardableResult
+    private func playAnim(lottieName: String, isOnec: Bool) -> AnimationView? {
+        guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
+              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+        else { return nil }
+        
+        let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+        animView.backgroundBehavior = .pauseAndRestore
+        animView.contentMode = .scaleAspectFit
+        animView.frame = [0, HalfDiffValue(frame.height, 300), PortraitScreenWidth, 300]
+        animView.loopMode = isOnec ? .playOnce : .loop
+        animView.isUserInteractionEnabled = false
+        addSubview(animView)
+        
+        if isOnec {
+            animView.play { [weak animView] _ in
+                animView?.removeFromSuperview()
+            }
+        } else {
+            animView.play()
+        }
+        
+        return animView
     }
 }
 

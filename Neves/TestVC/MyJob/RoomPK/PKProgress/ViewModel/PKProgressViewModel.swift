@@ -20,6 +20,10 @@ class PKProgressViewModel<T: PKRankModelCompatible>: NSObject, UICollectionViewD
         setupCollectionView(contentView.rightCollectionView)
     }
     
+    deinit {
+        JPrint("PKProgressViewModel 寿寝正终")
+    }
+    
     // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let models = getRankModels(for: collectionView)
@@ -89,6 +93,21 @@ extension PKProgressViewModel {
                                     rightCount: rightValue,
                                     progress: progress)
         }
+    }
+    
+    func startPK() {
+        contentView.showOrHideBottomImgView(false)
+        contentView.playStartAnim()
+    }
+    
+    func startPeakPK() {
+        contentView.showOrHideBottomImgView(true)
+        contentView.playStartPeakAnim()
+    }
+    
+    func endPk() {
+        contentView.showOrHideBottomImgView(false)
+        contentView.stopPeakingAnim()
     }
 }
 

@@ -223,6 +223,10 @@
 		719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */; };
 		719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719105E026E0B99000B2116F /* PlanetTitleView.swift */; };
 		719299DC28194F9D00CCE872 /* PKRankModelCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299DB28194F9D00CCE872 /* PKRankModelCompatible.swift */; };
+		719299E0281A332400CCE872 /* PKResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299DF281A332400CCE872 /* PKResult.swift */; };
+		719299E2281A332C00CCE872 /* PKResultPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E1281A332C00CCE872 /* PKResultPopView.swift */; };
+		719299E4281A351100CCE872 /* PKProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E3281A351100CCE872 /* PKProgress.swift */; };
+		719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E5281A3FAA00CCE872 /* PKProgressRankCell.swift */; };
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
@@ -571,6 +575,10 @@
 		719105DE26E0A94D00B2116F /* PeopleTurntableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTurntableView.swift; sourceTree = "<group>"; };
 		719105E026E0B99000B2116F /* PlanetTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetTitleView.swift; sourceTree = "<group>"; };
 		719299DB28194F9D00CCE872 /* PKRankModelCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKRankModelCompatible.swift; sourceTree = "<group>"; };
+		719299DF281A332400CCE872 /* PKResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKResult.swift; sourceTree = "<group>"; };
+		719299E1281A332C00CCE872 /* PKResultPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKResultPopView.swift; sourceTree = "<group>"; };
+		719299E3281A351100CCE872 /* PKProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgress.swift; sourceTree = "<group>"; };
+		719299E5281A3FAA00CCE872 /* PKProgressRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressRankCell.swift; sourceTree = "<group>"; };
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
@@ -1372,6 +1380,7 @@
 			isa = PBXGroup;
 			children = (
 				71902947281924F0000F6E29 /* PKProgressRankListView.swift */,
+				719299E5281A3FAA00CCE872 /* PKProgressRankCell.swift */,
 				719029412818E69E000F6E29 /* PKProgressView.swift */,
 				719029432818E7B3000F6E29 /* PKProgressView.xib */,
 				7190294B28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift */,
@@ -1444,9 +1453,8 @@
 			isa = PBXGroup;
 			children = (
 				7190293F2818E597000F6E29 /* RoomPKTestViewController.swift */,
-				718A0D6B28194BA100CECD54 /* ViewModel */,
-				718A0D6A28194B8D00CECD54 /* View */,
-				718A0D6C28194BBB00CECD54 /* Model */,
+				719299DE281A331500CCE872 /* PKResult */,
+				719299DD281A32EA00CCE872 /* PKProgress */,
 			);
 			path = RoomPK;
 			sourceTree = "<group>";
@@ -1458,6 +1466,26 @@
 				7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */,
 			);
 			path = Music;
+			sourceTree = "<group>";
+		};
+		719299DD281A32EA00CCE872 /* PKProgress */ = {
+			isa = PBXGroup;
+			children = (
+				719299E3281A351100CCE872 /* PKProgress.swift */,
+				718A0D6B28194BA100CECD54 /* ViewModel */,
+				718A0D6A28194B8D00CECD54 /* View */,
+				718A0D6C28194BBB00CECD54 /* Model */,
+			);
+			path = PKProgress;
+			sourceTree = "<group>";
+		};
+		719299DE281A331500CCE872 /* PKResult */ = {
+			isa = PBXGroup;
+			children = (
+				719299DF281A332400CCE872 /* PKResult.swift */,
+				719299E1281A332C00CCE872 /* PKResultPopView.swift */,
+			);
+			path = PKResult;
 			sourceTree = "<group>";
 		};
 		71AB637B27F5C287000CCF58 /* Turntable */ = {
@@ -1867,6 +1895,7 @@
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
+				719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
 				717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */,
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
@@ -1973,6 +2002,7 @@
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
+				719299E4281A351100CCE872 /* PKProgress.swift in Sources */,
 				1A354513254E77600032B677 /* JPSubCollectionViewController.m in Sources */,
 				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
 				71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */,
@@ -2007,6 +2037,7 @@
 				71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */,
 				71902948281924F0000F6E29 /* PKProgressRankListView.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
+				719299E0281A332400CCE872 /* PKResult.swift in Sources */,
 				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
 				71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */,
 				716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */,
@@ -2042,6 +2073,7 @@
 				7151895527EC574000342645 /* LoremPicsum.swift in Sources */,
 				71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */,
 				1A5930F627B8DD6900DC60FC /* TurntableView.Calculate.swift in Sources */,
+				719299E2281A332C00CCE872 /* PKResultPopView.swift in Sources */,
 				71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
