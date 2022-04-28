@@ -23,75 +23,20 @@ class RoomPKTestViewController: TestBaseViewController {
         slider.maximumValue = 1
         slider.value = 0.5
         slider.addTarget(self, action: #selector(sliderValueDidChanged(_:)), for: .valueChanged)
-        slider.frame = [20.px, PortraitScreenHeight - 200, PortraitScreenWidth - 40.px, slider.height]
+        slider.frame = [20.px, PortraitScreenHeight - 260, PortraitScreenWidth - 40.px, slider.height]
         view.addSubview(slider)
         
-        let btn1: UIButton = {
-            let btn = UIButton(type: .system)
-            btn.setTitle("胜利", for: .normal)
-            btn.setTitleColor(.randomColor, for: .normal)
-            btn.backgroundColor = .randomColor
-            btn.frame = [20.px, 420.px, 60.px, 30.px]
-            btn.addTarget(self, action: #selector(btn1DidClick), for: .touchUpInside)
-            return btn
-        }()
-        view.addSubview(btn1)
+        makeBtn("胜利", [20.px, 420.px], #selector(shengli))
+        makeBtn("失败", [100.px, 420.px], #selector(shibai))
+        makeBtn("打平", [180.px, 420.px], #selector(daping))
         
-        let btn2: UIButton = {
-            let btn = UIButton(type: .system)
-            btn.setTitle("失败", for: .normal)
-            btn.setTitleColor(.randomColor, for: .normal)
-            btn.backgroundColor = .randomColor
-            btn.frame = [90.px, 420.px, 60.px, 30.px]
-            btn.addTarget(self, action: #selector(btn2DidClick), for: .touchUpInside)
-            return btn
-        }()
-        view.addSubview(btn2)
+        makeBtn("开始PK", [20.px, 460.px], #selector(kaishipk))
+        makeBtn("开始巅峰", [100.px, 460.px], #selector(kaishidianfeng))
+        makeBtn("结束PK", [180.px, 460.px], #selector(jiesupk))
         
-        let btn3: UIButton = {
-            let btn = UIButton(type: .system)
-            btn.setTitle("打平", for: .normal)
-            btn.setTitleColor(.randomColor, for: .normal)
-            btn.backgroundColor = .randomColor
-            btn.frame = [160.px, 420.px, 60.px, 30.px]
-            btn.addTarget(self, action: #selector(btn3DidClick), for: .touchUpInside)
-            return btn
-        }()
-        view.addSubview(btn3)
-        
-        
-        let btn21: UIButton = {
-            let btn = UIButton(type: .system)
-            btn.setTitle("开始PK", for: .normal)
-            btn.setTitleColor(.randomColor, for: .normal)
-            btn.backgroundColor = .randomColor
-            btn.frame = [20.px, 460.px, 60.px, 30.px]
-            btn.addTarget(self, action: #selector(btn21DidClick), for: .touchUpInside)
-            return btn
-        }()
-        view.addSubview(btn21)
-        
-        let btn22: UIButton = {
-            let btn = UIButton(type: .system)
-            btn.setTitle("开始巅峰", for: .normal)
-            btn.setTitleColor(.randomColor, for: .normal)
-            btn.backgroundColor = .randomColor
-            btn.frame = [90.px, 460.px, 60.px, 30.px]
-            btn.addTarget(self, action: #selector(btn22DidClick), for: .touchUpInside)
-            return btn
-        }()
-        view.addSubview(btn22)
-        
-        let btn23: UIButton = {
-            let btn = UIButton(type: .system)
-            btn.setTitle("结束PK", for: .normal)
-            btn.setTitleColor(.randomColor, for: .normal)
-            btn.backgroundColor = .randomColor
-            btn.frame = [160.px, 460.px, 60.px, 30.px]
-            btn.addTarget(self, action: #selector(btn23DidClick), for: .touchUpInside)
-            return btn
-        }()
-        view.addSubview(btn23)
+        makeBtn("收起邀请", [20.px, 500.px], #selector(shouqiyaoqing))
+        makeBtn("弹起邀请", [100.px, 500.px], #selector(tanqiyaoqing))
+        makeBtn("收到邀请", [180.px, 500.px], #selector(shoudaoyaoqing))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -128,37 +73,69 @@ class RoomPKTestViewController: TestBaseViewController {
         removeFunAction()
     }
     
+    func makeBtn(_ title: String, _ origin: CGPoint, _ action: Selector) {
+        let btn: UIButton = {
+            let btn = UIButton(type: .system)
+            btn.setTitle(title, for: .normal)
+            btn.setTitleColor(.yellow, for: .normal)
+            btn.backgroundColor = .purple
+            btn.frame = CGRect(origin: origin, size: [70.px, 30.px])
+            btn.addTarget(self, action: action, for: .touchUpInside)
+            return btn
+        }()
+        view.addSubview(btn)
+    }
+}
+
+extension RoomPKTestViewController {
     @objc func sliderValueDidChanged(_ slider: UISlider) {
 //        let value = CGFloat(slider.value)
-//
 //        fmPkProgressVM?.contentView.updateProgress(value)
 //        phPkProgressVM?.contentView.updateProgress(value)
     }
-    
-    @objc func btn1DidClick() {
+}
+
+extension RoomPKTestViewController {
+    @objc func shengli() {
         
     }
     
-    @objc func btn2DidClick() {
+    @objc func shibai() {
         
     }
     
-    @objc func btn3DidClick() {
+    @objc func daping() {
         
     }
-    
-    @objc func btn21DidClick() {
+}
+
+extension RoomPKTestViewController {
+    @objc func kaishipk() {
         fmPkProgressVM.startPK()
         phPkProgressVM.startPK()
     }
     
-    @objc func btn22DidClick() {
+    @objc func kaishidianfeng() {
         fmPkProgressVM.startPeakPK()
         phPkProgressVM.startPeakPK()
     }
     
-    @objc func btn23DidClick() {
+    @objc func jiesupk() {
         fmPkProgressVM.endPk()
         phPkProgressVM.endPk()
+    }
+}
+
+extension RoomPKTestViewController {
+    @objc func shouqiyaoqing() {
+        
+    }
+    
+    @objc func tanqiyaoqing() {
+        
+    }
+    
+    @objc func shoudaoyaoqing() {
+        
     }
 }

@@ -227,6 +227,10 @@
 		719299E2281A332C00CCE872 /* PKResultPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E1281A332C00CCE872 /* PKResultPopView.swift */; };
 		719299E4281A351100CCE872 /* PKProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E3281A351100CCE872 /* PKProgress.swift */; };
 		719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E5281A3FAA00CCE872 /* PKProgressRankCell.swift */; };
+		719299E9281A45D200CCE872 /* PKChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E8281A45D200CCE872 /* PKChallenge.swift */; };
+		719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EA281A45DB00CCE872 /* PKChallengePopView.swift */; };
+		719299ED281A461800CCE872 /* PKChallengeInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EC281A461800CCE872 /* PKChallengeInviteView.swift */; };
+		719299EF281A466500CCE872 /* PKChallengeFoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EE281A466500CCE872 /* PKChallengeFoldView.swift */; };
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
@@ -579,6 +583,10 @@
 		719299E1281A332C00CCE872 /* PKResultPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKResultPopView.swift; sourceTree = "<group>"; };
 		719299E3281A351100CCE872 /* PKProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgress.swift; sourceTree = "<group>"; };
 		719299E5281A3FAA00CCE872 /* PKProgressRankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressRankCell.swift; sourceTree = "<group>"; };
+		719299E8281A45D200CCE872 /* PKChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallenge.swift; sourceTree = "<group>"; };
+		719299EA281A45DB00CCE872 /* PKChallengePopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengePopView.swift; sourceTree = "<group>"; };
+		719299EC281A461800CCE872 /* PKChallengeInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeInviteView.swift; sourceTree = "<group>"; };
+		719299EE281A466500CCE872 /* PKChallengeFoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeFoldView.swift; sourceTree = "<group>"; };
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
@@ -1453,8 +1461,9 @@
 			isa = PBXGroup;
 			children = (
 				7190293F2818E597000F6E29 /* RoomPKTestViewController.swift */,
-				719299DE281A331500CCE872 /* PKResult */,
+				719299E7281A45A200CCE872 /* PKChallenge */,
 				719299DD281A32EA00CCE872 /* PKProgress */,
+				719299DE281A331500CCE872 /* PKResult */,
 			);
 			path = RoomPK;
 			sourceTree = "<group>";
@@ -1486,6 +1495,17 @@
 				719299E1281A332C00CCE872 /* PKResultPopView.swift */,
 			);
 			path = PKResult;
+			sourceTree = "<group>";
+		};
+		719299E7281A45A200CCE872 /* PKChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				719299E8281A45D200CCE872 /* PKChallenge.swift */,
+				719299EA281A45DB00CCE872 /* PKChallengePopView.swift */,
+				719299EE281A466500CCE872 /* PKChallengeFoldView.swift */,
+				719299EC281A461800CCE872 /* PKChallengeInviteView.swift */,
+			);
+			path = PKChallenge;
 			sourceTree = "<group>";
 		};
 		71AB637B27F5C287000CCF58 /* Turntable */ = {
@@ -1968,6 +1988,7 @@
 				718A569A27F195A00071C724 /* CosmicExplorationTestViewController.swift in Sources */,
 				71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */,
 				715C900C27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift in Sources */,
+				719299ED281A461800CCE872 /* PKChallengeInviteView.swift in Sources */,
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
@@ -2023,6 +2044,7 @@
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
+				719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
@@ -2054,6 +2076,8 @@
 				7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
 				7190295028193176000F6E29 /* PlayhousePKProgressViewModel.swift in Sources */,
+				719299E9281A45D200CCE872 /* PKChallenge.swift in Sources */,
+				719299EF281A466500CCE872 /* PKChallengeFoldView.swift in Sources */,
 				71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
