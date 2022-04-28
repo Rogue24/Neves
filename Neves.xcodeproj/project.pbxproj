@@ -231,6 +231,9 @@
 		719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EA281A45DB00CCE872 /* PKChallengePopView.swift */; };
 		719299ED281A461800CCE872 /* PKChallengeInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EC281A461800CCE872 /* PKChallengeInviteView.swift */; };
 		719299EF281A466500CCE872 /* PKChallengeFoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EE281A466500CCE872 /* PKChallengeFoldView.swift */; };
+		719299F1281A620E00CCE872 /* PKChallengePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F0281A620E00CCE872 /* PKChallengePopView.xib */; };
+		719299F3281A6CC900CCE872 /* PKChallengeFoldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */; };
+		719299F5281A6E1700CCE872 /* PKChallengeInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */; };
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
@@ -587,6 +590,9 @@
 		719299EA281A45DB00CCE872 /* PKChallengePopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengePopView.swift; sourceTree = "<group>"; };
 		719299EC281A461800CCE872 /* PKChallengeInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeInviteView.swift; sourceTree = "<group>"; };
 		719299EE281A466500CCE872 /* PKChallengeFoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeFoldView.swift; sourceTree = "<group>"; };
+		719299F0281A620E00CCE872 /* PKChallengePopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengePopView.xib; sourceTree = "<group>"; };
+		719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeFoldView.xib; sourceTree = "<group>"; };
+		719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeInviteView.xib; sourceTree = "<group>"; };
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
@@ -1502,8 +1508,11 @@
 			children = (
 				719299E8281A45D200CCE872 /* PKChallenge.swift */,
 				719299EA281A45DB00CCE872 /* PKChallengePopView.swift */,
+				719299F0281A620E00CCE872 /* PKChallengePopView.xib */,
 				719299EE281A466500CCE872 /* PKChallengeFoldView.swift */,
+				719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */,
 				719299EC281A461800CCE872 /* PKChallengeInviteView.swift */,
+				719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */,
 			);
 			path = PKChallenge;
 			sourceTree = "<group>";
@@ -1814,8 +1823,10 @@
 				717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */,
 				713998072705B64D002BC263 /* Girl2.jpg in Resources */,
 				71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */,
+				719299F1281A620E00CCE872 /* PKChallengePopView.xib in Resources */,
 				713998062705B64D002BC263 /* Girl5.jpg in Resources */,
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
+				719299F5281A6E1700CCE872 /* PKChallengeInviteView.xib in Resources */,
 				715C901C27F7002200B88B85 /* CosmicExplorationJournalView.xib in Resources */,
 				1A35452F254E77600032B677 /* TestList.json in Resources */,
 				715C901027F6F44000B88B85 /* CosmicExplorationRuleView.xib in Resources */,
@@ -1833,6 +1844,7 @@
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
 				71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */,
 				71F249F52731517A00FAAD93 /* lrc2.txt in Resources */,
+				719299F3281A6CC900CCE872 /* PKChallengeFoldView.xib in Resources */,
 				71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */,
 				71F249F12731517A00FAAD93 /* noAccLrc1.txt in Resources */,
 				7110743D271ECA4800178969 /* voices.m4a in Resources */,

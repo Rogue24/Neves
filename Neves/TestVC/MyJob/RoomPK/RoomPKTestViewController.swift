@@ -10,7 +10,8 @@ class RoomPKTestViewController: TestBaseViewController {
     let fmPkProgressVM = PKProgressViewModel<PKRankModel>()
     let phPkProgressVM = PlayhousePKProgressViewModel<PKRankModel>()
     
-    
+    weak var foldView: PKChallengeFoldView?
+    weak var inviteView: PKChallengeInviteView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,14 +129,22 @@ extension RoomPKTestViewController {
 
 extension RoomPKTestViewController {
     @objc func shouqiyaoqing() {
-        
+        if let foldView = self.foldView {
+            foldView.hide()
+        } else {
+            foldView = PKChallengeFoldView.show(on: view)
+        }
     }
     
     @objc func tanqiyaoqing() {
-        
+        PKChallengePopView.show(on: view)
     }
     
     @objc func shoudaoyaoqing() {
-        
+        if let inviteView = self.inviteView {
+            inviteView.hide()
+        } else {
+            inviteView = PKChallengeInviteView.show(on: view)
+        }
     }
 }
