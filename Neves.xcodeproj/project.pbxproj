@@ -172,6 +172,8 @@
 		715C901A27F6F88800B88B85 /* CosmicExplorationJackpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */; };
 		715C901C27F7002200B88B85 /* CosmicExplorationJournalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */; };
 		715C901E27F7014600B88B85 /* CosmicExplorationJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */; };
+		715E5319281BCD0700DEEE9B /* PKStarLaunchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E5318281BCD0700DEEE9B /* PKStarLaunchpad.swift */; };
+		715E531B281BCE1400DEEE9B /* PKStarBottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E531A281BCE1400DEEE9B /* PKStarBottle.swift */; };
 		715ED74626FF26520030F279 /* Date.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715ED74526FF26520030F279 /* Date.Extension.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
 		71675A09266A323600392630 /* JPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A08266A323600392630 /* JPError.swift */; };
@@ -531,6 +533,8 @@
 		715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJackpotCell.xib; sourceTree = "<group>"; };
 		715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJournalView.xib; sourceTree = "<group>"; };
 		715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationJournalView.swift; sourceTree = "<group>"; };
+		715E5318281BCD0700DEEE9B /* PKStarLaunchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKStarLaunchpad.swift; sourceTree = "<group>"; };
+		715E531A281BCE1400DEEE9B /* PKStarBottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKStarBottle.swift; sourceTree = "<group>"; };
 		715ED74526FF26520030F279 /* Date.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.Extension.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		71675A08266A323600392630 /* JPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPError.swift; sourceTree = "<group>"; };
@@ -1330,6 +1334,15 @@
 			path = FaceAware;
 			sourceTree = "<group>";
 		};
+		715E5317281BCCC600DEEE9B /* PKStar */ = {
+			isa = PBXGroup;
+			children = (
+				715E5318281BCD0700DEEE9B /* PKStarLaunchpad.swift */,
+				715E531A281BCE1400DEEE9B /* PKStarBottle.swift */,
+			);
+			path = PKStar;
+			sourceTree = "<group>";
+		};
 		716EFCE72671EFE100320C79 /* Kingfisher */ = {
 			isa = PBXGroup;
 			children = (
@@ -1476,6 +1489,7 @@
 				719299E7281A45A200CCE872 /* PKChallenge */,
 				719299DD281A32EA00CCE872 /* PKProgress */,
 				719299DE281A331500CCE872 /* PKResult */,
+				715E5317281BCCC600DEEE9B /* PKStar */,
 			);
 			path = RoomPK;
 			sourceTree = "<group>";
@@ -2048,6 +2062,7 @@
 				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
 				71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */,
 				1A354503254E77600032B677 /* JPNoHighlightButton.m in Sources */,
+				715E5319281BCD0700DEEE9B /* PKStarLaunchpad.swift in Sources */,
 				005DF54425652EDB0010E772 /* File.swift in Sources */,
 				1A9E419326BE459E006941D0 /* JPObject.m in Sources */,
 				1A65874C2629E6CC00846689 /* AlertView.swift in Sources */,
@@ -2142,6 +2157,7 @@
 				00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */,
 				1A3544FA254E77600032B677 /* JP.swift in Sources */,
 				718A56A027F1B5730071C724 /* CosmicExplorationBannerView.swift in Sources */,
+				715E531B281BCE1400DEEE9B /* PKStarBottle.swift in Sources */,
 				1A354530254E77600032B677 /* GCDSemaphoreTestVC.swift in Sources */,
 				1A9E417826BE4061006941D0 /* TableViewAnimateController.swift in Sources */,
 				1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */,
