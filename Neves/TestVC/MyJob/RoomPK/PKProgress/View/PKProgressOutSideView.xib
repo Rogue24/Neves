@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="345" height="110"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-dV-4lG">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pk_yule_bg_long" translatesAutoresizingMaskIntoConstraints="NO" id="bTg-dV-4lG">
                     <rect key="frame" x="0.0" y="0.0" width="345" height="110"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLT-tY-odO">
@@ -192,6 +192,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bgImgView" destination="bTg-dV-4lG" id="HuW-RB-yDR"/>
                 <outlet property="leftIcon" destination="Xdh-ej-Mad" id="td6-VJ-nIF"/>
                 <outlet property="leftProgressView" destination="eT7-gz-4PF" id="KJq-9k-VGR"/>
                 <outlet property="leftTitleLabel" destination="e4H-tC-NyX" id="TXO-AX-aeh"/>
@@ -211,6 +212,7 @@
         <image name="Girl8.jpg" width="1080" height="1620"/>
         <image name="pk_progress_bule" width="365" height="15"/>
         <image name="pk_progress_red" width="365" height="15"/>
+        <image name="pk_yule_bg_long" width="345" height="110"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -6,6 +6,7 @@
 //
 
 class PKProgressOutSideView: UIView {
+    @IBOutlet weak var bgImgView: UIImageView!
     
     @IBOutlet weak var progressBgView: UIView!
     @IBOutlet weak var progressContainerView: UIView!
@@ -32,7 +33,9 @@ class PKProgressOutSideView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        backgroundColor = .randomColor
+        
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
         
         leftIcon.layer.borderWidth = 1.5
         leftIcon.layer.borderColor = UIColor.white.cgColor
@@ -83,10 +86,11 @@ extension PKProgressOutSideView {
     
     func updateLauout(isShot: Bool) {
         guard self.isShot != isShot else { return }
-        
         self.isShot = isShot
-        totalProgress = viewWidth - 69
         
+        bgImgView.image = UIImage(named: isShot ? "pk_yule_bg_short" : "pk_yule_bg_long")
+        
+        totalProgress = viewWidth - 69
         snp.updateConstraints { make in
             make.width.equalTo(viewWidth)
         }
