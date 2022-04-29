@@ -31,7 +31,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Girl4.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-eb-RS0">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Girl1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kv9-eb-RS0">
                     <rect key="frame" x="10" y="35" width="55" height="55"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="55" id="RlV-9K-skX"/>
@@ -134,7 +134,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Girl4.jpg" width="640" height="799"/>
+        <image name="Girl1.jpg" width="887" height="1920"/>
         <image name="pk_invite_bg" width="230" height="135"/>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
