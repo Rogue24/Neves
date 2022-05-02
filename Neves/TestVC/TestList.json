@@ -134,6 +134,10 @@
                 "vcName": "MoonMaskViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "M34TestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

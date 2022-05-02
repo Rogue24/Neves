@@ -17,6 +17,7 @@
 		00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109AA25749DBC00F17889 /* RealmTestViewController.swift */; };
 		00D65162257498720074693E /* Gradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65160257498720074693E /* Gradientable.swift */; };
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
+		1A0C7F712820827A000996EF /* M34TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0C7F702820827A000996EF /* M34TestViewController.swift */; };
 		1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433B254E75EB0032B677 /* AppDelegate.swift */; };
 		1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433D254E75EB0032B677 /* SceneDelegate.swift */; };
 		1A354343254E75EB0032B677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A354341254E75EB0032B677 /* Main.storyboard */; };
@@ -326,6 +327,7 @@
 		00D65161257498720074693E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A036500254E8AB0007932D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1A0C7F702820827A000996EF /* M34TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M34TestViewController.swift; sourceTree = "<group>"; };
 		1A354338254E75EB0032B677 /* Neves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A35433B254E75EB0032B677 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A35433D254E75EB0032B677 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1151,6 +1153,7 @@
 				718066A727D74823002CAC09 /* PanScrollViewController.swift */,
 				7151894C27EC154500342645 /* DrawRectTestViewController.swift */,
 				7151894E27EC168B00342645 /* MoonMaskViewController.swift */,
+				1A0C7F702820827A000996EF /* M34TestViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1973,6 +1976,7 @@
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
+				1A0C7F712820827A000996EF /* M34TestViewController.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
