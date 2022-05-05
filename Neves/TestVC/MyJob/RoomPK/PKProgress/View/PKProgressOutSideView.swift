@@ -31,6 +31,7 @@ class PKProgressOutSideView: UIView {
     let leftProgressMaskView = UIView(frame: [-8, 0, 0, 10])
     let posAnimView = AnimationView(animation: nil, imageProvider: nil)
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -56,17 +57,31 @@ class PKProgressOutSideView: UIView {
         leftProgressMaskView.backgroundColor = .black
         leftProgressView.mask = leftProgressMaskView
         
-        posAnimView.backgroundColor = .randomColor(0.3)
+//        posAnimView.backgroundColor = .randomColor(0.3)
         posAnimView.backgroundBehavior = .pauseAndRestore
         posAnimView.contentMode = .scaleAspectFill
         posAnimView.frame = [0, HalfDiffValue(10, 32), 69, 32]
         posAnimView.loopMode = .loop
         progressBgView.addSubview(posAnimView)
-        if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_room_progressbar_lottie"),
+        if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_progressbar_lottie"),
            let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
             posAnimView.animation = animation
             posAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             posAnimView.play()
+        }
+        
+        if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_tag_lottie"),
+           let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+            let pkLogoAnimView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+            pkLogoAnimView.backgroundBehavior = .pauseAndRestore
+            pkLogoAnimView.contentMode = .scaleAspectFit
+            pkLogoAnimView.loopMode = .loop
+            pkAnimContainer.addSubview(pkLogoAnimView)
+            pkLogoAnimView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            pkAnimContainer.layoutIfNeeded()
+            pkLogoAnimView.play()
         }
         
         update(progress: 0.5)

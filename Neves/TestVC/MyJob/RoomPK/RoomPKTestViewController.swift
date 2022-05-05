@@ -147,7 +147,7 @@ extension RoomPKTestViewController {
 
 extension RoomPKTestViewController {
     @objc func shengli() {
-        
+        PKResultPopView.show(on: view)
     }
     
     @objc func shibai() {

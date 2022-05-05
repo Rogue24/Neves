@@ -95,21 +95,21 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "pk_duel_lightning_lottie"
+            lottieName = "pk_fm_draw_lottie"
         case 1:
-            lottieName = "pk_duel_start_lottie"
+            lottieName = "pk_fm_lose_lottie"
         case 2:
-            lottieName = "pk_room_progressbar_lottie"
+            lottieName = "pk_fm_win_lottie"
         case 3:
-            lottieName = "pk_start_lottie"
+            lottieName = "pk_star_activation_lottie"
         case 4:
-            lottieName = "spaceship_normal_lottie"
+            lottieName = "pk_tag_lottie"
         case 5:
-            lottieName = "spaceship_random_lottie"
+            lottieName = "pk_yule_draw_lottie"
         case 6:
-            lottieName = "spaceship_result_lottie"
+            lottieName = "pk_yule_lose_lottie"
         case 7:
-            lottieName = "spaceship_target_lottie"
+            lottieName = "pk_yule_win_lottie"
         default:
             lottieName = "album_videobg_jielong_lottie"
         }

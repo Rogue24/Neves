@@ -40,7 +40,7 @@ class PKProgressView: UIView {
         leftProgressMaskView.backgroundColor = .black
         leftProgressView.mask = leftProgressMaskView
         
-        posAnimView.backgroundColor = .randomColor(0.3)
+//        posAnimView.backgroundColor = .randomColor(0.3)
         posAnimView.backgroundBehavior = .pauseAndRestore
         posAnimView.contentMode = .scaleAspectFill
         posAnimView.frame = [0, HalfDiffValue(15, 33), 50, 33]

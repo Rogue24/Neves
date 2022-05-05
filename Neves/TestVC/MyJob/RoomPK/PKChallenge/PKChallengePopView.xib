@@ -155,7 +155,7 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1J-Qb-riU">
                                     <rect key="frame" x="0.0" y="0.0" width="70" height="55"/>
-                                    <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="55" id="q2h-nC-2VT"/>
                                         <constraint firstAttribute="width" constant="70" id="rd6-wq-lZf"/>
@@ -273,9 +273,6 @@
         <image name="Girl5.jpg" width="1080" height="1080"/>
         <image name="pk_connect_arrow" width="10" height="10"/>
         <image name="pk_connect_bg" width="375" height="195"/>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
