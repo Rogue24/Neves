@@ -14,8 +14,8 @@ protocol PKStarTerminal: UIView {
 class PKStarBottle: UIView {
     /// 视图基本尺寸
     static var size: CGSize { [50, 50] }
-    /// 最大星星数
-    static var maxStarCount: Int { 6 }
+    /// 可显示的最大星星数
+    static var appearMaxStarCount: Int { 6 }
     
     /// 当前星星数
     private(set) var starCount: Int = 0
@@ -43,7 +43,7 @@ class PKStarBottle: UIView {
     
     private let bottleImgView = UIImageView(image: UIImage(named: "pk_star_emptybottle_grey"))
     private let starBgView = UIView()
-    private let starImgViews = Array(1...PKStarBottle.maxStarCount).map { UIImageView(image: UIImage(named: "pk_star_grey\($0)")) }
+    private let starImgViews = Array(1...PKStarBottle.appearMaxStarCount).map { UIImageView(image: UIImage(named: "pk_star_grey\($0)")) }
     private let starCountLabel: UILabel = {
         let label =  UILabel()
         label.font = .systemFont(ofSize: 12)
@@ -122,7 +122,7 @@ extension PKStarBottle {
         guard !isLaunching, starCount > 0 else { return }
         isLaunching = true
         
-        let count = starCount > Self.maxStarCount ? Self.maxStarCount : starCount
+        let count = starCount > Self.appearMaxStarCount ? Self.appearMaxStarCount : starCount
         let maxIndex = count - 1
         
         launchStar(on: view, to: terminal, count: count)
