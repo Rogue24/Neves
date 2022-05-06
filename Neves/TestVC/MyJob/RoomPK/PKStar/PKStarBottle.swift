@@ -136,11 +136,11 @@ private extension PKStarBottle {
     func updateStarImgViews(_ isDidChangedState: Bool) {
         UIView.transition(with: starBgView, duration: updateDuration, options: .transitionCrossDissolve) {
             for (i, starImgView) in self.starImgViews.enumerated() {
-                let alpha: CGFloat = i < self.starCount ? 1 : 0
                 if isDidChangedState {
                     let imgName = self.isActivated ? "pk_star_active\(i + 1)" : "pk_star_grey\(i + 1)"
                     starImgView.image = UIImage(named: imgName)
                 }
+                let alpha: CGFloat = i < self.starCount ? 1 : 0
                 starImgView.alpha = alpha
             }
         } completion: { _ in }
