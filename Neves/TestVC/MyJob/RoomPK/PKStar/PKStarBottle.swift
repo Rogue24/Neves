@@ -179,13 +179,15 @@ private extension PKStarBottle {
         
         let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
         animView.backgroundBehavior = .pauseAndRestore
-        animView.contentMode = .scaleAspectFit
+        animView.contentMode = .scaleToFill
         animView.loopMode = .playOnce
         animView.isUserInteractionEnabled = false
         
         addSubview(animView)
         animView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.size.equalTo(CGSize(width: 80, height: 80))
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(-20)
         }
         layoutIfNeeded()
         
