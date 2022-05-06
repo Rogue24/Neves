@@ -172,7 +172,6 @@
 		715C901A27F6F88800B88B85 /* CosmicExplorationJackpotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */; };
 		715C901C27F7002200B88B85 /* CosmicExplorationJournalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */; };
 		715C901E27F7014600B88B85 /* CosmicExplorationJournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */; };
-		715E5319281BCD0700DEEE9B /* PKStarLaunchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E5318281BCD0700DEEE9B /* PKStarLaunchpad.swift */; };
 		715E531B281BCE1400DEEE9B /* PKStarBottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E531A281BCE1400DEEE9B /* PKStarBottle.swift */; };
 		715ED74626FF26520030F279 /* Date.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715ED74526FF26520030F279 /* Date.Extension.swift */; };
 		71675A04266A057700392630 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71675A03266A057700392630 /* Bindable.swift */; };
@@ -240,6 +239,7 @@
 		719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */; };
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
+		719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
 		71AB638127F5C287000CCF58 /* CosmicExplorationTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */; };
 		71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637E27F5C287000CCF58 /* CosmicExplorationHostView.swift */; };
@@ -533,7 +533,6 @@
 		715C901827F6F88800B88B85 /* CosmicExplorationJackpotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJackpotCell.xib; sourceTree = "<group>"; };
 		715C901B27F7002200B88B85 /* CosmicExplorationJournalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationJournalView.xib; sourceTree = "<group>"; };
 		715C901D27F7014600B88B85 /* CosmicExplorationJournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationJournalView.swift; sourceTree = "<group>"; };
-		715E5318281BCD0700DEEE9B /* PKStarLaunchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKStarLaunchpad.swift; sourceTree = "<group>"; };
 		715E531A281BCE1400DEEE9B /* PKStarBottle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKStarBottle.swift; sourceTree = "<group>"; };
 		715ED74526FF26520030F279 /* Date.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.Extension.swift; sourceTree = "<group>"; };
 		71675A03266A057700392630 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
@@ -603,6 +602,7 @@
 		719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKProgressOutSideView.xib; sourceTree = "<group>"; };
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
+		719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAReplicatorLayerTestVC.swift; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
 		71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationTurntableView.swift; sourceTree = "<group>"; };
 		71AB637E27F5C287000CCF58 /* CosmicExplorationHostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationHostView.swift; sourceTree = "<group>"; };
@@ -1151,6 +1151,7 @@
 				718066A727D74823002CAC09 /* PanScrollViewController.swift */,
 				7151894C27EC154500342645 /* DrawRectTestViewController.swift */,
 				7151894E27EC168B00342645 /* MoonMaskViewController.swift */,
+				719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1337,7 +1338,6 @@
 		715E5317281BCCC600DEEE9B /* PKStar */ = {
 			isa = PBXGroup;
 			children = (
-				715E5318281BCD0700DEEE9B /* PKStarLaunchpad.swift */,
 				715E531A281BCE1400DEEE9B /* PKStarBottle.swift */,
 			);
 			path = PKStar;
@@ -2062,7 +2062,6 @@
 				71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */,
 				71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */,
 				1A354503254E77600032B677 /* JPNoHighlightButton.m in Sources */,
-				715E5319281BCD0700DEEE9B /* PKStarLaunchpad.swift in Sources */,
 				005DF54425652EDB0010E772 /* File.swift in Sources */,
 				1A9E419326BE459E006941D0 /* JPObject.m in Sources */,
 				1A65874C2629E6CC00846689 /* AlertView.swift in Sources */,
@@ -2163,6 +2162,7 @@
 				1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */,
 				718A56A827F1B6A00071C724 /* CosmicExplorationRecordView.swift in Sources */,
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
+				719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
 				1A82A1442768FCF000ECA895 /* FunFloatButton.Playground.swift in Sources */,
 				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,

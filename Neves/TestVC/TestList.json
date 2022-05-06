@@ -134,6 +134,10 @@
                 "vcName": "MoonMaskViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "CAReplicatorLayerTestVC",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

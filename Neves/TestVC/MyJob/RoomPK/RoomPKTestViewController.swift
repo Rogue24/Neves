@@ -20,8 +20,8 @@ class RoomPKTestViewController: TestBaseViewController {
     weak var inviteView: PKChallengeInviteView?
     
     let starBottle = PKStarBottle()
-    let leftStatView = UIView()
-    let rightStatView = UIView()
+    let leftStatView = StatView()
+    let rightStatView = StatView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,22 +58,19 @@ class RoomPKTestViewController: TestBaseViewController {
         makeBtn("弹起邀请", [100.px, 550.px], #selector(tanqiyaoqing))
         makeBtn("收到邀请", [180.px, 550.px], #selector(shoudaoyaoqing))
         
-        starBottle.origin = [HalfDiffValue(PortraitScreenWidth, starBottle.width), 700.px]
+        starBottle.backgroundColor = .black
         view.addSubview(starBottle)
+        starBottle.snp.makeConstraints { make in
+            make.size.equalTo(PKStarBottle.size)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(700.px)
+        }
         starBottle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClickStarBottle)))
         
-        leftStatView.frame = [50, 666.px, 33, 14]
-        leftStatView.backgroundColor = .orange
-        let starIcon1 = UIImageView(image: UIImage(named: "pk_fm_star"))
-        starIcon1.frame = [2.5, 1, 13, 13]
-        leftStatView.addSubview(starIcon1)
+        leftStatView.origin = [50, 666.px]
         view.addSubview(leftStatView)
         
-        rightStatView.frame = [280, 666.px, 33, 14]
-        rightStatView.backgroundColor = .orange
-        let starIcon2 = UIImageView(image: UIImage(named: "pk_fm_star"))
-        starIcon2.frame = [2.5, 1, 13, 13]
-        rightStatView.addSubview(starIcon2)
+        rightStatView.origin = [280, 666.px]
         view.addSubview(rightStatView)
     }
     
@@ -212,118 +209,33 @@ extension RoomPKTestViewController {
 
 extension RoomPKTestViewController {
     @objc func didClickStarBottle() {
-        starBottle.prepareLaunch()
-        
-//        2.5 + 6.5 = 9
-//        1 + 6.5 = 7.5
-        
-        let origin: CGPoint = [starBottle.centerX, starBottle.y + 5.5]
-        
-        let leftTarget: CGPoint = [leftStatView.x + 9, leftStatView.y + 7.5]
-        let leftControl: CGPoint = [leftTarget.x + HalfDiffValue(origin.x, leftTarget.x) + 20, leftTarget.y - 70]
-        
-        let rightTarget: CGPoint = [rightStatView.x + 9, rightStatView.y + 7.5]
-        let rightControl: CGPoint = [origin.x + HalfDiffValue(rightTarget.x, origin.x) - 0, rightTarget.y - 70]
-        
-        playStarAnim(6, from: origin, to: leftTarget, controlPoint: leftControl)
-        playStarAnim(6, from: origin, to: rightTarget, controlPoint: rightControl)
-        
-//        makeShapeLayer(from: origin, to: leftTarget, controlPoint: leftControl)
-//        makeShapeLayer(from: origin, to: rightTarget, controlPoint: rightControl)
-    }
-    
-    func playStarAnim(_ count: Int, from: CGPoint, to: CGPoint, controlPoint: CGPoint) {
-        guard count > 0 else { return }
-        
-        let imgViews = Array(0..<count).map { _ -> UIImageView in
-            let imgView = UIImageView(image: UIImage(named: "pk_flyingstar"))
-            imgView.frame = [starBottle.x + HalfDiffValue(starBottle.width, 11), starBottle.y, 11, 11]
-            imgView.alpha = 0
-            view.addSubview(imgView)
-            return imgView
+        if starBottle.starCount == 10 {
+            starBottle.launchStar(on: view, to: isFm ? leftStatView : rightStatView)
+            return
         }
         
-        Asyncs.mainDelay(0.01) {
-            for (i, imgView) in imgViews.enumerated() {
-                self.playStarAnim(imgView, index: i, from: from, to: to, controlPoint: controlPoint)
-            }
-        }
+        let count = starBottle.starCount == 10 ? 0 : (starBottle.starCount + 1)
+        let isActivated = count >= 5
+        starBottle.updateStar(count: count, isActivate: isActivated)
     }
+}
+
+class StatView: UIView, PKStarContainer {
+    var starCenter: CGPoint { starIcon.center }
     
-    func playStarAnim(_ imgView: UIImageView, index: Int, from: CGPoint, to: CGPoint, controlPoint: CGPoint) {
-        let delay = TimeInterval(index) * 0.3
-        Asyncs.mainDelay(delay) { [weak self] in
-            guard let self = self else { return }
-            if index < self.starBottle.starImgViews.count {
-                let starImgView = self.starBottle.starImgViews[index]
-                UIView.animate(withDuration: 0.6) {
-                    starImgView.alpha = 0
-                }
-            }
-            UIView.animate(withDuration: 0.12) {
-                imgView.alpha = 1
-            } completion: { _ in
-                let pathAnim = Self.createPathAnimation(from: from, to: to, controlPoint: controlPoint, duration: 0.58)
-//                let scaleAnim = Self.createScaleAnimation(0.8, duration: 0.48)
-                
-                CATransaction.begin()
-                CATransaction.setCompletionBlock(nil)
-                imgView.layer.add(pathAnim, forKey: "position")
-//                imgView.layer.add(scaleAnim, forKey: "scale")
-                CATransaction.commit()
-                
-                Asyncs.mainDelay(0.58) {
-                    CATransaction.begin()
-                    CATransaction.setCompletionBlock(nil)
-                    imgView.layer.removeAllAnimations()
-//                    imgView.layer.transform = CATransform3DMakeScale(0.8, 0.8, 1)
-                    imgView.layer.position = to
-                    CATransaction.commit()
-                    
-                    UIView.animate(withDuration: 0.12) {
-                        imgView.alpha = 0
-                    } completion: { _ in
-                        imgView.removeFromSuperview()
-                    }
-                }
-            }
-        }
-    }
+    let starIcon = UIImageView(image: UIImage(named: "pk_fm_star"))
     
-    static func createPathAnimation(from: CGPoint, to: CGPoint, controlPoint: CGPoint, duration: TimeInterval) -> CAKeyframeAnimation {
-        let path = UIBezierPath()
-        path.move(to: from)
-        path.addQuadCurve(to: to, controlPoint: controlPoint)
+    init() {
+        super.init(frame: [0, 0, 33, 14])
+        backgroundColor = .orange
         
-        let anim = CAKeyframeAnimation(keyPath: "position")
-        anim.path = path.cgPath
-        anim.fillMode = .forwards
-        anim.isRemovedOnCompletion = false
-        anim.timingFunction = CAMediaTimingFunction(name: .easeOut)
-        anim.duration = duration
-        return anim
+        starIcon.frame = [2.5, 1, 13, 13]
+        addSubview(starIcon)
     }
     
-    static func createScaleAnimation(_ scale: CGFloat, duration: TimeInterval) -> CABasicAnimation {
-        let anim = CABasicAnimation(keyPath: "transform.scale")
-        anim.fillMode = .forwards
-        anim.isRemovedOnCompletion = false
-        anim.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        anim.toValue = scale
-        anim.duration = duration
-        return anim
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func makeShapeLayer(from: CGPoint, to: CGPoint, controlPoint: CGPoint) {
-        let path = UIBezierPath()
-        path.move(to: from)
-        path.addQuadCurve(to: to, controlPoint: controlPoint)
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.randomColor.cgColor
-        shapeLayer.lineWidth = 2
-        view.layer.addSublayer(shapeLayer)
-    }
+    
 }
