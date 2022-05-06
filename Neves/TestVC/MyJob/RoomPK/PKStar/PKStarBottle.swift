@@ -15,6 +15,7 @@ class PKStarBottle: UIView {
     static var size: CGSize { [50, 50] }
     
     private let bottleImgView = UIImageView(image: UIImage(named: "pk_star_emptybottle_grey"))
+    private let starBgView = UIView()
     private let starImgViews = Array(1...6).map { UIImageView(image: UIImage(named: "pk_star_grey\($0)")) }
     private let starCountLabel: UILabel = {
         let label =  UILabel()
@@ -54,9 +55,14 @@ class PKStarBottle: UIView {
             make.edges.equalToSuperview()
         }
         
+        addSubview(starBgView)
+        starBgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         starImgViews.forEach {
             $0.alpha = 0
-            addSubview($0)
+            starBgView.addSubview($0)
             $0.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
             }
@@ -128,20 +134,16 @@ private extension PKStarBottle {
     }
     
     func updateStarImgViews(_ isDidChangedState: Bool) {
-        for (i, starImgView) in starImgViews.enumerated() {
-            let alpha: CGFloat = i < starCount ? 1 : 0
-            if isDidChangedState {
-                let imgName = isActivated ? "pk_star_active\(i + 1)" : "pk_star_grey\(i + 1)"
-                UIView.transition(with: starImgView, duration: updateDuration, options: .transitionCrossDissolve) {
+        UIView.transition(with: starBgView, duration: updateDuration, options: .transitionCrossDissolve) {
+            for (i, starImgView) in self.starImgViews.enumerated() {
+                let alpha: CGFloat = i < self.starCount ? 1 : 0
+                if isDidChangedState {
+                    let imgName = self.isActivated ? "pk_star_active\(i + 1)" : "pk_star_grey\(i + 1)"
                     starImgView.image = UIImage(named: imgName)
-                    starImgView.alpha = alpha
-                } completion: { _ in }
-            } else {
-                UIView.animate(withDuration: updateDuration) {
-                    starImgView.alpha = alpha
                 }
+                starImgView.alpha = alpha
             }
-        }
+        } completion: { _ in }
     }
     
     func playActivateAnim() {
