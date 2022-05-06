@@ -1089,6 +1089,7 @@
 		1A354430254E77600032B677 /* Animate */ = {
 			isa = PBXGroup;
 			children = (
+				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				7110743E271ED4D400178969 /* ImageVideoViewController.swift */,
 				71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */,
 				71107438271EA81300178969 /* LayerVideoViewController.swift */,
@@ -1097,7 +1098,6 @@
 				7110742E271D53B200178969 /* SolitaireAnimationViewController.swift */,
 				71107430271D7E7F00178969 /* SolitairePopAnimationViewController.swift */,
 				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
-				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */,
 				1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */,
 			);

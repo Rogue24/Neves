@@ -146,16 +146,18 @@ extension RoomPKTestViewController {
 }
 
 extension RoomPKTestViewController {
+    static let isFm = true
+    
     @objc func shengli() {
-        PKResultPopView.show(on: view)
+        PKResultPopView.show(withResult: .victory(Self.isFm), on: view)
     }
     
     @objc func shibai() {
-        
+        PKResultPopView.show(withResult: .lose(Self.isFm), on: view)
     }
     
     @objc func daping() {
-        
+        PKResultPopView.show(withResult: .draw(Self.isFm), on: view)
     }
 }
 
