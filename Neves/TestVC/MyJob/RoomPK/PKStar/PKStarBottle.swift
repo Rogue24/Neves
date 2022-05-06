@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PKStarContainer: UIView {
+protocol PKStarTerminal: UIView {
     var starCenter: CGPoint { get }
 }
 
@@ -118,7 +118,7 @@ extension PKStarBottle {
     /// - Parameters:
     ///   - view: 发射平台view（房间view）
     ///   - terminal: 终点view
-    func launchStar(on view: UIView, to terminal: PKStarContainer) {
+    func launchStar(on view: UIView, to terminal: PKStarTerminal) {
         guard !isLaunching, starCount > 0 else { return }
         isLaunching = true
         
@@ -202,7 +202,7 @@ private extension PKStarBottle {
     ///   - view: 发射平台view（房间view）
     ///   - terminal: 终点view
     ///   - count: 发射次数
-    func launchStar(on view: UIView, to terminal: PKStarContainer, count: Int) {
+    func launchStar(on view: UIView, to terminal: PKStarTerminal, count: Int) {
         guard isLaunching, count > 0 else { return }
         
         var origin = convert(bounds, to: view).origin

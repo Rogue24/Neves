@@ -220,7 +220,7 @@ extension RoomPKTestViewController {
     }
 }
 
-class StatView: UIView, PKStarContainer {
+class StatView: UIView, PKStarTerminal {
     var starCenter: CGPoint { starIcon.center }
     
     let starIcon = UIImageView(image: UIImage(named: "pk_fm_star"))
