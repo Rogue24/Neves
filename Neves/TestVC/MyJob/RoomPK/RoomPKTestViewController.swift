@@ -12,7 +12,9 @@ class RoomPKTestViewController: TestBaseViewController {
     let fmPkProgressVM = PKProgressViewModel<PKRankModel>()
     let phPkProgressVM = PlayhousePKProgressViewModel<PKRankModel>()
     let outSideView = PKProgressOutSideView.loadFromNib()
+    
     var isShot = false
+    var isFm = true
     
     weak var foldView: PKChallengeFoldView?
     weak var inviteView: PKChallengeInviteView?
@@ -41,6 +43,12 @@ class RoomPKTestViewController: TestBaseViewController {
         makeBtn("胜利", [20.px, 450.px], #selector(shengli))
         makeBtn("失败", [100.px, 450.px], #selector(shibai))
         makeBtn("打平", [180.px, 450.px], #selector(daping))
+        
+        let sOn = UISwitch()
+        sOn.origin = [270.px, 450.px]
+        sOn.isOn = isFm
+        sOn.addTarget(self, action: #selector(sOnDidClick(_:)), for: .touchUpInside)
+        view.addSubview(sOn)
         
         makeBtn("开始PK", [20.px, 500.px], #selector(kaishipk))
         makeBtn("开始巅峰", [100.px, 500.px], #selector(kaishidianfeng))
@@ -146,18 +154,20 @@ extension RoomPKTestViewController {
 }
 
 extension RoomPKTestViewController {
-    static let isFm = true
+    @objc func sOnDidClick(_ sender: UISwitch) {
+        isFm = sender.isOn
+    }
     
     @objc func shengli() {
-        PKResultPopView.show(withResult: .victory(Self.isFm), on: view)
+        PKResultPopView.show(withResult: .victory(isFm), on: view)
     }
     
     @objc func shibai() {
-        PKResultPopView.show(withResult: .lose(Self.isFm), on: view)
+        PKResultPopView.show(withResult: .lose(isFm), on: view)
     }
     
     @objc func daping() {
-        PKResultPopView.show(withResult: .draw(Self.isFm), on: view)
+        PKResultPopView.show(withResult: .draw(isFm), on: view)
     }
 }
 
