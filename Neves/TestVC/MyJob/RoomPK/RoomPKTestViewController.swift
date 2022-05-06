@@ -67,10 +67,10 @@ class RoomPKTestViewController: TestBaseViewController {
         }
         starBottle.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didClickStarBottle)))
         
-        leftStatView.origin = [50, 666.px]
+        leftStatView.origin = [50.px, 666.px]
         view.addSubview(leftStatView)
         
-        rightStatView.origin = [280, 666.px]
+        rightStatView.origin = [280.px, 666.px]
         view.addSubview(rightStatView)
     }
     
@@ -209,12 +209,12 @@ extension RoomPKTestViewController {
 
 extension RoomPKTestViewController {
     @objc func didClickStarBottle() {
-        if starBottle.starCount == 10 {
+        if starBottle.starCount == 6 {
             starBottle.launchStar(on: view, to: isFm ? leftStatView : rightStatView)
             return
         }
         
-        let count = starBottle.starCount == 10 ? 0 : (starBottle.starCount + 1)
+        let count = starBottle.starCount + 1
         let isActivated = count >= 5
         starBottle.updateStar(count: count, isActivate: isActivated)
     }
@@ -236,6 +236,4 @@ class StatView: UIView, PKStarContainer {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
