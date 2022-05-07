@@ -85,7 +85,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tKs-97-Wd5" customClass="PKProgressRankListView" customModule="Neves" customModuleProvider="target">
-                    <rect key="frame" x="258.5" y="54" width="100" height="21"/>
+                    <rect key="frame" x="258.5" y="59" width="100" height="21"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="zsb-UL-l6f">
                         <size key="itemSize" width="21" height="21"/>
@@ -107,7 +107,7 @@
                     <rect key="frame" x="148.5" y="49" width="68" height="41"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SSD-hz-Jid" customClass="PKProgressRankListView" customModule="Neves" customModuleProvider="target">
-                    <rect key="frame" x="6.5" y="54" width="100" height="21"/>
+                    <rect key="frame" x="6.5" y="59" width="100" height="21"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="7OJ-bn-Gk7"/>
@@ -129,7 +129,7 @@
                 <constraint firstItem="tKs-97-Wd5" firstAttribute="height" secondItem="SSD-hz-Jid" secondAttribute="height" id="OmC-nv-SNA"/>
                 <constraint firstAttribute="bottom" secondItem="War-YX-653" secondAttribute="bottom" id="PUO-5X-ZTF"/>
                 <constraint firstItem="nZ9-nW-53H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Qet-Sl-ugy"/>
-                <constraint firstItem="SSD-hz-Jid" firstAttribute="top" secondItem="RMm-1K-6mz" secondAttribute="bottom" constant="5" id="YaK-YK-wws"/>
+                <constraint firstItem="SSD-hz-Jid" firstAttribute="top" secondItem="RMm-1K-6mz" secondAttribute="bottom" constant="10" id="YaK-YK-wws"/>
                 <constraint firstItem="RMm-1K-6mz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yf7-f5-ADt"/>
                 <constraint firstItem="9vq-uc-wT6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yqh-sL-Kdn"/>
                 <constraint firstAttribute="trailing" secondItem="tKs-97-Wd5" secondAttribute="trailing" constant="6.5" id="dcc-Uk-eMy"/>
@@ -147,6 +147,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="bottomImgView" destination="War-YX-653" id="r52-om-u9u"/>
+                <outlet property="collectionViewTopConstraint" destination="YaK-YK-wws" id="Fka-H4-sxc"/>
                 <outlet property="durationLabel" destination="nZ9-nW-53H" id="H6K-pL-d7X"/>
                 <outlet property="leftCollectionView" destination="SSD-hz-Jid" id="Kut-Kb-pR5"/>
                 <outlet property="leftCountLabel" destination="xFe-2P-BGC" id="M2E-AW-cJJ"/>

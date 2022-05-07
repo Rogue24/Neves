@@ -13,6 +13,7 @@ class PlayhousePKProgressViewModel<T: PKRankModelCompatible>: PKProgressViewMode
         super.init()
         
         contentView.progressBgViewTopConstraint.constant = 41
+        contentView.collectionViewTopConstraint.constant = 5
         
         contentView.addSubview(infoView)
         infoView.snp.makeConstraints { make in

@@ -20,6 +20,7 @@ class PKProgressView: UIView {
     @IBOutlet weak var bottomImgView: UIImageView!
     
     @IBOutlet weak var progressBgViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var collectionViewTopConstraint: NSLayoutConstraint!
     
     let totalProgress = PortraitScreenWidth - 10 - 50
     let leftProgressMaskView = UIView(frame: [-5, 0, 0, 15])
