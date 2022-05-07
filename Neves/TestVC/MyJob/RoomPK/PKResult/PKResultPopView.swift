@@ -82,8 +82,10 @@ extension PKResultPopView {
     
     func playAnim(_ imageReplacement: [String: CGImage?]) {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(result.lottieName)"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
-        else { return }
+              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) else {
+            removeFromSuperview()
+            return
+        }
         
         setupCloseBtn(animation.bounds.size)
         
