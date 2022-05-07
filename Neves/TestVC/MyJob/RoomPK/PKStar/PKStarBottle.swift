@@ -23,13 +23,7 @@ class PKStarBottle: UIView {
     private(set) var isActivated: Bool = false
     /// 是否正在发射星星
     private(set) var isLaunching: Bool = false {
-        didSet {
-            delayWorkItem?.cancel()
-            delayWorkItem = nil
-            
-            replicatorLayer?.removeFromSuperlayer()
-            replicatorLayer = nil
-        }
+        didSet { launchReset() }
     }
     
     private var replicatorLayer: CAReplicatorLayer?
@@ -183,13 +177,13 @@ private extension PKStarBottle {
         animView.loopMode = .playOnce
         animView.isUserInteractionEnabled = false
         
-        addSubview(animView)
+        starBgView.addSubview(animView)
         animView.snp.makeConstraints { make in
             make.size.equalTo(CGSize(width: 80, height: 80))
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(-20)
         }
-        layoutIfNeeded()
+        starBgView.layoutIfNeeded()
         
         animView.play { [weak animView] _ in
             animView?.removeFromSuperview()
@@ -217,7 +211,7 @@ private extension PKStarBottle {
         
         var control: CGPoint = [origin.x, target.y]
         control.x += (target.x - origin.x) * 0.6
-        control.y -= 70
+        control.y -= 70.px
         
         let replicatorLayer = CAReplicatorLayer()
         replicatorLayer.frame = view.bounds
@@ -262,11 +256,21 @@ private extension PKStarBottle {
             }
         }
 
-        guard index > 0 else { return }
-        let nextIndex = index - 1
-        delayWorkItem = Asyncs.mainDelay(intervalDuration) {
-            self.eachToHideBottleStar(at: nextIndex)
+        if index > 0 {
+            let nextIndex = index - 1
+            delayWorkItem = Asyncs.mainDelay(intervalDuration) {
+                self.eachToHideBottleStar(at: nextIndex)
+            }
         }
+    }
+    
+    /// 发射重置（全部完成 or 中途取消）
+    func launchReset() {
+        delayWorkItem?.cancel()
+        delayWorkItem = nil
+        
+        replicatorLayer?.removeFromSuperlayer()
+        replicatorLayer = nil
     }
 }
 
