@@ -16,7 +16,7 @@ class RoomPKTestViewController: TestBaseViewController {
     var isShot = false
     var isFm = true
     
-    weak var foldView: PKChallengeFoldView?
+    weak var popView: PKChallengePopView?
     weak var inviteView: PKChallengeInviteView?
     
     let starBottle = PKStarBottle()
@@ -54,8 +54,8 @@ class RoomPKTestViewController: TestBaseViewController {
         makeBtn("开始巅峰", [100.px, 500.px], #selector(kaishidianfeng))
         makeBtn("结束PK", [180.px, 500.px], #selector(jiesupk))
         
-        makeBtn("收起邀请", [20.px, 550.px], #selector(shouqiyaoqing))
-        makeBtn("弹起邀请", [100.px, 550.px], #selector(tanqiyaoqing))
+        makeBtn("发起邀请" , [20.px, 550.px], #selector(faqiyaoqing))
+        makeBtn("取消邀请", [100.px, 550.px], #selector(qvxiaoyaoqing))
         makeBtn("收到邀请", [180.px, 550.px], #selector(shoudaoyaoqing))
         
         starBottle.backgroundColor = .black
@@ -186,16 +186,16 @@ extension RoomPKTestViewController {
 }
 
 extension RoomPKTestViewController {
-    @objc func shouqiyaoqing() {
-        if let foldView = self.foldView {
-            foldView.hide()
-        } else {
-            foldView = PKChallengeFoldView.show(on: view)
+    @objc func faqiyaoqing() {
+        guard popView == nil else {
+            JPrint("已经发起了！！！")
+            return
         }
+        popView = PKChallengePopView.show(on: view)
     }
     
-    @objc func tanqiyaoqing() {
-        PKChallengePopView.show(on: view)
+    @objc func qvxiaoyaoqing() {
+        popView?.close()
     }
     
     @objc func shoudaoyaoqing() {

@@ -200,6 +200,8 @@
 		718018C627228A830056E699 /* Syncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718018C527228A830056E699 /* Syncs.swift */; };
 		718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718066A727D74823002CAC09 /* PanScrollViewController.swift */; };
 		718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */; };
+		718915AA282620980003E294 /* PKChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718915A9282620980003E294 /* PKChallengeView.swift */; };
+		718915AC282620BC0003E294 /* PKChallengeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 718915AB282620BC0003E294 /* PKChallengeView.xib */; };
 		7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7189227C281153FF00EC4CA4 /* UserDefault.swift */; };
 		718A569527F193210071C724 /* CosmicExploration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A569427F193210071C724 /* CosmicExploration.swift */; };
 		718A569727F195780071C724 /* CosmicExplorationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718A569627F195780071C724 /* CosmicExplorationManager.swift */; };
@@ -231,9 +233,6 @@
 		719299E9281A45D200CCE872 /* PKChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299E8281A45D200CCE872 /* PKChallenge.swift */; };
 		719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EA281A45DB00CCE872 /* PKChallengePopView.swift */; };
 		719299ED281A461800CCE872 /* PKChallengeInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EC281A461800CCE872 /* PKChallengeInviteView.swift */; };
-		719299EF281A466500CCE872 /* PKChallengeFoldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299EE281A466500CCE872 /* PKChallengeFoldView.swift */; };
-		719299F1281A620E00CCE872 /* PKChallengePopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F0281A620E00CCE872 /* PKChallengePopView.xib */; };
-		719299F3281A6CC900CCE872 /* PKChallengeFoldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */; };
 		719299F5281A6E1700CCE872 /* PKChallengeInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */; };
 		719299F7281A8BC900CCE872 /* PKProgressOutSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719299F6281A8BC900CCE872 /* PKProgressOutSideView.swift */; };
 		719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */; };
@@ -563,6 +562,8 @@
 		718018C527228A830056E699 /* Syncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syncs.swift; sourceTree = "<group>"; };
 		718066A727D74823002CAC09 /* PanScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanScrollViewController.swift; sourceTree = "<group>"; };
 		718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusOnFacesViewController.swift; sourceTree = "<group>"; };
+		718915A9282620980003E294 /* PKChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeView.swift; sourceTree = "<group>"; };
+		718915AB282620BC0003E294 /* PKChallengeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeView.xib; sourceTree = "<group>"; };
 		7189227C281153FF00EC4CA4 /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		718A569427F193210071C724 /* CosmicExploration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExploration.swift; sourceTree = "<group>"; };
 		718A569627F195780071C724 /* CosmicExplorationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationManager.swift; sourceTree = "<group>"; };
@@ -594,9 +595,6 @@
 		719299E8281A45D200CCE872 /* PKChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallenge.swift; sourceTree = "<group>"; };
 		719299EA281A45DB00CCE872 /* PKChallengePopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengePopView.swift; sourceTree = "<group>"; };
 		719299EC281A461800CCE872 /* PKChallengeInviteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeInviteView.swift; sourceTree = "<group>"; };
-		719299EE281A466500CCE872 /* PKChallengeFoldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKChallengeFoldView.swift; sourceTree = "<group>"; };
-		719299F0281A620E00CCE872 /* PKChallengePopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengePopView.xib; sourceTree = "<group>"; };
-		719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeFoldView.xib; sourceTree = "<group>"; };
 		719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKChallengeInviteView.xib; sourceTree = "<group>"; };
 		719299F6281A8BC900CCE872 /* PKProgressOutSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKProgressOutSideView.swift; sourceTree = "<group>"; };
 		719299F8281A8C5400CCE872 /* PKProgressOutSideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PKProgressOutSideView.xib; sourceTree = "<group>"; };
@@ -1528,9 +1526,8 @@
 			children = (
 				719299E8281A45D200CCE872 /* PKChallenge.swift */,
 				719299EA281A45DB00CCE872 /* PKChallengePopView.swift */,
-				719299F0281A620E00CCE872 /* PKChallengePopView.xib */,
-				719299EE281A466500CCE872 /* PKChallengeFoldView.swift */,
-				719299F2281A6CC900CCE872 /* PKChallengeFoldView.xib */,
+				718915A9282620980003E294 /* PKChallengeView.swift */,
+				718915AB282620BC0003E294 /* PKChallengeView.xib */,
 				719299EC281A461800CCE872 /* PKChallengeInviteView.swift */,
 				719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */,
 			);
@@ -1843,7 +1840,6 @@
 				717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */,
 				713998072705B64D002BC263 /* Girl2.jpg in Resources */,
 				71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */,
-				719299F1281A620E00CCE872 /* PKChallengePopView.xib in Resources */,
 				713998062705B64D002BC263 /* Girl5.jpg in Resources */,
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
 				719299F5281A6E1700CCE872 /* PKChallengeInviteView.xib in Resources */,
@@ -1857,6 +1853,7 @@
 				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
 				71F249D62731517A00FAAD93 /* FireworkPopView.xib in Resources */,
 				71F249DA2731517A00FAAD93 /* FireworkRulePopView.xib in Resources */,
+				718915AC282620BC0003E294 /* PKChallengeView.xib in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,
 				71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */,
 				1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */,
@@ -1865,7 +1862,6 @@
 				71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */,
 				719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */,
 				71F249F52731517A00FAAD93 /* lrc2.txt in Resources */,
-				719299F3281A6CC900CCE872 /* PKChallengeFoldView.xib in Resources */,
 				71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */,
 				71F249F12731517A00FAAD93 /* noAccLrc1.txt in Resources */,
 				7110743D271ECA4800178969 /* voices.m4a in Resources */,
@@ -2108,10 +2104,10 @@
 				711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
 				7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */,
+				718915AA282620980003E294 /* PKChallengeView.swift in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
 				7190295028193176000F6E29 /* PlayhousePKProgressViewModel.swift in Sources */,
 				719299E9281A45D200CCE872 /* PKChallenge.swift in Sources */,
-				719299EF281A466500CCE872 /* PKChallengeFoldView.swift in Sources */,
 				71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */,
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
