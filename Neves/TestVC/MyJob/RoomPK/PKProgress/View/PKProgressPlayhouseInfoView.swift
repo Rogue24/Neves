@@ -11,9 +11,11 @@ class PKProgressPlayhouseInfoView: UIView {
     
     @IBOutlet weak var leftIcon: UIImageView!
     @IBOutlet weak var leftTitleLabel: UILabel!
+    @IBOutlet weak var leftResultImgView: UIImageView!
     
     @IBOutlet weak var rightIcon: UIImageView!
     @IBOutlet weak var rightTitleLabel: UILabel!
+    @IBOutlet weak var rightResultImgView: UIImageView!
     
     @IBOutlet weak var bottomTitleLabel: UILabel!
     

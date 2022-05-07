@@ -20,4 +20,41 @@ class PlayhousePKProgressViewModel<T: PKRankModelCompatible>: PKProgressViewMode
         }
     }
     
+    override func startPK() {
+        super.startPK()
+        infoView.leftResultImgView.image = nil
+        infoView.rightResultImgView.image = nil
+    }
+    
+    override func startPeakPK() {
+        super.startPeakPK()
+        infoView.leftResultImgView.image = nil
+        infoView.rightResultImgView.image = nil
+    }
+    
+    override func endPk() {
+        super.endPk()
+        
+        var leftResultImgName = ""
+        var rightResultImgName = ""
+        
+        let leftResult = Int.random(in: 0..<3)
+        switch leftResult {
+        case 0:
+            leftResultImgName = "pk_result_victory"
+            rightResultImgName = "pk_result_fail"
+        case 1:
+            leftResultImgName = "pk_result_fail"
+            rightResultImgName = "pk_result_victory"
+        case 2:
+            leftResultImgName = "pk_result_draw"
+            rightResultImgName = "pk_result_draw"
+        default:
+            return
+        }
+        
+        infoView.leftResultImgView.image = UIImage(named: leftResultImgName)
+        infoView.rightResultImgView.image = UIImage(named: rightResultImgName)
+    }
+    
 }

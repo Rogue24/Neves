@@ -37,6 +37,23 @@ class PKProgressViewModel<T: PKRankModelCompatible>: NSObject, UICollectionViewD
         return cell
     }
     
+    // MARK: - 进程控制
+    func startPK() {
+        contentView.playStartAnim()
+        contentView.stopPeakingAnim()
+        contentView.showOrHideBottomImgView(false)
+    }
+    
+    func startPeakPK() {
+        contentView.playStartPeakAnim()
+        contentView.playPeakingAnim()
+        contentView.showOrHideBottomImgView(true)
+    }
+    
+    func endPk() {
+        contentView.stopPeakingAnim()
+        contentView.showOrHideBottomImgView(false)
+    }
 }
 
 // MARK: - 私有API
@@ -93,23 +110,6 @@ extension PKProgressViewModel {
                                     rightCount: rightValue,
                                     progress: progress)
         }
-    }
-    
-    func startPK() {
-        contentView.playStartAnim()
-        contentView.stopPeakingAnim()
-        contentView.showOrHideBottomImgView(false)
-    }
-    
-    func startPeakPK() {
-        contentView.playStartPeakAnim()
-        contentView.playPeakingAnim()
-        contentView.showOrHideBottomImgView(true)
-    }
-    
-    func endPk() {
-        contentView.stopPeakingAnim()
-        contentView.showOrHideBottomImgView(false)
     }
 }
 
