@@ -8,6 +8,8 @@
 import UIKit
 
 class PKProgressView: UIView {
+    var isFm: Bool = false
+    
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var progressBgView: UIView!
     @IBOutlet weak var progressContainerView: UIView!
@@ -72,7 +74,7 @@ extension PKProgressView {
         let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
         animView.backgroundBehavior = .pauseAndRestore
         animView.contentMode = .scaleAspectFit
-        animView.frame = [0, HalfDiffValue(frame.height, 300), PortraitScreenWidth, 300]
+        animView.frame = [0, HalfDiffValue(frame.height, 300), frame.width, 300]
         animView.loopMode = isOnec ? .playOnce : .loop
         animView.isUserInteractionEnabled = false
         addSubview(animView)
@@ -100,7 +102,11 @@ extension PKProgressView {
     
     func playPeakingAnim() {
         guard peakingAnimView == nil else { return }
-        peakingAnimView = playAnim(lottieName: "pk_duel_lightning_lottie", isOnec: false)
+        if isFm {
+            peakingAnimView = playAnim(lottieName: "pk_duel_lightning_fm", isOnec: false)
+        } else {
+            peakingAnimView = playAnim(lottieName: "pk_duel_lightning_yule", isOnec: false)
+        }
     }
     
     func stopPeakingAnim() {

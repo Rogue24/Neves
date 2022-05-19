@@ -26,6 +26,9 @@ class RoomPKTestViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fmPkProgressVM.contentView.isFm = true
+        phPkProgressVM.contentView.isFm = false
+        
         fmPkProgressVM.addProgressView(on: view, top: 120)
         phPkProgressVM.addProgressView(on: view, top: 230)
         

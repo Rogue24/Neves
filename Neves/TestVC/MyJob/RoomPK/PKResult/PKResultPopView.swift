@@ -14,7 +14,7 @@ class PKResultPopView: UIView {
         super.init(frame: PortraitScreenBounds)
         
         animView.backgroundBehavior = .pauseAndRestore
-        animView.contentMode = .scaleAspectFit
+        animView.contentMode = .scaleAspectFill
         animView.loopMode = .playOnce
         addSubview(animView)
         animView.snp.makeConstraints { make in
@@ -100,22 +100,19 @@ extension PKResultPopView {
 
 extension PKResultPopView {
     func setupCloseBtn(_ animSize: CGSize) {
-        var wh: CGFloat = 60
-        
-        var x = HalfDiffValue(animSize.width, 530)
-        x += HalfDiffValue(530, wh)
-        
-        var y: CGFloat = 270 + 800 + 40
-        
         let scale = PortraitScreenWidth / animSize.width
-        x *= scale
-        y *= scale
-        y += HalfDiffValue(PortraitScreenHeight, animSize.height * scale)
-        wh *= scale
+        
+        let wh = 60 * scale
+        
+        let x = (PortraitScreenWidth - wh) * 0.5
+        
+        var y = 1170 * scale// (270 + 800 + 40) * scale
+        y += (PortraitScreenHeight - animSize.height * scale) * 0.5
         
         let closeBtn = UIButton(type: .custom)
         closeBtn.frame = [x, y, wh, wh]
         closeBtn.addTarget(self, action: #selector(closeBtnDicClick), for: .touchUpInside)
+//        closeBtn.backgroundColor = .green
         addSubview(closeBtn)
     }
     
