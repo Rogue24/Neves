@@ -130,6 +130,7 @@
 		1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */; };
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
+		7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104877E28391E0B00706ED7 /* M34TestViewController.swift */; };
 		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
 		71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */; };
 		71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1F274CD00C004C3257 /* AttentionBothSides.swift */; };
@@ -490,6 +491,7 @@
 		1AABA9B02555BBA10051CA7E /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
+		7104877E28391E0B00706ED7 /* M34TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M34TestViewController.swift; sourceTree = "<group>"; };
 		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
 		71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGuideAttentionViewController.swift; sourceTree = "<group>"; };
 		71070E1F274CD00C004C3257 /* AttentionBothSides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionBothSides.swift; sourceTree = "<group>"; };
@@ -1150,6 +1152,7 @@
 				7151894C27EC154500342645 /* DrawRectTestViewController.swift */,
 				7151894E27EC168B00342645 /* MoonMaskViewController.swift */,
 				719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */,
+				7104877E28391E0B00706ED7 /* M34TestViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1969,6 +1972,7 @@
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
+				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
