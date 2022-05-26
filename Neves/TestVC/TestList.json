@@ -160,6 +160,14 @@
                 "vcCreateWay" : 0
             },
             {
+                "vcName": "TestLock2ViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "TestDoCatchViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "TestScreenCornerViewController",
                 "vcCreateWay" : 0
             },

@@ -95,7 +95,7 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "pk_fm_draw_lottie"
+            lottieName = "redLine"
         case 1:
             lottieName = "pk_fm_lose_lottie"
         case 2:

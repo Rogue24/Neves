@@ -253,6 +253,8 @@
 		71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
+		71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */; };
+		71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */; };
 		71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0C27310D4500300367 /* FloatWindowContainer.swift */; };
 		71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0E2731141D00300367 /* FunFloatButton.swift */; };
 		71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE01A626E61978003EBF66 /* LottieShowViewController.swift */; };
@@ -617,6 +619,8 @@
 		71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageTest.swift; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
+		71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLock2ViewController.swift; sourceTree = "<group>"; };
+		71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoCatchViewController.swift; sourceTree = "<group>"; };
 		71D72B0C27310D4500300367 /* FloatWindowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWindowContainer.swift; sourceTree = "<group>"; };
 		71D72B0E2731141D00300367 /* FunFloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFloatButton.swift; sourceTree = "<group>"; };
 		71DE01A626E61978003EBF66 /* LottieShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieShowViewController.swift; sourceTree = "<group>"; };
@@ -1112,6 +1116,8 @@
 				007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */,
 				1A354436254E77600032B677 /* TestTableViewController.swift */,
 				71782B46274E40F60047F2B8 /* TestLockViewController.swift */,
+				71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */,
+				71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */,
 				717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */,
 			);
 			path = Test;
@@ -1964,6 +1970,7 @@
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
 				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
+				71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */,
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
 				1A9E419926BE45D6006941D0 /* CircleMedalView.swift in Sources */,
 				719299DC28194F9D00CCE872 /* PKRankModelCompatible.swift in Sources */,
@@ -2074,6 +2081,7 @@
 				1A35451D254E77600032B677 /* NSDate+JPExtension.m in Sources */,
 				71F249F02731517A00FAAD93 /* MarebulabulasRecordControl.swift in Sources */,
 				710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */,
+				71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */,
 				71F249DF2731517A00FAAD93 /* FireworkModel.swift in Sources */,
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
