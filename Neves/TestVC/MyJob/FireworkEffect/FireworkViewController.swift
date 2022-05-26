@@ -1,5 +1,5 @@
 //
-//  FileEffectViewController.swift
+//  FireworkViewController.swift
 //  Neves_Example
 //
 //  Created by aa on 2020/10/12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FileEffectViewController: TestBaseViewController {
+class FireworkViewController: TestBaseViewController {
 
     var animView1: AnimationView!
     var animView2: AnimationView!

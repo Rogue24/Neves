@@ -263,8 +263,8 @@
 		71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693D265631DF009463E6 /* WatermarkViewController.swift */; };
 		71EA694126563270009463E6 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71EA694026563270009463E6 /* girl.jpg */; };
 		71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499227313B0C00FAAD93 /* FloatContainer.swift */; };
-		71F249CF2731517A00FAAD93 /* FileEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499A2731517A00FAAD93 /* FileEffectViewController.swift */; };
-		71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499B2731517A00FAAD93 /* FileEffectViewController.xib */; };
+		71F249CF2731517A00FAAD93 /* FireworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499A2731517A00FAAD93 /* FireworkViewController.swift */; };
+		71F249D02731517A00FAAD93 /* FireworkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499B2731517A00FAAD93 /* FireworkViewController.xib */; };
 		71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499D2731517A00FAAD93 /* FireworkItem.xib */; };
 		71F249D22731517A00FAAD93 /* Firework.TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499F2731517A00FAAD93 /* Firework.TestData.swift */; };
 		71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F249A02731517A00FAAD93 /* Firework.Extension.swift */; };
@@ -629,8 +629,8 @@
 		71EA693D265631DF009463E6 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
 		71EA694026563270009463E6 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		71F2499227313B0C00FAAD93 /* FloatContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatContainer.swift; sourceTree = "<group>"; };
-		71F2499A2731517A00FAAD93 /* FileEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileEffectViewController.swift; sourceTree = "<group>"; };
-		71F2499B2731517A00FAAD93 /* FileEffectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileEffectViewController.xib; sourceTree = "<group>"; };
+		71F2499A2731517A00FAAD93 /* FireworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkViewController.swift; sourceTree = "<group>"; };
+		71F2499B2731517A00FAAD93 /* FireworkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkViewController.xib; sourceTree = "<group>"; };
 		71F2499D2731517A00FAAD93 /* FireworkItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkItem.xib; sourceTree = "<group>"; };
 		71F2499F2731517A00FAAD93 /* Firework.TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.TestData.swift; sourceTree = "<group>"; };
 		71F249A02731517A00FAAD93 /* Firework.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.Extension.swift; sourceTree = "<group>"; };
@@ -1588,7 +1588,7 @@
 		71F249982731517A00FAAD93 /* MyJob */ = {
 			isa = PBXGroup;
 			children = (
-				71F249992731517A00FAAD93 /* FileEffect */,
+				71F249992731517A00FAAD93 /* FireworkEffect */,
 				71F249BB2731517A00FAAD93 /* Marebulabulas */,
 				71F249B32731517A00FAAD93 /* MagicCube */,
 				71F249AE2731517A00FAAD93 /* DragonSlayer */,
@@ -1599,14 +1599,14 @@
 			path = MyJob;
 			sourceTree = "<group>";
 		};
-		71F249992731517A00FAAD93 /* FileEffect */ = {
+		71F249992731517A00FAAD93 /* FireworkEffect */ = {
 			isa = PBXGroup;
 			children = (
-				71F2499A2731517A00FAAD93 /* FileEffectViewController.swift */,
-				71F2499B2731517A00FAAD93 /* FileEffectViewController.xib */,
+				71F2499A2731517A00FAAD93 /* FireworkViewController.swift */,
+				71F2499B2731517A00FAAD93 /* FireworkViewController.xib */,
 				71F2499C2731517A00FAAD93 /* Firework */,
 			);
-			path = FileEffect;
+			path = FireworkEffect;
 			sourceTree = "<group>";
 		};
 		71F2499C2731517A00FAAD93 /* Firework */ = {
@@ -1848,7 +1848,7 @@
 				71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */,
 				717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */,
 				713998072705B64D002BC263 /* Girl2.jpg in Resources */,
-				71F249D02731517A00FAAD93 /* FileEffectViewController.xib in Resources */,
+				71F249D02731517A00FAAD93 /* FireworkViewController.xib in Resources */,
 				713998062705B64D002BC263 /* Girl5.jpg in Resources */,
 				1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */,
 				719299F5281A6E1700CCE872 /* PKChallengeInviteView.xib in Resources */,
@@ -1949,7 +1949,7 @@
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
 				71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
-				71F249CF2731517A00FAAD93 /* FileEffectViewController.swift in Sources */,
+				71F249CF2731517A00FAAD93 /* FireworkViewController.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
 				1A3544FD254E77600032B677 /* Const.swift in Sources */,
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
