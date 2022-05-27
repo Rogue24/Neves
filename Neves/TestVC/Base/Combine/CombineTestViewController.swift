@@ -4,35 +4,99 @@
 //
 //  Created by aa on 2021/8/23.
 //
-//  学自：https://blog.ficowshen.com/page/post/12
+//  学自1：https://blog.ficowshen.com/page/post/12
+//  学自2：https://www.jianshu.com/p/d14748abb911
 
 import Combine
 //import SwiftUI
 
-@objcMembers class Person: NSObject {
-    dynamic var name: String
+var abc = 1
+
+class TestMsgView: UIView {
+    let label = UILabel()
     
-    init(_ name: String) {
-        self.name = name
+    var text: String = "\(abc)" {
+        didSet {
+            label.text = text
+        }
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.borderColor = UIColor.randomColor.cgColor
+        layer.borderWidth = 8
+        
+        backgroundColor = .randomColor
+        
+        label.frame = bounds
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .randomColor
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = text
+        addSubview(label)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
+
+class CombineTestView1: UIView {
+    let label = UILabel()
+    
+    @Published var bgColor: UIColor = .randomColor {
+        didSet {
+            backgroundColor = bgColor
+        }
+    }
+    
+    @Published var text: String = "\(abc)" {
+        didSet {
+            label.text = text
+        }
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.borderColor = UIColor.randomColor.cgColor
+        layer.borderWidth = 8
+        
+        backgroundColor = bgColor
+        
+        label.frame = bounds
+        label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .randomColor
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = text
+        addSubview(label)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class CombineTestView2: CombineTestView1, ObservableObject {}
+
 
 @available(iOS 13.0, *)
 class CombineTestViewController: TestBaseViewController {
     
-//    @ObservedObject var store = UpdateStore()
-    
-    let person = Person("hh")
+    @objc dynamic var name: String = "\(Int(Date().timeIntervalSince1970))"
     
     var connection: Combine.Cancellable? // RxSwift也有Cancellable，得加上模块前缀区分
     
     // testObj
     var canceler1: AnyCancellable?
     var canceler2: AnyCancellable?
+    var canceler11: AnyCancellable?
+    var canceler22: AnyCancellable?
     
     // testReq
     var canceler3: AnyCancellable?
+    var canceler33: AnyCancellable?
     
     // testShare
     var canceler4: AnyCancellable?
@@ -44,24 +108,79 @@ class CombineTestViewController: TestBaseViewController {
     var canceler8: AnyCancellable?
     var canceler9: AnyCancellable?
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        person.name = "\(Date())"
-        view.backgroundColor = .randomColor
+    let testMsgView = TestMsgView(frame: [20, 150, 150, 150])
+    
+    let testView1 = CombineTestView1(frame: [20, 320, 150, 150])
+    let testView2 = CombineTestView2(frame: [20, 500, 150, 150])
+    
+    let testMsgView1 = TestMsgView(frame: [190, 320, 150, 150])
+    let testMsgView2 = TestMsgView(frame: [190, 500, 150, 150])
+    
+    var cancelerX1: AnyCancellable?
+    var cancelerX2: AnyCancellable?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        testConnectable()
+        view.addSubview(testMsgView)
+        
+        view.addSubview(testView1)
+        view.addSubview(testMsgView1)
+        
+        view.addSubview(testView2)
+        view.addSubview(testMsgView2)
+        
+        setupKvcKvoPublisher()
+        setupPublished()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addFunAction { [weak self] in
+            guard let self = self else { return }
+            
+            self.name = "\(Int(Date().timeIntervalSince1970))"
+            self.view.backgroundColor = .randomColor
+            
+//            self.testReq()
+//            self.testShare()
+//            self.testConnectable()
+            
+//            abc += 1
+//
+//            self.testView1.text = "\(abc)"
+////            self.testView1.bgColor = .randomColor
+//
+//            self.testView2.bgColor = .randomColor
+//            let rgba = self.testView2.bgColor.rgba
+//            JPrint("xxx r:", rgba.r, "g:", rgba.g, "b:", rgba.b)
+//
+//            self.testView2.text = "\(abc)"
+//            JPrint("xxx", self.testView2.text)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeFunAction()
     }
     
     deinit {
         connection?.cancel()
         canceler1?.cancel()
         canceler2?.cancel()
+        canceler11?.cancel()
+        canceler22?.cancel()
         canceler3?.cancel()
+        canceler33?.cancel()
         canceler4?.cancel()
         canceler5?.cancel()
         canceler6?.cancel()
         canceler7?.cancel()
         canceler8?.cancel()
         canceler9?.cancel()
+        cancelerX1?.cancel()
+        cancelerX2?.cancel()
     }
 }
 
@@ -73,43 +192,107 @@ class CombineTestViewController: TestBaseViewController {
 
 @available(iOS 13.0, *)
 extension CombineTestViewController {
-    func testObj() {
-        let personPublisher = person.publisher(for: \.name, options: .new)
-        canceler1 = personPublisher.sink { name in
+    func setupKvcKvoPublisher() {
+        // 创建KVC/KVO的发布者
+        // Swift的属性想要支持KVC/KVO需要使用`@objc dynamic`修饰符
+        let namePublisher = publisher(for: \.name, options: .new)
+        canceler1 = namePublisher.sink { name in
             JPrint("1 ---", name)
+        }
+        
+        // 可以创建多个发布者
+        let namePublisher2 = publisher(for: \.name, options: .new)
+        canceler11 = namePublisher2.sink { name in
+            self.testMsgView.text = name
         }
         
         let bgColorPublisher = view.publisher(for: \.backgroundColor, options: .new)
         canceler2 = bgColorPublisher.sink {
             guard let color = $0 else { return }
-            JPrint("2 ---", color)
+            let rgba = color.rgba
+            JPrint("2 --- r:", rgba.r, "g:", rgba.g, "b:", rgba.b)
+        }
+        
+        let bgColorPublisher2 = view.publisher(for: \.backgroundColor, options: .new)
+        canceler22 = bgColorPublisher2.sink {
+            self.testMsgView.backgroundColor = $0
         }
     }
     
+    func setupPublished() {
+        // 使用`@Published`包装的属性，可以通过`$`符号直接访问这个属性的发布者（系统自动生成）
+        cancelerX1 = testView1.$bgColor.sink { [weak self] in
+            self?.testMsgView1.backgroundColor = $0
+        }
+        
+        // ObservableObject可以通过`objectWillChange`获取到发布者，并订阅来监听所有被`@Published`标记的属性更改的回调
+        // 这里bgColor和text都修改，那就会回调两次，但是此时回调里面去获取的属性是【旧值】
+        cancelerX2 = testView2.objectWillChange.sink { [weak self] in
+            guard let self = self else { return }
+            
+            let rgba = self.testView2.bgColor.rgba
+            JPrint("bbb r:", rgba.r, "g:", rgba.g, "b:", rgba.b)
+            JPrint("bbb", self.testView2.text)
+            
+            self.testMsgView2.backgroundColor = self.testView2.bgColor
+            self.testMsgView2.text = self.testView2.text
+        }
+    }
+}
+    
+@available(iOS 13.0, *)
+extension CombineTestViewController {
     func testReq() {
+        canceler3?.cancel()
+        canceler33?.cancel()
+        
         let dataTaskPublisher = URLSession.shared.dataTaskPublisher(for: URL.jp.hitokoto)
-        // receiveCompletion 和 receiveValue 都在【同一线程】内回调，一般会先执行 receiveValue 再执行 receiveCompletion
+            .share() // 使用`Publisher/share()`则接收的都是同一个发布者
+        
+        /// `receiveCompletion`和`receiveValue`都在【同一队列】内回调（非同一线程），
+        /// 一般会先执行`receiveValue`再执行`receiveCompletion`。
+        
         canceler3 = dataTaskPublisher
             .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                
+            switch completion {
+            case .finished:
+                print("【m】成功 --- \(Thread.current)")
+            case .failure:
+                print("【m】失败 --- \(Thread.current)")
+            }
+                
+        }, receiveValue: { data, response in
+            
+            guard let dict = JSON(data).dictionary,
+                  let hitokoto = dict["hitokoto"] else {
+                print("【m】文案请求失败: 数据解析失败 --- \(Thread.current)")
+                return
+            }
+            print("【m】文案请求成功: \(hitokoto) --- \(Thread.current)")
+            
+        })
+        
+        canceler33 = dataTaskPublisher
+            .receive(on: DispatchQueue.global())
             .sink(receiveCompletion: { completion in
             
             switch completion {
             case .finished:
-                JPrint("成功 ---", Thread.current)
+                print("【g】成功 --- \(Thread.current)")
             case .failure:
-                JPrint("失败 ---", Thread.current)
+                print("【g】失败 --- \(Thread.current)")
             }
             
         }, receiveValue: { data, response in
             
             guard let dict = JSON(data).dictionary,
-                  let hitokoto = dict["hitokoto"] else
-            {
-                JPrint("文案请求失败: 数据解析失败 ---", Thread.current)
+                  let hitokoto = dict["hitokoto"] else {
+                print("【g】文案请求失败: 数据解析失败 --- \(Thread.current)")
                 return
             }
-            
-            JPrint("文案请求成功:", hitokoto, "---", Thread.current)
+            print("【g】文案请求成功: \(hitokoto) --- \(Thread.current)")
             
         })
     }
