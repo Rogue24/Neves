@@ -89,6 +89,10 @@
                 "vcName": "TableViewAnimateController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "AnimGroupTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

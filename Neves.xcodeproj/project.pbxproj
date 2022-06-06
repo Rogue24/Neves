@@ -240,6 +240,7 @@
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */; };
+		71A5C71A284E03CB00067318 /* AnimGroupTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
 		71AB638127F5C287000CCF58 /* CosmicExplorationTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */; };
 		71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637E27F5C287000CCF58 /* CosmicExplorationHostView.swift */; };
@@ -605,6 +606,7 @@
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAReplicatorLayerTestVC.swift; sourceTree = "<group>"; };
+		71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimGroupTestViewController.swift; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
 		71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationTurntableView.swift; sourceTree = "<group>"; };
 		71AB637E27F5C287000CCF58 /* CosmicExplorationHostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationHostView.swift; sourceTree = "<group>"; };
@@ -1104,6 +1106,7 @@
 				711074282717FBF400178969 /* LottieImagePickerViewController.swift */,
 				0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */,
 				1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */,
+				71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */,
 			);
 			path = Animate;
 			sourceTree = "<group>";
@@ -2013,6 +2016,7 @@
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
 				71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */,
 				1A354523254E77600032B677 /* JPFileTool.m in Sources */,
+				71A5C71A284E03CB00067318 /* AnimGroupTestViewController.swift in Sources */,
 				0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */,
 				718A56B627F1BDAF0071C724 /* CosmicExplorationCountView.swift in Sources */,
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
