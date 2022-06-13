@@ -1086,7 +1086,7 @@
 				71B897A6268C509F00705AC1 /* Video */,
 				1A35443A254E77600032B677 /* GCD */,
 				1A9E41AA26BFE19F006941D0 /* Memory */,
-				1A3545B6254E89040032B677 /* Widget */,
+				7170F8B82857353200C9B51C /* SwiftUI */,
 				71F249982731517A00FAAD93 /* MyJob */,
 			);
 			path = TestVC;
@@ -1359,6 +1359,14 @@
 				716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */,
 			);
 			path = Kingfisher;
+			sourceTree = "<group>";
+		};
+		7170F8B82857353200C9B51C /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				1A3545B6254E89040032B677 /* Widget */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		717B3387272902CD000B0A70 /* Video */ = {

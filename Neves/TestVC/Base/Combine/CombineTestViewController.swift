@@ -131,7 +131,12 @@ class CombineTestViewController: TestBaseViewController {
         view.addSubview(testMsgView2)
         
         setupKvcKvoPublisher()
-        setupPublished()
+        
+        // 使用`sink`订阅【特定属性】就会立刻调用一次闭包，
+        // 使用`sink`订阅【objectWillChange】不会立刻调用，只会在属性更改前一刻才会调用，所以在闭包内获取到的是旧值
+        Asyncs.mainDelay(3) {
+            self.setupPublished()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -146,17 +151,13 @@ class CombineTestViewController: TestBaseViewController {
 //            self.testShare()
 //            self.testConnectable()
             
-//            abc += 1
-//
-//            self.testView1.text = "\(abc)"
-////            self.testView1.bgColor = .randomColor
-//
-//            self.testView2.bgColor = .randomColor
-//            let rgba = self.testView2.bgColor.rgba
-//            JPrint("xxx r:", rgba.r, "g:", rgba.g, "b:", rgba.b)
-//
-//            self.testView2.text = "\(abc)"
-//            JPrint("xxx", self.testView2.text)
+            abc += 1
+            
+            self.testView1.bgColor = .randomColor
+            self.testView1.text = "\(abc)"
+            
+            self.testView2.bgColor = .randomColor
+            self.testView2.text = "\(abc)"
         }
     }
     
@@ -226,7 +227,8 @@ extension CombineTestViewController {
         }
         
         // ObservableObject可以通过`objectWillChange`获取到发布者，并订阅来监听所有被`@Published`标记的属性更改的回调
-        // 这里bgColor和text都修改，那就会回调两次，但是此时回调里面去获取的属性是【旧值】
+        // 当属性将要发生更改，会在属性更改【前】一刻回调闭包，因此在闭包里面去获取的属性是【旧值】
+        // 如果`bgColor`和`text`都修改了，那就会回调两次
         cancelerX2 = testView2.objectWillChange.sink { [weak self] in
             guard let self = self else { return }
             
