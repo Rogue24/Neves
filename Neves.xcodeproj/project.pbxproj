@@ -183,6 +183,8 @@
 		716A8B6D26F58B0100D9C8E9 /* CGFloat.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */; };
 		716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* VideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
+		7170F8BA28573C8600C9B51C /* SwiftUIBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170F8B928573C8600C9B51C /* SwiftUIBridge.swift */; };
+		7170F8BC28573CA300C9B51C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170F8BB28573CA300C9B51C /* WidgetView.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */; };
 		71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71782B46274E40F60047F2B8 /* TestLockViewController.swift */; };
@@ -240,6 +242,7 @@
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */; };
+		71A2702A2857432000B9D000 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A270292857432000B9D000 /* Modifier.swift */; };
 		71A5C71A284E03CB00067318 /* AnimGroupTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
 		71AB638127F5C287000CCF58 /* CosmicExplorationTurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */; };
@@ -548,6 +551,8 @@
 		716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.Extension.swift; sourceTree = "<group>"; };
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		7170BF122701CA2000900BE7 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
+		7170F8B928573C8600C9B51C /* SwiftUIBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBridge.swift; sourceTree = "<group>"; };
+		7170F8BB28573CA300C9B51C /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenCornerViewController.swift; sourceTree = "<group>"; };
 		71782B46274E40F60047F2B8 /* TestLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLockViewController.swift; sourceTree = "<group>"; };
@@ -606,6 +611,7 @@
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAReplicatorLayerTestVC.swift; sourceTree = "<group>"; };
+		71A270292857432000B9D000 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimGroupTestViewController.swift; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
 		71AB637D27F5C287000CCF58 /* CosmicExplorationTurntableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationTurntableView.swift; sourceTree = "<group>"; };
@@ -1200,12 +1206,12 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		1A3545B6254E89040032B677 /* Widget */ = {
+		1A3545B6254E89040032B677 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				1A3545B7254E893F0032B677 /* WidgetViewController.swift */,
 			);
-			path = Widget;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		1A5930EE27B8DD6900DC60FC /* Turntable */ = {
@@ -1336,6 +1342,22 @@
 			path = RoomGuideAttention;
 			sourceTree = "<group>";
 		};
+		712059F1285C7AFC0052E224 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7170F8BB28573CA300C9B51C /* WidgetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		712059F2285C7BDE0052E224 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				7170F8B928573C8600C9B51C /* SwiftUIBridge.swift */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
 		7151894727EB2AF400342645 /* FaceAware */ = {
 			isa = PBXGroup;
 			children = (
@@ -1364,7 +1386,10 @@
 		7170F8B82857353200C9B51C /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				1A3545B6254E89040032B677 /* Widget */,
+				1A3545B6254E89040032B677 /* ViewController */,
+				712059F2285C7BDE0052E224 /* Bridge */,
+				712059F1285C7AFC0052E224 /* View */,
+				71A270282857430C00B9D000 /* Modifier */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1552,6 +1577,14 @@
 				719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */,
 			);
 			path = PKChallenge;
+			sourceTree = "<group>";
+		};
+		71A270282857430C00B9D000 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				71A270292857432000B9D000 /* Modifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		71AB637B27F5C287000CCF58 /* Turntable */ = {
@@ -2016,6 +2049,7 @@
 				1A354515254E77600032B677 /* JPSubTableViewController.m in Sources */,
 				715ED74626FF26520030F279 /* Date.Extension.swift in Sources */,
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
+				71A2702A2857432000B9D000 /* Modifier.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */,
 				718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */,
@@ -2139,6 +2173,7 @@
 				717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
+				7170F8BC28573CA300C9B51C /* WidgetView.swift in Sources */,
 				1A5930F827B8DD6900DC60FC /* TurntableViewCell.swift in Sources */,
 				1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */,
 				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
@@ -2148,6 +2183,7 @@
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
 				71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */,
+				7170F8BA28573C8600C9B51C /* SwiftUIBridge.swift in Sources */,
 				7151895527EC574000342645 /* LoremPicsum.swift in Sources */,
 				71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */,
 				1A5930F627B8DD6900DC60FC /* TurntableView.Calculate.swift in Sources */,
