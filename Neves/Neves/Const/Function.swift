@@ -122,25 +122,20 @@ func PageScrollProgress(WithPageSizeValue pageSizeValue: CGFloat,
 
 /// 获取`KeyWindow`
 func GetKeyWindow() -> UIWindow? {
+    var window: UIWindow?
     if #available(iOS 13.0, *) {
-        return UIApplication.shared.connectedScenes
-                .filter { $0.activationState == .foregroundActive }
-                .compactMap { $0 as? UIWindowScene }
-                .first?
-                .windows
-                .filter { $0.isKeyWindow }
-                .first
-                ??
-        UIApplication.shared
-                .windows
-                .filter { $0.isKeyWindow }
-                .first
-    } else {
-        return UIApplication.shared
-                .windows
-                .filter { $0.isKeyWindow }
-                .first
+        window = UIApplication.shared.connectedScenes
+                    .filter { $0.activationState == .foregroundActive }
+                    .compactMap { $0 as? UIWindowScene }
+                    .first?
+                    .windows
+                    .filter { $0.isKeyWindow }
+                    .first
     }
+    return window ?? UIApplication.shared
+                        .windows
+                        .filter { $0.isKeyWindow }
+                        .first
 }
 
 /// 获取最顶层的`ViewController` --- 从`KeyWindow`开始查找
