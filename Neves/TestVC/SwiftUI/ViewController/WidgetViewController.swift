@@ -12,8 +12,6 @@ class WidgetViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
 //        let vc = SwiftUIBridge.addWidgetView()
 //        addChild(vc)
 //
@@ -21,17 +19,13 @@ class WidgetViewController: TestBaseViewController {
 //        vc.view.frame = [100, 200, 250, 250]
 //        view.addSubview(vc.view)
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         addFunAction { [weak self] in
-            let vc = WidgetView().intoVC()
-            
-            self?.navigationController?.pushViewController(vc, animated: true)
+            self?.navigationController?.pushViewController(WidgetView().intoVC(), animated: true)
         }
     }
 
