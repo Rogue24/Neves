@@ -171,7 +171,6 @@ extension KeyValueManager {
     subscript<T: NSCoding & NSObjectProtocol>(dynamicMember keyPath: KeyPath<KeyStore, Key<T>>) -> T? {
         get {
             let key = keyStore[keyPath: keyPath]
-            mmkv?.object(of: T.self, forKey: key.key)
             return mmkv?.object(of: T.self, forKey: key.key) as? T
         }
         set {
