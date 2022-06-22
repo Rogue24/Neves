@@ -184,6 +184,10 @@
                 "vcName": "JSONTestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "KeyValueTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

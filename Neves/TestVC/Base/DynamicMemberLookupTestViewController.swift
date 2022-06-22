@@ -6,10 +6,10 @@
 //
 //  学自：https://zhuanlan.zhihu.com/p/415217937
 
-var KVM: KeyValueManager { KeyValueManager.shared }
+var MyKVM: MyKeyValueManager { MyKeyValueManager.shared }
 
 @dynamicMemberLookup
-class KeyValueManager {
+class MyKeyValueManager {
     struct KeyValue<T> {
         let key: String
         let defaultValue: T?
@@ -25,7 +25,7 @@ class KeyValueManager {
         var name = KeyValue(key: "name", defaultValue: "zhoujianping")
     }
     
-    static let shared = KeyValueManager()
+    static let shared = MyKeyValueManager()
     private var store = KeyValueStore()
     
     subscript(dynamicMember keyPath: WritableKeyPath<KeyValueStore, KeyValue<String>>) -> String? {
@@ -66,9 +66,9 @@ class DynamicMemberLookupTestViewController: TestBaseViewController {
             guard let self = self else { return }
             
             JPrint("--------------------")
-            JPrint("1", KVM.name ?? "null")
-            KVM.name = "\(Int(Date().timeIntervalSince1970))"
-            JPrint("2", KVM.name ?? "null")
+            JPrint("1", MyKVM.name ?? "null")
+            MyKVM.name = "\(Int(Date().timeIntervalSince1970))"
+            JPrint("2", MyKVM.name ?? "null")
             
             var newFrame = self.myLabel.frame
             newFrame.origin.x += 1

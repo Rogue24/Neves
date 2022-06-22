@@ -131,6 +131,10 @@
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
 		7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104877E28391E0B00706ED7 /* M34TestViewController.swift */; };
+		71048BC62862FDAB00737278 /* KeyValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71048BC52862FDAB00737278 /* KeyValueManager.swift */; };
+		71048BC82863000F00737278 /* KeyValueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71048BC72863000F00737278 /* KeyValueTestViewController.swift */; };
+		71048BCB2863167300737278 /* MoguBanner.json in Resources */ = {isa = PBXBuildFile; fileRef = 71048BCA2863167300737278 /* MoguBanner.json */; };
+		71048BCD2863282E00737278 /* KeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71048BCC2863282E00737278 /* KeyStore.swift */; };
 		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
 		71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */; };
 		71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1F274CD00C004C3257 /* AttentionBothSides.swift */; };
@@ -500,6 +504,10 @@
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
 		7104877E28391E0B00706ED7 /* M34TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M34TestViewController.swift; sourceTree = "<group>"; };
+		71048BC52862FDAB00737278 /* KeyValueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueManager.swift; sourceTree = "<group>"; };
+		71048BC72863000F00737278 /* KeyValueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueTestViewController.swift; sourceTree = "<group>"; };
+		71048BCA2863167300737278 /* MoguBanner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MoguBanner.json; sourceTree = "<group>"; };
+		71048BCC2863282E00737278 /* KeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStore.swift; sourceTree = "<group>"; };
 		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
 		71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGuideAttentionViewController.swift; sourceTree = "<group>"; };
 		71070E1F274CD00C004C3257 /* AttentionBothSides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionBothSides.swift; sourceTree = "<group>"; };
@@ -773,10 +781,10 @@
 		1A354372254E775F0032B677 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				71048BC92863167300737278 /* JSON */,
 				717B3387272902CD000B0A70 /* Video */,
 				7190E4E227102EB600E8C511 /* Music */,
 				1A354373254E775F0032B677 /* Picture */,
-				1A354375254E775F0032B677 /* JSON */,
 				1A3543B3254E775F0032B677 /* Font */,
 			);
 			path = Resource;
@@ -797,13 +805,6 @@
 				1A354374254E775F0032B677 /* JPIcon.png */,
 			);
 			path = Picture;
-			sourceTree = "<group>";
-		};
-		1A354375254E775F0032B677 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JSON;
 			sourceTree = "<group>";
 		};
 		1A3543B3254E775F0032B677 /* Font */ = {
@@ -898,6 +899,7 @@
 				71B300892722BBAF00997B20 /* VideoMaker.Image.swift */,
 				71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */,
 				718018BE2722611A0056E699 /* LottieImage */,
+				71048BC42862FDAB00737278 /* KeyValue */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1237,8 +1239,9 @@
 		1A5930FD27B8DD9200DC60FC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */,
 				1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */,
+				1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */,
+				71048BC72863000F00737278 /* KeyValueTestViewController.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1338,6 +1341,23 @@
 				1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */,
 			);
 			path = Memory;
+			sourceTree = "<group>";
+		};
+		71048BC42862FDAB00737278 /* KeyValue */ = {
+			isa = PBXGroup;
+			children = (
+				71048BC52862FDAB00737278 /* KeyValueManager.swift */,
+				71048BCC2863282E00737278 /* KeyStore.swift */,
+			);
+			path = KeyValue;
+			sourceTree = "<group>";
+		};
+		71048BC92863167300737278 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				71048BCA2863167300737278 /* MoguBanner.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		71070E1C274CBADE004C3257 /* RoomGuideAttention */ = {
@@ -1885,6 +1905,7 @@
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
 				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
 				71EA694126563270009463E6 /* girl.jpg in Resources */,
+				71048BCB2863167300737278 /* MoguBanner.json in Resources */,
 				715C901427F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib in Resources */,
 				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
 				71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */,
@@ -2079,6 +2100,7 @@
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
+				71048BCD2863282E00737278 /* KeyStore.swift in Sources */,
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
 				71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
@@ -2129,6 +2151,7 @@
 				71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */,
 				71F249DF2731517A00FAAD93 /* FireworkModel.swift in Sources */,
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
+				71048BC62862FDAB00737278 /* KeyValueManager.swift in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
 				719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */,
@@ -2142,6 +2165,7 @@
 				71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */,
 				71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */,
 				1A35451E254E77600032B677 /* NSURL+JPExtension.m in Sources */,
+				71048BC82863000F00737278 /* KeyValueTestViewController.swift in Sources */,
 				1A3544F8254E77600032B677 /* UIScreen.Extension.swift in Sources */,
 				71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */,
 				71902948281924F0000F6E29 /* PKProgressRankListView.swift in Sources */,

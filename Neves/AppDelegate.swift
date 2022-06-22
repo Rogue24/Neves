@@ -53,6 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationBar.standardAppearance = appearance
         }
         
+        // 初始化MMKV
+        KVM.register(520)
+        
         return true
     }
 

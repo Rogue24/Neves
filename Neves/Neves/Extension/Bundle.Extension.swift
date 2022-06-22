@@ -22,6 +22,8 @@ extension Bundle {
     
     var appBuild: String { infoDictionary?[kCFBundleVersionKey as String] as? String ?? "Unknown" }
     
+    var appName: String { infoDictionary?[kCFBundleNameKey as String] as? String ?? "Unknown" }
+    
     var osNameVersion: String {
         let version = ProcessInfo.processInfo.operatingSystemVersion
         let versionString = "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"

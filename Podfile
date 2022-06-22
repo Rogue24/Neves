@@ -23,6 +23,7 @@ target 'Neves' do
   pod 'YYText'
   pod 'MJRefresh'
   pod 'SVProgressHUD'
+  pod 'MMKV'
   
   pod 'LookinServer', :configurations => ['Debug']
 end
