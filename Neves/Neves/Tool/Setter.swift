@@ -9,7 +9,7 @@
 /**
  * `@dynamicMemberLookup`：动态成员查询
  * 实现下标脚本函数`subscript<V>(dynamicMember keyPath: KeyPath<T, V>) -> V?`，
- * 编译器会通过下标脚本函数，根据`KeyPath`就可以访问到对象不存在的属性。
+ * 编译器会通过下标脚本函数，根据`KeyPath`就可以访问到对象“不存在”的属性。
  
  * 🌰🌰🌰🌰
  * `roomWidth`和`roomHeight`是属于`House.Room`的属性，创建`House`的对象，其中的`room`属性是私有不公开的，按照以往方式是无法访问的，
