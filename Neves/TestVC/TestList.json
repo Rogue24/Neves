@@ -217,6 +217,10 @@
                 "vcName": "CombineTestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "DynamicMemberLookupTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
