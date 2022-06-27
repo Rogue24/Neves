@@ -13,7 +13,7 @@ extension KeyValueManager {
             let valueType: T.Type = T.self
             let key: String
             let defaultValue: T?
-            init(key: String, defaultValue: T?) {
+            init(_ key: String, defaultValue: T? = nil) {
                 self.key = key
                 self.defaultValue = defaultValue
             }
@@ -21,9 +21,9 @@ extension KeyValueManager {
     }
 }
 
-// MARK: - 注册Key
+// MARK: - Key注册表
 extension KeyStore {
     
-    var moguBanner: Key<JPMoguBanner> { Key(key: "moguBanner", defaultValue: nil) }
+    var moguBanner: Key<JPMoguBanner> { Key("moguBanner") }
     
 }
