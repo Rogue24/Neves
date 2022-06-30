@@ -26,6 +26,7 @@
 #import "JPObject.h"
 #import "OCTestObject.h"
 #import "OCEqualTestViewController.h"
+#import "MyCache.h"
 
 // JPBasic
 #import "JPInline.h"

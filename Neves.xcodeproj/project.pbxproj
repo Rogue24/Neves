@@ -245,6 +245,13 @@
 		71981FC827F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */; };
 		71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */; };
 		719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */; };
+		719A5221286D48A700619AD4 /* JPCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A521E286D48A700619AD4 /* JPCacheKey.swift */; };
+		719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A521F286D48A700619AD4 /* JPCacheObject.swift */; };
+		719A5223286D48A700619AD4 /* JPCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A5220286D48A700619AD4 /* JPCache.swift */; };
+		719A522A286D9E8400619AD4 /* MyCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 719A5228286D9E8300619AD4 /* MyCache.m */; };
+		719A522F286D9F0A00619AD4 /* JPUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A522B286D9F0A00619AD4 /* JPUserInfo.swift */; };
+		719A5230286D9F0A00619AD4 /* JPCacheViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A522C286D9F0A00619AD4 /* JPCacheViewConstroller.swift */; };
+		719A5231286D9F0A00619AD4 /* JPUserInfoCacheTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719A522D286D9F0A00619AD4 /* JPUserInfoCacheTool.swift */; };
 		719F9FAF286043C9008B4C1F /* View.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F9FAE286043C9008B4C1F /* View.Extension.swift */; };
 		71A2702A2857432000B9D000 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A270292857432000B9D000 /* Modifier.swift */; };
 		71A5C71A284E03CB00067318 /* AnimGroupTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */; };
@@ -620,6 +627,14 @@
 		71981FC727F708A30094E6F0 /* CosmicExplorationBuyTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationBuyTicketView.swift; sourceTree = "<group>"; };
 		71981FC927F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationBuyTicketView.xib; sourceTree = "<group>"; };
 		719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAReplicatorLayerTestVC.swift; sourceTree = "<group>"; };
+		719A521E286D48A700619AD4 /* JPCacheKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPCacheKey.swift; sourceTree = "<group>"; };
+		719A521F286D48A700619AD4 /* JPCacheObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPCacheObject.swift; sourceTree = "<group>"; };
+		719A5220286D48A700619AD4 /* JPCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPCache.swift; sourceTree = "<group>"; };
+		719A5228286D9E8300619AD4 /* MyCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCache.m; sourceTree = "<group>"; };
+		719A5229286D9E8300619AD4 /* MyCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCache.h; sourceTree = "<group>"; };
+		719A522B286D9F0A00619AD4 /* JPUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPUserInfo.swift; sourceTree = "<group>"; };
+		719A522C286D9F0A00619AD4 /* JPCacheViewConstroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPCacheViewConstroller.swift; sourceTree = "<group>"; };
+		719A522D286D9F0A00619AD4 /* JPUserInfoCacheTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPUserInfoCacheTool.swift; sourceTree = "<group>"; };
 		719F9FAE286043C9008B4C1F /* View.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.Extension.swift; sourceTree = "<group>"; };
 		71A270292857432000B9D000 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimGroupTestViewController.swift; sourceTree = "<group>"; };
@@ -900,6 +915,7 @@
 				71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */,
 				718018BE2722611A0056E699 /* LottieImage */,
 				71048BC42862FDAB00737278 /* KeyValue */,
+				719A521D286D487A00619AD4 /* JPCache */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1242,6 +1258,7 @@
 				1A5930FE27B8DD9200DC60FC /* MoguBanner.swift */,
 				1A5930FF27B8DD9200DC60FC /* JSONTestViewController.swift */,
 				71048BC72863000F00737278 /* KeyValueTestViewController.swift */,
+				719A5227286D9E5500619AD4 /* JPCache */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1595,6 +1612,28 @@
 				719299F4281A6E1700CCE872 /* PKChallengeInviteView.xib */,
 			);
 			path = PKChallenge;
+			sourceTree = "<group>";
+		};
+		719A521D286D487A00619AD4 /* JPCache */ = {
+			isa = PBXGroup;
+			children = (
+				719A5229286D9E8300619AD4 /* MyCache.h */,
+				719A5228286D9E8300619AD4 /* MyCache.m */,
+				719A5220286D48A700619AD4 /* JPCache.swift */,
+				719A521E286D48A700619AD4 /* JPCacheKey.swift */,
+				719A521F286D48A700619AD4 /* JPCacheObject.swift */,
+			);
+			path = JPCache;
+			sourceTree = "<group>";
+		};
+		719A5227286D9E5500619AD4 /* JPCache */ = {
+			isa = PBXGroup;
+			children = (
+				719A522C286D9F0A00619AD4 /* JPCacheViewConstroller.swift */,
+				719A522B286D9F0A00619AD4 /* JPUserInfo.swift */,
+				719A522D286D9F0A00619AD4 /* JPUserInfoCacheTool.swift */,
+			);
+			path = JPCache;
 			sourceTree = "<group>";
 		};
 		71A270282857430C00B9D000 /* Modifier */ = {
@@ -2002,6 +2041,7 @@
 				71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */,
+				719A5231286D9F0A00619AD4 /* JPUserInfoCacheTool.swift in Sources */,
 				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
 				71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */,
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
@@ -2018,6 +2058,7 @@
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
+				719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */,
 				717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */,
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
@@ -2027,6 +2068,7 @@
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
 				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
 				7190294C28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift in Sources */,
+				719A522F286D9F0A00619AD4 /* JPUserInfo.swift in Sources */,
 				715C901927F6F88800B88B85 /* CosmicExplorationJackpotCell.swift in Sources */,
 				715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
@@ -2053,6 +2095,7 @@
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
 				71AB638327F5C287000CCF58 /* CosmicExplorationPrizeView.swift in Sources */,
 				7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */,
+				719A522A286D9E8400619AD4 /* MyCache.m in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
 				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
 				1A35451B254E77600032B677 /* UIViewController+JPExtension.m in Sources */,
@@ -2097,6 +2140,7 @@
 				715C900C27F6F2C600B88B85 /* CosmicExplorationRecordDetailView.swift in Sources */,
 				719299ED281A461800CCE872 /* PKChallengeInviteView.swift in Sources */,
 				713997FD2705B4B8002BC263 /* ImageVideoMakeViewController.swift in Sources */,
+				719A5223286D48A700619AD4 /* JPCache.swift in Sources */,
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
@@ -2110,6 +2154,7 @@
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				718A56B127F1B9500071C724 /* Buttons.swift in Sources */,
+				719A5230286D9F0A00619AD4 /* JPCacheViewConstroller.swift in Sources */,
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
@@ -2225,6 +2270,7 @@
 				718A569727F195780071C724 /* CosmicExplorationManager.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
+				719A5221286D48A700619AD4 /* JPCacheKey.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
 				1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */,
