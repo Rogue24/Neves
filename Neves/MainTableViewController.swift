@@ -28,7 +28,24 @@ class MainTableViewController: UITableViewController {
                 guard let vcType =
                         NSClassFromString(className) as? UIViewController.Type ??
                         NSClassFromString(vcName) as? UIViewController.Type
-                else { return nil }
+                else {
+                    return .other(vcName) { context in
+                        switch context {
+                        case "ResultBuilderView":
+                            if #available(iOS 14.0.0, *) {
+                                return ResultBuilderView().intoVC()
+                            } else {
+                                return nil
+                            }
+                        case "WidgetView":
+                            return WidgetView().intoVC().addFunAction {
+                                JPrint("wahahaha")
+                            }
+                        default:
+                            return nil
+                        }
+                    }
+                }
                 
                 switch vcCreateWay {
                 case .code:
@@ -39,11 +56,13 @@ class MainTableViewController: UITableViewController {
                     return .storyboard(vcType, sbName: "Main")
                 case .custom:
                     return .custom(vcType) { vcType in
-                        if vcType is MarebulabulasViewController.Type {
+                        switch vcType {
+                        case is MarebulabulasViewController.Type:
                             return MarebulabulasViewController(type: .sing(true))
 //                            return MarebulabulasViewController(type: .dialogue)
+                        default:
+                            return nil
                         }
-                        return nil
                     }
                 }
             }

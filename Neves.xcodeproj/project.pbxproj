@@ -90,7 +90,6 @@
 		1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AB254E818B0032B677 /* SwiftyJSON.Extension.swift */; };
 		1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AC254E818B0032B677 /* Lottie.Extension.swift */; };
 		1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545AD254E818B0032B677 /* HYLabel.swift */; };
-		1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3545B7254E893F0032B677 /* WidgetViewController.swift */; };
 		1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930EF27B8DD6900DC60FC /* TurntableView.swift */; };
 		1A5930F627B8DD6900DC60FC /* TurntableView.Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F027B8DD6900DC60FC /* TurntableView.Calculate.swift */; };
 		1A5930F727B8DD6900DC60FC /* TurntableViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5930F127B8DD6900DC60FC /* TurntableViewCellLayout.swift */; };
@@ -138,6 +137,7 @@
 		7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */; };
 		71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */; };
 		71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1F274CD00C004C3257 /* AttentionBothSides.swift */; };
+		7107CDA4287BD49E00AC9B9F /* Cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7107CDA3287BD49E00AC9B9F /* Cat.gif */; };
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
 		711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711074282717FBF400178969 /* LottieImagePickerViewController.swift */; };
 		7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742A271968D700178969 /* VideoMaker.Lottie.swift */; };
@@ -270,6 +270,7 @@
 		71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
+		71BD270E287D55E100496B6A /* ResultBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD270D287D55E100496B6A /* ResultBuilderView.swift */; };
 		71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */; };
 		71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */; };
 		71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0C27310D4500300367 /* FloatWindowContainer.swift */; };
@@ -463,7 +464,6 @@
 		1A3545AB254E818B0032B677 /* SwiftyJSON.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.Extension.swift; sourceTree = "<group>"; };
 		1A3545AC254E818B0032B677 /* Lottie.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lottie.Extension.swift; sourceTree = "<group>"; };
 		1A3545AD254E818B0032B677 /* HYLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYLabel.swift; sourceTree = "<group>"; };
-		1A3545B7254E893F0032B677 /* WidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetViewController.swift; sourceTree = "<group>"; };
 		1A5930EF27B8DD6900DC60FC /* TurntableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableView.swift; sourceTree = "<group>"; };
 		1A5930F027B8DD6900DC60FC /* TurntableView.Calculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableView.Calculate.swift; sourceTree = "<group>"; };
 		1A5930F127B8DD6900DC60FC /* TurntableViewCellLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurntableViewCellLayout.swift; sourceTree = "<group>"; };
@@ -518,6 +518,7 @@
 		7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueTestViewController.swift; sourceTree = "<group>"; };
 		71070E1D274CBB82004C3257 /* RoomGuideAttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomGuideAttentionViewController.swift; sourceTree = "<group>"; };
 		71070E1F274CD00C004C3257 /* AttentionBothSides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionBothSides.swift; sourceTree = "<group>"; };
+		7107CDA3287BD49E00AC9B9F /* Cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cat.gif; sourceTree = "<group>"; };
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
 		711074282717FBF400178969 /* LottieImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePickerViewController.swift; sourceTree = "<group>"; };
 		7110742A271968D700178969 /* VideoMaker.Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Lottie.swift; sourceTree = "<group>"; };
@@ -654,6 +655,7 @@
 		71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageTest.swift; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
+		71BD270D287D55E100496B6A /* ResultBuilderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBuilderView.swift; sourceTree = "<group>"; };
 		71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLock2ViewController.swift; sourceTree = "<group>"; };
 		71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoCatchViewController.swift; sourceTree = "<group>"; };
 		71D72B0C27310D4500300367 /* FloatWindowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWindowContainer.swift; sourceTree = "<group>"; };
@@ -796,6 +798,7 @@
 		1A354372254E775F0032B677 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				7107CDA2287BD49800AC9B9F /* GIF */,
 				71048BC92863167300737278 /* JSON */,
 				717B3387272902CD000B0A70 /* Video */,
 				7190E4E227102EB600E8C511 /* Music */,
@@ -1231,14 +1234,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		1A3545B6254E89040032B677 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1A3545B7254E893F0032B677 /* WidgetViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
 		1A5930EE27B8DD6900DC60FC /* Turntable */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,12 +1381,20 @@
 			path = RoomGuideAttention;
 			sourceTree = "<group>";
 		};
-		712059F1285C7AFC0052E224 /* View */ = {
+		7107CDA2287BD49800AC9B9F /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				7107CDA3287BD49E00AC9B9F /* Cat.gif */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
+		712059F1285C7AFC0052E224 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
 				7170F8BB28573CA300C9B51C /* WidgetView.swift */,
 			);
-			path = View;
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		7151894727EB2AF400342645 /* FaceAware */ = {
@@ -1422,8 +1425,8 @@
 		7170F8B82857353200C9B51C /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				1A3545B6254E89040032B677 /* ViewController */,
-				712059F1285C7AFC0052E224 /* View */,
+				71BD270C287D55D800496B6A /* ResultBuilder */,
+				712059F1285C7AFC0052E224 /* Widget */,
 				71A270282857430C00B9D000 /* Modifier */,
 			);
 			path = SwiftUI;
@@ -1673,6 +1676,14 @@
 				713997FC2705B4B8002BC263 /* ImageVideoMakeViewController.swift */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		71BD270C287D55D800496B6A /* ResultBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				71BD270D287D55E100496B6A /* ResultBuilderView.swift */,
+			);
+			path = ResultBuilder;
 			sourceTree = "<group>";
 		};
 		71D72B0B27310CD000300367 /* FloatWindow */ = {
@@ -1971,6 +1982,7 @@
 				718A569E27F19F5E0071C724 /* CosmicExplorationPlayView.xib in Resources */,
 				1A354343254E75EB0032B677 /* Main.storyboard in Resources */,
 				71F249F72731517A00FAAD93 /* dialogue1.txt in Resources */,
+				7107CDA4287BD49E00AC9B9F /* Cat.gif in Resources */,
 				719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */,
 				71F249F52731517A00FAAD93 /* lrc2.txt in Resources */,
 				71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */,
@@ -2097,6 +2109,7 @@
 				7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */,
 				719A522A286D9E8400619AD4 /* MyCache.m in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
+				71BD270E287D55E100496B6A /* ResultBuilderView.swift in Sources */,
 				1A9E419B26BE45D6006941D0 /* ResizableImageViewController.swift in Sources */,
 				1A35451B254E77600032B677 /* UIViewController+JPExtension.m in Sources */,
 				71AB638127F5C287000CCF58 /* CosmicExplorationTurntableView.swift in Sources */,
@@ -2169,7 +2182,6 @@
 				717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */,
 				719029402818E597000F6E29 /* RoomPKTestViewController.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
-				1A3545B8254E893F0032B677 /* WidgetViewController.swift in Sources */,
 				718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,

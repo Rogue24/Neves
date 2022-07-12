@@ -178,15 +178,17 @@ extension NSObject {
         FunFloatButton.replaceFunAction(action)
     }
     
-    @objc func addFunAction(_ action: (() -> ())?) {
+    @discardableResult @objc func addFunAction(_ action: (() -> ())?) -> Self {
         FunFloatButton.replaceFunAction(action)
+        return self
     }
     
     @objc static func removeFunAction() {
         FunFloatButton.shared.tapMeAction = nil
     }
     
-    @objc func removeFunAction() {
+    @discardableResult @objc func removeFunAction() -> Self {
         FunFloatButton.shared.tapMeAction = nil
+        return self
     }
 }

@@ -337,7 +337,11 @@
         "header" : "SwiftUI",
         "vcList" : [
             {
-                "vcName": "WidgetViewController",
+                "vcName": "ResultBuilderView",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "WidgetView",
                 "vcCreateWay" : 0
             },
         ]

@@ -13,6 +13,7 @@ enum VcBuilder {
     case xib(_ vcType: Vc.Type, nibName: String? = nil, bundle: Bundle? = nil)
     case storyboard(_ vcType: Vc.Type, sbName: String, bundle: Bundle? = nil, identifier: String? = nil)
     case custom(_ vcType: Vc.Type, build: (Vc.Type) -> Vc?)
+    case other(_ context: String, build: (String) -> Vc?)
     
     func build() -> Vc? {
         switch self {
@@ -31,6 +32,9 @@ enum VcBuilder {
             
         case let .custom(vcType, build):
             return build(vcType)
+            
+        case let .other(context, build):
+            return build(context)
         }
     }
 }
