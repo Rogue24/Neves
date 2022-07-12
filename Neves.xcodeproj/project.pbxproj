@@ -271,6 +271,7 @@
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
 		71BD270E287D55E100496B6A /* ResultBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD270D287D55E100496B6A /* ResultBuilderView.swift */; };
+		71BD2711287D64E100496B6A /* DiffableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD2710287D64E100496B6A /* DiffableTestViewController.swift */; };
 		71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */; };
 		71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */; };
 		71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0C27310D4500300367 /* FloatWindowContainer.swift */; };
@@ -656,6 +657,7 @@
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
 		71BD270D287D55E100496B6A /* ResultBuilderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBuilderView.swift; sourceTree = "<group>"; };
+		71BD2710287D64E100496B6A /* DiffableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTestViewController.swift; sourceTree = "<group>"; };
 		71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLock2ViewController.swift; sourceTree = "<group>"; };
 		71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoCatchViewController.swift; sourceTree = "<group>"; };
 		71D72B0C27310D4500300367 /* FloatWindowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWindowContainer.swift; sourceTree = "<group>"; };
@@ -1202,14 +1204,15 @@
 		1A354455254E77600032B677 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */,
 				71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */,
 				710A2F11260C6A130060CF01 /* BindableViewController.swift */,
-				7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */,
-				71A7D9DF28619ECC007960C3 /* DynamicMemberLookupTestViewController.swift */,
-				71B18FB926D338E1006CF7C0 /* Combine */,
 				1A9E41A726BFE0C5006941D0 /* PropertyWrapper */,
 				1A9E418F26BE459E006941D0 /* Set */,
 				1A9E418226BE44A1006941D0 /* Hash */,
+				71B18FB926D338E1006CF7C0 /* Combine */,
+				71BD2712287D659E00496B6A /* DynamicMemberLookup */,
+				71BD270F287D64BC00496B6A /* Diffable */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1684,6 +1687,22 @@
 				71BD270D287D55E100496B6A /* ResultBuilderView.swift */,
 			);
 			path = ResultBuilder;
+			sourceTree = "<group>";
+		};
+		71BD270F287D64BC00496B6A /* Diffable */ = {
+			isa = PBXGroup;
+			children = (
+				71BD2710287D64E100496B6A /* DiffableTestViewController.swift */,
+			);
+			path = Diffable;
+			sourceTree = "<group>";
+		};
+		71BD2712287D659E00496B6A /* DynamicMemberLookup */ = {
+			isa = PBXGroup;
+			children = (
+				71A7D9DF28619ECC007960C3 /* DynamicMemberLookupTestViewController.swift */,
+			);
+			path = DynamicMemberLookup;
 			sourceTree = "<group>";
 		};
 		71D72B0B27310CD000300367 /* FloatWindow */ = {
@@ -2252,6 +2271,7 @@
 				71675A04266A057700392630 /* Bindable.swift in Sources */,
 				1A35451A254E77600032B677 /* UIScrollView+JPExtension.m in Sources */,
 				7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */,
+				71BD2711287D64E100496B6A /* DiffableTestViewController.swift in Sources */,
 				717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
