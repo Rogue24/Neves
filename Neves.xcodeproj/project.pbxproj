@@ -139,6 +139,7 @@
 		71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71070E1F274CD00C004C3257 /* AttentionBothSides.swift */; };
 		7107CDA4287BD49E00AC9B9F /* Cat.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7107CDA3287BD49E00AC9B9F /* Cat.gif */; };
 		710A2F12260C6A130060CF01 /* BindableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710A2F11260C6A130060CF01 /* BindableViewController.swift */; };
+		710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710D5E2C2880696B0033C6C1 /* KFImageTestView.swift */; };
 		711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711074282717FBF400178969 /* LottieImagePickerViewController.swift */; };
 		7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742A271968D700178969 /* VideoMaker.Lottie.swift */; };
 		7110742D27196B8200178969 /* VideoMaker.ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7110742C27196B8200178969 /* VideoMaker.ImageInfo.swift */; };
@@ -521,6 +522,7 @@
 		71070E1F274CD00C004C3257 /* AttentionBothSides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionBothSides.swift; sourceTree = "<group>"; };
 		7107CDA3287BD49E00AC9B9F /* Cat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Cat.gif; sourceTree = "<group>"; };
 		710A2F11260C6A130060CF01 /* BindableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableViewController.swift; sourceTree = "<group>"; };
+		710D5E2C2880696B0033C6C1 /* KFImageTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFImageTestView.swift; sourceTree = "<group>"; };
 		711074282717FBF400178969 /* LottieImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieImagePickerViewController.swift; sourceTree = "<group>"; };
 		7110742A271968D700178969 /* VideoMaker.Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.Lottie.swift; sourceTree = "<group>"; };
 		7110742C27196B8200178969 /* VideoMaker.ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageInfo.swift; sourceTree = "<group>"; };
@@ -1392,6 +1394,14 @@
 			path = GIF;
 			sourceTree = "<group>";
 		};
+		710D5E2B288069570033C6C1 /* KFImage */ = {
+			isa = PBXGroup;
+			children = (
+				710D5E2C2880696B0033C6C1 /* KFImageTestView.swift */,
+			);
+			path = KFImage;
+			sourceTree = "<group>";
+		};
 		712059F1285C7AFC0052E224 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -1428,6 +1438,7 @@
 		7170F8B82857353200C9B51C /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				710D5E2B288069570033C6C1 /* KFImage */,
 				71BD270C287D55D800496B6A /* ResultBuilder */,
 				712059F1285C7AFC0052E224 /* Widget */,
 				71A270282857430C00B9D000 /* Modifier */,
@@ -2145,6 +2156,7 @@
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				71A2702A2857432000B9D000 /* Modifier.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
+				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
 				1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */,
 				718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */,
 				7151895327EC204D00342645 /* URL.Extension.swift in Sources */,

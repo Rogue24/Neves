@@ -31,6 +31,12 @@ class MainTableViewController: UITableViewController {
                 else {
                     return .other(vcName) { context in
                         switch context {
+                        case "KFImageTestView":
+                            if #available(iOS 15.0.0, *) {
+                                return KFImageTestView().intoVC()
+                            } else {
+                                return nil
+                            }
                         case "ResultBuilderView":
                             if #available(iOS 14.0.0, *) {
                                 return ResultBuilderView().intoVC()

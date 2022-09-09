@@ -341,6 +341,10 @@
         "header" : "SwiftUI",
         "vcList" : [
             {
+                "vcName": "KFImageTestView",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "ResultBuilderView",
                 "vcCreateWay" : 0
             },

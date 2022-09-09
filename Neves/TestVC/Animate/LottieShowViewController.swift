@@ -95,23 +95,23 @@ class LottieShowViewController: TestBaseViewController {
         let lottieName: String
         switch btn.tag {
         case 0:
-            lottieName = "roomguide_tx_lottie"
+            lottieName = "s_smelt_open2_lottie"
         case 1:
-            lottieName = "pk_fm_lose_lottie"
+            lottieName = "smelt_flash_lottie"
         case 2:
-            lottieName = "pk_fm_win_lottie"
+            lottieName = "smelt_open1_lottie"
         case 3:
-            lottieName = "pk_star_activation_lottie"
+            lottieName = "smelt_open2_lottie"
         case 4:
-            lottieName = "pk_tag_lottie"
+            lottieName = "smelt_popup_lottie"
         case 5:
-            lottieName = "pk_yule_draw_lottie"
+            lottieName = "smelt_selected_lottie"
         case 6:
-            lottieName = "pk_yule_lose_lottie"
+            lottieName = "room_renewguard01_lottie"
         case 7:
-            lottieName = "pk_yule_win_lottie"
+            lottieName = "room_renewguard02_lottie"
         default:
-            lottieName = "album_videobg_jielong_lottie"
+            lottieName = "room_upgradeguard_lottie"
         }
         
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
@@ -139,6 +139,8 @@ class LottieShowViewController: TestBaseViewController {
         makeAnimationImage(animationLayer, animation.startFrame)
         
         JPrint("时长", animation.duration)
+        JPrint("大小", animation.size)
+        JPrint("-------------")
     }
     
     @objc func sliderDidChanged(_ slider: UISlider) {

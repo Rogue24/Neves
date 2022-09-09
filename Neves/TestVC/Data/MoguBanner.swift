@@ -7,7 +7,9 @@
 //  系统JSON的使用例子：https://www.jianshu.com/p/9e6f8dc66a50
 //  SwiftyJSON的使用参考：https://blog.csdn.net/gf771115/article/details/111479203
 
-struct MoguBanner: Convertible, Codable {
+struct MoguBanner: Convertible, Codable, Hashable {
+    let identifier = UUID()
+    
     var title: String = ""
     var image: String = ""
     var link: String = ""
@@ -22,6 +24,14 @@ struct MoguBanner: Convertible, Codable {
         banner.image = dic["image"] as? String ?? ""
         banner.link = dic["link"] as? String ?? ""
         return banner
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+    
+    static func == (lhs: MoguBanner, rhs: MoguBanner) -> Bool {
+        return lhs.identifier == rhs.identifier
     }
     
 //    init() {}
@@ -64,6 +74,24 @@ extension MoguBanner {
             return try? Data(contentsOf: URL(fileURLWithPath: path))
         }
         return data
+    }
+    
+    enum Coder {
+        case system
+        case swiftyJSON
+        case kakaJSON
+    }
+    
+    static func requestDataModel(coder: Coder = .kakaJSON) async -> [MoguBanner] {
+        guard let data = await requestData() else { return [] }
+        switch coder {
+        case .system:
+            return await system_data2Model(data)
+        case .swiftyJSON:
+            return await swiftyJSON_data2Model(data)
+        case .kakaJSON:
+            return await kakaJSON_data2Model(data)
+        }
     }
 }
 
