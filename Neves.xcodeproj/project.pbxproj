@@ -189,6 +189,13 @@
 		716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170BF122701CA2000900BE7 /* VideoMaker.swift */; };
 		716EFCE92671F00700320C79 /* KingfisherTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */; };
 		7170F8BC28573CA300C9B51C /* WidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170F8BB28573CA300C9B51C /* WidgetView.swift */; };
+		7172B63128D06E8B00381E83 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63028D06E8B00381E83 /* Fonts.swift */; };
+		7172B63328D06E9700381E83 /* GifFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63228D06E9700381E83 /* GifFiles.swift */; };
+		7172B63728D06EA700381E83 /* MusicFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63628D06EA700381E83 /* MusicFiles.swift */; };
+		7172B63928D06EAD00381E83 /* PictureFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63828D06EAD00381E83 /* PictureFiles.swift */; };
+		7172B63B28D06EB400381E83 /* VideoFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63A28D06EB400381E83 /* VideoFiles.swift */; };
+		7172B63D28D06F2500381E83 /* MoguBannerJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63C28D06F2500381E83 /* MoguBannerJSON.swift */; };
+		7172B63F28D0710900381E83 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63E28D0710900381E83 /* Assets.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */; };
 		71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71782B46274E40F60047F2B8 /* TestLockViewController.swift */; };
@@ -573,6 +580,14 @@
 		716EFCE82671F00700320C79 /* KingfisherTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherTestViewController.swift; sourceTree = "<group>"; };
 		7170BF122701CA2000900BE7 /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
 		7170F8BB28573CA300C9B51C /* WidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetView.swift; sourceTree = "<group>"; };
+		7172B62D28D054CF00381E83 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		7172B63028D06E8B00381E83 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		7172B63228D06E9700381E83 /* GifFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifFiles.swift; sourceTree = "<group>"; };
+		7172B63628D06EA700381E83 /* MusicFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicFiles.swift; sourceTree = "<group>"; };
+		7172B63828D06EAD00381E83 /* PictureFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureFiles.swift; sourceTree = "<group>"; };
+		7172B63A28D06EB400381E83 /* VideoFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFiles.swift; sourceTree = "<group>"; };
+		7172B63C28D06F2500381E83 /* MoguBannerJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoguBannerJSON.swift; sourceTree = "<group>"; };
+		7172B63E28D0710900381E83 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenCornerViewController.swift; sourceTree = "<group>"; };
 		71782B46274E40F60047F2B8 /* TestLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLockViewController.swift; sourceTree = "<group>"; };
@@ -779,7 +794,6 @@
 				1A35433D254E75EB0032B677 /* SceneDelegate.swift */,
 				1A3543CF254E775F0032B677 /* MainTableViewController.swift */,
 				1A35442E254E77600032B677 /* TestVC */,
-				1A354372254E775F0032B677 /* Resource */,
 				1A3543D0254E775F0032B677 /* JPBasic */,
 				1A3545A9254E818B0032B677 /* ThirdLib */,
 				1A35436D254E76530032B677 /* Supporting Files */,
@@ -790,7 +804,8 @@
 		1A35436D254E76530032B677 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1A354344254E75EC0032B677 /* Assets.xcassets */,
+				7172B62D28D054CF00381E83 /* swiftgen.yml */,
+				1A354372254E775F0032B677 /* Resources */,
 				1A354349254E75EC0032B677 /* Info.plist */,
 				1A354346254E75EC0032B677 /* LaunchScreen.storyboard */,
 				1A354341254E75EB0032B677 /* Main.storyboard */,
@@ -799,22 +814,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1A354372254E775F0032B677 /* Resource */ = {
+		1A354372254E775F0032B677 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7172B62C28D01E8400381E83 /* Assets */,
+				1A3543B3254E775F0032B677 /* Font */,
 				7107CDA2287BD49800AC9B9F /* GIF */,
 				71048BC92863167300737278 /* JSON */,
-				717B3387272902CD000B0A70 /* Video */,
 				7190E4E227102EB600E8C511 /* Music */,
 				1A354373254E775F0032B677 /* Picture */,
-				1A3543B3254E775F0032B677 /* Font */,
+				717B3387272902CD000B0A70 /* Video */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		1A354373254E775F0032B677 /* Picture */ = {
 			isa = PBXGroup;
 			children = (
+				7172B63828D06EAD00381E83 /* PictureFiles.swift */,
 				713998032705B64D002BC263 /* Girl1.jpg */,
 				713997FF2705B64D002BC263 /* Girl2.jpg */,
 				713998002705B64D002BC263 /* Girl3.jpg */,
@@ -832,6 +849,7 @@
 		1A3543B3254E775F0032B677 /* Font */ = {
 			isa = PBXGroup;
 			children = (
+				7172B63028D06E8B00381E83 /* Fonts.swift */,
 				1A3543B4254E775F0032B677 /* FX-LED.ttf */,
 			);
 			path = Font;
@@ -1372,6 +1390,7 @@
 		71048BC92863167300737278 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				7172B63C28D06F2500381E83 /* MoguBannerJSON.swift */,
 				71048BCA2863167300737278 /* MoguBanner.json */,
 			);
 			path = JSON;
@@ -1389,6 +1408,7 @@
 		7107CDA2287BD49800AC9B9F /* GIF */ = {
 			isa = PBXGroup;
 			children = (
+				7172B63228D06E9700381E83 /* GifFiles.swift */,
 				7107CDA3287BD49E00AC9B9F /* Cat.gif */,
 			);
 			path = GIF;
@@ -1446,9 +1466,19 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
+		7172B62C28D01E8400381E83 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7172B63E28D0710900381E83 /* Assets.swift */,
+				1A354344254E75EC0032B677 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		717B3387272902CD000B0A70 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				7172B63A28D06EB400381E83 /* VideoFiles.swift */,
 				717B3388272902CD000B0A70 /* minion_01.mp4 */,
 			);
 			path = Video;
@@ -1592,6 +1622,7 @@
 		7190E4E227102EB600E8C511 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				7172B63628D06EA700381E83 /* MusicFiles.swift */,
 				7110743C271ECA4800178969 /* voices.m4a */,
 				7190E4E327102EB600E8C511 /* Matteo-Panama.mp3 */,
 			);
@@ -1928,6 +1959,7 @@
 				1A354335254E75EB0032B677 /* Frameworks */,
 				1A354336254E75EB0032B677 /* Resources */,
 				FD180B731909D91BBC67FB87 /* [CP] Embed Pods Frameworks */,
+				71B7141B28CB35FD000C7EF7 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -2054,6 +2086,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		71B7141B28CB35FD000C7EF7 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen > /dev/null; then\n    swiftgen\nelse \n    echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
 		FD180B731909D91BBC67FB87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2093,6 +2143,7 @@
 				007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */,
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
+				7172B63D28D06F2500381E83 /* MoguBannerJSON.swift in Sources */,
 				71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
 				71F249CF2731517A00FAAD93 /* FireworkViewController.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
@@ -2198,6 +2249,7 @@
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				718A56B127F1B9500071C724 /* Buttons.swift in Sources */,
+				7172B63B28D06EB400381E83 /* VideoFiles.swift in Sources */,
 				719A5230286D9F0A00619AD4 /* JPCacheViewConstroller.swift in Sources */,
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */,
@@ -2216,6 +2268,7 @@
 				718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
+				7172B63F28D0710900381E83 /* Assets.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
@@ -2241,6 +2294,7 @@
 				1A354517254E77600032B677 /* UIColor+JPExtension.m in Sources */,
 				71048BC62862FDAB00737278 /* KeyValueManager.swift in Sources */,
 				1A9E419A26BE45D6006941D0 /* CircleLevelView.swift in Sources */,
+				7172B63928D06EAD00381E83 /* PictureFiles.swift in Sources */,
 				71107433271E63B000178969 /* SolitaireCalculationViewController.swift in Sources */,
 				719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
@@ -2258,6 +2312,7 @@
 				71AB638227F5C287000CCF58 /* CosmicExplorationHostView.swift in Sources */,
 				71902948281924F0000F6E29 /* PKProgressRankListView.swift in Sources */,
 				1A354505254E77600032B677 /* JPScreenBorderButton.m in Sources */,
+				7172B63328D06E9700381E83 /* GifFiles.swift in Sources */,
 				719299E0281A332400CCE872 /* PKResult.swift in Sources */,
 				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
 				71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */,
@@ -2315,6 +2370,7 @@
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
 				719A5221286D48A700619AD4 /* JPCacheKey.swift in Sources */,
+				7172B63728D06EA700381E83 /* MusicFiles.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
 				1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */,
@@ -2353,6 +2409,7 @@
 				1A35450C254E77600032B677 /* JPTextView.m in Sources */,
 				1A354516254E77600032B677 /* UIImage+JPExtension.m in Sources */,
 				7151894B27EB2AF400342645 /* UIImageView+FaceAware.swift in Sources */,
+				7172B63128D06E8B00381E83 /* Fonts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

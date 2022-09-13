@@ -1,0 +1,75 @@
+input_dir: Neves/Resources
+output_dir: Neves/Resources
+
+xcassets:
+  - inputs: Assets/Assets.xcassets
+    outputs:
+      - templateName: swift5
+        output: Assets/Assets.swift
+        params:
+          imageTypeName: NevesImageAsset
+          colorTypeName: NevesColorAsset
+          dataTypeName: NevesDataAsset
+          symbolTypeName: NevesSymbolAsset
+                              
+fonts:
+  - inputs: Font/
+    outputs:
+      - templateName: swift5
+        output: Font/Fonts.swift
+      
+json:
+  - inputs: JSON/MoguBanner.json
+    outputs:
+      - templateName: runtime-swift5
+        output: JSON/MoguBannerJSON.swift
+        params:
+          enumName: MoguBannerJSON
+        
+files:
+  - inputs: Music/
+    filter: .+\.(m4a|mp3)$
+    outputs:
+      - templateName: structured-swift5
+        output: Music/MusicFiles.swift
+        params:
+          enumName: MusicFiles
+          resourceTypeName: MusicFile
+          
+  - inputs: Picture/
+    filter: .+\.(jpg|png)$
+    outputs:
+      - templateName: structured-swift5
+        output: Picture/PictureFiles.swift
+        params:
+          enumName: PictureFiles
+          resourceTypeName: PictureFile
+          
+  - inputs: GIF/
+    filter: .+\.gif$
+    outputs:
+      - templateName: structured-swift5
+        output: GIF/GifFiles.swift
+        params:
+          enumName: GifFiles
+          resourceTypeName: GifFile
+          
+  - inputs: Video/
+    filter: .+\.mp4$
+    outputs:
+      - templateName: structured-swift5
+        output: Video/VideoFiles.swift
+        params:
+          enumName: VideoFiles
+          resourceTypeName: VideoFile
+      
+#strings:
+#    inputs:
+#        - Localizable.strings
+#    outputs:
+#        templateName: structured-swift5
+#        output: Strings.swift
+
+
+
+

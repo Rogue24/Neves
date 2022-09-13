@@ -17,6 +17,7 @@ target 'Neves' do
   pod 'lottie-ios'
   pod 'SnapKit'
   pod 'RealmSwift'
+  pod 'SwiftGen'
 
 # OC的库
   pod 'pop'
