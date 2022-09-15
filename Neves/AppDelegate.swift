@@ -36,9 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         JPProgressHUD.setMaxSupportedWindowLevel(.alert)
         JPProgressHUD.setMinimumDismissTimeInterval(1.3)
         
-        JPrint("StatusBar", StatusBarH, DiffStatusBarH)
-        JPrint("TabBar", TabBarH, DiffTabBarH)
-        
         JPrint(File.documentDirPath)
         JPrint(File.documentFilePath("123"))
         JPrint(File.cacheDirPath)

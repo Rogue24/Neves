@@ -22,57 +22,65 @@ let LandscapeScreenBounds: CGRect = CGRect(origin: .zero, size: LandscapeScreenS
 
 let IsBangsScreen: Bool = PortraitScreenHeight > 736.0
 
-let BaseTabBarH: CGFloat = 49.0
-let DiffTabBarH: CGFloat = {
-    var diffH: CGFloat
-    if IsBangsScreen {
-        diffH = 34.0
-    } else {
-        diffH = 0
-    }
+private var _DiffTabBarH: CGFloat = 0
+var DiffTabBarH: CGFloat {
+    guard _DiffTabBarH == 0 else { return _DiffTabBarH }
+    
     if #available(iOS 11.0, *),
        let window = UIApplication.shared.delegate?.window ?? UIApplication.shared.windows.first
     {
-        diffH = window.safeAreaInsets.bottom
+        _DiffTabBarH = window.safeAreaInsets.bottom
     }
-    return diffH
-}()
+    
+    guard _DiffTabBarH == 0 else { return _DiffTabBarH }
+    
+    if IsBangsScreen {
+        return 34.0
+    } else {
+        return 0
+    }
+}
+let BaseTabBarH: CGFloat = 49.0
 let TabBarH: CGFloat = BaseTabBarH + DiffTabBarH
 
-let BaseStatusBarH: CGFloat = 20.0
-let DiffStatusBarH: CGFloat = StatusBarH - BaseStatusBarH
-let StatusBarH: CGFloat = {
-    var statusBarH: CGFloat
-    if IsBangsScreen {
-        if #available(iOS 13.0, *) {
-            statusBarH = 48.0
-        } else {
-            statusBarH = 44.0
-        }
-    } else {
-        statusBarH = BaseStatusBarH
-    }
+private var _StatusBarH: CGFloat = 0
+var StatusBarH: CGFloat {
+    guard _StatusBarH == 0 else { return _StatusBarH }
+    
     if #available(iOS 11.0, *) {
         if let window = UIApplication.shared.delegate?.window ?? UIApplication.shared.windows.first {
             if #available(iOS 13.0, *) {
                 if let statusBarManager = window.windowScene?.statusBarManager {
-                    statusBarH = statusBarManager.statusBarFrame.height
+                    _StatusBarH = statusBarManager.statusBarFrame.height
                 } else {
-                    statusBarH = window.safeAreaInsets.top
+                    _StatusBarH = window.safeAreaInsets.top
                 }
             } else {
-                statusBarH = window.safeAreaInsets.top
+                _StatusBarH = window.safeAreaInsets.top
             }
         } else {
             if #available(iOS 13.0, *) {} else {
-                statusBarH = UIApplication.shared.statusBarFrame.height
+                _StatusBarH = UIApplication.shared.statusBarFrame.height
             }
         }
     } else {
-        statusBarH = UIApplication.shared.statusBarFrame.height
+        _StatusBarH = UIApplication.shared.statusBarFrame.height
     }
-    return statusBarH
-}()
+    
+    guard _StatusBarH == 0 else { return _StatusBarH }
+    
+    if IsBangsScreen {
+        if #available(iOS 13.0, *) {
+            return 48.0
+        } else {
+            return 44.0
+        }
+    } else {
+        return BaseStatusBarH
+    }
+}
+let BaseStatusBarH: CGFloat = 20.0
+let DiffStatusBarH: CGFloat = StatusBarH - BaseStatusBarH
 
 let NavBarH: CGFloat = 44.0
 let NavTopMargin: CGFloat = StatusBarH + NavBarH

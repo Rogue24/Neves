@@ -91,6 +91,9 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Neves"
         
+        JPrint("StatusBar", StatusBarH, DiffStatusBarH)
+        JPrint("TabBar", TabBarH, DiffTabBarH)
+        
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: Self.headerID)
         
 //        let currentDate = Date()
