@@ -44,9 +44,11 @@ class MainTableViewController: UITableViewController {
                                 return nil
                             }
                         case "WidgetView":
-                            return WidgetView().intoVC().addFunAction {
+                            let vc = WidgetView().intoVC()
+                            vc.replaceFunnyAction {
                                 JPrint("wahahaha")
                             }
+                            return vc
                         default:
                             return nil
                         }
@@ -91,8 +93,8 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "Neves"
         
-        JPrint("StatusBar", StatusBarH, DiffStatusBarH)
-        JPrint("TabBar", TabBarH, DiffTabBarH)
+        JPrint("111 StatusBar", StatusBarH, DiffStatusBarH)
+        JPrint("111 TabBar", TabBarH, DiffTabBarH)
         
         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: Self.headerID)
         
@@ -122,7 +124,7 @@ class MainTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        addFunAction {
+        addFunnyAction {
             let s1 = JPStatus.received
             let s2 = JPStatus.countdown("1")
             let s3 = JPStatus.countdown("1")
@@ -133,6 +135,14 @@ class MainTableViewController: UITableViewController {
             JPrint("s2 == s3", s2 == s3) // true
             JPrint("s3 == s4", s3 == s4) // false
             JPrint("s4 == s5", s4 == s5) // false
+        }
+        
+        addFunnyAction(name: "哈哈") {
+            JPrint("哈哈")
+        }
+        
+        addFunnyAction(name: "嘻嘻") {
+            JPrint("嘻嘻")
         }
     }
 }
@@ -177,7 +187,7 @@ extension MainTableViewController {
         if let vcBuilder = rowItem.vcBuilder, let vc = vcBuilder.build() {
             navigationController?.pushViewController(vc, animated: true)
         } else {
-            JPProgressHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建")//, userInteractionEnabled: true)
+            JPProgressHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建", userInteractionEnabled: true)
         }
     }
 }

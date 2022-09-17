@@ -24,12 +24,10 @@ let IsBangsScreen: Bool = PortraitScreenHeight > 736.0
 
 private var _DiffTabBarH: CGFloat = 0
 var DiffTabBarH: CGFloat {
-    guard _DiffTabBarH == 0 else { return _DiffTabBarH }
-    
-    if #available(iOS 11.0, *),
-       let window = UIApplication.shared.delegate?.window ?? UIApplication.shared.windows.first
-    {
-        _DiffTabBarH = window.safeAreaInsets.bottom
+    if _DiffTabBarH > 0 {
+        return _DiffTabBarH
+    } else {
+        _DiffTabBarH = GetDiffTabBarH()
     }
     
     guard _DiffTabBarH == 0 else { return _DiffTabBarH }
@@ -45,26 +43,10 @@ let TabBarH: CGFloat = BaseTabBarH + DiffTabBarH
 
 private var _StatusBarH: CGFloat = 0
 var StatusBarH: CGFloat {
-    guard _StatusBarH == 0 else { return _StatusBarH }
-    
-    if #available(iOS 11.0, *) {
-        if let window = UIApplication.shared.delegate?.window ?? UIApplication.shared.windows.first {
-            if #available(iOS 13.0, *) {
-                if let statusBarManager = window.windowScene?.statusBarManager {
-                    _StatusBarH = statusBarManager.statusBarFrame.height
-                } else {
-                    _StatusBarH = window.safeAreaInsets.top
-                }
-            } else {
-                _StatusBarH = window.safeAreaInsets.top
-            }
-        } else {
-            if #available(iOS 13.0, *) {} else {
-                _StatusBarH = UIApplication.shared.statusBarFrame.height
-            }
-        }
+    if _StatusBarH > 0 {
+        return _StatusBarH
     } else {
-        _StatusBarH = UIApplication.shared.statusBarFrame.height
+        _StatusBarH = GetStatusBarH()
     }
     
     guard _StatusBarH == 0 else { return _StatusBarH }

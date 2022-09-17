@@ -23,7 +23,7 @@ class CosmicExplorationTestViewController: TestBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addFunAction { [weak self] in
+        replaceFunnyAction { [weak self] in
             guard let self = self else { return }
             guard CosmicExplorationManager.shared.playView == nil else {
                 if let model = CosmicExplorationManager.shared.selectedPlanet {
@@ -40,7 +40,7 @@ class CosmicExplorationTestViewController: TestBaseViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        removeFunAction()
+        removeFunnyActions()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

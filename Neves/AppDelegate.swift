@@ -53,6 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 初始化MMKV
         KVM.register(520)
         
+        JPrint("000 StatusBar", StatusBarH, DiffStatusBarH)
+        JPrint("000 TabBar", TabBarH, DiffTabBarH)
         return true
     }
 

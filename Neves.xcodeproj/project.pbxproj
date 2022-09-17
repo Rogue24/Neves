@@ -109,7 +109,6 @@
 		1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587442629E6CC00846689 /* OptionPopView.swift */; };
 		1A65874C2629E6CC00846689 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587452629E6CC00846689 /* AlertView.swift */; };
 		1A65874E2629E6CC00846689 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6587472629E6CC00846689 /* SheetView.swift */; };
-		1A82A1442768FCF000ECA895 /* FunFloatButton.Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A82A1432768FCF000ECA895 /* FunFloatButton.Playground.swift */; };
 		1A9E417826BE4061006941D0 /* TableViewAnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */; };
 		1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */; };
 		1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */; };
@@ -129,6 +128,7 @@
 		1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */; };
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
+		7102C56328D1ADC300E2265C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102C56228D1ADC300E2265C /* Assets.swift */; };
 		7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104877E28391E0B00706ED7 /* M34TestViewController.swift */; };
 		71048BC62862FDAB00737278 /* KeyValueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71048BC52862FDAB00737278 /* KeyValueManager.swift */; };
 		71048BC82863000F00737278 /* KeyValueTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71048BC72863000F00737278 /* KeyValueTestViewController.swift */; };
@@ -195,7 +195,6 @@
 		7172B63928D06EAD00381E83 /* PictureFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63828D06EAD00381E83 /* PictureFiles.swift */; };
 		7172B63B28D06EB400381E83 /* VideoFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63A28D06EB400381E83 /* VideoFiles.swift */; };
 		7172B63D28D06F2500381E83 /* MoguBannerJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63C28D06F2500381E83 /* MoguBannerJSON.swift */; };
-		7172B63F28D0710900381E83 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7172B63E28D0710900381E83 /* Assets.swift */; };
 		71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */; };
 		717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */; };
 		71782B47274E40F60047F2B8 /* TestLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71782B46274E40F60047F2B8 /* TestLockViewController.swift */; };
@@ -282,8 +281,6 @@
 		71BD2711287D64E100496B6A /* DiffableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD2710287D64E100496B6A /* DiffableTestViewController.swift */; };
 		71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */; };
 		71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */; };
-		71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0C27310D4500300367 /* FloatWindowContainer.swift */; };
-		71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D72B0E2731141D00300367 /* FunFloatButton.swift */; };
 		71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DE01A626E61978003EBF66 /* LottieShowViewController.swift */; };
 		71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3364126C26202004669F7 /* DeferTestViewController.swift */; };
 		71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693A26563165009463E6 /* UIImage.Extension.swift */; };
@@ -494,7 +491,6 @@
 		1A6587442629E6CC00846689 /* OptionPopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionPopView.swift; sourceTree = "<group>"; };
 		1A6587452629E6CC00846689 /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		1A6587472629E6CC00846689 /* SheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
-		1A82A1432768FCF000ECA895 /* FunFloatButton.Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFloatButton.Playground.swift; sourceTree = "<group>"; };
 		1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAnimateController.swift; sourceTree = "<group>"; };
 		1A9E417A26BE42FB006941D0 /* FuncTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuncTestViewController.swift; sourceTree = "<group>"; };
 		1A9E417B26BE42FB006941D0 /* TestTryCatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTryCatchViewController.swift; sourceTree = "<group>"; };
@@ -519,6 +515,8 @@
 		1AABA9B02555BBA10051CA7E /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
+		7102C56128D1ABF200E2265C /* swift5.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; name = swift5.stencil; path = Pods/SwiftGen/bin/SwiftGen_SwiftGenCLI.bundle/Contents/Resources/templates/xcassets/swift5.stencil; sourceTree = SOURCE_ROOT; };
+		7102C56228D1ADC300E2265C /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		7104877E28391E0B00706ED7 /* M34TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = M34TestViewController.swift; sourceTree = "<group>"; };
 		71048BC52862FDAB00737278 /* KeyValueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyValueManager.swift; sourceTree = "<group>"; };
 		71048BC72863000F00737278 /* KeyValueTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueTestViewController.swift; sourceTree = "<group>"; };
@@ -587,7 +585,6 @@
 		7172B63828D06EAD00381E83 /* PictureFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureFiles.swift; sourceTree = "<group>"; };
 		7172B63A28D06EB400381E83 /* VideoFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoFiles.swift; sourceTree = "<group>"; };
 		7172B63C28D06F2500381E83 /* MoguBannerJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoguBannerJSON.swift; sourceTree = "<group>"; };
-		7172B63E28D0710900381E83 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.Extension.swift; sourceTree = "<group>"; };
 		717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenCornerViewController.swift; sourceTree = "<group>"; };
 		71782B46274E40F60047F2B8 /* TestLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLockViewController.swift; sourceTree = "<group>"; };
@@ -677,8 +674,6 @@
 		71BD2710287D64E100496B6A /* DiffableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTestViewController.swift; sourceTree = "<group>"; };
 		71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLock2ViewController.swift; sourceTree = "<group>"; };
 		71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoCatchViewController.swift; sourceTree = "<group>"; };
-		71D72B0C27310D4500300367 /* FloatWindowContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatWindowContainer.swift; sourceTree = "<group>"; };
-		71D72B0E2731141D00300367 /* FunFloatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunFloatButton.swift; sourceTree = "<group>"; };
 		71DE01A626E61978003EBF66 /* LottieShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieShowViewController.swift; sourceTree = "<group>"; };
 		71E3364126C26202004669F7 /* DeferTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferTestViewController.swift; sourceTree = "<group>"; };
 		71EA693A26563165009463E6 /* UIImage.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.Extension.swift; sourceTree = "<group>"; };
@@ -804,6 +799,7 @@
 		1A35436D254E76530032B677 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7102C56128D1ABF200E2265C /* swift5.stencil */,
 				7172B62D28D054CF00381E83 /* swiftgen.yml */,
 				1A354372254E775F0032B677 /* Resources */,
 				1A354349254E75EC0032B677 /* Info.plist */,
@@ -1469,7 +1465,7 @@
 		7172B62C28D01E8400381E83 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				7172B63E28D0710900381E83 /* Assets.swift */,
+				7102C56228D1ADC300E2265C /* Assets.swift */,
 				1A354344254E75EC0032B677 /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -1751,9 +1747,6 @@
 			isa = PBXGroup;
 			children = (
 				71F2499227313B0C00FAAD93 /* FloatContainer.swift */,
-				71D72B0C27310D4500300367 /* FloatWindowContainer.swift */,
-				71D72B0E2731141D00300367 /* FunFloatButton.swift */,
-				1A82A1432768FCF000ECA895 /* FunFloatButton.Playground.swift */,
 			);
 			path = FloatWindow;
 			sourceTree = "<group>";
@@ -2102,7 +2095,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen > /dev/null; then\n    swiftgen\nelse \n    echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+			shellScript = "if [ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]; then\n    \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse \n    echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
 		FD180B731909D91BBC67FB87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2268,7 +2261,7 @@
 				718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
-				7172B63F28D0710900381E83 /* Assets.swift in Sources */,
+				7102C56328D1ADC300E2265C /* Assets.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
@@ -2351,7 +2344,6 @@
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
-				71D72B0F2731141D00300367 /* FunFloatButton.swift in Sources */,
 				7151895527EC574000342645 /* LoremPicsum.swift in Sources */,
 				71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */,
 				1A5930F627B8DD6900DC60FC /* TurntableView.Calculate.swift in Sources */,
@@ -2374,7 +2366,6 @@
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
 				1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */,
-				71D72B0D27310D4500300367 /* FloatWindowContainer.swift in Sources */,
 				718A569C27F19F130071C724 /* CosmicExplorationPlayView.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
 				00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */,
@@ -2390,7 +2381,6 @@
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
 				719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
-				1A82A1442768FCF000ECA895 /* FunFloatButton.Playground.swift in Sources */,
 				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,
 				71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,

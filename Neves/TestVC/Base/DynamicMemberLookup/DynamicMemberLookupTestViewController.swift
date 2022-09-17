@@ -62,7 +62,7 @@ class DynamicMemberLookupTestViewController: TestBaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        addFunAction { [weak self] in
+        replaceFunnyAction { [weak self] in
             guard let self = self else { return }
             
             JPrint("--------------------")
@@ -79,6 +79,11 @@ class DynamicMemberLookupTestViewController: TestBaseViewController {
                     .frame(newFrame)
             
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeFunnyActions()
     }
     
 }

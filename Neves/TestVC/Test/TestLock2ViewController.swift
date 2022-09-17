@@ -13,7 +13,7 @@ class TestLock2ViewController: TestBaseViewController {
         
         JPProgressHUD.show(true)
         
-        addFunAction { [weak self] in
+        replaceFunnyAction { [weak self] in
             guard let self = self else { return }
             
             self.abc(0)
@@ -51,7 +51,7 @@ class TestLock2ViewController: TestBaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        removeFunAction()
+        removeFunnyActions()
         
         JPProgressHUD.dismiss()
     }

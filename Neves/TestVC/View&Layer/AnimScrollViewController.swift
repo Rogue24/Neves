@@ -33,7 +33,7 @@ class AnimScrollViewController: TestBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addFunAction { [weak self] in
+        replaceFunnyAction { [weak self] in
             guard let self = self, !self.isAnimating else { return }
             self.isAnimating = true
             
@@ -74,7 +74,7 @@ class AnimScrollViewController: TestBaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        removeFunAction()
+        removeFunnyActions()
     }
 
 }

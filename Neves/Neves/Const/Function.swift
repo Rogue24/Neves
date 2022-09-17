@@ -122,20 +122,46 @@ func PageScrollProgress(WithPageSizeValue pageSizeValue: CGFloat,
 
 /// 获取`KeyWindow`
 func GetKeyWindow() -> UIWindow? {
-    var window: UIWindow?
     if #available(iOS 13.0, *) {
-        window = UIApplication.shared.connectedScenes
-                    .filter { $0.activationState == .foregroundActive }
-                    .compactMap { $0 as? UIWindowScene }
-                    .first?
-                    .windows
-                    .filter { $0.isKeyWindow }
-                    .first
+        for connectedScene in UIApplication.shared.connectedScenes {
+            guard connectedScene.activationState == .foregroundActive else { continue }
+            guard let windowScene = connectedScene as? UIWindowScene else { continue }
+            for window in windowScene.windows where window.isKeyWindow {
+                return window
+            }
+        }
     }
-    return window ?? UIApplication.shared
-                        .windows
-                        .filter { $0.isKeyWindow }
-                        .first
+    
+    for window in UIApplication.shared.windows where window.isKeyWindow {
+        return window
+    }
+    
+    return nil
+}
+
+/// 获取`下巴`高度
+func GetDiffTabBarH() -> CGFloat {
+    if #available(iOS 11.0, *) {
+        return GetKeyWindow()?.safeAreaInsets.bottom ?? 0
+    }
+    return 0
+}
+
+/// 获取`状态栏`高度
+func GetStatusBarH() -> CGFloat {
+    var h: CGFloat = 0
+    if #available(iOS 11.0, *) {
+        if let window = GetKeyWindow() {
+            if #available(iOS 13.0, *), let sbMgr = window.windowScene?.statusBarManager {
+                h = sbMgr.statusBarFrame.height
+            } else {
+                h = window.safeAreaInsets.top
+            }
+        }
+    } else {
+        h = UIApplication.shared.statusBarFrame.height
+    }
+    return h
 }
 
 /// 获取最顶层的`ViewController` --- 从`KeyWindow`开始查找

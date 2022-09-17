@@ -16,6 +16,7 @@
 #import <RxCocoa/RxCocoa-Swift.h>
 #import <lottie/lottie-Swift.h>
 #import <SnapKit/SnapKit-Swift.h>
+#import <FunnyButton/FunnyButton-Swift.h>
 
 // OC
 #import <MJRefresh/MJRefresh.h>
@@ -43,3 +44,4 @@
 #import "NSString+JPExtension.h"
 #import "JPProxy.h"
 #import "NSURL+JPExtension.h"
+#import "JPDeviceTool.h"

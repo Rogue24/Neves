@@ -38,7 +38,7 @@ class DiffableTestViewController: TestBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addFunAction { [weak self] in
+        replaceFunnyAction { [weak self] in
             guard let self = self, let dataSource = self.dataSource else { return }
             
             Task {
@@ -63,6 +63,11 @@ class DiffableTestViewController: TestBaseViewController {
             }
             
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeFunnyActions()
     }
     
     class MyCell: UITableViewCell, CellReusable {
