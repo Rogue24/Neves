@@ -99,9 +99,22 @@
         return;
     }
     
+    UIDeviceOrientation deviceOrientation;
+    switch (orientation) {
+        case JPDeviceOrientationLandscapeLeft:
+            deviceOrientation = UIDeviceOrientationLandscapeLeft;
+            break;
+        case JPDeviceOrientationLandscapeRight:
+            deviceOrientation = UIDeviceOrientationLandscapeRight;
+            break;
+        default:
+            deviceOrientation = UIDeviceOrientationPortrait;
+            break;
+    }
+    
     UIDevice *currentDevice = [UIDevice currentDevice];
     NSString *keyStr = JPKeyPath(currentDevice, orientation);
-    [currentDevice setValue:@(orientation) forKey:keyStr];
+    [currentDevice setValue:@(deviceOrientation) forKey:keyStr];
 }
 
 + (int)getSignalIntensity:(BOOL)isWiFi {
