@@ -48,6 +48,7 @@
 
 + (JPDeviceOrientation)currentOrientation {
     if (@available(iOS 16.0, *)) {
+        // 一般来说第一个就是app主体。
         UIWindowScene *scene = (UIWindowScene *)[UIApplication sharedApplication].connectedScenes.allObjects.firstObject;
         return [self convertUIInterfaceOrientation:scene.interfaceOrientation];
     }
