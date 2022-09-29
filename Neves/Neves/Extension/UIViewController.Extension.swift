@@ -51,4 +51,12 @@ extension JP where Base: UIViewController {
             base.automaticallyAdjustsScrollViewInsets = false
         }
     }
+    
+    func dismissAll(animated: Bool = false) {
+        if base.presentedViewController != nil {
+            base.dismiss(animated: animated)
+        }
+        
+        base.children.forEach { $0.jp.dismissAll(animated: animated) }
+    }
 }

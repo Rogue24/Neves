@@ -271,12 +271,14 @@
 		71AB638827F5DE29000CCF58 /* CosmicExplorationPrizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB638627F5DE29000CCF58 /* CosmicExplorationPrizeCell.swift */; };
 		71AB638927F5DE29000CCF58 /* CosmicExplorationPrizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71AB638727F5DE29000CCF58 /* CosmicExplorationPrizeCell.xib */; };
 		71ADDF7C279FECFC00404FF4 /* NestScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */; };
+		71B0E00128D9A55C00E3BC75 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B0E00028D9A55C00E3BC75 /* BaseNavigationController.swift */; };
 		71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */; };
 		71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */; };
 		71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B300892722BBAF00997B20 /* VideoMaker.Image.swift */; };
 		71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
+		71BBD45628DD63D9002C4186 /* JPScreenRotationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBD45528DD63D9002C4186 /* JPScreenRotationTool.m */; };
 		71BD270E287D55E100496B6A /* ResultBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD270D287D55E100496B6A /* ResultBuilderView.swift */; };
 		71BD2711287D64E100496B6A /* DiffableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD2710287D64E100496B6A /* DiffableTestViewController.swift */; };
 		71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */; };
@@ -663,6 +665,7 @@
 		71AB638627F5DE29000CCF58 /* CosmicExplorationPrizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPrizeCell.swift; sourceTree = "<group>"; };
 		71AB638727F5DE29000CCF58 /* CosmicExplorationPrizeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmicExplorationPrizeCell.xib; sourceTree = "<group>"; };
 		71ADDF7B279FECFC00404FF4 /* NestScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestScrollViewController.swift; sourceTree = "<group>"; };
+		71B0E00028D9A55C00E3BC75 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		71B18FBA26D338E1006CF7C0 /* UpdateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		71B18FC026D3A1E8006CF7C0 /* CombineTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineTestViewController.swift; sourceTree = "<group>"; };
 		71B18FC126D3A1E8006CF7C0 /* Publisher的share图示.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Publisher的share图示.jpg"; sourceTree = "<group>"; };
@@ -670,6 +673,8 @@
 		71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageTest.swift; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
+		71BBD45428DD63D9002C4186 /* JPScreenRotationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPScreenRotationTool.h; sourceTree = "<group>"; };
+		71BBD45528DD63D9002C4186 /* JPScreenRotationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPScreenRotationTool.m; sourceTree = "<group>"; };
 		71BD270D287D55E100496B6A /* ResultBuilderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBuilderView.swift; sourceTree = "<group>"; };
 		71BD2710287D64E100496B6A /* DiffableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTestViewController.swift; sourceTree = "<group>"; };
 		71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLock2ViewController.swift; sourceTree = "<group>"; };
@@ -787,6 +792,7 @@
 				1A3543B5254E775F0032B677 /* Neves */,
 				1A35433B254E75EB0032B677 /* AppDelegate.swift */,
 				1A35433D254E75EB0032B677 /* SceneDelegate.swift */,
+				71B0E00028D9A55C00E3BC75 /* BaseNavigationController.swift */,
 				1A3543CF254E775F0032B677 /* MainTableViewController.swift */,
 				1A35442E254E77600032B677 /* TestVC */,
 				1A3543D0254E775F0032B677 /* JPBasic */,
@@ -1102,6 +1108,8 @@
 		1A354421254E775F0032B677 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				71BBD45428DD63D9002C4186 /* JPScreenRotationTool.h */,
+				71BBD45528DD63D9002C4186 /* JPScreenRotationTool.m */,
 				1A35442C254E775F0032B677 /* JPAlertControllerTool.h */,
 				1A354426254E775F0032B677 /* JPAlertControllerTool.m */,
 				1A354423254E775F0032B677 /* JPDeviceTool.h */,
@@ -2129,6 +2137,7 @@
 				719A5231286D9F0A00619AD4 /* JPUserInfoCacheTool.swift in Sources */,
 				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
 				71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */,
+				71B0E00128D9A55C00E3BC75 /* BaseNavigationController.swift in Sources */,
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
 				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,
 				71F249D82731517A00FAAD93 /* FireworkCell.swift in Sources */,
@@ -2335,6 +2344,7 @@
 				717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
+				71BBD45628DD63D9002C4186 /* JPScreenRotationTool.m in Sources */,
 				7170F8BC28573CA300C9B51C /* WidgetView.swift in Sources */,
 				1A5930F827B8DD6900DC60FC /* TurntableViewCell.swift in Sources */,
 				1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */,

@@ -142,7 +142,7 @@ class MainTableViewController: UITableViewController {
         }
         
         addFunnyAction(name: "嘻嘻") {
-            JPrint("嘻嘻")
+            JPrint("嘻嘻", GetTopMostViewController() ?? "毛都没有")
         }
     }
 }
