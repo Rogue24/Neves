@@ -7,7 +7,7 @@
 
 final class ScreenRotator {
     /// 屏幕方向发生改变的通知
-    /// - object: orientationMark（UIInterfaceOrientationMask）
+    /// - object: orientationMask（UIInterfaceOrientationMask）
     static let orientationDidChangeNotification = Notification.Name("ScreenRotatorOrientationDidChangeNotification")
     
     /// 可旋转的屏幕方向
@@ -61,8 +61,8 @@ final class ScreenRotator {
 
 // MARK: - 私有API
 private extension ScreenRotator {
-    static func convertInterfaceOrientationMaskToDeviceOrientation(_ orientationMark: UIInterfaceOrientationMask) -> UIDeviceOrientation {
-        switch orientationMark {
+    static func convertInterfaceOrientationMaskToDeviceOrientation(_ orientationMask: UIInterfaceOrientationMask) -> UIDeviceOrientation {
+        switch orientationMask {
         case .landscapeLeft:
             return .landscapeRight
         case .landscapeRight:
@@ -147,7 +147,7 @@ private extension ScreenRotator {
         default:
             break
         }
-        let orientationMark = Self.convertDeviceOrientationToInterfaceOrientationMask(deviceOrientation)
+        let orientationMask = Self.convertDeviceOrientationToInterfaceOrientationMask(deviceOrientation)
         rotation(to: orientationMask)
     }
 }
