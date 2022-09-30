@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Notification: 屏幕方向发生改变的通知
- * object: orientationMark（UIInterfaceOrientationMask）
+ * object: orientationMask（UIInterfaceOrientationMask）
  * userInfo: nil
  */
 UIKIT_EXTERN NSNotificationName const JPScreenOrientationDidChangeNotification;

@@ -11,8 +11,8 @@
 
 NSNotificationName const JPScreenOrientationDidChangeNotification = @"JPScreenOrientationDidChangeNotification";
 
-static inline UIDeviceOrientation JPConvertInterfaceOrientationMaskToDeviceOrientation(UIInterfaceOrientationMask orientationMark) {
-    switch (orientationMark) {
+static inline UIDeviceOrientation JPConvertInterfaceOrientationMaskToDeviceOrientation(UIInterfaceOrientationMask orientationMask) {
+    switch (orientationMask) {
         case UIInterfaceOrientationMaskLandscapeLeft:
             return UIDeviceOrientationLandscapeRight;
         case UIInterfaceOrientationMaskLandscapeRight:
@@ -137,13 +137,13 @@ static JPScreenRotationTool *sharedInstance_;
         deviceOrientation == UIDeviceOrientationFaceUp ||
         deviceOrientation == UIDeviceOrientationFaceDown) return;
 
-    UIInterfaceOrientationMask orientationMark = JPConvertDeviceOrientationToInterfaceOrientationMask(deviceOrientation);
-    [self __rotationToOrientationMark:orientationMark];
+    UIInterfaceOrientationMask orientationMask = JPConvertDeviceOrientationToInterfaceOrientationMask(deviceOrientation);
+    [self __rotationToOrientationMask:orientationMask];
 }
 
 #pragma mark - 私有方法
 
-- (void)__rotationToOrientationMark:(UIInterfaceOrientationMask)orientationMask {
+- (void)__rotationToOrientationMask:(UIInterfaceOrientationMask)orientationMask {
     if (!_isEnabled) return;
     if (orientationMask == _orientationMask) return;
     
@@ -206,11 +206,11 @@ static JPScreenRotationTool *sharedInstance_;
             break;
     }
     
-    [self __rotationToOrientationMark:orientationMask];
+    [self __rotationToOrientationMask:orientationMask];
 }
 
 - (void)rotationToPortrait {
-    [self __rotationToOrientationMark:UIInterfaceOrientationMaskPortrait];
+    [self __rotationToOrientationMask:UIInterfaceOrientationMaskPortrait];
 }
 
 - (void)rotationToLandscape {
@@ -221,15 +221,15 @@ static JPScreenRotationTool *sharedInstance_;
         orientationMask = UIInterfaceOrientationMaskLandscapeRight;
     }
     
-    [self __rotationToOrientationMark:orientationMask];
+    [self __rotationToOrientationMask:orientationMask];
 }
 
 - (void)rotationToLandscapeLeft {
-    [self __rotationToOrientationMark:UIInterfaceOrientationMaskLandscapeRight];
+    [self __rotationToOrientationMask:UIInterfaceOrientationMaskLandscapeRight];
 }
 
 - (void)rotationToLandscapeRight {
-    [self __rotationToOrientationMark:UIInterfaceOrientationMaskLandscapeLeft];
+    [self __rotationToOrientationMask:UIInterfaceOrientationMaskLandscapeLeft];
 }
 
 - (void)toggleOrientation {
@@ -244,7 +244,7 @@ static JPScreenRotationTool *sharedInstance_;
         }
     }
     
-    [self __rotationToOrientationMark:orientationMask];
+    [self __rotationToOrientationMask:orientationMask];
 }
 
 @end
