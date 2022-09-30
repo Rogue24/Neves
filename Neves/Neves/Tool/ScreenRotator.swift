@@ -121,7 +121,7 @@ private extension ScreenRotator {
             // `iOS16`之后不能再通过设置`UIDevice.orientation`来控制横竖屏了，修改"orientation"无效。
             let currentDevice = UIDevice.current
             let deviceOrientation = Self.convertInterfaceOrientationMaskToDeviceOrientation(orientationMask)
-            currentDevice.setValue(deviceOrientation, forKeyPath: "orientation")
+            currentDevice.setValue(NSNumber(value: deviceOrientation.rawValue), forKeyPath: "orientation")
         }
         
         self.orientationMask = orientationMask
