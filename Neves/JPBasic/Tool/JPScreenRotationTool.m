@@ -71,6 +71,7 @@ static JPScreenRotationTool *sharedInstance_;
     if (self = [super init]) {
         _isEnabled = YES;
         _orientationMask = UIInterfaceOrientationMaskPortrait;
+        _isLockOrientationMask = YES;
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__willResignActive) name:UIApplicationWillResignActiveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -130,6 +131,7 @@ static JPScreenRotationTool *sharedInstance_;
 // 设备方向发生改变
 - (void)__deviceOrientationDidChange {
     if (!_isEnabled) return;
+    if (_isLockOrientationMask) return;
 
     UIDeviceOrientation deviceOrientation = UIDevice.currentDevice.orientation;
     if (deviceOrientation == UIDeviceOrientationUnknown ||

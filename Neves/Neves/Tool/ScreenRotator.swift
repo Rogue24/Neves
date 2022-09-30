@@ -46,6 +46,9 @@ final class ScreenRotator {
     /// 屏幕方向发生改变的回调
     var orientationMaskDidChange: ((_ orientationMask: UIInterfaceOrientationMask) -> ())?
     
+    /// 是否锁定屏幕方向（不随手机摆动改变）
+    var isLockOrientationMask = false
+    
     // MARK: - 构造器
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
@@ -139,7 +142,7 @@ private extension ScreenRotator {
     
     // 设备方向发生改变
     @objc func deviceOrientationDidChange() {
-        guard isEnabled else { return }
+        guard isEnabled, !isLockOrientationMask else { return }
         let deviceOrientation = UIDevice.current.orientation
         switch deviceOrientation {
         case .unknown, .portraitUpsideDown, .faceUp, .faceDown:

@@ -36,6 +36,8 @@ typedef NS_ENUM(NSUInteger, JPScreenOrientation) {
 
 /** 屏幕方向发生改变的回调 */
 @property (nonatomic, copy) void (^_Nullable orientationMaskDidChange)(UIInterfaceOrientationMask orientationMask);
+/** 是否锁定屏幕方向（不随手机摆动改变） */
+@property (nonatomic, assign) BOOL isLockOrientationMask;
 
 /** 旋转至目标方向 */
 - (void)rotationToOrientation:(JPScreenOrientation)orientation;
