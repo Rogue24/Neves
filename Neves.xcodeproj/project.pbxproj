@@ -262,6 +262,7 @@
 		719F9FAF286043C9008B4C1F /* View.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F9FAE286043C9008B4C1F /* View.Extension.swift */; };
 		71A2702A2857432000B9D000 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A270292857432000B9D000 /* Modifier.swift */; };
 		71A5C71A284E03CB00067318 /* AnimGroupTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */; };
+		71A737B928E68A2300B7C027 /* ScreenRotator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A737B828E68A2300B7C027 /* ScreenRotator.swift */; };
 		71A7D9E028619ECC007960C3 /* DynamicMemberLookupTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7D9DF28619ECC007960C3 /* DynamicMemberLookupTestViewController.swift */; };
 		71A7D9EA2862E43D007960C3 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7D9E92862E43D007960C3 /* Setter.swift */; };
 		71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */; };
@@ -656,6 +657,7 @@
 		719F9FAE286043C9008B4C1F /* View.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.Extension.swift; sourceTree = "<group>"; };
 		71A270292857432000B9D000 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimGroupTestViewController.swift; sourceTree = "<group>"; };
+		71A737B828E68A2300B7C027 /* ScreenRotator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRotator.swift; sourceTree = "<group>"; };
 		71A7D9DF28619ECC007960C3 /* DynamicMemberLookupTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicMemberLookupTestViewController.swift; sourceTree = "<group>"; };
 		71A7D9E92862E43D007960C3 /* Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setter.swift; sourceTree = "<group>"; };
 		71AB637C27F5C287000CCF58 /* CosmicExplorationPlanetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CosmicExplorationPlanetView.swift; sourceTree = "<group>"; };
@@ -927,6 +929,7 @@
 		1A3543CD254E775F0032B677 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				71A737B828E68A2300B7C027 /* ScreenRotator.swift */,
 				71A7D9E92862E43D007960C3 /* Setter.swift */,
 				7189227C281153FF00EC4CA4 /* UserDefault.swift */,
 				7151895427EC574000342645 /* LoremPicsum.swift */,
@@ -2130,6 +2133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */,
+				71A737B928E68A2300B7C027 /* ScreenRotator.swift in Sources */,
 				718A56B427F1B9E70071C724 /* ImageViews.swift in Sources */,
 				71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,

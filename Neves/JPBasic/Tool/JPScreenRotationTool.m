@@ -72,7 +72,7 @@ static JPScreenRotationTool *sharedInstance_;
         _isEnabled = YES;
         _orientationMask = UIInterfaceOrientationMaskPortrait;
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__didEnterBackground) name:UIApplicationWillResignActiveNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__willResignActive) name:UIApplicationWillResignActiveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(__deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
         
@@ -90,7 +90,6 @@ static JPScreenRotationTool *sharedInstance_;
 
 - (void)setOrientationMask:(UIInterfaceOrientationMask)orientationMask {
     _orientationMask = orientationMask;
-    
     !self.orientationMaskDidChange ? : self.orientationMaskDidChange(orientationMask);
     [[NSNotificationCenter defaultCenter] postNotificationName:JPScreenOrientationDidChangeNotification object:@(orientationMask)];
 }
@@ -118,14 +117,17 @@ static JPScreenRotationTool *sharedInstance_;
 
 #pragma mark - 监听通知
 
-- (void)__didEnterBackground {
+// 不活跃了，也就是进后台了
+- (void)__willResignActive {
     _isEnabled = NO;
 }
 
+// 活跃了，也就是从后台回来了
 - (void)__didBecomeActive {
     _isEnabled = YES;
 }
 
+// 设备方向发生改变
 - (void)__deviceOrientationDidChange {
     if (!_isEnabled) return;
 
@@ -146,45 +148,42 @@ static JPScreenRotationTool *sharedInstance_;
     if (orientationMask == _orientationMask) return;
     
     //【注意1】要先设置`UIInterfaceOrientationMaskAll`再设置【确定改变的方向】，
-    // 否则可能会导致两种情况：1.无法旋转；2.如果转右，会先转左再转右的连续两次旋转。
-    !self.orientationMaskDidChange ? : self.orientationMaskDidChange(UIInterfaceOrientationMaskAll);
-    _orientationMask = UIInterfaceOrientationMaskAll;
+    // 否则可能会导致两种情况：1.无法旋转；2.如果竖转右，会先转左再转右的连续两次旋转。
+    self.orientationMask = UIInterfaceOrientationMaskAll;
     
     //【注意2】要在设置【确定改变的方向】之前调用，如果在设置`UIInterfaceOrientationMaskAll`之前也调用，
-    // 可能会导致两种情况：1.如果转右，会先转左再转右的连续两次旋转；2.不会旋转。
+    // 可能会导致两种情况：1.无法旋转；2.如果竖转右，会先转左再转右的连续两次旋转。
     [UIViewController attemptRotationToDeviceOrientation];
     
     // `iOS16`控制横竖屏
+    // 由于不能再设置`UIDevice.orientation`来控制横竖屏了，所以`UIDeviceOrientationDidChangeNotification`将由系统自动发出，
+    // 即手机的摆动就会自动收到通知，不能自己控制，因此不能监听该通知来适配UI，
+    // 重写`UIViewController`的`-viewWillTransitionToSize:withTransitionCoordinator:`方法来监听屏幕的旋转并适配UI。
     // 参考1：https://www.jianshu.com/p/ff6ed9de906d
     // 参考2：https://blog.csdn.net/wujakf/article/details/126133680
-    // 重写`UIViewController`的`viewWillTransitionToSize:withTransitionCoordinator:`方法即可监听屏幕的旋转。
     if (@available(iOS 16.0, *)) {
-        UIWindowSceneGeometryPreferencesIOS *geometryPreferencesIOS = [[UIWindowSceneGeometryPreferencesIOS alloc] initWithInterfaceOrientations:orientationMask];
-        
+        UIWindowSceneGeometryPreferencesIOS *geometryPreferences = [[UIWindowSceneGeometryPreferencesIOS alloc] initWithInterfaceOrientations:orientationMask];
         NSArray *connectedScenes = [UIApplication sharedApplication].connectedScenes.allObjects;
         for (UIScene *scene in connectedScenes) {
             if ([scene isKindOfClass:UIWindowScene.class]) {
-                // 一般来说app只有一个windowScene，而windowScene内可能有多个window。
+                // 一般来说app只有一个`windowScene`，而`windowScene`内可能有多个`window`。
                 UIWindowScene *windowScene = (UIWindowScene *)scene;
-                // 例如Neves中至少有两个window：第一个是app主体的window，第二个则是FunnyButton所在的window。
+                // 例如`Neves`中至少有两个`window`：第一个是app主体的`window`，第二个则是`FunnyButton`所在的`window`。
                 for (UIWindow *window in windowScene.windows) {
-                    [window.windowScene requestGeometryUpdateWithPreferences:geometryPreferencesIOS errorHandler:^(NSError * _Nonnull error) {
+                    [window.windowScene requestGeometryUpdateWithPreferences:geometryPreferences errorHandler:^(NSError * _Nonnull error) {
                         JPLog(@"强制旋转错误: %@", error);
                     }];
                 }
             }
         }
-        
-        self.orientationMask = orientationMask;
-        return;
+    } else {
+        // `iOS16`之前修改"orientation"后会直接影响`UIDevice.currentDevice.orientation`；
+        // `iOS16`之后不能再通过设置`UIDevice.orientation`来控制横竖屏了，修改"orientation"无效。
+        UIDevice *currentDevice = UIDevice.currentDevice;
+        UIDeviceOrientation deviceOrientation = JPConvertInterfaceOrientationMaskToDeviceOrientation(orientationMask);
+        NSString *keyPath = JPKeyPath(currentDevice, orientation);
+        [currentDevice setValue:@(deviceOrientation) forKeyPath:keyPath];
     }
-    
-    // `iOS16`之前修改"orientation"后会直接影响`UIDevice.currentDevice.orientation`；
-    // `iOS16`之后不能再通过设置`UIDevice.orientation`来控制横竖屏了，修改"orientation"无效。
-    UIDevice *currentDevice = UIDevice.currentDevice;
-    UIDeviceOrientation deviceOrientation = JPConvertInterfaceOrientationMaskToDeviceOrientation(orientationMask);
-    NSString *keyPath = JPKeyPath(currentDevice, orientation);
-    [currentDevice setValue:@(deviceOrientation) forKey:keyPath];
     
     self.orientationMask = orientationMask;
 }
@@ -214,6 +213,17 @@ static JPScreenRotationTool *sharedInstance_;
     [self __rotationToOrientationMark:UIInterfaceOrientationMaskPortrait];
 }
 
+- (void)rotationToLandscape {
+    if (!_isEnabled) return;
+    
+    UIInterfaceOrientationMask orientationMask = JPConvertDeviceOrientationToInterfaceOrientationMask(UIDevice.currentDevice.orientation);
+    if (orientationMask == UIInterfaceOrientationMaskPortrait) {
+        orientationMask = UIInterfaceOrientationMaskLandscapeRight;
+    }
+    
+    [self __rotationToOrientationMark:orientationMask];
+}
+
 - (void)rotationToLandscapeLeft {
     [self __rotationToOrientationMark:UIInterfaceOrientationMaskLandscapeRight];
 }
@@ -222,23 +232,10 @@ static JPScreenRotationTool *sharedInstance_;
     [self __rotationToOrientationMark:UIInterfaceOrientationMaskLandscapeLeft];
 }
 
-- (void)rotationToLandscape {
-    if (!_isEnabled) return;
-    
-    UIInterfaceOrientationMask orientationMask = JPConvertDeviceOrientationToInterfaceOrientationMask(UIDevice.currentDevice.orientation);
-    
-    if (orientationMask == UIInterfaceOrientationMaskPortrait) {
-        orientationMask = UIInterfaceOrientationMaskLandscapeRight;
-    }
-    
-    [self __rotationToOrientationMark:orientationMask];
-}
-
 - (void)toggleOrientation {
     if (!_isEnabled) return;
     
     UIInterfaceOrientationMask orientationMask = JPConvertDeviceOrientationToInterfaceOrientationMask(UIDevice.currentDevice.orientation);
-    
     if (orientationMask == _orientationMask) {
         if (_orientationMask == UIInterfaceOrientationMaskPortrait) {
             orientationMask = UIInterfaceOrientationMaskLandscapeRight;

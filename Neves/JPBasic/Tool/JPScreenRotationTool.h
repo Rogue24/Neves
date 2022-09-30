@@ -9,7 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/** 屏幕方向发生改变的通知 */
+/**
+ * Notification: 屏幕方向发生改变的通知
+ * object: orientationMark（UIInterfaceOrientationMask）
+ * userInfo: nil
+ */
 UIKIT_EXTERN NSNotificationName const JPScreenOrientationDidChangeNotification;
 
 /** 可旋转的屏幕方向 */
@@ -39,14 +43,14 @@ typedef NS_ENUM(NSUInteger, JPScreenOrientation) {
 /** 旋转至竖屏 */
 - (void)rotationToPortrait;
 
+/** 旋转至横屏（如果锁定了屏幕，则转向手机头在左边） */
+- (void)rotationToLandscape;
+
 /** 旋转至横屏（手机头在左边） */
 - (void)rotationToLandscapeLeft;
 
 /** 旋转至横屏（手机头在右边） */
 - (void)rotationToLandscapeRight;
-
-/** 旋转至横屏（如果锁定了屏幕，则转向手机头在左边） */
-- (void)rotationToLandscape;
 
 /** 横竖屏切换 */
 - (void)toggleOrientation;
