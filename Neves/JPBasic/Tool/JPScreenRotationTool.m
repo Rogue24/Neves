@@ -6,8 +6,6 @@
 //
 
 #import "JPScreenRotationTool.h"
-#import "JPMacro.h"
-#import "JPConstant.h"
 
 NSNotificationName const JPScreenOrientationDidChangeNotification = @"JPScreenOrientationDidChangeNotification";
 
@@ -173,7 +171,7 @@ static JPScreenRotationTool *sharedInstance_;
                 // 例如`Neves`中至少有两个`window`：第一个是app主体的`window`，第二个则是`FunnyButton`所在的`window`。
                 for (UIWindow *window in windowScene.windows) {
                     [window.windowScene requestGeometryUpdateWithPreferences:geometryPreferences errorHandler:^(NSError * _Nonnull error) {
-                        JPLog(@"强制旋转错误: %@", error);
+                        NSLog(@"强制旋转错误: %@", error);
                     }];
                 }
             }
@@ -183,8 +181,7 @@ static JPScreenRotationTool *sharedInstance_;
         // `iOS16`之后不能再通过设置`UIDevice.orientation`来控制横竖屏了，修改"orientation"无效。
         UIDevice *currentDevice = UIDevice.currentDevice;
         UIDeviceOrientation deviceOrientation = JPConvertInterfaceOrientationMaskToDeviceOrientation(orientationMask);
-        NSString *keyPath = JPKeyPath(currentDevice, orientation);
-        [currentDevice setValue:@(deviceOrientation) forKeyPath:keyPath];
+        [currentDevice setValue:@(deviceOrientation) forKeyPath:@"orientation"];
     }
     
     self.orientationMask = orientationMask;

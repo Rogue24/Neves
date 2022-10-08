@@ -5,7 +5,80 @@
 //  Created by aa on 2022/9/30.
 //
 
+/**
+ * 屏幕旋转工具类
+ *
+ * - 目前仅支持三方向：
+ *  1. 竖屏：手机头在上边
+ *  2. 横屏：手机头在左边
+ *  3. 横屏：手机头在右边
+ *
+ * - 使用：
+ *  1. 让`ScreenRotator`全局控制屏幕方向，在`AppDelegate`中重写：
+ *
+ *      func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+ *          return ScreenRotator.shared.orientationMask
+ *      }
+ *
+ *  2. 不需要再重写`ViewController`的`supportedInterfaceOrientations`和`shouldAutorotate`；
+ *
+ *  3. 如需获取屏幕实时尺寸，在对应`ViewController`中重写：
+ *
+ *      override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+ *
+ *          // 当屏幕发生旋转时，系统会自动触发该函数，`size`为旋转后的屏幕尺寸
+ *          JPrint("size", size) // --- (926.0, 428.0)
+ *          // 或者通过`UIScreen`也能获取旋转后的屏幕尺寸
+ *          JPrint("mainScreen", UIScreen.mainSize) // --- (926.0, 428.0)
+ *
+ *          // 注意：如果想通过`self.xxx`去获取屏幕相关的信息（如`self.view.frame`），【此时】获取的尺寸还是【旋转之前】的尺寸，
+ *          // 想要获取【旋转之后】的屏幕信息，需要到`Runloop`的下一个循环才能获取。
+ *
+ *          // 🌰🌰🌰：竖屏 --> 横屏
+ *          JPrint("----------- 屏幕即将旋转 -----------")
+ *          JPrint("view.size", view.size) // - (428.0, 926.0)
+ *          JPrint("window.size", view.window?.size ?? .zero) // - (428.0, 926.0)
+ *          JPrint("window.safeAreaInsets", view.window?.safeAreaInsets ?? .zero) // - UIEdgeInsets(top: 47.0, left: 0.0, bottom: 34.0, right: 0.0)
+ *
+ *          DispatchQueue.main.async {
+ *              JPrint("----------- 屏幕已经旋转 -----------")
+ *              JPrint("view.size", self.view.size) // - (926.0, 428.0)
+ *              JPrint("window.size", self.view.window?.size ?? .zero) // - (926.0, 428.0)
+ *              JPrint("window.safeAreaInsets", self.view.window?.safeAreaInsets ?? .zero) // - UIEdgeInsets(top: 0.0, left: 47.0, bottom: 21.0, right: 47.0)
+ *              JPrint("==================================")
+ *          }
+ *      }
+ *
+ *  4. 如需监听屏幕的旋转，不要再监听`UIDevice.orientationDidChangeNotification`通知，而是监听`ScreenRotator.orientationDidChangeNotification`通知，
+ *  或者通过闭包的形式`ScreenRotator.shard.orientationMaskDidChange = { orientationMask in ...... }`实现监听。
+ *
+ * - API：
+ *  1. 旋转至目标方向
+ *      - func rotation(to orientation: Orientation)
+ *  2. 旋转至竖屏
+ *      - func rotationToPortrait()
+ *  3. 旋转至横屏（如果锁定了屏幕，则转向手机头在左边）
+ *      - func rotationToLandscape()
+ *  4. 旋转至横屏（手机头在左边）
+ *      - func rotationToLandscapeLeft()
+ *  5. 旋转至横屏（手机头在右边）
+ *      - func rotationToLandscapeRight()
+ *  6. 横竖屏切换
+ *      - func toggleOrientation()
+ *  7. 是否正在竖屏
+ *      - var isPortrait: Bool
+ *  8. 当前屏幕方向（ScreenRotator.Orientation）
+ *      - var orientation: Orientation
+ *  9. 屏幕方向发生改变的回调
+ *      - var orientationMaskDidChange: ((_ orientationMask: UIInterfaceOrientationMask) -> ())?
+ *  10. 是否锁定屏幕方向（true则不随手机摆动改变，即便控制中心禁止了竖屏锁定）
+ *      - var isLockOrientationMask = false
+ */
+
 final class ScreenRotator {
+    /// 单例
+    static let shared = ScreenRotator()
+    
     /// 屏幕方向发生改变的通知
     /// - object: orientationMask（UIInterfaceOrientationMask）
     static let orientationDidChangeNotification = Notification.Name("ScreenRotatorOrientationDidChangeNotification")
@@ -46,7 +119,7 @@ final class ScreenRotator {
     /// 屏幕方向发生改变的回调
     var orientationMaskDidChange: ((_ orientationMask: UIInterfaceOrientationMask) -> ())?
     
-    /// 是否锁定屏幕方向（不随手机摆动改变）
+    /// 是否锁定屏幕方向（true则不随手机摆动改变，即便控制中心禁止了竖屏锁定）
     var isLockOrientationMask = false
     
     // MARK: - 构造器
