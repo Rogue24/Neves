@@ -139,10 +139,22 @@ func GetKeyWindow() -> UIWindow? {
     return nil
 }
 
+/// 获取`主Window`
+func GetMainWindow() -> UIWindow? {
+    // 一般来说第一个window就是app主体的window。
+    if #available(iOS 13.0, *) {
+        for connectedScene in UIApplication.shared.connectedScenes {
+            guard let windowScene = connectedScene as? UIWindowScene else { continue }
+            return windowScene.windows.first
+        }
+    }
+    return UIApplication.shared.windows.first
+}
+
 /// 获取`下巴`高度
 func GetDiffTabBarH() -> CGFloat {
     if #available(iOS 11.0, *) {
-        return GetKeyWindow()?.safeAreaInsets.bottom ?? 0
+        return GetMainWindow()?.safeAreaInsets.bottom ?? 0
     }
     return 0
 }
@@ -151,7 +163,7 @@ func GetDiffTabBarH() -> CGFloat {
 func GetStatusBarH() -> CGFloat {
     var h: CGFloat = 0
     if #available(iOS 11.0, *) {
-        if let window = GetKeyWindow() {
+        if let window = GetMainWindow() {
             if #available(iOS 13.0, *), let sbMgr = window.windowScene?.statusBarManager {
                 h = sbMgr.statusBarFrame.height
             } else {
@@ -164,9 +176,9 @@ func GetStatusBarH() -> CGFloat {
     return h
 }
 
-/// 获取最顶层的`ViewController` --- 从`KeyWindow`开始查找
+/// 获取最顶层的`ViewController` --- 从`主Window`开始查找
 func GetTopMostViewController() -> UIViewController? {
-    guard let rootVC = GetKeyWindow()?.rootViewController else { return nil }
+    guard let rootVC = GetMainWindow()?.rootViewController else { return nil }
     return GetTopMostViewController(from: rootVC)
 }
 
