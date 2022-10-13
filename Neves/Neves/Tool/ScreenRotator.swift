@@ -69,8 +69,10 @@
  *      - var orientation: Orientation
  *  9. 屏幕方向发生改变的回调
  *      - var orientationMaskDidChange: ((_ orientationMask: UIInterfaceOrientationMask) -> ())?
- *  10. 是否锁定屏幕方向（true则不随手机摆动改变，即便控制中心禁止了竖屏锁定）
- *      - var isLockOrientationMask = false
+ *  10. 是否锁定屏幕方向（当控制中心禁止了竖屏锁定，为`true`则不会随手机摆动自动改变屏幕方向）
+ *      - var isLockOrientationWhenDeviceOrientationDidChange = false
+ *  11. 是否锁定横屏方向（当控制中心禁止了竖屏锁定，为`true`则【仅限横屏的两个方向】会随手机摆动自动改变屏幕方向）
+ *      - var isLockLandscapeWhenDeviceOrientationDidChange = false
  */
 
 final class ScreenRotator {
@@ -92,12 +94,7 @@ final class ScreenRotator {
     private(set) var isEnabled = true
     
     /// 当前屏幕方向（UIInterfaceOrientationMask）
-    private(set) var orientationMask: UIInterfaceOrientationMask = .portrait {
-        didSet {
-            orientationMaskDidChange?(orientationMask)
-            NotificationCenter.default.post(name: Self.orientationDidChangeNotification, object: orientationMask)
-        }
-    }
+    private(set) var orientationMask: UIInterfaceOrientationMask = .portrait
     
     /// 是否正在竖屏
     var isPortrait: Bool { orientationMask == .portrait }
@@ -109,16 +106,29 @@ final class ScreenRotator {
             return .landscapeRight
         case .landscapeRight:
             return .landscapeLeft
+        case .landscape:
+            let deviceOrientation = UIDevice.current.orientation
+            switch deviceOrientation {
+            case .landscapeLeft:
+                return .landscapeLeft
+            case .landscapeRight:
+                return .landscapeRight
+            default:
+                return .portrait
+            }
         default:
             return .portrait
         }
     }
     
+    /// 是否锁定屏幕方向（当控制中心禁止了竖屏锁定，为`true`则不会随手机摆动自动改变屏幕方向）
+    var isLockOrientationWhenDeviceOrientationDidChange = true
+    
+    /// 是否锁定横屏方向（当控制中心禁止了竖屏锁定，为`true`则【仅限横屏的两个方向】会随手机摆动自动改变屏幕方向）
+    var isLockLandscapeWhenDeviceOrientationDidChange = false
+    
     /// 屏幕方向发生改变的回调
     var orientationMaskDidChange: ((_ orientationMask: UIInterfaceOrientationMask) -> ())?
-    
-    /// 是否锁定屏幕方向（true则不随手机摆动改变，即便控制中心禁止了竖屏锁定）
-    var isLockOrientationMask = false
     
     // MARK: - 构造器
     init() {
@@ -162,18 +172,19 @@ private extension ScreenRotator {
     func rotation(to orientationMask: UIInterfaceOrientationMask) {
         guard isEnabled else { return }
         guard self.orientationMask != orientationMask else { return }
-
-        //【注意1】要先设置`UIInterfaceOrientationMaskAll`再设置【确定改变的方向】，
-        // 否则可能会导致两种情况：1.无法旋转；2.如果竖转右，会先转左再转右的连续两次旋转。
-        self.orientationMask = .all
         
-        //【注意2】要在设置【确定改变的方向】之前调用，如果在设置`UIInterfaceOrientationMaskAll`之前也调用，
-        // 可能会导致两种情况：1.无法旋转；2.如果竖转右，会先转左再转右的连续两次旋转。
+        self.orientationMask = orientationMask
+        
+        // 通知方向改变
+        orientationMaskDidChange?(orientationMask)
+        NotificationCenter.default.post(name: Self.orientationDidChangeNotification, object: orientationMask)
+        
+        //【注意】要在确定改变的方向【设置之后】才调用，否则会旋转到【设置之前】的方向
         UIViewController.attemptRotationToDeviceOrientation()
         
+        // 控制横竖屏
         if #available(iOS 16.0, *) {
-            // `iOS16`控制横竖屏
-            // 由于不能再设置`UIDevice.orientation`来控制横竖屏了，所以`UIDeviceOrientationDidChangeNotification`将由系统自动发出，
+            // `iOS16`由于不能再设置`UIDevice.orientation`来控制横竖屏了，所以`UIDeviceOrientationDidChangeNotification`将由系统自动发出，
             // 即手机的摆动就会自动收到通知，不能自己控制，因此不能监听该通知来适配UI，
             // 重写`UIViewController`的`-viewWillTransitionToSize:withTransitionCoordinator:`方法来监听屏幕的旋转并适配UI。
             // 参考1：https://www.jianshu.com/p/ff6ed9de906d
@@ -194,8 +205,6 @@ private extension ScreenRotator {
             let deviceOrientation = Self.convertInterfaceOrientationMaskToDeviceOrientation(orientationMask)
             currentDevice.setValue(NSNumber(value: deviceOrientation.rawValue), forKeyPath: "orientation")
         }
-        
-        self.orientationMask = orientationMask
     }
 }
 
@@ -213,7 +222,9 @@ private extension ScreenRotator {
     
     // 设备方向发生改变
     @objc func deviceOrientationDidChange() {
-        guard isEnabled, !isLockOrientationMask else { return }
+        guard isEnabled else { return }
+        guard !isLockOrientationWhenDeviceOrientationDidChange else { return }
+        
         let deviceOrientation = UIDevice.current.orientation
         switch deviceOrientation {
         case .unknown, .portraitUpsideDown, .faceUp, .faceDown:
@@ -221,6 +232,11 @@ private extension ScreenRotator {
         default:
             break
         }
+        
+        if isLockLandscapeWhenDeviceOrientationDidChange, !deviceOrientation.isLandscape {
+            return
+        }
+        
         let orientationMask = Self.convertDeviceOrientationToInterfaceOrientationMask(deviceOrientation)
         rotation(to: orientationMask)
     }

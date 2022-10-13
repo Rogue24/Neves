@@ -34,10 +34,13 @@ typedef NS_ENUM(NSUInteger, JPScreenOrientation) {
 /** 当前屏幕方向（UIInterfaceOrientationMask）  */
 @property (nonatomic, assign, readonly) UIInterfaceOrientationMask orientationMask;
 
+/** 是否锁定屏幕方向（当控制中心禁止了竖屏锁定，为YES则不会随手机摆动自动改变屏幕方向） */
+@property (nonatomic, assign) BOOL isLockOrientationWhenDeviceOrientationDidChange;
+/** 是否锁定横屏方向（当控制中心禁止了竖屏锁定，为YES则【仅限横屏的两个方向】会随手机摆动自动改变屏幕方向） */
+@property (nonatomic, assign) BOOL isLockLandscapeWhenDeviceOrientationDidChange;
+
 /** 屏幕方向发生改变的回调 */
 @property (nonatomic, copy) void (^_Nullable orientationMaskDidChange)(UIInterfaceOrientationMask orientationMask);
-/** 是否锁定屏幕方向（YES则不随手机摆动改变，即便控制中心禁止了竖屏锁定） */
-@property (nonatomic, assign) BOOL isLockOrientationMask;
 
 /** 旋转至目标方向 */
 - (void)rotationToOrientation:(JPScreenOrientation)orientation;
