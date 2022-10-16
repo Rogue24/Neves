@@ -279,7 +279,7 @@
 		71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */; };
 		71B897A5268C4F1E00705AC1 /* AwaitTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */; };
 		71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */; };
-		71BBD45628DD63D9002C4186 /* JPScreenRotationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBD45528DD63D9002C4186 /* JPScreenRotationTool.m */; };
+		71BBD45628DD63D9002C4186 /* JPScreenRotator.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BBD45528DD63D9002C4186 /* JPScreenRotator.m */; };
 		71BD270E287D55E100496B6A /* ResultBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD270D287D55E100496B6A /* ResultBuilderView.swift */; };
 		71BD2711287D64E100496B6A /* DiffableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD2710287D64E100496B6A /* DiffableTestViewController.swift */; };
 		71C2AAFE283F6BBF0066CF5E /* TestLock2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */; };
@@ -675,8 +675,8 @@
 		71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMaker.ImageTest.swift; sourceTree = "<group>"; };
 		71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwaitTestViewController.swift; sourceTree = "<group>"; };
 		71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolitaireAnimationLayer.swift; sourceTree = "<group>"; };
-		71BBD45428DD63D9002C4186 /* JPScreenRotationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPScreenRotationTool.h; sourceTree = "<group>"; };
-		71BBD45528DD63D9002C4186 /* JPScreenRotationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPScreenRotationTool.m; sourceTree = "<group>"; };
+		71BBD45428DD63D9002C4186 /* JPScreenRotator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPScreenRotator.h; sourceTree = "<group>"; };
+		71BBD45528DD63D9002C4186 /* JPScreenRotator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPScreenRotator.m; sourceTree = "<group>"; };
 		71BD270D287D55E100496B6A /* ResultBuilderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBuilderView.swift; sourceTree = "<group>"; };
 		71BD2710287D64E100496B6A /* DiffableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableTestViewController.swift; sourceTree = "<group>"; };
 		71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLock2ViewController.swift; sourceTree = "<group>"; };
@@ -1111,8 +1111,8 @@
 		1A354421254E775F0032B677 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				71BBD45428DD63D9002C4186 /* JPScreenRotationTool.h */,
-				71BBD45528DD63D9002C4186 /* JPScreenRotationTool.m */,
+				71BBD45428DD63D9002C4186 /* JPScreenRotator.h */,
+				71BBD45528DD63D9002C4186 /* JPScreenRotator.m */,
 				1A35442C254E775F0032B677 /* JPAlertControllerTool.h */,
 				1A354426254E775F0032B677 /* JPAlertControllerTool.m */,
 				1A354423254E775F0032B677 /* JPDeviceTool.h */,
@@ -2348,7 +2348,7 @@
 				717446D42763614E002BBE6F /* TestScreenCornerViewController.swift in Sources */,
 				1A354514254E77600032B677 /* JPSubScrollViewController.m in Sources */,
 				1A35450B254E77600032B677 /* JPTextField.m in Sources */,
-				71BBD45628DD63D9002C4186 /* JPScreenRotationTool.m in Sources */,
+				71BBD45628DD63D9002C4186 /* JPScreenRotator.m in Sources */,
 				7170F8BC28573CA300C9B51C /* WidgetView.swift in Sources */,
 				1A5930F827B8DD6900DC60FC /* TurntableViewCell.swift in Sources */,
 				1A5930F527B8DD6900DC60FC /* TurntableView.swift in Sources */,

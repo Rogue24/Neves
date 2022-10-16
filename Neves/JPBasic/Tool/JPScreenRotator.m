@@ -1,11 +1,11 @@
 //
-//  JPScreenRotationTool.m
+//  JPScreenRotator.m
 //  Neves
 //
 //  Created by aa on 2022/9/23.
 //
 
-#import "JPScreenRotationTool.h"
+#import "JPScreenRotator.h"
 
 NSNotificationName const JPScreenOrientationDidChangeNotification = @"JPScreenOrientationDidChangeNotification";
 
@@ -33,7 +33,7 @@ static inline UIInterfaceOrientationMask JPConvertDeviceOrientationToInterfaceOr
     }
 }
 
-@implementation JPScreenRotationTool
+@implementation JPScreenRotator
 {
     BOOL _isEnabled;
     UIInterfaceOrientationMask _orientationMask;
@@ -41,7 +41,7 @@ static inline UIInterfaceOrientationMask JPConvertDeviceOrientationToInterfaceOr
 
 #pragma mark - 单例
 
-static JPScreenRotationTool *sharedInstance_;
+static JPScreenRotator *sharedInstance_;
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
     static dispatch_once_t onceToken;
@@ -54,7 +54,7 @@ static JPScreenRotationTool *sharedInstance_;
 + (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedInstance_ = [[JPScreenRotationTool alloc] init];
+        sharedInstance_ = [[JPScreenRotator alloc] init];
     });
     return sharedInstance_;
 }

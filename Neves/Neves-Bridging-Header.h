@@ -45,4 +45,4 @@
 #import "JPProxy.h"
 #import "NSURL+JPExtension.h"
 #import "JPDeviceTool.h"
-#import "JPScreenRotationTool.h"
+#import "JPScreenRotator.h"

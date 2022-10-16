@@ -34,8 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FunnyButton.orientationMask = JPScreenRotationTool.sharedInstance().orientationMask
-        JPScreenRotationTool.sharedInstance().orientationMaskDidChange = { orientationMask in
+        FunnyButton.orientationMask = JPScreenRotator.sharedInstance().orientationMask
+        JPScreenRotator.sharedInstance().orientationMaskDidChange = { orientationMask in
             FunnyButton.orientationMask = orientationMask
         }
         
@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-        return JPScreenRotationTool.sharedInstance().orientationMask
+        return JPScreenRotator.sharedInstance().orientationMask
     }
 }
 

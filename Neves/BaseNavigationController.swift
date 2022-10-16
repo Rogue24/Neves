@@ -47,7 +47,7 @@ class BaseNavigationController: UINavigationController {
     }
     
     private func logOrientationMask() {
-        switch JPScreenRotationTool.sharedInstance().orientationMask {
+        switch JPScreenRotator.sharedInstance().orientationMask {
         case .landscapeLeft:
             JPrint("landscapeLeft")
         case .landscapeRight:

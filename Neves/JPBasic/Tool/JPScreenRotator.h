@@ -1,5 +1,5 @@
 //
-//  JPScreenRotationTool.h
+//  JPScreenRotator.h
 //  Neves
 //
 //  Created by aa on 2022/9/23.
@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, JPScreenOrientation) {
     JPScreenOrientationLandscapeRight,  // 横屏 手机头在右边
 };
 
-@interface JPScreenRotationTool : NSObject
+@interface JPScreenRotator : NSObject
 /** 单例 */
 + (instancetype)sharedInstance;
 
