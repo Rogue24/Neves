@@ -10,12 +10,16 @@ import UIKit
 
 extension JP where Base: UIWindow {
     
-    static var keyWindowTopVC: UIViewController? { GetTopMostViewController() }
+    static var mainWindowTopVC: UIViewController? {
+        return GetTopMostViewController()
+    }
+    
+    static var keyWindowTopVC: UIViewController? {
+        return GetKeyWindow()?.jp.topVC
+    }
     
     static var delegateWindowTopVC: UIViewController? {
-        guard let window = UIApplication.shared.delegate?.window ?? nil,
-              let rootVC = window.rootViewController else { return nil }
-        return GetTopMostViewController(from: rootVC)
+        return UIApplication.shared.delegate?.window??.jp.topVC
     }
     
     /**
