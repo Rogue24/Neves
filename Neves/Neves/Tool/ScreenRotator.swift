@@ -170,18 +170,17 @@ private extension ScreenRotator {
     }
     
     static func setNeedsUpdateOfSupportedInterfaceOrientations(_ currentVC: UIViewController, _ presentedVC: UIViewController?) {
-        if #available(iOS 16.0, *) {
-            currentVC.setNeedsUpdateOfSupportedInterfaceOrientations()
-        }
+        if #available(iOS 16.0, *) { currentVC.setNeedsUpdateOfSupportedInterfaceOrientations() }
         
         let currentPresentedVC = currentVC.presentedViewController
+        
+        if let currentPresentedVC = currentPresentedVC, currentPresentedVC != presentedVC {
+            setNeedsUpdateOfSupportedInterfaceOrientations(currentPresentedVC, nil)
+        }
         
         for childVC in currentVC.children {
             setNeedsUpdateOfSupportedInterfaceOrientations(childVC, currentPresentedVC)
         }
-        
-        guard let currentPresentedVC = currentPresentedVC, currentPresentedVC != presentedVC else { return }
-        setNeedsUpdateOfSupportedInterfaceOrientations(currentPresentedVC, nil)
     }
     
     func rotation(to orientationMask: UIInterfaceOrientationMask) {

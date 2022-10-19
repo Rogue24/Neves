@@ -33,22 +33,6 @@ static inline UIInterfaceOrientationMask JPConvertDeviceOrientationToInterfaceOr
     }
 }
 
-static inline void JPSetNeedsUpdateOfSupportedInterfaceOrientations(UIViewController *currentVC, UIViewController *presentedVC) {
-    if (@available(iOS 16.0, *)) {
-        [currentVC setNeedsUpdateOfSupportedInterfaceOrientations];
-    }
-    
-    UIViewController *currentPresentedVC = currentVC.presentedViewController;
-    
-    for (UIViewController *childVC in currentVC.childViewControllers) {
-        JPSetNeedsUpdateOfSupportedInterfaceOrientations(childVC, currentPresentedVC);
-    }
-    
-    if (currentPresentedVC && currentPresentedVC != presentedVC) {
-        JPSetNeedsUpdateOfSupportedInterfaceOrientations(currentPresentedVC, nil);
-    }
-}
-
 @implementation JPScreenRotator
 {
     BOOL _isEnabled;
@@ -197,8 +181,8 @@ static JPScreenRotator *sharedInstance_;
             for (UIWindow *window in windowScene.windows) {
                 // 由于`Neves`中只用到`rootViewController`控制屏幕方向，所以只对`rootViewController`调用即可。
                 [window.rootViewController setNeedsUpdateOfSupportedInterfaceOrientations];
-                // 若需要全部控制器都执行`setNeedsUpdateOfSupportedInterfaceOrientations`，可调用该函数：
-                // JPSetNeedsUpdateOfSupportedInterfaceOrientations(window.rootViewController, nil);
+                // 若需要全部控制器都执行`setNeedsUpdateOfSupportedInterfaceOrientations`，可调用该方法：
+                // [JPScreenRotator __setNeedsUpdateOfSupportedInterfaceOrientationsWithCurrentVC:window.rootViewController presentedVC:nil];
             }
             
             //【注意】要在全部`window`调用`requestGeometryUpdate`之前，先对`vc`调用`attemptRotationToDeviceOrientation`，
@@ -219,6 +203,20 @@ static JPScreenRotator *sharedInstance_;
         UIDevice *currentDevice = UIDevice.currentDevice;
         UIDeviceOrientation deviceOrientation = JPConvertInterfaceOrientationMaskToDeviceOrientation(orientationMask);
         [currentDevice setValue:@(deviceOrientation) forKeyPath:@"orientation"];
+    }
+}
+
++ (void)__setNeedsUpdateOfSupportedInterfaceOrientationsWithCurrentVC:(UIViewController *)currentVC presentedVC:(UIViewController *)presentedVC {
+    if (@available(iOS 16.0, *)) [currentVC setNeedsUpdateOfSupportedInterfaceOrientations];
+    
+    UIViewController *currentPresentedVC = currentVC.presentedViewController;
+    
+    if (currentPresentedVC && currentPresentedVC != presentedVC) {
+        [self __setNeedsUpdateOfSupportedInterfaceOrientationsWithCurrentVC:currentPresentedVC presentedVC:nil];
+    }
+    
+    for (UIViewController *childVC in currentVC.childViewControllers) {
+        [self __setNeedsUpdateOfSupportedInterfaceOrientationsWithCurrentVC:childVC presentedVC:currentPresentedVC];
     }
 }
 

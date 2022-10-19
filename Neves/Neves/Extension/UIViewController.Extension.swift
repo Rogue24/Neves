@@ -52,11 +52,30 @@ extension JP where Base: UIViewController {
         }
     }
     
-    func dismissAll(animated: Bool = false) {
-        if base.presentedViewController != nil {
+    func dismissAll(animated: Bool = false, presentedVC: UIViewController? = nil) {
+        let currentPresentedVC = base.presentedViewController
+        
+        if let currentPresentedVC = currentPresentedVC, currentPresentedVC != presentedVC {
+            JPrint("dismissAll", base)
             base.dismiss(animated: animated)
         }
         
-        base.children.forEach { $0.jp.dismissAll(animated: animated) }
+        base.children.forEach {
+            $0.jp.dismissAll(animated: animated, presentedVC: currentPresentedVC)
+        }
+    }
+    
+    func checkAllViewControllers(presentedVC: UIViewController? = nil) {
+        JPrint("check", base)
+        
+        let currentPresentedVC = base.presentedViewController
+        
+        if let currentPresentedVC = currentPresentedVC, currentPresentedVC != presentedVC {
+            currentPresentedVC.jp.checkAllViewControllers()
+        }
+        
+        base.children.forEach {
+            $0.jp.checkAllViewControllers(presentedVC: currentPresentedVC)
+        }
     }
 }
