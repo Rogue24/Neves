@@ -33,6 +33,22 @@ static inline UIInterfaceOrientationMask JPConvertDeviceOrientationToInterfaceOr
     }
 }
 
+static inline void JPSetNeedsUpdateOfSupportedInterfaceOrientations(UIViewController *currentVC, UIViewController *presentedVC) {
+    if (@available(iOS 16.0, *)) {
+        [currentVC setNeedsUpdateOfSupportedInterfaceOrientations];
+    }
+    
+    UIViewController *currentPresentedVC = currentVC.presentedViewController;
+    
+    for (UIViewController *childVC in currentVC.childViewControllers) {
+        JPSetNeedsUpdateOfSupportedInterfaceOrientations(childVC, currentPresentedVC);
+    }
+    
+    if (currentPresentedVC && currentPresentedVC != presentedVC) {
+        JPSetNeedsUpdateOfSupportedInterfaceOrientations(currentPresentedVC, nil);
+    }
+}
+
 @implementation JPScreenRotator
 {
     BOOL _isEnabled;
@@ -156,12 +172,9 @@ static JPScreenRotator *sharedInstance_;
     
     _orientationMask = orientationMask;
     
-    // 通知方向改变
+    // 通知屏幕方向发生改变
     !self.orientationMaskDidChange ? : self.orientationMaskDidChange(orientationMask);
     [[NSNotificationCenter defaultCenter] postNotificationName:JPScreenOrientationDidChangeNotification object:@(orientationMask)];
-    
-    //【注意】要在确定改变的方向【设置之后】才调用，否则会旋转到【设置之前】的方向
-    [UIViewController attemptRotationToDeviceOrientation];
     
     // 控制横竖屏
     if (@available(iOS 16.0, *)) {
@@ -173,18 +186,34 @@ static JPScreenRotator *sharedInstance_;
         UIWindowSceneGeometryPreferencesIOS *geometryPreferences = [[UIWindowSceneGeometryPreferencesIOS alloc] initWithInterfaceOrientations:orientationMask];
         NSArray *connectedScenes = [UIApplication sharedApplication].connectedScenes.allObjects;
         for (UIScene *scene in connectedScenes) {
-            if ([scene isKindOfClass:UIWindowScene.class]) {
-                // 一般来说app只有一个`windowScene`，而`windowScene`内可能有多个`window`。
-                UIWindowScene *windowScene = (UIWindowScene *)scene;
-                // 例如`Neves`中至少有两个`window`：第一个是app主体的`window`，第二个则是`FunnyButton`所在的`window`。
-                for (UIWindow *window in windowScene.windows) {
-                    [window.windowScene requestGeometryUpdateWithPreferences:geometryPreferences errorHandler:^(NSError * _Nonnull error) {
-                        NSLog(@"jpjpjp 强制旋转错误: %@", error);
-                    }];
-                }
+            if (![scene isKindOfClass:UIWindowScene.class]) continue;
+            UIWindowScene *windowScene = (UIWindowScene *)scene;
+            // 一般来说app只有一个`windowScene`，而`windowScene`内可能有多个`window`，
+            // 例如`Neves`中至少有两个`window`：第一个是app主体的`window`，第二个则是`FunnyButton`所在的`window`，
+            // 所以需要遍历全部`window`进行旋转，保证全部`window`都能保持一致的屏幕方向。
+            
+            // `iOS16`之后`attemptRotationToDeviceOrientation`建议不再使用（虽然还起效），
+            // 而是调用`setNeedsUpdateOfSupportedInterfaceOrientations`进行屏幕旋转。
+            for (UIWindow *window in windowScene.windows) {
+                // 由于`Neves`中只用到`rootViewController`控制屏幕方向，所以只对`rootViewController`调用即可。
+                [window.rootViewController setNeedsUpdateOfSupportedInterfaceOrientations];
+                // 若需要全部控制器都执行`setNeedsUpdateOfSupportedInterfaceOrientations`，可调用该函数：
+                // JPSetNeedsUpdateOfSupportedInterfaceOrientations(window.rootViewController, nil);
+            }
+            
+            //【注意】要在全部`window`调用`requestGeometryUpdate`之前，先对`vc`调用`attemptRotationToDeviceOrientation`，
+            // 否则会报错（虽然对屏幕旋转没影响）。
+            for (UIWindow *window in windowScene.windows) {
+                [window.windowScene requestGeometryUpdateWithPreferences:geometryPreferences errorHandler:^(NSError * _Nonnull error) {
+                    NSLog(@"jpjpjp 强制旋转错误: %@", error);
+                }];
             }
         }
     } else {
+        // `iOS16`之前调用`attemptRotationToDeviceOrientation`屏幕才会旋转。
+        //【注意】要在确定改变的方向【设置之后】才调用，否则会旋转到【设置之前】的方向
+        [UIViewController attemptRotationToDeviceOrientation];
+        
         // `iOS16`之前修改"orientation"后会直接影响`UIDevice.currentDevice.orientation`；
         // `iOS16`之后不能再通过设置`UIDevice.orientation`来控制横竖屏了，修改"orientation"无效。
         UIDevice *currentDevice = UIDevice.currentDevice;

@@ -807,8 +807,8 @@
 		1A35436D254E76530032B677 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7102C56128D1ABF200E2265C /* swift5.stencil */,
 				7172B62D28D054CF00381E83 /* swiftgen.yml */,
+				7102C56128D1ABF200E2265C /* swift5.stencil */,
 				1A354372254E775F0032B677 /* Resources */,
 				1A354349254E75EC0032B677 /* Info.plist */,
 				1A354346254E75EC0032B677 /* LaunchScreen.storyboard */,
@@ -2106,7 +2106,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]; then\n    \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse \n    echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+			shellScript = "if [[ ${CONFIGURATION} == 'Release' || ${CONFIGURATION} == 'Release1' || ${CONFIGURATION} == 'Release2' ]]; then\n    echo \"jpjpjp release环境不运行SwiftGen脚本\"\nelse\n    if [ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]; then\n        \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\n    else \n        echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\n    fi\nfi\n\n\n";
 		};
 		FD180B731909D91BBC67FB87 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

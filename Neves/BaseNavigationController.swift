@@ -46,8 +46,8 @@ class BaseNavigationController: UINavigationController {
         JPrint("window.safeAreaInsets", view.window?.safeAreaInsets ?? .zero)
     }
     
-    private func logOrientationMask() {
-        switch JPScreenRotator.sharedInstance().orientationMask {
+    private func logOrientationMask(_ orientationMask: UIInterfaceOrientationMask? = nil) {
+        switch orientationMask ?? JPScreenRotator.sharedInstance().orientationMask {
         case .landscapeLeft:
             JPrint("landscapeLeft")
         case .landscapeRight:
