@@ -18,15 +18,15 @@ class PlaygroundViewController: TestBaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        addFunAction { [weak self] in
-//            guard let self = self else { return }
-//            JPrint("replaceMe", self)
-//        }
+        replaceFunnyAction { [weak self] in
+            guard let self = self else { return }
+            JPrint("replaceMe", self)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-//        removeFunAction()
+        removeFunnyActions()
     }
 
 }
