@@ -13,7 +13,7 @@ extension DragonSlayerEntrance {
     
     class CountingDownView: UIView {
         
-        let bgAnimView = AnimationView.jp.build("dragon_enter_lottie_2")
+        let bgAnimView = LottieAnimationView.jp.build("dragon_enter_lottie_2")
         let secondLabel = UILabel()
         let titleLabel = UILabel()
         

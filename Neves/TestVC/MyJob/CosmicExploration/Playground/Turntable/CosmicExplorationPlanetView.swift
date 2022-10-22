@@ -57,10 +57,10 @@ class CosmicExplorationPlanetView: UIView {
     let supplyListView = SupplyListView()
     private var otherSupplyViews: [OtherSupplyView] = []
     
-    let bgAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
-    let selectedAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
-    let exploringAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
-    weak var winningAnimView: AnimationView?
+    let bgAnimView: LottieAnimationView = LottieAnimationView(animation: nil, imageProvider: nil)
+    let selectedAnimView: LottieAnimationView = LottieAnimationView(animation: nil, imageProvider: nil)
+    let exploringAnimView: LottieAnimationView = LottieAnimationView(animation: nil, imageProvider: nil)
+    weak var winningAnimView: LottieAnimationView?
     
     init(_ model: CosmicExploration.PlanetModel) {
         let planet = model.planet
@@ -121,19 +121,19 @@ class CosmicExplorationPlanetView: UIView {
         
         // TODO: 临时做法
         DispatchQueue.main.async {
-            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_default_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_default_lottie"), let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
                 self.bgAnimView.animation = animation
                 self.bgAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
                 self.bgAnimView.play()
             }
 
-            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_target_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_target_lottie"), let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
                 self.selectedAnimView.animation = animation
                 self.selectedAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
                 self.selectedAnimView.stop()
             }
             
-            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_random_lottie"), let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+            if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_random_lottie"), let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
                 self.exploringAnimView.animation = animation
                 self.exploringAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
                 self.exploringAnimView.stop()
@@ -554,12 +554,12 @@ extension CosmicExplorationPlanetView {
             
             guard winningAnimView == nil,
                   let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/spaceship_result_lottie"),
-                  let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+                  let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
             else {
                 return
             }
             
-            let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+            let animView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
             animView.backgroundBehavior = .pauseAndRestore
             animView.contentMode = .scaleAspectFill
             animView.frame = bounds

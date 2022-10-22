@@ -8,6 +8,9 @@
 #elseif os(tvOS) || os(watchOS)
   import UIKit
 #endif
+#if canImport(SwiftUI)
+  import SwiftUI
+#endif
 
 // Deprecated typealiases
 @available(*, deprecated, renamed: "NevesColorAsset.Color", message: "This typealias will be removed in SwiftGen 7.0")
@@ -305,6 +308,13 @@ internal final class NevesColorAsset {
   }
   #endif
 
+  #if canImport(SwiftUI)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  internal private(set) lazy var swiftUIColor: SwiftUI.Color = {
+    SwiftUI.Color(asset: self)
+  }()
+  #endif
+
   fileprivate init(name: String) {
     self.name = name
   }
@@ -323,6 +333,16 @@ internal extension NevesColorAsset.Color {
     #endif
   }
 }
+
+#if canImport(SwiftUI)
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+internal extension SwiftUI.Color {
+  init(asset: NevesColorAsset) {
+    let bundle = BundleToken.bundle
+    self.init(asset.name, bundle: bundle)
+  }
+}
+#endif
 
 internal struct NevesImageAsset {
   internal fileprivate(set) var name: String
@@ -360,6 +380,13 @@ internal struct NevesImageAsset {
     return result
   }
   #endif
+
+  #if canImport(SwiftUI)
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  internal var swiftUIImage: SwiftUI.Image {
+    SwiftUI.Image(asset: self)
+  }
+  #endif
 }
 
 internal extension NevesImageAsset.Image {
@@ -377,6 +404,26 @@ internal extension NevesImageAsset.Image {
     #endif
   }
 }
+
+#if canImport(SwiftUI)
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+internal extension SwiftUI.Image {
+  init(asset: NevesImageAsset) {
+    let bundle = BundleToken.bundle
+    self.init(asset.name, bundle: bundle)
+  }
+
+  init(asset: NevesImageAsset, label: Text) {
+    let bundle = BundleToken.bundle
+    self.init(asset.name, bundle: bundle, label: label)
+  }
+
+  init(decorative asset: NevesImageAsset) {
+    let bundle = BundleToken.bundle
+    self.init(decorative: asset.name, bundle: bundle)
+  }
+}
+#endif
 
 // swiftlint:disable convenience_type
 private final class BundleToken {

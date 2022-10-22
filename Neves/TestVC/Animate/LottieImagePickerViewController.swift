@@ -15,7 +15,7 @@ class LottieImagePickerViewController: TestBaseViewController {
 //            let lottieName = "video_tx_jielong_lottie"
 //            let lottieName = "album_videobg_jielong_lottie"
     
-    var animView: AnimationView!
+    var animView: LottieAnimationView!
     
     var picker: LottieImagePicker?
     
@@ -31,7 +31,7 @@ class LottieImagePickerViewController: TestBaseViewController {
         let lottieName = self.lottieName
         Asyncs.async {
             guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-                  let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+                  let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
             else {
                 JPrint("路径错误！")
                 return
@@ -51,7 +51,7 @@ class LottieImagePickerViewController: TestBaseViewController {
             
             Asyncs.main {
                 
-                let animView = AnimationView(animation: animation, imageProvider: provider)
+                let animView = LottieAnimationView(animation: animation, imageProvider: provider)
                 animView.backgroundColor = .black
                 animView.frame = [HalfDiffValue(PortraitScreenWidth, 300), NavTopMargin + 20, 300, 300]
                 animView.contentMode = .scaleAspectFit

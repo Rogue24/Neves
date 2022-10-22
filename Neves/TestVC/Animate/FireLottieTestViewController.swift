@@ -17,7 +17,7 @@ class FireLottieTestViewController: TestBaseViewController {
 //        let filepath = Bundle.main.path(forResource: "appgift_fire", ofType: nil, inDirectory: "lottie")!
         let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/appgift_fire/appgift_fire_animation")!
         
-        let animView = AnimationView.jp.build(at: filepath)
+        let animView = LottieAnimationView.jp.build(at: filepath)
         animView.frame = PortraitScreenBounds
         animView.contentMode = .scaleToFill
         view.addSubview(animView)

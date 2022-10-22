@@ -65,8 +65,8 @@ extension FireworkView {
     }
     
     // MARK: 创建lottie视图
-    fileprivate func animationView(_ icon: UIImage, _ dirName: String) -> AnimationView {
-        let animView = AnimationView.jp.build(dirName, ["img_0.png": icon.cgImage])
+    fileprivate func animationView(_ icon: UIImage, _ dirName: String) -> LottieAnimationView {
+        let animView = LottieAnimationView.jp.build(dirName, ["img_0.png": icon.cgImage])
         insertSubview(animView, belowSubview: itemView)
         animView.snp.makeConstraints { $0.edges.equalToSuperview() }
         return animView

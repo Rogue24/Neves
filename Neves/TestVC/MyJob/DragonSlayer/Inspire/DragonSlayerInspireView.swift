@@ -237,7 +237,7 @@ private extension DragonSlayerInspireView {
         
         defer {
             if animated {
-                let animView = AnimationView.jp.build("dragon_guwu_lottie")
+                let animView = LottieAnimationView.jp.build("dragon_guwu_lottie")
                 animView.isUserInteractionEnabled = false
                 animView.loopMode = .playOnce
                 addSubview(animView)

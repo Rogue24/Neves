@@ -29,7 +29,7 @@ class PKProgressOutSideView: UIView {
     private lazy var totalProgress = viewWidth - 69
     
     let leftProgressMaskView = UIView(frame: [-8, 0, 0, 10])
-    let posAnimView = AnimationView(animation: nil, imageProvider: nil)
+    let posAnimView = LottieAnimationView(animation: nil, imageProvider: nil)
     
     
     override func awakeFromNib() {
@@ -64,15 +64,15 @@ class PKProgressOutSideView: UIView {
         posAnimView.loopMode = .loop
         progressBgView.addSubview(posAnimView)
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_progressbar_lottie"),
-           let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
             posAnimView.animation = animation
             posAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             posAnimView.play()
         }
         
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_tag_lottie"),
-           let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
-            let pkLogoAnimView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+            let pkLogoAnimView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
             pkLogoAnimView.backgroundBehavior = .pauseAndRestore
             pkLogoAnimView.contentMode = .scaleAspectFit
             pkLogoAnimView.loopMode = .loop

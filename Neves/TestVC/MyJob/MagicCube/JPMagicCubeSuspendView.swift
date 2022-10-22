@@ -20,7 +20,7 @@ class JPMagicCubeSuspendView: UIView, JPMagicCubeBubbleLaunchAble {
         }
     }
     
-    var animView: AnimationView? = nil
+    var animView: LottieAnimationView? = nil
     
     let progressLabel: UILabel = {
         let lab = UILabel()
@@ -107,7 +107,7 @@ private extension JPMagicCubeSuspendView {
         guard self.animView == nil else {
             return
         }
-        let animView = AnimationView.jp.build("cube_s_lottie")
+        let animView = LottieAnimationView.jp.build("cube_s_lottie")
         animView.loopMode = .loop
         animView.isUserInteractionEnabled = false
         insertSubview(animView, at: 0)

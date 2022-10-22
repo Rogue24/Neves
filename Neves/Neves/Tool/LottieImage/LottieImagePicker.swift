@@ -11,11 +11,11 @@ class LottieImagePicker {
     
     let pickQueue = DispatchQueue(label: "LottieImagePicker.SerialQueue")
     
-    let animation: Animation
+    let animation: LottieAnimation
     
     let provider: AnimationImageProvider
     
-    let animLayer: AnimationContainer
+    let animLayer: MainThreadAnimationLayer
     
     let animFramerate: CGFloat
     
@@ -27,7 +27,7 @@ class LottieImagePicker {
     
     let animDuration: TimeInterval
     
-    init(animation: Animation,
+    init(animation: LottieAnimation,
          provider: AnimationImageProvider,
          bgColor: UIColor?,
          animSize: CGSize?,
@@ -42,10 +42,11 @@ class LottieImagePicker {
         animTotalFrame = animEndFrame - animStartFrame
         animDuration = animation.duration
         
-        let animLayer = AnimationContainer(animation: animation,
-                                           imageProvider: provider,
-                                           textProvider: DefaultTextProvider(),
-                                           fontProvider: DefaultFontProvider())
+        let animLayer = MainThreadAnimationLayer(animation: animation,
+                                                 imageProvider: provider,
+                                                 textProvider: DefaultTextProvider(),
+                                                 fontProvider: DefaultFontProvider(),
+                                                 logger: LottieLogger.shared)
         animLayer.backgroundColor = bgColor.map { $0.cgColor } ?? UIColor.clear.cgColor
         animLayer.frame = .init(origin: .zero, size: animSize ?? animation.bounds.size)
         
@@ -188,7 +189,7 @@ extension LottieImagePicker {
             return nil
         }
         
-        guard let animation = Animation.filepath(jsonPath, animationCache: LRUAnimationCache.sharedCache) else {
+        guard let animation = LottieAnimation.filepath(jsonPath, animationCache: LRUAnimationCache.sharedCache) else {
             JPrint("animation错误！")
             return nil
         }

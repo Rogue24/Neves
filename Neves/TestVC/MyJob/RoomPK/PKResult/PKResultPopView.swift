@@ -7,7 +7,7 @@
 
 class PKResultPopView: UIView {
     let result: PKResult
-    let animView = AnimationView(animation: nil, imageProvider: nil)
+    let animView = LottieAnimationView(animation: nil, imageProvider: nil)
     
     init(result: PKResult) {
         self.result = result
@@ -82,7 +82,7 @@ extension PKResultPopView {
     
     func playAnim(_ imageReplacement: [String: CGImage?]) {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(result.lottieName)"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) else {
+              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) else {
             removeFromSuperview()
             return
         }

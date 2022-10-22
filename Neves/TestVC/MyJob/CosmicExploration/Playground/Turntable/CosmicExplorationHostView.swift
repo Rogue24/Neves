@@ -10,7 +10,7 @@ import UIKit
 class CosmicExplorationHostView: UIView {
     
     var bgLottieName: String = ""
-    let bgAnimView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
+    let bgAnimView: LottieAnimationView = LottieAnimationView(animation: nil, imageProvider: nil)
     
     let countdownView = CountdownView()
     
@@ -63,7 +63,7 @@ extension CosmicExplorationHostView {
         
         bgAnimView.stop()
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(bgLottieName)"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         else {
             UIView.animate(withDuration: 0.18) {
                 self.bgAnimView.alpha = 0
@@ -96,7 +96,7 @@ extension CosmicExplorationHostView {
 extension CosmicExplorationHostView {
     class CountdownView: UIView {
         var lottieName: String = ""
-        let animView: AnimationView = AnimationView(animation: nil, imageProvider: nil)
+        let animView: LottieAnimationView = LottieAnimationView(animation: nil, imageProvider: nil)
         
         var second: Int? = nil
         let s1ImgView = UIImageView()
@@ -212,7 +212,7 @@ extension CosmicExplorationHostView {
                 self.lottieName = lottieName
                 animView.stop()
                 if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-                   let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+                   let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
                     animView.animation = animation
                     animView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
                     animView.loopMode = .playOnce
