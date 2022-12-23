@@ -129,6 +129,7 @@
 		1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */; };
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
 		1AF648452955956900752E57 /* MainActorTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF648442955956900752E57 /* MainActorTestVC.swift */; };
+		1AF648472955ACAC00752E57 /* Task.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF648462955ACAC00752E57 /* Task.Extension.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
 		7102C56328D1ADC300E2265C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102C56228D1ADC300E2265C /* Assets.swift */; };
 		7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104877E28391E0B00706ED7 /* M34TestViewController.swift */; };
@@ -520,6 +521,7 @@
 		1A9E41AD26BFE33A006941D0 /* Processor-函数式编程.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Processor-函数式编程.HEIC"; sourceTree = "<group>"; };
 		1AABA9B02555BBA10051CA7E /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 		1AF648442955956900752E57 /* MainActorTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActorTestVC.swift; sourceTree = "<group>"; };
+		1AF648462955ACAC00752E57 /* Task.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.Extension.swift; sourceTree = "<group>"; };
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
 		7102C56128D1ABF200E2265C /* swift5.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; name = swift5.stencil; path = Pods/SwiftGen/bin/SwiftGen_SwiftGenCLI.bundle/Contents/Resources/templates/xcassets/swift5.stencil; sourceTree = SOURCE_ROOT; };
@@ -905,6 +907,7 @@
 				715ED74526FF26520030F279 /* Date.Extension.swift */,
 				7151895227EC204D00342645 /* URL.Extension.swift */,
 				719F9FAE286043C9008B4C1F /* View.Extension.swift */,
+				1AF648462955ACAC00752E57 /* Task.Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -2291,6 +2294,7 @@
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
 				7102C56328D1ADC300E2265C /* Assets.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
+				1AF648472955ACAC00752E57 /* Task.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
 				719299E4281A351100CCE872 /* PKProgress.swift in Sources */,

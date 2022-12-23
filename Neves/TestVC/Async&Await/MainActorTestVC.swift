@@ -65,6 +65,24 @@ class MainActorTestVC: TestBaseViewController {
                 }
                 JPrint("func ended")
             }),
+            
+            FunnyAction(name: "4.sleep test", work: {
+                JPrint("func begin")
+                Task {
+                    JPrint("task begin1")
+                    try! await Task.sleep(seconds: 3)
+                    JPrint("task ended1")
+                    
+                    JPrint("task begin2")
+                    try! await Task.sleep(seconds: 2)
+                    JPrint("task ended2")
+                    
+                    JPrint("task begin3")
+                    try! await Task.sleep(seconds: 1)
+                    JPrint("task ended3")
+                }
+                JPrint("func ended")
+            }),
         ])
     }
     
