@@ -11,7 +11,6 @@ import Foundation
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum MoguBannerJSON {
   private static let _document = JSONDocument(path: "MoguBanner.json")
-
   internal static let data: [String: Any] = _document["data"]
   internal static let returnCode: String = _document["returnCode"]
   internal static let success: Bool = _document["success"]

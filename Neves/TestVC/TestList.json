@@ -321,6 +321,15 @@
         ]
     },
     {
+        "header" : "Async&Await",
+        "vcList" : [
+            {
+                "vcName": "MainActorTestVC",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "Memory",
         "vcList" : [
             {

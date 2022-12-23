@@ -127,6 +127,7 @@
 		1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41A826BFE0C5006941D0 /* PropertyWrapperTestVC.swift */; };
 		1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */; };
 		1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AABA9B02555BBA10051CA7E /* Mems.swift */; };
+		1AF648452955956900752E57 /* MainActorTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF648442955956900752E57 /* MainActorTestVC.swift */; };
 		1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */; };
 		7102C56328D1ADC300E2265C /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7102C56228D1ADC300E2265C /* Assets.swift */; };
 		7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7104877E28391E0B00706ED7 /* M34TestViewController.swift */; };
@@ -516,6 +517,7 @@
 		1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemorySizeTestViewController.swift; sourceTree = "<group>"; };
 		1A9E41AD26BFE33A006941D0 /* Processor-函数式编程.HEIC */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Processor-函数式编程.HEIC"; sourceTree = "<group>"; };
 		1AABA9B02555BBA10051CA7E /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
+		1AF648442955956900752E57 /* MainActorTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActorTestVC.swift; sourceTree = "<group>"; };
 		69C2DBE988C4DCA7E96F83F1 /* Pods-Neves.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.debug.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.debug.xcconfig"; sourceTree = "<group>"; };
 		6C407D531A7DA01BA487ED3A /* Pods-Neves.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neves.release.xcconfig"; path = "Target Support Files/Pods-Neves/Pods-Neves.release.xcconfig"; sourceTree = "<group>"; };
 		7102C56128D1ABF200E2265C /* swift5.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; name = swift5.stencil; path = Pods/SwiftGen/bin/SwiftGen_SwiftGenCLI.bundle/Contents/Resources/templates/xcassets/swift5.stencil; sourceTree = SOURCE_ROOT; };
@@ -791,12 +793,12 @@
 		1A35433A254E75EB0032B677 /* Neves */ = {
 			isa = PBXGroup;
 			children = (
-				1A3543B5254E775F0032B677 /* Neves */,
 				1A35433B254E75EB0032B677 /* AppDelegate.swift */,
 				1A35433D254E75EB0032B677 /* SceneDelegate.swift */,
 				71B0E00028D9A55C00E3BC75 /* BaseNavigationController.swift */,
 				1A3543CF254E775F0032B677 /* MainTableViewController.swift */,
 				1A35442E254E77600032B677 /* TestVC */,
+				1A3543B5254E775F0032B677 /* Neves */,
 				1A3543D0254E775F0032B677 /* JPBasic */,
 				1A3545A9254E818B0032B677 /* ThirdLib */,
 				1A35436D254E76530032B677 /* Supporting Files */,
@@ -1147,6 +1149,7 @@
 				1A35443C254E77600032B677 /* Image */,
 				71B897A6268C509F00705AC1 /* Video */,
 				1A35443A254E77600032B677 /* GCD */,
+				1AF64843295594FD00752E57 /* Async&Await */,
 				1A9E41AA26BFE19F006941D0 /* Memory */,
 				7170F8B82857353200C9B51C /* SwiftUI */,
 				71F249982731517A00FAAD93 /* MyJob */,
@@ -1383,6 +1386,14 @@
 				1A9E41AB26BFE19F006941D0 /* MemorySizeTestViewController.swift */,
 			);
 			path = Memory;
+			sourceTree = "<group>";
+		};
+		1AF64843295594FD00752E57 /* Async&Await */ = {
+			isa = PBXGroup;
+			children = (
+				1AF648442955956900752E57 /* MainActorTestVC.swift */,
+			);
+			path = "Async&Await";
 			sourceTree = "<group>";
 		};
 		71048BC42862FDAB00737278 /* KeyValue */ = {
@@ -2399,6 +2410,7 @@
 				71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
+				1AF648452955956900752E57 /* MainActorTestVC.swift in Sources */,
 				717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */,
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				715C900827F6F27B00B88B85 /* CosmicExplorationRuleView.swift in Sources */,
