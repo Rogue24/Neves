@@ -168,10 +168,10 @@ private extension PKStarBottle {
     /// 播放激活动画
     func playActivateAnim() {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_star_activation_lottie"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         else { return }
         
-        let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+        let animView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
         animView.backgroundBehavior = .pauseAndRestore
         animView.contentMode = .scaleToFill
         animView.loopMode = .playOnce

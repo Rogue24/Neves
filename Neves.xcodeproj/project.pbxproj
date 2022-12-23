@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00055475291A56A800AEC49B /* ScreenRotatorState.swift */; };
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
@@ -344,6 +345,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00055475291A56A800AEC49B /* ScreenRotatorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRotatorState.swift; sourceTree = "<group>"; };
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 			isa = PBXGroup;
 			children = (
 				71A737B828E68A2300B7C027 /* ScreenRotator.swift */,
+				00055475291A56A800AEC49B /* ScreenRotatorState.swift */,
 				71A7D9E92862E43D007960C3 /* Setter.swift */,
 				7189227C281153FF00EC4CA4 /* UserDefault.swift */,
 				7151895427EC574000342645 /* LoremPicsum.swift */,
@@ -2258,6 +2261,7 @@
 				71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
 				71048BCD2863282E00737278 /* KeyStore.swift in Sources */,
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
+				00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */,
 				71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
 				717FA03727706B2D0081DD50 /* MemoryLayoutViewController.swift in Sources */,

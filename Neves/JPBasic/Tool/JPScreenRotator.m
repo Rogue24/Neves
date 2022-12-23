@@ -1,13 +1,15 @@
 //
 //  JPScreenRotator.m
-//  Neves
+//  ScreenRotatorDemo
 //
-//  Created by aa on 2022/9/23.
+//  Created by 周健平 on 2022/10/28.
 //
 
 #import "JPScreenRotator.h"
 
-NSNotificationName const JPScreenOrientationDidChangeNotification = @"JPScreenOrientationDidChangeNotification";
+NSNotificationName const JPScreenRotatorOrientationDidChangeNotification = @"JPScreenRotatorOrientationDidChangeNotification";
+NSNotificationName const JPScreenRotatorLockOrientationWhenDeviceOrientationDidChangeNotification = @"JPScreenRotatorLockOrientationWhenDeviceOrientationDidChangeNotification";
+NSNotificationName const JPScreenRotatorLockLandscapeWhenDeviceOrientationDidChangeNotification = @"JPScreenRotatorLockLandscapeWhenDeviceOrientationDidChangeNotification";
 
 static inline UIDeviceOrientation JPConvertInterfaceOrientationMaskToDeviceOrientation(UIInterfaceOrientationMask orientationMask) {
     switch (orientationMask) {
@@ -86,6 +88,26 @@ static JPScreenRotator *sharedInstance_;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - setter
+
+- (void)setOrientationMask:(UIInterfaceOrientationMask)orientationMask {
+    if (_orientationMask == orientationMask) return;
+    _orientationMask = orientationMask;
+    [self __publishOrientationMaskDidChange];
+}
+
+- (void)setIsLockOrientationWhenDeviceOrientationDidChange:(BOOL)isLockOrientationWhenDeviceOrientationDidChange {
+    if (_isLockOrientationWhenDeviceOrientationDidChange == isLockOrientationWhenDeviceOrientationDidChange) return;
+    _isLockOrientationWhenDeviceOrientationDidChange = isLockOrientationWhenDeviceOrientationDidChange;
+    [self __publishLockOrientationWhenDeviceOrientationDidChange];
+}
+
+- (void)setIsLockLandscapeWhenDeviceOrientationDidChange:(BOOL)isLockLandscapeWhenDeviceOrientationDidChange {
+    if (_isLockLandscapeWhenDeviceOrientationDidChange == isLockLandscapeWhenDeviceOrientationDidChange) return;
+    _isLockLandscapeWhenDeviceOrientationDidChange = isLockLandscapeWhenDeviceOrientationDidChange;
+    [self __publishLockLandscapeWhenDeviceOrientationDidChange];
+}
+
 #pragma mark - getter
 
 - (BOOL)isPortrait {
@@ -148,17 +170,30 @@ static JPScreenRotator *sharedInstance_;
     [self __rotationToOrientationMask:orientationMask];
 }
 
+#pragma mark - 发布通知
+- (void)__publishOrientationMaskDidChange {
+    !self.orientationMaskDidChange ? : self.orientationMaskDidChange(_orientationMask);
+    [[NSNotificationCenter defaultCenter] postNotificationName:JPScreenRotatorOrientationDidChangeNotification object:@(_orientationMask)];
+}
+    
+- (void)__publishLockOrientationWhenDeviceOrientationDidChange {
+    !self.lockOrientationWhenDeviceOrientationDidChange ? : self.lockOrientationWhenDeviceOrientationDidChange(_isLockOrientationWhenDeviceOrientationDidChange);
+    [[NSNotificationCenter defaultCenter] postNotificationName:JPScreenRotatorLockOrientationWhenDeviceOrientationDidChangeNotification object:@(_isLockOrientationWhenDeviceOrientationDidChange)];
+}
+    
+- (void)__publishLockLandscapeWhenDeviceOrientationDidChange {
+    !self.lockLandscapeWhenDeviceOrientationDidChange ? : self.lockLandscapeWhenDeviceOrientationDidChange(_isLockLandscapeWhenDeviceOrientationDidChange);
+    [[NSNotificationCenter defaultCenter] postNotificationName:JPScreenRotatorLockLandscapeWhenDeviceOrientationDidChangeNotification object:@(_isLockLandscapeWhenDeviceOrientationDidChange)];
+}
+
 #pragma mark - 私有方法
 
 - (void)__rotationToOrientationMask:(UIInterfaceOrientationMask)orientationMask {
     if (!_isEnabled) return;
     if (_orientationMask == orientationMask) return;
     
-    _orientationMask = orientationMask;
-    
-    // 通知屏幕方向发生改变
-    !self.orientationMaskDidChange ? : self.orientationMaskDidChange(orientationMask);
-    [[NSNotificationCenter defaultCenter] postNotificationName:JPScreenOrientationDidChangeNotification object:@(orientationMask)];
+    // 更新并广播屏幕方向
+    self.orientationMask = orientationMask;
     
     // 控制横竖屏
     if (@available(iOS 16.0, *)) {
@@ -196,7 +231,10 @@ static JPScreenRotator *sharedInstance_;
     } else {
         // `iOS16`之前调用`attemptRotationToDeviceOrientation`屏幕才会旋转。
         //【注意】要在确定改变的方向【设置之后】才调用，否则会旋转到【设置之前】的方向
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [UIViewController attemptRotationToDeviceOrientation];
+#pragma clang diagnostic pop
         
         // `iOS16`之前修改"orientation"后会直接影响`UIDevice.currentDevice.orientation`；
         // `iOS16`之后不能再通过设置`UIDevice.orientation`来控制横竖屏了，修改"orientation"无效。

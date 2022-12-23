@@ -28,7 +28,7 @@ import SwiftyJSON
         let viewTag: Int
         let viewFrame: CGRect
         let zPosition: CGFloat
-        let anim: Animation?
+        let anim: LottieAnimation?
         let provider: AnimationImageProvider?
     }
     
@@ -108,7 +108,7 @@ extension AsyncDecodeAnimationView {
                     let packageName = subConfig["packageName"].stringValue
                     let animDirPath = packageJson.deletingLastPathComponent().appendingPathComponent(packageName).path
                     
-                    guard let objs: (Animation?, AnimationImageProvider?) = Self.createAnimationAndImageProvider(animDirPath, isSync: self.isSync) else { break }
+                    guard let objs: (LottieAnimation?, AnimationImageProvider?) = Self.createAnimationAndImageProvider(animDirPath, isSync: self.isSync) else { break }
                     
                     let margin = UIEdgeInsets(top: subConfig["marginTop"].jp.cgFloatValue + safeTop,
                                               left: subConfig["marginLeft"].jp.cgFloatValue,
@@ -138,7 +138,7 @@ extension AsyncDecodeAnimationView {
                     
                     let lock = DispatchSemaphore(value: 0)
                     DispatchQueue.main.async {
-                        let animView = AnimationView(animation: subItem.anim, imageProvider: subItem.provider)
+                        let animView = LottieAnimationView(animation: subItem.anim, imageProvider: subItem.provider)
                         animView.backgroundBehavior = .pauseAndRestore
                         animView.contentMode = .scaleToFill
                         animView.tag = subItem.viewTag
@@ -178,7 +178,7 @@ extension AsyncDecodeAnimationView {
         for i in 0..<animItem.subItems.count {
             let subItem = animItem.subItems[i]
             
-            guard let animView = viewWithTag(subItem.viewTag) as? AnimationView else {
+            guard let animView = viewWithTag(subItem.viewTag) as? LottieAnimationView else {
                 currCount += 1
                 allDone(currCount)
                 return
@@ -200,7 +200,7 @@ extension AsyncDecodeAnimationView {
 //
 //    static func decodeImageOfFile(_ imgPath: String) -> CGImage? {
     
-    static func createAnimationAndImageProvider(_ animDirPath: String, isSync: Bool = false) -> (Animation?, AnimationImageProvider?)? {
+    static func createAnimationAndImageProvider(_ animDirPath: String, isSync: Bool = false) -> (LottieAnimation?, AnimationImageProvider?)? {
         let fileManager = FileManager.default
         guard fileManager.fileExists(atPath: animDirPath) else { return nil }
         
@@ -209,7 +209,7 @@ extension AsyncDecodeAnimationView {
         
         guard fileManager.fileExists(atPath: animJsonPath) else { return nil }
         
-        let anim = Animation.filepath(animJsonPath)
+        let anim = LottieAnimation.filepath(animJsonPath)
         
         guard fileManager.fileExists(atPath: imageDirPath) else { return (anim, nil) }
         

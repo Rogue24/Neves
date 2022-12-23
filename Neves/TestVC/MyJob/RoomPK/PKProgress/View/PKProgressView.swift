@@ -26,8 +26,8 @@ class PKProgressView: UIView {
     
     let totalProgress = PortraitScreenWidth - 10 - 50
     let leftProgressMaskView = UIView(frame: [-5, 0, 0, 15])
-    let posAnimView = AnimationView(animation: nil, imageProvider: nil)
-    var peakingAnimView: AnimationView?
+    let posAnimView = LottieAnimationView(animation: nil, imageProvider: nil)
+    var peakingAnimView: LottieAnimationView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,7 +50,7 @@ class PKProgressView: UIView {
         posAnimView.loopMode = .loop
         progressBgView.addSubview(posAnimView)
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_room_progressbar_lottie"),
-           let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
             posAnimView.animation = animation
             posAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             posAnimView.play()
@@ -66,12 +66,12 @@ class PKProgressView: UIView {
 
 extension PKProgressView {
     @discardableResult
-    private func playAnim(lottieName: String, isOnec: Bool) -> AnimationView? {
+    private func playAnim(lottieName: String, isOnec: Bool) -> LottieAnimationView? {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         else { return nil }
         
-        let animView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+        let animView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
         animView.backgroundBehavior = .pauseAndRestore
         animView.contentMode = .scaleAspectFit
         animView.frame = [0, HalfDiffValue(frame.height, 300), frame.width, 300]

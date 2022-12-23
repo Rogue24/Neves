@@ -89,8 +89,8 @@ class PKChallengeView: UIView {
         }
         
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_tag_lottie"),
-           let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
-            let pkLogoAnimView = AnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
+           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+            let pkLogoAnimView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
             pkLogoAnimView.backgroundBehavior = .pauseAndRestore
             pkLogoAnimView.contentMode = .scaleAspectFit
             pkLogoAnimView.loopMode = .loop

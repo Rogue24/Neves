@@ -23,7 +23,7 @@ class MarebulabulasRecordControl: UIView {
     var recordLayer: CALayer?
     var recordingLayer: CAShapeLayer!
     // 扩散动画
-    var recordAnimView: AnimationView?
+    var recordAnimView: LottieAnimationView?
     // 重录按钮
     var reRecordView: UIImageView?
     
@@ -147,7 +147,7 @@ class MarebulabulasRecordControl: UIView {
 
     func buildRecordAnimView() {
         if recordAnimView != nil { return }
-        recordAnimView = AnimationView.jp.build("lottie_recordingmotion")
+        recordAnimView = LottieAnimationView.jp.build("lottie_recordingmotion")
         guard let recordAnimView = self.recordAnimView else { return }
         
         let wh: CGFloat = 175

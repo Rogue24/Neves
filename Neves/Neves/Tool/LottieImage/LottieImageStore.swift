@@ -77,7 +77,7 @@ extension LottieImageStore {
 }
 
 private extension LottieImageStore {
-    static func createAnimationAndImageProvider(_ lottieName: String) -> (Animation, DecodeImageProvider)? {
+    static func createAnimationAndImageProvider(_ lottieName: String) -> (LottieAnimation, DecodeImageProvider)? {
         guard let directoryPath = Bundle.main.path(forResource: "lottie/\(lottieName)", ofType: nil) else {
             JPrint("路径错误！")
             return nil
@@ -88,7 +88,7 @@ private extension LottieImageStore {
             JPrint("不存在JSON文件！")
             return nil
         }
-        guard let animation = Animation.filepath(jsonPath, animationCache: LRUAnimationCache.sharedCache) else {
+        guard let animation = LottieAnimation.filepath(jsonPath, animationCache: LRUAnimationCache.sharedCache) else {
             JPrint("animation错误！")
             return nil
         }
@@ -102,14 +102,15 @@ private extension LottieImageStore {
         return (animation, provider)
     }
     
-    static func createAnimationContainer(_ animation: Animation,
+    static func createAnimationContainer(_ animation: LottieAnimation,
                                          _ imageProvider: AnimationImageProvider,
-                                         _ size: CGSize?) -> AnimationContainer {
+                                         _ size: CGSize?) -> MainThreadAnimationLayer {
         
-        let animLayer = AnimationContainer(animation: animation,
-                                           imageProvider: imageProvider,
-                                           textProvider: DefaultTextProvider(),
-                                           fontProvider: DefaultFontProvider())
+        let animLayer = MainThreadAnimationLayer(animation: animation,
+                                                 imageProvider: imageProvider,
+                                                 textProvider: DefaultTextProvider(),
+                                                 fontProvider: DefaultFontProvider(),
+                                                 logger: LottieLogger.shared)
         animLayer.renderScale = 1
         animLayer.frame = CGRect(origin: .zero, size: size ?? animation.bounds.size)
         
@@ -135,7 +136,7 @@ private extension LottieImageStore {
         return animLayer
     }
     
-    func getImages(configure: Configure, animLayer: AnimationContainer) {
+    func getImages(configure: Configure, animLayer: MainThreadAnimationLayer) {
         
         let imageSize = configure.imageSize ?? animLayer.bounds.size
         self.imageSize = imageSize

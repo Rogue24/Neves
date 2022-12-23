@@ -10,9 +10,9 @@ import UIKit
 
 class FireworkViewController: TestBaseViewController {
 
-    var animView1: AnimationView!
-    var animView2: AnimationView!
-    var animView3: AnimationView!
+    var animView1: LottieAnimationView!
+    var animView2: LottieAnimationView!
+    var animView3: LottieAnimationView!
     
     var fwCtr: FireworkController!
     
@@ -30,7 +30,7 @@ class FireworkViewController: TestBaseViewController {
 //        let filepath1 = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/fire_lottie2")!
 //        let path1 = URL(fileURLWithPath: filepath1).deletingLastPathComponent().path
 //        let imageProvider1 = ExtendedFilepathImageProvider(filepath: path1, imageReplacement: dic)
-//        animView1 = AnimationView(filePath: filepath1, imageProvider: imageProvider1)
+//        animView1 = LottieAnimationView(filePath: filepath1, imageProvider: imageProvider1)
 //        animView1.backgroundColor = .randomColor()
 //        animView1.size = .init(width: w, height: h)
 //        view.addSubview(animView1)
@@ -40,7 +40,7 @@ class FireworkViewController: TestBaseViewController {
 //        let filepath2 = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/fire_lottie3")!
 //        let path2 = URL(fileURLWithPath: filepath2).deletingLastPathComponent().path
 //        let imageProvider2 = ExtendedFilepathImageProvider(filepath: path2, imageReplacement: dic)
-//        animView2 = AnimationView(filePath: filepath2, imageProvider: imageProvider2)
+//        animView2 = LottieAnimationView(filePath: filepath2, imageProvider: imageProvider2)
 //        animView2.backgroundColor = .randomColor()
 //        animView2.size = .init(width: w, height: h)
 //        view.addSubview(animView2)

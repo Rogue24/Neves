@@ -7,7 +7,7 @@
 
 class UniverseView: UIView {
     
-    let bgAnimView = AnimationView.jp.build("gxq_bg_lottie")
+    let bgAnimView = LottieAnimationView.jp.build("gxq_bg_lottie")
     let turntableView = PeopleTurntableView()
     
     let bosomFriendPlanet = PlanetView(style: .bosomFriend, layout: .main)

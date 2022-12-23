@@ -97,7 +97,7 @@ extension MarebulabulasViewController {
     
     private func _setupTopAnimView() {
         let dirName = type.isDialogue ? "album_dialog_bg_lottie" : "album_sing_bg_lottie"
-        let topAnimView = AnimationView.jp.build(dirName)
+        let topAnimView = LottieAnimationView.jp.build(dirName)
         topAnimView.isUserInteractionEnabled = false
         view.addSubview(topAnimView)
         topAnimView.snp.makeConstraints {

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 return window
             } else {
-                return UIApplication.shared.keyWindow
+                return UIApplication.shared.delegate?.window ?? nil
             }
         }
     }

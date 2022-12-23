@@ -10,7 +10,7 @@ target 'Neves' do
   pod 'Moya/ReactiveSwift'
   pod 'RxCocoa'
   pod 'WCDB'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 7.4.0'
 #  pod 'KingfisherWebP'
   pod 'SwiftyJSON'
   pod 'KakaJSON'

@@ -13,7 +13,7 @@ class PlanetView: UIView {
     weak var universe: UniverseView?
     
     lazy var planetImgView: UIImageView = { UIImageView(image: UIImage(named: style.planetImgName)) }()
-    lazy var planetRingImgView: AnimationView = { AnimationView.jp.build(style.ringLottieName) }()
+    lazy var planetRingImgView: LottieAnimationView = { LottieAnimationView.jp.build(style.ringLottieName) }()
     weak var turntableView: PeopleTurntableView?
     lazy var titleView: PlanetTitleView = { PlanetTitleView(style: style, layout: layout, count: 13) }()
     
@@ -32,7 +32,7 @@ class PlanetView: UIView {
         planetImgView.alpha = layout.imageAlpha
         addSubview(planetImgView)
         
-        let planetRingImgView = AnimationView.jp.build(style.ringLottieName)
+        let planetRingImgView = LottieAnimationView.jp.build(style.ringLottieName)
         planetRingImgView.loopMode = .loop
         planetRingImgView.frame = planetImgView.bounds
         planetRingImgView.isUserInteractionEnabled = false

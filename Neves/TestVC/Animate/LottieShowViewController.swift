@@ -7,8 +7,8 @@
 
 class LottieShowViewController: TestBaseViewController {
     
-    var animView: AnimationView!
-    var animationLayer: AnimationContainer?
+    var animView: LottieAnimationView!
+    var animationLayer: MainThreadAnimationLayer?
     
     lazy var imageMakerQueue: DispatchQueue = DispatchQueue(label: "ImageMaker.SerialQueue")
     var makerItem: DispatchWorkItem? = nil
@@ -32,17 +32,17 @@ class LottieShowViewController: TestBaseViewController {
         super.viewDidLoad()
         
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/gxq_rk_shitu_zhiyou"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         else {
             JPrint("路径错误！")
             return
         }
         
         // animation 和 provider 是必须的
-//        let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+//        let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         let provider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
         
-        animView = AnimationView(animation: animation, imageProvider: provider)
+        animView = LottieAnimationView(animation: animation, imageProvider: provider)
         animView.backgroundColor = .black
         animView.frame = [HalfDiffValue(PortraitScreenWidth, 300), NavTopMargin + 20, 300, 300]
         animView.contentMode = .scaleAspectFit
@@ -115,14 +115,14 @@ class LottieShowViewController: TestBaseViewController {
         }
         
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-              let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         else {
             JPrint("路径错误！")
             return
         }
         
         // animation 和 provider 是必须的
-//        let animation = Animation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+//        let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
         let provider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
         
         animView.animation = animation
@@ -176,7 +176,7 @@ class LottieShowViewController: TestBaseViewController {
 
 // MARK: - 截取Lottie动画的其中一帧生成图片
 extension LottieShowViewController {
-    func makeAnimationImage(_ animationLayer: AnimationContainer, _ currentFrame: CGFloat) {
+    func makeAnimationImage(_ animationLayer: MainThreadAnimationLayer, _ currentFrame: CGFloat) {
         makerItem?.cancel()
         let workItem = DispatchWorkItem {
             let image = animationLayer.jp_convertToImage()
@@ -191,8 +191,8 @@ extension LottieShowViewController {
         makerItem = workItem
     }
     
-    func makeAnimationLayer(_ animation: Animation, _ provider: FilepathImageProvider) -> AnimationContainer {
-        let animationLayer = AnimationContainer(animation: animation, imageProvider: provider, textProvider: DefaultTextProvider(), fontProvider: DefaultFontProvider())
+    func makeAnimationLayer(_ animation: LottieAnimation, _ provider: FilepathImageProvider) -> MainThreadAnimationLayer {
+        let animationLayer = MainThreadAnimationLayer(animation: animation, imageProvider: provider, textProvider: DefaultTextProvider(), fontProvider: DefaultFontProvider(), logger: LottieLogger.shared)
         animationLayer.backgroundColor = UIColor.black.cgColor
         animationLayer.frame = [0, 0, 300, 300]
         

@@ -24,7 +24,7 @@ struct ImageReplacementProvider: AnimationImageProvider {
 }
 
 //extension AnimationView: JPCompatible {}
-extension JP where Base: AnimationView {
+extension JP where Base: LottieAnimationView {
     static func build(_ dirName: String, _ imageReplacement: [String: CGImage?]? = nil) -> Base {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(dirName)") else { fatalError("路径错误！") }
         let animView: Base

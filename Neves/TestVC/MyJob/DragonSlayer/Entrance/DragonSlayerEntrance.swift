@@ -58,7 +58,7 @@ class DragonSlayerEntrance: UIView {
         }
     }
     
-    let bgAnimView = AnimationView.jp.build("dragon_enter_lottie_1")
+    let bgAnimView = LottieAnimationView.jp.build("dragon_enter_lottie_1")
     let contentView = ContentView()
     weak var countingDownView: CountingDownView? = nil
     
