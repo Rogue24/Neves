@@ -25,33 +25,45 @@ class MainActorTestVC: TestBaseViewController {
         replaceFunnyActions([
             FunnyAction(name: "1.Task { @MainActor in }", work: { [weak self] in
                 guard let self = self else { return }
+                JPrint("func begin")
                 Task { @MainActor in
+                    JPrint("task begin")
                     JPProgressHUD.show()
                     let image = await self.getImage()
                     self.imgView.image = image
                     JPProgressHUD.dismiss()
+                    JPrint("task ended")
                 }
+                JPrint("func ended")
             }),
             
             FunnyAction(name: "2.await MainActor.run {}", work: { [weak self] in
                 guard let self = self else { return }
+                JPrint("func begin")
                 Task {
+                    JPrint("task begin")
                     JPProgressHUD.show()
                     let image = await self.getImage()
                     await MainActor.run {
                         self.imgView.image = image
                     }
                     JPProgressHUD.dismiss()
+                    JPrint("task ended")
                 }
+                JPrint("func ended")
             }),
             
             FunnyAction(name: "3.@MainActor func", work: { [weak self] in
                 guard let self = self else { return }
+                JPrint("func begin")
                 Task {
+                    JPrint("task begin")
                     JPProgressHUD.show()
                     await self.setImage(self.getImage())
                     JPProgressHUD.dismiss()
+                    JPrint("task ended")
                 }
+                JPrint("func ended")
             }),
         ])
     }
