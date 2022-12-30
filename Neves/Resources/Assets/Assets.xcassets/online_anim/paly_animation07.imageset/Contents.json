@@ -1,16 +1,15 @@
 {
   "images" : [
     {
+      "filename" : "paly_animation07.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "roomguide_emoji_zudui@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "roomguide_emoji_zudui@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

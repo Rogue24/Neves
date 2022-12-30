@@ -57,8 +57,8 @@ class GuideIntoRoomPopViewController: UIViewController {
             self.view.layer.backgroundColor = UIColor.rgb(0, 0, 0, a: 0.5).cgColor
             self.view.layoutIfNeeded()
         } completion: { _ in
-            self.popView.loopEnable()
-            self.popView.loadData()
+//            self.popView.loopEnable()
+//            self.popView.loadData()
         }
     }
     

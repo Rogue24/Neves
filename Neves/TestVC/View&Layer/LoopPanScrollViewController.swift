@@ -52,7 +52,7 @@ class LoopPanScrollViewController: TestBaseViewController {
         
         let itemSize: CGSize = [250.px, 75.px]
         let horInset = HalfDiffValue(container.width, itemSize.width)
-        let flowLayout = AdjacentScaleLayout(adjacentScale: 0.5,
+        let flowLayout = AdjacentScaleLayout(adjacentScale: 0.8,
                                              adjacentAlpha: 0.5,
                                              itemSize: itemSize,
                                              horInset: horInset,
