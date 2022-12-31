@@ -10,8 +10,6 @@
 		00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00055475291A56A800AEC49B /* ScreenRotatorState.swift */; };
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
 		002E78C4295BF29E0071E30C /* GuideIntoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */; };
-		002E78C8295BF37A0071E30C /* JPImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C6295BF37A0071E30C /* JPImagePickerObject.swift */; };
-		002E78C9295BF37A0071E30C /* JPImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C7295BF37A0071E30C /* JPImagePickerController.swift */; };
 		002E78CB295BF4310071E30C /* GuideIntoRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78CA295BF4310071E30C /* GuideIntoRoom.swift */; };
 		002E78CD295C42840071E30C /* GuideIntoRoomPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78CC295C42840071E30C /* GuideIntoRoomPopView.swift */; };
 		002E78CF295C42980071E30C /* GuideIntoRoomPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78CE295C42980071E30C /* GuideIntoRoomPopViewController.swift */; };
@@ -19,6 +17,9 @@
 		002E78FE295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */; };
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
 		002E7902295EBD430071E30C /* GuideIntoRoomUserIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomUserIconView.swift */; };
+		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
+		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
+		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
 		0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */; };
@@ -359,8 +360,6 @@
 		00055475291A56A800AEC49B /* ScreenRotatorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRotatorState.swift; sourceTree = "<group>"; };
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
 		002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomViewController.swift; sourceTree = "<group>"; };
-		002E78C6295BF37A0071E30C /* JPImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPImagePickerObject.swift; sourceTree = "<group>"; };
-		002E78C7295BF37A0071E30C /* JPImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JPImagePickerController.swift; sourceTree = "<group>"; };
 		002E78CA295BF4310071E30C /* GuideIntoRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoom.swift; sourceTree = "<group>"; };
 		002E78CC295C42840071E30C /* GuideIntoRoomPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomPopView.swift; sourceTree = "<group>"; };
 		002E78CE295C42980071E30C /* GuideIntoRoomPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomPopViewController.swift; sourceTree = "<group>"; };
@@ -368,6 +367,9 @@
 		002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomGameTeamCardListView.swift; sourceTree = "<group>"; };
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
 		002E7901295EBD430071E30C /* GuideIntoRoomUserIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconView.swift; sourceTree = "<group>"; };
+		0053548029607E5900E52CBB /* ImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerObject.swift; sourceTree = "<group>"; };
+		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
 		0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLottieTestViewController.swift; sourceTree = "<group>"; };
@@ -791,13 +793,14 @@
 			path = GuideIntoRoom;
 			sourceTree = "<group>";
 		};
-		002E78C5295BF37A0071E30C /* JPImagePicker */ = {
+		0053547F29607E5900E52CBB /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				002E78C7295BF37A0071E30C /* JPImagePickerController.swift */,
-				002E78C6295BF37A0071E30C /* JPImagePickerObject.swift */,
+				0053548129607E5900E52CBB /* ImagePicker.swift */,
+				0053548229607E5900E52CBB /* ImagePicker.API.swift */,
+				0053548029607E5900E52CBB /* ImagePickerObject.swift */,
 			);
-			path = JPImagePicker;
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		00D109A125749D6500F17889 /* Relam */ = {
@@ -923,7 +926,7 @@
 		1A3543B6254E775F0032B677 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
-				002E78C5295BF37A0071E30C /* JPImagePicker */,
+				0053547F29607E5900E52CBB /* ImagePicker */,
 				718A56B227F1B9D30071C724 /* ImageViews */,
 				718A56AF27F1B9480071C724 /* Buttons */,
 				1A6587402629E6CC00846689 /* PopView */,
@@ -2236,6 +2239,7 @@
 				715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
+				0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */,
 				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
 				71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */,
@@ -2245,6 +2249,7 @@
 				7151894F27EC168B00342645 /* MoonMaskViewController.swift in Sources */,
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
+				0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */,
 				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
 				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
@@ -2278,6 +2283,7 @@
 				71A2702A2857432000B9D000 /* Modifier.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
+				0053548429607E5900E52CBB /* ImagePicker.swift in Sources */,
 				1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */,
 				718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */,
 				7151895327EC204D00342645 /* URL.Extension.swift in Sources */,
@@ -2381,8 +2387,6 @@
 				1A3545AF254E818B0032B677 /* Lottie.Extension.swift in Sources */,
 				71AB638827F5DE29000CCF58 /* CosmicExplorationPrizeCell.swift in Sources */,
 				71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */,
-				002E78C8295BF37A0071E30C /* JPImagePickerObject.swift in Sources */,
-				002E78C9295BF37A0071E30C /* JPImagePickerController.swift in Sources */,
 				71F249E42731517A00FAAD93 /* JPMagicCubeSuspendView.swift in Sources */,
 				1A35451E254E77600032B677 /* NSURL+JPExtension.m in Sources */,
 				71048BC82863000F00737278 /* KeyValueTestViewController.swift in Sources */,
