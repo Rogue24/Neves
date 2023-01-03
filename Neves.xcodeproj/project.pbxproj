@@ -16,7 +16,7 @@
 		002E78FC295E84260071E30C /* LoopPanScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FB295E84260071E30C /* LoopPanScrollViewController.swift */; };
 		002E78FE295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */; };
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
-		002E7902295EBD430071E30C /* GuideIntoRoomUserIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomUserIconView.swift */; };
+		002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */; };
 		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
@@ -366,7 +366,7 @@
 		002E78FB295E84260071E30C /* LoopPanScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPanScrollViewController.swift; sourceTree = "<group>"; };
 		002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomGameTeamCardListView.swift; sourceTree = "<group>"; };
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
-		002E7901295EBD430071E30C /* GuideIntoRoomUserIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconView.swift; sourceTree = "<group>"; };
+		002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomFmView.swift; sourceTree = "<group>"; };
 		0053548029607E5900E52CBB /* ImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerObject.swift; sourceTree = "<group>"; };
 		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
@@ -785,8 +785,8 @@
 				002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */,
 				002E78CA295BF4310071E30C /* GuideIntoRoom.swift */,
 				002E78CC295C42840071E30C /* GuideIntoRoomPopView.swift */,
-				002E7901295EBD430071E30C /* GuideIntoRoomUserIconView.swift */,
 				002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */,
+				002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */,
 				002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */,
 				002E78CE295C42980071E30C /* GuideIntoRoomPopViewController.swift */,
 			);
@@ -2334,7 +2334,7 @@
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
 				71ADDF7C279FECFC00404FF4 /* NestScrollViewController.swift in Sources */,
-				002E7902295EBD430071E30C /* GuideIntoRoomUserIconView.swift in Sources */,
+				002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */,
 				1A354522254E77600032B677 /* JPProgressHUD.m in Sources */,
 				1A354527254E77600032B677 /* JPSolveTool.m in Sources */,
 				71B3008A2722BBAF00997B20 /* VideoMaker.Image.swift in Sources */,

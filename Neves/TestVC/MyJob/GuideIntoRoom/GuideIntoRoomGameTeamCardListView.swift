@@ -30,7 +30,6 @@ class GuideIntoRoomGameTeamCardListView: UICollectionView, GuideIntoRoomContentV
     
     private var isFirstDecelerate = true
     private var isDecelerate = false
-    private var isLoopEnabled = false
     
     private var pageWidth: CGFloat {
         flowLayout.itemSize.width + flowLayout.minimumLineSpacing
@@ -41,19 +40,19 @@ class GuideIntoRoomGameTeamCardListView: UICollectionView, GuideIntoRoomContentV
     
     init(gameId: UInt32) {
         self.gameId = gameId
-        self.viewSize = [GuideIntoRoomPopView.baseSize.width, flowLayout.itemSize.height]
+        self.viewSize = [GuideIntoRoomPopView.viewWidth, flowLayout.itemSize.height]
         super.init(frame: .zero, collectionViewLayout: flowLayout)
-        backgroundColor = .randomColor
+        backgroundColor = .clear
         clipsToBounds = true
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
         delegate = self
         dataSource = self
         isScrollEnabled = false
-        register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        loopEnable()
+        register(Cell.self, forCellWithReuseIdentifier: "cell")
         Asyncs.mainDelay(0.1) {
-            self.reloadData([1, 2, 3, 4, 5])
+            let dataList = Array(1...Int.random(in: 1...10))
+            self.reloadData(dataList)
         }
     }
     
@@ -64,6 +63,15 @@ class GuideIntoRoomGameTeamCardListView: UICollectionView, GuideIntoRoomContentV
     deinit {
         loopWorkItem?.cancel()
     }
+    
+    var showTag = 0
+    func testShow() {
+        showTag += 1
+        if showTag > 3 {
+            showTag = 0
+        }
+        reloadData(dataList)
+    }
 }
 
 extension GuideIntoRoomGameTeamCardListView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -73,25 +81,25 @@ extension GuideIntoRoomGameTeamCardListView: UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! Cell
+        cell.showTag = showTag
         
-        let label = cell.viewWithTag(10086) as? UILabel ?? {
-            let label = UILabel()
-            label.tag = 10086
-            label.font = .boldSystemFont(ofSize: 50)
-            label.textAlignment = .center
-            cell.contentView.addSubview(label)
-            label.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-            }
-            return label
-        }()
-        let itemIndex = indexPath.item
-        let dataIndex = getDataIndex(itemIndex)
-        let data = dataList[dataIndex]
-        label.textColor = .randomColor
-        label.text = "\(data)"
+//        let label = cell.viewWithTag(10086) as? UILabel ?? {
+//            let label = UILabel()
+//            label.tag = 10086
+//            label.font = .boldSystemFont(ofSize: 50)
+//            label.textAlignment = .center
+//            cell.contentView.addSubview(label)
+//            label.snp.makeConstraints { make in
+//                make.edges.equalToSuperview()
+//            }
+//            return label
+//        }()
+//        let itemIndex = indexPath.item
+//        let dataIndex = getDataIndex(itemIndex)
+//        let data = dataList[dataIndex]
+//        label.textColor = .randomColor
+//        label.text = "\(data)"
         
         return cell
     }
@@ -115,31 +123,16 @@ extension GuideIntoRoomGameTeamCardListView: UICollectionViewDelegate, UICollect
         }
         if !isDecelerate { scrollViewDidEndDecelerating(scrollView) }
     }
-
-    // 手指滑动动画停止时会调用该方法
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollDidEnd()
-    }
-}
-
-// MARK: - API
-extension GuideIntoRoomGameTeamCardListView {
-    func loopEnable() {
-        guard !isLoopEnabled else { return }
-        isLoopEnabled = true
-        startAutoLoopShow()
-    }
-    
-    func unLoopEnable() {
-        guard isLoopEnabled else { return }
-        isLoopEnabled = false
-        stopAutoLoopShow()
     }
 }
 
 // MARK: - Reload
 private extension GuideIntoRoomGameTeamCardListView {
     func reloadData(_ dataList: [Int]) {
+        JPrint("dataList.count", dataList.count)
         stopAutoLoopShow()
         
         self.dataList = dataList
@@ -209,7 +202,7 @@ private extension GuideIntoRoomGameTeamCardListView {
 // MARK: - AutoLoopShow
 private extension GuideIntoRoomGameTeamCardListView {
     func startAutoLoopShow() {
-        guard isLoopShow, isLoopEnabled else {
+        guard isLoopShow else {
             stopAutoLoopShow()
             return
         }
@@ -229,7 +222,7 @@ private extension GuideIntoRoomGameTeamCardListView {
     }
     
     func showNextItem() {
-        guard isLoopShow, isLoopEnabled else {
+        guard isLoopShow else {
             stopAutoLoopShow()
             return
         }
@@ -294,9 +287,9 @@ class GuideIntoRoomGameTeamLayout: UICollectionViewFlowLayout {
         super.init()
         scrollDirection = .horizontal
         minimumInteritemSpacing = 0
-        itemSize = [250, 75]
+        itemSize = GuideIntoRoomGameTeamCardListView.Cell.size
         
-        let horInset = HalfDiffValue(GuideIntoRoomPopView.baseSize.width, itemSize.width)
+        let horInset = HalfDiffValue(GuideIntoRoomPopView.viewWidth, itemSize.width)
         sectionInset = .init(top: 0, left: horInset, bottom: 0, right: horInset)
         
         let lineSpacing: CGFloat = 10
@@ -337,4 +330,116 @@ class GuideIntoRoomGameTeamLayout: UICollectionViewFlowLayout {
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
+}
+
+extension GuideIntoRoomGameTeamCardListView {
+    class Cell: UICollectionViewCell {
+        static let size: CGSize = [250, 75]
+        
+        var showTag = 0 {
+            didSet {
+                switch showTag {
+                case 1:
+                    voiceBgView.isHidden = true
+                case 2:
+                    demandLabel1.isHidden = true
+                case 3:
+                    demandLabel2.isHidden = true
+                default:
+                    voiceBgView.isHidden = false
+                    demandLabel1.isHidden = false
+                    demandLabel2.isHidden = false
+                }
+            }
+        }
+        
+        let userIcon = UIImageView()
+        
+        let voiceBgView = UIView()
+        let voiceLabel = UILabel()
+        
+        let demandLabel1 = UILabel()
+        
+        let demandLabel2 = UILabel()
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+            let bgImgView = UIImageView(image: UIImage(named: "roomguide_game_listbg"))
+            contentView.addSubview(bgImgView)
+            bgImgView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+            
+            userIcon.image = UIImage(named: "jp_icon")
+            userIcon.contentMode = .scaleAspectFill
+            userIcon.layer.cornerRadius = 29
+            userIcon.layer.borderWidth = 1
+            userIcon.layer.borderColor = UIColor.white.cgColor
+            userIcon.layer.masksToBounds = true
+            contentView.addSubview(userIcon)
+            userIcon.snp.makeConstraints { make in
+                make.width.height.equalTo(58)
+                make.left.equalTo(20)
+                make.centerY.equalToSuperview()
+            }
+            
+            let stackView = UIStackView()
+            stackView.axis = .vertical
+            stackView.spacing = 3
+            stackView.distribution = .fillProportionally
+            contentView.addSubview(stackView)
+            stackView.snp.makeConstraints { make in
+                make.left.equalTo(userIcon.snp.right).offset(8)
+                make.centerY.equalToSuperview()
+            }
+            
+            stackView.addArrangedSubview(voiceBgView)
+            voiceBgView.snp.makeConstraints { make in
+                make.height.equalTo(14)
+            }
+            
+            let gradientView = GradientView()
+            gradientView.startPoint = [0, 0.5]
+            gradientView.endPoint = [1, 0.5]
+            gradientView.colors = [.rgb(255, 89, 158), .rgb(255, 129, 117)]
+            gradientView.layer.cornerRadius = 4
+            gradientView.layer.masksToBounds = true
+            voiceBgView.addSubview(gradientView)
+            gradientView.snp.makeConstraints { make in
+                make.top.left.bottom.equalToSuperview()
+            }
+            
+            voiceLabel.font = .systemFont(ofSize: 9)
+            voiceLabel.textColor = .white
+            voiceLabel.text = "美男音"
+            gradientView.addSubview(voiceLabel)
+            voiceLabel.snp.makeConstraints { make in
+                make.left.equalTo(3)
+                make.right.equalTo(-3)
+                make.top.bottom.equalToSuperview()
+            }
+            
+            demandLabel1.font = .systemFont(ofSize: 11)
+            demandLabel1.textColor = UIColor(white: 1, alpha: 0.8)
+            demandLabel1.text = "王者荣耀·永恒钻石·微信"
+            stackView.addArrangedSubview(demandLabel1)
+            demandLabel1.snp.makeConstraints { make in
+                make.height.equalTo(18)
+            }
+            
+            demandLabel2.font = .systemFont(ofSize: 11)
+            demandLabel2.textColor = UIColor(white: 1, alpha: 0.8)
+            demandLabel2.text = "和平精英·战神·QQ"
+            stackView.addArrangedSubview(demandLabel2)
+            demandLabel2.snp.makeConstraints { make in
+                make.height.equalTo(18)
+            }
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+    }
+    
 }

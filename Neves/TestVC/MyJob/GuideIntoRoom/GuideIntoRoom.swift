@@ -11,6 +11,42 @@ enum GuideIntoRoomType {
     case fm
     case gameTeam(_ id: UInt32)
     
+    var isBlindDate: Bool {
+        switch self {
+        case .blindDate:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isJoyParty: Bool {
+        switch self {
+        case .joyParty:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isFm: Bool {
+        switch self {
+        case .fm:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isGameTeam: Bool {
+        switch self {
+        case .gameTeam:
+            return true
+        default:
+            return false
+        }
+    }
+    
     var title: String {
         switch self {
         case .blindDate:
@@ -50,7 +86,7 @@ enum GuideIntoRoomType {
         }
     }
     
-    var topInset: CGFloat {
+    var contentTopInset: CGFloat {
         switch self {
         case .blindDate:
             return 25
@@ -63,7 +99,7 @@ enum GuideIntoRoomType {
         }
     }
     
-    var bottomInset: CGFloat {
+    var contentBottomInset: CGFloat {
         switch self {
         case .blindDate:
             return 15
@@ -73,6 +109,20 @@ enum GuideIntoRoomType {
             return 15
         case .gameTeam:
             return 38
+        }
+    }
+    
+    var bgImage: UIImage {
+        switch self {
+        case var .gameTeam(id):
+            if id < 1 {
+                id = 1
+            } else if id > 3 {
+                id = 3
+            }
+            return UIImage(named: "roomguide_gamebg_\(id)")!
+        default:
+            return UIImage(named: "roomguide_bg_\(UInt32.random(in: 1...10))")!
         }
     }
 }
