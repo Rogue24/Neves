@@ -58,7 +58,6 @@ enum ImagePicker {
                     ]
                 }
             }
-            
         }
     }
     
@@ -93,9 +92,8 @@ enum ImagePicker {
 // MARK: - ImagePicker.Controller
 extension ImagePicker {
     class Controller<T: ImagePickerObject>: UIImagePickerController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        private var result: Result<T, ImagePicker.PickError>? = nil
-        private let locker = DispatchSemaphore(value: 0)
-        private var isLocking = false
+        // 完成闭包，用于返回结果
+        private var completion: ImagePicker.Completion<T>? = nil
         
         // MARK: Life cycle
         deinit {
@@ -104,7 +102,8 @@ extension ImagePicker {
         
         // MARK: UIImagePickerControllerDelegate
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            // 获取结果
+            // 1.获取结果
+            let result: Result<T, ImagePicker.PickError>
             do {
                 result = .success(try T.fetchFromPicker(info))
             } catch let pickError as ImagePicker.PickError {
@@ -113,18 +112,18 @@ extension ImagePicker {
                 result = .failure(.other(error))
             }
             
-            // 解锁，抛出结果
-            tryUnlock()
+            // 2.返回结果
+            completion?(result)
             
-            // 关闭控制器
+            // 3.关闭控制器
             dismiss(animated: true)
         }
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            // 解锁
-            tryUnlock()
+            // 1.返回结果：用户点击取消
+            completion?(.failure(.userCancel))
             
-            // 关闭控制器
+            // 2.关闭控制器
             dismiss(animated: true)
         }
     }
@@ -171,9 +170,7 @@ extension ImagePicker.Controller {
 // MARK: - Show picker
 private extension ImagePicker.Controller {
     static func showAlbumPicker<T>(mediaType: ImagePicker.PickType) throws -> ImagePicker.Controller<T> {
-        guard let parentVC = UIApplication.shared.delegate?.window??.rootViewController else {
-            throw ImagePicker.PickError.nullParentVC
-        }
+        let parentVC = try getParentVC()
         let picker = ImagePicker.Controller<T>()
         picker.modalPresentationStyle = .overFullScreen
         picker.mediaTypes = mediaType.types
@@ -184,9 +181,7 @@ private extension ImagePicker.Controller {
     }
     
     static func showPhotographPicker() throws -> ImagePicker.Controller<UIImage> {
-        guard let parentVC = UIApplication.shared.delegate?.window??.rootViewController else {
-            throw ImagePicker.PickError.nullParentVC
-        }
+        let parentVC = try getParentVC()
         let picker = ImagePicker.Controller<UIImage>()
         picker.modalPresentationStyle = .overFullScreen
         picker.sourceType = .camera
@@ -194,56 +189,29 @@ private extension ImagePicker.Controller {
         parentVC.present(picker, animated: true)
         return picker
     }
+    
+    static func getParentVC() throws -> UIViewController {
+        guard var parentVC = UIApplication.shared.delegate?.window??.rootViewController else {
+            throw ImagePicker.PickError.nullParentVC
+        }
+        while parentVC.presentedViewController != nil {
+            parentVC = parentVC.presentedViewController!
+        }
+        return parentVC
+    }
 }
 
 // MARK: - Pick object handle
 private extension ImagePicker.Controller {
+    func pickObject(completion: @escaping ImagePicker.Completion<T>) {
+        self.completion = completion
+    }
+    
     func pickObject() async throws -> T {
         try await withCheckedThrowingContinuation { continuation in
             pickObject() { result in
                 continuation.resume(with: result)
             }
         }
-    }
-    
-    func pickObject(completion: @escaping ImagePicker.Completion<T>) {
-        DispatchQueue.global().async { [weak self] in
-            guard let self = self else {
-                DispatchQueue.main.async {
-                    completion(.failure(.userCancel))
-                }
-                return
-            }
-            
-            // 加锁，等待代理方法的触发
-            self.tryLock()
-            
-            // 来到这里就是已经获取结果or用户点击取消，
-            // 回到主线程将结果抛出。
-            DispatchQueue.main.async {
-                completion(self.result ?? .failure(.userCancel))
-            }
-        }
-    }
-}
-
-// MARK: - Lock & Unlock
-private extension ImagePicker.Controller {
-    @discardableResult
-    func tryLock() -> Bool {
-        guard !isLocking else { return isLocking }
-        guard !Thread.isMainThread else { return isLocking }
-        isLocking = true
-        locker.wait()
-        return isLocking
-    }
-    
-    @discardableResult
-    func tryUnlock() -> Bool {
-        guard Thread.isMainThread else { return !isLocking }
-        guard isLocking else { return !isLocking }
-        isLocking = false
-        locker.signal()
-        return !isLocking
     }
 }
