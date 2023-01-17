@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PKChallengePopView: FloatContainer {
+class PKChallengePopView: UIView, Penetrable {
     let foldView = UIView()
     let challengeView = PKChallengeView.loadFromNib()
     

@@ -154,6 +154,10 @@
                 "vcName": "M34TestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "PenetrableTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

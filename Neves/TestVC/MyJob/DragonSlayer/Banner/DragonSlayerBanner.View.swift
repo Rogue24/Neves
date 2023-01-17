@@ -9,7 +9,7 @@ import UIKit
 
 extension DragonSlayerBanner {
     
-    class Container: FloatContainer {
+    class Container: UIView, Penetrable {
         weak var banner: Banner?
         
         static func create(on view: UIView) -> Container {

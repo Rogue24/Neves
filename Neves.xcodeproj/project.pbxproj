@@ -23,6 +23,9 @@
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
 		0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */; };
+		008DC2E529763D510039AB22 /* Hookable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2E429763D510039AB22 /* Hookable.swift */; };
+		008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2F6297699C90039AB22 /* Penetrable.swift */; };
+		008DC2F929769EC50039AB22 /* PenetrableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */; };
 		0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */; };
 		00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00965D5B25CBF4DD00B7BB9C /* Done.swift */; };
 		00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109A725749DA200F17889 /* TestBaseViewController.swift */; };
@@ -303,7 +306,6 @@
 		71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693A26563165009463E6 /* UIImage.Extension.swift */; };
 		71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693D265631DF009463E6 /* WatermarkViewController.swift */; };
 		71EA694126563270009463E6 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71EA694026563270009463E6 /* girl.jpg */; };
-		71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499227313B0C00FAAD93 /* FloatContainer.swift */; };
 		71F249CF2731517A00FAAD93 /* FireworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499A2731517A00FAAD93 /* FireworkViewController.swift */; };
 		71F249D02731517A00FAAD93 /* FireworkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499B2731517A00FAAD93 /* FireworkViewController.xib */; };
 		71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499D2731517A00FAAD93 /* FireworkItem.xib */; };
@@ -373,6 +375,9 @@
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
 		0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLottieTestViewController.swift; sourceTree = "<group>"; };
+		008DC2E429763D510039AB22 /* Hookable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hookable.swift; sourceTree = "<group>"; };
+		008DC2F6297699C90039AB22 /* Penetrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penetrable.swift; sourceTree = "<group>"; };
+		008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenetrableTestViewController.swift; sourceTree = "<group>"; };
 		0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFit.Extension.swift; sourceTree = "<group>"; };
 		00965D5B25CBF4DD00B7BB9C /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
 		00D109A725749DA200F17889 /* TestBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
@@ -714,7 +719,6 @@
 		71EA693A26563165009463E6 /* UIImage.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.Extension.swift; sourceTree = "<group>"; };
 		71EA693D265631DF009463E6 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
 		71EA694026563270009463E6 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
-		71F2499227313B0C00FAAD93 /* FloatContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatContainer.swift; sourceTree = "<group>"; };
 		71F2499A2731517A00FAAD93 /* FireworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkViewController.swift; sourceTree = "<group>"; };
 		71F2499B2731517A00FAAD93 /* FireworkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkViewController.xib; sourceTree = "<group>"; };
 		71F2499D2731517A00FAAD93 /* FireworkItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkItem.xib; sourceTree = "<group>"; };
@@ -796,8 +800,8 @@
 		0053547F29607E5900E52CBB /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				0053548129607E5900E52CBB /* ImagePicker.swift */,
 				0053548229607E5900E52CBB /* ImagePicker.API.swift */,
+				0053548129607E5900E52CBB /* ImagePicker.swift */,
 				0053548029607E5900E52CBB /* ImagePickerObject.swift */,
 			);
 			path = ImagePicker;
@@ -967,6 +971,8 @@
 				1A3543C8254E775F0032B677 /* ListViewReusable.swift */,
 				1A3543C9254E775F0032B677 /* PopViewReusable.swift */,
 				71675A03266A057700392630 /* Bindable.swift */,
+				008DC2E429763D510039AB22 /* Hookable.swift */,
+				008DC2F6297699C90039AB22 /* Penetrable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1190,7 +1196,6 @@
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
 				1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */,
-				71D72B0B27310CD000300367 /* FloatWindow */,
 				1A354432254E77600032B677 /* Test */,
 				1A354455254E77600032B677 /* Base */,
 				1A5930FD27B8DD9200DC60FC /* Data */,
@@ -1281,6 +1286,7 @@
 				7151894E27EC168B00342645 /* MoonMaskViewController.swift */,
 				719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */,
 				7104877E28391E0B00706ED7 /* M34TestViewController.swift */,
+				008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1819,14 +1825,6 @@
 			path = DynamicMemberLookup;
 			sourceTree = "<group>";
 		};
-		71D72B0B27310CD000300367 /* FloatWindow */ = {
-			isa = PBXGroup;
-			children = (
-				71F2499227313B0C00FAAD93 /* FloatContainer.swift */,
-			);
-			path = FloatWindow;
-			sourceTree = "<group>";
-		};
 		71F249982731517A00FAAD93 /* MyJob */ = {
 			isa = PBXGroup;
 			children = (
@@ -2250,11 +2248,11 @@
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */,
-				71F2499327313B0C00FAAD93 /* FloatContainer.swift in Sources */,
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
 				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
+				008DC2E529763D510039AB22 /* Hookable.swift in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,
 				1A59310327B8E5EF00DC60FC /* PlaygroundViewController.swift in Sources */,
 				71F249E52731517A00FAAD93 /* JPMagicGiftInfo.swift in Sources */,
@@ -2349,6 +2347,7 @@
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
 				7102C56328D1ADC300E2265C /* Assets.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
+				008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */,
 				1AF648472955ACAC00752E57 /* Task.Extension.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
@@ -2484,6 +2483,7 @@
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
+				008DC2F929769EC50039AB22 /* PenetrableTestViewController.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
 				71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */,
 				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,
