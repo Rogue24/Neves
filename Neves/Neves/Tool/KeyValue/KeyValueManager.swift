@@ -22,11 +22,13 @@ class KeyValueManager: NSObject {
 // MARK: - Register & Unregiser
 extension KeyValueManager {
     func register(_ uid: Int) {
-        unregiser()
+//        unregiser()
         
         let rootDir = File.cacheFilePath(Bundle.main.appName) + "/" + "mmkv_\(uid)"
-        MMKV.initialize(rootDir: rootDir)
-        MMKV.register(self)
+//        MMKV.initialize(rootDir: rootDir)
+//        MMKV.register(self)
+        MMKV.initialize(rootDir: rootDir, logLevel: .info, handler: self)
+        
         MMKV.enableAutoCleanUp(maxIdleMinutes: 10) // 每隔10分钟自动清理内存缓存
     }
     

@@ -25,7 +25,7 @@ target 'Neves' do
   pod 'YYText'
   pod 'MJRefresh'
   pod 'SVProgressHUD'
-  pod 'MMKV'
+  pod 'MMKV'#, '~> 1.2.14'
   
   pod 'LookinServer', :configurations => ['Debug']
 end
