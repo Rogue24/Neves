@@ -14,7 +14,7 @@ target 'Neves' do
 #  pod 'KingfisherWebP'
   pod 'SwiftyJSON'
   pod 'KakaJSON'
-  pod 'lottie-ios'
+  pod 'lottie-ios', '~> 3.5.0'
   pod 'SnapKit'
   pod 'RealmSwift'
   pod 'SwiftGen'
