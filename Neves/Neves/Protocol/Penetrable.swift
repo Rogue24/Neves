@@ -29,9 +29,9 @@ extension UIView {
         // MARK: 拦截点击 => 自己不响应，触碰的子视图响应。
         guard !isHidden, subviews.count > 0 else { return nil }
         for subview in subviews.reversed() where subview.isUserInteractionEnabled && !subview.isHidden && subview.alpha > 0.01 && subview.frame.contains(point) {
-            let childP = convert(point, to: subview)
+            let subPoint = convert(point, to: subview)
             // 其他对象调用`hitTest` -> 执行【交换后的方法】penetrate_hitTest
-            guard let rspView = subview.hitTest(childP, with: event) else { continue }
+            guard let rspView = subview.hitTest(subPoint, with: event) else { continue }
             return rspView
         }
         return nil
