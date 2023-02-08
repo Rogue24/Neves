@@ -187,6 +187,10 @@
                 "vcName": "TestScreenCornerViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "TestDismissAllViewController",
+                "vcCreateWay" : 0
+            },
         ],
     },
     {

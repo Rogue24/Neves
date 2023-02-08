@@ -30,6 +30,7 @@
 		00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00965D5B25CBF4DD00B7BB9C /* Done.swift */; };
 		00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109A725749DA200F17889 /* TestBaseViewController.swift */; };
 		00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109AA25749DBC00F17889 /* RealmTestViewController.swift */; };
+		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
 		00D65162257498720074693E /* Gradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65160257498720074693E /* Gradientable.swift */; };
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
 		1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433B254E75EB0032B677 /* AppDelegate.swift */; };
@@ -382,6 +383,7 @@
 		00965D5B25CBF4DD00B7BB9C /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
 		00D109A725749DA200F17889 /* TestBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
 		00D109AA25749DBC00F17889 /* RealmTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestViewController.swift; sourceTree = "<group>"; };
+		00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDismissAllViewController.swift; sourceTree = "<group>"; };
 		00D65160257498720074693E /* Gradientable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradientable.swift; sourceTree = "<group>"; };
 		00D65161257498720074693E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1245,6 +1247,7 @@
 				71C2AAFD283F6BBF0066CF5E /* TestLock2ViewController.swift */,
 				71C2AAFF283F6FBD0066CF5E /* TestDoCatchViewController.swift */,
 				717446D32763614E002BBE6F /* TestScreenCornerViewController.swift */,
+				00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -2227,6 +2230,7 @@
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */,
+				00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */,
 				00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */,
 				71797E6F27CF704800ED2EE3 /* AnimScrollViewController.swift in Sources */,
 				1A35450F254E77600032B677 /* JPSeparateHeaderFooterView.m in Sources */,
