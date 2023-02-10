@@ -18,7 +18,7 @@ target 'Neves' do
   pod 'SnapKit'
   pod 'RealmSwift'
   pod 'SwiftGen'
-  pod 'FunnyButton'
+  pod 'FunnyButton', '~> 0.1.5'
 
 # OC的库
   pod 'pop'
