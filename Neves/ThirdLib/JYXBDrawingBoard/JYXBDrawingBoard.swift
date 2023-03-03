@@ -111,6 +111,15 @@ open class JYXBDrawingBoard: UIView {
             layer.contents = image
         }
     }
+    
+//    open override var bounds: CGRect {
+//        set {
+//            super.bounds = newValue
+//        }
+//        get {
+//            super.bounds
+//        }
+//    }
 }
 
 // 内部操作者调用的方法
@@ -245,9 +254,9 @@ extension JYXBDrawingBoard {
         guard isEnable else {
             return
         }
-        var point = touches.first!.location(in: self)
-        point.x += 50
-        point.y += 50
+        let point = touches.first!.location(in: self)
+//        point.x += 50
+//        point.y += 50
         let isPencil = touches.first!.type == .pencil
         let boardPoint = JYXBDrawingBoardElement(point: point, action: .begin, type: .internalPoint, isPencil: isPencil)
 
@@ -266,14 +275,14 @@ extension JYXBDrawingBoard {
         guard isEnable else {
             return
         }
-        var point = touches.first!.location(in: self)
+        let point = touches.first!.location(in: self)
         let isPencil = touches.first!.type == .pencil
-        JPrint("000 point \(point)")
-        point.x += 50
-        point.y += 50
+//        JPrint("000 point \(point)")
+//        point.x += 50
+//        point.y += 50
         let boardPoint = JYXBDrawingBoardElement(point: point, action: .move, type: .internalPoint, isPencil: isPencil)
-        JPrint("000 boardPoint \(boardPoint)")
-        JPrint("----------------")
+//        JPrint("000 boardPoint \(boardPoint)")
+//        JPrint("----------------")
         
         if let closure = pointActionClosure {
             let externalPoint = JYXBDrawingBoardElement(point: bounds.scalePoint(point: point), action: .move, type: .externalPoint, isPencil: isPencil)
@@ -290,9 +299,9 @@ extension JYXBDrawingBoard {
         guard isEnable else {
             return
         }
-        var point = touches.first!.location(in: self)
-        point.x += 50
-        point.y += 50
+        let point = touches.first!.location(in: self)
+//        point.x += 50
+//        point.y += 50
         let isPencil = touches.first!.type == .pencil
         let boardPoint = JYXBDrawingBoardElement(point: point, action: .end, type: .internalPoint, isPencil: isPencil)
 
