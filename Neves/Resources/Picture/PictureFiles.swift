@@ -10,8 +10,6 @@ import Foundation
 // swiftlint:disable explicit_type_interface identifier_name
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum PictureFiles {
-  /// girl.jpg
-  internal static let girlJpg = PictureFile(name: "girl", ext: "jpg", relativePath: "", mimeType: "image/jpeg")
   /// Girl1.jpg
   internal static let girl1Jpg = PictureFile(name: "Girl1", ext: "jpg", relativePath: "", mimeType: "image/jpeg")
   /// Girl2.jpg
@@ -28,6 +26,8 @@ internal enum PictureFiles {
   internal static let girl7Jpg = PictureFile(name: "Girl7", ext: "jpg", relativePath: "", mimeType: "image/jpeg")
   /// Girl8.jpg
   internal static let girl8Jpg = PictureFile(name: "Girl8", ext: "jpg", relativePath: "", mimeType: "image/jpeg")
+  /// Girl9.jpg
+  internal static let girl9Jpg = PictureFile(name: "Girl9", ext: "jpg", relativePath: "", mimeType: "image/jpeg")
   /// JPIcon.png
   internal static let jpIconPng = PictureFile(name: "JPIcon", ext: "png", relativePath: "", mimeType: "image/png")
 }

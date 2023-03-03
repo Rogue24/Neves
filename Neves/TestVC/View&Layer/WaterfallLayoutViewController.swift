@@ -9,7 +9,7 @@ import FunnyButton
 
 class WaterfallLayoutViewController: TestBaseViewController {
     
-    var colCount = 3
+    var colCount = 4
     
     var girls: [Girl] = []
     
@@ -18,9 +18,9 @@ class WaterfallLayoutViewController: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bgView = UIView(frame: [0, 0, PortraitScreenWidth, PortraitScreenHeight - (DiffTabBarH + 5.px)])
-        bgView.backgroundColor = .randomColor
-        view.addSubview(bgView)
+//        let bgView = UIView(frame: [0, 0, PortraitScreenWidth, PortraitScreenHeight - (DiffTabBarH + 5.px)])
+//        bgView.backgroundColor = .randomColor
+//        view.addSubview(bgView)
         
         let waterfallLayout = WaterfallLayout()
         waterfallLayout.delegate = self
@@ -50,14 +50,14 @@ class WaterfallLayoutViewController: TestBaseViewController {
 //            JPrint(s2 == s3)
 //            return
             
-            self.colCount = Int.random(in: 1...5)
-            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
-//                UIView.animate(withDuration: 3) {
-                self.collectionView.performBatchUpdates {
-                    self.collectionView.reloadSections(IndexSet(integer: 0))
-                }
-            }
-            return
+//            self.colCount = Int.random(in: 1...5)
+//            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
+////                UIView.animate(withDuration: 3) {
+//                self.collectionView.performBatchUpdates {
+//                    self.collectionView.reloadSections(IndexSet(integer: 0))
+//                }
+//            }
+//            return
             
             self.reloadView()
         }
@@ -113,8 +113,8 @@ extension WaterfallLayoutViewController: UICollectionViewDataSource, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        girls.remove(at: indexPath.item)
-//        girls[indexPath.item] = Girl(imgName: "Girl\(Int.random(in: 1...8))")
-        girls.insert(Girl(imgName: "Girl\(Int.random(in: 1...8))"), at: indexPath.item)
+//        girls[indexPath.item] = Girl(imgName: "Girl\(Int.random(in: 1...9))")
+        girls.insert(Girl(imgName: "Girl\(Int.random(in: 1...9))"), at: indexPath.item)
         
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
 //        UIView.animate(withDuration: 3) {
@@ -163,8 +163,8 @@ extension WaterfallLayoutViewController {
         }
         
         static func fetchTestList() -> [Girl] {
-            let girlList1 = Array(1...8).map { Girl(imgName: "Girl\($0)") }
-            let girlList2 = Array(1...8).map { Girl(imgName: "Girl\($0)") }
+            let girlList1 = Array(1...9).map { Girl(imgName: "Girl\($0)") }
+            let girlList2 = Array(1...9).map { Girl(imgName: "Girl\($0)") }
             return girlList1.shuffled() + girlList2.shuffled()
         }
     }

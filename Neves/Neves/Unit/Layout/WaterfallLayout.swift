@@ -47,7 +47,8 @@ class WaterfallLayout: UICollectionViewLayout {
     
     //*****  协议数据处理
     var colCount: Int {
-        delegate?.colCountInWaterFlowLayout?(self) ?? Self.defaultColCount
+        let colCount = delegate?.colCountInWaterFlowLayout?(self) ?? Self.defaultColCount
+        return colCount > 0 ? colCount : 1
     }
 
     var colMargin: CGFloat {
@@ -63,111 +64,48 @@ class WaterfallLayout: UICollectionViewLayout {
     }
     //*****
     
-    var attrsDict: [Int: UICollectionViewLayoutAttributes] = [:]
-    var attrsSeats: [[UICollectionViewLayoutAttributes]] = []
-    var colHeights: [CGFloat] = []
     
-    var oldAttrsDict: [Int: UICollectionViewLayoutAttributes] = [:]
-    var oldAttrsSeats: [[UICollectionViewLayoutAttributes]] = []
-    lazy var oldColHeights: [CGFloat] = Array(repeating: edgeInsets.top, count: colCount)
-    var oldColCount = 0
-    
-    var appearAttrsYDict: [Int: CGFloat] = [:]
-    var disappearAttrsYDict: [Int: CGFloat] = [:]
-    
-    var contentHeight: CGFloat = 0
+    var contentSize: CGSize = .zero
     
     var insertIndexPaths: [IndexPath] = []
     var deleteIndexPaths: [IndexPath] = []
     var reloadIndexPaths: [IndexPath] = []
     var isReloadSection = false
     
-    /**
-     * 初始化（每次collectionView刷新一遍都会重新调用一次prepareLayout，例如上下拉刷新）
-     */
+    var attributesArray: [UICollectionViewLayoutAttributes] = []
+    var attributesColumns: [AttributesColumn] = []
+    
+    var oldColCount = 0
+    lazy var oldAttributesColumns: [AttributesColumn] = Array(0 ..< colCount).map {
+        AttributesColumn(col: $0, colHeight: edgeInsets.top)
+    }
+    var appearingInitialYs: [Seat: CGFloat] = [:]
+    var disappearingFinalYs: [Seat: CGFloat] = [:]
+    
     override func prepare() {
         super.prepare()
-        
-        contentHeight = 0
-        
-        setupAttributes()
-        
-        // 刷新内容高度
-        let maxColInfo = findMaxHeightColInfo()
-        contentHeight = maxColInfo.height + edgeInsets.bottom
+        setupAllAttributes()
+        setupContentSize()
     }
     
-    
-    func reset() {
-        
-    }
-    
-    
-    func setupAttributes() {
-        // 清除之前所有的布局属性
-        attrsDict.removeAll()
-        attrsSeats = Array(repeating: [], count: colCount)
-        // 先清除之前计算的所有高度并初始化
-        colHeights = Array(repeating: edgeInsets.top, count: colCount)
-        
-        let collectionViewW = collectionView?.frame.width ?? 0
-        let numberOfItems = collectionView?.numberOfItems(inSection: 0) ?? 0
-        
-        for i in 0 ..< numberOfItems {
-            // 获取cell对应的布局属性
-            let attrs = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: i, section: 0))
-            
-            // 找出高度最小的那一列
-            let minColInfo = findMinHeightColInfo()
-            
-            let width = (collectionViewW - edgeInsets.left - edgeInsets.right - CGFloat(colCount - 1) * colMargin) / CGFloat(colCount)
-            
-            let height = delegate?.waterfallLayout(self, heightForItemAtIndex: i, itemWidth: width) ?? width
-            
-            let x = edgeInsets.left + CGFloat(minColInfo.col) * (width + colMargin)
-            
-            let y = minColInfo.height > edgeInsets.top ? (minColInfo.height + rowMargin) : edgeInsets.top
-            
-            attrs.frame = CGRect(x: x, y: y, width: width, height: height)
-            
-            
-            attrsDict[i] = attrs
-            attrsSeats[minColInfo.col].append(attrs)
-            
-            // 刷新最短那列的高度
-            colHeights[minColInfo.col] = attrs.frame.maxY
-        }
-    }
-    
-    /**
-     * 决定cell的排布（在继承UICollectionViewLayout会多次调用此方法，将计算过程放到prepareLayout确保计算过程只执行一次，除非刷新collectionView）
-     */
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        attrsDict.values.map { $0 }
+        attributesArray
     }
     
-    /**
-     * 返回indexPath位置cell对应的布局属性
-     */
-//    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-//        guard indexPath.item < attrsDict.count else { return nil }
-//        return attrsDict[indexPath.item]
-//    }
-
     override var collectionViewContentSize: CGSize {
-        CGSize(width: 0, height: contentHeight)
+        contentSize
     }
-    
     
     override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
         for updateItem in updateItems {
-            if updateItem.updateAction == .insert {
+            switch updateItem.updateAction {
+            case .insert:
                 insertIndexPaths.append(updateItem.indexPathAfterUpdate!)
-            }
-            if updateItem.updateAction == .delete {
+                
+            case .delete:
                 deleteIndexPaths.append(updateItem.indexPathBeforeUpdate!)
-            }
-            if updateItem.updateAction == .reload {
+                
+            case .reload:
                 if updateItem.indexPathAfterUpdate!.item < Int.max {
                     // indexPathBeforeUpdate indexPathAfterUpdate 都一样
                     reloadIndexPaths.append(updateItem.indexPathAfterUpdate!)
@@ -175,54 +113,46 @@ class WaterfallLayout: UICollectionViewLayout {
                     // item 为 NSIntegerMax 时就是 reloadSections 更新整个 section 的（NSIndexSet）
                     isReloadSection = true
                 }
+                
+            default:
+                break
             }
         }
         
+        let colCount = self.colCount
+        guard isReloadSection, oldColCount == colCount else { return }
+        let rowMargin = self.rowMargin
+        let edgeInsets = self.edgeInsets
         
-        if oldColCount == colCount, oldAttrsDict.count > 0 {
-            for col in 0 ..< colCount {
-                let oldRowCount = oldAttrsSeats[col].count
-                let newRowCount = attrsSeats[col].count
-                
-                
-                guard oldRowCount != newRowCount else { continue }
-                
-                
-                
-                if oldRowCount > newRowCount {
-                    var beginY = colHeights[col]
-                    
-                    for row in newRowCount ..< oldRowCount {
-                        let key = (col << 16) | row
-                        
-                        let y = beginY > edgeInsets.top ? (beginY + rowMargin) : edgeInsets.top
-                        disappearAttrsYDict[key] = y
-                        
-                        beginY += oldAttrsSeats[col][row].frame.height
-                    }
-                    
-                } else {
-                    var beginY = oldColHeights[col]
-                    
-                    
-                    for row in oldRowCount ..< newRowCount {
-                        let key = (col << 16) | row
-                        
-                        let y = beginY > edgeInsets.top ? (beginY + rowMargin) : edgeInsets.top
-                        appearAttrsYDict[key] = y
-                        
-                        beginY += attrsSeats[col][row].frame.height
-                    }
-                    
+        for col in 0 ..< colCount {
+            let oldAttrColumn = oldAttributesColumns[col]
+            let newAttrColumn = attributesColumns[col]
+            
+            let oldAttrSeats = oldAttrColumn.attributesSeats
+            let newAttrSeats = newAttrColumn.attributesSeats
+            
+            let oldRowCount = oldAttrSeats.count
+            let newRowCount = newAttrSeats.count
+            
+            guard oldRowCount != newRowCount else { continue }
+            
+            if oldRowCount > newRowCount {
+                var beginY = newAttrColumn.colHeight
+                for row in newRowCount ..< oldRowCount {
+                    let attrSeat = oldAttrSeats[row]
+                    let attrY = beginY + (beginY > edgeInsets.top ? rowMargin : 0)
+                    disappearingFinalYs[attrSeat.seat] = attrY
+                    beginY += attrSeat.attributes.frame.height
                 }
-                
-                
+            } else {
+                var beginY = oldAttrColumn.colHeight
+                for row in oldRowCount ..< newRowCount {
+                    let attrSeat = newAttrSeats[row]
+                    let attrY = beginY + (beginY > edgeInsets.top ? rowMargin : 0)
+                    appearingInitialYs[attrSeat.seat] = attrY
+                    beginY += attrSeat.attributes.frame.height
+                }
             }
-            
-            
-            
-            
-            
         }
     }
     
@@ -232,47 +162,31 @@ class WaterfallLayout: UICollectionViewLayout {
         reloadIndexPaths.removeAll()
         isReloadSection = false
         
-        oldAttrsDict = attrsDict
-        oldAttrsSeats = attrsSeats
-        oldColHeights = colHeights
         oldColCount = colCount
-        
-        appearAttrsYDict.removeAll()
-        disappearAttrsYDict.removeAll()
-        
-        JPrint("============finalizeCollectionViewUpdates============")
+        oldAttributesColumns = attributesColumns
+        appearingInitialYs.removeAll()
+        disappearingFinalYs.removeAll()
     }
     
     
-    
-    
-    
-
     // 从 刚创建出来时的样式设置 --到--> 正常状态：这里设置的是展示动画的【初始状态】，例如设置了alpha为0，动画会自动变为1
     override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let item = itemIndexPath.item
-        
-        
         if isReloadSection {
-//            guard let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath) else { return nil }
             let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath) ?? UICollectionViewLayoutAttributes(forCellWith: itemIndexPath)
             attributes.zIndex = 1
             attributes.alpha = 0
-            
-            if let colRow = findColRow(with: item, in: attrsSeats) {
-                if let attrs = findAttributes(with: colRow, in: oldAttrsSeats) {
-                    attributes.frame = attrs.frame
+            if let seat = findSeat(with: itemIndexPath.item, in: attributesColumns) {
+                if let attrSeat = findAttributesSeat(with: seat, in: oldAttributesColumns) {
+                    attributes.frame = attrSeat.attributes.frame
                 } else {
-                    attributes.frame = attrsSeats[colRow.col][colRow.row].frame
-                    
-                    let key = (colRow.col << 16) | colRow.row
-                    if let y = appearAttrsYDict[key] {
-                        attributes.frame.origin.y = y
+                    let attributesColumn = attributesColumns[seat.col]
+                    let attributesSeat = attributesColumn.attributesSeats[seat.row]
+                    attributes.frame = attributesSeat.attributes.frame
+                    if let initialY = appearingInitialYs[attributesSeat.seat] {
+                        attributes.frame.origin.y = initialY
                     }
                 }
             }
-            
-            JPrint("initialLayout item: \(item),", "alpha: \(attributes.alpha),", logFrame(attributes.frame))
             return attributes
         }
         
@@ -284,10 +198,7 @@ class WaterfallLayout: UICollectionViewLayout {
             attributes.alpha = 1
         } else if reloadIndexPaths.contains(itemIndexPath) {
             attributes.alpha = 1
-            // 下面这句是用来观察差异的
-//            attributes.transform = CGAffineTransformMakeScale(1.5, 1.5)
         }
-        
         // 删除不会走这里，不用判断 deleteIndexPaths
         
         return attributes
@@ -295,27 +206,23 @@ class WaterfallLayout: UICollectionViewLayout {
 
     // 从 正常状态 --到--> 最后消失时的样式设置：这里设置的是消失动画的【最终状态】
     override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let item = itemIndexPath.item
         guard let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath) else { return nil }
         
         if isReloadSection {
             attributes.zIndex = 0
             attributes.alpha = 0
-            
-            if let colRow = findColRow(with: item, in: oldAttrsSeats) {
-                if let attrs = findAttributes(with: colRow, in: attrsSeats) {
-                    attributes.frame = attrs.frame
+            if let seat = findSeat(with: itemIndexPath.item, in: oldAttributesColumns) {
+                if let attrSeat = findAttributesSeat(with: seat, in: attributesColumns) {
+                    attributes.frame = attrSeat.attributes.frame
                 } else {
-                    attributes.frame = oldAttrsSeats[colRow.col][colRow.row].frame
-                    
-                    let key = (colRow.col << 16) | colRow.row
-                    if let y = disappearAttrsYDict[key] {
-                        attributes.frame.origin.y = y
+                    let attributesColumn = oldAttributesColumns[seat.col]
+                    let attributesSeat = attributesColumn.attributesSeats[seat.row]
+                    attributes.frame = attributesSeat.attributes.frame
+                    if let finalY = disappearingFinalYs[attributesSeat.seat] {
+                        attributes.frame.origin.y = finalY
                     }
                 }
             }
-            
-            JPrint("finalLayout item: \(item),", "alpha: \(attributes.alpha),", logFrame(attributes.frame))
             return attributes
         }
         
@@ -326,22 +233,54 @@ class WaterfallLayout: UICollectionViewLayout {
         } else if reloadIndexPaths.contains(itemIndexPath) {
             // 刷新：旧的是覆盖在新的上面，现在对旧的进行渐变消失
             attributes.alpha = 0
-            // 下面两句是用来观察差异的
-//            attributes.alpha = 1
-//            attributes.transform = CGAffineTransformMakeScale(0.5, 0.5)
         }
         
         return attributes
     }
-    
-    func logFrame(_ frame: CGRect) -> String {
-        "frame: [\(CGFloat(Int(frame.origin.x * 100)) / 100), \(CGFloat(Int(frame.origin.y * 100)) / 100), \(CGFloat(Int(frame.width * 100)) / 100), \(CGFloat(Int(frame.height * 100)) / 100)])"
-    }
-    
-    
-    
 }
 
+extension WaterfallLayout {
+    func setupAllAttributes() {
+        let colCount = self.colCount
+        let colMargin = self.colMargin
+        let rowMargin = self.rowMargin
+        let edgeInsets = self.edgeInsets
+        
+        attributesArray.removeAll()
+        attributesColumns = Array(0 ..< colCount).map {
+            AttributesColumn(col: $0, colHeight: edgeInsets.top)
+        }
+        
+        let collectionViewW = collectionView?.frame.width ?? 0
+        let width = (collectionViewW - edgeInsets.left - edgeInsets.right - CGFloat(colCount - 1) * colMargin) / CGFloat(colCount)
+        
+        let numberOfItems = collectionView?.numberOfItems(inSection: 0) ?? 0
+        for i in 0 ..< numberOfItems {
+            // 找出高度最小的那一列
+            var minColumn = findMinHeightColumn()
+            
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: i, section: 0))
+            attributes.frame = CGRect(
+                x: edgeInsets.left + CGFloat(minColumn.col) * (width + colMargin),
+                y: minColumn.colHeight + (minColumn.colHeight > edgeInsets.top ? rowMargin : 0),
+                width: width,
+                height: delegate?.waterfallLayout(self, heightForItemAtIndex: i, itemWidth: width) ?? width
+            )
+            
+            let attributesSeat = AttributesSeat(seat: Seat(col: minColumn.col, row: minColumn.attributesSeats.count), attributes: attributes)
+            minColumn.attributesSeats.append(attributesSeat)
+            minColumn.colHeight = attributes.frame.maxY // 刷新最短那列的高度
+            
+            attributesColumns[minColumn.col] = minColumn
+            attributesArray.append(attributes)
+        }
+    }
+    
+    func setupContentSize() {
+        let maxColumn = findMaxHeightColumn()
+        contentSize = CGSize(width: 0, height: maxColumn.colHeight + edgeInsets.bottom)
+    }
+}
 
 extension WaterfallLayout {
     struct Seat: Hashable {
@@ -357,63 +296,56 @@ extension WaterfallLayout {
             lhs.col == rhs.col && lhs.row == rhs.row
         }
     }
+    
+    struct AttributesSeat {
+        var seat: Seat
+        var attributes: UICollectionViewLayoutAttributes
+    }
+    
+    struct AttributesColumn {
+        var col: Int
+        var colHeight: CGFloat
+        var attributesSeats: [AttributesSeat] = []
+    }
 }
 
-private extension WaterfallLayout {
-    typealias ColInfo = (col: Int, height: CGFloat)
-    
-    func findMinHeightColInfo() -> ColInfo {
-        var destCol = 0
-        var destColHeight = colHeights[0]
-        
-        for i in 0 ..< colCount {
-            let colHeight = colHeights[i]
-            if destColHeight > colHeight {
-                destColHeight = colHeight
-                destCol = i
-            }
+extension WaterfallLayout {
+    func findMinHeightColumn() -> AttributesColumn {
+        var destColumn = attributesColumns[0]
+        for column in attributesColumns where destColumn.colHeight > column.colHeight {
+            destColumn = column
         }
-        
-        return (destCol, destColHeight)
+        return destColumn
     }
     
-    func findMaxHeightColInfo() -> ColInfo {
-        var destCol = 0
-        var destColHeight = colHeights[0]
-        
-        for i in 0 ..< colCount {
-            let colHeight = colHeights[i]
-            if destColHeight < colHeight {
-                destColHeight = colHeight
-                destCol = i
-            }
+    func findMaxHeightColumn() -> AttributesColumn {
+        var destColumn = attributesColumns[0]
+        for column in attributesColumns where destColumn.colHeight < column.colHeight {
+            destColumn = column
         }
-        
-        return (destCol, destColHeight)
+        return destColumn
     }
     
-    typealias ColRow = (col: Int, row: Int)
-    
-    func findColRow(with item: Int, in attrsSeats: [[UICollectionViewLayoutAttributes]]) -> ColRow? {
-        for col in 0 ..< attrsSeats.count {
-            let kAttrsArray = attrsSeats[col]
-            guard let row = kAttrsArray.firstIndex(where: { $0.indexPath.item == item }) else {
+    func findSeat(with item: Int, in attributesColumns: [AttributesColumn]) -> Seat? {
+        for col in 0 ..< attributesColumns.count {
+            let column = attributesColumns[col]
+            guard let attributesSeat = column.attributesSeats.first(where: { $0.attributes.indexPath.item == item }) else {
                 continue
             }
-            return (col, row)
+            return attributesSeat.seat
         }
         return nil
     }
     
-    func findAttributes(with colRow: ColRow, in attrsSeats: [[UICollectionViewLayoutAttributes]]) -> UICollectionViewLayoutAttributes? {
-        guard colRow.col < attrsSeats.count else {
+    func findAttributesSeat(with seat: Seat, in attributesColumns: [AttributesColumn]) -> AttributesSeat? {
+        guard seat.col < attributesColumns.count else {
             return nil
         }
-        let kAttrsArray = attrsSeats[colRow.col]
+        let column = attributesColumns[seat.col]
         
-        guard colRow.row < kAttrsArray.count else {
+        guard seat.row < column.attributesSeats.count else {
             return nil
         }
-        return kAttrsArray[colRow.row]
+        return column.attributesSeats[seat.row]
     }
 }

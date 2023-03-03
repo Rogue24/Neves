@@ -314,7 +314,7 @@
 		71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E3364126C26202004669F7 /* DeferTestViewController.swift */; };
 		71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693A26563165009463E6 /* UIImage.Extension.swift */; };
 		71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA693D265631DF009463E6 /* WatermarkViewController.swift */; };
-		71EA694126563270009463E6 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71EA694026563270009463E6 /* girl.jpg */; };
+		71EA694126563270009463E6 /* Girl9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 71EA694026563270009463E6 /* Girl9.jpg */; };
 		71F249CF2731517A00FAAD93 /* FireworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F2499A2731517A00FAAD93 /* FireworkViewController.swift */; };
 		71F249D02731517A00FAAD93 /* FireworkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499B2731517A00FAAD93 /* FireworkViewController.xib */; };
 		71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71F2499D2731517A00FAAD93 /* FireworkItem.xib */; };
@@ -736,7 +736,7 @@
 		71E3364126C26202004669F7 /* DeferTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeferTestViewController.swift; sourceTree = "<group>"; };
 		71EA693A26563165009463E6 /* UIImage.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.Extension.swift; sourceTree = "<group>"; };
 		71EA693D265631DF009463E6 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
-		71EA694026563270009463E6 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
+		71EA694026563270009463E6 /* Girl9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Girl9.jpg; sourceTree = "<group>"; };
 		71F2499A2731517A00FAAD93 /* FireworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkViewController.swift; sourceTree = "<group>"; };
 		71F2499B2731517A00FAAD93 /* FireworkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkViewController.xib; sourceTree = "<group>"; };
 		71F2499D2731517A00FAAD93 /* FireworkItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FireworkItem.xib; sourceTree = "<group>"; };
@@ -939,7 +939,7 @@
 				713998042705B64D002BC263 /* Girl6.jpg */,
 				713998012705B64D002BC263 /* Girl7.jpg */,
 				713998052705B64D002BC263 /* Girl8.jpg */,
-				71EA694026563270009463E6 /* girl.jpg */,
+				71EA694026563270009463E6 /* Girl9.jpg */,
 				1A354374254E775F0032B677 /* JPIcon.png */,
 			);
 			path = Picture;
@@ -2127,7 +2127,7 @@
 				71F249D52731517A00FAAD93 /* FireworkCell.xib in Resources */,
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
 				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
-				71EA694126563270009463E6 /* girl.jpg in Resources */,
+				71EA694126563270009463E6 /* Girl9.jpg in Resources */,
 				71048BCB2863167300737278 /* MoguBanner.json in Resources */,
 				715C901427F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib in Resources */,
 				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
