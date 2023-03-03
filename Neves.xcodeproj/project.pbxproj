@@ -22,6 +22,8 @@
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
+		007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */; };
+		007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */; };
 		0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */; };
 		008DC2E529763D510039AB22 /* Hookable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2E429763D510039AB22 /* Hookable.swift */; };
 		008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2F6297699C90039AB22 /* Penetrable.swift */; };
@@ -33,6 +35,12 @@
 		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
 		00D65162257498720074693E /* Gradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65160257498720074693E /* Gradientable.swift */; };
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
+		00EE356429A70448008902DD /* JYXBDrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356129A70448008902DD /* JYXBDrawingBoard.swift */; };
+		00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */; };
+		00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */; };
+		00EE356829A705CC008902DD /* CG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356729A705CC008902DD /* CG.swift */; };
+		00EE356A29A705E6008902DD /* AttributeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356929A705E5008902DD /* AttributeString.swift */; };
+		00EE356C29A706D1008902DD /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356B29A706D1008902DD /* extension.swift */; };
 		1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433B254E75EB0032B677 /* AppDelegate.swift */; };
 		1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433D254E75EB0032B677 /* SceneDelegate.swift */; };
 		1A354343254E75EB0032B677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A354341254E75EB0032B677 /* Main.storyboard */; };
@@ -375,6 +383,8 @@
 		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
+		007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
+		007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutViewController.swift; sourceTree = "<group>"; };
 		0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLottieTestViewController.swift; sourceTree = "<group>"; };
 		008DC2E429763D510039AB22 /* Hookable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hookable.swift; sourceTree = "<group>"; };
 		008DC2F6297699C90039AB22 /* Penetrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penetrable.swift; sourceTree = "<group>"; };
@@ -386,6 +396,12 @@
 		00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDismissAllViewController.swift; sourceTree = "<group>"; };
 		00D65160257498720074693E /* Gradientable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradientable.swift; sourceTree = "<group>"; };
 		00D65161257498720074693E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		00EE356129A70448008902DD /* JYXBDrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoard.swift; sourceTree = "<group>"; };
+		00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoardOperator.swift; sourceTree = "<group>"; };
+		00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBOTODrawingBoard.swift; sourceTree = "<group>"; };
+		00EE356729A705CC008902DD /* CG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CG.swift; sourceTree = "<group>"; };
+		00EE356929A705E5008902DD /* AttributeString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeString.swift; sourceTree = "<group>"; };
+		00EE356B29A706D1008902DD /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A036500254E8AB0007932D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A354338254E75EB0032B677 /* Neves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neves.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -809,6 +825,14 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		007E64E429ADB39C00FD5F70 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		00D109A125749D6500F17889 /* Relam */ = {
 			isa = PBXGroup;
 			children = (
@@ -824,6 +848,19 @@
 				00D65161257498720074693E /* GradientView.swift */,
 			);
 			path = Gradient;
+			sourceTree = "<group>";
+		};
+		00EE358429A70BEE008902DD /* JYXBDrawingBoard */ = {
+			isa = PBXGroup;
+			children = (
+				00EE356929A705E5008902DD /* AttributeString.swift */,
+				00EE356729A705CC008902DD /* CG.swift */,
+				00EE356B29A706D1008902DD /* extension.swift */,
+				00EE356129A70448008902DD /* JYXBDrawingBoard.swift */,
+				00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */,
+				00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */,
+			);
+			path = JYXBDrawingBoard;
 			sourceTree = "<group>";
 		};
 		1A35432F254E75EB0032B677 = {
@@ -932,6 +969,7 @@
 		1A3543B6254E775F0032B677 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				007E64E429ADB39C00FD5F70 /* Layout */,
 				0053547F29607E5900E52CBB /* ImagePicker */,
 				718A56B227F1B9D30071C724 /* ImageViews */,
 				718A56AF27F1B9480071C724 /* Buttons */,
@@ -1290,6 +1328,7 @@
 				719820822824F2CD00237AE0 /* CAReplicatorLayerTestVC.swift */,
 				7104877E28391E0B00706ED7 /* M34TestViewController.swift */,
 				008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */,
+				007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */,
 			);
 			path = "View&Layer";
 			sourceTree = "<group>";
@@ -1313,6 +1352,7 @@
 		1A3545A9254E818B0032B677 /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				00EE358429A70BEE008902DD /* JYXBDrawingBoard */,
 				7151894727EB2AF400342645 /* FaceAware */,
 				1A3545AA254E818B0032B677 /* Extension */,
 				1A3545AD254E818B0032B677 /* HYLabel.swift */,
@@ -2205,6 +2245,7 @@
 				71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */,
+				00EE356429A70448008902DD /* JYXBDrawingBoard.swift in Sources */,
 				719A5231286D9F0A00619AD4 /* JPUserInfoCacheTool.swift in Sources */,
 				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
 				71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */,
@@ -2225,7 +2266,10 @@
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
+				00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */,
+				007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */,
 				719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */,
+				00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */,
 				717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */,
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
@@ -2252,6 +2296,7 @@
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */,
+				00EE356829A705CC008902DD /* CG.swift in Sources */,
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
 				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
@@ -2286,6 +2331,7 @@
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
 				0053548429607E5900E52CBB /* ImagePicker.swift in Sources */,
+				00EE356A29A705E6008902DD /* AttributeString.swift in Sources */,
 				1A5930F927B8DD6900DC60FC /* TurntableViewController.swift in Sources */,
 				718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */,
 				7151895327EC204D00342645 /* URL.Extension.swift in Sources */,
@@ -2307,6 +2353,7 @@
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
 				1A5930F727B8DD6900DC60FC /* TurntableViewCellLayout.swift in Sources */,
+				00EE356C29A706D1008902DD /* extension.swift in Sources */,
 				718A569527F193210071C724 /* CosmicExploration.swift in Sources */,
 				718A569A27F195A00071C724 /* CosmicExplorationTestViewController.swift in Sources */,
 				71070E20274CD00C004C3257 /* AttentionBothSides.swift in Sources */,
@@ -2353,6 +2400,7 @@
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */,
 				1AF648472955ACAC00752E57 /* Task.Extension.swift in Sources */,
+				007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
 				7110742B271968D700178969 /* VideoMaker.Lottie.swift in Sources */,
 				719299E4281A351100CCE872 /* PKProgress.swift in Sources */,
