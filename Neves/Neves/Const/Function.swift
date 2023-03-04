@@ -17,8 +17,9 @@ func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String
     
     // 时间+文件位置+行数
     let date = hhmmssSSFormatter.string(from: Date()).utf8
-    let fileName = (file.lastPathComponent as NSString).deletingPathExtension
-    let prefix = "[\(date)] [\(fileName) \(fn)] [第\(line)行]:"
+//    let fileName = (file.lastPathComponent as NSString).deletingPathExtension
+//    let prefix = "[\(date)] [\(fileName) \(fn)] [第\(line)行]:"
+    let prefix = "jpjpjp [\(date)]:"
     
     // 获取【除最后一个】的其他部分
     let items = msg.count > 1 ? msg[..<(msg.count - 1)] : []
