@@ -1,9 +1,8 @@
 //
 //  WaterfallLayout.swift
-//  JPMovieWriter_Example
+//  WaterfallLayout
 //
-//  Created by aa on 2023/2/27.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Created by aa on 2023/3/5.
 //
 
 import UIKit
@@ -81,18 +80,24 @@ class WaterfallLayout: UICollectionViewLayout {
     override func prepare() {
         super.prepare()
         
-        if isAsyncLayout {
-            guard let tempContentSize = self.tempContentSize,
-                  let tempAttrsArray = self.tempAttrsArray,
-                  let tempAttrsGrid = self.tempAttrsGrid else {
-                return
-            }
+        defer {
+            tempContentSize = nil
+            tempAttrsArray = nil
+            tempAttrsGrid = nil
+        }
+        
+        if isAsyncLayout,
+           let tempContentSize = self.tempContentSize,
+           let tempAttrsArray = self.tempAttrsArray,
+           let tempAttrsGrid = self.tempAttrsGrid
+        {
             attrsArray = tempAttrsArray
             nowAttrsGrid = tempAttrsGrid
             contentSize = tempContentSize
             return
         }
         
+        isAsyncLayout = false
         setupAttributes()
         setupContentSize()
     }
