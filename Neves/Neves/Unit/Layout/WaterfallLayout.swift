@@ -8,7 +8,8 @@
 
 import UIKit
 
-@objc protocol WaterfallLayoutDelegate: NSObjectProtocol {
+@objc
+protocol WaterfallLayoutDelegate: NSObjectProtocol {
     /// 根据给出的宽度计算出item高度
     func waterfallLayout(_ waterfallLayout: WaterfallLayout, heightForItemAtIndex index: Int, itemWidth: CGFloat) -> CGFloat
 
@@ -25,7 +26,7 @@ import UIKit
     @objc optional func edgeInsetsInWaterFlowLayout(_ waterfallLayout: WaterfallLayout) -> UIEdgeInsets
 }
 
-
+@objcMembers
 class WaterfallLayout: UICollectionViewLayout {
     // MARK: - 默认参数
     /// 默认列数
@@ -52,10 +53,16 @@ class WaterfallLayout: UICollectionViewLayout {
         delegate?.edgeInsetsInWaterFlowLayout?(self) ?? Self.defaultEdgeInsets
     }
     
+    // MARK: - 代理
     weak var delegate: (AnyObject & WaterfallLayoutDelegate)? = nil
     
+    // MARK: - 布局基础参数
     private var contentSize: CGSize = .zero
+    private var attrsArray: [UICollectionViewLayoutAttributes] = []
+    private var nowAttrsGrid: AttributesGrid = AttributesGrid()
+    private var oldAttrsGrid: AttributesGrid = AttributesGrid()
     
+    // MARK: - 布局刷新参数
     private var isReloadSection = false
     private var insertIndexPaths: [IndexPath] = []
     private var deleteIndexPaths: [IndexPath] = []
@@ -63,12 +70,29 @@ class WaterfallLayout: UICollectionViewLayout {
     private var appearingInitialYs: [AttributesSeat: CGFloat] = [:]
     private var disappearingFinalYs: [AttributesSeat: CGFloat] = [:]
     
-    private var attrsArray: [UICollectionViewLayoutAttributes] = []
-    private var nowAttrsGrid: AttributesGrid = AttributesGrid()
-    private var oldAttrsGrid: AttributesGrid = AttributesGrid()
+    // MARK: - 布局异步参数
+    private var isAsyncLayout: Bool = false
+    private var tempContentSize: CGSize?
+    private var tempAttrsArray: [UICollectionViewLayoutAttributes]?
+    private var tempAttrsGrid: AttributesGrid?
+    
+    // MARK: - Override
     
     override func prepare() {
         super.prepare()
+        
+        if isAsyncLayout {
+            guard let tempContentSize = self.tempContentSize,
+                  let tempAttrsArray = self.tempAttrsArray,
+                  let tempAttrsGrid = self.tempAttrsGrid else {
+                return
+            }
+            attrsArray = tempAttrsArray
+            nowAttrsGrid = tempAttrsGrid
+            contentSize = tempContentSize
+            return
+        }
+        
         setupAttributes()
         setupContentSize()
     }
@@ -82,22 +106,39 @@ class WaterfallLayout: UICollectionViewLayout {
     }
     
     override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
+        if isAsyncLayout {
+            super.prepare(forCollectionViewUpdates: updateItems)
+            return
+        }
+        
         prepareUpdateItems(updateItems)
         prepareColumnDiffYs()
     }
-    
+
     override func finalizeCollectionViewUpdates() {
         oldAttrsGrid.attrsColumns = nowAttrsGrid.attrsColumns
+        
         isReloadSection = false
         insertIndexPaths.removeAll()
         deleteIndexPaths.removeAll()
         reloadIndexPaths.removeAll()
+        
         appearingInitialYs.removeAll()
         disappearingFinalYs.removeAll()
+        
+        isAsyncLayout = false
+        tempContentSize = nil
+        tempAttrsArray = nil
+        tempAttrsGrid = nil
     }
     
-    // 从 刚创建出来时的样式设置 --到--> 正常状态：这里设置的是展示动画的【初始状态】，例如设置了alpha为0，动画会自动变为1
+    /// 从`刚创建出来时的样式设置`到`正常状态`
+    /// 这里设置的是展示动画的【初始状态】，例如如果设置了alpha为0，一开始则为0，接着通过动画变为1
     override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if isAsyncLayout {
+            return super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+        }
+        
         if isReloadSection {
             return reloadSection_initialLayoutAttributesForAppearingItem(at: itemIndexPath)
         } else {
@@ -105,8 +146,13 @@ class WaterfallLayout: UICollectionViewLayout {
         }
     }
 
-    // 从 正常状态 --到--> 最后消失时的样式设置：这里设置的是消失动画的【最终状态】
+    /// 从`正常状态`到`最后消失时的样式设置`
+    /// 这里设置的是消失动画的【最终状态】，例如如果设置了alpha为0，通过动画最终变为0
     override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if isAsyncLayout {
+            return super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
+        }
+        
         if isReloadSection {
             return reloadSection_finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
         } else {
@@ -114,6 +160,84 @@ class WaterfallLayout: UICollectionViewLayout {
         }
     }
 }
+
+extension WaterfallLayout {
+    // MARK: - 异步刷新
+    func asyncUpdateLayout(itemTotal: Int,
+                           heightForItemAtIndex: @escaping (_ item: Int, _ itemWidth: CGFloat) -> CGFloat,
+                           completion: (() -> ())?) {
+        isAsyncLayout = true
+        
+        if Thread.isMainThread {
+            DispatchQueue.global().async {
+                self.asyncUpdateLayout(itemTotal: itemTotal,
+                                       heightForItemAtIndex: heightForItemAtIndex,
+                                       completion: completion)
+            }
+            return
+        }
+        
+        let colCount = self.colCount
+        let colMargin = self.colMargin
+        let rowMargin = self.rowMargin
+        let edgeInsets = self.edgeInsets
+        var collectionViewW: CGFloat = 0
+        DispatchQueue.main.sync {
+            collectionViewW = self.collectionView?.frame.width ?? 0
+        }
+        let itemWidth = (collectionViewW - edgeInsets.left - edgeInsets.right - CGFloat(colCount - 1) * colMargin) / CGFloat(colCount)
+        
+        var tempContentSize: CGSize = .zero
+        var tempAttrsArray: [UICollectionViewLayoutAttributes] = []
+        let tempAttrsGrid = AttributesGrid()
+        
+        let attrsColumns = Array(0 ..< colCount).map { _ in
+            AttributesColumn(attributes: [], colHeight: edgeInsets.top)
+        }
+        
+        for item in 0 ..< itemTotal {
+            // 找出高度最小的那一列
+            var destCol = 0
+            var destColumn = attrsColumns[destCol]
+            for col in 0..<attrsColumns.count {
+                let attrsColumn = attrsColumns[col]
+                guard destColumn.colHeight > attrsColumn.colHeight else { continue }
+                destColumn = attrsColumn
+                destCol = col
+            }
+            
+            let attrs = UICollectionViewLayoutAttributes(forCellWith: IndexPath(item: item, section: 0))
+            attrs.frame = CGRect(
+                x: edgeInsets.left + CGFloat(destCol) * (itemWidth + colMargin),
+                y: destColumn.colHeight + (destColumn.colHeight > edgeInsets.top ? rowMargin : 0),
+                width: itemWidth,
+                height: heightForItemAtIndex(item, itemWidth)
+            )
+            destColumn.attributes.append(attrs)
+            destColumn.colHeight = attrs.frame.maxY // 刷新最短那列的高度
+            
+            tempAttrsArray.append(attrs)
+        }
+        
+        tempAttrsGrid.attrsColumns = attrsColumns
+        
+        var colHeight = attrsColumns[0].colHeight
+        for attrsColumn in attrsColumns where colHeight < attrsColumn.colHeight {
+            colHeight = attrsColumn.colHeight
+        }
+        colHeight += edgeInsets.bottom
+        tempContentSize = CGSize(width: 0, height: colHeight)
+        
+        DispatchQueue.main.async {
+            self.tempContentSize = tempContentSize
+            self.tempAttrsArray = tempAttrsArray
+            self.tempAttrsGrid = tempAttrsGrid
+            completion?()
+        }
+    }
+}
+
+// MARK: - 私有计算函数
 
 private extension WaterfallLayout {
     func setupAttributes() {
@@ -269,6 +393,7 @@ private extension WaterfallLayout {
                 } else {
                     // item 为 NSIntegerMax 时就是 reloadSections 更新整个 section 的（NSIndexSet）
                     isReloadSection = true
+                    break
                 }
                 
             default:
@@ -327,6 +452,7 @@ private extension WaterfallLayout {
     }
 }
 
+// MARK: - 私有类
 private extension WaterfallLayout {
     struct AttributesSeat: Hashable {
         let col: Int
@@ -396,8 +522,7 @@ private extension WaterfallLayout {
 //                }
 //                str += "\n"
 //            }
-//            JPrint(str)
+//            print(str)
 //        }
     }
 }
-
