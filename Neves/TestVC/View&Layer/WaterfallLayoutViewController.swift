@@ -90,8 +90,8 @@ class WaterfallLayoutViewController: TestBaseViewController {
 //                }
             
             self.girls = girls
-//            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
-            UIView.animate(withDuration: 3) {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
+//            UIView.animate(withDuration: 3) {
                 self.collectionView.performBatchUpdates {
                     self.collectionView.reloadSections(IndexSet(integer: 0))
                 }

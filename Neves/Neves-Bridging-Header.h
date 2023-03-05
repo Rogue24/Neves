@@ -46,3 +46,4 @@
 #import "NSURL+JPExtension.h"
 #import "JPDeviceTool.h"
 #import "JPScreenRotator.h"
+#import "JPPhotoTool.h"

@@ -17,6 +17,9 @@
 		002E78FE295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */; };
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
 		002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */; };
+		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
+		004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */; };
+		004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */; };
 		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
@@ -378,6 +381,12 @@
 		002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomGameTeamCardListView.swift; sourceTree = "<group>"; };
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
 		002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomFmView.swift; sourceTree = "<group>"; };
+		004A324529B47365001832E5 /* JPPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoTool.m; sourceTree = "<group>"; };
+		004A324629B47365001832E5 /* JPPhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoTool.h; sourceTree = "<group>"; };
+		004A324829B473D4001832E5 /* UICollectionView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Convenience.h"; sourceTree = "<group>"; };
+		004A324929B473D4001832E5 /* NSIndexSet+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Convenience.h"; sourceTree = "<group>"; };
+		004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+Convenience.m"; sourceTree = "<group>"; };
+		004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Convenience.m"; sourceTree = "<group>"; };
 		0053548029607E5900E52CBB /* ImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerObject.swift; sourceTree = "<group>"; };
 		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
@@ -1156,6 +1165,8 @@
 		1A354401254E775F0032B677 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				004A324829B473D4001832E5 /* UICollectionView+Convenience.h */,
+				004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */,
 				1A35440B254E775F0032B677 /* UIColor+JPExtension.h */,
 				1A354405254E775F0032B677 /* UIColor+JPExtension.m */,
 				1A35440C254E775F0032B677 /* UIImage+JPExtension.h */,
@@ -1179,6 +1190,8 @@
 			children = (
 				1A354417254E775F0032B677 /* NSDate+JPExtension.h */,
 				1A354412254E775F0032B677 /* NSDate+JPExtension.m */,
+				004A324929B473D4001832E5 /* NSIndexSet+Convenience.h */,
+				004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */,
 				1A354411254E775F0032B677 /* NSObject+JPExtension.h */,
 				1A354415254E775F0032B677 /* NSObject+JPExtension.m */,
 				1A354414254E775F0032B677 /* NSString+JPExtension.h */,
@@ -1226,6 +1239,8 @@
 				1A35442A254E775F0032B677 /* JPSolveTool.m */,
 				1A354424254E775F0032B677 /* JPTextLayoutTool.h */,
 				1A354428254E775F0032B677 /* JPTextLayoutTool.m */,
+				004A324629B47365001832E5 /* JPPhotoTool.h */,
+				004A324529B47365001832E5 /* JPPhotoTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2349,6 +2364,7 @@
 				719029422818E69E000F6E29 /* PKProgressView.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
 				7190294A281924F9000F6E29 /* PKProgressViewModel.swift in Sources */,
+				004A324729B47365001832E5 /* JPPhotoTool.m in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
@@ -2482,6 +2498,7 @@
 				002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */,
 				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
 				1A5930FA27B8DD6900DC60FC /* Turntable.swift in Sources */,
+				004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */,
 				717F59D927F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift in Sources */,
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
@@ -2493,6 +2510,7 @@
 				71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
+				004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */,
 				1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */,
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */,

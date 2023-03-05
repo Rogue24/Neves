@@ -9,9 +9,7 @@
 import UIKit
 
 @objc protocol WaterfallLayoutDelegate: NSObjectProtocol {
-    /**
-     * 让代理根据给出的宽度计算出item高度
-     */
+    /// 根据给出的宽度计算出item高度
     func waterfallLayout(_ waterfallLayout: WaterfallLayout, heightForItemAtIndex index: Int, itemWidth: CGFloat) -> CGFloat
 
     /// cell的总列数
@@ -29,53 +27,45 @@ import UIKit
 
 
 class WaterfallLayout: UICollectionViewLayout {
-    
+    // MARK: - 默认参数
     /// 默认列数
     static let defaultColCount: Int = 3
-
     /// 默认cell列间距
     static let defaultColMargin: CGFloat = 10
-
     /// 默认cell行间距
     static let defaultRowMargin: CGFloat = 10
-
     /// collectionView的内容间距
     static let defaultEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     
-    weak var delegate: (AnyObject & WaterfallLayoutDelegate)? = nil
-    
-    
-    //*****  协议数据处理
+    // MARK: - 协议参数
     var colCount: Int {
         let colCount = delegate?.colCountInWaterFlowLayout?(self) ?? Self.defaultColCount
         return colCount > 0 ? colCount : 1
     }
-
     var colMargin: CGFloat {
         delegate?.colMarginInWaterFlowLayout?(self) ?? Self.defaultColMargin
     }
-    
     var rowMargin: CGFloat {
         delegate?.rowMarginInWaterFlowLayout?(self) ?? Self.defaultRowMargin
     }
-    
     var edgeInsets: UIEdgeInsets {
         delegate?.edgeInsetsInWaterFlowLayout?(self) ?? Self.defaultEdgeInsets
     }
-    //*****
     
-    var contentSize: CGSize = .zero
+    weak var delegate: (AnyObject & WaterfallLayoutDelegate)? = nil
     
-    var insertIndexPaths: [IndexPath] = []
-    var deleteIndexPaths: [IndexPath] = []
-    var reloadIndexPaths: [IndexPath] = []
-    var isReloadSection = false
+    private var contentSize: CGSize = .zero
     
-    var attrsArray: [UICollectionViewLayoutAttributes] = []
-    var nowAttrsGrid: AttributesGrid = AttributesGrid()
-    var oldAttrsGrid: AttributesGrid = AttributesGrid()
-    var appearingInitialYs: [AttributesSeat: CGFloat] = [:]
-    var disappearingFinalYs: [AttributesSeat: CGFloat] = [:]
+    private var isReloadSection = false
+    private var insertIndexPaths: [IndexPath] = []
+    private var deleteIndexPaths: [IndexPath] = []
+    private var reloadIndexPaths: [IndexPath] = []
+    private var appearingInitialYs: [AttributesSeat: CGFloat] = [:]
+    private var disappearingFinalYs: [AttributesSeat: CGFloat] = [:]
+    
+    private var attrsArray: [UICollectionViewLayoutAttributes] = []
+    private var nowAttrsGrid: AttributesGrid = AttributesGrid()
+    private var oldAttrsGrid: AttributesGrid = AttributesGrid()
     
     override func prepare() {
         super.prepare()
@@ -92,163 +82,40 @@ class WaterfallLayout: UICollectionViewLayout {
     }
     
     override func prepare(forCollectionViewUpdates updateItems: [UICollectionViewUpdateItem]) {
-        for updateItem in updateItems {
-            switch updateItem.updateAction {
-            case .insert:
-                insertIndexPaths.append(updateItem.indexPathAfterUpdate!)
-                
-            case .delete:
-                deleteIndexPaths.append(updateItem.indexPathBeforeUpdate!)
-                
-            case .reload:
-                if updateItem.indexPathAfterUpdate!.item < Int.max {
-                    // indexPathBeforeUpdate indexPathAfterUpdate 都一样
-                    reloadIndexPaths.append(updateItem.indexPathAfterUpdate!)
-                } else {
-                    // item 为 NSIntegerMax 时就是 reloadSections 更新整个 section 的（NSIndexSet）
-                    isReloadSection = true
-                }
-                
-            default:
-                break
-            }
-        }
-        
-//        guard isReloadSection, oldAttrsGrid.attrsColumns.count == nowAttrsGrid.attrsColumns.count else {
-//            return
-//        }
-//
-//        let rowMargin = self.rowMargin
-//        let topInset = self.edgeInsets.top
-//        func makeTargetYs(col: Int, colHeight: CGFloat,
-//                          attributes: [UICollectionViewLayoutAttributes],
-//                          from: Int, to: Int) -> [AttributesSeat: CGFloat] {
-//            var targetYs: [AttributesSeat: CGFloat] = [:]
-//            var itemY = colHeight
-//            for row in from ..< to {
-//                let seat = AttributesSeat(col: col, row: row)
-//                targetYs[seat] = itemY + (itemY > topInset ? rowMargin : 0)
-//                itemY += attributes[row].frame.height
-//            }
-//            return targetYs
-//        }
-//
-//        let colCount = self.colCount
-//        let oldAttrsColumns = oldAttrsGrid.attrsColumns
-//        let nowAttrsColumns = nowAttrsGrid.attrsColumns
-//        for col in 0 ..< colCount {
-//            let oldAttrColumn = oldAttrsColumns[col]
-//            let oldAttributes = oldAttrColumn.attributes
-//            let oldRowCount = oldAttributes.count
-//
-//            let nowAttrColumn = nowAttrsColumns[col]
-//            let nowAttributes = nowAttrColumn.attributes
-//            let nowRowCount = nowAttributes.count
-//
-//            guard oldRowCount != nowRowCount else {
-//                JPrint("col: \(col), 数量没变")
-//                continue
-//            }
-//            if oldRowCount > nowRowCount {
-//                JPrint("col: \(col), 数量减少，oldRowCount: \(oldRowCount), nowRowCount: \(nowRowCount)")
-//                disappearingFinalYs = makeTargetYs(col: col,
-//                                                   colHeight: nowAttrColumn.colHeight,
-//                                                   attributes: oldAttributes,
-//                                                   from: nowRowCount,
-//                                                   to: oldRowCount)
-//            } else {
-//                JPrint("col: \(col), 数量增多，oldRowCount: \(oldRowCount), nowRowCount: \(nowRowCount)")
-//                appearingInitialYs = makeTargetYs(col: col,
-//                                                  colHeight: oldAttrColumn.colHeight,
-//                                                  attributes: nowAttributes,
-//                                                  from: oldRowCount,
-//                                                  to: nowRowCount)
-//            }
-//        }
-        
-        guard isReloadSection, oldAttrsGrid.attrsColumns.count == nowAttrsGrid.attrsColumns.count else {
-            return
-        }
-
-        let colCount = self.colCount
-        let rowMargin = self.rowMargin
-        let topInset = self.edgeInsets.top
-
-        let oldAttrsColumns = oldAttrsGrid.attrsColumns
-        let nowAttrsColumns = nowAttrsGrid.attrsColumns
-
-        for col in 0 ..< colCount {
-            let oldAttrColumn = oldAttrsColumns[col]
-            let nowAttrColumn = nowAttrsColumns[col]
-
-            let oldAttributes = oldAttrColumn.attributes
-            let nowAttributes = nowAttrColumn.attributes
-
-            let oldRowCount = oldAttributes.count
-            let nowRowCount = nowAttributes.count
-
-            guard oldRowCount != nowRowCount else { continue }
-
-            if oldRowCount > nowRowCount {
-                JPrint("col: \(col), 数量减少，oldRowCount: \(oldRowCount), nowRowCount: \(nowRowCount)")
-                var itemY = nowAttrColumn.colHeight
-                for row in nowRowCount ..< oldRowCount {
-                    let seat = AttributesSeat(col: col, row: row)
-                    let finalY = itemY + (itemY > topInset ? rowMargin : 0)
-                    disappearingFinalYs[seat] = finalY
-
-                    let attrs = oldAttributes[row]
-                    itemY += attrs.frame.height
-                }
-            } else {
-                JPrint("col: \(col), 数量增多，oldRowCount: \(oldRowCount), nowRowCount: \(nowRowCount)")
-                var itemY = oldAttrColumn.colHeight
-                for row in oldRowCount ..< nowRowCount {
-                    let seat = AttributesSeat(col: col, row: row)
-                    let initialY = itemY + (itemY > topInset ? rowMargin : 0)
-                    appearingInitialYs[seat] = initialY
-
-                    let attrs = nowAttributes[row]
-                    itemY += attrs.frame.height
-                }
-            }
-        }
+        prepareUpdateItems(updateItems)
+        prepareColumnDiffYs()
     }
     
     override func finalizeCollectionViewUpdates() {
+        oldAttrsGrid.attrsColumns = nowAttrsGrid.attrsColumns
+        isReloadSection = false
         insertIndexPaths.removeAll()
         deleteIndexPaths.removeAll()
         reloadIndexPaths.removeAll()
-        isReloadSection = false
-        
-        oldAttrsGrid.attrsColumns = nowAttrsGrid.attrsColumns
         appearingInitialYs.removeAll()
         disappearingFinalYs.removeAll()
-        
-        JPrint("========finalizeCollectionViewUpdates=======")
     }
-    
     
     // 从 刚创建出来时的样式设置 --到--> 正常状态：这里设置的是展示动画的【初始状态】，例如设置了alpha为0，动画会自动变为1
     override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if isReloadSection {
-            return reloadSectionAttributesForAppearingItem(at: itemIndexPath)
+            return reloadSection_initialLayoutAttributesForAppearingItem(at: itemIndexPath)
         } else {
-            return updateAttributesForAppearingItem(at: itemIndexPath)
+            return updateItems_initialLayoutAttributesForAppearingItem(at: itemIndexPath)
         }
     }
 
     // 从 正常状态 --到--> 最后消失时的样式设置：这里设置的是消失动画的【最终状态】
     override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         if isReloadSection {
-            return reloadSectionAttributesForDisappearingItem(at: itemIndexPath)
+            return reloadSection_finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
         } else {
-            return updateAttributesForDisappearingItem(at: itemIndexPath)
+            return updateItems_finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
         }
     }
 }
 
-extension WaterfallLayout {
+private extension WaterfallLayout {
     func setupAttributes() {
         attrsArray.removeAll()
         nowAttrsGrid.attrsColumns.removeAll()
@@ -258,13 +125,13 @@ extension WaterfallLayout {
         let rowMargin = self.rowMargin
         let edgeInsets = self.edgeInsets
         
-        let attrsColumns = Array(0 ..< colCount).map { _ in
-            AttributesColumn(attributes: [], colHeight: edgeInsets.top)
-        }
-        
         let collectionViewW = collectionView?.frame.width ?? 0
         let itemTotal = collectionView?.numberOfItems(inSection: 0) ?? 0
         let itemWidth = (collectionViewW - edgeInsets.left - edgeInsets.right - CGFloat(colCount - 1) * colMargin) / CGFloat(colCount)
+        
+        let attrsColumns = Array(0 ..< colCount).map { _ in
+            AttributesColumn(attributes: [], colHeight: edgeInsets.top)
+        }
         
         for item in 0 ..< itemTotal {
             // 找出高度最小的那一列
@@ -304,8 +171,8 @@ extension WaterfallLayout {
     }
 }
 
-extension WaterfallLayout {
-    func reloadSectionAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+private extension WaterfallLayout {
+    func reloadSection_initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         // 当刷新整个Section：
         // 如果super获取为空，则说明是新增的item，新增的item默认就直接在最终位置停留，只有透明度的过渡
         // 为了让item能有过渡动画，为空时则手动创建一个来实现过渡动画
@@ -325,13 +192,13 @@ extension WaterfallLayout {
         let nowAttrs = nowAttrsGrid[nowSeat]!
         attributes.frame = nowAttrs.frame
         if let initialY = appearingInitialYs[nowSeat] {
-            JPrint("新增 col: \(nowSeat.col), row: \(nowSeat.row), oy: \(attributes.frame.origin.y), ny: \(initialY)")
             attributes.frame.origin.y = initialY
         }
+        
         return attributes
     }
     
-    func reloadSectionAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func reloadSection_finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath) else { return nil }
         attributes.zIndex = 0
         attributes.alpha = 0
@@ -348,14 +215,13 @@ extension WaterfallLayout {
         let oldAttrs = oldAttrsGrid[oldSeat]!
         attributes.frame = oldAttrs.frame
         if let finalY = disappearingFinalYs[oldSeat] {
-            JPrint("移除 col: \(oldSeat.col), row: \(oldSeat.row), oy: \(attributes.frame.origin.y), ny: \(finalY)")
             attributes.frame.origin.y = finalY
         }
         
         return attributes
     }
     
-    func updateAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func updateItems_initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath) else { return nil }
         
         if insertIndexPaths.contains(itemIndexPath) {
@@ -370,7 +236,7 @@ extension WaterfallLayout {
         return attributes
     }
     
-    func updateAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    func updateItems_finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath) else { return nil }
         
         if insertIndexPaths.contains(itemIndexPath) {
@@ -386,7 +252,82 @@ extension WaterfallLayout {
     }
 }
 
-extension WaterfallLayout {
+private extension WaterfallLayout {
+    func prepareUpdateItems(_ updateItems: [UICollectionViewUpdateItem]) {
+        for updateItem in updateItems {
+            switch updateItem.updateAction {
+            case .insert:
+                insertIndexPaths.append(updateItem.indexPathAfterUpdate!)
+                
+            case .delete:
+                deleteIndexPaths.append(updateItem.indexPathBeforeUpdate!)
+                
+            case .reload:
+                if updateItem.indexPathAfterUpdate!.item < Int.max {
+                    // indexPathBeforeUpdate indexPathAfterUpdate 都一样
+                    reloadIndexPaths.append(updateItem.indexPathAfterUpdate!)
+                } else {
+                    // item 为 NSIntegerMax 时就是 reloadSections 更新整个 section 的（NSIndexSet）
+                    isReloadSection = true
+                }
+                
+            default:
+                break
+            }
+        }
+    }
+    
+    func prepareColumnDiffYs() {
+        guard isReloadSection, oldAttrsGrid.attrsColumns.count == nowAttrsGrid.attrsColumns.count else {
+            return
+        }
+
+        let rowMargin = self.rowMargin
+        let topInset = self.edgeInsets.top
+        func makeColumnDiffYs(_ diffYs: inout [AttributesSeat: CGFloat],
+                              col: Int, colHeight: CGFloat,
+                              attributes: [UICollectionViewLayoutAttributes],
+                              from: Int, to: Int) {
+            var itemY = colHeight
+            for row in from ..< to {
+                let seat = AttributesSeat(col: col, row: row)
+                diffYs[seat] = itemY + (itemY > topInset ? rowMargin : 0)
+                itemY += attributes[row].frame.height
+            }
+        }
+
+        let colCount = self.colCount
+        let oldAttrsColumns = oldAttrsGrid.attrsColumns
+        let nowAttrsColumns = nowAttrsGrid.attrsColumns
+        for col in 0 ..< colCount {
+            let oldAttrColumn = oldAttrsColumns[col]
+            let oldAttributes = oldAttrColumn.attributes
+            let oldRowCount = oldAttributes.count
+
+            let nowAttrColumn = nowAttrsColumns[col]
+            let nowAttributes = nowAttrColumn.attributes
+            let nowRowCount = nowAttributes.count
+
+            guard oldRowCount != nowRowCount else {
+                continue
+            }
+            
+            if oldRowCount > nowRowCount {
+                makeColumnDiffYs(&disappearingFinalYs,
+                                 col: col, colHeight: nowAttrColumn.colHeight,
+                                 attributes: oldAttributes,
+                                 from: nowRowCount, to: oldRowCount)
+            } else {
+                makeColumnDiffYs(&appearingInitialYs,
+                                 col: col, colHeight: oldAttrColumn.colHeight,
+                                 attributes: nowAttributes,
+                                 from: oldRowCount, to: nowRowCount)
+            }
+        }
+    }
+}
+
+private extension WaterfallLayout {
     struct AttributesSeat: Hashable {
         let col: Int
         let row: Int
@@ -413,12 +354,6 @@ extension WaterfallLayout {
     
     class AttributesGrid {
         var attrsColumns: [AttributesColumn] = []
-        
-        func resetAll(colCount: Int, topInset: CGFloat) {
-            attrsColumns = Array(0..<colCount).map { _ in
-                AttributesColumn(attributes: [], colHeight: topInset)
-            }
-        }
         
         subscript(seat: AttributesSeat) -> UICollectionViewLayoutAttributes? {
             get {
@@ -448,21 +383,21 @@ extension WaterfallLayout {
             }
         }
         
-        func log() {
-            var str = "\n"
-            for col in 0 ..< attrsColumns.count {
-                str += "-------col: \(col)-------\n"
-                let column = attrsColumns[col]
-                for row in 0 ..< column.attributes.count {
-                    let attrs = column.attributes[row]
-                    str += "["
-                    str += "row: \(row), item: \(attrs.indexPath.item), x: \(attrs.frame.origin.x)"
-                    str += "]\n"
-                }
-                str += "\n"
-            }
-            JPrint(str)
-        }
+//        func log() {
+//            var str = "\n"
+//            for col in 0 ..< attrsColumns.count {
+//                str += "-------col: \(col)-------\n"
+//                let column = attrsColumns[col]
+//                for row in 0 ..< column.attributes.count {
+//                    let attrs = column.attributes[row]
+//                    str += "["
+//                    str += "row: \(row), item: \(attrs.indexPath.item), x: \(attrs.frame.origin.x)"
+//                    str += "]\n"
+//                }
+//                str += "\n"
+//            }
+//            JPrint(str)
+//        }
     }
 }
 
