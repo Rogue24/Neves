@@ -101,6 +101,10 @@ class WaterfallLayout: UICollectionViewLayout {
         attrsArray
     }
     
+//    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+//        super.layoutAttributesForItem(at: indexPath)
+//    }
+    
     override var collectionViewContentSize: CGSize {
         contentSize
     }
@@ -298,9 +302,26 @@ private extension WaterfallLayout {
 private extension WaterfallLayout {
     func reloadSection_initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         // 当刷新整个Section：
-        // 如果super获取为空，则说明是新增的item，新增的item默认就直接在最终位置停留，只有透明度的过渡
-        // 为了让item能有过渡动画，为空时则手动创建一个来实现过渡动画
-        let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath) ?? UICollectionViewLayoutAttributes(forCellWith: itemIndexPath)
+        var attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
+        if attributes == nil {
+            // 如果super获取为空，则说明是新增的item，新增的item默认就直接在最终位置停留，只有透明度的过渡
+            // 为了让item能有过渡动画，当super获取为空、并且之前的cell处于正在显示的区域时，则手动创建一个来实现过渡动画
+            if let oldAttds = oldAttrsGrid.findAttributes(with: itemIndexPath) {
+                // scrollView的bounds就是正在显示的区域
+                let showingRect = collectionView?.bounds ?? .zero
+                if showingRect.intersects(oldAttds.frame) {
+                    attributes = UICollectionViewLayoutAttributes(forCellWith: itemIndexPath)
+//                    print("jpjpjp \(itemIndexPath.item) 正在显示区域")
+//                } else {
+//                    print("jpjpjp \(itemIndexPath.item) 不在显示区域")
+                }
+            }
+//            else {
+//                print("jpjpjp \(itemIndexPath.item) 本来就不存在")
+//            }
+        }
+        
+        guard let attributes = attributes else { return nil }
         attributes.zIndex = 1
         attributes.alpha = 0
         
@@ -481,6 +502,18 @@ private extension WaterfallLayout {
     class AttributesGrid {
         var attrsColumns: [AttributesColumn] = []
         
+        func findAttributes(with indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+            let item = indexPath.item
+            for col in 0 ..< attrsColumns.count {
+                let attributes = attrsColumns[col].attributes
+                guard let attrs = attributes.first(where: { $0.indexPath.item == item }) else {
+                    continue
+                }
+                return attrs
+            }
+            return nil
+        }
+        
         subscript(seat: AttributesSeat) -> UICollectionViewLayoutAttributes? {
             get {
                 guard seat.col >= 0, seat.col < attrsColumns.count else {
@@ -522,7 +555,7 @@ private extension WaterfallLayout {
 //                }
 //                str += "\n"
 //            }
-//            print(str)
+//            print("jpjpjp \(str)")
 //        }
     }
 }
