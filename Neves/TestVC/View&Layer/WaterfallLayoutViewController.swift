@@ -15,6 +15,8 @@ class WaterfallLayoutViewController: TestBaseViewController {
     
     var collectionView: UICollectionView!
     
+    let animated = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,29 +42,13 @@ class WaterfallLayoutViewController: TestBaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         replaceFunnyAction {
-            
-//            let s1 = WaterfallLayout.Seat(col: 1, row: 2)
-//            let s2 = WaterfallLayout.Seat(col: 1, row: 2)
-//            let s3 = WaterfallLayout.Seat(col: 2, row: 5)
-//            JPrint(s1 == s2)
-//            JPrint(s1 == s3)
-//            JPrint(s2 == s3)
-//            return
-            
-//            self.colCount = Int.random(in: 1...5)
-//            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
-////                UIView.animate(withDuration: 3) {
-//                self.collectionView.performBatchUpdates {
-//                    self.collectionView.reloadSections(IndexSet(integer: 0))
-//                }
-//            }
-//            return
-            
-            self.reloadView()
+            self.reloadView(isAdd: self.girls.count < 80)
+//            self.reloadView(isAdd: false)
         }
         
-        reloadView()
+        reloadView(isAdd: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -70,30 +56,34 @@ class WaterfallLayoutViewController: TestBaseViewController {
         removeFunnyActions()
     }
     
-    func reloadView() {
-        var girls: [Girl] = []
+    func reloadView(isAdd: Bool) {
+        var kGirls: [Girl] = []
         Asyncs.async {
-            girls = Girl.fetchTestList()
+            kGirls = Girl.fetchTestList()
         } mainTask: {
-//                JPProgressHUD.dismiss()
+            var indexPaths: [IndexPath] = []
+            if isAdd {
+                for i in 0 ..< kGirls.count {
+                    indexPaths.append(IndexPath(item: i + self.girls.count, section: 0))
+                }
+                self.girls += kGirls
+            } else {
+                self.girls = kGirls
+            }
             
-//                if self.girls.count == 0 {
-//                    self.girls = girls
-//                    self.collectionView.reloadSections(IndexSet(integer: 0))
-//                } else {
-//                    var indexPaths: [IndexPath] = []
-//                    for i in 0 ..< girls.count {
-//                        indexPaths.append(IndexPath(item: self.girls.count + i, section: 0))
-//                    }
-//                    self.girls += girls
-//                    self.collectionView.insertItems(at: indexPaths)
-//                }
+            if !self.animated {
+                self.collectionView.reloadData()
+                return
+            }
             
-            self.girls = girls
             UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.88, initialSpringVelocity: 1) {
 //            UIView.animate(withDuration: 3) {
                 self.collectionView.performBatchUpdates {
-                    self.collectionView.reloadSections(IndexSet(integer: 0))
+                    if isAdd {
+                        self.collectionView.insertItems(at: indexPaths)
+                    } else {
+                        self.collectionView.reloadSections(IndexSet(integer: 0))
+                    }
                 }
             }
         }
@@ -165,7 +155,7 @@ extension WaterfallLayoutViewController {
         static func fetchTestList() -> [Girl] {
             let girlList1 = Array(1...9).map { Girl(imgName: "Girl\($0)") }
             let girlList2 = Array(1...9).map { Girl(imgName: "Girl\($0)") }
-            return girlList1.shuffled() + girlList2.shuffled()
+            return (girlList1 + girlList2).shuffled()
         }
     }
     

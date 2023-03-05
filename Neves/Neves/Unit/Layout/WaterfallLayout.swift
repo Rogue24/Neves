@@ -173,7 +173,7 @@ class WaterfallLayout: UICollectionViewLayout {
 extension WaterfallLayout {
     // MARK: - 异步刷新
     func asyncUpdateLayout(itemTotal: Int,
-                           heightForItemAtIndex: @escaping (_ item: Int, _ itemWidth: CGFloat) -> CGFloat,
+                           heightForItemAtIndex: @escaping (_ index: Int, _ itemWidth: CGFloat) -> CGFloat,
                            completion: (() -> ())?) {
         isAsyncLayout = true
         
@@ -186,14 +186,19 @@ extension WaterfallLayout {
             return
         }
         
-        let colCount = self.colCount
-        let colMargin = self.colMargin
-        let rowMargin = self.rowMargin
-        let edgeInsets = self.edgeInsets
+        var colCount: Int = 0
+        var colMargin: CGFloat = 0
+        var rowMargin: CGFloat = 0
+        var edgeInsets: UIEdgeInsets = .zero
         var collectionViewW: CGFloat = 0
         DispatchQueue.main.sync {
+            colCount = self.colCount
+            colMargin = self.colMargin
+            rowMargin = self.rowMargin
+            edgeInsets = self.edgeInsets
             collectionViewW = self.collectionView?.frame.width ?? 0
         }
+        
         let itemWidth = (collectionViewW - edgeInsets.left - edgeInsets.right - CGFloat(colCount - 1) * colMargin) / CGFloat(colCount)
         
         var tempContentSize: CGSize = .zero
