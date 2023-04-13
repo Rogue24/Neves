@@ -6,6 +6,7 @@
 //
 //  学自1：https://blog.ficowshen.com/page/post/12
 //  学自2：https://www.jianshu.com/p/d14748abb911
+//  学自3：https://juejin.cn/post/7017623451858894862
 
 import Combine
 //import SwiftUI

@@ -321,14 +321,14 @@ private extension WaterfallLayout {
                 let showingRect = collectionView?.bounds ?? .zero
                 if showingRect.intersects(oldAttds.frame) {
                     attributes = UICollectionViewLayoutAttributes(forCellWith: itemIndexPath)
-//                    print("jpjpjp \(itemIndexPath.item) 正在显示区域")
-//                } else {
-//                    print("jpjpjp \(itemIndexPath.item) 不在显示区域")
+                    print("jpjpjp \(itemIndexPath.item) 正在显示区域")
+                } else {
+                    print("jpjpjp \(itemIndexPath.item) 不在显示区域")
                 }
             }
-//            else {
-//                print("jpjpjp \(itemIndexPath.item) 本来就不存在")
-//            }
+            else {
+                print("jpjpjp \(itemIndexPath.item) 本来就不存在")
+            }
         }
         
         guard let attributes = attributes else { return nil }
