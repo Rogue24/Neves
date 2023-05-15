@@ -109,7 +109,7 @@ class LottieShowViewController: TestBaseViewController {
         case 6:
             lottieName = "room_renewguard01_lottie"
         case 7:
-            lottieName = "room_renewguard02_lottie"
+            lottieName = "pk_duel_start_lottie"
         default:
             lottieName = "room_upgradeguard_lottie"
         }

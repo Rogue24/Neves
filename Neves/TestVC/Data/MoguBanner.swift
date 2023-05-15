@@ -7,6 +7,9 @@
 //  系统JSON的使用例子：https://www.jianshu.com/p/9e6f8dc66a50
 //  SwiftyJSON的使用参考：https://blog.csdn.net/gf771115/article/details/111479203
 
+import KakaJSON
+import SwiftyJSON
+
 struct MoguBanner: Convertible, Codable, Hashable {
     let identifier = UUID()
     
