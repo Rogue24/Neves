@@ -38,6 +38,23 @@ struct File {
         }
         
         @discardableResult
+        static func clearDirectory(_ atPath: String?, executeError: ExecuteError? = nil) -> Bool {
+            guard let dirPath = atPath,
+                  FileManager.default.fileExists(atPath: dirPath) else { return true }
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: dirPath)
+                for fileName in contents {
+                    let filePath = (dirPath as NSString).appendingPathComponent(fileName)
+                    try FileManager.default.removeItem(atPath: filePath)
+                }
+                return true
+            } catch {
+                executeError?(error)
+                return false
+            }
+        }
+        
+        @discardableResult
         static func deleteFile(_ atPath: String?, executeError: ExecuteError? = nil) -> Bool {
             guard let filePath = atPath,
                   FileManager.default.fileExists(atPath: filePath) else { return true }
