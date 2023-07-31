@@ -24,6 +24,7 @@
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
+		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
 		007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */; };
 		007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */; };
@@ -392,6 +393,7 @@
 		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.Extension.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
 		007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutViewController.swift; sourceTree = "<group>"; };
@@ -411,7 +413,7 @@
 		00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBOTODrawingBoard.swift; sourceTree = "<group>"; };
 		00EE356729A705CC008902DD /* CG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CG.swift; sourceTree = "<group>"; };
 		00EE356929A705E5008902DD /* AttributeString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeString.swift; sourceTree = "<group>"; };
-		00EE356B29A706D1008902DD /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		00EE356B29A706D1008902DD /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A036500254E8AB0007932D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A1F92D42A010CAC000EB64F /* GPTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTAPI.swift; sourceTree = "<group>"; };
@@ -1003,6 +1005,7 @@
 				1A3543C0254E775F0032B677 /* UIView.Extension.swift */,
 				71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */,
 				1A3543BE254E775F0032B677 /* UIViewController.Extension.swift */,
+				006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */,
 				1A3543C2254E775F0032B677 /* UIWindow.Extension.swift */,
 				71EA693A26563165009463E6 /* UIImage.Extension.swift */,
 				716A8B6C26F58B0100D9C8E9 /* CGFloat.Extension.swift */,
@@ -2516,6 +2519,7 @@
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
 				004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */,
 				1A5C014126CEA2AF00DF819F /* EqualTestViewController.swift in Sources */,
+				006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */,
 				71675A09266A323600392630 /* JPError.swift in Sources */,
 				71070E1E274CBB82004C3257 /* RoomGuideAttentionViewController.swift in Sources */,
 				00D65163257498720074693E /* GradientView.swift in Sources */,
