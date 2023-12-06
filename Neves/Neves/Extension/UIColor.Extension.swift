@@ -81,3 +81,17 @@ extension UIColor {
     class var randomColor: UIColor { UIColor.rgba(RGBA.randomRGBA()) }
     class func randomColor(_ a: CGFloat = 1.0) -> UIColor { UIColor.rgba(RGBA.randomRGBA(a)) }
 }
+
+extension CGColor {
+    // MARK: - 通过RGBA创建颜色
+    class func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, a: CGFloat = 1) -> CGColor {
+        UIColor.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a).cgColor
+    }
+    class func rgba(_ rgba: UIColor.RGBA) -> CGColor {
+        UIColor.init(red: rgba.r / 255.0, green: rgba.g / 255.0, blue: rgba.b / 255.0, alpha: rgba.a).cgColor
+    }
+    
+    // MARK: - 随机颜色
+    class var randomColor: CGColor { UIColor.rgba(UIColor.RGBA.randomRGBA()).cgColor }
+    class func randomColor(_ a: CGFloat = 1.0) -> CGColor { UIColor.rgba(UIColor.RGBA.randomRGBA(a)).cgColor }
+}

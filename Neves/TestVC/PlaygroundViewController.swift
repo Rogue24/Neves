@@ -222,7 +222,24 @@ class PlaygroundViewController: TestBaseViewController {
 //                self.dismiss(animated: true)
 //            }),
 //        ])
+        
+        replaceFunnyAction { [weak self] in
+            guard let self else { return }
+            let ssvc = JPSSVC(vvc: self)
+            
+            ssvc.modalPresentationStyle = .overCurrentContext
+            
+            ssvc.view.frame = [10, 300, 150, 150]
+            
+            self.present(ssvc, animated: false) {
+                ssvc.view.frame = [10, 300, 150, 150]
+            }
+            
+        }
+        
+        JPrint("PlaygroundViewController --- viewDidAppear")
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)

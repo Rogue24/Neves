@@ -9,6 +9,7 @@
 import Foundation
 import AVKit
 
+// MARK: - 自定义日志
 private let JPrintQueue = DispatchQueue(label: "JPrintQueue")
 /// 自定义日志
 func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String = #function) {
@@ -121,6 +122,7 @@ func PageScrollProgress(WithPageSizeValue pageSizeValue: CGFloat,
     return true
 }
 
+// MARK: - 获取【KeyWindow】
 /// 获取`KeyWindow`
 func GetKeyWindow() -> UIWindow? {
     if #available(iOS 13.0, *) {
@@ -140,6 +142,7 @@ func GetKeyWindow() -> UIWindow? {
     return nil
 }
 
+// MARK: - 获取【主Window】
 /// 获取`主Window`
 func GetMainWindow() -> UIWindow? {
     // 一般来说第一个window就是app主体的window。
@@ -152,6 +155,7 @@ func GetMainWindow() -> UIWindow? {
     return UIApplication.shared.windows.first
 }
 
+// MARK: - 获取【下巴】高度
 /// 获取`下巴`高度
 func GetDiffTabBarH() -> CGFloat {
     if #available(iOS 11.0, *) {
@@ -160,6 +164,7 @@ func GetDiffTabBarH() -> CGFloat {
     return 0
 }
 
+// MARK: - 获取【状态栏】高度
 /// 获取`状态栏`高度
 func GetStatusBarH() -> CGFloat {
     var h: CGFloat = 0
@@ -177,12 +182,14 @@ func GetStatusBarH() -> CGFloat {
     return h
 }
 
+// MARK: - 获取最顶层的【ViewController】--- from main window
 /// 获取最顶层的`ViewController` --- 从`主Window`开始查找
 func GetTopMostViewController() -> UIViewController? {
     guard let rootVC = GetMainWindow()?.rootViewController else { return nil }
     return GetTopMostViewController(from: rootVC)
 }
 
+// MARK: - 获取最顶层的【ViewController】--- from some VC
 /// 获取最顶层的`ViewController` --- 从指定VC开始查找
 func GetTopMostViewController(from vc: UIViewController) -> UIViewController {
     if let presentedVC = vc.presentedViewController {
@@ -207,6 +214,7 @@ func GetTopMostViewController(from vc: UIViewController) -> UIViewController {
     }
 }
 
+// MARK: - 解码图片
 /// 解码图片
 func DecodeImage(_ cgImage: CGImage) -> CGImage? {
     let width = cgImage.width
@@ -236,6 +244,7 @@ func DecodeImage(_ cgImage: CGImage) -> CGImage? {
     return decodeImg
 }
 
+// MARK: - 简易播放视频（系统播放器）
 func Play(_ filePath: String, isAutoPlay: Bool = true) {
     guard File.manager.fileExists(filePath) else {
         JPProgressHUD.showError(withStatus: "文件不存在！", userInteractionEnabled: true)
@@ -253,4 +262,14 @@ func Play(_ filePath: String, isAutoPlay: Bool = true) {
     topVC.present(playerVC, animated: true) {
         if isAutoPlay { playerVC.player?.play() }
     }
+}
+
+// MARK: - 获取枚举名
+/// 获取枚举名
+func GetEnumName<T>(_ value: T) -> String {
+    let mirror = Mirror(reflecting: value)
+    guard let displayStyle = mirror.displayStyle, displayStyle == .enum,
+          let enumName = mirror.children.first?.label
+    else { return "" }
+    return enumName
 }

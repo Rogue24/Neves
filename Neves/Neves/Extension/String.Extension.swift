@@ -154,5 +154,42 @@ extension String {
         isOneLine = !isMoreThanOneLine
         return rect.size
     }
+}
+
+extension String {
+    subscript(r: Range<Int>) -> String {
+        let lower: Range<Int>.Bound = max(0, min(count, r.lowerBound))
+        let upper: Range<Int>.Bound = min(count, max(0, r.upperBound))
+        let range = Range(uncheckedBounds: (lower, upper))
+        
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
+    }
     
+    subscript(i: Int) -> String {
+        self[i ..< (i + 1)]
+    }
+    
+    func substring(from i: Int) -> String {
+        self[min(i, count) ..< count]
+    }
+    
+    func substring(to i: Int) -> String {
+        self[0 ..< max(0, i)]
+    }
+    
+    func substring(at i: Int) -> String {
+        self[i]
+    }
+}
+
+extension JP where Base == String {
+    func prefix(_ maxLength: Int) -> String {
+        String(base.prefix(maxLength))
+    }
+    
+    func suffix(_ maxLength: Int) -> String {
+        String(base.suffix(maxLength))
+    }
 }

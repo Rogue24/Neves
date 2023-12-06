@@ -195,6 +195,14 @@
                 "vcName": "TestDismissAllViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "TestCollectionViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "TestNotificationViewController",
+                "vcCreateWay" : 0
+            },
         ],
     },
     {
@@ -285,24 +293,6 @@
         ],
     },
     {
-        "header" : "Kingfisher",
-        "vcList" : [
-            {
-                "vcName": "KingfisherTestViewController",
-                "vcCreateWay" : 0
-            },
-        ]
-    },
-    {
-        "header" : "Realm",
-        "vcList" : [
-            {
-                "vcName": "RealmTestViewController",
-                "vcCreateWay" : 0
-            },
-        ]
-    },
-    {
         "header" : "Image",
         "vcList" : [
             {
@@ -379,6 +369,23 @@
             },
             {
                 "vcName": "WidgetView",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "ThirdKit",
+        "vcList" : [
+            {
+                "vcName": "KingfisherTestViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "RealmTestViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "JYXBDrawingBoardTestViewController",
                 "vcCreateWay" : 0
             },
         ]

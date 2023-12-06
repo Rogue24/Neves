@@ -88,3 +88,9 @@ let ShotMonths: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Au
 
 let Weekdays: [String] = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 let ShotWeekdays: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+let isRTL: Bool = {
+    guard let window = GetMainWindow() else { return false }
+    let layoutDirection = UIView.userInterfaceLayoutDirection(for: window.semanticContentAttribute)
+    return layoutDirection == .rightToLeft
+}()
