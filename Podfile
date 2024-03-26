@@ -15,7 +15,7 @@ target 'Neves' do
   pod 'SwiftyJSON'
   pod 'KakaJSON'
   pod 'lottie-ios', '~> 3.5.0'
-  pod 'SnapKit'
+  pod 'SnapKit', '~> 5.7.1'
   pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'FunnyButton', '~> 0.1.5'
