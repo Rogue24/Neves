@@ -24,6 +24,7 @@
 		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
+		00535C702B7E0B1700C308C9 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00535C6F2B7E0B1700C308C9 /* girl.jpg */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
@@ -403,6 +404,7 @@
 		0053548029607E5900E52CBB /* ImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerObject.swift; sourceTree = "<group>"; };
 		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
+		00535C6F2B7E0B1700C308C9 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.Extension.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
@@ -1006,6 +1008,7 @@
 				713998052705B64D002BC263 /* Girl8.jpg */,
 				71EA694026563270009463E6 /* Girl9.jpg */,
 				1A354374254E775F0032B677 /* JPIcon.png */,
+				00535C6F2B7E0B1700C308C9 /* girl.jpg */,
 			);
 			path = Picture;
 			sourceTree = "<group>";
@@ -2237,6 +2240,7 @@
 				71F249F12731517A00FAAD93 /* noAccLrc1.txt in Resources */,
 				7110743D271ECA4800178969 /* voices.m4a in Resources */,
 				71F249F22731517A00FAAD93 /* noAccLrc2.txt in Resources */,
+				00535C702B7E0B1700C308C9 /* girl.jpg in Resources */,
 				71F249F42731517A00FAAD93 /* lrc1.txt in Resources */,
 				1A354370254E76B40032B677 /* lottie in Resources */,
 				7139980A2705B64D002BC263 /* Girl4.jpg in Resources */,

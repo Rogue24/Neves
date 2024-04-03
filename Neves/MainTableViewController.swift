@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import KakaJSON
+
 
 class MainTableViewController: UITableViewController {
     
@@ -33,18 +35,18 @@ class MainTableViewController: UITableViewController {
                         switch context {
                         case "KFImageTestView":
                             if #available(iOS 15.0.0, *) {
-                                return KFImageTestView().intoVC()
+                                return KFImageTestView().intoUIVC()
                             } else {
                                 return nil
                             }
                         case "ResultBuilderView":
                             if #available(iOS 14.0.0, *) {
-                                return ResultBuilderView().intoVC()
+                                return ResultBuilderView().intoUIVC()
                             } else {
                                 return nil
                             }
                         case "WidgetView":
-                            let vc = WidgetView().intoVC()
+                            let vc = WidgetView().intoUIVC()
                             vc.replaceFunnyAction {
                                 JPrint("wahahaha")
                             }

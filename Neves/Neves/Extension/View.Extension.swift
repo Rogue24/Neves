@@ -8,7 +8,7 @@
 import SwiftUI
 
 extension View {
-    func intoVC() -> UIHostingController<Self> {
+    func intoUIVC() -> UIHostingController<Self> {
         UIHostingController(rootView: self)
     }
 }
