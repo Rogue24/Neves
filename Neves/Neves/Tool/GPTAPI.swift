@@ -16,7 +16,7 @@ enum GPTAPI {
     /// ChatGPT API Model
     static let apiModel = "gpt-3.5-turbo"
     /// ChatGPT API Key
-    static let apiKey = "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"
+    static let apiKey = "xxxx"
     
     enum Error: Swift.Error, LocalizedError {
         /// 参数错误
