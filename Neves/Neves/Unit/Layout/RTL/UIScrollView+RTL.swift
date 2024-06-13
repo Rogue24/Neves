@@ -69,7 +69,8 @@ extension UIScrollView {
         setContentOffset(offset, animated: animated)
     }
     
-    /// 相对自身的转换值
+    /// 相对【自身宽度】的转换值
+    /// - PS: 自身宽度在`ScrollView`中是内容参照宽度，也就是内容的总宽度`contentSize.width`
     override func rtl_valueFromSelf(_ v: CGFloat) -> CGFloat {
         isRTL ? (rtl_contentRefWidth - v) : v
     }

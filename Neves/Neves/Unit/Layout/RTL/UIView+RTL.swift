@@ -93,12 +93,13 @@ extension UIView {
     }
     
     /// 相对【参照宽度】的转换值
-    @objc func rtl_valueFromRef(_ v: CGFloat) -> CGFloat {
+    func rtl_valueFromRef(_ v: CGFloat) -> CGFloat {
         isRTL ? (rtl_refWidth - v) : v
     }
 }
 
 extension UIView {
+    /// 沿着Y轴180°翻转（水平镜像）
     func rtl_flip() {
         guard isRTL else { return }
         layer.transform = CATransform3DMakeRotation(CGFloat.pi, 0, 1, 0)
