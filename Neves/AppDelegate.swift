@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FunnyButton.orientationMask = JPScreenRotator.sharedInstance().orientationMask
+        JPScreenRotator.sharedInstance().isLockLandscapeWhenDeviceOrientationDidChange = false
+        JPScreenRotator.sharedInstance().isLockOrientationWhenDeviceOrientationDidChange = false
         JPScreenRotator.sharedInstance().orientationMaskDidChange = { orientationMask in
             FunnyButton.orientationMask = orientationMask
         }
