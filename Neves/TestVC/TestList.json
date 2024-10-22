@@ -311,6 +311,10 @@
                 "vcName": "FocusOnFacesViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "DeepLabV3ViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

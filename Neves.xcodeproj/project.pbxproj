@@ -55,6 +55,8 @@
 		00E4BC442C79F6D100D1C9EB /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC432C79F6D100D1C9EB /* AFNetworking */; };
 		00E4BC4A2C7A4B5800D1C9EB /* JPImageresizerView in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */; };
 		00E707282CC7D27B00733639 /* JPHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E707272CC7D27B00733639 /* JPHUD.swift */; };
+		00E7072B2CC7D81200733639 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00E7072A2CC7D81200733639 /* DeepLabV3.mlmodel */; };
+		00E7072D2CC7D83400733639 /* DeepLabV3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7072C2CC7D83400733639 /* DeepLabV3ViewController.swift */; };
 		00EE356429A70448008902DD /* JYXBDrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356129A70448008902DD /* JYXBDrawingBoard.swift */; };
 		00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */; };
 		00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */; };
@@ -436,6 +438,8 @@
 		00D65160257498720074693E /* Gradientable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradientable.swift; sourceTree = "<group>"; };
 		00D65161257498720074693E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		00E707272CC7D27B00733639 /* JPHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPHUD.swift; sourceTree = "<group>"; };
+		00E7072A2CC7D81200733639 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
+		00E7072C2CC7D83400733639 /* DeepLabV3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLabV3ViewController.swift; sourceTree = "<group>"; };
 		00EE356129A70448008902DD /* JYXBDrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoard.swift; sourceTree = "<group>"; };
 		00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoardOperator.swift; sourceTree = "<group>"; };
 		00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBOTODrawingBoard.swift; sourceTree = "<group>"; };
@@ -928,6 +932,15 @@
 			path = Gradient;
 			sourceTree = "<group>";
 		};
+		00E707292CC7D80400733639 /* DeepLabV3 */ = {
+			isa = PBXGroup;
+			children = (
+				00E7072A2CC7D81200733639 /* DeepLabV3.mlmodel */,
+				00E7072C2CC7D83400733639 /* DeepLabV3ViewController.swift */,
+			);
+			path = DeepLabV3;
+			sourceTree = "<group>";
+		};
 		00EE358429A70BEE008902DD /* JYXBDrawingBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1397,6 +1410,7 @@
 				1A9E419526BE45D6006941D0 /* CircleMedal */,
 				71EA693D265631DF009463E6 /* WatermarkViewController.swift */,
 				718066A927D74D70002CAC09 /* FocusOnFacesViewController.swift */,
+				00E707292CC7D80400733639 /* DeepLabV3 */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -2389,6 +2403,7 @@
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
 				0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */,
 				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
+				00E7072D2CC7D83400733639 /* DeepLabV3ViewController.swift in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,
 				71C2AB00283F6FBE0066CF5E /* TestDoCatchViewController.swift in Sources */,
 				71EA693E265631DF009463E6 /* WatermarkViewController.swift in Sources */,
@@ -2398,6 +2413,7 @@
 				718018C2272261380056E699 /* DecodeImageProvider.swift in Sources */,
 				71F24A032732270800FAAD93 /* DragonSlayerBanner.View.swift in Sources */,
 				0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */,
+				00E7072B2CC7D81200733639 /* DeepLabV3.mlmodel in Sources */,
 				00EE356829A705CC008902DD /* CG.swift in Sources */,
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
 				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
