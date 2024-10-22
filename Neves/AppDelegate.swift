@@ -41,8 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             FunnyButton.orientationMask = orientationMask
         }
         
-        JPProgressHUD.setMaxSupportedWindowLevel(.alert)
-        JPProgressHUD.setMinimumDismissTimeInterval(1.3)
+        JPHUD.setMaxSupportedWindowLevel(.alert)
+        JPHUD.setMinimumDismissTimeInterval(1.3)
         
         JPrint(File.documentDirPath)
         JPrint(File.documentFilePath("123"))
@@ -86,6 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        JPrint("isPortrait \(JPScreenRotator.sharedInstance().isPortrait)");
         return JPScreenRotator.sharedInstance().orientationMask
     }
 }

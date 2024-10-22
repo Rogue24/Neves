@@ -42,7 +42,7 @@ class DiffableTestViewController: TestBaseViewController {
             guard let self = self, let dataSource = self.dataSource else { return }
             
             Task {
-                JPProgressHUD.show()
+                JPHUD.show()
                 
                 var models = await MoguBanner.requestDataModel()
                 models = models.shuffled()
@@ -59,7 +59,7 @@ class DiffableTestViewController: TestBaseViewController {
                 
                 await dataSource.apply(snapshot, animatingDifferences: true)
                 
-                JPProgressHUD.dismiss()
+                JPHUD.dismiss()
             }
             
         }

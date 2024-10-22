@@ -28,6 +28,7 @@
 #import "OCTestObject.h"
 #import "OCEqualTestViewController.h"
 #import "MyCache.h"
+#import <libpag/PAGView.h>
 
 // JPBasic
 #import "JPInline.h"
@@ -36,7 +37,6 @@
 #import "UIView+JPExtension.h"
 #import "UIView+JPPOP.h"
 #import "UIColor+JPExtension.h"
-#import "JPProgressHUD.h"
 #import "JPFileTool.h"
 #import "UIViewController+JPExtension.h"
 #import "UIImage+JPExtension.h"

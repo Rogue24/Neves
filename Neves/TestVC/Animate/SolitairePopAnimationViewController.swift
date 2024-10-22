@@ -282,7 +282,7 @@ class SolitairePopAnimationViewController: TestBaseViewController {
         
         let maxTime = anim1Duration + anim2Duration + duration
         
-        JPProgressHUD.show()
+        JPHUD.show()
         Asyncs.async {
             
             let size: CGSize = [360, 360]
@@ -292,7 +292,7 @@ class SolitairePopAnimationViewController: TestBaseViewController {
             guard let ctx = UIGraphicsGetCurrentContext() else {
                 UIGraphicsEndImageContext()
                 Asyncs.main {
-                    JPProgressHUD.showError(withStatus: "失败", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败")
                 }
                 return
             }
@@ -334,10 +334,10 @@ class SolitairePopAnimationViewController: TestBaseViewController {
                 Asyncs.main {
                     switch result {
                     case let .success(path):
-                        JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+                        JPHUD.showSuccess(withStatus: "成功！")
                         JPrint("视频路径", path)
                     case .failure:
-                        JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                        JPHUD.showError(withStatus: "失败！")
                     }
                 }
             }

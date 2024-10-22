@@ -28,10 +28,10 @@ class MainActorTestVC: TestBaseViewController {
                 JPrint("func begin")
                 Task { @MainActor in
                     JPrint("task begin")
-                    JPProgressHUD.show()
+                    JPHUD.show()
                     let image = await self.getImage()
                     self.imgView.image = image
-                    JPProgressHUD.dismiss()
+                    JPHUD.dismiss()
                     JPrint("task ended")
                 }
                 JPrint("func ended")
@@ -42,12 +42,12 @@ class MainActorTestVC: TestBaseViewController {
                 JPrint("func begin")
                 Task {
                     JPrint("task begin")
-                    JPProgressHUD.show()
+                    JPHUD.show()
                     let image = await self.getImage()
                     await MainActor.run {
                         self.imgView.image = image
                     }
-                    JPProgressHUD.dismiss()
+                    JPHUD.dismiss()
                     JPrint("task ended")
                 }
                 JPrint("func ended")
@@ -58,9 +58,9 @@ class MainActorTestVC: TestBaseViewController {
                 JPrint("func begin")
                 Task {
                     JPrint("task begin")
-                    JPProgressHUD.show()
+                    JPHUD.show()
                     await self.setImage(self.getImage())
-                    JPProgressHUD.dismiss()
+                    JPHUD.dismiss()
                     JPrint("task ended")
                 }
                 JPrint("func ended")

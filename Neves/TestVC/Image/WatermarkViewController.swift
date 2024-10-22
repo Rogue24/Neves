@@ -36,7 +36,7 @@ class WatermarkViewController: TestBaseViewController {
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        JPProgressHUD.show()
+        JPHUD.show()
         var watermark1: UIImage? = nil
         var watermark2: UIImage? = nil
         Asyncs.async {
@@ -44,7 +44,7 @@ class WatermarkViewController: TestBaseViewController {
 //            watermark2 = self.originImage2.jp.watermark
             watermark2 = self.originImage2.jp.watermarkOnScreenWidth
         } mainTask: {
-            JPProgressHUD.dismiss()
+            JPHUD.dismiss()
             guard let image1 = watermark1,
                   let image2 = watermark2 else { return }
             self.imgView1.image = image1

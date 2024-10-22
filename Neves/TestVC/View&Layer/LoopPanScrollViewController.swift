@@ -104,9 +104,9 @@ class LoopPanScrollViewController: TestBaseViewController {
             FunnyAction(name: "刷新数据") { [weak self] in
                 guard let self = self else { return }
                 
-                JPProgressHUD.show()
+                JPHUD.show()
                 Asyncs.mainDelay(0.2) {
-                    JPProgressHUD.dismiss()
+                    JPHUD.dismiss()
                     let dataList = (1 ..< Int.random(in: 2...10)).map { $0 }
                     self.reloadData(dataList)
                 }

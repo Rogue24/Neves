@@ -12,7 +12,7 @@ class ImageVideoMakeViewController: TestBaseViewController {
     let maker = VideoMaker()
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        JPProgressHUD.show()
+        JPHUD.show()
         
         var indexs: Set<Int> = Set()
         for i in 1 ... 8 { indexs.insert(i) }
@@ -26,7 +26,7 @@ class ImageVideoMakeViewController: TestBaseViewController {
         
         maker.makeVideo(with: imageInfos) { result in
             Asyncs.main {
-                JPProgressHUD.dismiss()
+                JPHUD.dismiss()
             }
             switch result {
             case let .success(cachePath):

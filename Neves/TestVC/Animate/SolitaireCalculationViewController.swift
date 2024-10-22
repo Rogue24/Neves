@@ -348,7 +348,7 @@ class SolitaireCalculationViewController: TestBaseViewController {
     
     @objc func makeVideo() {
         
-        JPProgressHUD.show()
+        JPHUD.show()
         
 //        Asyncs.async {
 //
@@ -359,7 +359,7 @@ class SolitaireCalculationViewController: TestBaseViewController {
 //            guard let ctx = UIGraphicsGetCurrentContext() else {
 //                UIGraphicsEndImageContext()
 //                Asyncs.main {
-//                    JPProgressHUD.showError(withStatus: "失败", userInteractionEnabled: true)
+//                    JPHUD.showError(withStatus: "失败")
 //                }
 //                return
 //            }
@@ -391,10 +391,10 @@ class SolitaireCalculationViewController: TestBaseViewController {
 //                Asyncs.main {
 //                    switch result {
 //                    case let .success(path):
-//                        JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+//                        JPHUD.showSuccess(withStatus: "成功！")
 //                        JPrint("视频路径", path)
 //                    case .failure:
-//                        JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+//                        JPHUD.showError(withStatus: "失败！")
 //                    }
 //                }
 //            }
@@ -411,12 +411,12 @@ class SolitaireCalculationViewController: TestBaseViewController {
         } completion: { result in
             switch result {
             case let .success(path):
-                JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+                JPHUD.showSuccess(withStatus: "成功！")
                 File.manager.deleteFile(Self.videoPath)
                 Self.videoPath = path
                 JPrint("成功！视频路径", path)
             case .failure:
-                JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                JPHUD.showError(withStatus: "失败！")
             }
         }
         
@@ -424,7 +424,7 @@ class SolitaireCalculationViewController: TestBaseViewController {
     
     @objc func playVideo() {
         guard let videoPath = Self.videoPath else {
-            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+            JPHUD.showError(withStatus: "木有视频！")
             return
         }
         

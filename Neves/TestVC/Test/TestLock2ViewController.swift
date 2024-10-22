@@ -11,7 +11,7 @@ class TestLock2ViewController: TestBaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        JPProgressHUD.show(true)
+        JPHUD.show(isUserInteractionEnabled: true)
         
         replaceFunnyAction { [weak self] in
             guard let self = self else { return }
@@ -53,6 +53,6 @@ class TestLock2ViewController: TestBaseViewController {
         super.viewWillDisappear(animated)
         removeFunnyActions()
         
-        JPProgressHUD.dismiss()
+        JPHUD.dismiss()
     }
 }

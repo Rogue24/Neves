@@ -100,13 +100,13 @@ class LayerVideoViewController: TestBaseViewController {
 //        let solitaireLayer = solitaireView.layer
         let animLayer: VideoAnimationLayer? = solitaireLayer
         
-        JPProgressHUD.show(true)
+        JPHUD.show(isUserInteractionEnabled: true)
         Asyncs.async {
             guard let bgPicker = LottieImagePicker(lottieName: "album_videobg_jielong_lottie",
                                                    animSize: self.size) else {
                 Asyncs.main {
                     JPrint("失败！")
-                    JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败！")
                     self.isMaking = false
                 }
                 return
@@ -116,7 +116,7 @@ class LayerVideoViewController: TestBaseViewController {
                                                       animSize: [220, 220]) else {
                 Asyncs.main {
                     JPrint("失败！")
-                    JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败！")
                     self.isMaking = false
                 }
                 return
@@ -154,7 +154,7 @@ class LayerVideoViewController: TestBaseViewController {
                 
                 switch result {
                 case let .success(path):
-                    JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+                    JPHUD.showSuccess(withStatus: "成功！")
                     
                     File.manager.deleteFile(Self.videoPath)
                     Self.videoPath = path
@@ -162,7 +162,7 @@ class LayerVideoViewController: TestBaseViewController {
                     
                 case .failure:
                     JPrint("失败！")
-                    JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败！")
                 }
                 
                 self.isMaking = false
@@ -178,7 +178,7 @@ class LayerVideoViewController: TestBaseViewController {
 //        }
 //
 //        guard let videoPath = Self.videoPath else {
-//            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+//            JPHUD.showError(withStatus: "木有视频！")
 //            return
 //        }
 //
@@ -194,7 +194,7 @@ class LayerVideoViewController: TestBaseViewController {
         player.currentItem?.asset.cancelLoading()
 
         guard let videoPath = Self.videoPath else {
-            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+            JPHUD.showError(withStatus: "木有视频！")
             return
         }
         

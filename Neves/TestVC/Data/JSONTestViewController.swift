@@ -25,8 +25,8 @@ class JSONTestViewController: TestBaseViewController {
     
     func test() {
         Task {
-            JPProgressHUD.show()
-            defer { JPProgressHUD.dismiss() }
+            JPHUD.show()
+            defer { JPHUD.dismiss() }
             
             guard let data = await MoguBanner.requestData() else {
                 JPrint("获取数据失败")

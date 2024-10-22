@@ -110,8 +110,8 @@ extension AwaitTestViewController {
 extension AwaitTestViewController {
     func testDownloadImage() {
         Task {
-            JPProgressHUD.show()
-            defer { JPProgressHUD.dismiss() }
+            JPHUD.show()
+            defer { JPHUD.dismiss() }
             
             let size: CGSize = [self.imgView.width * ScreenScale, self.imgView.height * ScreenScale]
 

@@ -189,7 +189,7 @@ extension MainTableViewController {
         if let vcBuilder = rowItem.vcBuilder, let vc = vcBuilder.build() {
             navigationController?.pushViewController(vc, animated: true)
         } else {
-            JPProgressHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建", userInteractionEnabled: true)
+            JPHUD.showInfo(withStatus: "\(rowItem.vcName)还没构建")
         }
     }
 }

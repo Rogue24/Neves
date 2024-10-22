@@ -247,12 +247,12 @@ func DecodeImage(_ cgImage: CGImage) -> CGImage? {
 // MARK: - 简易播放视频（系统播放器）
 func Play(_ filePath: String, isAutoPlay: Bool = true) {
     guard File.manager.fileExists(filePath) else {
-        JPProgressHUD.showError(withStatus: "文件不存在！", userInteractionEnabled: true)
+        JPHUD.showError(withStatus: "文件不存在！")
         return
     }
     
     guard let topVC = GetTopMostViewController() else {
-        JPProgressHUD.showError(withStatus: "木有控制器！", userInteractionEnabled: true)
+        JPHUD.showError(withStatus: "木有控制器！")
         return
     }
     

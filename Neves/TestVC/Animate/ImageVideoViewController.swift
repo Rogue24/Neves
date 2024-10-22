@@ -83,12 +83,12 @@ class ImageVideoViewController: TestBaseViewController {
         let audioPath = Bundle.main.path(forResource: "Matteo-Panama", ofType: "mp3")
         let animLayer = solitaireLayer
         
-        JPProgressHUD.show(true)
+        JPHUD.show(isUserInteractionEnabled: true)
         Asyncs.async {
             guard let store1 = LottieImageStore.createStore(configure: LottieImageStore.Configure(lottieName: "album_videobg_jielong_lottie", imageSize: self.size)) else {
                 Asyncs.main {
                     JPrint("失败！")
-                    JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败！")
                     self.isMaking = false
                 }
                 return
@@ -97,7 +97,7 @@ class ImageVideoViewController: TestBaseViewController {
             guard let store2 = LottieImageStore.createStore(configure: LottieImageStore.Configure(lottieName: "video_tx_jielong_lottie", imageSize: self.size, lottieSize: [220, 220]) { [374, 250, $1.width, $1.height] }) else {
                 Asyncs.main {
                     JPrint("失败！")
-                    JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败！")
                     self.isMaking = false
                 }
                 return
@@ -113,7 +113,7 @@ class ImageVideoViewController: TestBaseViewController {
                                  imageStores: [store1, store2]) { result in
                 switch result {
                 case let .success(path):
-                    JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+                    JPHUD.showSuccess(withStatus: "成功！")
                     
                     File.manager.deleteFile(Self.videoPath)
                     Self.videoPath = path
@@ -121,7 +121,7 @@ class ImageVideoViewController: TestBaseViewController {
                     
                 case .failure:
                     JPrint("失败！")
-                    JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                    JPHUD.showError(withStatus: "失败！")
                 }
                 
                 self.isMaking = false
@@ -136,7 +136,7 @@ class ImageVideoViewController: TestBaseViewController {
         }
         
         guard let videoPath = Self.videoPath else {
-            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+            JPHUD.showError(withStatus: "木有视频！")
             return
         }
         

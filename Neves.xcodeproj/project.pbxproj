@@ -54,6 +54,7 @@
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
 		00E4BC442C79F6D100D1C9EB /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC432C79F6D100D1C9EB /* AFNetworking */; };
 		00E4BC4A2C7A4B5800D1C9EB /* JPImageresizerView in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */; };
+		00E707282CC7D27B00733639 /* JPHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E707272CC7D27B00733639 /* JPHUD.swift */; };
 		00EE356429A70448008902DD /* JYXBDrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356129A70448008902DD /* JYXBDrawingBoard.swift */; };
 		00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */; };
 		00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */; };
@@ -434,6 +435,7 @@
 		00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDismissAllViewController.swift; sourceTree = "<group>"; };
 		00D65160257498720074693E /* Gradientable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradientable.swift; sourceTree = "<group>"; };
 		00D65161257498720074693E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		00E707272CC7D27B00733639 /* JPHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPHUD.swift; sourceTree = "<group>"; };
 		00EE356129A70448008902DD /* JYXBDrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoard.swift; sourceTree = "<group>"; };
 		00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoardOperator.swift; sourceTree = "<group>"; };
 		00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JYXBOTODrawingBoard.swift; sourceTree = "<group>"; };
@@ -1107,6 +1109,7 @@
 		1A3543CD254E775F0032B677 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				00E707272CC7D27B00733639 /* JPHUD.swift */,
 				1A1F92D42A010CAC000EB64F /* GPTAPI.swift */,
 				00A364232B20160E00CDCFAF /* TorchTool.swift */,
 				71A737B828E68A2300B7C027 /* ScreenRotator.swift */,
@@ -2399,6 +2402,7 @@
 				7189227D281153FF00EC4CA4 /* UserDefault.swift in Sources */,
 				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
+				00E707282CC7D27B00733639 /* JPHUD.swift in Sources */,
 				1A354528254E77600032B677 /* JPInteractiveTransition.m in Sources */,
 				008DC2E529763D510039AB22 /* Hookable.swift in Sources */,
 				1A9E41A926BFE0C5006941D0 /* PropertyWrapperTestVC.swift in Sources */,

@@ -123,12 +123,12 @@ class LottieImagePickerViewController: TestBaseViewController {
         
         isPicking = true
         
-        JPProgressHUD.show()
+        JPHUD.show()
         picker.asyncPickAllImages(framerate: nil, directoryPath: "/Users/aa/Desktop/LottieTest/Images/") { isSuccess in
             if isSuccess {
-                JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+                JPHUD.showSuccess(withStatus: "成功！")
             } else {
-                JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                JPHUD.showError(withStatus: "失败！")
             }
             self.isPicking = false
         }
@@ -147,20 +147,20 @@ class LottieImagePickerViewController: TestBaseViewController {
         }
         
         isPicking = true
-        JPProgressHUD.show()
+        JPHUD.show()
         
         let maker = VideoMaker()
         maker.makeVideo(with: picker) { result in
             switch result {
             case let .success(path):
-                JPProgressHUD.showSuccess(withStatus: "成功！", userInteractionEnabled: true)
+                JPHUD.showSuccess(withStatus: "成功！")
                 
                 File.manager.deleteFile(Self.videoPath)
                 Self.videoPath = path
                 JPrint("成功！视频路径", path)
                 
             case .failure:
-                JPProgressHUD.showError(withStatus: "失败！", userInteractionEnabled: true)
+                JPHUD.showError(withStatus: "失败！")
             }
             self.isPicking = false
         }
@@ -173,7 +173,7 @@ class LottieImagePickerViewController: TestBaseViewController {
         }
 
         guard let videoPath = Self.videoPath else {
-            JPProgressHUD.showError(withStatus: "木有视频！", userInteractionEnabled: true)
+            JPHUD.showError(withStatus: "木有视频！")
             return
         }
 
@@ -181,7 +181,7 @@ class LottieImagePickerViewController: TestBaseViewController {
     }
     
     @objc func pickImagesToStore() {
-        JPProgressHUD.show()
+        JPHUD.show()
         Asyncs.async {
             let directoryPath = "/Users/aa/Desktop/LottieTest/Images/"
             
@@ -246,7 +246,7 @@ class LottieImagePickerViewController: TestBaseViewController {
 //                self.s3 = s3
 //            }
             
-            Asyncs.main { JPProgressHUD.dismiss() }
+            Asyncs.main { JPHUD.dismiss() }
         }
     }
 }
