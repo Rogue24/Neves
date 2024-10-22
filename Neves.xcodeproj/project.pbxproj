@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433D254E75EB0032B677 /* SceneDelegate.swift */; };
 		00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00055475291A56A800AEC49B /* ScreenRotatorState.swift */; };
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
 		002E0C582ADD0AFC008EA4B8 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */; };
@@ -25,6 +26,7 @@
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
 		00535C702B7E0B1700C308C9 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00535C6F2B7E0B1700C308C9 /* girl.jpg */; };
+		00551A732C79C9A700F08DC9 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 00551A722C79C9A700F08DC9 /* SVProgressHUD */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
@@ -50,6 +52,8 @@
 		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
 		00D65162257498720074693E /* Gradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65160257498720074693E /* Gradientable.swift */; };
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
+		00E4BC442C79F6D100D1C9EB /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC432C79F6D100D1C9EB /* AFNetworking */; };
+		00E4BC4A2C7A4B5800D1C9EB /* JPImageresizerView in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */; };
 		00EE356429A70448008902DD /* JYXBDrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356129A70448008902DD /* JYXBDrawingBoard.swift */; };
 		00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356229A70448008902DD /* JYXBDrawingBoardOperator.swift */; };
 		00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356329A70448008902DD /* JYXBOTODrawingBoard.swift */; };
@@ -59,7 +63,6 @@
 		00FBB3C42BEB7A0B00D78D40 /* UIImageView+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBB3C32BEB7A0B00D78D40 /* UIImageView+RTL.swift */; };
 		1A1F92D52A010CAC000EB64F /* GPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F92D42A010CAC000EB64F /* GPTAPI.swift */; };
 		1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433B254E75EB0032B677 /* AppDelegate.swift */; };
-		1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433D254E75EB0032B677 /* SceneDelegate.swift */; };
 		1A354343254E75EB0032B677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A354341254E75EB0032B677 /* Main.storyboard */; };
 		1A354345254E75EC0032B677 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A354344254E75EC0032B677 /* Assets.xcassets */; };
 		1A354348254E75EC0032B677 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A354346254E75EC0032B677 /* LaunchScreen.storyboard */; };
@@ -831,7 +834,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00551A732C79C9A700F08DC9 /* SVProgressHUD in Frameworks */,
 				1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */,
+				00E4BC4A2C7A4B5800D1C9EB /* JPImageresizerView in Frameworks */,
+				00E4BC442C79F6D100D1C9EB /* AFNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2158,6 +2164,11 @@
 			dependencies = (
 			);
 			name = Neves;
+			packageProductDependencies = (
+				00551A722C79C9A700F08DC9 /* SVProgressHUD */,
+				00E4BC432C79F6D100D1C9EB /* AFNetworking */,
+				00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */,
+			);
 			productName = Neves;
 			productReference = 1A354338254E75EB0032B677 /* Neves.app */;
 			productType = "com.apple.product-type.application";
@@ -2186,6 +2197,11 @@
 				Base,
 			);
 			mainGroup = 1A35432F254E75EB0032B677;
+			packageReferences = (
+				00551A712C79C9A700F08DC9 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				00E4BC422C79F44E00D1C9EB /* XCRemoteSwiftPackageReference "AFNetworking" */,
+				00E4BC482C7A4B5800D1C9EB /* XCRemoteSwiftPackageReference "JPImageresizerView" */,
+			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2413,6 +2429,7 @@
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				71A2702A2857432000B9D000 /* Modifier.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
+				0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */,
 				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
 				0053548429607E5900E52CBB /* ImagePicker.swift in Sources */,
 				00EE356A29A705E6008902DD /* AttributeString.swift in Sources */,
@@ -2543,7 +2560,6 @@
 				717F59DD27F6E74B00D759FB /* CosmicExplorationMenuView.swift in Sources */,
 				71B18FBB26D338E1006CF7C0 /* UpdateStore.swift in Sources */,
 				1A354542254E77600032B677 /* SublayerTransformTestVC.swift in Sources */,
-				1A35433E254E75EB0032B677 /* SceneDelegate.swift in Sources */,
 				1A354509254E77600032B677 /* JPGradientView.m in Sources */,
 				00A3641F2B20114600CDCFAF /* CALayer+RTL.swift in Sources */,
 				1A354525254E77600032B677 /* JPTextLayoutTool.m in Sources */,
@@ -2862,6 +2878,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00551A712C79C9A700F08DC9 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+		00E4BC422C79F44E00D1C9EB /* XCRemoteSwiftPackageReference "AFNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AFNetworking/AFNetworking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		00E4BC482C7A4B5800D1C9EB /* XCRemoteSwiftPackageReference "JPImageresizerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Rogue24/JPImageresizerView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00551A722C79C9A700F08DC9 /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00551A712C79C9A700F08DC9 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
+		00E4BC432C79F6D100D1C9EB /* AFNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00E4BC422C79F44E00D1C9EB /* XCRemoteSwiftPackageReference "AFNetworking" */;
+			productName = AFNetworking;
+		};
+		00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00E4BC482C7A4B5800D1C9EB /* XCRemoteSwiftPackageReference "JPImageresizerView" */;
+			productName = JPImageresizerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A354330254E75EB0032B677 /* Project object */;
 }

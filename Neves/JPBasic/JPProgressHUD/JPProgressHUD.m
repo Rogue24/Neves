@@ -7,7 +7,7 @@
 //
 
 #import "JPProgressHUD.h"
-#import <SVProgressHUD/SVProgressHUD.h>
+#import <SVProgressHUD.h>
 
 @implementation JPProgressHUD
 
