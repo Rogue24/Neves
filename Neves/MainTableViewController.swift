@@ -35,16 +35,23 @@ class MainTableViewController: UITableViewController {
                         switch context {
                         case "KFImageTestView":
                             return KFImageTestView().intoUIVC()
+                            
                         case "ResultBuilderView":
                             return ResultBuilderView().intoUIVC()
+                            
                         case "WidgetView":
                             let vc = WidgetView().intoUIVC()
                             vc.replaceFunnyAction {
                                 JPrint("wahahaha")
                             }
                             return vc
+                            
                         case "TypingTextView":
                             return TypingTextView().intoUIVC()
+                            
+                        case "AnimatedTypingTextView":
+                            return AnimatedTypingTextView().intoUIVC()
+                            
                         default:
                             return nil
                         }

@@ -387,6 +387,10 @@
                 "vcName": "TypingTextView",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "AnimatedTypingTextView",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

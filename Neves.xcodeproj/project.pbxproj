@@ -49,6 +49,7 @@
 		00BC975C2AEE480600944EA9 /* TestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */; };
 		00C5618F2DF9E4CC00D35E7A /* TypingLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */; };
 		00C561912DF9E70400D35E7A /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C561902DF9E70400D35E7A /* TypingTextView.swift */; };
+		00C561942DF9EB6900D35E7A /* AnimatedTypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C561932DF9EB6900D35E7A /* AnimatedTypingTextView.swift */; };
 		00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109A725749DA200F17889 /* TestBaseViewController.swift */; };
 		00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109AA25749DBC00F17889 /* RealmTestViewController.swift */; };
 		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
@@ -435,6 +436,7 @@
 		00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotificationViewController.swift; sourceTree = "<group>"; };
 		00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingLabelViewController.swift; sourceTree = "<group>"; };
 		00C561902DF9E70400D35E7A /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
+		00C561932DF9EB6900D35E7A /* AnimatedTypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTypingTextView.swift; sourceTree = "<group>"; };
 		00D109A725749DA200F17889 /* TestBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
 		00D109AA25749DBC00F17889 /* RealmTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestViewController.swift; sourceTree = "<group>"; };
 		00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDismissAllViewController.swift; sourceTree = "<group>"; };
@@ -919,6 +921,7 @@
 			isa = PBXGroup;
 			children = (
 				00C561902DF9E70400D35E7A /* TypingTextView.swift */,
+				00C561932DF9EB6900D35E7A /* AnimatedTypingTextView.swift */,
 			);
 			path = TypingText;
 			sourceTree = "<group>";
@@ -2560,6 +2563,7 @@
 				719299EB281A45DB00CCE872 /* PKChallengePopView.swift in Sources */,
 				1A3544F7254E77600032B677 /* UIColor.Extension.swift in Sources */,
 				1A9E41A026BE4633006941D0 /* JPCroper.swift in Sources */,
+				00C561942DF9EB6900D35E7A /* AnimatedTypingTextView.swift in Sources */,
 				1A354521254E77600032B677 /* JPConstant.m in Sources */,
 				71F249EA2731517A00FAAD93 /* JPMagicCubeBubbleLaunchAble.swift in Sources */,
 				7151894A27EB2AF400342645 /* Attachable.swift in Sources */,
