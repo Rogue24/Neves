@@ -24,7 +24,9 @@ target 'Neves' do
   pod 'pop'
   pod 'YYText'
   pod 'MJRefresh'
-#  pod 'SVProgressHUD'
+  pod 'SVProgressHUD'
+  pod 'AFNetworking'
+  pod 'JPImageresizerView'
   pod 'MMKV'#, '~> 1.2.14'
   pod 'libpag'
   

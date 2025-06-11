@@ -26,7 +26,6 @@
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
 		00535C702B7E0B1700C308C9 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00535C6F2B7E0B1700C308C9 /* girl.jpg */; };
-		00551A732C79C9A700F08DC9 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 00551A722C79C9A700F08DC9 /* SVProgressHUD */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
@@ -46,14 +45,13 @@
 		00A364222B20114600CDCFAF /* UIView+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3641C2B20114600CDCFAF /* UIView+RTL.swift */; };
 		00A364242B20160E00CDCFAF /* TorchTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364232B20160E00CDCFAF /* TorchTool.swift */; };
 		00A364282B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364272B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift */; };
+		00AD4FB32D054F9B0011C4AA /* GCDBarrierTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */; };
 		00BC975C2AEE480600944EA9 /* TestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */; };
 		00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109A725749DA200F17889 /* TestBaseViewController.swift */; };
 		00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109AA25749DBC00F17889 /* RealmTestViewController.swift */; };
 		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
 		00D65162257498720074693E /* Gradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65160257498720074693E /* Gradientable.swift */; };
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
-		00E4BC442C79F6D100D1C9EB /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC432C79F6D100D1C9EB /* AFNetworking */; };
-		00E4BC4A2C7A4B5800D1C9EB /* JPImageresizerView in Frameworks */ = {isa = PBXBuildFile; productRef = 00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */; };
 		00E707282CC7D27B00733639 /* JPHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E707272CC7D27B00733639 /* JPHUD.swift */; };
 		00E7072B2CC7D81200733639 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00E7072A2CC7D81200733639 /* DeepLabV3.mlmodel */; };
 		00E7072D2CC7D83400733639 /* DeepLabV3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7072C2CC7D83400733639 /* DeepLabV3ViewController.swift */; };
@@ -431,6 +429,7 @@
 		00A3641C2B20114600CDCFAF /* UIView+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RTL.swift"; sourceTree = "<group>"; };
 		00A364232B20160E00CDCFAF /* TorchTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchTool.swift; sourceTree = "<group>"; };
 		00A364272B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoardTestViewController.swift; sourceTree = "<group>"; };
+		00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBarrierTestVC.swift; sourceTree = "<group>"; };
 		00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotificationViewController.swift; sourceTree = "<group>"; };
 		00D109A725749DA200F17889 /* TestBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
 		00D109AA25749DBC00F17889 /* RealmTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestViewController.swift; sourceTree = "<group>"; };
@@ -840,10 +839,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00551A732C79C9A700F08DC9 /* SVProgressHUD in Frameworks */,
 				1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */,
-				00E4BC4A2C7A4B5800D1C9EB /* JPImageresizerView in Frameworks */,
-				00E4BC442C79F6D100D1C9EB /* AFNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1399,6 +1395,7 @@
 				1A35443B254E77600032B677 /* GCDSemaphoreTestVC.swift */,
 				00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */,
 				7151895027EC16B500342645 /* GCDAttributesViewController.swift */,
+				00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */,
 			);
 			path = GCD;
 			sourceTree = "<group>";
@@ -2181,11 +2178,6 @@
 			dependencies = (
 			);
 			name = Neves;
-			packageProductDependencies = (
-				00551A722C79C9A700F08DC9 /* SVProgressHUD */,
-				00E4BC432C79F6D100D1C9EB /* AFNetworking */,
-				00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */,
-			);
 			productName = Neves;
 			productReference = 1A354338254E75EB0032B677 /* Neves.app */;
 			productType = "com.apple.product-type.application";
@@ -2214,11 +2206,6 @@
 				Base,
 			);
 			mainGroup = 1A35432F254E75EB0032B677;
-			packageReferences = (
-				00551A712C79C9A700F08DC9 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
-				00E4BC422C79F44E00D1C9EB /* XCRemoteSwiftPackageReference "AFNetworking" */,
-				00E4BC482C7A4B5800D1C9EB /* XCRemoteSwiftPackageReference "JPImageresizerView" */,
-			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2636,6 +2623,7 @@
 				718A569727F195780071C724 /* CosmicExplorationManager.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
+				00AD4FB32D054F9B0011C4AA /* GCDBarrierTestVC.swift in Sources */,
 				719A5221286D48A700619AD4 /* JPCacheKey.swift in Sources */,
 				7172B63728D06EA700381E83 /* MusicFiles.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
@@ -2898,51 +2886,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		00551A712C79C9A700F08DC9 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.3.1;
-			};
-		};
-		00E4BC422C79F44E00D1C9EB /* XCRemoteSwiftPackageReference "AFNetworking" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AFNetworking/AFNetworking.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-		00E4BC482C7A4B5800D1C9EB /* XCRemoteSwiftPackageReference "JPImageresizerView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Rogue24/JPImageresizerView.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		00551A722C79C9A700F08DC9 /* SVProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00551A712C79C9A700F08DC9 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
-			productName = SVProgressHUD;
-		};
-		00E4BC432C79F6D100D1C9EB /* AFNetworking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00E4BC422C79F44E00D1C9EB /* XCRemoteSwiftPackageReference "AFNetworking" */;
-			productName = AFNetworking;
-		};
-		00E4BC492C7A4B5800D1C9EB /* JPImageresizerView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00E4BC482C7A4B5800D1C9EB /* XCRemoteSwiftPackageReference "JPImageresizerView" */;
-			productName = JPImageresizerView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A354330254E75EB0032B677 /* Project object */;
 }
