@@ -97,6 +97,10 @@
                 "vcName": "AnimGroupTestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "TypingLabelViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
@@ -377,6 +381,10 @@
             },
             {
                 "vcName": "WidgetView",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "TypingTextView",
                 "vcCreateWay" : 0
             },
         ]

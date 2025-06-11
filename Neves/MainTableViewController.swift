@@ -34,23 +34,17 @@ class MainTableViewController: UITableViewController {
                     return .other(vcName) { context in
                         switch context {
                         case "KFImageTestView":
-                            if #available(iOS 15.0.0, *) {
-                                return KFImageTestView().intoUIVC()
-                            } else {
-                                return nil
-                            }
+                            return KFImageTestView().intoUIVC()
                         case "ResultBuilderView":
-                            if #available(iOS 14.0.0, *) {
-                                return ResultBuilderView().intoUIVC()
-                            } else {
-                                return nil
-                            }
+                            return ResultBuilderView().intoUIVC()
                         case "WidgetView":
                             let vc = WidgetView().intoUIVC()
                             vc.replaceFunnyAction {
                                 JPrint("wahahaha")
                             }
                             return vc
+                        case "TypingTextView":
+                            return TypingTextView().intoUIVC()
                         default:
                             return nil
                         }

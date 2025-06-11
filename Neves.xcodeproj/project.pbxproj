@@ -47,6 +47,8 @@
 		00A364282B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364272B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift */; };
 		00AD4FB32D054F9B0011C4AA /* GCDBarrierTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */; };
 		00BC975C2AEE480600944EA9 /* TestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */; };
+		00C5618F2DF9E4CC00D35E7A /* TypingLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */; };
+		00C561912DF9E70400D35E7A /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C561902DF9E70400D35E7A /* TypingTextView.swift */; };
 		00D109A825749DA200F17889 /* TestBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109A725749DA200F17889 /* TestBaseViewController.swift */; };
 		00D109AB25749DBC00F17889 /* RealmTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D109AA25749DBC00F17889 /* RealmTestViewController.swift */; };
 		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
@@ -431,6 +433,8 @@
 		00A364272B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoardTestViewController.swift; sourceTree = "<group>"; };
 		00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBarrierTestVC.swift; sourceTree = "<group>"; };
 		00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotificationViewController.swift; sourceTree = "<group>"; };
+		00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingLabelViewController.swift; sourceTree = "<group>"; };
+		00C561902DF9E70400D35E7A /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
 		00D109A725749DA200F17889 /* TestBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseViewController.swift; sourceTree = "<group>"; };
 		00D109AA25749DBC00F17889 /* RealmTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTestViewController.swift; sourceTree = "<group>"; };
 		00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDismissAllViewController.swift; sourceTree = "<group>"; };
@@ -911,6 +915,14 @@
 			path = JYXBDrawingBoard;
 			sourceTree = "<group>";
 		};
+		00C561922DF9EAA600D35E7A /* TypingText */ = {
+			isa = PBXGroup;
+			children = (
+				00C561902DF9E70400D35E7A /* TypingTextView.swift */,
+			);
+			path = TypingText;
+			sourceTree = "<group>";
+		};
 		00D109A125749D6500F17889 /* Relam */ = {
 			isa = PBXGroup;
 			children = (
@@ -1367,6 +1379,7 @@
 				0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */,
 				1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */,
 				71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */,
+				00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */,
 			);
 			path = Animate;
 			sourceTree = "<group>";
@@ -1683,6 +1696,7 @@
 				710D5E2B288069570033C6C1 /* KFImage */,
 				71BD270C287D55D800496B6A /* ResultBuilder */,
 				712059F1285C7AFC0052E224 /* Widget */,
+				00C561922DF9EAA600D35E7A /* TypingText */,
 				71A270282857430C00B9D000 /* Modifier */,
 			);
 			path = SwiftUI;
@@ -2384,6 +2398,7 @@
 				718018C02722611A0056E699 /* LottieImagePicker.swift in Sources */,
 				7190294C28192DF0000F6E29 /* PKProgressPlayhouseInfoView.swift in Sources */,
 				719A522F286D9F0A00619AD4 /* JPUserInfo.swift in Sources */,
+				00C561912DF9E70400D35E7A /* TypingTextView.swift in Sources */,
 				715C901927F6F88800B88B85 /* CosmicExplorationJackpotCell.swift in Sources */,
 				715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
@@ -2473,6 +2488,7 @@
 				1A6587492629E6CC00846689 /* PopViewCompatible.swift in Sources */,
 				1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */,
 				71F24A022732270800FAAD93 /* DragonSlayerBanner.Model.swift in Sources */,
+				00C5618F2DF9E4CC00D35E7A /* TypingLabelViewController.swift in Sources */,
 				71048BCD2863282E00737278 /* KeyStore.swift in Sources */,
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
 				00A364222B20114600CDCFAF /* UIView+RTL.swift in Sources */,
@@ -2819,7 +2835,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH4WHYK8ZQ;
 				INFOPLIST_FILE = Neves/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2847,7 +2863,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FH4WHYK8ZQ;
 				INFOPLIST_FILE = Neves/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
