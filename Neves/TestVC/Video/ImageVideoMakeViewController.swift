@@ -20,8 +20,11 @@ class ImageVideoMakeViewController: TestBaseViewController {
         var imageInfos = [VideoMaker.ImageInfo]()
         while let i = indexs.first {
             indexs.remove(i)
-            imageInfos.append(.init(image: UIImage.jp.fromBundle("Girl\(i).jpg")!,
-                                    duration: TimeInterval.random(in: 1...3)))
+            let imgName = "Girl\(i).jpg"
+            let duration = TimeInterval.random(in: 1...3)
+            JPrint("imgName:", imgName, "duration:", duration)
+            imageInfos.append(.init(image: UIImage.jp.fromBundle(imgName)!,
+                                    duration: duration))
         }
         
         maker.makeVideo(with: imageInfos) { result in
