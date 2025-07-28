@@ -64,7 +64,7 @@
 		00EE356829A705CC008902DD /* CG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356729A705CC008902DD /* CG.swift */; };
 		00EE356A29A705E6008902DD /* AttributeString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356929A705E5008902DD /* AttributeString.swift */; };
 		00EE356C29A706D1008902DD /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE356B29A706D1008902DD /* extension.swift */; };
-		00FBB3C42BEB7A0B00D78D40 /* UIImageView+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBB3C32BEB7A0B00D78D40 /* UIImageView+RTL.swift */; };
+		00FBB3C42BEB7A0B00D78D40 /* UIImage+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FBB3C32BEB7A0B00D78D40 /* UIImage+RTL.swift */; };
 		1A1F92D52A010CAC000EB64F /* GPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F92D42A010CAC000EB64F /* GPTAPI.swift */; };
 		1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433B254E75EB0032B677 /* AppDelegate.swift */; };
 		1A354343254E75EB0032B677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A354341254E75EB0032B677 /* Main.storyboard */; };
@@ -451,7 +451,7 @@
 		00EE356729A705CC008902DD /* CG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CG.swift; sourceTree = "<group>"; };
 		00EE356929A705E5008902DD /* AttributeString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributeString.swift; sourceTree = "<group>"; };
 		00EE356B29A706D1008902DD /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
-		00FBB3C32BEB7A0B00D78D40 /* UIImageView+RTL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RTL.swift"; sourceTree = "<group>"; };
+		00FBB3C32BEB7A0B00D78D40 /* UIImage+RTL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+RTL.swift"; sourceTree = "<group>"; };
 		17A29644ECEC0B34C3D9796A /* Pods_Neves.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neves.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A036500254E8AB0007932D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1A1F92D42A010CAC000EB64F /* GPTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTAPI.swift; sourceTree = "<group>"; };
@@ -892,7 +892,7 @@
 				00A3641C2B20114600CDCFAF /* UIView+RTL.swift */,
 				00A364192B20114600CDCFAF /* CALayer+RTL.swift */,
 				00A3641B2B20114600CDCFAF /* UIScrollView+RTL.swift */,
-				00FBB3C32BEB7A0B00D78D40 /* UIImageView+RTL.swift */,
+				00FBB3C32BEB7A0B00D78D40 /* UIImage+RTL.swift */,
 				00A364182B20114600CDCFAF /* UILabel+RTL.swift */,
 				00A364172B20114600CDCFAF /* Gradient+RTL.swift */,
 			);
@@ -2519,7 +2519,7 @@
 				1A354506254E77600032B677 /* JPCustomLayoutButton.m in Sources */,
 				718A56AE27F1B8B80071C724 /* CosmicExplorationBottomView.swift in Sources */,
 				71F24A052732272700FAAD93 /* DragonSlayerViewController.swift in Sources */,
-				00FBB3C42BEB7A0B00D78D40 /* UIImageView+RTL.swift in Sources */,
+				00FBB3C42BEB7A0B00D78D40 /* UIImage+RTL.swift in Sources */,
 				717FA035277059FF0081DD50 /* MemorySizeViewController.swift in Sources */,
 				719029402818E597000F6E29 /* RoomPKTestViewController.swift in Sources */,
 				1A9E418826BE44A1006941D0 /* JPPerson.m in Sources */,
