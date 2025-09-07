@@ -46,6 +46,19 @@
         ]
     },
     {
+        "header" : "LLM",
+        "vcList" : [
+            {
+                "vcName": "LocalLLMViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "LocalLLMView",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
         "header" : "Video",
         "vcList" : [
             {

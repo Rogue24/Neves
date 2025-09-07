@@ -52,6 +52,9 @@ class MainTableViewController: UITableViewController {
                         case "AnimatedTypingTextView":
                             return AnimatedTypingTextView().intoUIVC()
                             
+                        case "LocalLLMView":
+                            return LocalLLMView().intoUIVC()
+                            
                         default:
                             return nil
                         }

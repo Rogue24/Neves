@@ -19,6 +19,7 @@
 		002E78FE295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */; };
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
 		002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */; };
+		0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F41F2E6D771000CB841C /* LocalLLMView.swift */; };
 		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
 		004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */; };
 		004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */; };
@@ -37,6 +38,7 @@
 		008DC2F929769EC50039AB22 /* PenetrableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */; };
 		0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */; };
 		00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00965D5B25CBF4DD00B7BB9C /* Done.swift */; };
+		00995C142E6C1EF200391279 /* LocalLLMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00995C132E6C1EF200391279 /* LocalLLMViewController.swift */; };
 		00A3641D2B20114600CDCFAF /* Gradient+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364172B20114600CDCFAF /* Gradient+RTL.swift */; };
 		00A3641E2B20114600CDCFAF /* UILabel+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364182B20114600CDCFAF /* UILabel+RTL.swift */; };
 		00A3641F2B20114600CDCFAF /* CALayer+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364192B20114600CDCFAF /* CALayer+RTL.swift */; };
@@ -403,6 +405,7 @@
 		002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomGameTeamCardListView.swift; sourceTree = "<group>"; };
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
 		002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomFmView.swift; sourceTree = "<group>"; };
+		0045F41F2E6D771000CB841C /* LocalLLMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMView.swift; sourceTree = "<group>"; };
 		004A324529B47365001832E5 /* JPPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoTool.m; sourceTree = "<group>"; };
 		004A324629B47365001832E5 /* JPPhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoTool.h; sourceTree = "<group>"; };
 		004A324829B473D4001832E5 /* UICollectionView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Convenience.h"; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 		008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenetrableTestViewController.swift; sourceTree = "<group>"; };
 		0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFit.Extension.swift; sourceTree = "<group>"; };
 		00965D5B25CBF4DD00B7BB9C /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
+		00995C132E6C1EF200391279 /* LocalLLMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMViewController.swift; sourceTree = "<group>"; };
 		00A364172B20114600CDCFAF /* Gradient+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gradient+RTL.swift"; sourceTree = "<group>"; };
 		00A364182B20114600CDCFAF /* UILabel+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RTL.swift"; sourceTree = "<group>"; };
 		00A364192B20114600CDCFAF /* CALayer+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+RTL.swift"; sourceTree = "<group>"; };
@@ -883,6 +887,15 @@
 				007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		00995C122E6C1EBD00391279 /* LLM */ = {
+			isa = PBXGroup;
+			children = (
+				00995C132E6C1EF200391279 /* LocalLLMViewController.swift */,
+				0045F41F2E6D771000CB841C /* LocalLLMView.swift */,
+			);
+			path = LLM;
 			sourceTree = "<group>";
 		};
 		00A364162B20114600CDCFAF /* RTL */ = {
@@ -1350,6 +1363,7 @@
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
 				1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */,
 				71F249982731517A00FAAD93 /* MyJob */,
+				00995C122E6C1EBD00391279 /* LLM */,
 				71B897A6268C509F00705AC1 /* Video */,
 				1A354430254E77600032B677 /* Animate */,
 				1A354453254E77600032B677 /* View&Layer */,
@@ -2668,6 +2682,7 @@
 				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,
 				71F249ED2731517A00FAAD93 /* MarebulabulasManager.swift in Sources */,
 				1A9E41AC26BFE19F006941D0 /* MemorySizeTestViewController.swift in Sources */,
+				00995C142E6C1EF200391279 /* LocalLLMViewController.swift in Sources */,
 				1A35450E254E77600032B677 /* JPBasicPopView.m in Sources */,
 				1AF648452955956900752E57 /* MainActorTestVC.swift in Sources */,
 				717E8B7B26DDF44E000E3E9F /* PlanetView.swift in Sources */,
@@ -2681,6 +2696,7 @@
 				71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */,
 				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,
 				1A3544FE254E77600032B677 /* Function.swift in Sources */,
+				0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */,
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
 				1A35450C254E77600032B677 /* JPTextView.m in Sources */,
 				00A3641E2B20114600CDCFAF /* UILabel+RTL.swift in Sources */,
