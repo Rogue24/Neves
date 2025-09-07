@@ -20,6 +20,7 @@
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
 		002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */; };
 		0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F41F2E6D771000CB841C /* LocalLLMView.swift */; };
+		0045F4222E6D7A7600CB841C /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F4212E6D7A7600CB841C /* ChatClient.swift */; };
 		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
 		004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */; };
 		004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */; };
@@ -406,6 +407,7 @@
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
 		002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomFmView.swift; sourceTree = "<group>"; };
 		0045F41F2E6D771000CB841C /* LocalLLMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMView.swift; sourceTree = "<group>"; };
+		0045F4212E6D7A7600CB841C /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		004A324529B47365001832E5 /* JPPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoTool.m; sourceTree = "<group>"; };
 		004A324629B47365001832E5 /* JPPhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPPhotoTool.h; sourceTree = "<group>"; };
 		004A324829B473D4001832E5 /* UICollectionView+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Convenience.h"; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 		00995C122E6C1EBD00391279 /* LLM */ = {
 			isa = PBXGroup;
 			children = (
+				0045F4212E6D7A7600CB841C /* ChatClient.swift */,
 				00995C132E6C1EF200391279 /* LocalLLMViewController.swift */,
 				0045F41F2E6D771000CB841C /* LocalLLMView.swift */,
 			);
@@ -2555,6 +2558,7 @@
 				1A354503254E77600032B677 /* JPNoHighlightButton.m in Sources */,
 				005DF54425652EDB0010E772 /* File.swift in Sources */,
 				1A9E419326BE459E006941D0 /* JPObject.m in Sources */,
+				0045F4222E6D7A7600CB841C /* ChatClient.swift in Sources */,
 				1A65874C2629E6CC00846689 /* AlertView.swift in Sources */,
 				71F249F92731517A00FAAD93 /* MarebulabulasViewController.swift in Sources */,
 				71F249D22731517A00FAAD93 /* Firework.TestData.swift in Sources */,

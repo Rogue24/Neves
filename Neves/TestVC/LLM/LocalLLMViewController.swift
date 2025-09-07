@@ -18,7 +18,7 @@ class LocalLLMViewController: TestBaseViewController {
     
     private let sendButton: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("发送到 Ollama", for: .normal)
+        btn.setTitle("发送到模型", for: .normal)
         btn.backgroundColor = .systemBlue
         btn.setTitleColor(.white, for: .normal)
         btn.layer.cornerRadius = 8
@@ -39,12 +39,18 @@ class LocalLLMViewController: TestBaseViewController {
         return tv
     }()
     
+    // ✅ 使用 ChatClient（此处默认用 Ollama，本地 API）
+    private let client = ChatClient(baseURL: "http://127.0.0.1:11434/v1")
+    // 改成你在 Ollama 本地加载的模型
+    private let model = "deepseek-r1:8b"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         layoutUI()
         
-        sendButton.addTarget(self, action: #selector(sendTapped), for: .touchUpInside)
+//        sendButton.addTarget(self, action: #selector(sendTapped_mySelf), for: .touchUpInside)
+        sendButton.addTarget(self, action: #selector(sendTapped_client), for: .touchUpInside)
     }
     
     private func layoutUI() {
@@ -70,7 +76,18 @@ class LocalLLMViewController: TestBaseViewController {
         ])
     }
     
-    @objc private func sendTapped() {
+    @MainActor
+    private func appendText(_ text: String) async {
+        outputView.text += text
+        // 自动滚动到底部
+        let range = NSRange(location: outputView.text.count, length: 1)
+        outputView.scrollRangeToVisible(range)
+    }
+}
+
+// MARK: - 自己实现流式请求
+private extension LocalLLMViewController {
+    @objc func sendTapped_mySelf() {
         guard let text = inputField.text, !text.isEmpty else { return }
         inputField.resignFirstResponder()
         outputView.text = ""
@@ -88,9 +105,9 @@ class LocalLLMViewController: TestBaseViewController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let body: [String: Any] = [
-            "model": "deepseek-r1:8b",   // 改成你在 Ollama 本地加载的模型
+            "model": model,
             "prompt": prompt,
-            "stream": true       // 开启流式输出
+            "stream": true // 开启流式输出
         ]
         
         do {
@@ -113,16 +130,34 @@ class LocalLLMViewController: TestBaseViewController {
             }
             
         } catch {
-            await appendText("错误: \(error.localizedDescription)")
+            Task { @MainActor in
+                outputView.text = "错误：\(error.localizedDescription)"
+            }
         }
-    }
-    
-    @MainActor
-    private func appendText(_ text: String) async {
-        outputView.text += text
-        // 自动滚动到底部
-        let range = NSRange(location: outputView.text.count, length: 1)
-        outputView.scrollRangeToVisible(range)
     }
 }
 
+// MARK: - 使用 ChatClient（推荐）
+private extension LocalLLMViewController {
+    @objc func sendTapped_client() {
+        guard let text = inputField.text, !text.isEmpty else { return }
+        outputView.text = ""
+        
+        Task {
+            do {
+                try await client.sendMessageStream(
+                    model: model,
+                    messages: [["role": "user", "content": text]]
+                ) { token in
+                    Task {
+                        await self.appendText(token)
+                    }
+                }
+            } catch {
+                Task { @MainActor in
+                    self.outputView.text = "错误：\(error.localizedDescription)"
+                }
+            }
+        }
+    }
+}
