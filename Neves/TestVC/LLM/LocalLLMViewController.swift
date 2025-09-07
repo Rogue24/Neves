@@ -90,6 +90,7 @@ private extension LocalLLMViewController {
     @objc func sendTapped_mySelf() {
         guard let text = inputField.text, !text.isEmpty else { return }
         inputField.resignFirstResponder()
+        
         outputView.text = ""
         Task {
             await sendStreamRequest(prompt: text)
@@ -98,6 +99,7 @@ private extension LocalLLMViewController {
     
     // 🔹 调用 Ollama API (流式)
     func sendStreamRequest(prompt: String) async {
+        /// `/api/generate`：单次生成任务，不需要上下文管理
         guard let url = URL(string: "http://127.0.0.1:11434/api/generate") else { return }
         
         var request = URLRequest(url: url)
@@ -141,8 +143,9 @@ private extension LocalLLMViewController {
 private extension LocalLLMViewController {
     @objc func sendTapped_client() {
         guard let text = inputField.text, !text.isEmpty else { return }
-        outputView.text = ""
+        inputField.resignFirstResponder()
         
+        outputView.text = ""
         Task {
             do {
                 try await client.sendMessageStream(

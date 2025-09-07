@@ -44,6 +44,7 @@ struct LocalLLMView: View {
             ScrollView {
                 Text(outputText)
                     .foregroundColor(.white)
+                    .animation(.linear(duration: 0.2), value: outputText) // 渐显动画有待优化
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -58,6 +59,7 @@ struct LocalLLMView: View {
 private extension LocalLLMView {
     // 🔹 调用 Ollama API (流式)
     func sendStreamRequest_mySelf() async {
+        /// `/api/generate`：单次生成任务，不需要上下文管理
         guard let url = URL(string: "http://127.0.0.1:11434/api/generate") else { return }
         
         var request = URLRequest(url: url)
