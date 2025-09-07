@@ -17,7 +17,7 @@ target 'Neves' do
 #  pod 'lottie-ios', '~> 3.5.0'
   pod 'lottie-ios', :git => 'https://github.com/Rogue24/lottie-ios.git', :branch => 'JP_3.5.1'
   pod 'SnapKit', '~> 5.7.1'
-#  pod 'RealmSwift'
+  pod 'RealmSwift'
   pod 'SwiftGen'
   pod 'FunnyButton', '~> 0.1.5'
 
