@@ -18,6 +18,7 @@ struct LocalLLMView: View {
     private let client = ChatClient(baseURL: "http://127.0.0.1:11434/v1")
     // 改成你在 Ollama 本地加载的模型
     private let model = "deepseek-r1:8b"
+//    private let model = "gpt-oss:20b"
     
     var body: some View {
         VStack(spacing: 20) {
@@ -44,7 +45,8 @@ struct LocalLLMView: View {
             ScrollView {
                 Text(outputText)
                     .foregroundColor(.white)
-                    .animation(.linear(duration: 0.2), value: outputText) // 渐显动画有待优化
+                    // 渐显动画有待优化
+//                    .animation(.linear(duration: 0.2), value: outputText)
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
             }

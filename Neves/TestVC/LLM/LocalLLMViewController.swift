@@ -42,7 +42,8 @@ class LocalLLMViewController: TestBaseViewController {
     // ✅ 使用 ChatClient（此处默认用 Ollama，本地 API）
     private let client = ChatClient(baseURL: "http://127.0.0.1:11434/v1")
     // 改成你在 Ollama 本地加载的模型
-    private let model = "deepseek-r1:8b"
+//    private let model = "deepseek-r1:8b"
+    private let model = "gpt-oss:20b"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +82,10 @@ class LocalLLMViewController: TestBaseViewController {
         outputView.text += text
         // 自动滚动到底部
         let range = NSRange(location: outputView.text.count, length: 1)
-        outputView.scrollRangeToVisible(range)
+        // 滚动动画有待优化，先移除
+        UIView.performWithoutAnimation {
+            self.outputView.scrollRangeToVisible(range)
+        }
     }
 }
 
