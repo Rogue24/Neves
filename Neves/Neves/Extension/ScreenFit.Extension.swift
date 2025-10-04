@@ -21,6 +21,22 @@ extension CGFloat {
     var px: CGFloat { self * BasisWScale }
 }
 
+extension Array<Int> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<Float> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<Double> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<CGFloat> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
 extension CGPoint {
     var px: CGPoint { .init(x: self.x * BasisWScale, y: self.y * BasisWScale) }
     
