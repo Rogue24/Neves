@@ -201,7 +201,7 @@ extension CosmicExplorationHostView {
                     titleImgName = isDiscover ? "spaceship_result_txt04" : "spaceship_fail_txt"
                     animViewFrame = [HalfDiffValue(frame.width, 135.px), 99.px, 135.px, 60.px]
                     s1ImgViewFrame = [82.px, 125.px, 11.5.px, 20.px]
-                    s2ImgViewFrame = [94.5.px, 125.px, 11.5.px, 20.px]
+                    s2ImgViewFrame = [(94.5).px, 125.px, 11.5.px, 20.px]
                     sImgViewFrame = [107.px, 125.px, 11.5.px, 20.px]
                     titleImgViewFrame = [HalfDiffValue(frame.width, 150.px), 44.px, 150.px, 50.px]
                     subtitleLabelAlpha = 0

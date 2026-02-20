@@ -6,6 +6,10 @@
                 "vcName": "PlaygroundViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "DiffableDataSourceViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
@@ -41,6 +45,15 @@
             },
             {
                 "vcName": "CosmicExplorationTestViewController",
+                "vcCreateWay" : 0
+            },
+        ]
+    },
+    {
+        "header" : "Codex",
+        "vcList" : [
+            {
+                "vcName": "AICropViewController",
                 "vcCreateWay" : 0
             },
         ]
@@ -218,6 +231,10 @@
             },
             {
                 "vcName": "TestNotificationViewController",
+                "vcCreateWay" : 0
+            },
+            {
+                "vcName": "TestScrollingSetOffsetViewController",
                 "vcCreateWay" : 0
             },
         ],

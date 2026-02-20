@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433D254E75EB0032B677 /* SceneDelegate.swift */; };
 		00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00055475291A56A800AEC49B /* ScreenRotatorState.swift */; };
+		00139EFC2EC594350025C029 /* DiffableDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */; };
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
 		002E0C582ADD0AFC008EA4B8 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */; };
 		002E78C4295BF29E0071E30C /* GuideIntoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */; };
@@ -19,6 +20,7 @@
 		002E78FE295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */; };
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
 		002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */; };
+		003AE9F82F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE9F72F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift */; };
 		0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F41F2E6D771000CB841C /* LocalLLMView.swift */; };
 		0045F4222E6D7A7600CB841C /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F4212E6D7A7600CB841C /* ChatClient.swift */; };
 		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
@@ -30,6 +32,7 @@
 		00535C702B7E0B1700C308C9 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00535C6F2B7E0B1700C308C9 /* girl.jpg */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
+		0079757D2F48200700B178E1 /* AICropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079757C2F48200700B178E1 /* AICropViewController.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
 		007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */; };
 		007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */; };
@@ -396,6 +399,7 @@
 
 /* Begin PBXFileReference section */
 		00055475291A56A800AEC49B /* ScreenRotatorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRotatorState.swift; sourceTree = "<group>"; };
+		00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceViewController.swift; sourceTree = "<group>"; };
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
 		002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomViewController.swift; sourceTree = "<group>"; };
@@ -406,6 +410,7 @@
 		002E78FD295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomGameTeamCardListView.swift; sourceTree = "<group>"; };
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
 		002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomFmView.swift; sourceTree = "<group>"; };
+		003AE9F72F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollingSetOffsetViewController.swift; sourceTree = "<group>"; };
 		0045F41F2E6D771000CB841C /* LocalLLMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMView.swift; sourceTree = "<group>"; };
 		0045F4212E6D7A7600CB841C /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		004A324529B47365001832E5 /* JPPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoTool.m; sourceTree = "<group>"; };
@@ -420,6 +425,7 @@
 		00535C6F2B7E0B1700C308C9 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.Extension.swift; sourceTree = "<group>"; };
+		0079757C2F48200700B178E1 /* AICropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICropViewController.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
 		007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutViewController.swift; sourceTree = "<group>"; };
@@ -880,6 +886,14 @@
 				0053548029607E5900E52CBB /* ImagePickerObject.swift */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		0079757B2F481FEB00B178E1 /* Codex */ = {
+			isa = PBXGroup;
+			children = (
+				0079757C2F48200700B178E1 /* AICropViewController.swift */,
+			);
+			path = Codex;
 			sourceTree = "<group>";
 		};
 		007E64E429ADB39C00FD5F70 /* Layout */ = {
@@ -1365,7 +1379,9 @@
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
 				1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */,
+				00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */,
 				71F249982731517A00FAAD93 /* MyJob */,
+				0079757B2F481FEB00B178E1 /* Codex */,
 				00995C122E6C1EBD00391279 /* LLM */,
 				71B897A6268C509F00705AC1 /* Video */,
 				1A354430254E77600032B677 /* Animate */,
@@ -1418,6 +1434,7 @@
 				00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */,
 				002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */,
 				00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */,
+				003AE9F72F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -2359,9 +2376,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2375,6 +2396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003AE9F82F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift in Sources */,
 				1A3545B0254E818B0032B677 /* HYLabel.swift in Sources */,
 				71A737B928E68A2300B7C027 /* ScreenRotator.swift in Sources */,
 				718A56B427F1B9E70071C724 /* ImageViews.swift in Sources */,
@@ -2421,6 +2443,7 @@
 				00C561912DF9E70400D35E7A /* TypingTextView.swift in Sources */,
 				715C901927F6F88800B88B85 /* CosmicExplorationJackpotCell.swift in Sources */,
 				715C900A27F6F2BC00B88B85 /* CosmicExplorationJackpotView.swift in Sources */,
+				00139EFC2EC594350025C029 /* DiffableDataSourceViewController.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
 				0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */,
@@ -2471,6 +2494,7 @@
 				71107439271EA81300178969 /* LayerVideoViewController.swift in Sources */,
 				71A2702A2857432000B9D000 /* Modifier.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
+				0079757D2F48200700B178E1 /* AICropViewController.swift in Sources */,
 				0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */,
 				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
 				0053548429607E5900E52CBB /* ImagePicker.swift in Sources */,

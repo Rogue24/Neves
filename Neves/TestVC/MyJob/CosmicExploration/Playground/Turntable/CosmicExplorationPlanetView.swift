@@ -413,7 +413,7 @@ extension CosmicExplorationPlanetView {
             layer.masksToBounds = true
             
             userIcon.image = UIImage(named: "jp_icon")
-            userIcon.frame = [1.5.px, 1.5.px, 11.px, 11.px]
+            userIcon.frame = [(1.5).px, 1.5.px, 11.px, 11.px]
             userIcon.layer.cornerRadius = 5.5.px
             userIcon.layer.masksToBounds = true
             addSubview(userIcon)
