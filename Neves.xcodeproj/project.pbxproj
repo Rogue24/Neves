@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000297712F4CC06A00D5770F /* CAAnimationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000297702F4CC06A00D5770F /* CAAnimationTestViewController.swift */; };
 		0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A35433D254E75EB0032B677 /* SceneDelegate.swift */; };
 		00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00055475291A56A800AEC49B /* ScreenRotatorState.swift */; };
 		00139EFC2EC594350025C029 /* DiffableDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */; };
@@ -398,6 +399,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000297702F4CC06A00D5770F /* CAAnimationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CAAnimationTestViewController.swift; sourceTree = "<group>"; };
 		00055475291A56A800AEC49B /* ScreenRotatorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRotatorState.swift; sourceTree = "<group>"; };
 		00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceViewController.swift; sourceTree = "<group>"; };
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
@@ -1416,6 +1418,7 @@
 				1A9E417726BE4061006941D0 /* TableViewAnimateController.swift */,
 				71A5C719284E03CB00067318 /* AnimGroupTestViewController.swift */,
 				00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */,
+				000297702F4CC06A00D5770F /* CAAnimationTestViewController.swift */,
 			);
 			path = Animate;
 			sourceTree = "<group>";
@@ -2407,6 +2410,7 @@
 				719A5231286D9F0A00619AD4 /* JPUserInfoCacheTool.swift in Sources */,
 				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
 				71F249DE2731517A00FAAD93 /* FireworkItem.swift in Sources */,
+				000297712F4CC06A00D5770F /* CAAnimationTestViewController.swift in Sources */,
 				71B0E00128D9A55C00E3BC75 /* BaseNavigationController.swift in Sources */,
 				1A3544F6254E77600032B677 /* UIWindow.Extension.swift in Sources */,
 				1A9E418A26BE44A1006941D0 /* HashTestViewController.swift in Sources */,

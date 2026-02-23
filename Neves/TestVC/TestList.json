@@ -127,6 +127,10 @@
                 "vcName": "TypingLabelViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "CAAnimationTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {
