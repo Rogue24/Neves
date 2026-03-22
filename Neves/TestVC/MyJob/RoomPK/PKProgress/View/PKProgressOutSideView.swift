@@ -5,6 +5,9 @@
 //  Created by aa on 2022/4/28.
 //
 
+import UIKit
+import Lottie
+
 class PKProgressOutSideView: UIView {
     @IBOutlet weak var bgImgView: UIImageView!
     
@@ -64,14 +67,14 @@ class PKProgressOutSideView: UIView {
         posAnimView.loopMode = .loop
         progressBgView.addSubview(posAnimView)
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_progressbar_lottie"),
-           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) {
             posAnimView.animation = animation
             posAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             posAnimView.play()
         }
         
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_tag_lottie"),
-           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) {
             let pkLogoAnimView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
             pkLogoAnimView.backgroundBehavior = .pauseAndRestore
             pkLogoAnimView.contentMode = .scaleAspectFit

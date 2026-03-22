@@ -5,6 +5,8 @@
 //  Created by aa on 2021/10/14.
 //
 
+import Lottie
+
 class LottieImagePickerViewController: TestBaseViewController {
     static var videoPath: String? = nil
     
@@ -31,7 +33,7 @@ class LottieImagePickerViewController: TestBaseViewController {
         let lottieName = self.lottieName
         Asyncs.async {
             guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-                  let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+                  let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache)
             else {
                 JPrint("路径错误！")
                 return

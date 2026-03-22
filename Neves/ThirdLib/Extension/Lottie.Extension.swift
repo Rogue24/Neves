@@ -6,6 +6,8 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
+import Lottie
+
 struct ImageReplacementProvider: AnimationImageProvider {
     let replacement: [String: CGImage?]?
     let fileProvider: FilepathImageProvider
@@ -24,7 +26,19 @@ struct ImageReplacementProvider: AnimationImageProvider {
 }
 
 //extension AnimationView: JPCompatible {}
-extension JP where Base: LottieAnimationView {
+extension JP where Base == LottieAnimationView {
+//    public convenience init(
+//      filePath: String,
+//      imageProvider: AnimationImageProvider? = nil,
+//      animationCache: AnimationCacheProvider? = LottieAnimationCache.shared,
+//      configuration: LottieConfiguration = .shared
+//    ) {
+//      let animation = LottieAnimation.filepath(filePath, animationCache: animationCache)
+//      let provider = imageProvider ??
+//        FilepathImageProvider(filepath: URL(fileURLWithPath: filePath).deletingLastPathComponent().path)
+//      self.init(animation: animation, imageProvider: provider, configuration: configuration)
+//    }
+    
     static func build(_ dirName: String, _ imageReplacement: [String: CGImage?]? = nil) -> Base {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(dirName)") else { fatalError("路径错误！") }
         let animView: Base

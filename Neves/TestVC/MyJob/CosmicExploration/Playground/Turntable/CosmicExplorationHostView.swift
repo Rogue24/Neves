@@ -63,7 +63,7 @@ extension CosmicExplorationHostView {
         
         bgAnimView.stop()
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(bgLottieName)"),
-              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache)
         else {
             UIView.animate(withDuration: 0.18) {
                 self.bgAnimView.alpha = 0
@@ -212,7 +212,7 @@ extension CosmicExplorationHostView {
                 self.lottieName = lottieName
                 animView.stop()
                 if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-                   let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+                   let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) {
                     animView.animation = animation
                     animView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
                     animView.loopMode = .playOnce
