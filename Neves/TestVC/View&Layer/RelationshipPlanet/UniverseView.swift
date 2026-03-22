@@ -5,6 +5,9 @@
 //  Created by aa on 2021/9/1.
 //
 
+import UIKit
+import Lottie
+
 class UniverseView: UIView {
     
     let bgAnimView = LottieAnimationView.jp.build("gxq_bg_lottie")

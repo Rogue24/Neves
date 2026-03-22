@@ -5,6 +5,9 @@
 //  Created by aa on 2021/7/21.
 //
 
+import UIKit
+import Lottie
+
 class JPMagicCubeSuspendView: UIView, JPMagicCubeBubbleLaunchAble {
     
     var bubbleView: JPMagicCubeBubbleView? = nil

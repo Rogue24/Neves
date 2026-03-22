@@ -6,6 +6,9 @@
 //  Copyright © 2020 CocoaPods. All rights reserved.
 //
 
+import UIKit
+import Lottie
+
 enum MarebulabulasType: Equatable {
     case dialogue
     case sing(_ isAccompaniment: Bool)

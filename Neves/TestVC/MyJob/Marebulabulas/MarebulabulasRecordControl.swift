@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class MarebulabulasRecordControl: UIView {
     

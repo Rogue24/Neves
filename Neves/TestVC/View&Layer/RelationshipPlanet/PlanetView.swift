@@ -5,6 +5,9 @@
 //  Created by aa on 2021/8/31.
 //
 
+import UIKit
+import Lottie
+
 class PlanetView: UIView {
     
     let style: RelationshipPlanet.Style

@@ -5,6 +5,9 @@
 //  Created by aa on 2020/11/3.
 //
 
+import UIKit
+import Lottie
+
 class FireLottieTestViewController: TestBaseViewController {
     
     override func viewDidLoad() {

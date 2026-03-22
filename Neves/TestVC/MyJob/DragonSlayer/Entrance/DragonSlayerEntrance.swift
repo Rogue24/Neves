@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class DragonSlayerEntrance: UIView {
     static let size: CGSize = [75, 105]

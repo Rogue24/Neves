@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class FireworkView: UIView {
     // MARK: - 公开属性
