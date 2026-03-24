@@ -27,6 +27,21 @@
 		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
 		004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */; };
 		004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */; };
+		004D9B242F72A38700A7DB56 /* svip_main_lottie_5.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1E2F72A38700A7DB56 /* svip_main_lottie_5.lottie */; };
+		004D9B252F72A38700A7DB56 /* svip_main_lottie_9.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B222F72A38700A7DB56 /* svip_main_lottie_9.lottie */; };
+		004D9B262F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B182F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie */; };
+		004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B162F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie */; };
+		004D9B282F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B172F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie */; };
+		004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B212F72A38700A7DB56 /* svip_main_lottie_8.lottie */; };
+		004D9B2A2F72A38700A7DB56 /* svip_main_lottie_6.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1F2F72A38700A7DB56 /* svip_main_lottie_6.lottie */; };
+		004D9B2B2F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B152F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie */; };
+		004D9B2C2F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B192F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie */; };
+		004D9B2D2F72A38700A7DB56 /* svip_main_lottie_3.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1C2F72A38700A7DB56 /* svip_main_lottie_3.lottie */; };
+		004D9B2E2F72A38700A7DB56 /* svip_main_lottie_10.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B232F72A38700A7DB56 /* svip_main_lottie_10.lottie */; };
+		004D9B2F2F72A38700A7DB56 /* svip_main_lottie_7.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B202F72A38700A7DB56 /* svip_main_lottie_7.lottie */; };
+		004D9B302F72A38700A7DB56 /* svip_main_lottie_1.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1A2F72A38700A7DB56 /* svip_main_lottie_1.lottie */; };
+		004D9B312F72A38700A7DB56 /* svip_main_lottie_4.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1D2F72A38700A7DB56 /* svip_main_lottie_4.lottie */; };
+		004D9B322F72A38700A7DB56 /* svip_main_lottie_2.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1B2F72A38700A7DB56 /* svip_main_lottie_2.lottie */; };
 		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
@@ -421,6 +436,21 @@
 		004A324929B473D4001832E5 /* NSIndexSet+Convenience.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+Convenience.h"; sourceTree = "<group>"; };
 		004A324A29B473D4001832E5 /* NSIndexSet+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+Convenience.m"; sourceTree = "<group>"; };
 		004A324B29B473D5001832E5 /* UICollectionView+Convenience.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Convenience.m"; sourceTree = "<group>"; };
+		004D9B152F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = collecting_cards_open_bag_level_1.lottie; sourceTree = "<group>"; };
+		004D9B162F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = collecting_cards_open_bag_level_2.lottie; sourceTree = "<group>"; };
+		004D9B172F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = collecting_cards_open_bag_level_3.lottie; sourceTree = "<group>"; };
+		004D9B182F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = collecting_cards_open_bag_level_4.lottie; sourceTree = "<group>"; };
+		004D9B192F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = collecting_cards_open_bag_level_5.lottie; sourceTree = "<group>"; };
+		004D9B1A2F72A38700A7DB56 /* svip_main_lottie_1.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_1.lottie; sourceTree = "<group>"; };
+		004D9B1B2F72A38700A7DB56 /* svip_main_lottie_2.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_2.lottie; sourceTree = "<group>"; };
+		004D9B1C2F72A38700A7DB56 /* svip_main_lottie_3.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_3.lottie; sourceTree = "<group>"; };
+		004D9B1D2F72A38700A7DB56 /* svip_main_lottie_4.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_4.lottie; sourceTree = "<group>"; };
+		004D9B1E2F72A38700A7DB56 /* svip_main_lottie_5.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_5.lottie; sourceTree = "<group>"; };
+		004D9B1F2F72A38700A7DB56 /* svip_main_lottie_6.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_6.lottie; sourceTree = "<group>"; };
+		004D9B202F72A38700A7DB56 /* svip_main_lottie_7.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_7.lottie; sourceTree = "<group>"; };
+		004D9B212F72A38700A7DB56 /* svip_main_lottie_8.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_8.lottie; sourceTree = "<group>"; };
+		004D9B222F72A38700A7DB56 /* svip_main_lottie_9.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_9.lottie; sourceTree = "<group>"; };
+		004D9B232F72A38700A7DB56 /* svip_main_lottie_10.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_10.lottie; sourceTree = "<group>"; };
 		0053548029607E5900E52CBB /* ImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerObject.swift; sourceTree = "<group>"; };
 		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
@@ -880,6 +910,28 @@
 			path = GuideIntoRoom;
 			sourceTree = "<group>";
 		};
+		004D9B142F72A36000A7DB56 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				004D9B152F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie */,
+				004D9B162F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie */,
+				004D9B172F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie */,
+				004D9B182F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie */,
+				004D9B192F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie */,
+				004D9B1A2F72A38700A7DB56 /* svip_main_lottie_1.lottie */,
+				004D9B1B2F72A38700A7DB56 /* svip_main_lottie_2.lottie */,
+				004D9B1C2F72A38700A7DB56 /* svip_main_lottie_3.lottie */,
+				004D9B1D2F72A38700A7DB56 /* svip_main_lottie_4.lottie */,
+				004D9B1E2F72A38700A7DB56 /* svip_main_lottie_5.lottie */,
+				004D9B1F2F72A38700A7DB56 /* svip_main_lottie_6.lottie */,
+				004D9B202F72A38700A7DB56 /* svip_main_lottie_7.lottie */,
+				004D9B212F72A38700A7DB56 /* svip_main_lottie_8.lottie */,
+				004D9B222F72A38700A7DB56 /* svip_main_lottie_9.lottie */,
+				004D9B232F72A38700A7DB56 /* svip_main_lottie_10.lottie */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		0053547F29607E5900E52CBB /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1104,7 @@
 			children = (
 				7172B62C28D01E8400381E83 /* Assets */,
 				1A3543B3254E775F0032B677 /* Font */,
+				004D9B142F72A36000A7DB56 /* Lottie */,
 				7107CDA2287BD49800AC9B9F /* GIF */,
 				71048BC92863167300737278 /* JSON */,
 				7190E4E227102EB600E8C511 /* Music */,
@@ -2301,6 +2354,21 @@
 				7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */,
 				71F249D72731517A00FAAD93 /* FireworkFooter.xib in Resources */,
 				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
+				004D9B242F72A38700A7DB56 /* svip_main_lottie_5.lottie in Resources */,
+				004D9B252F72A38700A7DB56 /* svip_main_lottie_9.lottie in Resources */,
+				004D9B262F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie in Resources */,
+				004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */,
+				004D9B282F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie in Resources */,
+				004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */,
+				004D9B2A2F72A38700A7DB56 /* svip_main_lottie_6.lottie in Resources */,
+				004D9B2B2F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie in Resources */,
+				004D9B2C2F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie in Resources */,
+				004D9B2D2F72A38700A7DB56 /* svip_main_lottie_3.lottie in Resources */,
+				004D9B2E2F72A38700A7DB56 /* svip_main_lottie_10.lottie in Resources */,
+				004D9B2F2F72A38700A7DB56 /* svip_main_lottie_7.lottie in Resources */,
+				004D9B302F72A38700A7DB56 /* svip_main_lottie_1.lottie in Resources */,
+				004D9B312F72A38700A7DB56 /* svip_main_lottie_4.lottie in Resources */,
+				004D9B322F72A38700A7DB56 /* svip_main_lottie_2.lottie in Resources */,
 				71F249D62731517A00FAAD93 /* FireworkPopView.xib in Resources */,
 				71F249DA2731517A00FAAD93 /* FireworkRulePopView.xib in Resources */,
 				718915AC282620BC0003E294 /* PKChallengeView.xib in Resources */,
@@ -2379,9 +2447,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
