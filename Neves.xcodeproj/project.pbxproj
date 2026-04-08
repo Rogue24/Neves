@@ -68,6 +68,7 @@
 		00A364242B20160E00CDCFAF /* TorchTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364232B20160E00CDCFAF /* TorchTool.swift */; };
 		00A364282B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364272B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift */; };
 		00AD4FB32D054F9B0011C4AA /* GCDBarrierTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */; };
+		00B57BE72F86C39500DBBE87 /* SimpleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B57BE62F86C39500DBBE87 /* SimpleTimer.swift */; };
 		00BC975C2AEE480600944EA9 /* TestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */; };
 		00C5618F2DF9E4CC00D35E7A /* TypingLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */; };
 		00C561912DF9E70400D35E7A /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C561902DF9E70400D35E7A /* TypingTextView.swift */; };
@@ -477,6 +478,7 @@
 		00A364232B20160E00CDCFAF /* TorchTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchTool.swift; sourceTree = "<group>"; };
 		00A364272B2018D200CDCFAF /* JYXBDrawingBoardTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JYXBDrawingBoardTestViewController.swift; sourceTree = "<group>"; };
 		00AD4FB22D054F9B0011C4AA /* GCDBarrierTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBarrierTestVC.swift; sourceTree = "<group>"; };
+		00B57BE62F86C39500DBBE87 /* SimpleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimer.swift; sourceTree = "<group>"; };
 		00BC975B2AEE480600944EA9 /* TestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotificationViewController.swift; sourceTree = "<group>"; };
 		00C5618E2DF9E4CC00D35E7A /* TypingLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingLabelViewController.swift; sourceTree = "<group>"; };
 		00C561902DF9E70400D35E7A /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
@@ -1230,6 +1232,7 @@
 				1A3543CE254E775F0032B677 /* Asyncs.swift */,
 				718018C527228A830056E699 /* Syncs.swift */,
 				00965D5B25CBF4DD00B7BB9C /* Done.swift */,
+				00B57BE62F86C39500DBBE87 /* SimpleTimer.swift */,
 				7170BF122701CA2000900BE7 /* VideoMaker.swift */,
 				7110742C27196B8200178969 /* VideoMaker.ImageInfo.swift */,
 				7110742A271968D700178969 /* VideoMaker.Lottie.swift */,
@@ -2558,6 +2561,7 @@
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
 				71F24A09273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
+				00B57BE72F86C39500DBBE87 /* SimpleTimer.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
 				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
 				1A354512254E77600032B677 /* JPViewController.m in Sources */,
