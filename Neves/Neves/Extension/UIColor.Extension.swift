@@ -88,6 +88,20 @@ extension UIColor {
     // MARK: - 随机颜色
     class var randomColor: UIColor { UIColor.rgba(RGBA.randomRGBA()) }
     class func randomColor(_ a: CGFloat = 1.0) -> UIColor { UIColor.rgba(RGBA.randomRGBA(a)) }
+    
+    // MARK: - 颜色转图片
+    func toImage(size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = UIScreen.main.scale
+        format.opaque = false // 是否“完全不透明” --- false：可能有透明
+        // 使用 renderer 生成图像
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        return renderer.image {
+            // 背景填充
+            self.setFill()
+            $0.cgContext.fill(CGRect(origin: .zero, size: size))
+        }
+    }
 }
 
 extension CGColor {
