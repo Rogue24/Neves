@@ -77,7 +77,8 @@ let AspectRatio_9_16: CGFloat = 9.0 / 16.0
 
 let hhmmssSSFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "hh:mm:ss:SS"
+    formatter.locale = Locale(identifier: "zh_CN")
+    formatter.dateFormat = "hh:mm:ss.SS"
     return formatter
 }()
 
@@ -94,3 +95,29 @@ let isRTL: Bool = {
     let layoutDirection = UIView.userInterfaceLayoutDirection(for: window.semanticContentAttribute)
     return layoutDirection == .rightToLeft
 }()
+
+/// 一分钟的秒数
+var OneMinSec: Int {
+    60
+}
+/// 一小时的秒数
+var OneHourSec: Int {
+    3600 // 60 * 60
+}
+/// 一天的秒数
+var OneDaySec: Int {
+    86400 // 60 * 60 * 24
+}
+/// 一年的秒数
+var OneYearSec: Int {
+    31536000 // 60 * 60 * 24 * 365
+}
+
+/// 今天0点时间戳
+var TodayZeroTimeInt: Int {
+    Int(Date.getTodayZeroTime())
+}
+/// 第二天0点时间戳
+var NextDayZeroTimeInt: Int {
+    TodayZeroTimeInt + OneDaySec
+}

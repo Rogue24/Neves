@@ -9,12 +9,40 @@
 import Foundation
 import AVKit
 
+#if DEBUG
+import os
+
+private let logger_subsystem = "com.zhoujianping.logger"
+private let logger_category = "JPDebug"
+private let logger = OSLog(subsystem: logger_subsystem, category: logger_category)
+
+private let JPrintQueue = DispatchQueue(label: "com.zhoujianping.JPrintQueue")
+#endif
+
 // MARK: - 自定义日志
-private let JPrintQueue = DispatchQueue(label: "JPrintQueue")
 /// 自定义日志
 func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String = #function) {
 #if DEBUG
-    guard msg.count != 0, let lastItem = msg.last else { return }
+    // -------------- old log --------------
+//    guard let lastItem = msg.last else { return }
+//
+//    // 时间+文件位置+行数
+//    let date = hhmmssSSFormatter.string(from: Date()).utf8
+////    let fileName = (file.lastPathComponent as NSString).deletingPathExtension
+////    let prefix = "[\(date)] [\(fileName) \(fn)] [第\(line)行]:"
+//    let prefix = "jpjpjp [\(date)]:"
+//    
+//    // 获取【除最后一个】的其他部分
+//    let items = msg.count > 1 ? msg[..<(msg.count - 1)] : []
+//    
+//    JPrintQueue.sync {
+//        print(prefix, terminator: " ")
+//        items.forEach { print($0, terminator: " ") }
+//        print(lastItem)
+//    }
+    
+    // -------------- new log --------------
+    guard msg.count > 0 else { return }
     
     // 时间+文件位置+行数
     let date = hhmmssSSFormatter.string(from: Date()).utf8
@@ -22,13 +50,9 @@ func JPrint(_ msg: Any..., file: NSString = #file, line: Int = #line, fn: String
 //    let prefix = "[\(date)] [\(fileName) \(fn)] [第\(line)行]:"
     let prefix = "jpjpjp [\(date)]:"
     
-    // 获取【除最后一个】的其他部分
-    let items = msg.count > 1 ? msg[..<(msg.count - 1)] : []
-    
     JPrintQueue.sync {
-        print(prefix, terminator: " ")
-        items.forEach { print($0, terminator: " ") }
-        print(lastItem)
+        let fullMsg = ([prefix] + msg).map { "\($0)" }.joined(separator: " ")
+        os_log(.debug, log: logger, "%{public}@", fullMsg)
     }
 #endif
 }

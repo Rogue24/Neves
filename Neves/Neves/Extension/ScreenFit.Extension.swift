@@ -21,22 +21,6 @@ extension CGFloat {
     var px: CGFloat { self * BasisWScale }
 }
 
-extension Array<Int> {
-    var px: Array<CGFloat> { self.map { $0.px } }
-}
-
-extension Array<Float> {
-    var px: Array<CGFloat> { self.map { $0.px } }
-}
-
-extension Array<Double> {
-    var px: Array<CGFloat> { self.map { $0.px } }
-}
-
-extension Array<CGFloat> {
-    var px: Array<CGFloat> { self.map { $0.px } }
-}
-
 extension CGPoint {
     var px: CGPoint { .init(x: self.x * BasisWScale, y: self.y * BasisWScale) }
     
@@ -72,4 +56,32 @@ extension CGRect {
                size: .init(width: size.width * BasisWScale,
                            height: size.height * BasisWScale))
     }
+}
+
+extension Array<Int> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<Float> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<Double> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<CGFloat> {
+    var px: Array<CGFloat> { self.map { $0.px } }
+}
+
+extension Array<CGPoint> {
+    var px: Array<CGPoint> { self.map { $0.px } }
+}
+
+extension Array<CGSize> {
+    var px: Array<CGSize> { self.map { $0.px } }
+}
+
+extension Array<CGRect> {
+    var px: Array<CGRect> { self.map { $0.px } }
 }
