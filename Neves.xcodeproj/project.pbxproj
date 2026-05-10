@@ -53,6 +53,7 @@
 		0060D0142F975D1A00809046 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060D0102F975D1A00809046 /* UserDefaults+Extension.swift */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
 		0079757D2F48200700B178E1 /* AICropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079757C2F48200700B178E1 /* AICropViewController.swift */; };
+		9A26C0022FCA000100000001 /* JPiOS26FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
 		007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */; };
 		007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */; };
@@ -466,6 +467,7 @@
 		0060D0102F975D1A00809046 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.Extension.swift; sourceTree = "<group>"; };
 		0079757C2F48200700B178E1 /* AICropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICropViewController.swift; sourceTree = "<group>"; };
+		9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPiOS26FeaturesViewController.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
 		007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutViewController.swift; sourceTree = "<group>"; };
@@ -963,6 +965,7 @@
 			isa = PBXGroup;
 			children = (
 				0079757C2F48200700B178E1 /* AICropViewController.swift */,
+				9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */,
 			);
 			path = Codex;
 			sourceTree = "<group>";
@@ -2588,6 +2591,7 @@
 				71A2702A2857432000B9D000 /* Modifier.swift in Sources */,
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				0079757D2F48200700B178E1 /* AICropViewController.swift in Sources */,
+				9A26C0022FCA000100000001 /* JPiOS26FeaturesViewController.swift in Sources */,
 				0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */,
 				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
 				0053548429607E5900E52CBB /* ImagePicker.swift in Sources */,
