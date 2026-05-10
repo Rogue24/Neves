@@ -7,6 +7,7 @@
 
 import UIKit
 import FunnyButton
+import SnapKit
 
 #if canImport(FoundationModels)
 import FoundationModels
@@ -116,27 +117,22 @@ private extension JPiOS26FeaturesViewController {
         title = "iOS 26 新特性"
         view.backgroundColor = .systemGroupedBackground
 
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.alwaysBounceVertical = true
         view.addSubview(scrollView)
 
         contentStack.axis = .vertical
         contentStack.spacing = 14
-        contentStack.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(contentStack)
 
-        NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        scrollView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
+        }
 
-            contentStack.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
-            contentStack.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -16),
-            contentStack.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 16),
-            contentStack.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor, constant: -28),
-            contentStack.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor, constant: -32),
-        ])
+        contentStack.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView.contentLayoutGuide).inset(UIEdgeInsets(top: 16, left: 16, bottom: 28, right: 16))
+            make.width.equalTo(scrollView.frameLayoutGuide).offset(-32)
+        }
 
         showWelcome()
     }
@@ -202,7 +198,6 @@ private extension JPiOS26FeaturesViewController {
         stack.axis = .vertical
         stack.spacing = spacing
         stack.alignment = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }
 
@@ -212,7 +207,6 @@ private extension JPiOS26FeaturesViewController {
         stack.spacing = spacing
         stack.alignment = .fill
         stack.distribution = .fillEqually
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }
 
@@ -229,7 +223,9 @@ private extension JPiOS26FeaturesViewController {
         view.backgroundColor = .tertiarySystemGroupedBackground
         view.layer.cornerRadius = 12
         view.clipsToBounds = true
-        view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        view.snp.makeConstraints { make in
+            make.height.equalTo(height)
+        }
         return view
     }
 
@@ -294,12 +290,16 @@ private extension JPiOS26FeaturesViewController {
         controllerLabel.backgroundColor = .systemBackground
         controllerLabel.layer.cornerRadius = 10
         controllerLabel.layer.masksToBounds = true
-        controllerLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 92).isActive = true
+        controllerLabel.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(92)
+        }
         controllerPropertiesLabel = controllerLabel
         stack.addArrangedSubview(controllerLabel)
 
         let demoView = PropertiesUpdateDemoView()
-        demoView.heightAnchor.constraint(equalToConstant: 112).isActive = true
+        demoView.snp.makeConstraints { make in
+            make.height.equalTo(112)
+        }
         stack.addArrangedSubview(demoView)
 
         let buttons = makeHorizontalStack()
@@ -344,7 +344,9 @@ private extension JPiOS26FeaturesViewController {
         )
 
         let box = FlushUpdatesDemoView()
-        box.heightAnchor.constraint(equalToConstant: 128).isActive = true
+        box.snp.makeConstraints { make in
+            make.height.equalTo(128)
+        }
         stack.addArrangedSubview(box)
 
         let buttons = makeHorizontalStack()
@@ -404,7 +406,6 @@ private extension JPiOS26FeaturesViewController {
         let containerEffect = UIGlassContainerEffect()
         containerEffect.spacing = 22
         let glassContainer = UIVisualEffectView(effect: containerEffect)
-        glassContainer.translatesAutoresizingMaskIntoConstraints = false
         canvas.addSubview(glassContainer)
 
         let glassStack = makeHorizontalStack(spacing: 18)
@@ -415,12 +416,9 @@ private extension JPiOS26FeaturesViewController {
         glassStack.addArrangedSubview(makeGlassTile(style: .clear, tint: .systemYellow.withAlphaComponent(0.16), title: "clear"))
         glassStack.addArrangedSubview(makeGlassTile(style: .regular, tint: .systemBlue.withAlphaComponent(0.20), title: "interactive"))
 
-        NSLayoutConstraint.activate([
-            glassContainer.leadingAnchor.constraint(equalTo: canvas.leadingAnchor, constant: 18),
-            glassContainer.trailingAnchor.constraint(equalTo: canvas.trailingAnchor, constant: -18),
-            glassContainer.topAnchor.constraint(equalTo: canvas.topAnchor, constant: 32),
-            glassContainer.bottomAnchor.constraint(equalTo: canvas.bottomAnchor, constant: -32),
-        ])
+        glassContainer.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 32, left: 18, bottom: 32, right: 18))
+        }
 
         addInfo("要点：交互元素可设置 effect.interactive = true；多个玻璃元素相邻时用 UIGlassContainerEffect 承载。", to: stack)
     }
@@ -436,7 +434,6 @@ private extension JPiOS26FeaturesViewController {
         view.clipsToBounds = true
 
         let label = makeLabel(title, font: .systemFont(ofSize: 16, weight: .bold), color: .white, alignment: .center)
-        label.translatesAutoresizingMaskIntoConstraints = false
         view.contentView.addSubview(label)
         label.pinEdges(to: view.contentView)
         return view
@@ -477,7 +474,9 @@ private extension JPiOS26FeaturesViewController {
             config.cornerStyle = .capsule
 
             let button = UIButton(configuration: config)
-            button.heightAnchor.constraint(equalToConstant: 56).isActive = true
+            button.snp.makeConstraints { make in
+                make.height.equalTo(56)
+            }
             stack.addArrangedSubview(button)
         }
 
@@ -513,7 +512,9 @@ private extension JPiOS26FeaturesViewController {
         concentric.cornerConfiguration = .uniformCorners(radius: .containerConcentric(minimum: 12))
 
         [fixed, capsule, concentric].forEach {
-            $0.heightAnchor.constraint(equalToConstant: 64).isActive = true
+            $0.snp.makeConstraints { make in
+                make.height.equalTo(64)
+            }
             stack.addArrangedSubview($0)
         }
 
@@ -558,7 +559,6 @@ private extension JPiOS26FeaturesViewController {
         stack.addArrangedSubview(canvas)
 
         let innerScrollView = UIScrollView()
-        innerScrollView.translatesAutoresizingMaskIntoConstraints = false
         innerScrollView.topEdgeEffect.style = .hard
         innerScrollView.bottomEdgeEffect.style = .soft
         canvas.addSubview(innerScrollView)
@@ -567,19 +567,22 @@ private extension JPiOS26FeaturesViewController {
         let content = makeVerticalStack(spacing: 8)
         innerScrollView.addSubview(content)
         content.pinEdges(to: innerScrollView.contentLayoutGuide, insets: UIEdgeInsets(top: 18, left: 18, bottom: 90, right: 18))
-        content.widthAnchor.constraint(equalTo: innerScrollView.frameLayoutGuide.widthAnchor, constant: -36).isActive = true
+        content.snp.makeConstraints { make in
+            make.width.equalTo(innerScrollView.frameLayoutGuide).offset(-36)
+        }
 
         for index in 1...18 {
             let row = makeLabel("Scroll Edge Row \(index)", font: .systemFont(ofSize: 16, weight: .medium), color: .label)
             row.backgroundColor = index.isMultiple(of: 2) ? .systemBackground : .secondarySystemBackground
             row.layer.cornerRadius = 10
             row.layer.masksToBounds = true
-            row.heightAnchor.constraint(equalToConstant: 42).isActive = true
+            row.snp.makeConstraints { make in
+                make.height.equalTo(42)
+            }
             content.addArrangedSubview(row)
         }
 
         let bottomBar = UIVisualEffectView(effect: UIBlurEffect(style: .systemMaterial))
-        bottomBar.translatesAutoresizingMaskIntoConstraints = false
         bottomBar.layer.cornerRadius = 18
         bottomBar.clipsToBounds = true
         canvas.addSubview(bottomBar)
@@ -599,12 +602,11 @@ private extension JPiOS26FeaturesViewController {
         bottomBar.contentView.addSubview(toggleButton)
         toggleButton.pinEdges(to: bottomBar.contentView, insets: UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14))
 
-        NSLayoutConstraint.activate([
-            bottomBar.leadingAnchor.constraint(equalTo: canvas.leadingAnchor, constant: 22),
-            bottomBar.trailingAnchor.constraint(equalTo: canvas.trailingAnchor, constant: -22),
-            bottomBar.bottomAnchor.constraint(equalTo: canvas.bottomAnchor, constant: -16),
-            bottomBar.heightAnchor.constraint(equalToConstant: 58),
-        ])
+        bottomBar.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(22)
+            make.bottom.equalToSuperview().inset(16)
+            make.height.equalTo(58)
+        }
     }
 }
 
@@ -737,7 +739,9 @@ private extension JPiOS26FeaturesViewController {
                 variableValue: value,
                 configuration: base.applying(variable).applying(gradient)
             )
-            imageView.heightAnchor.constraint(equalToConstant: 76).isActive = true
+            imageView.snp.makeConstraints { make in
+                make.height.equalTo(76)
+            }
             symbolRow.addArrangedSubview(imageView)
         }
         stack.addArrangedSubview(symbolRow)
@@ -755,7 +759,9 @@ private extension JPiOS26FeaturesViewController {
         #endif
 
         let button = UIButton(configuration: config)
-        button.heightAnchor.constraint(equalToConstant: 96).isActive = true
+        button.snp.makeConstraints { make in
+            make.height.equalTo(96)
+        }
         button.addAction(UIAction { [weak button] _ in
             guard let button else { return }
             index = (index + 1) % names.count
@@ -799,7 +805,9 @@ private extension JPiOS26FeaturesViewController {
         textView.layer.cornerRadius = 12
         textView.delegate = self
         textView.isEditable = true
-        textView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        textView.snp.makeConstraints { make in
+            make.height.equalTo(150)
+        }
         stack.addArrangedSubview(textView)
 
         let statusLabel = addInfo("尚未设置多选区。", to: stack)
@@ -845,7 +853,9 @@ private extension JPiOS26FeaturesViewController {
         outputLabel.backgroundColor = .systemBackground
         outputLabel.layer.cornerRadius = 12
         outputLabel.layer.masksToBounds = true
-        outputLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 140).isActive = true
+        outputLabel.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(140)
+        }
         stack.addArrangedSubview(outputLabel)
 
         #if canImport(FoundationModels)
@@ -956,7 +966,6 @@ private final class PropertiesUpdateDemoView: UIView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 8
-        stack.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stack)
         stack.pinEdges(to: self, insets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
 
@@ -1009,7 +1018,6 @@ private final class FlushUpdatesDemoView: UIView {
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         label.pinEdges(to: self, insets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
     }
@@ -1037,22 +1045,14 @@ private extension UIButton {
 private extension UIView {
 
     func pinEdges(to view: UIView, insets: UIEdgeInsets = .zero) {
-        translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left),
-            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -insets.right),
-            topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top),
-            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -insets.bottom),
-        ])
+        snp.makeConstraints { make in
+            make.edges.equalTo(view).inset(insets)
+        }
     }
 
     func pinEdges(to guide: UILayoutGuide, insets: UIEdgeInsets = .zero) {
-        translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: insets.left),
-            trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -insets.right),
-            topAnchor.constraint(equalTo: guide.topAnchor, constant: insets.top),
-            bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -insets.bottom),
-        ])
+        snp.makeConstraints { make in
+            make.edges.equalTo(guide).inset(insets)
+        }
     }
 }
