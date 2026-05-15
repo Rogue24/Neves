@@ -51,9 +51,13 @@
 		0060D00D2F975B4A00809046 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060D00C2F975B4A00809046 /* Array+Extension.swift */; };
 		0060D0122F975D1A00809046 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060D00E2F975D1A00809046 /* UserDefault.swift */; };
 		0060D0142F975D1A00809046 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060D0102F975D1A00809046 /* UserDefaults+Extension.swift */; };
+		0060D0162F98B5DC00809046 /* theming.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 0060D0152F98B5DC00809046 /* theming.lottie */; };
+		0060D0182F98B73100809046 /* clipped-traffic-lights.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 0060D0172F98B73100809046 /* clipped-traffic-lights.lottie */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
+		006DF7B32FB6FE1E00140BAC /* multiple_animations.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 006DF7B22FB6FE1E00140BAC /* multiple_animations.lottie */; };
+		006DF7B52FB6FE2700140BAC /* pigeon.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 006DF7B42FB6FE2700140BAC /* pigeon.lottie */; };
+		006DF7B72FB6FE3700140BAC /* LTR_D3.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 006DF7B62FB6FE3700140BAC /* LTR_D3.lottie */; };
 		0079757D2F48200700B178E1 /* AICropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079757C2F48200700B178E1 /* AICropViewController.swift */; };
-		9A26C0022FCA000100000001 /* JPiOS26FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */; };
 		007AB30C25CA387B00CFF914 /* WorkItemTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */; };
 		007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */; };
 		007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */; };
@@ -416,6 +420,7 @@
 		71F24A122733B33300FAAD93 /* DragonSlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A112733B33300FAAD93 /* DragonSlayer.swift */; };
 		71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */; };
 		71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */; };
+		9A26C0022FCA000100000001 /* JPiOS26FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -465,9 +470,13 @@
 		0060D00C2F975B4A00809046 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		0060D00E2F975D1A00809046 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		0060D0102F975D1A00809046 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		0060D0152F98B5DC00809046 /* theming.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = theming.lottie; sourceTree = "<group>"; };
+		0060D0172F98B73100809046 /* clipped-traffic-lights.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clipped-traffic-lights.lottie"; sourceTree = "<group>"; };
 		006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.Extension.swift; sourceTree = "<group>"; };
+		006DF7B22FB6FE1E00140BAC /* multiple_animations.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = multiple_animations.lottie; sourceTree = "<group>"; };
+		006DF7B42FB6FE2700140BAC /* pigeon.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = pigeon.lottie; sourceTree = "<group>"; };
+		006DF7B62FB6FE3700140BAC /* LTR_D3.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = LTR_D3.lottie; sourceTree = "<group>"; };
 		0079757C2F48200700B178E1 /* AICropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICropViewController.swift; sourceTree = "<group>"; };
-		9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPiOS26FeaturesViewController.swift; sourceTree = "<group>"; };
 		007AB30B25CA387B00CFF914 /* WorkItemTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemTestViewController.swift; sourceTree = "<group>"; };
 		007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutViewController.swift; sourceTree = "<group>"; };
@@ -892,6 +901,7 @@
 		71F24A112733B33300FAAD93 /* DragonSlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayer.swift; sourceTree = "<group>"; };
 		71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.CountingDown.swift; sourceTree = "<group>"; };
 		71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.Content.swift; sourceTree = "<group>"; };
+		9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPiOS26FeaturesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -923,6 +933,11 @@
 		004D9B142F72A36000A7DB56 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				0060D0152F98B5DC00809046 /* theming.lottie */,
+				0060D0172F98B73100809046 /* clipped-traffic-lights.lottie */,
+				006DF7B22FB6FE1E00140BAC /* multiple_animations.lottie */,
+				006DF7B42FB6FE2700140BAC /* pigeon.lottie */,
+				006DF7B62FB6FE3700140BAC /* LTR_D3.lottie */,
 				004D9B152F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie */,
 				004D9B162F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie */,
 				004D9B172F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie */,
@@ -2359,6 +2374,7 @@
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
 				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
 				71EA694126563270009463E6 /* Girl9.jpg in Resources */,
+				0060D0182F98B73100809046 /* clipped-traffic-lights.lottie in Resources */,
 				71048BCB2863167300737278 /* MoguBanner.json in Resources */,
 				715C901427F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib in Resources */,
 				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
@@ -2377,7 +2393,9 @@
 				7190E4E427102EB600E8C511 /* Matteo-Panama.mp3 in Resources */,
 				71F249D72731517A00FAAD93 /* FireworkFooter.xib in Resources */,
 				7139980D2705B64D002BC263 /* Girl8.jpg in Resources */,
+				006DF7B32FB6FE1E00140BAC /* multiple_animations.lottie in Resources */,
 				004D9B242F72A38700A7DB56 /* svip_main_lottie_5.lottie in Resources */,
+				006DF7B72FB6FE3700140BAC /* LTR_D3.lottie in Resources */,
 				004D9B252F72A38700A7DB56 /* svip_main_lottie_9.lottie in Resources */,
 				004D9B262F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie in Resources */,
 				004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */,
@@ -2396,6 +2414,7 @@
 				71F249DA2731517A00FAAD93 /* FireworkRulePopView.xib in Resources */,
 				718915AC282620BC0003E294 /* PKChallengeView.xib in Resources */,
 				1A354345254E75EC0032B677 /* Assets.xcassets in Resources */,
+				006DF7B52FB6FE2700140BAC /* pigeon.lottie in Resources */,
 				71F249D12731517A00FAAD93 /* FireworkItem.xib in Resources */,
 				1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */,
 				718A569E27F19F5E0071C724 /* CosmicExplorationPlayView.xib in Resources */,
@@ -2412,6 +2431,7 @@
 				71F249F42731517A00FAAD93 /* lrc1.txt in Resources */,
 				1A354370254E76B40032B677 /* lottie in Resources */,
 				7139980A2705B64D002BC263 /* Girl4.jpg in Resources */,
+				0060D0162F98B5DC00809046 /* theming.lottie in Resources */,
 				715C901227F6F45100B88B85 /* CosmicExplorationJackpotView.xib in Resources */,
 				71981FCA27F708AF0094E6F0 /* CosmicExplorationBuyTicketView.xib in Resources */,
 				713998092705B64D002BC263 /* Girl7.jpg in Resources */,
