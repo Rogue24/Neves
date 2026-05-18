@@ -60,6 +60,10 @@
                 "vcName": "JPiOS26FeaturesViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "JPSwiftMacroGuideViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

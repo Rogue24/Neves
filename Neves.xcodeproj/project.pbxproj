@@ -421,6 +421,15 @@
 		71F24A142733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */; };
 		71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */; };
 		9A26C0022FCA000100000001 /* JPiOS26FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */; };
+		9B6000012FDD100100000001 /* JPSwiftMacroLessons in Frameworks */ = {isa = PBXBuildFile; productRef = 9B6000022FDD100100000001 /* JPSwiftMacroLessons */; };
+		9B6000502FDD100100000001 /* JPSwiftMacroLessonBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6000302FDD100100000001 /* JPSwiftMacroLessonBaseViewController.swift */; };
+		9B6000512FDD100100000001 /* JPSwiftMacroGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6000312FDD100100000001 /* JPSwiftMacroGuideViewController.swift */; };
+		9B6000522FDD100100000001 /* JPSwiftMacroIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6000332FDD100100000001 /* JPSwiftMacroIntroViewController.swift */; };
+		9B6000532FDD100100000001 /* JPSwiftMacroFreestandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6000352FDD100100000001 /* JPSwiftMacroFreestandingViewController.swift */; };
+		9B6000542FDD100100000001 /* JPSwiftMacroDiagnosticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6000372FDD100100000001 /* JPSwiftMacroDiagnosticsViewController.swift */; };
+		9B6000552FDD100100000001 /* JPSwiftMacroAttachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6000392FDD100100000001 /* JPSwiftMacroAttachedViewController.swift */; };
+		9B6000562FDD100100000001 /* JPSwiftMacroOCCompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B60003B2FDD100100000001 /* JPSwiftMacroOCCompareViewController.swift */; };
+		9B6000572FDD100100000001 /* JPSwiftMacroWhenToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B60003D2FDD100100000001 /* JPSwiftMacroWhenToUseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -902,6 +911,21 @@
 		71F24A132733DCCC00FAAD93 /* DragonSlayerEntrance.CountingDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.CountingDown.swift; sourceTree = "<group>"; };
 		71F24A152733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonSlayerEntrance.Content.swift; sourceTree = "<group>"; };
 		9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPiOS26FeaturesViewController.swift; sourceTree = "<group>"; };
+		9B6000302FDD100100000001 /* JPSwiftMacroLessonBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroLessonBaseViewController.swift; sourceTree = "<group>"; };
+		9B6000312FDD100100000001 /* JPSwiftMacroGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroGuideViewController.swift; sourceTree = "<group>"; };
+		9B6000322FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B6000332FDD100100000001 /* JPSwiftMacroIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroIntroViewController.swift; sourceTree = "<group>"; };
+		9B6000342FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B6000352FDD100100000001 /* JPSwiftMacroFreestandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroFreestandingViewController.swift; sourceTree = "<group>"; };
+		9B6000362FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B6000372FDD100100000001 /* JPSwiftMacroDiagnosticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroDiagnosticsViewController.swift; sourceTree = "<group>"; };
+		9B6000382FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B6000392FDD100100000001 /* JPSwiftMacroAttachedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroAttachedViewController.swift; sourceTree = "<group>"; };
+		9B60003A2FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B60003B2FDD100100000001 /* JPSwiftMacroOCCompareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroOCCompareViewController.swift; sourceTree = "<group>"; };
+		9B60003C2FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B60003D2FDD100100000001 /* JPSwiftMacroWhenToUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPSwiftMacroWhenToUseViewController.swift; sourceTree = "<group>"; };
+		9B60003E2FDD100100000001 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -909,6 +933,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B6000012FDD100100000001 /* JPSwiftMacroLessons in Frameworks */,
 				1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -981,8 +1006,95 @@
 			children = (
 				0079757C2F48200700B178E1 /* AICropViewController.swift */,
 				9A26C0012FCA000100000001 /* JPiOS26FeaturesViewController.swift */,
+				9B6000202FDD100100000001 /* SwiftMacroLessons */,
 			);
 			path = Codex;
+			sourceTree = "<group>";
+		};
+		9B6000202FDD100100000001 /* SwiftMacroLessons */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000212FDD100100000001 /* Shared */,
+				9B6000222FDD100100000001 /* 00_Guide */,
+				9B6000232FDD100100000001 /* 01_Intro */,
+				9B6000242FDD100100000001 /* 02_Freestanding */,
+				9B6000252FDD100100000001 /* 03_Diagnostics */,
+				9B6000262FDD100100000001 /* 04_Attached */,
+				9B6000272FDD100100000001 /* 05_OCCompare */,
+				9B6000282FDD100100000001 /* 06_WhenToUse */,
+			);
+			path = SwiftMacroLessons;
+			sourceTree = "<group>";
+		};
+		9B6000212FDD100100000001 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000302FDD100100000001 /* JPSwiftMacroLessonBaseViewController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9B6000222FDD100100000001 /* 00_Guide */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000312FDD100100000001 /* JPSwiftMacroGuideViewController.swift */,
+				9B6000322FDD100100000001 /* README.md */,
+			);
+			path = 00_Guide;
+			sourceTree = "<group>";
+		};
+		9B6000232FDD100100000001 /* 01_Intro */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000332FDD100100000001 /* JPSwiftMacroIntroViewController.swift */,
+				9B6000342FDD100100000001 /* README.md */,
+			);
+			path = 01_Intro;
+			sourceTree = "<group>";
+		};
+		9B6000242FDD100100000001 /* 02_Freestanding */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000352FDD100100000001 /* JPSwiftMacroFreestandingViewController.swift */,
+				9B6000362FDD100100000001 /* README.md */,
+			);
+			path = 02_Freestanding;
+			sourceTree = "<group>";
+		};
+		9B6000252FDD100100000001 /* 03_Diagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000372FDD100100000001 /* JPSwiftMacroDiagnosticsViewController.swift */,
+				9B6000382FDD100100000001 /* README.md */,
+			);
+			path = 03_Diagnostics;
+			sourceTree = "<group>";
+		};
+		9B6000262FDD100100000001 /* 04_Attached */ = {
+			isa = PBXGroup;
+			children = (
+				9B6000392FDD100100000001 /* JPSwiftMacroAttachedViewController.swift */,
+				9B60003A2FDD100100000001 /* README.md */,
+			);
+			path = 04_Attached;
+			sourceTree = "<group>";
+		};
+		9B6000272FDD100100000001 /* 05_OCCompare */ = {
+			isa = PBXGroup;
+			children = (
+				9B60003B2FDD100100000001 /* JPSwiftMacroOCCompareViewController.swift */,
+				9B60003C2FDD100100000001 /* README.md */,
+			);
+			path = 05_OCCompare;
+			sourceTree = "<group>";
+		};
+		9B6000282FDD100100000001 /* 06_WhenToUse */ = {
+			isa = PBXGroup;
+			children = (
+				9B60003D2FDD100100000001 /* JPSwiftMacroWhenToUseViewController.swift */,
+				9B60003E2FDD100100000001 /* README.md */,
+			);
+			path = 06_WhenToUse;
 			sourceTree = "<group>";
 		};
 		007E64E429ADB39C00FD5F70 /* Layout */ = {
@@ -2323,6 +2435,9 @@
 			dependencies = (
 			);
 			name = Neves;
+			packageProductDependencies = (
+				9B6000022FDD100100000001 /* JPSwiftMacroLessons */,
+			);
 			productName = Neves;
 			productReference = 1A354338254E75EB0032B677 /* Neves.app */;
 			productType = "com.apple.product-type.application";
@@ -2351,6 +2466,9 @@
 				Base,
 			);
 			mainGroup = 1A35432F254E75EB0032B677;
+			packageReferences = (
+				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */,
+			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -2612,6 +2730,14 @@
 				1A35450D254E77600032B677 /* JPScreenEdgeLeftScrollView.m in Sources */,
 				0079757D2F48200700B178E1 /* AICropViewController.swift in Sources */,
 				9A26C0022FCA000100000001 /* JPiOS26FeaturesViewController.swift in Sources */,
+				9B6000502FDD100100000001 /* JPSwiftMacroLessonBaseViewController.swift in Sources */,
+				9B6000512FDD100100000001 /* JPSwiftMacroGuideViewController.swift in Sources */,
+				9B6000522FDD100100000001 /* JPSwiftMacroIntroViewController.swift in Sources */,
+				9B6000532FDD100100000001 /* JPSwiftMacroFreestandingViewController.swift in Sources */,
+				9B6000542FDD100100000001 /* JPSwiftMacroDiagnosticsViewController.swift in Sources */,
+				9B6000552FDD100100000001 /* JPSwiftMacroAttachedViewController.swift in Sources */,
+				9B6000562FDD100100000001 /* JPSwiftMacroOCCompareViewController.swift in Sources */,
+				9B6000572FDD100100000001 /* JPSwiftMacroWhenToUseViewController.swift in Sources */,
 				0002A5572CBBC02F0006C80F /* SceneDelegate.swift in Sources */,
 				710D5E2D2880696B0033C6C1 /* KFImageTestView.swift in Sources */,
 				0053548429607E5900E52CBB /* ImagePicker.swift in Sources */,
@@ -3070,6 +3196,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/JPSwiftMacroLessons;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B6000022FDD100100000001 /* JPSwiftMacroLessons */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */;
+			productName = JPSwiftMacroLessons;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1A354330254E75EB0032B677 /* Project object */;
 }

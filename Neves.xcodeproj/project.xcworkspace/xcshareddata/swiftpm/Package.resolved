@@ -1,5 +1,5 @@
 {
-  "originHash" : "fa72f1c550c7af821a83ea03207ac421e9fc8c01fac74d28a7455821c4e15910",
+  "originHash" : "126e55d5612d48a8062b16888dfd85097e8b4d9ffad0925501270dccd4d43e19",
   "pins" : [
     {
       "identity" : "afnetworking",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "d9f589cc2c1fe9d55eb5eea00558010afea7a41e"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "state" : {
+        "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
+        "version" : "602.0.0"
       }
     },
     {
