@@ -8,7 +8,7 @@
 struct Syncs {
     
     /// 返回主队列执行
-    public static func main(_ task: @escaping MyTask) {
+    public static func main(_ task: @escaping Asyncs.BaseTask) {
         if Thread.isMainThread {
             task()
             return

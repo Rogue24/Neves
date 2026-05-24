@@ -51,8 +51,8 @@ class TestNotificationViewController: TestBaseViewController {
         a.name = "aaa"
         b.name = "bbb"
         
-        NotificationCenter.jp.addObserver(a, selector: #selector(ABC.abc(_:)), name: "wAaa", object: self)
-        NotificationCenter.jp.addObserver(b, selector: #selector(ABC.abc(_:)), name: "wAaa", object: nil)
+        NotificationCenter.jp.addObserver(a, selector: #selector(ABC.abc(_:)), key: .wAaa, object: self)
+        NotificationCenter.jp.addObserver(b, selector: #selector(ABC.abc(_:)), key: .wAaa, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,11 +62,11 @@ class TestNotificationViewController: TestBaseViewController {
         
         addFunnyAction(name: "带self") { [weak self] in
             guard let self = self else { return }
-            NotificationCenter.jp.post(name: "wAaa", object: self)
+            NotificationCenter.jp.post(key: .wAaa, object: self)
         }
         
         addFunnyAction(name: "不带self") {
-            NotificationCenter.jp.post(name: "wAaa", object: nil)
+            NotificationCenter.jp.post(key: .wAaa, object: nil)
         }
     }
     

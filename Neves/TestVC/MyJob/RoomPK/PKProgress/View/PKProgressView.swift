@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class PKProgressView: UIView {
     var isFm: Bool = false
@@ -50,7 +51,7 @@ class PKProgressView: UIView {
         posAnimView.loopMode = .loop
         progressBgView.addSubview(posAnimView)
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_room_progressbar_lottie"),
-           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) {
             posAnimView.animation = animation
             posAnimView.imageProvider = FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path)
             posAnimView.play()
@@ -68,7 +69,7 @@ extension PKProgressView {
     @discardableResult
     private func playAnim(lottieName: String, isOnec: Bool) -> LottieAnimationView? {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(lottieName)"),
-              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache)
         else { return nil }
         
         let animView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))

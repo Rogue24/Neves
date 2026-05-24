@@ -5,6 +5,7 @@
 //  Created by aa on 2022/12/30.
 //
 
+import UIKit
 import Lottie
 
 class GuideIntoRoomUserIconListView: UIView, GuideIntoRoomContentViewCompatible {
@@ -22,7 +23,7 @@ class GuideIntoRoomUserIconListView: UIView, GuideIntoRoomContentViewCompatible 
         super.init(frame: .zero)
         
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/roomguide_picture_lottie"),
-              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache)
         else {
             JPrint("路径错误！")
             return

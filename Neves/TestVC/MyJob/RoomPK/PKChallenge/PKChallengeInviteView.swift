@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class PKChallengeInviteView: UIView {
     @IBOutlet weak var pkAnimContainer: UIView!
@@ -36,7 +37,7 @@ class PKChallengeInviteView: UIView {
         refuseBtn.layer.masksToBounds = true
         
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_tag_lottie"),
-           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) {
             let pkLogoAnimView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
             pkLogoAnimView.backgroundBehavior = .pauseAndRestore
             pkLogoAnimView.contentMode = .scaleAspectFit

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol PKStarTerminal: UIView {
     var starCenter: CGPoint { get }
@@ -168,7 +169,7 @@ private extension PKStarBottle {
     /// 播放激活动画
     func playActivateAnim() {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_star_activation_lottie"),
-              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache)
+              let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache)
         else { return }
         
         let animView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))

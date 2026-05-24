@@ -34,7 +34,7 @@ struct MarebulabulasLrcCellModel {
         lrcFrame = [MarebulabulasLrcCell.LrcX,
                     0,
                     maxSize.width,
-                    content.textSize(withFont: font, lineSpace: lineSpace, isOneLine: &isOneLine, maxSize: maxSize).height]
+                    content.jp.textSize(withFont: font, lineSpace: lineSpace, isOneLine: &isOneLine, maxSize: maxSize).height]
         cellHeight = lrcFrame.height + 16
         
         var attributes: [NSAttributedString.Key: Any] = [:]

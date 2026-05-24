@@ -5,6 +5,9 @@
 //  Created by aa on 2022/5/7.
 //
 
+import UIKit
+import Lottie
+
 class PKChallengeView: UIView {
     static let openSize: CGSize = [PortraitScreenWidth, 195]
     static let foldSize: CGSize = [105, 45]
@@ -89,7 +92,7 @@ class PKChallengeView: UIView {
         }
         
         if let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/pk_tag_lottie"),
-           let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) {
+           let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) {
             let pkLogoAnimView = LottieAnimationView(animation: animation, imageProvider: FilepathImageProvider(filepath: URL(fileURLWithPath: filepath).deletingLastPathComponent().path))
             pkLogoAnimView.backgroundBehavior = .pauseAndRestore
             pkLogoAnimView.contentMode = .scaleAspectFit

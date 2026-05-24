@@ -77,18 +77,45 @@ extension UIColor {
         Self.init(red: rgba.r / 255.0, green: rgba.g / 255.0, blue: rgba.b / 255.0, alpha: rgba.a)
     }
     
+    // MARK: - 通过十六进制颜色值创建颜色
+    class func hex(_ hex: UInt32, a: CGFloat = 1) -> Self {
+        let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
+        let g = CGFloat((hex & 0x00FF00) >> 8) / 255.0
+        let b = CGFloat(hex & 0x0000FF) / 255.0
+        return Self.init(red: r, green: g, blue: b, alpha: a)
+    }
+    
     // MARK: - 随机颜色
     class var randomColor: UIColor { UIColor.rgba(RGBA.randomRGBA()) }
     class func randomColor(_ a: CGFloat = 1.0) -> UIColor { UIColor.rgba(RGBA.randomRGBA(a)) }
+    
+    // MARK: - 颜色转图片
+    func toImage(size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = UIScreen.main.scale
+        format.opaque = false // 是否“完全不透明” --- false：可能有透明
+        // 使用 renderer 生成图像
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        return renderer.image {
+            // 背景填充
+            self.setFill()
+            $0.cgContext.fill(CGRect(origin: .zero, size: size))
+        }
+    }
 }
 
 extension CGColor {
     // MARK: - 通过RGBA创建颜色
     class func rgb(_ r: CGFloat, _ g: CGFloat, _ b: CGFloat, a: CGFloat = 1) -> CGColor {
-        UIColor.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a).cgColor
+        UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: a).cgColor
     }
     class func rgba(_ rgba: UIColor.RGBA) -> CGColor {
-        UIColor.init(red: rgba.r / 255.0, green: rgba.g / 255.0, blue: rgba.b / 255.0, alpha: rgba.a).cgColor
+        UIColor(red: rgba.r / 255.0, green: rgba.g / 255.0, blue: rgba.b / 255.0, alpha: rgba.a).cgColor
+    }
+    
+    // MARK: - 通过十六进制颜色值创建颜色
+    class func hex(_ hex: UInt32, a: CGFloat = 1) -> CGColor {
+        UIColor.hex(hex, a: a).cgColor
     }
     
     // MARK: - 随机颜色

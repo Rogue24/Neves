@@ -13,9 +13,9 @@ struct UserDefaultsConfig {
     /// 告诉编译器 我要包裹的是hadShownGuideView这个值。
     /// 实际写法就是在UserDefault包裹器的初始化方法前加了个@
     /// hadShownGuideView 属性的一些key和默认值已经在 UserDefault包裹器的构造方法中实现
-    @UserDefault("had_shown_guide_view", defaultValue: false) static var hadShownGuideView: Bool?
+    @UserDefault(.had_shown_guide_view) static var hadShownGuideView: Bool = false
     
-    @UserDefault("name", defaultValue: "sb") static var name: String?
+    @UserDefault(.name) static var name: String = "sb"
 }
 /// ==================================================================================================
 
@@ -63,7 +63,7 @@ struct UserDefaultsConfig {
 
 class PropertyWrapperTestVC: TestBaseViewController {
     
-    @UserDefault("nickname", defaultValue: "shuaige") var nickname: String?
+    @UserDefault(.nickname) var nickname: String = "shuaige"
     
     @ObserveChangeValue(valueDidChangedCallback: { (oldValue, newValue) in
         JPrint("oldValue", oldValue)
@@ -75,29 +75,29 @@ class PropertyWrapperTestVC: TestBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        JPrint("nickname", nickname ?? "?")
+        JPrint("nickname", nickname)
         JPrint("$nickname", $nickname ?? "??")
         
-        JPrint("myName", myName ?? "?")
-        JPrint("$myName", $myName ?? "??")
+        JPrint("myName", myName)
+        JPrint("$myName", $myName)
         
-        JPrint("taName", taName ?? "?")
-        JPrint("$taName", $taName ?? "??")
+        JPrint("taName", taName)
+        JPrint("$taName", $taName)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
         nickname = "shuaige \(formatter.string(from: Date()))"
-        JPrint("nickname", nickname ?? "?")
+        JPrint("nickname", nickname)
         JPrint("-------------")
         
         myName = "shuaigeping \(formatter.string(from: Date()))"
-        JPrint("myName", myName ?? "?")
+        JPrint("myName", myName)
         JPrint("-------------")
         
         taName = "zhoujianping \(formatter.string(from: Date()))"
-        JPrint("taName", taName ?? "?")
+        JPrint("taName", taName)
         JPrint("-------------")
     }
 }

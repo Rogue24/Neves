@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 extension DragonSlayerEntrance {
     

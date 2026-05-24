@@ -5,6 +5,9 @@
 //  Created by aa on 2022/4/28.
 //
 
+import UIKit
+import Lottie
+
 class PKResultPopView: UIView {
     let result: PKResult
     let animView = LottieAnimationView(animation: nil, imageProvider: nil)
@@ -82,7 +85,7 @@ extension PKResultPopView {
     
     func playAnim(_ imageReplacement: [String: CGImage?]) {
         guard let filepath = Bundle.main.path(forResource: "data", ofType: "json", inDirectory: "lottie/\(result.lottieName)"),
-              let animation = LottieAnimation.filepath(filepath, animationCache: LRUAnimationCache.sharedCache) else {
+              let animation = LottieAnimation.filepath(filepath, animationCache: DefaultAnimationCache.sharedCache) else {
             removeFromSuperview()
             return
         }
