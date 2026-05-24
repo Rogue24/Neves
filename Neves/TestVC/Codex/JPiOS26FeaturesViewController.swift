@@ -9,6 +9,10 @@ import UIKit
 import FunnyButton
 import SnapKit
 
+#if canImport(Observation)
+import Observation
+#endif
+
 #if canImport(FoundationModels)
 import FoundationModels
 #endif
@@ -49,34 +53,37 @@ class JPiOS26FeaturesViewController: TestBaseViewController {
             FunnyAction(name: "1.Properties更新") { [weak self] in
                 self?.demoPropertiesUpdatePass()
             },
-            FunnyAction(name: "2.Flush动画更新") { [weak self] in
+            FunnyAction(name: "2.@Observable自动更新") { [weak self] in
+                self?.demoObservableUIKitProperties()
+            },
+            FunnyAction(name: "3.Flush动画更新") { [weak self] in
                 self?.demoFlushUpdatesAnimation()
             },
-            FunnyAction(name: "3.Liquid Glass") { [weak self] in
+            FunnyAction(name: "4.Liquid Glass") { [weak self] in
                 self?.demoLiquidGlassEffect()
             },
-            FunnyAction(name: "4.Glass Button") { [weak self] in
+            FunnyAction(name: "5.Glass Button") { [weak self] in
                 self?.demoGlassButtonConfiguration()
             },
-            FunnyAction(name: "5.圆角配置") { [weak self] in
+            FunnyAction(name: "6.圆角配置") { [weak self] in
                 self?.demoCornerConfiguration()
             },
-            FunnyAction(name: "6.Scroll Edge") { [weak self] in
+            FunnyAction(name: "7.Scroll Edge") { [weak self] in
                 self?.demoScrollEdgeEffects()
             },
-            FunnyAction(name: "7.Slider配置") { [weak self] in
+            FunnyAction(name: "8.Slider配置") { [weak self] in
                 self?.demoSliderTrackConfiguration()
             },
-            FunnyAction(name: "8.导航栏徽章") { [weak self] in
+            FunnyAction(name: "9.导航栏徽章") { [weak self] in
                 self?.demoNavigationSubtitleAndBadge()
             },
-            FunnyAction(name: "9.Symbol渲染") { [weak self] in
+            FunnyAction(name: "10.Symbol渲染") { [weak self] in
                 self?.demoSymbolRenderingAndTransition()
             },
-            FunnyAction(name: "10.TextView多选区") { [weak self] in
+            FunnyAction(name: "11.TextView多选区") { [weak self] in
                 self?.demoTextViewMultiRangeEditing()
             },
-            FunnyAction(name: "11.Foundation Models") { [weak self] in
+            FunnyAction(name: "12.Foundation Models") { [weak self] in
                 self?.demoFoundationModels()
             },
         ])
@@ -325,7 +332,56 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 2. Flush Updates Animation
+// MARK: - 2. UIKit Observation Tracking
+
+private extension JPiOS26FeaturesViewController {
+
+    func demoObservableUIKitProperties() {
+        // [iOS 26] UIKit 的 updateProperties() 支持 Swift Observation 追踪。
+        // 在 updateProperties() 中读取 @Observable 对象的属性后，后续属性变化会自动让 UIKit 重新调度 properties update。
+        // 参考链接：https://developer.apple.com/documentation/uikit/updating-views-automatically-with-observation-tracking
+        // 参考链接：https://developer.apple.com/documentation/observation/observable()
+        guard #available(iOS 26.0, *) else {
+            showUnavailable("@Observable 自动刷新 UIKit", link: "https://developer.apple.com/documentation/uikit/updating-views-automatically-with-observation-tracking")
+            return
+        }
+
+        let stack = prepareDemo(
+            title: "@Observable + updateProperties",
+            description: "这个 demo 只修改 @Observable model，不在按钮回调里手动调用 setNeedsUpdateProperties。UIKit 会根据 updateProperties 内读取过的属性自动重新刷新。"
+        )
+
+        #if canImport(Observation)
+        let model = ObservableUIKitDemoModel()
+        let colors: [UIColor] = [.systemBlue, .systemPink, .systemGreen, .systemOrange, .systemPurple]
+        let demoView = ObservableUIKitDemoView(model: model)
+        demoView.heightAnchor.constraint(equalToConstant: 142).isActive = true
+        stack.addArrangedSubview(demoView)
+
+        let statusLabel = addInfo("已建立初始 observation tracking。点击按钮后只改 model，观察卡片自动更新。", to: stack)
+        let buttons = makeHorizontalStack()
+        buttons.addArrangedSubview(makeDemoButton("count + 1") { [weak statusLabel] _ in
+            model.count += 1
+            statusLabel?.text = "刚刚执行：model.count += 1，没有手动 setNeedsUpdateProperties。"
+        })
+        buttons.addArrangedSubview(makeDemoButton("切换状态/颜色") { [weak statusLabel] _ in
+            model.isHighlighted.toggle()
+            model.colorIndex += 1
+            model.accentColor = colors[model.colorIndex % colors.count]
+            statusLabel?.text = "刚刚执行：toggle + accentColor 更新，UIKit 自动调度 updateProperties。"
+        })
+        stack.addArrangedSubview(buttons)
+
+        addInfo("要点：把 UI 派生逻辑放进 updateProperties()；当里面读取到的 @Observable 属性变化时，UIKit 会自动失效并合并更新。", to: stack)
+        demoView.setNeedsUpdateProperties()
+        demoView.updatePropertiesIfNeeded()
+        #else
+        addInfo("当前 SDK 无法 import Observation，已跳过 @Observable 演示。", to: stack)
+        #endif
+    }
+}
+
+// MARK: - 3. Flush Updates Animation
 
 private extension JPiOS26FeaturesViewController {
 
@@ -373,7 +429,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 3. Liquid Glass
+// MARK: - 4. Liquid Glass
 
 private extension JPiOS26FeaturesViewController {
 
@@ -440,7 +496,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 4. Glass Button Configuration
+// MARK: - 5. Glass Button Configuration
 
 private extension JPiOS26FeaturesViewController {
 
@@ -484,7 +540,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 5. Corner Configuration
+// MARK: - 6. Corner Configuration
 
 private extension JPiOS26FeaturesViewController {
 
@@ -536,7 +592,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 6. Scroll Edge Effects
+// MARK: - 7. Scroll Edge Effects
 
 private extension JPiOS26FeaturesViewController {
 
@@ -610,7 +666,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 7. Slider Track Configuration
+// MARK: - 8. Slider Track Configuration
 
 private extension JPiOS26FeaturesViewController {
 
@@ -662,7 +718,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 8. Navigation Subtitle And Badge
+// MARK: - 9. Navigation Subtitle And Badge
 
 private extension JPiOS26FeaturesViewController {
 
@@ -707,7 +763,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 9. Symbol Rendering And Transition
+// MARK: - 10. Symbol Rendering And Transition
 
 private extension JPiOS26FeaturesViewController {
 
@@ -780,7 +836,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 10. TextView Multi Range Editing
+// MARK: - 11. TextView Multi Range Editing
 
 private extension JPiOS26FeaturesViewController {
 
@@ -831,7 +887,7 @@ private extension JPiOS26FeaturesViewController {
     }
 }
 
-// MARK: - 11. Foundation Models
+// MARK: - 12. Foundation Models
 
 private extension JPiOS26FeaturesViewController {
 
@@ -988,6 +1044,80 @@ private final class PropertiesUpdateDemoView: UIView {
         backgroundColor = value.isMultiple(of: 2) ? .systemMint.withAlphaComponent(0.22) : .systemOrange.withAlphaComponent(0.22)
     }
 }
+
+#if canImport(Observation)
+@available(iOS 26.0, *)
+@Observable
+private final class ObservableUIKitDemoModel {
+    var count = 0
+    var colorIndex = 0
+    var isHighlighted = false
+    var accentColor: UIColor = .systemBlue
+}
+
+@available(iOS 26.0, *)
+private final class ObservableUIKitDemoView: UIView {
+
+    private let model: ObservableUIKitDemoModel
+    private let titleLabel = UILabel()
+    private let detailLabel = UILabel()
+    private var updateCount = 0
+
+    init(model: ObservableUIKitDemoModel) {
+        self.model = model
+        super.init(frame: .zero)
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupUI() {
+        backgroundColor = .systemBackground
+        layer.cornerRadius = 14
+        layer.masksToBounds = true
+        layer.borderWidth = 1
+
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stack)
+        stack.pinEdges(to: self, insets: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+
+        titleLabel.font = .monospacedDigitSystemFont(ofSize: 20, weight: .bold)
+        titleLabel.numberOfLines = 0
+        stack.addArrangedSubview(titleLabel)
+
+        detailLabel.font = .systemFont(ofSize: 14)
+        detailLabel.textColor = .secondaryLabel
+        detailLabel.numberOfLines = 0
+        stack.addArrangedSubview(detailLabel)
+    }
+
+    @available(iOS 26.0, *)
+    override func updateProperties() {
+        super.updateProperties()
+
+        updateCount += 1
+
+        // 这里读取 @Observable model 的属性，UIKit 会记录依赖关系；
+        // 后续这些属性变化时，会自动让本 view 再次进入 updateProperties。
+        let accentColor = model.accentColor
+        let highlighted = model.isHighlighted
+        titleLabel.text = "@Observable count = \(model.count)"
+        detailLabel.text = """
+        updateProperties 第 \(updateCount) 次
+        highlighted = \(highlighted)
+        这次刷新不是按钮里手动 setNeedsUpdateProperties 触发的。
+        """
+        titleLabel.textColor = accentColor
+        layer.borderColor = accentColor.cgColor
+        backgroundColor = highlighted ? accentColor.withAlphaComponent(0.16) : .systemBackground
+    }
+}
+#endif
 
 private final class FlushUpdatesDemoView: UIView {
 
