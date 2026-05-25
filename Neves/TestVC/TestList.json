@@ -7,6 +7,10 @@
                 "vcCreateWay" : 0
             },
             {
+                "vcName": "FontListViewController",
+                "vcCreateWay" : 0
+            },
+            {
                 "vcName": "DiffableDataSourceViewController",
                 "vcCreateWay" : 0
             },
