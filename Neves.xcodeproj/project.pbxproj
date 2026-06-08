@@ -54,6 +54,7 @@
 		0060D0162F98B5DC00809046 /* theming.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 0060D0152F98B5DC00809046 /* theming.lottie */; };
 		0060D0182F98B73100809046 /* clipped-traffic-lights.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 0060D0172F98B73100809046 /* clipped-traffic-lights.lottie */; };
 		006A9E262A77CCA600AD86BA /* UIAlertController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */; };
+		006DA00A2FD6B20300DF0D22 /* HitokotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006DA0092FD6B20300DF0D22 /* HitokotoModel.swift */; };
 		006DF7B32FB6FE1E00140BAC /* multiple_animations.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 006DF7B22FB6FE1E00140BAC /* multiple_animations.lottie */; };
 		006DF7B52FB6FE2700140BAC /* pigeon.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 006DF7B42FB6FE2700140BAC /* pigeon.lottie */; };
 		006DF7B72FB6FE3700140BAC /* LTR_D3.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 006DF7B62FB6FE3700140BAC /* LTR_D3.lottie */; };
@@ -483,6 +484,7 @@
 		0060D0152F98B5DC00809046 /* theming.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = theming.lottie; sourceTree = "<group>"; };
 		0060D0172F98B73100809046 /* clipped-traffic-lights.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = "clipped-traffic-lights.lottie"; sourceTree = "<group>"; };
 		006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.Extension.swift; sourceTree = "<group>"; };
+		006DA0092FD6B20300DF0D22 /* HitokotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitokotoModel.swift; sourceTree = "<group>"; };
 		006DF7B22FB6FE1E00140BAC /* multiple_animations.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = multiple_animations.lottie; sourceTree = "<group>"; };
 		006DF7B42FB6FE2700140BAC /* pigeon.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = pigeon.lottie; sourceTree = "<group>"; };
 		006DF7B62FB6FE3700140BAC /* LTR_D3.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = LTR_D3.lottie; sourceTree = "<group>"; };
@@ -1003,6 +1005,14 @@
 			path = UserDefault;
 			sourceTree = "<group>";
 		};
+		006DA0082FD6B1EE00DF0D22 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				006DA0092FD6B20300DF0D22 /* HitokotoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0079757B2F481FEB00B178E1 /* Codex */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,6 +1237,7 @@
 				718A56AF27F1B9480071C724 /* Buttons */,
 				1A6587402629E6CC00846689 /* PopView */,
 				00D6515F257498720074693E /* Gradient */,
+				006DA0082FD6B1EE00DF0D22 /* Model */,
 			);
 			path = Unit;
 			sourceTree = "<group>";
@@ -2711,6 +2722,7 @@
 				719299F7281A8BC900CCE872 /* PKProgressOutSideView.swift in Sources */,
 				1A354526254E77600032B677 /* JPDeviceTool.m in Sources */,
 				71AB638327F5C287000CCF58 /* CosmicExplorationPrizeView.swift in Sources */,
+				006DA00A2FD6B20300DF0D22 /* HitokotoModel.swift in Sources */,
 				7110743F271ED4D400178969 /* ImageVideoViewController.swift in Sources */,
 				719A522A286D9E8400619AD4 /* MyCache.m in Sources */,
 				1A354529254E77600032B677 /* TestViewController.swift in Sources */,
