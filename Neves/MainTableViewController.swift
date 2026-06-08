@@ -8,7 +8,7 @@
 
 import UIKit
 import KakaJSON
-
+import FunnyButton
 
 class MainTableViewController: UITableViewController {
     
@@ -129,6 +129,7 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        removeFunnyActions()
         
         addFunnyAction {
             let s1 = JPStatus.received
