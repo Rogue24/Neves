@@ -7,10 +7,6 @@
                 "vcCreateWay" : 0
             },
             {
-                "vcName": "FontListViewController",
-                "vcCreateWay" : 0
-            },
-            {
                 "vcName": "DiffableDataSourceViewController",
                 "vcCreateWay" : 0
             },
@@ -275,6 +271,10 @@
     {
         "header" : "Base",
         "vcList" : [
+            {
+                "vcName": "FontListViewController",
+                "vcCreateWay" : 0
+            },
             {
                 "vcName": "OperationQueueTestViewController",
                 "vcCreateWay" : 0

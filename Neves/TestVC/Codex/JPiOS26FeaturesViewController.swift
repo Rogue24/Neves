@@ -4,6 +4,7 @@
 //
 //  Created by Codex on 2026/5/10.
 //
+//  参考：https://juejin.cn/post/7560958498676588590
 
 import UIKit
 import FunnyButton
@@ -41,6 +42,8 @@ class JPiOS26FeaturesViewController: TestBaseViewController {
 
     private var navBadgeCount = 1
     private var navBadgeItem: UIBarButtonItem?
+    
+    private weak var heightConstraint: Constraint?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -272,6 +275,75 @@ private extension JPiOS26FeaturesViewController {
 }
 
 // MARK: - 1. Properties Update Pass
+// 参考：https://juejin.cn/post/7520093724988145715
+/**
+ * `UIViewController`与`UIView`均增加了一个名为`updateProperties()`的新方法，可以通过修改属性值达到更新 UI 的效果。
+ * 它是一种轻量级的 UI 更新方式，不会触发完整的布局过程（不会触发`layoutSubviews()`或者`viewWillLayoutSubviews()`方法）。
+ * 常见使用场景如下：
+ *  - 更改 UI 的内容。
+ *  - 显示/隐藏 UI。
+ *  - 无需移动或者调整 UI 的大小。
+ * 可以自动追踪`@Observable Object`。
+ * 可以通过调用`setNeedsUpdateProperties()`方法手动触发更新。
+ */
+
+private final class PropertiesUpdateDemoView: UIView {
+
+    private let titleLabel = UILabel()
+    private let detailLabel = UILabel()
+
+    var value = 0 {
+        didSet {
+            if #available(iOS 26.0, *) {
+                setNeedsUpdateProperties()
+            }
+        }
+    }
+    private var updateCount = 0
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupUI() {
+        backgroundColor = .systemBackground
+        layer.cornerRadius = 12
+        layer.masksToBounds = true
+
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        addSubview(stack)
+        stack.pinEdges(to: self, insets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
+
+        titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
+        titleLabel.numberOfLines = 0
+        stack.addArrangedSubview(titleLabel)
+
+        detailLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        detailLabel.textColor = .secondaryLabel
+        detailLabel.numberOfLines = 0
+        stack.addArrangedSubview(detailLabel)
+    }
+
+    @available(iOS 26.0, *)
+    override func updateProperties() {
+        super.updateProperties()
+        updateCount += 1
+        titleLabel.text = "UIView updateProperties 第 \(updateCount) 次"
+        detailLabel.text = "value = \(value)，颜色和文案都在 updateProperties 里统一刷新。"
+        backgroundColor = value.isMultiple(of: 2) ? .systemMint.withAlphaComponent(0.22) : .systemOrange.withAlphaComponent(0.22)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+}
 
 private extension JPiOS26FeaturesViewController {
 
@@ -333,6 +405,92 @@ private extension JPiOS26FeaturesViewController {
 }
 
 // MARK: - 2. UIKit Observation Tracking
+// 参考：https://juejin.cn/post/7518758885274517541
+/**
+ * UIKit 支持`@Observable类型`。
+ * 修饰的类型必须是类而不能是结构体。
+ * 当其中的数据（属性值）发生更改时，相应的 UI 能够自动更新，而无需手动调用`setNeedsLayout()`、`setNeedsDisplay()`、`layoutIfNeeded()`等方法。
+ * 需要将 UI 更新的代码放在`UIView`的`layoutSubviews()`或者`UIViewController` 的`viewWillLayoutSubviews()`方法中。当`@Observable`中的数据发生变化时，`layoutSubviews()`与`viewWillLayoutSubviews()`方法会【自动调用】。
+ * 该功能可以支持到 iOS 18，但需要在 Info.plist 文件中增加字段`UIObservationTrackingEnabled`，并且将其值设置为YES。
+ */
+
+#if canImport(Observation)
+@available(iOS 26.0, *)
+@Observable
+private final class ObservableUIKitDemoModel {
+    var count = 0
+    var colorIndex = 0
+    var isHighlighted = false
+    var accentColor: UIColor = .systemBlue
+}
+
+@available(iOS 26.0, *)
+private final class ObservableUIKitDemoView: UIView {
+
+    private let model: ObservableUIKitDemoModel
+    private let titleLabel = UILabel()
+    private let detailLabel = UILabel()
+    private var updateCount = 0
+
+    init(model: ObservableUIKitDemoModel) {
+        self.model = model
+        super.init(frame: .zero)
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupUI() {
+        backgroundColor = .systemBackground
+        layer.cornerRadius = 14
+        layer.masksToBounds = true
+        layer.borderWidth = 1
+
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(stack)
+        stack.pinEdges(to: self, insets: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
+
+        titleLabel.font = .monospacedDigitSystemFont(ofSize: 20, weight: .bold)
+        titleLabel.numberOfLines = 0
+        stack.addArrangedSubview(titleLabel)
+
+        detailLabel.font = .systemFont(ofSize: 14)
+        detailLabel.textColor = .secondaryLabel
+        detailLabel.numberOfLines = 0
+        stack.addArrangedSubview(detailLabel)
+    }
+
+    @available(iOS 26.0, *)
+    override func updateProperties() {
+        super.updateProperties()
+
+        updateCount += 1
+
+        // 这里读取 @Observable model 的属性，UIKit 会记录依赖关系；
+        // 后续这些属性变化时，会自动让本 view 再次进入 updateProperties。
+        let accentColor = model.accentColor
+        let highlighted = model.isHighlighted
+        titleLabel.text = "@Observable count = \(model.count)"
+        detailLabel.text = """
+        updateProperties 第 \(updateCount) 次
+        highlighted = \(highlighted)
+        这次刷新不是按钮里手动 setNeedsUpdateProperties 触发的。
+        """
+        titleLabel.textColor = accentColor
+        layer.borderColor = accentColor.cgColor
+        backgroundColor = highlighted ? accentColor.withAlphaComponent(0.16) : .systemBackground
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+}
+#endif
 
 private extension JPiOS26FeaturesViewController {
 
@@ -382,6 +540,52 @@ private extension JPiOS26FeaturesViewController {
 }
 
 // MARK: - 3. Flush Updates Animation
+// 参考：https://juejin.cn/post/7528721862462291978
+
+private final class FlushUpdatesDemoView: UIView {
+
+    private let label = UILabel()
+
+    var step = 0 {
+        didSet {
+            if #available(iOS 26.0, *) {
+                setNeedsUpdateProperties()
+            }
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupUI() {
+        backgroundColor = .systemBackground
+        layer.cornerRadius = 14
+        layer.masksToBounds = true
+
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        addSubview(label)
+        label.pinEdges(to: self, insets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
+    }
+
+    @available(iOS 26.0, *)
+    override func updateProperties() {
+        super.updateProperties()
+        label.text = "pending property step = \(step)\n动画开始前会 flush 更新"
+        backgroundColor = step.isMultiple(of: 2) ? .systemBlue.withAlphaComponent(0.16) : .systemPink.withAlphaComponent(0.16)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+}
 
 private extension JPiOS26FeaturesViewController {
 
@@ -393,6 +597,9 @@ private extension JPiOS26FeaturesViewController {
             showUnavailable("Flush Updates 动画", link: "https://developer.apple.com/documentation/uikit/uiview/animationoptions")
             return
         }
+        
+        let testView = UIView()
+        let subView = UIView()
 
         let stack = prepareDemo(
             title: "UIView.AnimationOptions.flushUpdates",
@@ -404,7 +611,7 @@ private extension JPiOS26FeaturesViewController {
             make.height.equalTo(128)
         }
         stack.addArrangedSubview(box)
-
+        
         let buttons = makeHorizontalStack()
         buttons.addArrangedSubview(makeDemoButton("UIView.animate") { [weak box] _ in
             guard let box else { return }
@@ -412,6 +619,18 @@ private extension JPiOS26FeaturesViewController {
             UIView.animate(withDuration: 0.35, delay: 0, options: [.curveEaseInOut, .flushUpdates]) {
                 box.transform = box.transform == .identity ? CGAffineTransform(scaleX: 0.92, y: 0.92) : .identity
             }
+            
+            self.heightConstraint?.update(offset: 100)
+            UIView.animate(withDuration: 3, delay: 0, options: .flushUpdates) {
+                self.heightConstraint?.update(offset: 150)
+            }
+            // 👆🏻等同于👇🏻
+//            self.heightConstraint?.update(offset: 100)
+//            testView.layoutIfNeeded()
+//            self.heightConstraint?.update(offset: 150)
+//            UIView.animate(withDuration: 3, delay: 0) {
+//                testView.layoutIfNeeded()
+//            }
         })
         buttons.addArrangedSubview(makeDemoButton("PropertyAnimator") { [weak box] _ in
             guard let box else { return }
@@ -426,6 +645,21 @@ private extension JPiOS26FeaturesViewController {
         stack.addArrangedSubview(buttons)
         addInfo("要点：flushUpdates 不是替代 layoutIfNeeded，而是告诉 UIKit 在动画边界处理 pending 更新，减少旧状态参与动画。", to: stack)
         box.setNeedsUpdateProperties()
+        
+        testView.backgroundColor = .randomColor
+        stack.addArrangedSubview(testView)
+        testView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(200)
+        }
+        
+        subView.backgroundColor = .randomColor
+        testView.addSubview(subView)
+        subView.snp.makeConstraints { make in
+            make.centerX.top.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.5)
+            heightConstraint = make.height.equalTo(10).constraint
+        }
     }
 }
 
@@ -989,176 +1223,7 @@ extension JPiOS26FeaturesViewController: UITextViewDelegate {
     }
 }
 
-// MARK: - Demo Views
-
-private final class PropertiesUpdateDemoView: UIView {
-
-    private let titleLabel = UILabel()
-    private let detailLabel = UILabel()
-
-    var value = 0 {
-        didSet {
-            if #available(iOS 26.0, *) {
-                setNeedsUpdateProperties()
-            }
-        }
-    }
-    private var updateCount = 0
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    private func setupUI() {
-        backgroundColor = .systemBackground
-        layer.cornerRadius = 12
-        layer.masksToBounds = true
-
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 8
-        addSubview(stack)
-        stack.pinEdges(to: self, insets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
-
-        titleLabel.font = .systemFont(ofSize: 17, weight: .bold)
-        titleLabel.numberOfLines = 0
-        stack.addArrangedSubview(titleLabel)
-
-        detailLabel.font = .systemFont(ofSize: 14, weight: .regular)
-        detailLabel.textColor = .secondaryLabel
-        detailLabel.numberOfLines = 0
-        stack.addArrangedSubview(detailLabel)
-    }
-
-    @available(iOS 26.0, *)
-    override func updateProperties() {
-        super.updateProperties()
-        updateCount += 1
-        titleLabel.text = "UIView updateProperties 第 \(updateCount) 次"
-        detailLabel.text = "value = \(value)，颜色和文案都在 updateProperties 里统一刷新。"
-        backgroundColor = value.isMultiple(of: 2) ? .systemMint.withAlphaComponent(0.22) : .systemOrange.withAlphaComponent(0.22)
-    }
-}
-
-#if canImport(Observation)
-@available(iOS 26.0, *)
-@Observable
-private final class ObservableUIKitDemoModel {
-    var count = 0
-    var colorIndex = 0
-    var isHighlighted = false
-    var accentColor: UIColor = .systemBlue
-}
-
-@available(iOS 26.0, *)
-private final class ObservableUIKitDemoView: UIView {
-
-    private let model: ObservableUIKitDemoModel
-    private let titleLabel = UILabel()
-    private let detailLabel = UILabel()
-    private var updateCount = 0
-
-    init(model: ObservableUIKitDemoModel) {
-        self.model = model
-        super.init(frame: .zero)
-        setupUI()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    private func setupUI() {
-        backgroundColor = .systemBackground
-        layer.cornerRadius = 14
-        layer.masksToBounds = true
-        layer.borderWidth = 1
-
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 8
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(stack)
-        stack.pinEdges(to: self, insets: UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16))
-
-        titleLabel.font = .monospacedDigitSystemFont(ofSize: 20, weight: .bold)
-        titleLabel.numberOfLines = 0
-        stack.addArrangedSubview(titleLabel)
-
-        detailLabel.font = .systemFont(ofSize: 14)
-        detailLabel.textColor = .secondaryLabel
-        detailLabel.numberOfLines = 0
-        stack.addArrangedSubview(detailLabel)
-    }
-
-    @available(iOS 26.0, *)
-    override func updateProperties() {
-        super.updateProperties()
-
-        updateCount += 1
-
-        // 这里读取 @Observable model 的属性，UIKit 会记录依赖关系；
-        // 后续这些属性变化时，会自动让本 view 再次进入 updateProperties。
-        let accentColor = model.accentColor
-        let highlighted = model.isHighlighted
-        titleLabel.text = "@Observable count = \(model.count)"
-        detailLabel.text = """
-        updateProperties 第 \(updateCount) 次
-        highlighted = \(highlighted)
-        这次刷新不是按钮里手动 setNeedsUpdateProperties 触发的。
-        """
-        titleLabel.textColor = accentColor
-        layer.borderColor = accentColor.cgColor
-        backgroundColor = highlighted ? accentColor.withAlphaComponent(0.16) : .systemBackground
-    }
-}
-#endif
-
-private final class FlushUpdatesDemoView: UIView {
-
-    private let label = UILabel()
-
-    var step = 0 {
-        didSet {
-            if #available(iOS 26.0, *) {
-                setNeedsUpdateProperties()
-            }
-        }
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    private func setupUI() {
-        backgroundColor = .systemBackground
-        layer.cornerRadius = 14
-        layer.masksToBounds = true
-
-        label.font = .systemFont(ofSize: 18, weight: .bold)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        addSubview(label)
-        label.pinEdges(to: self, insets: UIEdgeInsets(top: 14, left: 14, bottom: 14, right: 14))
-    }
-
-    @available(iOS 26.0, *)
-    override func updateProperties() {
-        super.updateProperties()
-        label.text = "pending property step = \(step)\n动画开始前会 flush 更新"
-        backgroundColor = step.isMultiple(of: 2) ? .systemBlue.withAlphaComponent(0.16) : .systemPink.withAlphaComponent(0.16)
-    }
-}
+// MARK: - 扩展方法
 
 private extension UIButton {
 

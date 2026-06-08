@@ -1500,7 +1500,6 @@
 				1A354439254E77600032B677 /* TestList.json */,
 				00D109A725749DA200F17889 /* TestBaseViewController.swift */,
 				1A59310227B8E5EF00DC60FC /* PlaygroundViewController.swift */,
-				006DF7C22FC403CA00140BAC /* FontListViewController.swift */,
 				00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */,
 				71F249982731517A00FAAD93 /* MyJob */,
 				0079757B2F481FEB00B178E1 /* Codex */,
@@ -1610,6 +1609,7 @@
 		1A354455254E77600032B677 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				006DF7C22FC403CA00140BAC /* FontListViewController.swift */,
 				7106A05027043E6500186BDE /* OperationQueueTestViewController.swift */,
 				71B897A4268C4F1E00705AC1 /* AwaitTestViewController.swift */,
 				710A2F11260C6A130060CF01 /* BindableViewController.swift */,
