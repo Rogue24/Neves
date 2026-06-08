@@ -97,6 +97,10 @@ class JPiOS26FeaturesViewController: TestBaseViewController {
         foundationModelsTask?.cancel()
         resetNavigationDemo()
     }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+    }
 
     @available(iOS 26.0, *)
     override func updateProperties() {
@@ -414,7 +418,7 @@ private extension JPiOS26FeaturesViewController {
  * 需要将 UI 更新的代码放在`UIView`的`layoutSubviews()`或者`UIViewController` 的`viewWillLayoutSubviews()`方法中。当`@Observable`中的数据发生变化时，`layoutSubviews()`与`viewWillLayoutSubviews()`方法会【自动调用】。
  * 该功能可以支持到 iOS 18，但需要在 Info.plist 文件中增加字段`UIObservationTrackingEnabled`，并且将其值设置为YES。
  *
- * iOS 26 推荐用`updateProperties()`（兼容 iOS 18 才使用`layoutSubviews()`与`viewWillLayoutSubviews()`方法 ）。
+ * iOS 26 推荐用`updateProperties()`（兼容 iOS 18 才会用`layoutSubviews()`与`viewWillLayoutSubviews()`方法 ）。
  * - 苹果说`updateProperties`会在`layoutSubviews`前运行，并且它也会自动追踪`Observable`，可以手动用`setNeedsUpdateProperties()`触发。
  */
 
