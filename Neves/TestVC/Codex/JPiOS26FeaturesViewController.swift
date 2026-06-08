@@ -405,13 +405,17 @@ private extension JPiOS26FeaturesViewController {
 }
 
 // MARK: - 2. UIKit Observation Tracking
-// 参考：https://juejin.cn/post/7518758885274517541
+// 参考1：https://juejin.cn/post/7518758885274517541
+// 参考2：https://chatgpt.com/share/6a2672db-d858-83ec-b6d5-91bc20b7876d
 /**
  * UIKit 支持`@Observable类型`。
  * 修饰的类型必须是类而不能是结构体。
  * 当其中的数据（属性值）发生更改时，相应的 UI 能够自动更新，而无需手动调用`setNeedsLayout()`、`setNeedsDisplay()`、`layoutIfNeeded()`等方法。
  * 需要将 UI 更新的代码放在`UIView`的`layoutSubviews()`或者`UIViewController` 的`viewWillLayoutSubviews()`方法中。当`@Observable`中的数据发生变化时，`layoutSubviews()`与`viewWillLayoutSubviews()`方法会【自动调用】。
  * 该功能可以支持到 iOS 18，但需要在 Info.plist 文件中增加字段`UIObservationTrackingEnabled`，并且将其值设置为YES。
+ *
+ * iOS 26 推荐用`updateProperties()`（兼容 iOS 18 才使用`layoutSubviews()`与`viewWillLayoutSubviews()`方法 ）。
+ * - 苹果说`updateProperties`会在`layoutSubviews`前运行，并且它也会自动追踪`Observable`，可以手动用`setNeedsUpdateProperties()`触发。
  */
 
 #if canImport(Observation)
@@ -540,7 +544,8 @@ private extension JPiOS26FeaturesViewController {
 }
 
 // MARK: - 3. Flush Updates Animation
-// 参考：https://juejin.cn/post/7528721862462291978
+// 参考1：https://juejin.cn/post/7528721862462291978
+// 参考2：https://chatgpt.com/share/6a2672f9-a468-83ec-a65c-46ad96582bd4
 
 private final class FlushUpdatesDemoView: UIView {
 
@@ -620,17 +625,22 @@ private extension JPiOS26FeaturesViewController {
                 box.transform = box.transform == .identity ? CGAffineTransform(scaleX: 0.92, y: 0.92) : .identity
             }
             
+            /**
+             * 在约束动画里，可以把`flushUpdates`理解成 UIKit 帮我们完成了以前手动`layoutIfNeeded()`用来确定起点和终点的工作；
+             * 但它不是机械调用两次`layoutIfNeeded()`，而是在动画上下文变化时统一刷新`pending updates`。
+             * - `pending updates`：“欠着没算的布局”，也就是约束改了但UI布局还没更新的时候（系统通常会等到下一轮RunLoop再统一布局）
+             */
+//            self.heightConstraint?.update(offset: 100)
+//            testView.layoutIfNeeded() // 1.先把当前布局刷到最新，确定动画起点
+//            self.heightConstraint?.update(offset: 150) // 2.修改约束，制造目标状态
+//            UIView.animate(withDuration: 3, delay: 0) {
+//                testView.layoutIfNeeded()
+//            } // 3.在动画block里刷新布局，系统会把frame变化做成动画
+            // 👆🏻等同于👇🏻
             self.heightConstraint?.update(offset: 100)
             UIView.animate(withDuration: 3, delay: 0, options: .flushUpdates) {
                 self.heightConstraint?.update(offset: 150)
-            }
-            // 👆🏻等同于👇🏻
-//            self.heightConstraint?.update(offset: 100)
-//            testView.layoutIfNeeded()
-//            self.heightConstraint?.update(offset: 150)
-//            UIView.animate(withDuration: 3, delay: 0) {
-//                testView.layoutIfNeeded()
-//            }
+            } // `flushUpdates`通常可以替代「动画前确定起点+动画中刷新终点」的那套手动`layoutIfNeeded()`流程。
         })
         buttons.addArrangedSubview(makeDemoButton("PropertyAnimator") { [weak box] _ in
             guard let box else { return }
