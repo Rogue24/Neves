@@ -98,6 +98,7 @@ class JPiOS26FeaturesViewController: TestBaseViewController {
         resetNavigationDemo()
     }
     
+    // 打断点用的
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
     }
@@ -344,6 +345,7 @@ private final class PropertiesUpdateDemoView: UIView {
         backgroundColor = value.isMultiple(of: 2) ? .systemMint.withAlphaComponent(0.22) : .systemOrange.withAlphaComponent(0.22)
     }
     
+    // 打断点用的
     override func layoutSubviews() {
         super.layoutSubviews()
     }
@@ -418,8 +420,15 @@ private extension JPiOS26FeaturesViewController {
  * 需要将 UI 更新的代码放在`UIView`的`layoutSubviews()`或者`UIViewController` 的`viewWillLayoutSubviews()`方法中。当`@Observable`中的数据发生变化时，`layoutSubviews()`与`viewWillLayoutSubviews()`方法会【自动调用】。
  * 该功能可以支持到 iOS 18，但需要在 Info.plist 文件中增加字段`UIObservationTrackingEnabled`，并且将其值设置为YES。
  *
+ * 例如`model`是`@Observable类型`，在控制器的`viewWillLayoutSubviews`方法中有这么一句`nameLabel.text = model.name`，
+ * 那么 UIKit 会自动记录：`model.name`，也就是：这个控制器的 UI 依赖了这个值。以后其他地方改：`model.name = "Swift"`，UIKit 会自动重新触发相关更新流程，不需要你手动调用`setNeedsLayout()`。
+ *
  * iOS 26 推荐用`updateProperties()`（兼容 iOS 18 才会用`layoutSubviews()`与`viewWillLayoutSubviews()`方法 ）。
- * - 苹果说`updateProperties`会在`layoutSubviews`前运行，并且它也会自动追踪`Observable`，可以手动用`setNeedsUpdateProperties()`触发。
+ * - 苹果说`updateProperties`会在`layoutSubviews`【前】运行，并且它也会自动追踪`Observable`，可以手动用`setNeedsUpdateProperties()`触发。
+ * - 这个方法更适合更新内容、样式、配置，而不是布局，这比把所有东西都塞进`layoutSubviews()`更干净。因为`layoutSubviews`本质是【布局】方法，不应该在里面塞一堆文本、颜色、图片更新等这些跟布局无关的操作。
+ *
+ * `@Observable`不是【监听整个对象】，而是【监听你读到的属性】。
+ * - 例如我在`updateProperties`里面读的是`model.count`，不是`model.count2`，那么我在其他处修改了`model.count2`，是不会触发`updateProperties`的 ---【谁被读，谁被追踪】。
  */
 
 #if canImport(Observation)
@@ -427,6 +436,7 @@ private extension JPiOS26FeaturesViewController {
 @Observable
 private final class ObservableUIKitDemoModel {
     var count = 0
+    var count2 = 0
     var colorIndex = 0
     var isHighlighted = false
     var accentColor: UIColor = .systemBlue
@@ -494,8 +504,10 @@ private final class ObservableUIKitDemoView: UIView {
         backgroundColor = highlighted ? accentColor.withAlphaComponent(0.16) : .systemBackground
     }
     
+    // 打断点用的
     override func layoutSubviews() {
         super.layoutSubviews()
+        // 这里啥事没干，没有记录`@Observable类型`模型，UIKit不会触发这里。
     }
 }
 #endif
@@ -529,6 +541,8 @@ private extension JPiOS26FeaturesViewController {
         buttons.addArrangedSubview(makeDemoButton("count + 1") { [weak statusLabel] _ in
             model.count += 1
             statusLabel?.text = "刚刚执行：model.count += 1，没有手动 setNeedsUpdateProperties。"
+//            model.count2 += 1
+//            statusLabel?.text = "刚刚执行：model.count2 += 1，count2 = \(model.count2)，但没有触发 updateProperties。"
         })
         buttons.addArrangedSubview(makeDemoButton("切换状态/颜色") { [weak statusLabel] _ in
             model.isHighlighted.toggle()
@@ -591,6 +605,7 @@ private final class FlushUpdatesDemoView: UIView {
         backgroundColor = step.isMultiple(of: 2) ? .systemBlue.withAlphaComponent(0.16) : .systemPink.withAlphaComponent(0.16)
     }
     
+    // 打断点用的
     override func layoutSubviews() {
         super.layoutSubviews()
     }
