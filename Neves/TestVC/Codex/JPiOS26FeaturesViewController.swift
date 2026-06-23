@@ -429,6 +429,17 @@ private extension JPiOS26FeaturesViewController {
  *
  * `@Observable`不是【监听整个对象】，而是【监听你读到的属性】。
  * - 例如我在`updateProperties`里面读的是`model.count`，不是`model.count2`，那么我在其他处修改了`model.count2`，是不会触发`updateProperties`的 ---【谁被读，谁被追踪】。
+ *
+ * UIKit 还支持在 cell 的配置更新里追踪`@Observable`。
+ * 在`UICollectionViewCell`的`configurationUpdateHandler`里使用 Observable，UIKit 也能【建立依赖】，模型变化时重新跑`handler`更新 cell：
+ *  cell.configurationUpdateHandler = { cell, state in
+        var content = UIListContentConfiguration.subtitleCell()
+        content.text = itemModel.title
+        content.secondaryText = itemModel.subtitle
+        cell.contentConfiguration = content
+    }
+ * 以后在其他地方修改了`itemModel.title"`，可见 cell 会自动更新，不用你手动调用`collectionView.reloadItems(at:)`。
+ * - 注意，是【可见 cell】才会自动更新，别幻想一个已经复用飞走的 cell 还能穿越回来报恩，UIKit 不是修仙框架。
  */
 
 #if canImport(Observation)
