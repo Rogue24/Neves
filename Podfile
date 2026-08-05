@@ -15,7 +15,7 @@ target 'Neves' do
   pod 'SwiftyJSON'
   pod 'KakaJSON'
 #  pod 'lottie-ios', '~> 3.5.0'
-  pod 'lottie-ios', :git => 'https://github.com/Rogue24/lottie-ios.git', :branch => 'JP_4.6.1'
+  pod 'lottie-ios', :git => 'https://github.com/Rogue24/lottie-ios.git', :branch => 'JP_4.6.1.1'
   pod 'SnapKit', '~> 5.7.1'
   pod 'RealmSwift'
   pod 'SwiftGen'

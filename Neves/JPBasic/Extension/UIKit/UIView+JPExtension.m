@@ -95,10 +95,17 @@
 }
 
 - (UIImage *)jp_convertToImage {
-    UIGraphicsBeginImageContextWithOptions(self.jp_size, NO, [UIScreen mainScreen].scale);
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    return [self jp_convertToImageAfterScreenUpdates:YES];
+}
+
+- (UIImage *)jp_convertToImageAfterScreenUpdates:(BOOL)afterUpdates {
+    UIGraphicsImageRendererFormat *format = [[UIGraphicsImageRendererFormat alloc] init];
+//    format.opaque = NO;
+//    format.scale = [UIScreen mainScreen].scale;
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:self.bounds.size format:format];
+    UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext *context) {
+        [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:afterUpdates];
+    }];
     return image;
 }
 
@@ -328,10 +335,13 @@
 }
 
 - (UIImage *)jp_convertToImage {
-    UIGraphicsBeginImageContextWithOptions(self.jp_size, NO, [UIScreen mainScreen].scale);
-    [self renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    UIGraphicsImageRendererFormat *format = [[UIGraphicsImageRendererFormat alloc] init];
+//    format.opaque = NO;
+//    format.scale = self.contentsScale;
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:self.bounds.size format:format];
+    UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext *context) {
+        [self renderInContext:context.CGContext];
+    }];
     return image;
 }
 

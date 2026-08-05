@@ -12,6 +12,7 @@
 		00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00055475291A56A800AEC49B /* ScreenRotatorState.swift */; };
 		00139EFC2EC594350025C029 /* DiffableDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */; };
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
+		0019819030219894005F9425 /* pr_2271.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 0019818F30219894005F9425 /* pr_2271.lottie */; };
 		002E0C582ADD0AFC008EA4B8 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */; };
 		002E78C4295BF29E0071E30C /* GuideIntoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */; };
 		002E78CB295BF4310071E30C /* GuideIntoRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78CA295BF4310071E30C /* GuideIntoRoom.swift */; };
@@ -44,7 +45,7 @@
 		004D9B322F72A38700A7DB56 /* svip_main_lottie_2.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1B2F72A38700A7DB56 /* svip_main_lottie_2.lottie */; };
 		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
-		0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker.API.swift */; };
+		0053548529607E5900E52CBB /* ImagePicker+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker+API.swift */; };
 		00535C702B7E0B1700C308C9 /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00535C6F2B7E0B1700C308C9 /* girl.jpg */; };
 		005DF54425652EDB0010E772 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005DF54325652EDB0010E772 /* File.swift */; };
 		0060D00B2F97544E00809046 /* Comparable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0060D00A2F97544E00809046 /* Comparable+Extension.swift */; };
@@ -439,6 +440,8 @@
 		00055475291A56A800AEC49B /* ScreenRotatorState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenRotatorState.swift; sourceTree = "<group>"; };
 		00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceViewController.swift; sourceTree = "<group>"; };
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
+		0019818F30219894005F9425 /* pr_2271.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = pr_2271.lottie; sourceTree = "<group>"; };
+		001981913022D58A005F9425 /* lottie-抓帧技术讨论.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lottie-抓帧技术讨论.md"; sourceTree = "<group>"; };
 		002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomViewController.swift; sourceTree = "<group>"; };
 		002E78CA295BF4310071E30C /* GuideIntoRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoom.swift; sourceTree = "<group>"; };
@@ -474,7 +477,7 @@
 		004D9B232F72A38700A7DB56 /* svip_main_lottie_10.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_10.lottie; sourceTree = "<group>"; };
 		0053548029607E5900E52CBB /* ImagePickerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerObject.swift; sourceTree = "<group>"; };
 		0053548129607E5900E52CBB /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		0053548229607E5900E52CBB /* ImagePicker.API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.API.swift; sourceTree = "<group>"; };
+		0053548229607E5900E52CBB /* ImagePicker+API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImagePicker+API.swift"; sourceTree = "<group>"; };
 		00535C6F2B7E0B1700C308C9 /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
 		005DF54325652EDB0010E772 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0060D00A2F97544E00809046 /* Comparable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Extension.swift"; sourceTree = "<group>"; };
@@ -967,6 +970,7 @@
 				006DF7B22FB6FE1E00140BAC /* multiple_animations.lottie */,
 				006DF7B42FB6FE2700140BAC /* pigeon.lottie */,
 				006DF7B62FB6FE3700140BAC /* LTR_D3.lottie */,
+				0019818F30219894005F9425 /* pr_2271.lottie */,
 				004D9B152F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie */,
 				004D9B162F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie */,
 				004D9B172F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie */,
@@ -989,8 +993,8 @@
 		0053547F29607E5900E52CBB /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				0053548229607E5900E52CBB /* ImagePicker.API.swift */,
 				0053548129607E5900E52CBB /* ImagePicker.swift */,
+				0053548229607E5900E52CBB /* ImagePicker+API.swift */,
 				0053548029607E5900E52CBB /* ImagePickerObject.swift */,
 			);
 			path = ImagePicker;
@@ -1535,6 +1539,7 @@
 		1A354430254E77600032B677 /* Animate */ = {
 			isa = PBXGroup;
 			children = (
+				001981913022D58A005F9425 /* lottie-抓帧技术讨论.md */,
 				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				7110743E271ED4D400178969 /* ImageVideoViewController.swift */,
 				71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */,
@@ -2531,6 +2536,7 @@
 				004D9B252F72A38700A7DB56 /* svip_main_lottie_9.lottie in Resources */,
 				004D9B262F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie in Resources */,
 				004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */,
+				0019819030219894005F9425 /* pr_2271.lottie in Resources */,
 				004D9B282F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie in Resources */,
 				004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */,
 				004D9B2A2F72A38700A7DB56 /* svip_main_lottie_6.lottie in Resources */,
@@ -2695,7 +2701,7 @@
 				00139EFC2EC594350025C029 /* DiffableDataSourceViewController.swift in Sources */,
 				1A35452A254E77600032B677 /* ManyLayerToMaskViewController.swift in Sources */,
 				1A354507254E77600032B677 /* JPProxy.m in Sources */,
-				0053548529607E5900E52CBB /* ImagePicker.API.swift in Sources */,
+				0053548529607E5900E52CBB /* ImagePicker+API.swift in Sources */,
 				1A9E418E26BE44E3006941D0 /* ProcessorTestViewController.swift in Sources */,
 				00E7072D2CC7D83400733639 /* DeepLabV3ViewController.swift in Sources */,
 				1A3545AE254E818B0032B677 /* SwiftyJSON.Extension.swift in Sources */,

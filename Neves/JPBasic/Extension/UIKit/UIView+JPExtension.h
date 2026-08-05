@@ -22,6 +22,7 @@
 - (void)jp_addRoundedCornerWithSize:(CGSize)size radius:(CGFloat)radius maskColor:(UIColor *)maskColor lineWidth:(CGFloat)lineWidth lineColor:(UIColor *)lineColor;
 
 - (UIImage *)jp_convertToImage;
+- (UIImage *)jp_convertToImageAfterScreenUpdates:(BOOL)afterUpdates;
 
 + (instancetype)jp_viewLoadFromNib;
 
