@@ -13,6 +13,9 @@
 		00139EFC2EC594350025C029 /* DiffableDataSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00139EFB2EC594350025C029 /* DiffableDataSourceViewController.swift */; };
 		00140ADD255396C2001B6106 /* GCDWorkItemTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */; };
 		0019819030219894005F9425 /* pr_2271.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 0019818F30219894005F9425 /* pr_2271.lottie */; };
+		002792703025833900405857 /* CALayer+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027926F3025833900405857 /* CALayer+Image.swift */; };
+		0027927230258EBC00405857 /* LayerImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027927130258EBC00405857 /* LayerImageRenderer.swift */; };
+		002792783025C6CE00405857 /* CGContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002792773025C6CE00405857 /* CGContext+.swift */; };
 		002E0C582ADD0AFC008EA4B8 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */; };
 		002E78C4295BF29E0071E30C /* GuideIntoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */; };
 		002E78CB295BF4310071E30C /* GuideIntoRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78CA295BF4310071E30C /* GuideIntoRoom.swift */; };
@@ -442,6 +445,10 @@
 		00140ADC255396C2001B6106 /* GCDWorkItemTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDWorkItemTestVC.swift; sourceTree = "<group>"; };
 		0019818F30219894005F9425 /* pr_2271.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = pr_2271.lottie; sourceTree = "<group>"; };
 		001981913022D58A005F9425 /* lottie-抓帧技术讨论.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "lottie-抓帧技术讨论.md"; sourceTree = "<group>"; };
+		0027926F3025833900405857 /* CALayer+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Image.swift"; sourceTree = "<group>"; };
+		0027927130258EBC00405857 /* LayerImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerImageRenderer.swift; sourceTree = "<group>"; };
+		002792773025C6CE00405857 /* CGContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+.swift"; sourceTree = "<group>"; };
+		002792793025C70E00405857 /* CALayer转Image技术讨论.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "CALayer转Image技术讨论.md"; sourceTree = "<group>"; };
 		002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomViewController.swift; sourceTree = "<group>"; };
 		002E78CA295BF4310071E30C /* GuideIntoRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoom.swift; sourceTree = "<group>"; };
@@ -1269,6 +1276,8 @@
 				7151895227EC204D00342645 /* URL.Extension.swift */,
 				719F9FAE286043C9008B4C1F /* View.Extension.swift */,
 				1AF648462955ACAC00752E57 /* Task.Extension.swift */,
+				0027926F3025833900405857 /* CALayer+Image.swift */,
+				002792773025C6CE00405857 /* CGContext+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1317,6 +1326,7 @@
 				71107436271E956100178969 /* VideoMaker.Layer.swift */,
 				71B300892722BBAF00997B20 /* VideoMaker.Image.swift */,
 				71B3008B27268F0800997B20 /* VideoMaker.ImageTest.swift */,
+				0027927130258EBC00405857 /* LayerImageRenderer.swift */,
 				718018BE2722611A0056E699 /* LottieImage */,
 				71048BC42862FDAB00737278 /* KeyValue */,
 				719A521D286D487A00619AD4 /* JPCache */,
@@ -1540,6 +1550,7 @@
 			isa = PBXGroup;
 			children = (
 				001981913022D58A005F9425 /* lottie-抓帧技术讨论.md */,
+				002792793025C70E00405857 /* CALayer转Image技术讨论.md */,
 				71DE01A626E61978003EBF66 /* LottieShowViewController.swift */,
 				7110743E271ED4D400178969 /* ImageVideoViewController.swift */,
 				71B9D91727210A5D002B2BC6 /* SolitaireAnimationLayer.swift */,
@@ -2812,6 +2823,7 @@
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				718A56B127F1B9500071C724 /* Buttons.swift in Sources */,
+				0027927230258EBC00405857 /* LayerImageRenderer.swift in Sources */,
 				7172B63B28D06EB400381E83 /* VideoFiles.swift in Sources */,
 				719A5230286D9F0A00619AD4 /* JPCacheViewConstroller.swift in Sources */,
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
@@ -2854,6 +2866,7 @@
 				71F249D22731517A00FAAD93 /* Firework.TestData.swift in Sources */,
 				1A354502254E77600032B677 /* JPUnderlineButton.m in Sources */,
 				1A354508254E77600032B677 /* JPFPSLabel.m in Sources */,
+				002792783025C6CE00405857 /* CGContext+.swift in Sources */,
 				71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */,
 				002E78CB295BF4310071E30C /* GuideIntoRoom.swift in Sources */,
 				71F249E92731517A00FAAD93 /* MagicCubeSuspendView.swift in Sources */,
@@ -2973,6 +2986,7 @@
 				1A9E417E26BE42FB006941D0 /* TestTryCatchViewController.swift in Sources */,
 				718A56A827F1B6A00071C724 /* CosmicExplorationRecordView.swift in Sources */,
 				1A354501254E77600032B677 /* JPIconButton.m in Sources */,
+				002792703025833900405857 /* CALayer+Image.swift in Sources */,
 				719820832824F2CE00237AE0 /* CAReplicatorLayerTestVC.swift in Sources */,
 				1A65874B2629E6CC00846689 /* OptionPopView.swift in Sources */,
 				71F249DB2731517A00FAAD93 /* FireworkPopView.swift in Sources */,

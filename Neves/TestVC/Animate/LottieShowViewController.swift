@@ -190,8 +190,8 @@ extension LottieShowViewController {
             makeBaseLottieImage(baseLottieLayer, currentFrame, isAsync: true)
         }
         else if let dotLottieLayer {
+            // `currentFrame`内部自动会调用`forceDisplayUpdate`
             dotLottieLayer.currentFrame = currentFrame
-            dotLottieLayer.forceDisplayUpdate()
             makeDotLottieImage(dotLottieLayer, currentFrame, isAsync: false)
         }
     }
@@ -371,10 +371,9 @@ extension LottieShowViewController {
             animationLayer.reloadImages()
             animationLayer.setNeedsDisplay()
             
+            // `currentFrame`内部自动会调用`forceDisplayUpdate`
             dotLottieLayer.currentFrame = animation.startFrame
         }
-        
-        dotLottieLayer.forceDisplayUpdate()
         
         return dotLottieLayer
     }
