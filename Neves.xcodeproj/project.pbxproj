@@ -16,6 +16,7 @@
 		002792703025833900405857 /* CALayer+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027926F3025833900405857 /* CALayer+Image.swift */; };
 		0027927230258EBC00405857 /* LayerImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027927130258EBC00405857 /* LayerImageRenderer.swift */; };
 		002792783025C6CE00405857 /* CGContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002792773025C6CE00405857 /* CGContext+.swift */; };
+		0027927F302ADCC700405857 /* UIView+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027927E302ADCC700405857 /* UIView+Image.swift */; };
 		002E0C582ADD0AFC008EA4B8 /* TestCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */; };
 		002E78C4295BF29E0071E30C /* GuideIntoRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */; };
 		002E78CB295BF4310071E30C /* GuideIntoRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78CA295BF4310071E30C /* GuideIntoRoom.swift */; };
@@ -449,6 +450,7 @@
 		0027927130258EBC00405857 /* LayerImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerImageRenderer.swift; sourceTree = "<group>"; };
 		002792773025C6CE00405857 /* CGContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGContext+.swift"; sourceTree = "<group>"; };
 		002792793025C70E00405857 /* CALayer转Image技术讨论.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "CALayer转Image技术讨论.md"; sourceTree = "<group>"; };
+		0027927E302ADCC700405857 /* UIView+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Image.swift"; sourceTree = "<group>"; };
 		002E0C572ADD0AFC008EA4B8 /* TestCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewController.swift; sourceTree = "<group>"; };
 		002E78C3295BF29E0071E30C /* GuideIntoRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomViewController.swift; sourceTree = "<group>"; };
 		002E78CA295BF4310071E30C /* GuideIntoRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoom.swift; sourceTree = "<group>"; };
@@ -1276,6 +1278,7 @@
 				7151895227EC204D00342645 /* URL.Extension.swift */,
 				719F9FAE286043C9008B4C1F /* View.Extension.swift */,
 				1AF648462955ACAC00752E57 /* Task.Extension.swift */,
+				0027927E302ADCC700405857 /* UIView+Image.swift */,
 				0027926F3025833900405857 /* CALayer+Image.swift */,
 				002792773025C6CE00405857 /* CGContext+.swift */,
 			);
@@ -2683,6 +2686,7 @@
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
 				7172B63D28D06F2500381E83 /* MoguBannerJSON.swift in Sources */,
 				71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
+				0027927F302ADCC700405857 /* UIView+Image.swift in Sources */,
 				002E0C582ADD0AFC008EA4B8 /* TestCollectionViewController.swift in Sources */,
 				71F249CF2731517A00FAAD93 /* FireworkViewController.swift in Sources */,
 				1AABA9B12555BBA10051CA7E /* Mems.swift in Sources */,
