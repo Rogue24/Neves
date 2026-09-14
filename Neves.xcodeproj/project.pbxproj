@@ -82,6 +82,7 @@
 		005310F53045674C00B14F3B /* MedalRankingNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310BD3045674C00B14F3B /* MedalRankingNavigationBar.swift */; };
 		005310F63045674C00B14F3B /* MedalRankingListBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310C63045674C00B14F3B /* MedalRankingListBgView.swift */; };
 		005310F73045674C00B14F3B /* MedalWallIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310B33045674C00B14F3B /* MedalWallIconCell.swift */; };
+		005310FA30456B5E00B14F3B /* SVGAPlayer_Optimized in Frameworks */ = {isa = PBXBuildFile; productRef = 005310F930456B5E00B14F3B /* SVGAPlayer_Optimized */; };
 		0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548029607E5900E52CBB /* ImagePickerObject.swift */; };
 		0053548429607E5900E52CBB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548129607E5900E52CBB /* ImagePicker.swift */; };
 		0053548529607E5900E52CBB /* ImagePicker+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053548229607E5900E52CBB /* ImagePicker+API.swift */; };
@@ -110,6 +111,20 @@
 		0091CDB225CFF9A900CD64BB /* ScreenFit.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */; };
 		00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00965D5B25CBF4DD00B7BB9C /* Done.swift */; };
 		00995C142E6C1EF200391279 /* LocalLLMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00995C132E6C1EF200391279 /* LocalLLMViewController.swift */; };
+		009E3D1C3057CA1A00FA2E3B /* JKRUserMedalsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D1B3057CA1A00FA2E3B /* JKRUserMedalsList.m */; };
+		009E3D203057D62B00FA2E3B /* Env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D1F3057D62B00FA2E3B /* Env.swift */; };
+		009E3D233057DF8100FA2E3B /* JKRChatRoomMedalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D223057DF8100FA2E3B /* JKRChatRoomMedalModel.m */; };
+		009E3D263057DFAC00FA2E3B /* NSString+ResizeQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D253057DFAC00FA2E3B /* NSString+ResizeQuality.m */; };
+		009E3D2D3057E1BF00FA2E3B /* JKRShimmeringMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D2A3057E1BF00FA2E3B /* JKRShimmeringMask.m */; };
+		009E3D2E3057E1BF00FA2E3B /* JKRShimmeringLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D283057E1BF00FA2E3B /* JKRShimmeringLabel.m */; };
+		009E3D2F3057E1BF00FA2E3B /* JKRAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D2C3057E1BF00FA2E3B /* JKRAutoScrollLabel.m */; };
+		009E3D313057E7A300FA2E3B /* FallaResizeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D303057E7A300FA2E3B /* FallaResizeBuilder.swift */; };
+		009E3D353057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D333057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m */; };
+		009E3D363057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009E3D343057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib */; };
+		009E3D383057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D373057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift */; };
+		009E3D3B3057EFAF00FA2E3B /* JKRCurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D3A3057EFAF00FA2E3B /* JKRCurrentUser.m */; };
+		009E3D3E3057F15200FA2E3B /* EMLRankingUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D3D3057F15200FA2E3B /* EMLRankingUserModel.m */; };
+		009E3D413057F1AA00FA2E3B /* EMLRankingUsersModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D403057F1AA00FA2E3B /* EMLRankingUsersModel.m */; };
 		00A3641D2B20114600CDCFAF /* Gradient+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364172B20114600CDCFAF /* Gradient+RTL.swift */; };
 		00A3641E2B20114600CDCFAF /* UILabel+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364182B20114600CDCFAF /* UILabel+RTL.swift */; };
 		00A3641F2B20114600CDCFAF /* CALayer+RTL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A364192B20114600CDCFAF /* CALayer+RTL.swift */; };
@@ -148,7 +163,7 @@
 		1A3544B6254E77600032B677 /* JPIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A354374254E775F0032B677 /* JPIcon.png */; };
 		1A3544EC254E77600032B677 /* FX-LED.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A3543B4254E775F0032B677 /* FX-LED.ttf */; };
 		1A3544F1254E77600032B677 /* NotificationCenter.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3543BD254E775F0032B677 /* NotificationCenter.Extension.swift */; };
-		1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3543BE254E775F0032B677 /* UIViewController.Extension.swift */; };
+		1A3544F2254E77600032B677 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3543BE254E775F0032B677 /* UIViewController+Extension.swift */; };
 		1A3544F3254E77600032B677 /* Literal.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3543BF254E775F0032B677 /* Literal.Extension.swift */; };
 		1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3543C0254E775F0032B677 /* UIView.Extension.swift */; };
 		1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3543C1254E775F0032B677 /* Bundle.Extension.swift */; };
@@ -582,6 +597,30 @@
 		0091CDB125CFF9A900CD64BB /* ScreenFit.Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenFit.Extension.swift; sourceTree = "<group>"; };
 		00965D5B25CBF4DD00B7BB9C /* Done.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Done.swift; sourceTree = "<group>"; };
 		00995C132E6C1EF200391279 /* LocalLLMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMViewController.swift; sourceTree = "<group>"; };
+		009E3D1A3057CA1A00FA2E3B /* JKRUserMedalsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRUserMedalsList.h; sourceTree = "<group>"; };
+		009E3D1B3057CA1A00FA2E3B /* JKRUserMedalsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRUserMedalsList.m; sourceTree = "<group>"; };
+		009E3D1F3057D62B00FA2E3B /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
+		009E3D213057DF8100FA2E3B /* JKRChatRoomMedalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRChatRoomMedalModel.h; sourceTree = "<group>"; };
+		009E3D223057DF8100FA2E3B /* JKRChatRoomMedalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRChatRoomMedalModel.m; sourceTree = "<group>"; };
+		009E3D243057DFAC00FA2E3B /* NSString+ResizeQuality.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+ResizeQuality.h"; sourceTree = "<group>"; };
+		009E3D253057DFAC00FA2E3B /* NSString+ResizeQuality.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+ResizeQuality.m"; sourceTree = "<group>"; };
+		009E3D273057E1BF00FA2E3B /* JKRShimmeringLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRShimmeringLabel.h; sourceTree = "<group>"; };
+		009E3D283057E1BF00FA2E3B /* JKRShimmeringLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRShimmeringLabel.m; sourceTree = "<group>"; };
+		009E3D293057E1BF00FA2E3B /* JKRShimmeringMask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRShimmeringMask.h; sourceTree = "<group>"; };
+		009E3D2A3057E1BF00FA2E3B /* JKRShimmeringMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRShimmeringMask.m; sourceTree = "<group>"; };
+		009E3D2B3057E1BF00FA2E3B /* JKRAutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRAutoScrollLabel.h; sourceTree = "<group>"; };
+		009E3D2C3057E1BF00FA2E3B /* JKRAutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRAutoScrollLabel.m; sourceTree = "<group>"; };
+		009E3D303057E7A300FA2E3B /* FallaResizeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallaResizeBuilder.swift; sourceTree = "<group>"; };
+		009E3D323057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLProfileMedalIntegralCollectionViewCell.h; sourceTree = "<group>"; };
+		009E3D333057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLProfileMedalIntegralCollectionViewCell.m; sourceTree = "<group>"; };
+		009E3D343057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EMLProfileMedalIntegralCollectionViewCell.xib; sourceTree = "<group>"; };
+		009E3D373057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLRankingRegionToggleButton.swift; sourceTree = "<group>"; };
+		009E3D393057EFAF00FA2E3B /* JKRCurrentUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRCurrentUser.h; sourceTree = "<group>"; };
+		009E3D3A3057EFAF00FA2E3B /* JKRCurrentUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRCurrentUser.m; sourceTree = "<group>"; };
+		009E3D3C3057F15200FA2E3B /* EMLRankingUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLRankingUserModel.h; sourceTree = "<group>"; };
+		009E3D3D3057F15200FA2E3B /* EMLRankingUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLRankingUserModel.m; sourceTree = "<group>"; };
+		009E3D3F3057F1AA00FA2E3B /* EMLRankingUsersModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLRankingUsersModel.h; sourceTree = "<group>"; };
+		009E3D403057F1AA00FA2E3B /* EMLRankingUsersModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLRankingUsersModel.m; sourceTree = "<group>"; };
 		00A364172B20114600CDCFAF /* Gradient+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Gradient+RTL.swift"; sourceTree = "<group>"; };
 		00A364182B20114600CDCFAF /* UILabel+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RTL.swift"; sourceTree = "<group>"; };
 		00A364192B20114600CDCFAF /* CALayer+RTL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+RTL.swift"; sourceTree = "<group>"; };
@@ -626,7 +665,7 @@
 		1A354374254E775F0032B677 /* JPIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = JPIcon.png; sourceTree = "<group>"; };
 		1A3543B4254E775F0032B677 /* FX-LED.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FX-LED.ttf"; sourceTree = "<group>"; };
 		1A3543BD254E775F0032B677 /* NotificationCenter.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.Extension.swift; sourceTree = "<group>"; };
-		1A3543BE254E775F0032B677 /* UIViewController.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.Extension.swift; sourceTree = "<group>"; };
+		1A3543BE254E775F0032B677 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1A3543BF254E775F0032B677 /* Literal.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Literal.Extension.swift; sourceTree = "<group>"; };
 		1A3543C0254E775F0032B677 /* UIView.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.Extension.swift; sourceTree = "<group>"; };
 		1A3543C1254E775F0032B677 /* Bundle.Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.Extension.swift; sourceTree = "<group>"; };
@@ -1020,6 +1059,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B6000012FDD100100000001 /* JPSwiftMacroLessons in Frameworks */,
+				005310FA30456B5E00B14F3B /* SVGAPlayer_Optimized in Frameworks */,
 				1BA5D44D6AB0659A2576E1B8 /* Pods_Neves.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1077,6 +1117,7 @@
 				005310AC3045674C00B14F3B /* MedalDetail */,
 				005310B73045674C00B14F3B /* MedalWall */,
 				005310D43045674C00B14F3B /* MedalRanking */,
+				009E3D193057C86700FA2E3B /* Other */,
 			);
 			path = Medals;
 			sourceTree = "<group>";
@@ -1166,6 +1207,7 @@
 			children = (
 				005310CA3045674C00B14F3B /* MedalRankingUserInfoView.swift */,
 				005310CB3045674C00B14F3B /* MedalRankingIconListView.swift */,
+				009E3D373057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1261,6 +1303,35 @@
 				0045F41F2E6D771000CB841C /* LocalLLMView.swift */,
 			);
 			path = LLM;
+			sourceTree = "<group>";
+		};
+		009E3D193057C86700FA2E3B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				009E3D303057E7A300FA2E3B /* FallaResizeBuilder.swift */,
+				009E3D243057DFAC00FA2E3B /* NSString+ResizeQuality.h */,
+				009E3D253057DFAC00FA2E3B /* NSString+ResizeQuality.m */,
+				009E3D3F3057F1AA00FA2E3B /* EMLRankingUsersModel.h */,
+				009E3D403057F1AA00FA2E3B /* EMLRankingUsersModel.m */,
+				009E3D3C3057F15200FA2E3B /* EMLRankingUserModel.h */,
+				009E3D3D3057F15200FA2E3B /* EMLRankingUserModel.m */,
+				009E3D393057EFAF00FA2E3B /* JKRCurrentUser.h */,
+				009E3D3A3057EFAF00FA2E3B /* JKRCurrentUser.m */,
+				009E3D1A3057CA1A00FA2E3B /* JKRUserMedalsList.h */,
+				009E3D1B3057CA1A00FA2E3B /* JKRUserMedalsList.m */,
+				009E3D213057DF8100FA2E3B /* JKRChatRoomMedalModel.h */,
+				009E3D223057DF8100FA2E3B /* JKRChatRoomMedalModel.m */,
+				009E3D273057E1BF00FA2E3B /* JKRShimmeringLabel.h */,
+				009E3D283057E1BF00FA2E3B /* JKRShimmeringLabel.m */,
+				009E3D293057E1BF00FA2E3B /* JKRShimmeringMask.h */,
+				009E3D2A3057E1BF00FA2E3B /* JKRShimmeringMask.m */,
+				009E3D2B3057E1BF00FA2E3B /* JKRAutoScrollLabel.h */,
+				009E3D2C3057E1BF00FA2E3B /* JKRAutoScrollLabel.m */,
+				009E3D323057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.h */,
+				009E3D333057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m */,
+				009E3D343057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		00A364162B20114600CDCFAF /* RTL */ = {
@@ -1477,7 +1548,7 @@
 				1A3543C4254E775F0032B677 /* UIScreen.Extension.swift */,
 				1A3543C0254E775F0032B677 /* UIView.Extension.swift */,
 				71731F1B2668D56F00024564 /* UIScrollView.Extension.swift */,
-				1A3543BE254E775F0032B677 /* UIViewController.Extension.swift */,
+				1A3543BE254E775F0032B677 /* UIViewController+Extension.swift */,
 				006A9E252A77CCA600AD86BA /* UIAlertController.Extension.swift */,
 				1A3543C2254E775F0032B677 /* UIWindow.Extension.swift */,
 				71EA693A26563165009463E6 /* UIImage.Extension.swift */,
@@ -1510,6 +1581,7 @@
 		1A3543CA254E775F0032B677 /* Const */ = {
 			isa = PBXGroup;
 			children = (
+				009E3D1F3057D62B00FA2E3B /* Env.swift */,
 				1A3543CB254E775F0032B677 /* Const.swift */,
 				1A3543CC254E775F0032B677 /* Function.swift */,
 			);
@@ -2679,6 +2751,7 @@
 			name = Neves;
 			packageProductDependencies = (
 				9B6000022FDD100100000001 /* JPSwiftMacroLessons */,
+				005310F930456B5E00B14F3B /* SVGAPlayer_Optimized */,
 			);
 			productName = Neves;
 			productReference = 1A354338254E75EB0032B677 /* Neves.app */;
@@ -2710,6 +2783,7 @@
 			mainGroup = 1A35432F254E75EB0032B677;
 			packageReferences = (
 				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */,
+				005310F830456B5E00B14F3B /* XCRemoteSwiftPackageReference "SVGAPlayer_Optimized" */,
 			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
 			projectDirPath = "";
@@ -2760,6 +2834,7 @@
 				004D9B262F72A38700A7DB56 /* collecting_cards_open_bag_level_4.lottie in Resources */,
 				004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */,
 				0019819030219894005F9425 /* pr_2271.lottie in Resources */,
+				009E3D363057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib in Resources */,
 				004D9B282F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie in Resources */,
 				004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */,
 				004D9B2A2F72A38700A7DB56 /* svip_main_lottie_6.lottie in Resources */,
@@ -2903,6 +2978,7 @@
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
+				009E3D313057E7A300FA2E3B /* FallaResizeBuilder.swift in Sources */,
 				00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */,
 				007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */,
 				719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */,
@@ -2970,6 +3046,9 @@
 				005310DA3045674C00B14F3B /* MedalRankingNavSegmentBar.swift in Sources */,
 				005310DB3045674C00B14F3B /* MedalRankingEmptyCell.swift in Sources */,
 				005310DC3045674C00B14F3B /* MedalDetailListViewController.swift in Sources */,
+				009E3D2D3057E1BF00FA2E3B /* JKRShimmeringMask.m in Sources */,
+				009E3D2E3057E1BF00FA2E3B /* JKRShimmeringLabel.m in Sources */,
+				009E3D2F3057E1BF00FA2E3B /* JKRAutoScrollLabel.m in Sources */,
 				005310DD3045674C00B14F3B /* MedalRankingIconViewModel.swift in Sources */,
 				005310DE3045674C00B14F3B /* MedalRankingListView.swift in Sources */,
 				005310DF3045674C00B14F3B /* MedalLevel.swift in Sources */,
@@ -3038,10 +3117,13 @@
 				1A3544F4254E77600032B677 /* UIView.Extension.swift in Sources */,
 				715C901E27F7014600B88B85 /* CosmicExplorationJournalView.swift in Sources */,
 				718018C627228A830056E699 /* Syncs.swift in Sources */,
+				009E3D263057DFAC00FA2E3B /* NSString+ResizeQuality.m in Sources */,
 				719029422818E69E000F6E29 /* PKProgressView.swift in Sources */,
 				1A354511254E77600032B677 /* JPMaskView.m in Sources */,
 				7190294A281924F9000F6E29 /* PKProgressViewModel.swift in Sources */,
+				009E3D233057DF8100FA2E3B /* JKRChatRoomMedalModel.m in Sources */,
 				004A324729B47365001832E5 /* JPPhotoTool.m in Sources */,
+				009E3D3E3057F15200FA2E3B /* EMLRankingUserModel.m in Sources */,
 				00965D5C25CBF4DD00B7BB9C /* Done.swift in Sources */,
 				71EA693B26563165009463E6 /* UIImage.Extension.swift in Sources */,
 				719105E126E0B99000B2116F /* PlanetTitleView.swift in Sources */,
@@ -3077,6 +3159,7 @@
 				71B18FC226D3A1E9006CF7C0 /* CombineTestViewController.swift in Sources */,
 				1A59310027B8DD9200DC60FC /* MoguBanner.swift in Sources */,
 				1A3544FF254E77600032B677 /* Asyncs.swift in Sources */,
+				009E3D1C3057CA1A00FA2E3B /* JKRUserMedalsList.m in Sources */,
 				1A9E417D26BE42FB006941D0 /* FuncTestViewController.swift in Sources */,
 				71ADDF7C279FECFC00404FF4 /* NestScrollViewController.swift in Sources */,
 				002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */,
@@ -3093,6 +3176,7 @@
 				718066AA27D74D70002CAC09 /* FocusOnFacesViewController.swift in Sources */,
 				1A35451C254E77600032B677 /* UIView+JPPOP.m in Sources */,
 				71F249EF2731517A00FAAD93 /* MarebulabulasLrcCell.swift in Sources */,
+				009E3D383057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift in Sources */,
 				7102C56328D1ADC300E2265C /* Assets.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */,
@@ -3166,9 +3250,11 @@
 				71F249D92731517A00FAAD93 /* FireworkRulePopView.swift in Sources */,
 				711074292717FBF500178969 /* LottieImagePickerViewController.swift in Sources */,
 				1A354524254E77600032B677 /* JPAlertControllerTool.m in Sources */,
+				009E3D413057F1AA00FA2E3B /* EMLRankingUsersModel.m in Sources */,
 				7151895127EC16B500342645 /* GCDAttributesViewController.swift in Sources */,
 				718915AA282620980003E294 /* PKChallengeView.swift in Sources */,
 				1A3544F5254E77600032B677 /* Bundle.Extension.swift in Sources */,
+				009E3D3B3057EFAF00FA2E3B /* JKRCurrentUser.m in Sources */,
 				00A364202B20114600CDCFAF /* RTLFlowLayout.swift in Sources */,
 				00A3641D2B20114600CDCFAF /* Gradient+RTL.swift in Sources */,
 				7190295028193176000F6E29 /* PlayhousePKProgressViewModel.swift in Sources */,
@@ -3189,6 +3275,7 @@
 				002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */,
 				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
 				1A5930FA27B8DD6900DC60FC /* Turntable.swift in Sources */,
+				009E3D353057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m in Sources */,
 				004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */,
 				717F59D927F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift in Sources */,
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
@@ -3200,6 +3287,7 @@
 				719299E2281A332C00CCE872 /* PKResultPopView.swift in Sources */,
 				71F249DD2731517A00FAAD93 /* AsyncDecodeAnimationView.swift in Sources */,
 				71731F1C2668D56F00024564 /* UIScrollView.Extension.swift in Sources */,
+				009E3D203057D62B00FA2E3B /* Env.swift in Sources */,
 				718018C4272261970056E699 /* LottieImageStore.swift in Sources */,
 				00BC975C2AEE480600944EA9 /* TestNotificationViewController.swift in Sources */,
 				004A324D29B473D5001832E5 /* UICollectionView+Convenience.m in Sources */,
@@ -3247,7 +3335,7 @@
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				715C900827F6F27B00B88B85 /* CosmicExplorationRuleView.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
-				1A3544F2254E77600032B677 /* UIViewController.Extension.swift in Sources */,
+				1A3544F2254E77600032B677 /* UIViewController+Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
 				008DC2F929769EC50039AB22 /* PenetrableTestViewController.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
@@ -3488,7 +3576,23 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		005310F830456B5E00B14F3B /* XCRemoteSwiftPackageReference "SVGAPlayer_Optimized" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Rogue24/SVGAPlayer_Optimized.git";
+			requirement = {
+				branch = SPM;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		005310F930456B5E00B14F3B /* SVGAPlayer_Optimized */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 005310F830456B5E00B14F3B /* XCRemoteSwiftPackageReference "SVGAPlayer_Optimized" */;
+			productName = SVGAPlayer_Optimized;
+		};
 		9B6000022FDD100100000001 /* JPSwiftMacroLessons */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */;

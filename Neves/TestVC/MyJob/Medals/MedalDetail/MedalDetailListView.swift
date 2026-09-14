@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVGAPlayer_Optimized
 
 protocol MedalDetailListViewDelegate: AnyObject {
     func beginScrollHandle(_ listView: MedalDetailListView)

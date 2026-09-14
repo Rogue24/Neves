@@ -32,7 +32,7 @@ class MedalRankingNavigationBar: UIView {
             anim2.duration = 0.2
             titleLabel.pop_add(anim2, forKey: kPOPLabelTextColor)
             
-            backBtn.setImage(UIImage.jkr_imageNamed(isTop ? "nav-back" : "icon_nav_back_white")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            backBtn.setImage(UIImage(named: isTop ? "nav-back" : "icon_nav_back_white")?.rtl.withRenderingMode(.alwaysOriginal), for: .normal)
             helpBtn.setBackgroundImage(UIImage(named: isTop ? "medal_ranking_help_black" : "icon_ranking_help")?.withRenderingMode(.alwaysOriginal), for: .normal)
             toggleBtn.isDark = isTop
             
@@ -51,12 +51,12 @@ class MedalRankingNavigationBar: UIView {
         titleLabel.textColor = .white
         titleLabel.font = .boldSystemFont(ofSize: 18)
         titleLabel.textAlignment = .center
-        titleLabel.text = FallaLocalized.str_medal_ranking.string
+        titleLabel.text = "勋章排行榜"
         titleLabel.rtl_refWidth = bounds.width
         titleLabel.rtl_frame = bounds
         addSubview(titleLabel)
         
-        backBtn.setImage(UIImage.jkr_imageNamed("icon_nav_back_white")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        backBtn.setImage(UIImage(named: "icon_nav_back_white")?.rtl.withRenderingMode(.alwaysOriginal), for: .normal)
         backBtn.rtl_refWidth = bounds.width
         backBtn.rtl_frame = [8, HalfDiffValue(bounds.height, 45), 53, 45]
         addSubview(backBtn)

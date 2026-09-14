@@ -5,6 +5,9 @@
 //  Created by aa on 2023/7/4.
 //
 
+import UIKit
+import SVGAPlayer_Optimized
+
 class MedalRankingListViewModel {
     let type: MedalRanking.ListType
     let range: MedalRanking.RegionRange

@@ -30,6 +30,7 @@ target 'Neves' do
   pod 'JPImageresizerView'
   pod 'MMKV'#, '~> 1.2.14'
   pod 'libpag'
+  pod 'MJExtension'
   
   pod 'LookinServer', :configurations => ['Debug']
   

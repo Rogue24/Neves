@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SVGAPlayer_Optimized
 
 @objcMembers
 class MedalDetailListViewController: UIViewController {

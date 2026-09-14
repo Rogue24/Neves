@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MedalWallLevelHeader: UICollectionReusableView {
     static var headerID: String { "MedalWallLevelHeader" }

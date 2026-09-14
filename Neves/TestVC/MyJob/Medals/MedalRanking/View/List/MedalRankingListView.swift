@@ -87,7 +87,7 @@ private extension MedalRankingListView {
             label.font = .systemFont(ofSize: 12.px)
             label.textColor = .rgb(153, 153, 153)
             label.textAlignment = .center
-            label.text = FallaLocalized.str_medal_ranking_show_count.string(30)
+            label.text = "仅展示前30条信息"
             addSubview(label)
             label.snp.makeConstraints { make in
                 make.center.equalToSuperview()
@@ -131,7 +131,7 @@ extension MedalRankingListView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let listVM, listVM.userVMs.count > 0 else {
             let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "MedalRankingEmptyCell", for: indexPath) as! MedalRankingEmptyCell
-            cell.label.text = listVM == nil ? "app_refresh_refreshing".fa.localized : String.fa.noContent
+            cell.label.text = listVM == nil ? "正在刷新..." : "暂无数据"
             return cell
         }
         

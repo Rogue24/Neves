@@ -33,7 +33,7 @@ class MedalRankingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fd_prefersNavigationBarHidden = true
+//        fd_prefersNavigationBarHidden = true
         
         listView.scrollDelegate = self
         view.addSubview(listView)
@@ -54,7 +54,7 @@ class MedalRankingViewController: UIViewController {
         view.addSubview(myView)
         
         refreshInsetTop = segmentView.frame.maxY + 5.px
-        let refreshHeader = JKRRefreshHeader(refreshingTarget: self, refreshingAction: #selector(reloadCurrentList))
+        let refreshHeader = MJRefreshStateHeader(refreshingTarget: self, refreshingAction: #selector(reloadCurrentList))
         refreshHeader.ignoredScrollViewContentInsetTop = -refreshInsetTop
         refreshHeader.isAutomaticallyChangeAlpha = true
         listView.mj_header = refreshHeader
@@ -62,6 +62,15 @@ class MedalRankingViewController: UIViewController {
         
         dataMgr.responder = self
         dataMgr.fetchData(for: segmentView.currentType, range, isReload: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        if #available(iOS 26.0, *) {
+            navigationController?.interactiveContentPopGestureRecognizer?.delegate = nil
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -129,7 +138,7 @@ extension MedalRankingViewController: MedalRankingDataResponder {
         case let .failure(er):
             guard !er.isUserCancel, er.listType == currentType, er.range == range else { return }
             listView.mj_header?.endRefreshing()
-            JKRHUDManager.toast(withMessage: er.localizedDescription)
+            JPHUD.showError(withStatus: er.localizedDescription)
         }
     }
 }

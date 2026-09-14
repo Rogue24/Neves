@@ -81,8 +81,7 @@ class MedalRankingPopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fd_prefersNavigationBarHidden = true
-        
+//        fd_prefersNavigationBarHidden = true
         view.backgroundColor = .rgb(0, 0, 0, a: 0)
         
         let closeBtn = UIButton(type: .custom)
@@ -119,7 +118,7 @@ class MedalRankingPopViewController: UIViewController {
             listView.headerView.helpBtn?.tag = type.rawValue
             listView.headerView.helpBtn?.addTarget(self, action: #selector(goHelp(_:)), for: .touchUpInside)
             
-            let refreshHeader = JKRRefreshHeader(refreshingTarget: self, refreshingAction: #selector(reloadListData(_:)))
+            let refreshHeader = MJRefreshStateHeader(refreshingTarget: self, refreshingAction: #selector(reloadListData(_:)))
             refreshHeader.tag = type.rawValue
             refreshHeader.isAutomaticallyChangeAlpha = true
             listView.mj_header = refreshHeader
@@ -142,6 +141,15 @@ class MedalRankingPopViewController: UIViewController {
         
         dataMgr.responder = self
         dataMgr.fetchData(for: currentType, range, isReload: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        if #available(iOS 26.0, *) {
+            navigationController?.interactiveContentPopGestureRecognizer?.delegate = nil
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -169,7 +177,7 @@ private extension MedalRankingPopViewController {
         MedalRouter.desc.jump()
     }
     
-    @objc func reloadListData(_ sender: JKRRefreshHeader) {
+    @objc func reloadListData(_ sender: MJRefreshStateHeader) {
         let type = MedalRanking.ListType(rawValue: sender.tag) ?? .quarterly
         dataMgr.fetchData(for: type, range, isReload: true)
     }
@@ -222,7 +230,7 @@ extension MedalRankingPopViewController: MedalRankingDataResponder {
             guard !er.isUserCancel, er.range == range else { return }
             let listView = getListView(for: er.listType)
             listView.0.mj_header?.endRefreshing()
-            JKRHUDManager.toast(withMessage: er.localizedDescription)
+            JPHUD.showError(withStatus: er.localizedDescription)
         }
     }
 }
@@ -336,7 +344,7 @@ extension MedalRankingPopViewController: MedalRouterCompatible {
         let popVC = MedalRankingPopViewController()
         popVC.fromVC = superVC as? MedalRouterCompatible ?? nil
         
-        let navCtr = JKRRootNavigationController(rootViewController: popVC)
+        let navCtr = BaseNavigationController(rootViewController: popVC)
         navCtr.modalPresentationStyle = .overFullScreen
         
         superVC.present(navCtr, animated: false) {

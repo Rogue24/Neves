@@ -61,7 +61,7 @@ class MedalRankingNavSegmentBar: UIView {
         let font = UIFont.systemFont(ofSize: 18.px, weight: .medium)
         var labW: CGFloat = 0
         for type in allType {
-            let width = type.title.fa.textSize(withFont: font).width + 20.px
+            let width = type.title.jp.textSize(withFont: font).width + 20.px
             if labW < width { labW = width }
         }
         

@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImage {
-    var rtl: UIImage {
+    @objc var rtl: UIImage {
         guard isRTL, !flipsForRightToLeftLayoutDirection else {
             return self
         }

@@ -21,7 +21,7 @@ class MedalWallNavigationBar: UIView {
         
         titleLabel.font = .systemFont(ofSize: 16.px, weight: .bold)
         titleLabel.textColor = .rgb(51, 51, 51)
-        titleLabel.text = FallaLocalized.str_medal_quarterly_medal.string
+        titleLabel.text = "季度勋章"
         
         dateLabel.font = .systemFont(ofSize: 12.px)
         dateLabel.textColor = .rgb(51, 51, 51)

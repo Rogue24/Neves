@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 @available(iOS 15.0, *)
 class DiffableTestViewController: TestBaseViewController {

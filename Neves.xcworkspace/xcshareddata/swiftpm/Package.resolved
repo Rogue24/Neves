@@ -1,6 +1,24 @@
 {
-  "originHash" : "126e55d5612d48a8062b16888dfd85097e8b4d9ffad0925501270dccd4d43e19",
+  "originHash" : "fde9d6e76b102cf7ba55330e36083728941b6a66b8972dc41e3427fb161e74d0",
   "pins" : [
+    {
+      "identity" : "svgaplayer-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Rogue24/SVGAPlayer-iOS.git",
+      "state" : {
+        "branch" : "SPM",
+        "revision" : "8aa6c710cf0cc4a2c42cc4b556df8ebab92389a1"
+      }
+    },
+    {
+      "identity" : "svgaplayer_optimized",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Rogue24/SVGAPlayer_Optimized.git",
+      "state" : {
+        "branch" : "SPM",
+        "revision" : "e4fc092dd8d5c05e90d42014ecd7b58c2c239604"
+      }
+    },
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
@@ -8,6 +26,15 @@
       "state" : {
         "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
         "version" : "602.0.0"
+      }
+    },
+    {
+      "identity" : "ziparchive",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ZipArchive/ZipArchive.git",
+      "state" : {
+        "revision" : "df35718ea19a94e015b91dc4881dee028ce4cdba",
+        "version" : "2.6.0"
       }
     }
   ],

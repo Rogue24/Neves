@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MedalRankingTopView: UIView {
     static let size: CGSize = [Env.screenWidth, 230.px]

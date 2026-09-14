@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MedalWallIconCell: UICollectionViewCell {
     static let cellID = "MedalWallIconCell"
