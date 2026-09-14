@@ -30,23 +30,25 @@ enum MedalRouter {
         
         switch self {
         case let .anonymons(nobility):
-            EMLNobilityAnonymonsAlertController.show(from: currentVC,
-                                                     typeIdx: EMLAnonymonsEnterType_RankingList,
-                                                     nobility: nobility)
+            JPHUD.showInfo(withStatus: "用户已开启VIP\(nobility)特权：榜单上匿名")
             
         case let .room(gid):
             Self.push(.room(gid), currentVC)
             
         case let .profile(uid):
             Self.push(.other({
-                let vc = EMLPersonalCenterViewController()
-                vc.userId = uid
-                vc.source = "勋章榜单"
+                let vc = TestBaseViewController()
+                vc.title = "个人主页_\(uid)"
                 return vc
             }), currentVC)
             
         case let .svip(level):
-            Self.push(.other({ YYJSVIPViewController(svipLevel: level) }), currentVC)
+            Self.push(.other({
+                let vc = TestBaseViewController()
+                vc.title = "SVIP详情_\(level)"
+                return vc
+            }), currentVC)
+            break
             
         case let .ranking(isPop):
             guard isPop else {
@@ -64,8 +66,11 @@ enum MedalRouter {
             )
             
         case .desc:
-            guard let urlStr = JKRSystemConfigManager.shared().jkr_getSystemConfigModel()?.medalDescUrl else { return }
-            Self.push(.other({ JKRWebViewController(urlString: urlStr) }), currentVC)
+            Self.push(.other({
+                let vc = TestBaseViewController()
+                vc.title = "WebView"
+                return vc
+            }), currentVC)
         }
     }
     
@@ -74,13 +79,15 @@ enum MedalRouter {
         case other(_ builder: () -> UIViewController)
     }
     
-    private static func push(_ toVC: PushVC, _ fromVC: MedalRouterCompatible) {
+    private static func push(_ toVC: PushVC, _ fromVC: some MedalRouterCompatible) {
         guard fromVC.navigationController == nil, let presentingVC = fromVC.presentingViewController else {
             switch toVC {
             case let .room(gid):
-                ChatRoomViewController.joinChatRoom(groupID: gid)
+                let vc = TestBaseViewController()
+                vc.title = "ChatRoom_\(gid)"
+                fromVC.jp.topNavCtr?.pushViewController(vc, animated: true)
             case let .other(builder):
-                fromVC.fa_topMostNavCtr?.pushViewController(builder(), animated: true)
+                fromVC.jp.topNavCtr?.pushViewController(builder(), animated: true)
             }
             return
         }
@@ -90,9 +97,11 @@ enum MedalRouter {
         Asyncs.mainDelay(0.05) {
             switch toVC {
             case let .room(gid):
-                ChatRoomViewController.joinChatRoom(groupID: gid)
+                let vc = TestBaseViewController()
+                vc.title = "ChatRoom_\(gid)"
+                presentingVC.jp.topNavCtr?.pushViewController(vc, animated: true)
             case let .other(builder):
-                presentingVC.fa_topMostNavCtr?.pushViewController(builder(), animated: true)
+                presentingVC.jp.topNavCtr?.pushViewController(builder(), animated: true)
             }
         }
     }
