@@ -297,3 +297,12 @@ func GetEnumName<T>(_ value: T) -> String {
     else { return "" }
     return enumName
 }
+
+/// 在哪个线程
+func whereAmI() -> String {
+#if DEBUG
+    "\(Thread.current)"
+#else
+    ""
+#endif
+}

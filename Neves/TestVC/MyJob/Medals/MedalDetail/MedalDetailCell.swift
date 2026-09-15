@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import SVGAPlayer_Optimized
+import Kingfisher
 
 class MedalDetailCell: UICollectionViewCell, VBindable {
     static var size: CGSize { Env.screenSize }
@@ -165,13 +167,15 @@ private extension MedalDetailCell {
             
         case let .image(url):
             let identifier = model.identifier
-            imgView.jkr_setImage(with: URL(string: url),
-                                 placeholder: nil,
-                                 options: .avoidSetImage) { [weak self] image, _, _, _, _ in
-                guard let image = image,
-                      let self = self, let bindModel = self.bindModel,
-                      identifier == bindModel.identifier else { return }
-                self.showImage(image)
+            imgView.image = nil
+            guard let URL = URL(string: url) else { return }
+            KingfisherManager.shared.retrieveImage(with: URL) { [weak self] result in
+                guard case let .success(value) = result else { return }
+                Task { @MainActor [weak self] in
+                    guard let self, let bindModel = self.bindModel,
+                          identifier == bindModel.identifier else { return }
+                    self.showImage(value.image)
+                }
             }
         }
         
@@ -190,7 +194,7 @@ private extension MedalDetailCell {
             containerView?.alpha = 0
         }
         
-        levelIconView?.image = model.levelIconName?.fa.image
+        levelIconView?.image = model.levelIconName?.jp.image
     }
 }
 

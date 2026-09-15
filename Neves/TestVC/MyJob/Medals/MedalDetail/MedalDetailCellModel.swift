@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVGAPlayer_Optimized
 
 class MedalDetailCellModel: MBindable {
     enum IconSource {
@@ -47,14 +48,14 @@ class MedalDetailCellModel: MBindable {
         if medal.createTs > 0 {
             let date = Date(timeIntervalSince1970: TimeInterval(medal.createTs))
             let dateStr = dateFormatter.string(from: date)
-            self.subTitle = FallaLocalized.str_medal_get_date.string(dateStr)
+            self.subTitle = "获得时间：\(dateStr)"
         } else {
             self.subTitle = nil
         }
         
         self.levelIconName = MedalLevel(rawValue: medal.lv)?.iconName
         
-        self.score = medal.point > 0 ? (NSString.jkr_largeNumber(withNumber: medal.point) as? String) : nil
+        self.score = medal.point > 0 ? medal.point.friendlyString() : nil
     }
     
     init(_ medal: JKRChatRoomMedalModel) {
@@ -77,12 +78,16 @@ class MedalDetailCellModel: MBindable {
         switch iconSource {
         case let .svga(entity):
             guard !isLoading, entity == nil else { return }
+            guard let url = URL(string: medalUrl) else { return }
             isLoading = true
-            JKRPreloadCacheManager.shared().jkr_getSvga(withURL: medalUrl) { [weak self] e in
-                guard let self = self else { return }
+            SVGAParser().parse(with: url) { [weak self] e in
+                guard let self else { return }
                 self.isLoading = false
+                guard let e else { return }
                 self.iconSource = .svga(e)
                 self.bindView?.showSVGA(e)
+            } failureBlock: { [weak self] _ in
+                self?.isLoading = false
             }
         case .image:
             break

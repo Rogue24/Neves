@@ -5,6 +5,10 @@
 //  Created by aa on 2021/6/10.
 //
 
+import UIKit
+import FunnyButton
+import Kingfisher
+
 class KingfisherTestViewController: TestBaseViewController {
     
     let imgView1 = UIImageView(frame: [0, NavTopMargin, PortraitScreenWidth, (PortraitScreenHeight - NavTopMargin - DiffTabBarH) * 0.5])
@@ -54,16 +58,18 @@ class KingfisherTestViewController: TestBaseViewController {
         // downloadImage不会去缓存获取，每次都会重新下载，也不会缓存到磁盘中
         // 下载过程接收的是mutableData（可变Data），在内存中，并不是磁盘里面
         KingfisherManager.shared.downloader.downloadImage(with: url, options: [.processor(p)]) { a, b in
-            JPrint("progress1", Double(a) / Double(b))
+            JPrint("progress1", Double(a) / Double(b), whereAmI())
         } completionHandler: { [weak self] r in
             switch r {
             case let .success(imgResult):
                 let image = imgResult.image
-                JPrint("成功111", image.size, imgResult.url?.absoluteString ?? "")
-                self?.imgView1.image = image
+                JPrint("成功111", image.size, imgResult.url?.absoluteString ?? "", whereAmI())
+                Task { @MainActor in
+                    self?.imgView1.image = image
+                }
 
             case .failure(_):
-                JPrint("失败111")
+                JPrint("失败111", whereAmI())
             }
         }
         
@@ -72,18 +78,20 @@ class KingfisherTestViewController: TestBaseViewController {
         
         // retrieveImage才会缓存，有缓存（内存没有再去磁盘找）直接返回，没有就下载
         KingfisherManager.shared.retrieveImage(with: url, options: [.processor(p), .cacheSerializer(c)]) { a, b in
-            JPrint("progress2", Double(a) / Double(b))
+            JPrint("progress2", Double(a) / Double(b), whereAmI())
         } downloadTaskUpdated: { t in
 
         } completionHandler: { [weak self] r in
             switch r {
             case let .success(imgResult):
                 let image = imgResult.image
-                JPrint("成功222", image.size, imgResult.cacheType, imgResult.source.cacheKey, imgResult.originalSource.cacheKey)
-                self?.imgView2.image = image
+                JPrint("成功222", image.size, imgResult.cacheType, imgResult.source.cacheKey, imgResult.originalSource.cacheKey, whereAmI())
+                Task { @MainActor in
+                    self?.imgView2.image = image
+                }
 
             case .failure(_):
-                JPrint("失败222")
+                JPrint("失败222", whereAmI())
             }
         }
         
@@ -112,9 +120,9 @@ class KingfisherTestViewController: TestBaseViewController {
         // f：获取失败的
         // c：通过下载获取到的
         let imagePrefetcher = ImagePrefetcher(resources: urls, options: [.processor(p)]) { s, f, c in
-            JPrint("progress ---", "s =", s.count, ", f =", f.count, ", c =", c.count)
+            JPrint("progress ---", "s =", s.count, ", f =", f.count, ", c =", c.count, whereAmI())
         } completionHandler: { s, f, c in
-            JPrint("completion ---", "s =", s.count, ", f =", f.count, ", c =", c.count)
+            JPrint("completion ---", "s =", s.count, ", f =", f.count, ", c =", c.count, whereAmI())
         }
         imagePrefetcher.start()
         

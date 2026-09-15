@@ -280,6 +280,12 @@ extension JP where Base == String {
         }
     }
     
+    /// 获取`UTF-16 code unit`数量（等同于`NSString.length`）
+    /// - `String.count`是按「用户看到的字符」计数：例如`😁` ，`self.count = 1`，而`(self as NSString).length = self.utf16.count = 2`。
+    var length: Int {
+        base.utf16.count
+    }
+    
     /// 是否MP4路径
     var isMp4Url: Bool {
         base.hasSuffix(".mp4")
@@ -418,9 +424,6 @@ extension JP where Base == String {
     }
 }
 
-
-
-
 /**
  🌰🌰🌰 removingAllURLParam 🌰🌰🌰
  let url = "https://ssr-test.zzzzjp.live/app-level/wealth400?__debug__=true&__refresh__=1760612005961&fuck=xiaotao"
@@ -458,3 +461,40 @@ extension JP where Base == String {
      JPrint("··································")
  }
  */
+
+extension JP where Base == String {
+    /// 截断小数位数并补齐末尾的 0；没有小数点时保持原字符串不变。
+    func truncatingFractionDigits(_ fractionDigits: Int) -> String {
+        guard base.contains(".") else { return base }
+        return formattedNumber(fractionDigits: fractionDigits)
+    }
+
+    /// 将数字字符串向下截取到指定小数位数，并补齐末尾的 0。
+    ///
+    /// 原字符串包含千分位分隔符时，结果会继续保留千分位格式。
+    func formattedNumber(fractionDigits: Int) -> String {
+        guard (0...10).contains(fractionDigits) else { return base }
+
+        let usesGroupingSeparator = base.contains(",")
+        let numberString = base.replacingOccurrences(of: ",", with: "")
+        let number = NSDecimalNumber(string: numberString)
+        let roundingBehavior = NSDecimalNumberHandler(
+            roundingMode: .down,
+            scale: Int16(fractionDigits),
+            raiseOnExactness: false,
+            raiseOnOverflow: false,
+            raiseOnUnderflow: false,
+            raiseOnDivideByZero: true
+        )
+        let roundedNumber = number.rounding(accordingToBehavior: roundingBehavior)
+
+        let formatter = NumberFormatter()
+        formatter.locale = Locale(identifier: "en_US") // 使用西方数字，避免出现阿拉伯象形数字
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = fractionDigits
+        formatter.maximumFractionDigits = fractionDigits
+        formatter.usesGroupingSeparator = usesGroupingSeparator
+
+        return formatter.string(from: roundedNumber) ?? roundedNumber.stringValue
+    }
+}

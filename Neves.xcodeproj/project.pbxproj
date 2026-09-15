@@ -144,6 +144,7 @@
 		00D63E3729938461003F0C29 /* TestDismissAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */; };
 		00D65162257498720074693E /* Gradientable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65160257498720074693E /* Gradientable.swift */; };
 		00D65163257498720074693E /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D65161257498720074693E /* GradientView.swift */; };
+		00E401A63058E9E000CB6F3E /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E401A53058E9DF00CB6F3E /* Int+Extension.swift */; };
 		00E707282CC7D27B00733639 /* JPHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E707272CC7D27B00733639 /* JPHUD.swift */; };
 		00E7072B2CC7D81200733639 /* DeepLabV3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 00E7072A2CC7D81200733639 /* DeepLabV3.mlmodel */; };
 		00E7072D2CC7D83400733639 /* DeepLabV3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E7072C2CC7D83400733639 /* DeepLabV3ViewController.swift */; };
@@ -640,6 +641,7 @@
 		00D63E3629938461003F0C29 /* TestDismissAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDismissAllViewController.swift; sourceTree = "<group>"; };
 		00D65160257498720074693E /* Gradientable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradientable.swift; sourceTree = "<group>"; };
 		00D65161257498720074693E /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		00E401A53058E9DF00CB6F3E /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		00E707272CC7D27B00733639 /* JPHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPHUD.swift; sourceTree = "<group>"; };
 		00E7072A2CC7D81200733639 /* DeepLabV3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepLabV3.mlmodel; sourceTree = "<group>"; };
 		00E7072C2CC7D83400733639 /* DeepLabV3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLabV3ViewController.swift; sourceTree = "<group>"; };
@@ -1560,6 +1562,7 @@
 				0027927E302ADCC700405857 /* UIView+Image.swift */,
 				0027926F3025833900405857 /* CALayer+Image.swift */,
 				002792773025C6CE00405857 /* CGContext+.swift */,
+				00E401A53058E9DF00CB6F3E /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3201,6 +3204,7 @@
 				002792783025C6CE00405857 /* CGContext+.swift in Sources */,
 				71695AC826DE153B00384C2A /* RelationshipPlanet.swift in Sources */,
 				002E78CB295BF4310071E30C /* GuideIntoRoom.swift in Sources */,
+				00E401A63058E9E000CB6F3E /* Int+Extension.swift in Sources */,
 				71F249E92731517A00FAAD93 /* MagicCubeSuspendView.swift in Sources */,
 				1A35451D254E77600032B677 /* NSDate+JPExtension.m in Sources */,
 				71F249F02731517A00FAAD93 /* MarebulabulasRecordControl.swift in Sources */,
