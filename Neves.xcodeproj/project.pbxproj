@@ -47,6 +47,15 @@
 		004D9B302F72A38700A7DB56 /* svip_main_lottie_1.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1A2F72A38700A7DB56 /* svip_main_lottie_1.lottie */; };
 		004D9B312F72A38700A7DB56 /* svip_main_lottie_4.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1D2F72A38700A7DB56 /* svip_main_lottie_4.lottie */; };
 		004D9B322F72A38700A7DB56 /* svip_main_lottie_2.lottie in Resources */ = {isa = PBXBuildFile; fileRef = 004D9B1B2F72A38700A7DB56 /* svip_main_lottie_2.lottie */; };
+		00520C2230595E93001B49FE /* medals_rank_quarterly_country_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1C30595E93001B49FE /* medals_rank_quarterly_country_data.txt */; };
+		00520C2330595E93001B49FE /* medals_test_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1F30595E93001B49FE /* medals_test_data.txt */; };
+		00520C2430595E93001B49FE /* medals_rank_overall_global_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1B30595E93001B49FE /* medals_rank_overall_global_data.txt */; };
+		00520C2530595E93001B49FE /* medals_rank_overall_country_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1930595E93001B49FE /* medals_rank_overall_country_data.txt */; };
+		00520C2630595E93001B49FE /* medals_rank_quarterly_global_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1E30595E93001B49FE /* medals_rank_quarterly_global_data.txt */; };
+		00520C2730595E93001B49FE /* medals_wall_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2030595E93001B49FE /* medals_wall_data.txt */; };
+		00520C2830595E93001B49FE /* medals_rank_quarterly_default_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1D30595E93001B49FE /* medals_rank_quarterly_default_data.txt */; };
+		00520C2930595E93001B49FE /* medals_rank_overall_default_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1A30595E93001B49FE /* medals_rank_overall_default_data.txt */; };
+		00520C2B30596391001B49FE /* account_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2A30596391001B49FE /* account_data.txt */; };
 		005310D53045674C00B14F3B /* MedalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310A73045674C00B14F3B /* MedalRouter.swift */; };
 		005310D63045674C00B14F3B /* MedalWallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310B53045674C00B14F3B /* MedalWallViewModel.swift */; };
 		005310D73045674C00B14F3B /* MedalWallPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310AD3045674C00B14F3B /* MedalWallPopViewController.swift */; };
@@ -535,6 +544,15 @@
 		004D9B212F72A38700A7DB56 /* svip_main_lottie_8.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_8.lottie; sourceTree = "<group>"; };
 		004D9B222F72A38700A7DB56 /* svip_main_lottie_9.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_9.lottie; sourceTree = "<group>"; };
 		004D9B232F72A38700A7DB56 /* svip_main_lottie_10.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = svip_main_lottie_10.lottie; sourceTree = "<group>"; };
+		00520C1930595E93001B49FE /* medals_rank_overall_country_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_overall_country_data.txt; sourceTree = "<group>"; };
+		00520C1A30595E93001B49FE /* medals_rank_overall_default_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_overall_default_data.txt; sourceTree = "<group>"; };
+		00520C1B30595E93001B49FE /* medals_rank_overall_global_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_overall_global_data.txt; sourceTree = "<group>"; };
+		00520C1C30595E93001B49FE /* medals_rank_quarterly_country_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_quarterly_country_data.txt; sourceTree = "<group>"; };
+		00520C1D30595E93001B49FE /* medals_rank_quarterly_default_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_quarterly_default_data.txt; sourceTree = "<group>"; };
+		00520C1E30595E93001B49FE /* medals_rank_quarterly_global_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_quarterly_global_data.txt; sourceTree = "<group>"; };
+		00520C1F30595E93001B49FE /* medals_test_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_test_data.txt; sourceTree = "<group>"; };
+		00520C2030595E93001B49FE /* medals_wall_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_wall_data.txt; sourceTree = "<group>"; };
+		00520C2A30596391001B49FE /* account_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = account_data.txt; sourceTree = "<group>"; };
 		005310A63045674C00B14F3B /* MedalLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalLevel.swift; sourceTree = "<group>"; };
 		005310A73045674C00B14F3B /* MedalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalRouter.swift; sourceTree = "<group>"; };
 		005310A83045674C00B14F3B /* MedalDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalDetailListViewController.swift; sourceTree = "<group>"; };
@@ -1111,6 +1129,22 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		00520C2130595E93001B49FE /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				00520C2A30596391001B49FE /* account_data.txt */,
+				00520C1930595E93001B49FE /* medals_rank_overall_country_data.txt */,
+				00520C1A30595E93001B49FE /* medals_rank_overall_default_data.txt */,
+				00520C1B30595E93001B49FE /* medals_rank_overall_global_data.txt */,
+				00520C1C30595E93001B49FE /* medals_rank_quarterly_country_data.txt */,
+				00520C1D30595E93001B49FE /* medals_rank_quarterly_default_data.txt */,
+				00520C1E30595E93001B49FE /* medals_rank_quarterly_global_data.txt */,
+				00520C1F30595E93001B49FE /* medals_test_data.txt */,
+				00520C2030595E93001B49FE /* medals_wall_data.txt */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		005310A53045673500B14F3B /* Medals */ = {
 			isa = PBXGroup;
 			children = (
@@ -1120,6 +1154,7 @@
 				005310B73045674C00B14F3B /* MedalWall */,
 				005310D43045674C00B14F3B /* MedalRanking */,
 				009E3D193057C86700FA2E3B /* Other */,
+				00520C2130595E93001B49FE /* JSON */,
 			);
 			path = Medals;
 			sourceTree = "<group>";
@@ -2842,6 +2877,15 @@
 				004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */,
 				004D9B2A2F72A38700A7DB56 /* svip_main_lottie_6.lottie in Resources */,
 				004D9B2B2F72A38700A7DB56 /* collecting_cards_open_bag_level_1.lottie in Resources */,
+				00520C2230595E93001B49FE /* medals_rank_quarterly_country_data.txt in Resources */,
+				00520C2330595E93001B49FE /* medals_test_data.txt in Resources */,
+				00520C2430595E93001B49FE /* medals_rank_overall_global_data.txt in Resources */,
+				00520C2530595E93001B49FE /* medals_rank_overall_country_data.txt in Resources */,
+				00520C2630595E93001B49FE /* medals_rank_quarterly_global_data.txt in Resources */,
+				00520C2730595E93001B49FE /* medals_wall_data.txt in Resources */,
+				00520C2B30596391001B49FE /* account_data.txt in Resources */,
+				00520C2830595E93001B49FE /* medals_rank_quarterly_default_data.txt in Resources */,
+				00520C2930595E93001B49FE /* medals_rank_overall_default_data.txt in Resources */,
 				004D9B2C2F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie in Resources */,
 				004D9B2D2F72A38700A7DB56 /* svip_main_lottie_3.lottie in Resources */,
 				004D9B2E2F72A38700A7DB56 /* svip_main_lottie_10.lottie in Resources */,

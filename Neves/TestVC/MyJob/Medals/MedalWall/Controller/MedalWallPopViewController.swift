@@ -1,11 +1,12 @@
 //
 //  MedalWallViewController.swift
-//  Falla
+//  Neves
 //
 //  Created by aa on 2023/7/6.
 //
 
 import UIKit
+import SnapKit
 
 @objcMembers
 class MedalWallPopViewController: UIViewController {
@@ -16,14 +17,13 @@ class MedalWallPopViewController: UIViewController {
     let collectionView = MedalWallCollectionView()
     
     var mwVM: MedalWallViewModel?
-    weak var request: URLSessionTask?
+//    weak var request: URLSessionTask?
+    weak var request: DispatchWorkItem?
     
     private weak var fromVC: MedalRouterCompatible?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fd_prefersNavigationBarHidden = true
-        
         view.backgroundColor = .rgb(0, 0, 0, a: 0)
         
         let closeBtn = UIButton(type: .custom)
@@ -54,6 +54,16 @@ class MedalWallPopViewController: UIViewController {
         }
     }
     
+    // fd_prefersNavigationBarHidden = true 👇🏻
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+        if #available(iOS 26.0, *) {
+            navigationController?.interactiveContentPopGestureRecognizer?.delegate = nil
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         MedalRouter.currentVC = self
@@ -76,35 +86,54 @@ class MedalWallPopViewController: UIViewController {
         let uid = model.uid
         let nobility = model.nobility
         let svip = model.svip
-        let nickname = model.nickname
-        let avatarurl = model.avatarurl
+        let nickname = model.nickname ?? ""
+        let avatarurl = model.avatarurl ?? ""
         
-        let url = "/api/user/medals/wall"
-        let params = ["uid": uid]
+//        let url = "/api/user/medals/wall"
+//        let params = ["uid": uid]
+//        
+//        request = JKRNetWorkManager.share().jkr_sendApi(withUrl: url, params: params) { [weak self] returnValue in
+//            guard let self = self else { return }
+//
+//            guard let returnValue else {
+//                JKRHUDManager.toast(withMessage: String.fa.networkError)
+//                return
+//            }
+//            
+//            var mwVM: MedalWallViewModel?
+//            Asyncs.async {
+//                guard let dict = returnValue as? [String: Any] else { return }
+//                mwVM = MedalWallViewModel(uid, nobility, svip, nickname ?? "", avatarurl ?? "", dict)
+//            } mainTask: { [weak self] in
+//                guard let self = self, let mwVM else { return }
+//                self.mwVM = mwVM
+//                self.navBar.updateData(mwVM)
+//                self.collectionView.updateData(mwVM)
+//            }
+//
+//        } failure: { [weak self] error in
+//            guard self != nil else { return }
+//            JKRHUDManager.toast(withMessage: error.localizedDescription)
+//        } cancel: {}
         
-        request = JKRNetWorkManager.share().jkr_sendApi(withUrl: url, params: params) { [weak self] returnValue in
-            guard let self = self else { return }
-
-            guard let returnValue else {
-                JKRHUDManager.toast(withMessage: String.fa.networkError)
+        let delay = TimeInterval(Int.random(in: 5...10)) / 10.0
+        request = Asyncs.asyncDelay(delay) { [weak self] in
+            guard let url = Bundle.main.url(forResource: "medals_wall_data", withExtension: "txt"),
+                  let data = try? Data(contentsOf: url),
+                  let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+            else {
+                Asyncs.main { JPHUD.showError(withStatus: "网络连接异常，请检查您的网络") }
                 return
             }
             
-            var mwVM: MedalWallViewModel?
-            Asyncs.async {
-                guard let dict = returnValue as? [String: Any] else { return }
-                mwVM = MedalWallViewModel(uid, nobility, svip, nickname ?? "", avatarurl ?? "", dict)
-            } mainTask: { [weak self] in
-                guard let self = self, let mwVM else { return }
+            let mwVM = MedalWallViewModel(uid, nobility, svip, nickname, avatarurl, dict)
+            Asyncs.main { [weak self] in
+                guard let self else { return }
                 self.mwVM = mwVM
                 self.navBar.updateData(mwVM)
                 self.collectionView.updateData(mwVM)
             }
-
-        } failure: { [weak self] error in
-            guard self != nil else { return }
-            JKRHUDManager.toast(withMessage: error.localizedDescription)
-        } cancel: {}
+        }
         
         // test
 //        request = JKRNetWorkManager.share().jkr_sendApi(withUrl: "/api/user/medals", params: ["uid": uid]) { [weak self] returnValue in
@@ -172,7 +201,7 @@ extension MedalWallPopViewController: MedalRouterCompatible {
         let popVC = MedalWallPopViewController()
         popVC.fromVC = superVC as? MedalRouterCompatible ?? nil
         
-        let navCtr = JKRRootNavigationController(rootViewController: popVC)
+        let navCtr = BaseNavigationController(rootViewController: popVC)
         navCtr.modalPresentationStyle = .overFullScreen
         
         superVC.present(navCtr, animated: false) {
@@ -204,7 +233,7 @@ extension MedalWallPopViewController: MedalRouterCompatible {
         UIView.animate(withDuration: 0.3) {
             self.view.layer.backgroundColor = .rgb(0, 0, 0, a: 0)
             self.view.layoutIfNeeded()
-        } completion: { _ in
+        } completion: { [weak fromVC] _ in
             self.dismiss(animated: false) { [weak fromVC] in
                 MedalRouter.currentVC = fromVC
             }
