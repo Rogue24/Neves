@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+import SVGAPlayer_Optimized
 
 class MedalRankingTopUserView: UIView {
     static var top1Size: CGSize { size(.top1) }
@@ -132,11 +134,11 @@ private extension MedalRankingTopUserView {
     class UserCrownView: UIView, MedalRankingTopUserSubviewCompatible {
         let ranking: MedalRanking.Ranking
         
-        let avatarView: YYAnimatedImageView = {
-            let av = YYAnimatedImageView()
+        let avatarView: AnimatedImageView = {
+            let av = AnimatedImageView()
             av.contentMode = .scaleAspectFill
             av.layer.masksToBounds = true
-            av.runloopMode = RunLoop.Mode.default.rawValue
+            av.runLoopMode = RunLoop.Mode.default
             av.backgroundColor = .black
             av.image = UIImage(named: "header_no")
             av.isUserInteractionEnabled = false
@@ -144,7 +146,7 @@ private extension MedalRankingTopUserView {
         }()
         let crownView = UIImageView()
         let nobilityView = UIImageView()
-        var player: SVGAPlayer?
+        var player: SVGARePlayer?
         
         private var gid: Int?
         private var uid: Int?
@@ -237,7 +239,7 @@ private extension MedalRankingTopUserView {
             
             // 直播图标
             if topUserVM.isOnLine, self.player == nil, let videoItem = topUserVM.getOnLineEntity?() {
-                let player = SVGAPlayer()
+                let player = SVGARePlayer()
                 player.rtl_refWidth = bounds.width
                 switch ranking {
                 case .top1:
@@ -263,10 +265,10 @@ private extension MedalRankingTopUserView {
             uid = nil
             
             guard let topUserVM else {
-                avatarView.jkr_cancelCurrentImageRequest()
+                avatarView.kf.cancelDownloadTask()
                 avatarView.image = UIImage(named: "header_no")
                 
-                nobilityView.jkr_cancelCurrentImageRequest()
+                nobilityView.kf.cancelDownloadTask()
                 nobilityView.image = nil
                 
                 player?.stopAnimation()
@@ -276,15 +278,16 @@ private extension MedalRankingTopUserView {
                 return frame.maxY
             }
             
-            avatarView.jkr_setImage(with: topUserVM.avatarUrl,
-                                    placeholder: avatarView.image,
-                                    loadErrorPlaceholder: UIImage(named: "header_no"),
-                                    options: .setImageWithFadeAnimation)
+            avatarView.kf.setImage(
+                with: topUserVM.avatarUrl,
+                placeholder: UIImage(named: "header_no"),
+                options: [.transition(.fade(0.2)), .keepCurrentImageWhileLoading]
+            )
             
-            nobilityView.jkr_setImage(with: topUserVM.nobilityUrl,
-                                      placeholder: nobilityView.image,
-                                      loadErrorPlaceholder: nil,
-                                      options: .setImageWithFadeAnimation)
+            nobilityView.kf.setImage(
+                with: topUserVM.nobilityUrl,
+                options: [.transition(.fade(0.2)), .keepCurrentImageWhileLoading]
+            )
             
             if topUserVM.isOnLine {
                 player?.startAnimation()

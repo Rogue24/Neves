@@ -5,6 +5,9 @@
 //  Created by aa on 2023/6/30.
 //
 
+import UIKit
+import Kingfisher
+
 enum MedalRanking {
     enum ShowType {
         case fullScreen
@@ -17,8 +20,8 @@ enum MedalRanking {
         
         var title: String {
             switch self {
-            case .quarterly: return FallaLocalized.str_medal_ranking_quarterly_chart.string
-            case .overall: return FallaLocalized.str_medal_ranking_overall_list.string
+            case .quarterly: return "季度榜"
+            case .overall: return "历史总榜"
             }
         }
         
@@ -70,32 +73,32 @@ enum MedalRanking {
         case remote(_ url: String)
         case label(_ text: String, _ mask: UIImage?)
         
+        @MainActor
         static func setup(_ iconSource: IconSource?, for view: UIView) {
             switch view {
             case let imgView as UIImageView:
                 guard let iconSource else {
-                    imgView.jkr_cancelCurrentImageRequest()
+                    imgView.kf.cancelDownloadTask()
                     imgView.image = nil
                     return
                 }
                 
                 switch iconSource {
                 case let .image(img):
-                    imgView.jkr_cancelCurrentImageRequest()
+                    imgView.kf.cancelDownloadTask()
                     imgView.image = img
                     
                 case let .asset(name):
-                    imgView.jkr_cancelCurrentImageRequest()
+                    imgView.kf.cancelDownloadTask()
                     imgView.image = UIImage(named: name)
                     
                 case let .remote(url):
-                    imgView.jkr_setImage(with: URL(string: url),
-                                         placeholder: imgView.image,
-                                         loadErrorPlaceholder: nil,
-                                         options: .setImageWithFadeAnimation)
-                    
+                    imgView.kf.setImage(
+                        with: URL(string: url),
+                        options: [.transition(.fade(0.2))]
+                    )
                 case .label:
-                    imgView.jkr_cancelCurrentImageRequest()
+                    imgView.kf.cancelDownloadTask()
                     imgView.image = nil
                 }
                 
@@ -161,9 +164,9 @@ enum MedalRanking {
         var errorDescription: String? {
             switch self {
             case .networkFailed:
-                return String.fa.networkError
+                return "网络连接异常，请检查您的网络"
             case .nullData:
-                return String.fa.noContent
+                return "暂无数据"
             case .userCancel:
                 return nil
             }

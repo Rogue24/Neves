@@ -5,11 +5,15 @@
 //  Created by aa on 2023/7/6.
 //
 
+import UIKit
+import SnapKit
+import Kingfisher
+
 class MedalWallUserCell: UICollectionViewCell {
     static let cellID = "MedalWallUserCell"
     static let size: CGSize = [MedalWallCollectionView.size.width, 107.px]
     
-    let avatarView = YYAnimatedImageView()
+    let avatarView = AnimatedImageView()
     let nameLabel = JKRShimmeringLabel()
     
     private var uid: Int = 0
@@ -54,10 +58,11 @@ extension MedalWallUserCell {
 
 extension MedalWallUserCell {
     func updateData(_ mwVM: MedalWallViewModel) {
-        avatarView.jkr_setImage(with: URL(string: mwVM.rq_avatarurl),
-                                placeholder: UIImage(named: "header_no"),
-                                loadErrorPlaceholder: UIImage(named: "header_no"),
-                                options: .setImageWithFadeAnimation)
+        avatarView.kf.setImage(
+            with: URL(string: mwVM.rq_avatarurl),
+            placeholder: UIImage(named: "header_no"),
+            options: [.transition(.fade(0.2))]
+        )
         
         nameLabel.text = mwVM.nickname
         nameLabel.shimmerMask = JKRShimmeringMask.nickNameMask(withVip: mwVM.nobility, svip: mwVM.svip)

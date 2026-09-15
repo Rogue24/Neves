@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+import SVGAPlayer_Optimized
 
 class MedalRankingUserInfoView: UIView {
     static let size: CGSize = [Env.screenWidth, 50.px]
@@ -28,14 +30,14 @@ class MedalRankingUserInfoView: UIView {
         return nl
     }()
     
-    private let avatarView: YYAnimatedImageView = {
-        let av = YYAnimatedImageView()
+    private let avatarView: AnimatedImageView = {
+        let av = AnimatedImageView()
         av.rtl_refWidth = MedalRankingUserInfoView.size.width
         av.rtl_frame = [40.px, 0, MedalRankingUserInfoView.size.height, MedalRankingUserInfoView.size.height]
         av.contentMode = .scaleAspectFill
         av.layer.cornerRadius = MedalRankingUserInfoView.size.height * 0.5
         av.layer.masksToBounds = true
-        av.runloopMode = RunLoop.Mode.default.rawValue
+        av.runLoopMode = RunLoop.Mode.default
         av.backgroundColor = .black
         av.image = UIImage(named: "header_no")
         return av
@@ -76,7 +78,7 @@ class MedalRankingUserInfoView: UIView {
         return si
     }()
     
-    private(set) var player: SVGAPlayer?
+    private(set) var player: SVGARePlayer?
     private(set) var nameImgView: UIImageView?
     
     private var gid: Int?
@@ -131,7 +133,7 @@ extension MedalRankingUserInfoView {
         
         // 直播图标
         if userVM.isOnLine, self.player == nil, let videoItem = userVM.getOnLineEntity?() {
-            let player = SVGAPlayer()
+            let player = SVGARePlayer()
             player.frame = CGRect(origin: .zero, size: [85.px, 85.px])
             player.rtl_refWidth = bounds.width
             player.rtl_center = avatarView.rtl_center
@@ -165,7 +167,7 @@ extension MedalRankingUserInfoView {
         guard let userVM else {
             numLabel.text = ""
             
-            avatarView.cancelCurrentImageRequest()
+            avatarView.kf.cancelDownloadTask()
             avatarView.image = UIImage(named: "header_no")
             
             player?.stopAnimation()
@@ -187,10 +189,11 @@ extension MedalRankingUserInfoView {
         
         numLabel.text = userVM.numStr
         
-        avatarView.jkr_setImage(with: userVM.avatarUrl,
-                                placeholder: UIImage(named: "header_no"),
-                                loadErrorPlaceholder: UIImage(named: "header_no"),
-                                options: .setImageWithFadeAnimation)
+        avatarView.kf.setImage(
+            with: userVM.avatarUrl,
+            placeholder: UIImage(named: "header_no"),
+            options: [.transition(.fade(0.2))]
+        )
         
         if userVM.isOnLine {
             player?.startAnimation()

@@ -5,6 +5,9 @@
 //  Created by aa on 2023/7/3.
 //
 
+import UIKit
+import SVGAPlayer_Optimized
+
 class MedalRankingUserViewModel {
     let ranking: MedalRanking.Ranking
     let user: EMLRankingUserModel
@@ -83,9 +86,11 @@ class MedalRankingUserViewModel {
         if let nobilityUrl = user.nobilityIcon, nobilityUrl.count > 0 {
             if (x + iconWH) <= listWidth {
                 iconModels.append(
-                    MedalRankingIconModel(iconSource: .remote(nobilityUrl.rq_40x40),
-                                          iconFrame: [0, 0, iconWH, iconWH],
-                                          nextSpace: space)
+                    MedalRankingIconModel(
+                        iconSource: .remote(nobilityUrl.rq_40x40),
+                        iconFrame: [0, 0, iconWH, iconWH],
+                        nextSpace: space
+                    )
                 )
                 x += (iconWH + space)
             }
@@ -98,10 +103,12 @@ class MedalRankingUserViewModel {
             let imgW: CGFloat = imgH * (image.size.width / image.size.height)
             if (x + imgW) <= listWidth {
                 iconModels.append(
-                    MedalRankingIconModel(iconSource: .asset(svipImgName),
-                                          iconFrame: [0, 0, imgW, imgH],
-                                          nextSpace: space,
-                                          tapAction: { MedalRouter.svip(svip).jump() })
+                    MedalRankingIconModel(
+                        iconSource: .asset(svipImgName),
+                        iconFrame: [0, 0, imgW, imgH],
+                        nextSpace: space,
+                        tapAction: { MedalRouter.svip(svip).jump() }
+                    )
                 )
                 x += (imgW + space)
             }
@@ -111,20 +118,24 @@ class MedalRankingUserViewModel {
             for medalsIcon in medalsIcons {
                 guard (x + iconWH) <= listWidth else { break }
                 iconModels.append(
-                    MedalRankingIconModel(iconSource: .remote(medalsIcon.rq_20x20),
-                                          iconFrame: [0, 0, iconWH, iconWH],
-                                          nextSpace: space)
+                    MedalRankingIconModel(
+                        iconSource: .remote(medalsIcon.rq_20x20),
+                        iconFrame: [0, 0, iconWH, iconWH],
+                        nextSpace: space
+                    )
                 )
                 x += (iconWH + space)
             }
         }
         
-        iconVMs = MedalRankingIconViewModel.build(with: iconModels,
-                                                  iconMaxCount: MedalRankingUserInfoView.iconMaxCount,
-                                                  iconListSize: MedalRankingUserInfoView.iconListSize,
-                                                  iconListAlignment: MedalRankingUserInfoView.iconListAlignment)
+        iconVMs = MedalRankingIconViewModel.build(
+            with: iconModels,
+            iconMaxCount: MedalRankingUserInfoView.iconMaxCount,
+            iconListSize: MedalRankingUserInfoView.iconListSize,
+            iconListAlignment: MedalRankingUserInfoView.iconListAlignment
+        )
         
-        score = NSString.jkr_largeNumber(withNumber: user.val) as? String
+        score = user.val.friendlyString()
         scoreImage = UIImage(named: "medal_integral_logo_small")
     }
 }

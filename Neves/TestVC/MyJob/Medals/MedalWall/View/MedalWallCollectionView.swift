@@ -5,6 +5,9 @@
 //  Created by aa on 2023/7/6.
 //
 
+import UIKit
+import Kingfisher
+
 class MedalWallCollectionView: UICollectionView {
     static let size: CGSize = [Env.screenWidth, MedalWallPopViewController.contentSize.height - MedalWallNavigationBar.size.height]
     static let medalIntegralCellSize: CGSize = [MedalWallCollectionView.size.width - 32.px - 1, 54.px]
@@ -57,7 +60,7 @@ extension MedalWallCollectionView: UICollectionViewDataSource {
         if let mwVM {
             let listVM = mwVM.listVMs[indexPath.section - 2]
             header.iconView.image = UIImage(named: listVM.level.smallIconName)
-            header.titleLabel.text = FallaLocalized.str_medal_wall_level.string(listVM.level.rawValue)
+            header.titleLabel.text = "\(listVM.level.rawValue)级勋章"
             header.countLabel.text = "(\(listVM.count))"
         }
         return header
@@ -86,10 +89,10 @@ extension MedalWallCollectionView: UICollectionViewDataSource {
             if let mwVM {
                 let listVM = mwVM.listVMs[indexPath.section - 2]
                 let medal = listVM.medals[indexPath.item]
-                cell.imgView.jkr_setImage(with: URL(string: medal.iconL.rq_100x100),
-                                          placeholder: nil,
-                                          loadErrorPlaceholder: nil,
-                                          options: .setImageWithFadeAnimation)
+                cell.imgView.kf.setImage(
+                    with: URL(string: medal.iconL.rq_100x100),
+                    options: [.transition(.fade(0.2))]
+                )
                 cell.indexPath = indexPath
                 cell.didClickHandler = { [weak self] idp in
                     self?.medalDidClick(idp)

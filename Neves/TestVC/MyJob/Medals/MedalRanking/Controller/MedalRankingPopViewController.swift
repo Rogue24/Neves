@@ -81,7 +81,6 @@ class MedalRankingPopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fd_prefersNavigationBarHidden = true
         view.backgroundColor = .rgb(0, 0, 0, a: 0)
         
         let closeBtn = UIButton(type: .custom)
@@ -143,6 +142,7 @@ class MedalRankingPopViewController: UIViewController {
         dataMgr.fetchData(for: currentType, range, isReload: false)
     }
     
+    // fd_prefersNavigationBarHidden = true 👇🏻
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)

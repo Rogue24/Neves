@@ -5,6 +5,9 @@
 //  Created by aa on 2023/7/4.
 //
 
+import UIKit
+import SVGAPlayer_Optimized
+
 class MedalRankingTopUserViewModel {
     let ranking: MedalRanking.Ranking
     let user: EMLRankingUserModel
@@ -82,19 +85,23 @@ class MedalRankingTopUserViewModel {
             var iconModels: [MedalRankingIconModel] = []
             for i in 0 ..< count {
                 iconModels.append(
-                    MedalRankingIconModel(iconSource: .remote(medalsIcons[i].rq_20x20),
-                                          iconFrame: [0, 0, 18.px, 18.px],
-                                          nextSpace: 2.px)
+                    MedalRankingIconModel(
+                        iconSource: .remote(medalsIcons[i].rq_20x20),
+                        iconFrame: [0, 0, 18.px, 18.px],
+                        nextSpace: 2.px
+                    )
                 )
             }
             
-            iconVMs = MedalRankingIconViewModel.build(with: iconModels,
-                                                      iconMaxCount: MedalRankingTopUserView.iconMaxCount,
-                                                      iconListSize: MedalRankingTopUserView.iconListSize(ranking),
-                                                      iconListAlignment: MedalRankingTopUserView.iconListAlignment(ranking))
+            iconVMs = MedalRankingIconViewModel.build(
+                with: iconModels,
+                iconMaxCount: MedalRankingTopUserView.iconMaxCount,
+                iconListSize: MedalRankingTopUserView.iconListSize(ranking),
+                iconListAlignment: MedalRankingTopUserView.iconListAlignment(ranking)
+            )
         }
         
-        score = NSString.jkr_largeNumber(withNumber: user.val) as? String
+        score = user.val.friendlyString()
         scoreImage = UIImage(named: "medal_integral_logo_small")
         scoreColors = [.rgb(240, 142, 255), .rgb(71, 57, 255)]
     }

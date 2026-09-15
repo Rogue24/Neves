@@ -33,7 +33,6 @@ class MedalRankingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fd_prefersNavigationBarHidden = true
         
         listView.scrollDelegate = self
         view.addSubview(listView)
@@ -64,6 +63,7 @@ class MedalRankingViewController: UIViewController {
         dataMgr.fetchData(for: segmentView.currentType, range, isReload: false)
     }
     
+    // fd_prefersNavigationBarHidden = true 👇🏻
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
