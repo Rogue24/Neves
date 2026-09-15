@@ -56,6 +56,10 @@
 		00520C2830595E93001B49FE /* medals_rank_quarterly_default_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1D30595E93001B49FE /* medals_rank_quarterly_default_data.txt */; };
 		00520C2930595E93001B49FE /* medals_rank_overall_default_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1A30595E93001B49FE /* medals_rank_overall_default_data.txt */; };
 		00520C2B30596391001B49FE /* account_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2A30596391001B49FE /* account_data.txt */; };
+		00520C2D305971F0001B49FE /* MedalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00520C2C305971F0001B49FE /* MedalTestViewController.swift */; };
+		00520C303059770F001B49FE /* hudloading.svga in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2F3059770F001B49FE /* hudloading.svga */; };
+		00520C3230597736001B49FE /* ranking_top_online.svga in Resources */ = {isa = PBXBuildFile; fileRef = 00520C3130597736001B49FE /* ranking_top_online.svga */; };
+		00520C343059773F001B49FE /* time_line_online.svga in Resources */ = {isa = PBXBuildFile; fileRef = 00520C333059773F001B49FE /* time_line_online.svga */; };
 		005310D53045674C00B14F3B /* MedalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310A73045674C00B14F3B /* MedalRouter.swift */; };
 		005310D63045674C00B14F3B /* MedalWallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310B53045674C00B14F3B /* MedalWallViewModel.swift */; };
 		005310D73045674C00B14F3B /* MedalWallPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005310AD3045674C00B14F3B /* MedalWallPopViewController.swift */; };
@@ -553,6 +557,10 @@
 		00520C1F30595E93001B49FE /* medals_test_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_test_data.txt; sourceTree = "<group>"; };
 		00520C2030595E93001B49FE /* medals_wall_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_wall_data.txt; sourceTree = "<group>"; };
 		00520C2A30596391001B49FE /* account_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = account_data.txt; sourceTree = "<group>"; };
+		00520C2C305971F0001B49FE /* MedalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalTestViewController.swift; sourceTree = "<group>"; };
+		00520C2F3059770F001B49FE /* hudloading.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = hudloading.svga; sourceTree = "<group>"; };
+		00520C3130597736001B49FE /* ranking_top_online.svga */ = {isa = PBXFileReference; lastKnownFileType = text; path = ranking_top_online.svga; sourceTree = "<group>"; };
+		00520C333059773F001B49FE /* time_line_online.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = time_line_online.svga; sourceTree = "<group>"; };
 		005310A63045674C00B14F3B /* MedalLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalLevel.swift; sourceTree = "<group>"; };
 		005310A73045674C00B14F3B /* MedalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalRouter.swift; sourceTree = "<group>"; };
 		005310A83045674C00B14F3B /* MedalDetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalDetailListViewController.swift; sourceTree = "<group>"; };
@@ -1145,9 +1153,20 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		00520C2E30597705001B49FE /* SVGA */ = {
+			isa = PBXGroup;
+			children = (
+				00520C2F3059770F001B49FE /* hudloading.svga */,
+				00520C3130597736001B49FE /* ranking_top_online.svga */,
+				00520C333059773F001B49FE /* time_line_online.svga */,
+			);
+			path = SVGA;
+			sourceTree = "<group>";
+		};
 		005310A53045673500B14F3B /* Medals */ = {
 			isa = PBXGroup;
 			children = (
+				00520C2C305971F0001B49FE /* MedalTestViewController.swift */,
 				005310A63045674C00B14F3B /* MedalLevel.swift */,
 				005310A73045674C00B14F3B /* MedalRouter.swift */,
 				005310AC3045674C00B14F3B /* MedalDetail */,
@@ -1507,6 +1526,7 @@
 				7172B62C28D01E8400381E83 /* Assets */,
 				1A3543B3254E775F0032B677 /* Font */,
 				004D9B142F72A36000A7DB56 /* Lottie */,
+				00520C2E30597705001B49FE /* SVGA */,
 				7107CDA2287BD49800AC9B9F /* GIF */,
 				71048BC92863167300737278 /* JSON */,
 				7190E4E227102EB600E8C511 /* Music */,
@@ -2843,13 +2863,16 @@
 				7190294E28192E04000F6E29 /* PKProgressPlayhouseInfoView.xib in Resources */,
 				71F249F32731517A00FAAD93 /* bgm.wav in Resources */,
 				71F249D52731517A00FAAD93 /* FireworkCell.xib in Resources */,
+				00520C303059770F001B49FE /* hudloading.svga in Resources */,
 				713998082705B64D002BC263 /* Girl3.jpg in Resources */,
+				00520C343059773F001B49FE /* time_line_online.svga in Resources */,
 				7139980C2705B64D002BC263 /* Girl6.jpg in Resources */,
 				71EA694126563270009463E6 /* Girl9.jpg in Resources */,
 				0060D0182F98B73100809046 /* clipped-traffic-lights.lottie in Resources */,
 				71048BCB2863167300737278 /* MoguBanner.json in Resources */,
 				715C901427F6F45D00B88B85 /* CosmicExplorationRecordDetailView.xib in Resources */,
 				7139980B2705B64D002BC263 /* Girl1.jpg in Resources */,
+				00520C3230597736001B49FE /* ranking_top_online.svga in Resources */,
 				71F249F82731517A00FAAD93 /* MarebulabulasLrcCell.xib in Resources */,
 				717B3389272902CD000B0A70 /* minion_01.mp4 in Resources */,
 				713998072705B64D002BC263 /* Girl2.jpg in Resources */,
@@ -3031,6 +3054,7 @@
 				719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */,
 				00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */,
 				717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */,
+				00520C2D305971F0001B49FE /* MedalTestViewController.swift in Sources */,
 				1A5930FC27B8DD8500DC60FC /* AutoLayoutTableViewController.swift in Sources */,
 				71107435271E930C00178969 /* SolitaireCalculationView.swift in Sources */,
 				71AB638027F5C287000CCF58 /* CosmicExplorationPlanetView.swift in Sources */,

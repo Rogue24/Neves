@@ -17,6 +17,18 @@
     };
 }
 
++ (NSArray *)mj_ignoredPropertyNames {
+    return @[
+        @"rq_icon",
+    ];
+}
+
++ (NSArray *)mj_ignoredCodingPropertyNames {
+    return @[
+        @"rq_icon",
+    ];
+}
+
 - (NSString *)rq_icon {
     if (!_rq_icon) {
         _rq_icon = [self.icon resizeQualityForDisplay_100x100];

@@ -47,6 +47,10 @@
                 "vcName": "CosmicExplorationTestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "MedalTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

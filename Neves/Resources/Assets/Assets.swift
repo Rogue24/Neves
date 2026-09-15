@@ -257,6 +257,7 @@ internal enum Asset {
   internal static let iconRankingHelp = NevesImageAsset(name: "icon_ranking_help")
   internal static let iconRankingToggleDark = NevesImageAsset(name: "icon_ranking_toggle_dark")
   internal static let iconRankingToggleLight = NevesImageAsset(name: "icon_ranking_toggle_light")
+  internal static let momentArrowsBlack = NevesImageAsset(name: "moment_arrows_black")
   internal static let momentTime = NevesImageAsset(name: "moment_time")
   internal static let navBack = NevesImageAsset(name: "nav-back")
   internal static let iconSvip1 = NevesImageAsset(name: "icon_svip_1")

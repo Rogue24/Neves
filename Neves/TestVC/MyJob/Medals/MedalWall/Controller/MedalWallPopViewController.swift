@@ -12,13 +12,13 @@ import SnapKit
 class MedalWallPopViewController: UIViewController {
     static let contentSize: CGSize = [Env.screenWidth, Env.screenHeight - Env.safeAreaInsets.top - 117.px]
     
-    let contentView = UIView()
-    let navBar = MedalWallNavigationBar()
-    let collectionView = MedalWallCollectionView()
+    private let contentView = UIView()
+    private let navBar = MedalWallNavigationBar()
+    private let collectionView = MedalWallCollectionView()
     
-    var mwVM: MedalWallViewModel?
-//    weak var request: URLSessionTask?
-    weak var request: DispatchWorkItem?
+    private var mwVM: MedalWallViewModel?
+//    private weak var request: URLSessionTask?
+    private var request: DispatchWorkItem?
     
     private weak var fromVC: MedalRouterCompatible?
     
@@ -122,13 +122,18 @@ class MedalWallPopViewController: UIViewController {
                   let data = try? Data(contentsOf: url),
                   let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
             else {
-                Asyncs.main { JPHUD.showError(withStatus: "网络连接异常，请检查您的网络") }
+                Asyncs.main { [weak self] in
+                    guard let self else { return }
+                    self.request = nil
+                    JPHUD.showError(withStatus: "网络连接异常，请检查您的网络")
+                }
                 return
             }
             
             let mwVM = MedalWallViewModel(uid, nobility, svip, nickname, avatarurl, dict)
             Asyncs.main { [weak self] in
                 guard let self else { return }
+                self.request = nil
                 self.mwVM = mwVM
                 self.navBar.updateData(mwVM)
                 self.collectionView.updateData(mwVM)
@@ -227,6 +232,7 @@ extension MedalWallPopViewController: MedalRouterCompatible {
     func close() {
         let fromVC = self.fromVC
         request?.cancel()
+        request = nil
         contentView.snp.updateConstraints { make in
             make.bottom.equalTo(view.snp.bottom).offset(Self.contentSize.height)
         }

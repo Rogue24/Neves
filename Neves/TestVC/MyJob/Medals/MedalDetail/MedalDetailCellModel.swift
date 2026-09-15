@@ -89,6 +89,14 @@ class MedalDetailCellModel: MBindable {
             } failureBlock: { [weak self] _ in
                 self?.isLoading = false
             }
+//            Task {
+//                do {
+//                    let (data, _) = try await URLSession.shared.data(from: url)
+//                    await MainActor.run { success(data) }
+//                } catch {
+//                    await MainActor.run { failure(error) }
+//                }
+//            }
         case .image:
             break
         }
