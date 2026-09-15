@@ -1,9 +1,8 @@
 //
 //  JKRAutoScrollLabel.m
-//  XMScrollCanvas
+//  Neves
 //
-//  Created by Howie on 2021/10/27.
-//  Copyright © 2021 wxm. All rights reserved.
+//  Created by cc on 2021/10/27.
 //
 
 #import "JKRAutoScrollLabel.h"

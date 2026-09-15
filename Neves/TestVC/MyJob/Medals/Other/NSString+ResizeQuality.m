@@ -1,6 +1,6 @@
 //
 //  NSString+ResizeQuality.m
-//  Falla
+//  Neves
 //
 //  Created by aa on 2024/9/26.
 //

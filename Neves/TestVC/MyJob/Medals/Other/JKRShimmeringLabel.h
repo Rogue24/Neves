@@ -1,9 +1,8 @@
 //
 //  JKRShimmeringLabel.h
-//  SoldierShimmering
+//  Neves
 //
-//  Created by 胡怀刈 on 2022/12/7.
-//  Copyright © 2022 Soldier. All rights reserved.
+//  Created by hh on 2022/12/7.
 //
 
 #import <UIKit/UIKit.h>

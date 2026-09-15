@@ -1,13 +1,13 @@
 //
-//  FallaResizeBuilder.swift
-//  Falla
+//  EMLResizeBuilder.swift
+//  Neves
 //
 //  Created by aa on 2025/8/15.
 //
 
 import UIKit
 
-struct FallaResizeBuilder {
+struct EMLResizeBuilder {
     private let url: String
     private var size: CGSize
     private var scale: Int = Int(UIScreen.main.scale)
@@ -64,31 +64,31 @@ struct FallaResizeBuilder {
 }
 
 extension String {
-    var rq: FallaResizeBuilder { .init(url: self) }
+    var rq: EMLResizeBuilder { .init(url: self) }
     
     var rq_20x20: String {
-        FallaResizeBuilder(
+        EMLResizeBuilder(
             url: self,
             size: CGSizeMake(20, 20)
         ).build()
     }
 
     var rq_40x40: String {
-        FallaResizeBuilder(
+        EMLResizeBuilder(
             url: self,
             size: CGSizeMake(40, 40)
         ).build()
     }
 
     var rq_80x80: String {
-        FallaResizeBuilder(
+        EMLResizeBuilder(
             url: self,
             size: CGSizeMake(80, 80)
         ).build()
     }
     
     var rq_100x100: String {
-        FallaResizeBuilder(
+        EMLResizeBuilder(
             url: self,
             size: CGSizeMake(100, 100)
         ).build()

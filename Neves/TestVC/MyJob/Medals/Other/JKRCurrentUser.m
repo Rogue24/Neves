@@ -1,9 +1,8 @@
 //
 //  JKRCurrentUser.m
-//  Falla
+//  Neves
 //
-//  Created by Howie on 2021/2/3.
-//  Copyright © 2021 Falla. All rights reserved.
+//  Created by cc on 2021/2/3.
 //
 
 #import "JKRCurrentUser.h"

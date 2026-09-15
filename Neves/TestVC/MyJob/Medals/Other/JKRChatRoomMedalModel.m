@@ -1,8 +1,8 @@
 //
 //  JKRChatRoomMedalModel.m
-//  Falla
+//  Neves
 //
-//  Created by Howie on 2021/5/28.
+//  Created by cc on 2021/5/28.
 //
 
 #import "JKRChatRoomMedalModel.h"

@@ -1,9 +1,8 @@
 //
 //  EMLRankingUsersModel.h
-//  Falla
+//  Neves
 //
-//  Created by falla on 2021/2/23.
-//  Copyright © 2021 Falla. All rights reserved.
+//  Created by cc on 2021/2/23.
 //
 
 #import <Foundation/Foundation.h>

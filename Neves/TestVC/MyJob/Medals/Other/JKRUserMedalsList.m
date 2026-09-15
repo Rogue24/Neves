@@ -1,9 +1,8 @@
 //
 //  JKRUserMedalsList.m
-//  Falla
+//  Neves
 //
-//  Created by Lucky on 2021/1/19.
-//  Copyright © 2021 Falla. All rights reserved.
+//  Created by kk on 2021/1/19.
 //
 
 #import "JKRUserMedalsList.h"

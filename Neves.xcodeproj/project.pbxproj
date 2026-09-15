@@ -118,7 +118,7 @@
 		009E3D2D3057E1BF00FA2E3B /* JKRShimmeringMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D2A3057E1BF00FA2E3B /* JKRShimmeringMask.m */; };
 		009E3D2E3057E1BF00FA2E3B /* JKRShimmeringLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D283057E1BF00FA2E3B /* JKRShimmeringLabel.m */; };
 		009E3D2F3057E1BF00FA2E3B /* JKRAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D2C3057E1BF00FA2E3B /* JKRAutoScrollLabel.m */; };
-		009E3D313057E7A300FA2E3B /* FallaResizeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D303057E7A300FA2E3B /* FallaResizeBuilder.swift */; };
+		009E3D313057E7A300FA2E3B /* EMLResizeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D303057E7A300FA2E3B /* EMLResizeBuilder.swift */; };
 		009E3D353057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D333057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m */; };
 		009E3D363057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009E3D343057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib */; };
 		009E3D383057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009E3D373057EE4300FA2E3B /* EMLRankingRegionToggleButton.swift */; };
@@ -611,7 +611,7 @@
 		009E3D2A3057E1BF00FA2E3B /* JKRShimmeringMask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRShimmeringMask.m; sourceTree = "<group>"; };
 		009E3D2B3057E1BF00FA2E3B /* JKRAutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRAutoScrollLabel.h; sourceTree = "<group>"; };
 		009E3D2C3057E1BF00FA2E3B /* JKRAutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRAutoScrollLabel.m; sourceTree = "<group>"; };
-		009E3D303057E7A300FA2E3B /* FallaResizeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallaResizeBuilder.swift; sourceTree = "<group>"; };
+		009E3D303057E7A300FA2E3B /* EMLResizeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLResizeBuilder.swift; sourceTree = "<group>"; };
 		009E3D323057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLProfileMedalIntegralCollectionViewCell.h; sourceTree = "<group>"; };
 		009E3D333057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLProfileMedalIntegralCollectionViewCell.m; sourceTree = "<group>"; };
 		009E3D343057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EMLProfileMedalIntegralCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1310,7 +1310,7 @@
 		009E3D193057C86700FA2E3B /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				009E3D303057E7A300FA2E3B /* FallaResizeBuilder.swift */,
+				009E3D303057E7A300FA2E3B /* EMLResizeBuilder.swift */,
 				009E3D243057DFAC00FA2E3B /* NSString+ResizeQuality.h */,
 				009E3D253057DFAC00FA2E3B /* NSString+ResizeQuality.m */,
 				009E3D3F3057F1AA00FA2E3B /* EMLRankingUsersModel.h */,
@@ -2981,7 +2981,7 @@
 				1A9E41A226BE4633006941D0 /* JPCropViewController.swift in Sources */,
 				719299E6281A3FAA00CCE872 /* PKProgressRankCell.swift in Sources */,
 				719105DF26E0A94D00B2116F /* PeopleTurntableView.swift in Sources */,
-				009E3D313057E7A300FA2E3B /* FallaResizeBuilder.swift in Sources */,
+				009E3D313057E7A300FA2E3B /* EMLResizeBuilder.swift in Sources */,
 				00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */,
 				007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */,
 				719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */,
