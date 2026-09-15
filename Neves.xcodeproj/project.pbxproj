@@ -2840,7 +2840,7 @@
 			);
 			mainGroup = 1A35432F254E75EB0032B677;
 			packageReferences = (
-				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */,
+				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */,
 				005310F830456B5E00B14F3B /* XCRemoteSwiftPackageReference "SVGAPlayer_Optimized" */,
 			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
@@ -2996,13 +2996,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3642,7 +3638,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */ = {
+		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/JPSwiftMacroLessons;
 		};
@@ -3667,7 +3663,7 @@
 		};
 		9B6000022FDD100100000001 /* JPSwiftMacroLessons */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */;
+			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */;
 			productName = JPSwiftMacroLessons;
 		};
 /* End XCSwiftPackageProductDependency section */
