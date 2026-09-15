@@ -167,18 +167,6 @@ static void __unresizLog(NSString *info) {
         return NO;
     }
     
-    if (![self containsString:@"resygg.com"] &&
-        ![self containsString:@"falla.live"] &&
-        ![self containsString:@"apifalla.com"] &&
-        ![self containsString:@"fallalive.com"] &&
-        ![self containsString:@"vochat.com"] &&
-        ![self containsString:@"vochatapp.com"]) {
-#ifdef DEBUG
-        __unresizLog(@"不包含可用域名");
-#endif
-        return NO;
-    }
-    
     NSString *extension = [self pathExtension];
     if (extension.length == 0) {
 #ifdef DEBUG
