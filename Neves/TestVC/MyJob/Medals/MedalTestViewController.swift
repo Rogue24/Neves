@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FunnyButton
 
 class MedalTestViewController: TestBaseViewController {
     private var user: JKRCurrentUser? = nil
@@ -16,7 +17,7 @@ class MedalTestViewController: TestBaseViewController {
         JPHUD.show(isUserInteractionEnabled: true)
         var user: JKRCurrentUser? = nil
         Asyncs.asyncDelay(0.3) {
-            guard let url = Bundle.main.url(forResource: "account_data", withExtension: "txt"),
+            guard let url = Bundle.main.url(forResource: "account_101610_data", withExtension: "txt"),
                   let data = try? Data(contentsOf: url),
                   let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
             else { return }
@@ -44,7 +45,16 @@ class MedalTestViewController: TestBaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         removeFunnyActions()
-        addFunnyAction(name: "MedalWallPopViewController") { [weak self] in
+        addFunnyAction(name: "Go Medal Ranking") { [weak self] in
+            guard let self else { return }
+            let vc = MedalRankingViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        addFunnyAction(name: "Pop Medal Ranking") { [weak self] in
+            guard let self else { return }
+            MedalRankingPopViewController.show(from: self)
+        }
+        addFunnyAction(name: "Pop Medal Wall") { [weak self] in
             guard let self, let user = self.user else { return }
             MedalWallPopViewController.show(from: self, model: user)
         }

@@ -29,7 +29,11 @@ class MedalRankingPopViewController: UIViewController {
                     }
                 } else { // 其他列表，如果还没请求成功的，就取消请求并清空列表（滑过去再请求）
                     let vm = dataMgr.getViewModel(for: type, newValue)
-                    vm.request?.cancel()
+                    if let request = vm.request {
+                        request.cancel()
+                        vm.cancelHandler?(vm)
+                        vm.request = nil
+                    }
                     updateData(.success(vm))
                 }
             }
@@ -368,7 +372,7 @@ extension MedalRankingPopViewController: MedalRouterCompatible {
         UIView.animate(withDuration: 0.3) {
             self.view.layer.backgroundColor = .rgb(0, 0, 0, a: 0)
             self.contentView.frame.origin.y = Env.screenHeight
-        } completion: { _ in
+        } completion: { [weak fromVC] _ in
             self.dismiss(animated: false) { [weak fromVC] in
                 MedalRouter.currentVC = fromVC
             }

@@ -11,7 +11,8 @@ class MedalRankingViewModel {
     
     var listVM: MedalRankingListViewModel? = nil
     
-    weak var request: URLSessionTask? = nil
+//    weak var request: URLSessionTask? = nil
+    var request: DispatchWorkItem? = nil
     var isRequesting = false
     var isRequested = false
     
@@ -19,4 +20,7 @@ class MedalRankingViewModel {
         self.type = type
         self.range = range
     }
+    
+    // 特殊处理：代替原来网络请求的取消行为
+    var cancelHandler: ((_ vm: MedalRankingViewModel) -> Void)? = nil
 }

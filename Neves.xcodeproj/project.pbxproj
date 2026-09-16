@@ -55,7 +55,6 @@
 		00520C2730595E93001B49FE /* medals_wall_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2030595E93001B49FE /* medals_wall_data.txt */; };
 		00520C2830595E93001B49FE /* medals_rank_quarterly_default_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1D30595E93001B49FE /* medals_rank_quarterly_default_data.txt */; };
 		00520C2930595E93001B49FE /* medals_rank_overall_default_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C1A30595E93001B49FE /* medals_rank_overall_default_data.txt */; };
-		00520C2B30596391001B49FE /* account_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2A30596391001B49FE /* account_data.txt */; };
 		00520C2D305971F0001B49FE /* MedalTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00520C2C305971F0001B49FE /* MedalTestViewController.swift */; };
 		00520C303059770F001B49FE /* hudloading.svga in Resources */ = {isa = PBXBuildFile; fileRef = 00520C2F3059770F001B49FE /* hudloading.svga */; };
 		00520C3230597736001B49FE /* ranking_top_online.svga in Resources */ = {isa = PBXBuildFile; fileRef = 00520C3130597736001B49FE /* ranking_top_online.svga */; };
@@ -118,6 +117,11 @@
 		007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */; };
 		007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */; };
 		0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */; };
+		00836D93305A3FE100EE7F27 /* account_101610_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00836D92305A3FE100EE7F27 /* account_101610_data.txt */; };
+		00836D98305A490100EE7F27 /* user_card_101610_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00836D95305A490100EE7F27 /* user_card_101610_data.txt */; };
+		00836D99305A490100EE7F27 /* user_card_102129_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00836D96305A490100EE7F27 /* user_card_102129_data.txt */; };
+		00836D9A305A490100EE7F27 /* user_card_100875_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00836D94305A490100EE7F27 /* user_card_100875_data.txt */; };
+		00836D9B305A490100EE7F27 /* user_card_103360_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00836D97305A490100EE7F27 /* user_card_103360_data.txt */; };
 		008DC2E529763D510039AB22 /* Hookable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2E429763D510039AB22 /* Hookable.swift */; };
 		008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2F6297699C90039AB22 /* Penetrable.swift */; };
 		008DC2F929769EC50039AB22 /* PenetrableTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */; };
@@ -556,7 +560,6 @@
 		00520C1E30595E93001B49FE /* medals_rank_quarterly_global_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_rank_quarterly_global_data.txt; sourceTree = "<group>"; };
 		00520C1F30595E93001B49FE /* medals_test_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_test_data.txt; sourceTree = "<group>"; };
 		00520C2030595E93001B49FE /* medals_wall_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = medals_wall_data.txt; sourceTree = "<group>"; };
-		00520C2A30596391001B49FE /* account_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = account_data.txt; sourceTree = "<group>"; };
 		00520C2C305971F0001B49FE /* MedalTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedalTestViewController.swift; sourceTree = "<group>"; };
 		00520C2F3059770F001B49FE /* hudloading.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = hudloading.svga; sourceTree = "<group>"; };
 		00520C3130597736001B49FE /* ranking_top_online.svga */ = {isa = PBXFileReference; lastKnownFileType = text; path = ranking_top_online.svga; sourceTree = "<group>"; };
@@ -618,6 +621,11 @@
 		007E64E529ADB3A300FD5F70 /* WaterfallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterfallLayout.swift; sourceTree = "<group>"; };
 		007E64E729ADE57100FD5F70 /* WaterfallLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallLayoutViewController.swift; sourceTree = "<group>"; };
 		0081D76E2550EC15009D7ABA /* FireLottieTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireLottieTestViewController.swift; sourceTree = "<group>"; };
+		00836D92305A3FE100EE7F27 /* account_101610_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = account_101610_data.txt; sourceTree = "<group>"; };
+		00836D94305A490100EE7F27 /* user_card_100875_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = user_card_100875_data.txt; sourceTree = "<group>"; };
+		00836D95305A490100EE7F27 /* user_card_101610_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = user_card_101610_data.txt; sourceTree = "<group>"; };
+		00836D96305A490100EE7F27 /* user_card_102129_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = user_card_102129_data.txt; sourceTree = "<group>"; };
+		00836D97305A490100EE7F27 /* user_card_103360_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = user_card_103360_data.txt; sourceTree = "<group>"; };
 		008DC2E429763D510039AB22 /* Hookable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hookable.swift; sourceTree = "<group>"; };
 		008DC2F6297699C90039AB22 /* Penetrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Penetrable.swift; sourceTree = "<group>"; };
 		008DC2F829769EC50039AB22 /* PenetrableTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenetrableTestViewController.swift; sourceTree = "<group>"; };
@@ -1140,7 +1148,7 @@
 		00520C2130595E93001B49FE /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				00520C2A30596391001B49FE /* account_data.txt */,
+				00836D92305A3FE100EE7F27 /* account_101610_data.txt */,
 				00520C1930595E93001B49FE /* medals_rank_overall_country_data.txt */,
 				00520C1A30595E93001B49FE /* medals_rank_overall_default_data.txt */,
 				00520C1B30595E93001B49FE /* medals_rank_overall_global_data.txt */,
@@ -1149,6 +1157,10 @@
 				00520C1E30595E93001B49FE /* medals_rank_quarterly_global_data.txt */,
 				00520C1F30595E93001B49FE /* medals_test_data.txt */,
 				00520C2030595E93001B49FE /* medals_wall_data.txt */,
+				00836D94305A490100EE7F27 /* user_card_100875_data.txt */,
+				00836D95305A490100EE7F27 /* user_card_101610_data.txt */,
+				00836D96305A490100EE7F27 /* user_card_102129_data.txt */,
+				00836D97305A490100EE7F27 /* user_card_103360_data.txt */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -2840,7 +2852,7 @@
 			);
 			mainGroup = 1A35432F254E75EB0032B677;
 			packageReferences = (
-				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */,
+				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */,
 				005310F830456B5E00B14F3B /* XCRemoteSwiftPackageReference "SVGAPlayer_Optimized" */,
 			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
@@ -2896,6 +2908,7 @@
 				004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */,
 				0019819030219894005F9425 /* pr_2271.lottie in Resources */,
 				009E3D363057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib in Resources */,
+				00836D93305A3FE100EE7F27 /* account_101610_data.txt in Resources */,
 				004D9B282F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie in Resources */,
 				004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */,
 				004D9B2A2F72A38700A7DB56 /* svip_main_lottie_6.lottie in Resources */,
@@ -2906,7 +2919,6 @@
 				00520C2530595E93001B49FE /* medals_rank_overall_country_data.txt in Resources */,
 				00520C2630595E93001B49FE /* medals_rank_quarterly_global_data.txt in Resources */,
 				00520C2730595E93001B49FE /* medals_wall_data.txt in Resources */,
-				00520C2B30596391001B49FE /* account_data.txt in Resources */,
 				00520C2830595E93001B49FE /* medals_rank_quarterly_default_data.txt in Resources */,
 				00520C2930595E93001B49FE /* medals_rank_overall_default_data.txt in Resources */,
 				004D9B2C2F72A38700A7DB56 /* collecting_cards_open_bag_level_5.lottie in Resources */,
@@ -2929,6 +2941,10 @@
 				7107CDA4287BD49E00AC9B9F /* Cat.gif in Resources */,
 				719299F9281A8C5400CCE872 /* PKProgressOutSideView.xib in Resources */,
 				71F249F52731517A00FAAD93 /* lrc2.txt in Resources */,
+				00836D98305A490100EE7F27 /* user_card_101610_data.txt in Resources */,
+				00836D99305A490100EE7F27 /* user_card_102129_data.txt in Resources */,
+				00836D9A305A490100EE7F27 /* user_card_100875_data.txt in Resources */,
+				00836D9B305A490100EE7F27 /* user_card_103360_data.txt in Resources */,
 				71F249F62731517A00FAAD93 /* dialogue2.txt in Resources */,
 				71F249F12731517A00FAAD93 /* noAccLrc1.txt in Resources */,
 				7110743D271ECA4800178969 /* voices.m4a in Resources */,
@@ -2996,13 +3012,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3642,7 +3654,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */ = {
+		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/JPSwiftMacroLessons;
 		};
@@ -3667,7 +3679,7 @@
 		};
 		9B6000022FDD100100000001 /* JPSwiftMacroLessons */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */;
+			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */;
 			productName = JPSwiftMacroLessons;
 		};
 /* End XCSwiftPackageProductDependency section */

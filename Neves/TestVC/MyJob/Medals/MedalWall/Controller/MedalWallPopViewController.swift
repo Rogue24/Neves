@@ -78,20 +78,34 @@ class MedalWallPopViewController: UIViewController {
 //        print("jpjpjp MedalWallPopViewController 死")
 //    }
     
-    @objc func closeAction() {
+    @objc private func closeAction() {
         close()
     }
-    
+}
+
+// MARK: - 请求数据
+private extension MedalWallPopViewController {
     func fetchData(_ model: JKRCurrentUser) {
         let uid = model.uid
         let nobility = model.nobility
         let svip = model.svip
         let nickname = model.nickname ?? ""
         let avatarurl = model.avatarurl ?? ""
-        
+        _fetchData(uid, nobility, svip, nickname, avatarurl)
+        // JPTest
+//        _fetchTestData(uid, nobility, svip, nickname, avatarurl)
+    }
+    
+    func _fetchData(
+        _ uid: Int,
+        _ nobility: Int,
+        _ svip: Int,
+        _ nickname: String,
+        _ avatarurl: String
+    ) {
 //        let url = "/api/user/medals/wall"
 //        let params = ["uid": uid]
-//        
+//
 //        request = JKRNetWorkManager.share().jkr_sendApi(withUrl: url, params: params) { [weak self] returnValue in
 //            guard let self = self else { return }
 //
@@ -99,7 +113,7 @@ class MedalWallPopViewController: UIViewController {
 //                JKRHUDManager.toast(withMessage: String.fa.networkError)
 //                return
 //            }
-//            
+//
 //            var mwVM: MedalWallViewModel?
 //            Asyncs.async {
 //                guard let dict = returnValue as? [String: Any] else { return }
@@ -116,6 +130,7 @@ class MedalWallPopViewController: UIViewController {
 //            JKRHUDManager.toast(withMessage: error.localizedDescription)
 //        } cancel: {}
         
+        // 读取本地测试数据
         let delay = TimeInterval(Int.random(in: 5...10)) / 10.0
         request = Asyncs.asyncDelay(delay) { [weak self] in
             guard let url = Bundle.main.url(forResource: "medals_wall_data", withExtension: "txt"),
@@ -139,8 +154,15 @@ class MedalWallPopViewController: UIViewController {
                 self.collectionView.updateData(mwVM)
             }
         }
-        
-        // test
+    }
+    
+    func _fetchTestData(
+        _ uid: Int,
+        _ nobility: Int,
+        _ svip: Int,
+        _ nickname: String,
+        _ avatarurl: String
+    ) {
 //        request = JKRNetWorkManager.share().jkr_sendApi(withUrl: "/api/user/medals", params: ["uid": uid]) { [weak self] returnValue in
 //            guard let self = self else { return }
 //
@@ -195,11 +217,70 @@ class MedalWallPopViewController: UIViewController {
 //            guard self != nil else { return }
 //            JKRHUDManager.toast(withMessage: error.localizedDescription)
 //        } cancel: {}
+        
+        // 读取本地测试数据
+        let delay = TimeInterval(Int.random(in: 5...10)) / 10.0
+        request = Asyncs.asyncDelay(delay) { [weak self] in
+            guard let url = Bundle.main.url(forResource: "medals_test_data", withExtension: "txt"),
+                  let data = try? Data(contentsOf: url),
+                  let dict = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                  let list = dict["list"] as? [[String: Any]]
+            else {
+                Asyncs.main { [weak self] in
+                    guard let self else { return }
+                    self.request = nil
+                    JPHUD.showError(withStatus: "网络连接异常，请检查您的网络")
+                }
+                return
+            }
+            
+            var list1: [String: Any] = [:]
+            list1["lv"] = "A"
+            list1["list"] = list.shuffled()
+            list1["count"] = list.count
+
+            var list2: [String: Any] = [:]
+            list2["lv"] = "B"
+            list2["list"] = list.shuffled()
+            list2["count"] = list.count
+            
+            var list3: [String: Any] = [:]
+            list3["lv"] = "S"
+            list3["list"] = list.shuffled()
+            list3["count"] = list.count
+            
+            var list4: [String: Any] = [:]
+            list4["lv"] = "SS"
+            list4["list"] = list.shuffled()
+            list4["count"] = list.count
+            
+            var list5: [String: Any] = [:]
+            list5["lv"] = "SSS"
+            list5["list"] = list.shuffled()
+            list5["count"] = list.count
+            
+            var dict2: [String: Any] = [:]
+            dict2["nickname"] = "捡了个票"
+            dict2["avatarurl"] = avatarurl
+            dict2["quarter"] = "\(Int.random(in: 1000...10000))"
+            dict2["medalPoint"] = Int.random(in: 1000...10000)
+            dict2["medalPointRank"] = Int.random(in: 1...30)
+            dict2["medalList"] = [list1, list2, list3, list4, list5]
+            
+            let mwVM = MedalWallViewModel(uid, nobility, svip, nickname, avatarurl, dict2)
+            Asyncs.main { [weak self] in
+                guard let self else { return }
+                self.request = nil
+                self.mwVM = mwVM
+                self.navBar.updateData(mwVM)
+                self.collectionView.updateData(mwVM)
+            }
+        }
     }
 }
 
+// MARK: - 创建+弹出
 extension MedalWallPopViewController: MedalRouterCompatible {
-    // MARK: - 创建+弹出
     @objc static func show(from superVC: UIViewController?, model: JKRCurrentUser) {
         guard let superVC else { return }
         
