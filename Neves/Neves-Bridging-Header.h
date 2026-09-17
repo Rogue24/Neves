@@ -30,6 +30,7 @@
 #import "OCTestObject.h"
 #import "OCEqualTestViewController.h"
 #import "MyCache.h"
+// -----------
 #import "NSString+ResizeQuality.h"
 #import "EMLRankingUsersModel.h"
 #import "JKRUserMedalsList.h"
@@ -37,6 +38,7 @@
 #import "JKRShimmeringLabel.h"
 #import "JKRShimmeringMask.h"
 #import "EMLProfileMedalIntegralCollectionViewCell.h"
+#import "JKRMedalIconV2Model.h"
 
 // JPBasic
 #import "JPInline.h"

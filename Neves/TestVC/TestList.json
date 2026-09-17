@@ -51,6 +51,10 @@
                 "vcName": "MedalTestViewController",
                 "vcCreateWay" : 0
             },
+            {
+                "vcName": "UserInfoCardTestViewController",
+                "vcCreateWay" : 0
+            },
         ]
     },
     {

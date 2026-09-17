@@ -27,6 +27,24 @@
 		002E7900295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */; };
 		002E7902295EBD430071E30C /* GuideIntoRoomFmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */; };
 		003AE9F82F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003AE9F72F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift */; };
+		00421ADB305B85B7008EFF5D /* UserInfoCardTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421ADA305B85B7008EFF5D /* UserInfoCardTestViewController.swift */; };
+		00421ADD305B8749008EFF5D /* user_card_106230_data.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00421ADC305B8749008EFF5D /* user_card_106230_data.txt */; };
+		00421AE2305B879B008EFF5D /* EMLChatRoomUserInfoCard+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421ADF305B879B008EFF5D /* EMLChatRoomUserInfoCard+Model.swift */; };
+		00421AE3305B879B008EFF5D /* EMLChatRoomUserInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421ADE305B879B008EFF5D /* EMLChatRoomUserInfoCard.swift */; };
+		00421AE4305B879B008EFF5D /* EMLChatRoomUserInfoCard+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AE0305B879B008EFF5D /* EMLChatRoomUserInfoCard+Action.swift */; };
+		00421AE5305B879B008EFF5D /* EMLCountryRegionBadgeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AE1305B879B008EFF5D /* EMLCountryRegionBadgeCollectionView.swift */; };
+		00421AE9305B88CB008EFF5D /* JKRMedalIconV2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421AE8305B88CB008EFF5D /* JKRMedalIconV2Model.m */; };
+		00421AEC305B8900008EFF5D /* EMLPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AEA305B88FF008EFF5D /* EMLPopView.swift */; };
+		00421AED305B8900008EFF5D /* EMLPopCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AEB305B88FF008EFF5D /* EMLPopCard.swift */; };
+		00421AF1305B8984008EFF5D /* ContributionRankingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AEF305B8984008EFF5D /* ContributionRankingLabel.swift */; };
+		00421AF2305B8984008EFF5D /* ContributionRankingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AEE305B8984008EFF5D /* ContributionRankingManager.swift */; };
+		00421AF4305B89CC008EFF5D /* SweepImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AF3305B89CC008EFF5D /* SweepImageView.swift */; };
+		00421AF6305B8AEB008EFF5D /* FancyIDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AF5305B8AEB008EFF5D /* FancyIDView.swift */; };
+		00421AFA305B8AFE008EFF5D /* EMLUserTitleFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AF7305B8AFE008EFF5D /* EMLUserTitleFlowView.swift */; };
+		00421AFB305B8AFE008EFF5D /* EMLUserTitleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AF8305B8AFE008EFF5D /* EMLUserTitleCellModel.swift */; };
+		00421AFE305B8B47008EFF5D /* SVGAExImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AFC305B8B47008EFF5D /* SVGAExImageView.swift */; };
+		00421AFF305B8B47008EFF5D /* SVGAExImageView+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AFD305B8B47008EFF5D /* SVGAExImageView+API.swift */; };
+		00421B01305B8B51008EFF5D /* RingerFXPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B00305B8B51008EFF5D /* RingerFXPlayer.swift */; };
 		0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F41F2E6D771000CB841C /* LocalLLMView.swift */; };
 		0045F4222E6D7A7600CB841C /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F4212E6D7A7600CB841C /* ChatClient.swift */; };
 		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
@@ -529,6 +547,25 @@
 		002E78FF295EBCF50071E30C /* GuideIntoRoomUserIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomUserIconListView.swift; sourceTree = "<group>"; };
 		002E7901295EBD430071E30C /* GuideIntoRoomFmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideIntoRoomFmView.swift; sourceTree = "<group>"; };
 		003AE9F72F20B29800AE73BF /* TestScrollingSetOffsetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollingSetOffsetViewController.swift; sourceTree = "<group>"; };
+		00421ADA305B85B7008EFF5D /* UserInfoCardTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCardTestViewController.swift; sourceTree = "<group>"; };
+		00421ADC305B8749008EFF5D /* user_card_106230_data.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = user_card_106230_data.txt; sourceTree = "<group>"; };
+		00421ADE305B879B008EFF5D /* EMLChatRoomUserInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLChatRoomUserInfoCard.swift; sourceTree = "<group>"; };
+		00421ADF305B879B008EFF5D /* EMLChatRoomUserInfoCard+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EMLChatRoomUserInfoCard+Model.swift"; sourceTree = "<group>"; };
+		00421AE0305B879B008EFF5D /* EMLChatRoomUserInfoCard+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EMLChatRoomUserInfoCard+Action.swift"; sourceTree = "<group>"; };
+		00421AE1305B879B008EFF5D /* EMLCountryRegionBadgeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLCountryRegionBadgeCollectionView.swift; sourceTree = "<group>"; };
+		00421AE7305B88CB008EFF5D /* JKRMedalIconV2Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRMedalIconV2Model.h; sourceTree = "<group>"; };
+		00421AE8305B88CB008EFF5D /* JKRMedalIconV2Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRMedalIconV2Model.m; sourceTree = "<group>"; };
+		00421AEA305B88FF008EFF5D /* EMLPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLPopView.swift; sourceTree = "<group>"; };
+		00421AEB305B88FF008EFF5D /* EMLPopCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLPopCard.swift; sourceTree = "<group>"; };
+		00421AEE305B8984008EFF5D /* ContributionRankingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionRankingManager.swift; sourceTree = "<group>"; };
+		00421AEF305B8984008EFF5D /* ContributionRankingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionRankingLabel.swift; sourceTree = "<group>"; };
+		00421AF3305B89CC008EFF5D /* SweepImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SweepImageView.swift; sourceTree = "<group>"; };
+		00421AF5305B8AEB008EFF5D /* FancyIDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FancyIDView.swift; sourceTree = "<group>"; };
+		00421AF7305B8AFE008EFF5D /* EMLUserTitleFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLUserTitleFlowView.swift; sourceTree = "<group>"; };
+		00421AF8305B8AFE008EFF5D /* EMLUserTitleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMLUserTitleCellModel.swift; sourceTree = "<group>"; };
+		00421AFC305B8B47008EFF5D /* SVGAExImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGAExImageView.swift; sourceTree = "<group>"; };
+		00421AFD305B8B47008EFF5D /* SVGAExImageView+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVGAExImageView+API.swift"; sourceTree = "<group>"; };
+		00421B00305B8B51008EFF5D /* RingerFXPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingerFXPlayer.swift; sourceTree = "<group>"; };
 		0045F41F2E6D771000CB841C /* LocalLLMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMView.swift; sourceTree = "<group>"; };
 		0045F4212E6D7A7600CB841C /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		004A324529B47365001832E5 /* JPPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoTool.m; sourceTree = "<group>"; };
@@ -1117,6 +1154,55 @@
 			path = GuideIntoRoom;
 			sourceTree = "<group>";
 		};
+		00421AD9305B8585008EFF5D /* UserInfoCard */ = {
+			isa = PBXGroup;
+			children = (
+				00421ADA305B85B7008EFF5D /* UserInfoCardTestViewController.swift */,
+				00421ADE305B879B008EFF5D /* EMLChatRoomUserInfoCard.swift */,
+				00421ADF305B879B008EFF5D /* EMLChatRoomUserInfoCard+Model.swift */,
+				00421AE0305B879B008EFF5D /* EMLChatRoomUserInfoCard+Action.swift */,
+				00421AE1305B879B008EFF5D /* EMLCountryRegionBadgeCollectionView.swift */,
+				00421AEA305B88FF008EFF5D /* EMLPopView.swift */,
+				00421AEB305B88FF008EFF5D /* EMLPopCard.swift */,
+				00421AF3305B89CC008EFF5D /* SweepImageView.swift */,
+				00421AF5305B8AEB008EFF5D /* FancyIDView.swift */,
+				00421AFC305B8B47008EFF5D /* SVGAExImageView.swift */,
+				00421AFD305B8B47008EFF5D /* SVGAExImageView+API.swift */,
+				00421B00305B8B51008EFF5D /* RingerFXPlayer.swift */,
+				00421AF9305B8AFE008EFF5D /* EMLUserTitleFlowView */,
+				00421AF0305B8984008EFF5D /* ContributionRanking */,
+				00421AE6305B88C3008EFF5D /* Other */,
+			);
+			path = UserInfoCard;
+			sourceTree = "<group>";
+		};
+		00421AE6305B88C3008EFF5D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				00421AE7305B88CB008EFF5D /* JKRMedalIconV2Model.h */,
+				00421AE8305B88CB008EFF5D /* JKRMedalIconV2Model.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		00421AF0305B8984008EFF5D /* ContributionRanking */ = {
+			isa = PBXGroup;
+			children = (
+				00421AEE305B8984008EFF5D /* ContributionRankingManager.swift */,
+				00421AEF305B8984008EFF5D /* ContributionRankingLabel.swift */,
+			);
+			path = ContributionRanking;
+			sourceTree = "<group>";
+		};
+		00421AF9305B8AFE008EFF5D /* EMLUserTitleFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				00421AF7305B8AFE008EFF5D /* EMLUserTitleFlowView.swift */,
+				00421AF8305B8AFE008EFF5D /* EMLUserTitleCellModel.swift */,
+			);
+			path = EMLUserTitleFlowView;
+			sourceTree = "<group>";
+		};
 		004D9B142F72A36000A7DB56 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1161,6 +1247,7 @@
 				00836D95305A490100EE7F27 /* user_card_101610_data.txt */,
 				00836D96305A490100EE7F27 /* user_card_102129_data.txt */,
 				00836D97305A490100EE7F27 /* user_card_103360_data.txt */,
+				00421ADC305B8749008EFF5D /* user_card_106230_data.txt */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -2535,6 +2622,7 @@
 				718A569327F192FC0071C724 /* CosmicExploration */,
 				7190293E2818E485000F6E29 /* RoomPK */,
 				005310A53045673500B14F3B /* Medals */,
+				00421AD9305B8585008EFF5D /* UserInfoCard */,
 			);
 			path = MyJob;
 			sourceTree = "<group>";
@@ -2852,7 +2940,7 @@
 			);
 			mainGroup = 1A35432F254E75EB0032B677;
 			packageReferences = (
-				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */,
+				9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */,
 				005310F830456B5E00B14F3B /* XCRemoteSwiftPackageReference "SVGAPlayer_Optimized" */,
 			);
 			productRefGroup = 1A354339254E75EB0032B677 /* Products */;
@@ -2908,6 +2996,7 @@
 				004D9B272F72A38700A7DB56 /* collecting_cards_open_bag_level_2.lottie in Resources */,
 				0019819030219894005F9425 /* pr_2271.lottie in Resources */,
 				009E3D363057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.xib in Resources */,
+				00421ADD305B8749008EFF5D /* user_card_106230_data.txt in Resources */,
 				00836D93305A3FE100EE7F27 /* account_101610_data.txt in Resources */,
 				004D9B282F72A38700A7DB56 /* collecting_cards_open_bag_level_3.lottie in Resources */,
 				004D9B292F72A38700A7DB56 /* svip_main_lottie_8.lottie in Resources */,
@@ -3012,9 +3101,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Neves/Pods-Neves-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -3050,6 +3143,8 @@
 				1A65874E2629E6CC00846689 /* SheetView.swift in Sources */,
 				002E78CF295C42980071E30C /* GuideIntoRoomPopViewController.swift in Sources */,
 				71F249E62731517A00FAAD93 /* MagicCubeBubbleView.swift in Sources */,
+				00421AF1305B8984008EFF5D /* ContributionRankingLabel.swift in Sources */,
+				00421AF2305B8984008EFF5D /* ContributionRankingManager.swift in Sources */,
 				7172B63D28D06F2500381E83 /* MoguBannerJSON.swift in Sources */,
 				71F24A012732270800FAAD93 /* DragonSlayerBanner.Manager.swift in Sources */,
 				0027927F302ADCC700405857 /* UIView+Image.swift in Sources */,
@@ -3063,6 +3158,7 @@
 				009E3D313057E7A300FA2E3B /* EMLResizeBuilder.swift in Sources */,
 				00EE356629A70448008902DD /* JYXBOTODrawingBoard.swift in Sources */,
 				007E64E829ADE57100FD5F70 /* WaterfallLayoutViewController.swift in Sources */,
+				00421AF4305B89CC008EFF5D /* SweepImageView.swift in Sources */,
 				719A5222286D48A700619AD4 /* JPCacheObject.swift in Sources */,
 				00EE356529A70448008902DD /* JYXBDrawingBoardOperator.swift in Sources */,
 				717F59D627F6E31C00D759FB /* CosmicExplorationManager.Exploring.swift in Sources */,
@@ -3163,6 +3259,7 @@
 				71F24A09273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
 				00B57BE72F86C39500DBBE87 /* SimpleTimer.swift in Sources */,
+				00421ADB305B85B7008EFF5D /* UserInfoCardTestViewController.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
 				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
 				1A354512254E77600032B677 /* JPViewController.m in Sources */,
@@ -3189,6 +3286,7 @@
 				718066A827D74823002CAC09 /* PanScrollViewController.swift in Sources */,
 				7151895327EC204D00342645 /* URL.Extension.swift in Sources */,
 				71F249DC2731517A00FAAD93 /* FireworkView.swift in Sources */,
+				00421AF6305B8AEB008EFF5D /* FancyIDView.swift in Sources */,
 				1A5C013D26CEA10100DF819F /* OCTestObject.m in Sources */,
 				0060D00D2F975B4A00809046 /* Array+Extension.swift in Sources */,
 				71B9D91827210A5D002B2BC6 /* SolitaireAnimationLayer.swift in Sources */,
@@ -3319,6 +3417,7 @@
 				7172B63328D06E9700381E83 /* GifFiles.swift in Sources */,
 				719299E0281A332400CCE872 /* PKResult.swift in Sources */,
 				71F249D42731517A00FAAD93 /* FireworkController.swift in Sources */,
+				00421B01305B8B51008EFF5D /* RingerFXPlayer.swift in Sources */,
 				00A364212B20114600CDCFAF /* UIScrollView+RTL.swift in Sources */,
 				71F24A0E27337C9700FAAD93 /* DragonSlayerEntrance.swift in Sources */,
 				71A7D9E028619ECC007960C3 /* DynamicMemberLookupTestViewController.swift in Sources */,
@@ -3360,10 +3459,14 @@
 				71F249EC2731517A00FAAD93 /* MarebulabulasOperationView.swift in Sources */,
 				1A5930FA27B8DD6900DC60FC /* Turntable.swift in Sources */,
 				009E3D353057E7DE00FA2E3B /* EMLProfileMedalIntegralCollectionViewCell.m in Sources */,
+				00421AFE305B8B47008EFF5D /* SVGAExImageView.swift in Sources */,
+				00421AFF305B8B47008EFF5D /* SVGAExImageView+API.swift in Sources */,
 				004A324C29B473D5001832E5 /* NSIndexSet+Convenience.m in Sources */,
 				717F59D927F6E67700D759FB /* CosmicExplorationPopViewCompatible.swift in Sources */,
 				7106A05127043E6500186BDE /* OperationQueueTestViewController.swift in Sources */,
 				71695ACB26DF920D00384C2A /* UniverseView.swift in Sources */,
+				00421AEC305B8900008EFF5D /* EMLPopView.swift in Sources */,
+				00421AED305B8900008EFF5D /* EMLPopCard.swift in Sources */,
 				1A35450A254E77600032B677 /* JPBadgeLabel.m in Sources */,
 				7151895527EC574000342645 /* LoremPicsum.swift in Sources */,
 				71F249EB2731517A00FAAD93 /* Marebulabulas.TestData.swift in Sources */,
@@ -3391,6 +3494,7 @@
 				7172B63728D06EA700381E83 /* MusicFiles.swift in Sources */,
 				1A9E419426BE459E006941D0 /* SetTestViewController.swift in Sources */,
 				71F249D32731517A00FAAD93 /* Firework.Extension.swift in Sources */,
+				00421AE9305B88CB008EFF5D /* JKRMedalIconV2Model.m in Sources */,
 				1A59310127B8DD9200DC60FC /* JSONTestViewController.swift in Sources */,
 				718A569C27F19F130071C724 /* CosmicExplorationPlayView.swift in Sources */,
 				1A354504254E77600032B677 /* JPMaskButton.m in Sources */,
@@ -3419,12 +3523,18 @@
 				1A354500254E77600032B677 /* MainTableViewController.swift in Sources */,
 				715C900827F6F27B00B88B85 /* CosmicExplorationRuleView.swift in Sources */,
 				1A3544FC254E77600032B677 /* PopViewReusable.swift in Sources */,
+				00421AFA305B8AFE008EFF5D /* EMLUserTitleFlowView.swift in Sources */,
+				00421AFB305B8AFE008EFF5D /* EMLUserTitleCellModel.swift in Sources */,
 				1A3544F2254E77600032B677 /* UIViewController+Extension.swift in Sources */,
 				71DE01A726E61978003EBF66 /* LottieShowViewController.swift in Sources */,
 				008DC2F929769EC50039AB22 /* PenetrableTestViewController.swift in Sources */,
 				1A35451F254E77600032B677 /* NSObject+JPExtension.m in Sources */,
 				71107431271D7E7F00178969 /* SolitairePopAnimationViewController.swift in Sources */,
 				1A5C014426CEA5FB00DF819F /* OCEqualTestViewController.m in Sources */,
+				00421AE2305B879B008EFF5D /* EMLChatRoomUserInfoCard+Model.swift in Sources */,
+				00421AE3305B879B008EFF5D /* EMLChatRoomUserInfoCard.swift in Sources */,
+				00421AE4305B879B008EFF5D /* EMLChatRoomUserInfoCard+Action.swift in Sources */,
+				00421AE5305B879B008EFF5D /* EMLCountryRegionBadgeCollectionView.swift in Sources */,
 				1A3544FE254E77600032B677 /* Function.swift in Sources */,
 				0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */,
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
@@ -3654,7 +3764,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */ = {
+		9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/JPSwiftMacroLessons;
 		};
@@ -3679,7 +3789,7 @@
 		};
 		9B6000022FDD100100000001 /* JPSwiftMacroLessons */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "JPSwiftMacroLessons" */;
+			package = 9B6000032FDD100100000001 /* XCLocalSwiftPackageReference "Packages/JPSwiftMacroLessons" */;
 			productName = JPSwiftMacroLessons;
 		};
 /* End XCSwiftPackageProductDependency section */

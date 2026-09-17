@@ -13,6 +13,8 @@ extension Notification.Name {
     /// 在这里注册`Key`
     enum Key: String {
         case wAaa
+        case ChatRoomContributionRankingUpdated
+        case ChatRoomContributionTop1Updated
         
         var name: Notification.Name {
             Notification.Name(rawValue)
