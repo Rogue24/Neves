@@ -9,105 +9,105 @@
 import UIKit
 
 extension UIView {
-    var x: CGFloat {
+    var jp_x: CGFloat {
         set { frame.origin.x = newValue }
         get { frame.origin.x }
     }
-    var midX: CGFloat {
+    var jp_midX: CGFloat {
         set { frame.origin.x += (newValue - frame.midX) }
         get { frame.midX }
     }
-    var maxX: CGFloat {
+    var jp_maxX: CGFloat {
         set { frame.origin.x += (newValue - frame.maxX) }
         get { frame.maxX }
     }
     
-    var y: CGFloat {
+    var jp_y: CGFloat {
         set { frame.origin.y = newValue }
         get { frame.origin.y }
     }
-    var midY: CGFloat {
+    var jp_midY: CGFloat {
         set { frame.origin.y += (newValue - frame.midY) }
         get { frame.midY }
     }
-    var maxY: CGFloat {
+    var jp_maxY: CGFloat {
         set { frame.origin.y += (newValue - frame.maxY) }
         get { frame.maxY }
     }
     
-    var width: CGFloat {
+    var jp_width: CGFloat {
         set { frame.size.width = newValue }
         get { frame.width }
     }
     
-    var height: CGFloat {
+    var jp_height: CGFloat {
         set { frame.size.height = newValue }
         get { frame.height }
     }
     
-    var centerX: CGFloat {
+    var jp_centerX: CGFloat {
         set { center.x = newValue }
         get { center.x }
     }
-    var centerY: CGFloat {
+    var jp_centerY: CGFloat {
         set { center.y = newValue }
         get { center.y }
     }
     
-    var origin: CGPoint {
+    var jp_origin: CGPoint {
         set { frame.origin = newValue }
         get { frame.origin }
     }
     
-    var size: CGSize {
+    var jp_size: CGSize {
         set { frame.size = newValue }
         get { frame.size }
     }
     
-    var right: CGFloat {
+    var jp_right: CGFloat {
         set {
             guard let superview = self.superview else { return }
-            x = superview.width - width - newValue
+            jp_x = superview.jp_width - jp_width - newValue
         }
         get {
             guard let superview = self.superview else { return 0 }
-            return superview.width - maxX
+            return superview.jp_width - jp_maxX
         }
     }
     
-    var bottom: CGFloat {
+    var jp_bottom: CGFloat {
         set {
             guard let superview = self.superview else { return }
-            y = superview.height - height - newValue
+            jp_y = superview.jp_height - jp_height - newValue
         }
         get {
             guard let superview = self.superview else { return 0 }
-            return superview.height - maxY
+            return superview.jp_height - jp_maxY
         }
     }
     
-    var radian: CGFloat { CGFloat(atan2(Double(transform.b), Double(transform.a))) }
+    var jp_radian: CGFloat { CGFloat(atan2(Double(transform.b), Double(transform.a))) }
     
-    var angle: CGFloat { (radian * 180.0) / CGFloat.pi }
+    var jp_angle: CGFloat { (jp_radian * 180.0) / CGFloat.pi }
     
-    var scaleX: CGFloat { CGFloat(sqrt(pow(transform.a, 2) + pow(transform.c, 2))) }
+    var jp_scaleX: CGFloat { CGFloat(sqrt(pow(transform.a, 2) + pow(transform.c, 2))) }
     
-    var scaleY: CGFloat { CGFloat(sqrt(pow(transform.b, 2) + pow(transform.d, 2))) }
+    var jp_scaleY: CGFloat { CGFloat(sqrt(pow(transform.b, 2) + pow(transform.d, 2))) }
     
-    var scale: CGPoint { .init(x: scaleX, y: scaleY) }
+    var jp_scale: CGPoint { .init(x: jp_scaleX, y: jp_scaleY) }
     
-    var translationX: CGFloat { transform.tx }
+    var jp_translationX: CGFloat { transform.tx }
     
-    var translationY: CGFloat { transform.ty }
+    var jp_translationY: CGFloat { transform.ty }
     
-    var translation: CGPoint { .init(x: translationX, y: translationY) }
+    var jp_translation: CGPoint { .init(x: jp_translationX, y: jp_translationY) }
     
-    static func loadFromNib(_ nibName: String? = nil, bundle: Bundle = Bundle.main) -> Self {
+    static func jp_loadFromNib(_ nibName: String? = nil, bundle: Bundle = Bundle.main) -> Self {
         let nibNamed = nibName ?? "\(self)"
         return bundle.loadNibNamed(nibNamed, owner: nil, options: nil)?.first as! Self
     }
     
-    static func nib(_ nibName: String? = nil, bundle: Bundle = Bundle.main) -> UINib? {
+    static func jp_nib(_ nibName: String? = nil, bundle: Bundle = Bundle.main) -> UINib? {
         let nibNamed = nibName ?? "\(self)"
         return UINib(nibName: nibNamed, bundle: bundle)
     }

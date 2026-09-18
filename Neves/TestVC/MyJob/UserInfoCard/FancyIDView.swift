@@ -149,20 +149,34 @@ class FancyIDView: UIView {
             // 刷新文本
             if let attStr = sLabel.attributedText {
                 let mAttStr = NSMutableAttributedString(attributedString: attStr)
-                mAttStr.font = font
-                mAttStr.kern = NSNumber(floatLiteral: kern)
-                mAttStr.paragraphStyle = style
-                if mAttStr.strokeWidth != nil {
-                    mAttStr.strokeWidth = NSNumber(floatLiteral: -strokeWidth)
+//                mAttStr.font = font
+//                mAttStr.kern = NSNumber(floatLiteral: kern)
+//                mAttStr.paragraphStyle = style
+//                if mAttStr.strokeWidth != nil {
+//                    mAttStr.strokeWidth = NSNumber(floatLiteral: -strokeWidth)
+//                }
+                var attrs: [NSAttributedString.Key: Any] = [
+                    .font: font,
+                    .kern: NSNumber(floatLiteral: kern),
+                    .paragraphStyle: style,
+                ]
+                if mAttStr.length > 0, mAttStr.attribute(.strokeWidth, at: 0, effectiveRange: nil) != nil {
+                    attrs[.strokeWidth] = NSNumber(floatLiteral: -strokeWidth)
                 }
+                mAttStr.addAttributes(attrs, range: NSRange(location: 0, length: mAttStr.length))
                 sLabel.attributedText = mAttStr
             }
             
             if let attStr = gLabel.attributedText {
                 let mAttStr = NSMutableAttributedString(attributedString: attStr)
-                mAttStr.font = font
-                mAttStr.kern = NSNumber(floatLiteral: kern)
-                mAttStr.paragraphStyle = style
+//                mAttStr.font = font
+//                mAttStr.kern = NSNumber(floatLiteral: kern)
+//                mAttStr.paragraphStyle = style
+                mAttStr.addAttributes([
+                    .font: font,
+                    .kern: NSNumber(floatLiteral: kern),
+                    .paragraphStyle: style,
+                ], range: NSRange(location: 0, length: mAttStr.length))
                 gLabel.attributedText = mAttStr
             }
         }
@@ -243,7 +257,24 @@ extension FancyIDView {
     }
     
     func updateUI(withId idStr: String?, idLv: Int, isEffect: Bool, isOldId: Bool) {
-        let iconImg = UIImage.jkr_getFancyIdIcon(withIdLv: idLv, isOldId: isOldId)
+        let iconImg: UIImage?
+        if (idLv <= 0) {
+            iconImg = nil
+        } else {
+            if (isOldId) {
+                var idLv = idLv
+                if idLv > 5, idLv < 100 {
+                    idLv = 5
+                } else if idLv > 100, idLv < 1000 {
+                    idLv = 100
+                } else if idLv > 1000 {
+                    idLv = 1000
+                }
+                iconImg = UIImage(named: "duid_little_icon\(idLv)")
+            } else {
+                iconImg = UIImage(named: "suid_little_icon_\(idLv > 8 ? 8 : idLv)")
+            }
+        }
         
         let isShowIcon = iconImg != nil
         let isShimmering = isEffect && idLv > 0
@@ -317,7 +348,7 @@ extension FancyIDView {
                 sLabel.setNeedsLayout()
             }
         } else {
-            if !isOldId, let strokeColor = UIColor.fancyIdStroke(withIdLv: idLv) {
+            if !isOldId, let strokeColor = Self.fancyIdStrokeColor(idLv) {
                 sLabel.attributedText = _buildAttText(text, strokeColor, strokeColor)
             } else {
                 sLabel.attributedText = _buildAttText(text, .clear)
@@ -325,11 +356,7 @@ extension FancyIDView {
             
             gLabel.attributedText = _buildAttText(text, .black)
             if self.idLv != idLv || self.isOldId != isOldId {
-                if isOldId {
-                    gLabel.colors = [UIColor(idLv: idLv, defaultColor: defaultColor)]
-                } else {
-                    gLabel.colors = UIColor.fancyIdTextColor(withIdLv: idLv, defaultColor: defaultColor)
-                }
+                gLabel.colors = Self.fancyIdTextColors(idLv, isOldId: isOldId, default: defaultColor)
             }
         }
         
@@ -361,3 +388,82 @@ extension FancyIDView {
         return NSAttributedString(string: text, attributes: attrs)
     }
 }
+
+private extension FancyIDView {
+    static func fancyIdStrokeColor(_ idLv: Int) -> UIColor? {
+        guard idLv > 0 else { return nil }
+        switch idLv {
+        case 1:
+            return .rgb(58, 19, 0)
+        case 2:
+            return .rgb(0, 53, 53)
+        case 3:
+            return .rgb(3, 56, 0)
+        case 4:
+            return .rgb(0, 22, 68)
+        case 5:
+            return .rgb(17, 0, 57)
+        case 6:
+            return .rgb(5, 0, 66)
+        case 7:
+            return .rgb(66, 0, 0)
+        default: // 8+
+            return .rgb(66, 26, 0)
+        }
+    }
+    
+    static func fancyIdTextColors(_ idLv: Int, isOldId: Bool, default dColor: UIColor?) -> [UIColor] {
+        if isOldId {
+            var idLv = idLv
+            if idLv > 5, idLv < 100 {
+                idLv = 5
+            } else if idLv > 100, idLv < 1000 {
+                idLv = 100
+            } else if idLv > 1000 {
+                idLv = 1000
+            }
+            switch (idLv) {
+            case 5:
+                return [.hex(0xFF577A)]
+            case 4:
+                return [.hex(0x9F70FF)]
+            case 3:
+                return [.hex(0x0081FF)]
+            case 2:
+                return [.hex(0x009A54)]
+            case 1:
+                return [.hex(0xFF7C26)]
+            case 100:
+                return [.hex(0xEE2EFF)]
+            case 1000:
+                return [.hex(0xFB1313)]
+            default:
+                return [dColor.map { $0 } ?? .hex(0x666666)]
+            }
+        }
+        
+        guard idLv > 0 else {
+            return [dColor.map { $0 } ?? .rgb(102, 102, 102)]
+        }
+        
+        switch (idLv) {
+        case 1:
+            return [.rgb(255, 143, 45)]
+        case 2:
+            return [.rgb(121, 214, 210)]
+        case 3:
+            return [.rgb(113, 219, 123)]
+        case 4:
+            return [.rgb(88, 205, 255)]
+        case 5:
+            return [.rgb(173, 112, 255)]
+        case 6:
+            return [.rgb(111, 152, 255)]
+        case 7:
+            return [.rgb(255, 49, 52)]
+        default: // 8+
+            return [.rgb(255, 192, 6), .rgb(255, 248, 83), .rgb(255, 192, 6)]
+        }
+    }
+}
+

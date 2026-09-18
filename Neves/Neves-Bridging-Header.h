@@ -57,3 +57,4 @@
 #import "JPDeviceTool.h"
 #import "JPScreenRotator.h"
 #import "JPPhotoTool.h"
+#import "JPBounceView.h"
