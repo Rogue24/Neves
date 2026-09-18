@@ -45,6 +45,17 @@
 		00421AFE305B8B47008EFF5D /* SVGAExImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AFC305B8B47008EFF5D /* SVGAExImageView.swift */; };
 		00421AFF305B8B47008EFF5D /* SVGAExImageView+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421AFD305B8B47008EFF5D /* SVGAExImageView+API.swift */; };
 		00421B01305B8B51008EFF5D /* RingerFXPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B00305B8B51008EFF5D /* RingerFXPlayer.swift */; };
+		00421B03305B8BBA008EFF5D /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B02305B8BBA008EFF5D /* GradientLabel.swift */; };
+		00421B05305B8C12008EFF5D /* HeadwearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B04305B8C12008EFF5D /* HeadwearView.swift */; };
+		00421B09305B8DB6008EFF5D /* EdgeMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B06305B8DB6008EFF5D /* EdgeMaskView.swift */; };
+		00421B0A305B8DB6008EFF5D /* JPJvhua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B08305B8DB6008EFF5D /* JPJvhua.swift */; };
+		00421B0E305B8E07008EFF5D /* PenetrableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421B0D305B8E07008EFF5D /* PenetrableView.swift */; };
+		00421B17305CDE65008EFF5D /* EMLProfileTitlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421B16305CDE65008EFF5D /* EMLProfileTitlesModel.m */; };
+		00421B1B305CDEA9008EFF5D /* JPHeadEffectCfg.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421B1A305CDEA9008EFF5D /* JPHeadEffectCfg.m */; };
+		00421B1E305CDEB5008EFF5D /* EMLMysteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421B1D305CDEB5008EFF5D /* EMLMysteryInfo.m */; };
+		00421B21305CDEE4008EFF5D /* JKRBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421B20305CDEE4008EFF5D /* JKRBubble.m */; };
+		00421B24305CDEF2008EFF5D /* JKREntryEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421B23305CDEF2008EFF5D /* JKREntryEffect.m */; };
+		00421B27305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00421B26305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.m */; };
 		0045F4202E6D771000CB841C /* LocalLLMView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F41F2E6D771000CB841C /* LocalLLMView.swift */; };
 		0045F4222E6D7A7600CB841C /* ChatClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0045F4212E6D7A7600CB841C /* ChatClient.swift */; };
 		004A324729B47365001832E5 /* JPPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A324529B47365001832E5 /* JPPhotoTool.m */; };
@@ -566,6 +577,24 @@
 		00421AFC305B8B47008EFF5D /* SVGAExImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGAExImageView.swift; sourceTree = "<group>"; };
 		00421AFD305B8B47008EFF5D /* SVGAExImageView+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SVGAExImageView+API.swift"; sourceTree = "<group>"; };
 		00421B00305B8B51008EFF5D /* RingerFXPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingerFXPlayer.swift; sourceTree = "<group>"; };
+		00421B02305B8BBA008EFF5D /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
+		00421B04305B8C12008EFF5D /* HeadwearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadwearView.swift; sourceTree = "<group>"; };
+		00421B06305B8DB6008EFF5D /* EdgeMaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeMaskView.swift; sourceTree = "<group>"; };
+		00421B08305B8DB6008EFF5D /* JPJvhua.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JPJvhua.swift; sourceTree = "<group>"; };
+		00421B0D305B8E07008EFF5D /* PenetrableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenetrableView.swift; sourceTree = "<group>"; };
+		00421B15305CDE65008EFF5D /* EMLProfileTitlesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLProfileTitlesModel.h; sourceTree = "<group>"; };
+		00421B16305CDE65008EFF5D /* EMLProfileTitlesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLProfileTitlesModel.m; sourceTree = "<group>"; };
+		00421B18305CDE8A008EFF5D /* ChatRoomGroupPower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatRoomGroupPower.h; sourceTree = "<group>"; };
+		00421B19305CDEA9008EFF5D /* JPHeadEffectCfg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JPHeadEffectCfg.h; sourceTree = "<group>"; };
+		00421B1A305CDEA9008EFF5D /* JPHeadEffectCfg.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JPHeadEffectCfg.m; sourceTree = "<group>"; };
+		00421B1C305CDEB5008EFF5D /* EMLMysteryInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLMysteryInfo.h; sourceTree = "<group>"; };
+		00421B1D305CDEB5008EFF5D /* EMLMysteryInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLMysteryInfo.m; sourceTree = "<group>"; };
+		00421B1F305CDEE4008EFF5D /* JKRBubble.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKRBubble.h; sourceTree = "<group>"; };
+		00421B20305CDEE4008EFF5D /* JKRBubble.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRBubble.m; sourceTree = "<group>"; };
+		00421B22305CDEF2008EFF5D /* JKREntryEffect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKREntryEffect.h; sourceTree = "<group>"; };
+		00421B23305CDEF2008EFF5D /* JKREntryEffect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKREntryEffect.m; sourceTree = "<group>"; };
+		00421B25305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EMLCountryRegionBadgeModel.h; sourceTree = "<group>"; };
+		00421B26305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMLCountryRegionBadgeModel.m; sourceTree = "<group>"; };
 		0045F41F2E6D771000CB841C /* LocalLLMView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLLMView.swift; sourceTree = "<group>"; };
 		0045F4212E6D7A7600CB841C /* ChatClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatClient.swift; sourceTree = "<group>"; };
 		004A324529B47365001832E5 /* JPPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPPhotoTool.m; sourceTree = "<group>"; };
@@ -1168,7 +1197,10 @@
 				00421AF5305B8AEB008EFF5D /* FancyIDView.swift */,
 				00421AFC305B8B47008EFF5D /* SVGAExImageView.swift */,
 				00421AFD305B8B47008EFF5D /* SVGAExImageView+API.swift */,
+				00421B04305B8C12008EFF5D /* HeadwearView.swift */,
 				00421B00305B8B51008EFF5D /* RingerFXPlayer.swift */,
+				00421B06305B8DB6008EFF5D /* EdgeMaskView.swift */,
+				00421B08305B8DB6008EFF5D /* JPJvhua.swift */,
 				00421AF9305B8AFE008EFF5D /* EMLUserTitleFlowView */,
 				00421AF0305B8984008EFF5D /* ContributionRanking */,
 				00421AE6305B88C3008EFF5D /* Other */,
@@ -1201,6 +1233,14 @@
 				00421AF8305B8AFE008EFF5D /* EMLUserTitleCellModel.swift */,
 			);
 			path = EMLUserTitleFlowView;
+			sourceTree = "<group>";
+		};
+		00421B0C305B8E02008EFF5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00421B0D305B8E07008EFF5D /* PenetrableView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		004D9B142F72A36000A7DB56 /* Lottie */ = {
@@ -1470,8 +1510,21 @@
 				009E3D403057F1AA00FA2E3B /* EMLRankingUsersModel.m */,
 				009E3D3C3057F15200FA2E3B /* EMLRankingUserModel.h */,
 				009E3D3D3057F15200FA2E3B /* EMLRankingUserModel.m */,
+				00421B18305CDE8A008EFF5D /* ChatRoomGroupPower.h */,
 				009E3D393057EFAF00FA2E3B /* JKRCurrentUser.h */,
 				009E3D3A3057EFAF00FA2E3B /* JKRCurrentUser.m */,
+				00421B25305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.h */,
+				00421B26305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.m */,
+				00421B1F305CDEE4008EFF5D /* JKRBubble.h */,
+				00421B20305CDEE4008EFF5D /* JKRBubble.m */,
+				00421B22305CDEF2008EFF5D /* JKREntryEffect.h */,
+				00421B23305CDEF2008EFF5D /* JKREntryEffect.m */,
+				00421B15305CDE65008EFF5D /* EMLProfileTitlesModel.h */,
+				00421B16305CDE65008EFF5D /* EMLProfileTitlesModel.m */,
+				00421B19305CDEA9008EFF5D /* JPHeadEffectCfg.h */,
+				00421B1A305CDEA9008EFF5D /* JPHeadEffectCfg.m */,
+				00421B1C305CDEB5008EFF5D /* EMLMysteryInfo.h */,
+				00421B1D305CDEB5008EFF5D /* EMLMysteryInfo.m */,
 				009E3D1A3057CA1A00FA2E3B /* JKRUserMedalsList.h */,
 				009E3D1B3057CA1A00FA2E3B /* JKRUserMedalsList.m */,
 				009E3D213057DF8100FA2E3B /* JKRChatRoomMedalModel.h */,
@@ -1543,6 +1596,7 @@
 			children = (
 				00D65160257498720074693E /* Gradientable.swift */,
 				00D65161257498720074693E /* GradientView.swift */,
+				00421B02305B8BBA008EFF5D /* GradientLabel.swift */,
 			);
 			path = Gradient;
 			sourceTree = "<group>";
@@ -1678,6 +1732,7 @@
 		1A3543B6254E775F0032B677 /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				00421B0C305B8E02008EFF5D /* View */,
 				0060D0112F975D1A00809046 /* UserDefault */,
 				007E64E429ADB39C00FD5F70 /* Layout */,
 				0053547F29607E5900E52CBB /* ImagePicker */,
@@ -3128,6 +3183,7 @@
 				71F24A162733DD8300FAAD93 /* DragonSlayerEntrance.Content.swift in Sources */,
 				1A354510254E77600032B677 /* JPBounceView.m in Sources */,
 				0081D76F2550EC15009D7ABA /* FireLottieTestViewController.swift in Sources */,
+				00421B27305CDF6D008EFF5D /* EMLCountryRegionBadgeModel.m in Sources */,
 				00EE356429A70448008902DD /* JYXBDrawingBoard.swift in Sources */,
 				719A5231286D9F0A00619AD4 /* JPUserInfoCacheTool.swift in Sources */,
 				71F24A07273227AE00FAAD93 /* DragonSlayerInspireView.swift in Sources */,
@@ -3194,6 +3250,7 @@
 				0053548329607E5900E52CBB /* ImagePickerObject.swift in Sources */,
 				00E7072B2CC7D81200733639 /* DeepLabV3.mlmodel in Sources */,
 				00EE356829A705CC008902DD /* CG.swift in Sources */,
+				00421B05305B8C12008EFF5D /* HeadwearView.swift in Sources */,
 				7104877F28391E0B00706ED7 /* M34TestViewController.swift in Sources */,
 				71E3364226C26202004669F7 /* DeferTestViewController.swift in Sources */,
 				00E707282CC7D27B00733639 /* JPHUD.swift in Sources */,
@@ -3255,12 +3312,14 @@
 				005310F53045674C00B14F3B /* MedalRankingNavigationBar.swift in Sources */,
 				005310F63045674C00B14F3B /* MedalRankingListBgView.swift in Sources */,
 				005310F73045674C00B14F3B /* MedalWallIconCell.swift in Sources */,
+				00421B21305CDEE4008EFF5D /* JKRBubble.m in Sources */,
 				1A35452C254E77600032B677 /* TestTableViewController.swift in Sources */,
 				71F24A09273282AD00FAAD93 /* DragonSlayerInspireView.Bubble.swift in Sources */,
 				1A35433C254E75EB0032B677 /* AppDelegate.swift in Sources */,
 				00B57BE72F86C39500DBBE87 /* SimpleTimer.swift in Sources */,
 				00421ADB305B85B7008EFF5D /* UserInfoCardTestViewController.swift in Sources */,
 				1A65873E2629E67300846689 /* PopViewTestViewController.swift in Sources */,
+				00421B03305B8BBA008EFF5D /* GradientLabel.swift in Sources */,
 				717E8B7526DCC6A9000E3E9F /* RelationshipPlanetViewController.swift in Sources */,
 				1A354512254E77600032B677 /* JPViewController.m in Sources */,
 				1A354515254E77600032B677 /* JPSubTableViewController.m in Sources */,
@@ -3325,15 +3384,18 @@
 				71B3008C27268F0800997B20 /* VideoMaker.ImageTest.swift in Sources */,
 				00A364222B20114600CDCFAF /* UIView+RTL.swift in Sources */,
 				00055476291A56A800AEC49B /* ScreenRotatorState.swift in Sources */,
+				00421B1B305CDEA9008EFF5D /* JPHeadEffectCfg.m in Sources */,
 				002E78FE295EB45A0071E30C /* GuideIntoRoomGameTeamCardListView.swift in Sources */,
 				71F249E82731517A00FAAD93 /* JPMagicCubeBubbleView.swift in Sources */,
 				71695AC626DE07D200384C2A /* PeopleView.swift in Sources */,
+				00421B1E305CDEB5008EFF5D /* EMLMysteryInfo.m in Sources */,
 				717FA03727706B2D0081DD50 /* MemoryLayoutViewController.swift in Sources */,
 				71F249EE2731517A00FAAD93 /* MarebulabulasLrcView.swift in Sources */,
 				71107437271E956100178969 /* VideoMaker.Layer.swift in Sources */,
 				1A354519254E77600032B677 /* UIView+JPExtension.m in Sources */,
 				1A354520254E77600032B677 /* NSString+JPExtension.m in Sources */,
 				718A56B127F1B9500071C724 /* Buttons.swift in Sources */,
+				00421B0E305B8E07008EFF5D /* PenetrableView.swift in Sources */,
 				0027927230258EBC00405857 /* LayerImageRenderer.swift in Sources */,
 				7172B63B28D06EB400381E83 /* VideoFiles.swift in Sources */,
 				719A5230286D9F0A00619AD4 /* JPCacheViewConstroller.swift in Sources */,
@@ -3361,6 +3423,7 @@
 				7102C56328D1ADC300E2265C /* Assets.swift in Sources */,
 				1A3544F9254E77600032B677 /* String.Extension.swift in Sources */,
 				008DC2F7297699C90039AB22 /* Penetrable.swift in Sources */,
+				00421B17305CDE65008EFF5D /* EMLProfileTitlesModel.m in Sources */,
 				1AF648472955ACAC00752E57 /* Task.Extension.swift in Sources */,
 				007E64E629ADB3A300FD5F70 /* WaterfallLayout.swift in Sources */,
 				1A5C013F26CEA11200DF819F /* TestObject.swift in Sources */,
@@ -3487,6 +3550,8 @@
 				71F24A122733B33300FAAD93 /* DragonSlayer.swift in Sources */,
 				00D65162257498720074693E /* Gradientable.swift in Sources */,
 				718A569727F195780071C724 /* CosmicExplorationManager.swift in Sources */,
+				00421B09305B8DB6008EFF5D /* EdgeMaskView.swift in Sources */,
+				00421B0A305B8DB6008EFF5D /* JPJvhua.swift in Sources */,
 				7110742F271D53B200178969 /* SolitaireAnimationViewController.swift in Sources */,
 				716B20B527055B5E00F0A955 /* VideoMaker.swift in Sources */,
 				00AD4FB32D054F9B0011C4AA /* GCDBarrierTestVC.swift in Sources */,
@@ -3540,6 +3605,7 @@
 				1A354518254E77600032B677 /* UIWindow+JPExtension.m in Sources */,
 				1A35450C254E77600032B677 /* JPTextView.m in Sources */,
 				00A3641E2B20114600CDCFAF /* UILabel+RTL.swift in Sources */,
+				00421B24305CDEF2008EFF5D /* JKREntryEffect.m in Sources */,
 				002E78CD295C42840071E30C /* GuideIntoRoomPopView.swift in Sources */,
 				1A354516254E77600032B677 /* UIImage+JPExtension.m in Sources */,
 				7151894B27EB2AF400342645 /* UIImageView+FaceAware.swift in Sources */,

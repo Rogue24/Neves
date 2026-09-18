@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVGAPlayer_Optimized
 
 class RingerFXPlayer: UIView {
     enum Mode: Equatable {

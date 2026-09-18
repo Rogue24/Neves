@@ -6,12 +6,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JKRBubble.h"
+#import "JKREntryEffect.h"
+#import "EMLProfileTitlesModel.h"
+#import "JPHeadEffectCfg.h"
+#import "ChatRoomGroupPower.h"
+#import "EMLCountryRegionBadgeModel.h"
+#import "EMLMysteryInfo.h"
+#import "JKRMedalIconV2Model.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JKRCurrentUser : NSObject <NSCoding>
+@interface JKRFamilyNameplateConfig : NSObject
+@property (nonatomic, copy) NSString *medalImg;
+@property (nonatomic, copy) NSString *bgImg;
+@property (nonatomic, copy) NSString *fontColor;
+@end
+
+@interface JKRCurrentUser : NSObject <NSCopying, NSCoding>
 /// 用户uid
 @property (nonatomic, assign) NSInteger uid;
+/// 绑定的靓号
+@property (nonatomic, assign) NSInteger duid;
 /// 昵称
 @property (nonatomic, copy, nullable) NSString *nickname;
 /// 头像
@@ -24,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger charmlv;
 /// 活跃值等级
 @property (nonatomic, assign) NSInteger activelv;
+/// 人工设置是否靓号
+@property (nonatomic, assign) NSInteger isduid;
 /// 靓号等级（旧版）
 @property (nonatomic, assign) NSInteger suidLv;
 /// v9.7.0_新靓号等级_用户：1~8（共8个级别）
@@ -86,8 +104,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSArray<NSString *> *managerIcon;
 /// 勋章图标
 @property (nonatomic, copy, nullable) NSArray<NSString *> *medalsIcon;
+/// 勋章图标V2（与 medalsIcon 同级新增，元素含 icon/style；style 1=印记 2=勋章 3=钻章）
+@property (nonatomic, copy, nullable) NSArray<JKRMedalIconV2Model *> *medalsIconV2;
 /// CP勋章
 @property (nonatomic, copy, nullable) NSString *cpMedal;
+///// 管理国家
+//@property (nonatomic, copy, nullable) NSArray<NSNumber *> *mgrCountries; // 已废弃
 
 /// 是否关注了，只有uid唯一查询时出现
 @property (nonatomic, assign) BOOL follow;
@@ -126,6 +148,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *cpSuid;
 @property (nonatomic, assign) NSInteger cpSuidLv;
 
+/// 私聊气泡
+@property (nonatomic, strong) JKRBubble *privatBubble;
+/// 聊天室气泡
+@property (nonatomic, strong) JKRBubble *chatRoomBubble;
+/// 进场动效
+@property (nonatomic, strong) JKREntryEffect *entryEffect;
+
 /// 家族ID
 @property (nonatomic, assign) NSInteger familyId;
 @property (nonatomic, assign) NSInteger familyOwner;
@@ -148,6 +177,12 @@ NS_ASSUME_NONNULL_BEGIN
 /// 家族成员-是否是新成员
 @property (nonatomic, assign) BOOL isNewMember;
 
+// MARK: - v6.0.0 新增
+/// 称号
+@property (nonatomic, copy) NSArray<EMLProfileTitlesModel *> *titles;
+/// 经过`region`过滤后的称号
+- (NSArray<EMLProfileTitlesResourcesItemModel *> *)getUsedTitles;
+
 /// 注册天数
 @property (nonatomic, assign) NSInteger regDays;
 /// 最后一次活跃时间
@@ -168,6 +203,12 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: - v6.3.0 新增
 /// 用户是否已注销
 @property (nonatomic, assign) BOOL accountDisabled;
+/// 外管中心
+@property (nonatomic, copy) NSString *outerTeamUrl;
+/// 房间成员，管理员需要用到的字段 用户级别
+@property (nonatomic, assign) ChatRoomGroupPower groupPower;
+/// 用户子权限：groupSubPower - 350 房间超级管理员
+@property (nonatomic, assign) ChatRoomGroupAdminPower groupSubPower;
 /// 当前所在房间（不是指自己创建的房间，不在任何房间则为0）
 @property (nonatomic, assign) NSInteger gid;
 /// 是否已申请好友
@@ -178,18 +219,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) NSString *headSvga;
 /// 静态头饰
 @property (nonatomic, copy, nullable) NSString *headImage;
+/// 亲密关系的用户信息（uid、头像等）
+@property (nonatomic, strong, nullable) JPHeadEffectCfg *headEffectCfg;
 
-// MARK: - v6.8.0 新增
 /// 自己的房间号（本人创建的房间，只作用于单例对象`[JKRUserManager sharedUserManager].user`中）
 @property (nonatomic, assign) NSInteger mineGid;
 
-// MARK: - v7.0.0 新增
 /// 游戏等级
 @property (nonatomic, assign) NSInteger gameLv;
 /// 最高游戏等级积分
 @property (nonatomic, assign) NSInteger gameLvStar;
 
-// MARK: - v7.8.0 新增
 /// 影响力等级
 @property (nonatomic, assign) NSInteger influenceLv;
 /// 荣誉积分
@@ -197,14 +237,33 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否是国家管理员（新增原因是因为多了个支持经理概念，支持经理与国家管理员power都为3，客户端区分不出来，主要用于房间用户资料卡）
 @property (nonatomic, assign) BOOL isCountryAdmin;
 
-// MARK: - v8.2.0 新增
+/// 国家区域徽章
+@property (nonatomic, copy, nullable) NSArray<EMLCountryRegionBadgeModel *> *badgelist;
 /// 腾讯云Sig
 @property (nonatomic, copy) NSString *userSig;
 
-// MARK: - v9.1.0 新增
+/// 家族铭牌信息
+@property (nonatomic, strong, nullable) JKRFamilyNameplateConfig *familyNameplateConf;
 /// 用户信息时间戳，防止旧数据覆盖用
 @property (nonatomic, assign) NSTimeInterval timeUnix;
 
+/// 神秘人信息
+@property (nonatomic, strong, nullable) EMLMysteryInfo *mysteryInfo;
+/// 我是否神秘人
+- (BOOL)currentIsMystery;
+/// 是否可以查看神秘人信息
+@property (nonatomic, assign) BOOL hasMysteryInfoPower;
+
+/// 0-未知（未知情况以及不识别枚举值时展示默认的勋章）；1-展示VIP勋章；2-展示SVIP勋章。
+@property (nonatomic, assign) NSInteger micMedalType;
+/// 0-不在【APP账号管理】系统名单的用户，才会受到原来做的财富魅力等级展示的限制 1-“展示游戏”，不论财富魅力等级是多少，都可以正常展示下列场景入口、收到相关全服/飞幕、推送 2-“不展示游戏”，不论财富魅力等级是多少，都【不展示】下列场景入口、收不到相关全服/飞幕、推送
+@property (nonatomic, assign) NSInteger gameStatus;
+
+/// 是否可显示高级游戏
+@property (nonatomic, assign) BOOL relaunchGameShow;
+
+/// 已点亮礼物图鉴数量
+@property (nonatomic, assign) NSInteger litAtlasCount;
 @end
 
 NS_ASSUME_NONNULL_END
